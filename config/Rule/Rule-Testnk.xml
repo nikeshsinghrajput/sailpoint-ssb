@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestNK" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  import sailpoint.object.Identity;
+  import sailpoint.object.Link;
+  import sailpoint.object.Filter;
+  import sailpoint.object.QueryOptions;
+  import sailpoint.api.IdentityService;
+  import sailpoint.object.Application;
+    System.out.println("TestNK start");
+    log.debug("debug called");
+    log.warn("warn called");
+  log.error("error called");
+  log.info("info called");
+  log.trace("trace called");
+  // for updating identity
+  /*
+  String identityName="David Brown";
+  Identity identity= context.getObjectByName(Identity.class,identityName);
+ List links = identity.getLinks();
+		  for(Link link:links){
+		   if(link.getApplicationName().equalsIgnoreCase("Financial Application")) {
+			   link.setAttribute("Inactive", true);
+		   }
+		  }
+		  context.saveObject(identity);
+		  context.commitTransaction();
+      */
+  // for link by IdentityService
+  /*
+  Identity identity= context.getObjectByName(Identity.class,identityName);
+		  IdentityService is= new IdentityService(context);
+		  Application application = context.getObjectByName(Application.class, "Financial Application");
+		  List links = is.getLinks(identity, application);
+		  for(Link link:links) {
+			 return link;
+		  }*/
+  QueryOptions qo=new QueryOptions();
+  Filter f= Filter.eq("correlated",false);
+  qo.addFilter(f);
+  Iterator it =context.search(Identity.class,qo);
+  int count=0;
+  while(it.hasNext()){
+    System.out.println("uncorrelated account :"+it.next().toXml());
+    count++;
+  }
+ // return "total uncorrelated account :"+count;
+ return context.getObjectById(Identity.class,"Brooke Bishop");
+  </Source>
+</Rule>

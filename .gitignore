@@ -1,0 +1,34 @@
+# Ignore build output
+build/
+*.war
+*.zip
+
+# Ignore extracted binaries
+base/ga/*.zip
+base/patch/*.jar
+base/efix/**
+
+# Ignore compiled Java
+*.class
+target/
+out/
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore logs
+*.log
+
+# Ignore OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Ignore backup or temp files
+*.orig
+*.tmp
+
+# Ignore local override property files
+*.build.properties
+*.target.properties

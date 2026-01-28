@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestFilterOrg" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  import sailpoint.object.Identity;
+  import sailpoint.object.Link;
+  import sailpoint.object.Filter;
+  import sailpoint.object.QueryOptions;
+  import sailpoint.api.IdentityService;
+  import sailpoint.object.Application;
+  import sailpoint.api.Provisioner;
+  import sailpoint.object.ProvisioningPlan;
+  import sailpoint.object.ProvisioningPlan.AccountRequest;
+  
+    System.out.println("TestNK start");
+    Filter frName=Filter.eq("name","arjun.reddy");
+	Filter frcorrelated=Filter.eq("correlated",true);
+	QueryOptions qo=new QueryOptions();
+	Filter combineFilter=Filter.and(frName,frcorrelated);
+	qo.addFilter(combineFilter);
+	Iterator it=context.search(Identity.class,qo);
+	if(it!=null){
+	Identity identity=it.next();
+	 ProvisioningPlan plan=new ProvisioningPlan();
+	 plan.setIdentity(identity);
+	 AccountRequest ac=new AccountRequest();
+	 ac.setApplication("Employee JDBC App");
+	 ac.setOperation(AccountRequest.Operation.Create);
+	 plan.add(ac);
+	 System.out.println("plan;;;;;;;;;"+plan.toXml());
+	 Provisioner pr=new Provisioner(context);
+	 pr.compile(plan);
+	 pr.execute();
+	}
+  </Source>
+</Rule>

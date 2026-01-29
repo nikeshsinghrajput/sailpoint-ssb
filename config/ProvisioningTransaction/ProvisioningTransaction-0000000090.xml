@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="tiwari.saanvi@nksiiq.com" applicationName="Sales Analytics" identityDisplayName="4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2" identityName="4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2" integration="Sales Analytics" name="0000000090" nativeIdentity="8512501" operation="Modify" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed"/>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Sales Analytics" nativeIdentity="8512501" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a671ea5819a6e74b8b5077e"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="firstName" op="Remove" value="Saanvi"/>
+            <AttributeRequest name="lastName" op="Remove" value="Tiwari"/>
+            <AttributeRequest name="status" op="Remove" value="Active"/>
+            <AttributeRequest name="department" op="Remove" value="Sales"/>
+            <AttributeRequest name="userLevel" op="Remove" value="A"/>
+            <AttributeRequest name="hireDate" op="Remove" value="01-01-2025"/>
+            <AttributeRequest name="salesQuota" op="Remove" value="500000"/>
+            <AttributeRequest name="achievedSales" op="Remove" value="0"/>
+            <AttributeRequest name="terminationDate" op="Remove" value="01-04-2027"/>
+            <AttributeRequest name="workState" op="Remove" value="Noida"/>
+            <AttributeRequest name="email" op="Remove" value="tiwari.saanvi@nksiiq.com"/>
+            <AttributeRequest name="region" op="Remove" value="A"/>
+            <AttributeRequest name="territory" op="Remove" value="A"/>
+            <AttributeRequest name="commissionRate" op="Remove" value="5%"/>
+            <AttributeRequest name="managerId" op="Remove" value="6b04258c-218e-4ab6-b992-bb4702a3daa5"/>
+            <AttributeRequest name="annualHours" op="Remove" value="720"/>
+            <AttributeRequest name="jobTitle" op="Remove" value="Software Engineer"/>
+            <AttributeRequest name="country" op="Remove" value="India"/>
+            <AttributeRequest name="isManager" op="Remove" value="No"/>
+            <AttributeRequest name="businessUnit" op="Remove" value="A"/>
+            <ProvisioningResult status="failed"/>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

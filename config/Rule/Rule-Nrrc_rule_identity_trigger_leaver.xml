@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NRRC_Rule_Identity_Trigger_Leaver" type="IdentityTrigger">
+  <Description>This rule can be used for Certification Events that use rule triggers. The previousIdentity and newIdentity hold snapshots of the identity before the update has occurred and the state of the identity after the update, respectively.</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NRRC_RuleLibrary_Active_Directory"/>
+  </ReferencedRules>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="previousIdentity">
+        <Description>
+          The identity before the refresh/aggregation (this will be null when an
+          identity is created).
+        </Description>
+      </Argument>
+      <Argument name="newIdentity">
+        <Description>
+          The identity after the refresh/aggregation (this will be null when an
+          identity is deleted).
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+          A boolean describing the result of the rule.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+  import java.text.SimpleDateFormat;
+   import java.util.Calendar;
+   import java.util.Date;
+   import sailpoint.tools.Util;
+   import sailpoint.object.Link;
+  boolean result = false;
+  int leaverDayDiffMax=0;
+  int leaverDayDiffMin=0;
+  Logger logs = Logger.getLogger("com.ns.rule.NRRC_Rule_Identity_Trigger_Leaver");
+   logs.debug("Leaver_Trigger_rule started");
+  try {
+   
+    String terminationDate =  newIdentity.getAttribute("terminationDate");
+	String status =  newIdentity.getAttribute("status");
+	boolean inactive =  newIdentity.getAttribute("inactive");
+    logs.debug("terminationDate:::::"+terminationDate);
+	logs.debug("status:::::"+status);
+	Link hrLink=getPrimaryAccountLink(newIdentity.getName());
+	Custom cs = context.getObjectByName(Custom.class, "NRRC_CustomObject_IdentityEvent_Leaver");
+		if (cs != null) {
+			leaverDayDiffMax =Integer.parseInt(cs.get("LeaverDayDiffMax"));
+			leaverDayDiffMin =Integer.parseInt(cs.get("LeaverDayDiffMin"));
+			logs.debug("LeaverDayDiffMax : " + leaverDayDiffMax);
+			logs.debug("LeaverDayDiffMin : " + leaverDayDiffMin);
+		}
+     if (inactive &amp;&amp; terminationDate != null &amp;&amp; Util.isNotNullOrEmpty(status)) {
+
+        SimpleDateFormat f = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a z");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        Date today = calendar.getTime();
+        logs.debug("Current Date is::::::"+f.format(today));
+        Date terminationDateObj = f.parse(terminationDate);
+		   long diffInMillis = terminationDateObj.getTime() - today.getTime();
+		    long diffInDays = diffInMillis / (1000 * 60 * 60 * 24);
+        logs.debug("diffInDays : " + diffInDays);
+        if (diffInDays &lt;= leaverDayDiffMax &amp;&amp; diffInDays &gt;= leaverDayDiffMin &amp;&amp; status.equalsIgnoreCase("Leaver_Active")) {
+          String newStatus = "Leaver-Started";
+          newIdentity.setAttribute("status", newStatus);
+          context.saveObject(newIdentity);
+          context.commitTransaction();
+          logs.debug("Leaver is able to trigger");
+          result = true;
+        }
+      }
+    }catch (Exception e) {
+	logs.error("Exception occured in Leaver_Trigger_rule"+e);
+    }
+  return result;</Source>
+</Rule>

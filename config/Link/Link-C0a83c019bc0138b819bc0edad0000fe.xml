@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Chelsea Figueroa" identity="739055" lastRefresh="1768468360448">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7797 Hill St"/>
+      <entry key="ADDRESS_WORK" value="7797 Hill St;Shanghai, Guangdong 20077;China"/>
+      <entry key="BUILDING_CODE" value="CN_GUA_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3008"/>
+      <entry key="CLASS" value="Shift-Based"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="05-03-2026"/>
+      <entry key="COUNTRY_NAME" value="China"/>
+      <entry key="DEPARTMENT" value="Treasury &amp; Cash Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-002"/>
+      <entry key="DIVISION" value="China Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-CN-04"/>
+      <entry key="EMAIL" value="chelsea.figueroa@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739055"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739055"/>
+      <entry key="FIRST_NAME" value="Chelsea"/>
+      <entry key="HIREDATE" value="08-15-2023"/>
+      <entry key="JOBCODE" value="JT-002-01"/>
+      <entry key="JOBTITLE" value="Treasury Analyst"/>
+      <entry key="LAST_NAME" value="Figueroa"/>
+      <entry key="LOCATION" value="CN - Shanghai"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="69780"/>
+      <entry key="REGION" value="Shanghai"/>
+      <entry key="WORKER_NAME" value="Chelsea Figueroa"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

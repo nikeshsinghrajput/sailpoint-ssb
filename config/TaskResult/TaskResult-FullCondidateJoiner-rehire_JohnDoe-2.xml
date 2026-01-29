@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768905598002" completionStatus="Error" launched="1768905570775" launcher="Scheduler" name="Full Condidate Joiner-rehire: John Doe - 2" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="identityRequestId" value="0000000341"/>
+      <entry key="password"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="db561a67-5064-475f-bedc-35bad74bb86b">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000341"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <Filtered>
+              <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable">
+                <AttributeRequest name="manager" op="Set" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="description" op="Set" value="Created via sailpoint :Threat Intelligence Specialist">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="userAccountControl" op="Set" value="512">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+              </AccountRequest>
+            </Filtered>
+            <MasterPlan>
+              <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable">
+                  <AttributeRequest name="distinguishedName" value="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                  <AttributeRequest name="IIQDisabled">
+                    <Value>
+                      <Boolean/>
+                    </Value>
+                  </AttributeRequest>
+                  <AttributeRequest name="memberOf" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                  <AttributeRequest name="password"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000341"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b" targetIntegration="Active Directory" trackingId="ef09b3d3b2754e98ad1930f3d572a902">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                <AttributeRequest name="distinguishedName" op="Set" value="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="IIQDisabled" op="Set">
+                  <Value>
+                    <Boolean/>
+                  </Value>
+                </AttributeRequest>
+                <AttributeRequest name="memberOf" op="Set" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="password" op="Set"/>
+                <AttributeRequest name="accountExpires" op="Add" value="01/29/2028 05:30:00 AM IST"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000341"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="NS_Role_Corporate_Learning_Portal"/>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="doe1.john" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="retries">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019bd11f47819bdafcfb4a07d9"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="Provision Accounts"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+  <Messages>
+    <Message key="err_exception" type="Error">
+      <Parameters>
+        <Message key="Typed variable declaration : Command not found: moveADAccountInActiveOU(java.lang.String, java.lang.String) : at Line: 18 " type="Error"/>
+      </Parameters>
+    </Message>
+  </Messages>
+</TaskResult>

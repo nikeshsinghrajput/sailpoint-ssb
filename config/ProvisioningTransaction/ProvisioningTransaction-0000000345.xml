@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="VDI_ExternalAccess" applicationName="Active Directory" integration="Active Directory" name="0000000345" nativeIdentity="CN=VDI_ExternalAccess,OU=Groups,OU=SailPoint,DC=sriiq,DC=com" operation="Create" source="GroupManagement" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <ObjectRequest application="Active Directory" nativeIdentity="CN=VDI_ExternalAccess,OU=Groups,OU=SailPoint,DC=sriiq,DC=com" op="Create" targetIntegration="Active Directory" type="group">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019ae91354819ae99257800029"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="distinguishedName" op="Set" value="CN=VDI_ExternalAccess,OU=Groups,OU=SailPoint,DC=sriiq,DC=com"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="VDI_ExternalAccess"/>
+            <AttributeRequest name="GroupType" op="Set" value="Security"/>
+            <AttributeRequest name="GroupScope" op="Set" value="Global"/>
+            <AttributeRequest name="sysAttribute" op="Set" value="memberOf"/>
+            <AttributeRequest name="sysDisplayName" op="Set" value="VDI_ExternalAccess"/>
+            <AttributeRequest name="sysDescriptions" op="Set">
+              <Value>
+                <Map>
+                  <entry key="en_US"/>
+                </Map>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="sysOwner" op="Set" value="spadmin"/>
+            <AttributeRequest name="sysRequestable" op="Set">
+              <Value>
+                <Boolean>true</Boolean>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="sysManagedAttributeType" op="Set" value="group"/>
+            <AttributeRequest name="sysClassifications" op="Set"/>
+            <AttributeRequest name="sysIiqElevatedAccess" op="Set">
+              <Value>
+                <Boolean/>
+              </Value>
+            </AttributeRequest>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;Failed to connect to the server for OU=Groups,OU=SailPoint,DC=sriiq,DC=com:The server is not operational. The server is not operational. . HRESULT:[0x8007203A]Failed to connect to the server for OU=Groups,OU=SailPoint,DC=sriiq,DC=com:The server is not operational. The server is not operational. . HRESULT:[0x8007203A]&quot; Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </ObjectRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

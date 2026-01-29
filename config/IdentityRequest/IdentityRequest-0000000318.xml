@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1768471306093" executionStatus="Completed" name="0000000318" priority="Normal" requesterDisplayName="The Administrator" requesterId="c0a83c0199cf13658199cf93c73500fe" source="LCM" state="End" targetClass="Identity" targetDisplayName="Hector Petty" type="AccessRequest" verified="1768471324770">
+  <Attributes>
+    <Map>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="3ae9ccae-0c70-4dda-a43e-2654222f32a8">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000318"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4de0503"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Manager" name="roles" op="Add" value="Sales Manager">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4ee0504"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Operations Specialist" name="roles" op="Add" value="Sales Operations Specialist">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000318"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+                <ProvisioningTargets>
+                  <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Sales Manager">
+                    <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" selection="739092">
+                      <AccountInfo displayName="739092" nativeIdentity="739092"/>
+                    </AccountSelection>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Sales Operations Specialist">
+                    <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" selection="739092">
+                      <AccountInfo displayName="739092" nativeIdentity="739092"/>
+                    </AccountSelection>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+                    <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+                  </ProvisioningTarget>
+                </ProvisioningTargets>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="3ae9ccae-0c70-4dda-a43e-2654222f32a8" targetIntegration="Sales Analytics" trackingId="62c05958dc19487b81d6bca649c0050c">
+              <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify" targetIntegration="Sales Analytics">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a0c102b819a1038f4ee0504"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="EntitlementAdd"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Sales Manager" name="roles" op="Add" value="Sales Manager">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest displayValue="Sales Operations Specialist" name="roles" op="Add" value="Sales Operations Specialist">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000318"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Sales Manager">
+              <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" selection="739092">
+                <AccountInfo displayName="739092" nativeIdentity="739092"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+            <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Sales Operations Specialist">
+              <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" selection="739092">
+                <AccountInfo displayName="739092" nativeIdentity="739092"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bc0138b819bc11a9c6c05d1"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" name="roles" nativeIdentity="739092" operation="Add" ownerName="spadmin" provisioningEngine="Sales Analytics" provisioningState="Finished" value="Sales Manager">
+      <Attributes>
+        <Map>
+          <entry key="assignmentId" value="1242bc6e04104d0eba9f60005487795f"/>
+          <entry key="attachmentConfigList"/>
+          <entry key="attachments"/>
+          <entry key="flow" value="AccessRequest"/>
+          <entry key="id" value="c0a83c019a0c102b819a1038f4de0503"/>
+          <entry key="identityEntitlementId" value="c0a83c019bc0138b819bc11a9de005d8"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="operation" value="EntitlementAdd"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="e7a77b9382c8423a9c10b63afced2a44">
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify" targetIntegration="Sales Analytics">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4ee0504"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Manager" name="roles" op="Add" trackingId="e7a77b9382c8423a9c10b63afced2a44" value="Sales Manager">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" name="roles" nativeIdentity="739092" operation="Add" ownerName="spadmin" provisioningEngine="Sales Analytics" provisioningState="Finished" value="Sales Operations Specialist">
+      <Attributes>
+        <Map>
+          <entry key="assignmentId" value="f1ff6979f15d4f7596f581264092fb59"/>
+          <entry key="attachmentConfigList"/>
+          <entry key="attachments"/>
+          <entry key="flow" value="AccessRequest"/>
+          <entry key="id" value="c0a83c019a0c102b819a1038f4ee0504"/>
+          <entry key="identityEntitlementId" value="c0a83c019bc0138b819bc11a9de505d9"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="operation" value="EntitlementAdd"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="28dcad6fe80e4a77a0feda2a36ea851e">
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify" targetIntegration="Sales Analytics">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4ee0504"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Operations Specialist" name="roles" op="Add" trackingId="28dcad6fe80e4a77a0feda2a36ea851e" value="Sales Operations Specialist">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

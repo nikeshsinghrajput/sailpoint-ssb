@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469461869" name="8a4f57e4-1875-47a2-ad55-135b1c0d42dc">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Brazil"/>
+      <entry key="department" value="Legal &amp; Corporate Affairs"/>
+      <entry key="displayName" value="Veronica Guerra"/>
+      <entry key="division" value="Brazil Risk and Compliance"/>
+      <entry key="employeeId" value="739025"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Remote"/>
+      <entry key="firstname" value="Veronica"/>
+      <entry key="hireDate" value="06-17-2020"/>
+      <entry key="lastname" value="Guerra"/>
+      <entry key="location" value="BR - Salvador"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="73972"/>
+      <entry key="terminationDate" value="09-16-2026"/>
+      <entry key="title" value="Legal Counsel"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469461822" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Veronica Guerra" identity="739025" lastRefresh="1768468353305">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="9283 Hill Blvd"/>
+          <entry key="ADDRESS_WORK" value="9283 Hill Blvd;Salvador, São Paulo State 52067;Brazil"/>
+          <entry key="BUILDING_CODE" value="BR_SOP_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3040"/>
+          <entry key="CLASS" value="Remote"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="09-16-2026"/>
+          <entry key="COUNTRY_NAME" value="Brazil"/>
+          <entry key="DEPARTMENT" value="Legal &amp; Corporate Affairs"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-009"/>
+          <entry key="DIVISION" value="Brazil Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-BR-04"/>
+          <entry key="EMAIL" value="veronica.guerra@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739025"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739025"/>
+          <entry key="FIRST_NAME" value="Veronica"/>
+          <entry key="HIREDATE" value="06-17-2020"/>
+          <entry key="JOBCODE" value="JT-009-01"/>
+          <entry key="JOBTITLE" value="Legal Counsel"/>
+          <entry key="LAST_NAME" value="Guerra"/>
+          <entry key="LOCATION" value="BR - Salvador"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="73972"/>
+          <entry key="REGION" value="Salvador"/>
+          <entry key="WORKER_NAME" value="Veronica Guerra"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Vendor"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

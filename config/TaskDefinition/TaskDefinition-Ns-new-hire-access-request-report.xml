@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition executor="sailpoint.reporting.LiveReportExecutor" name="NS-New-Hire-Access-Request-Report" progressMode="Percentage" resultAction="Rename" subType="Extended Reports" template="true" type="LiveReport">
+  <Attributes>
+    <Map>
+      <entry key="report">
+        <value>
+          <LiveReport title="Access request Based on Country and Division">
+            <DataSource dataSourceClass="org.SailPoint_IIQ.reports.NsNewHireReportAccessRequestReport" type="Java"/>
+            <ReportForm>
+              <Reference class="sailpoint.object.Form" name="NS_Report_Identity_AccessRequest_Form"/>
+            </ReportForm>
+            <Columns>
+              <ReportColumnConfig field="identityLifeCycleEvent" header="LifeCycle Event" property="identityLifeCycleEvent" sortable="true" width="100"/>
+              <ReportColumnConfig field="triggerDate" header="Triggerd Date" property="triggerDate" sortable="true" width="110"/>
+              <ReportColumnConfig field="identityName" header="Employee Id" property="identityName" sortable="true" width="110"/>
+              <ReportColumnConfig field="email" header="Email" property="email" sortable="true" width="110"/>
+              <ReportColumnConfig field="firstName" header="First Name" property="firstName" sortable="true" width="110"/>
+              <ReportColumnConfig field="lastName" header="Last Name" property="lastName" sortable="true" width="110"/>
+              <ReportColumnConfig field="managerName" header="Manager" property="managerName" sortable="true" width="110"/>
+              <ReportColumnConfig field="identityRequestId" header="Identity Request ID" property="identityRequestId" sortable="true" width="110"/>
+              <ReportColumnConfig field="requestType" header="Request Type" property="requestType" sortable="true" width="110"/>
+              <ReportColumnConfig field="requestee" header="Requestee" property="requestee" sortable="true" width="110"/>
+              <ReportColumnConfig field="requester" header="Requester" property="requester" sortable="true" width="110"/>
+              <ReportColumnConfig field="completionStatus" header="Status" property="completionStatus" sortable="true" width="110"/>
+              <ReportColumnConfig field="requestedDate" header="Requested Date" property="requestedDate" sortable="true" width="110"/>
+              <ReportColumnConfig field="completionDate" header="Completion Date" property="completionDate" sortable="true" width="110"/>
+              <ReportColumnConfig field="currentStep" header="State" property="currentStep" sortable="true" width="110"/>
+              <ReportColumnConfig field="requestedItem" header="Requested Items" property="requestedItem" sortable="true" width="110"/>
+            </Columns>
+          </LiveReport>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Description>
+      This report provides insights into identity lifecycle activities, tracking users through access Request.
+  </Description>
+  <RequiredRights>
+    <Reference class="sailpoint.object.SPRight" name="FullAccessWorkItemReport"/>
+  </RequiredRights>
+  <Signature>
+    <Inputs>
+      <Argument name="created" type="date">
+        <Description>created</Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+</TaskDefinition>

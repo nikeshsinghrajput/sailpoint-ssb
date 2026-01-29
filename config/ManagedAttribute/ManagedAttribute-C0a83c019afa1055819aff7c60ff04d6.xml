@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="GLOBAL_USERS" hash="893727c41830c6c5ad5d3a437265340de4363208" lastRefresh="1765222932735" requestable="true" type="group" uuid="{92b9e6d0-cf3c-4f3f-9808-b8a282867462}" value="CN=GLOBAL_USERS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="GLOBAL_USERS"/>
+      <entry key="description" value="GLOBAL_USERS created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\GLOBAL_USERS"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1279"/>
+      <entry key="objectguid" value="{92b9e6d0-cf3c-4f3f-9808-b8a282867462}"/>
+      <entry key="sAMAccountName" value="GLOBAL_USERS"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

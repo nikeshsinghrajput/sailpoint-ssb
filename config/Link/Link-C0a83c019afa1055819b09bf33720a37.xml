@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link disabled="true" displayName="kumar.sai" identity="CN=kumar.sai,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1765476002471" manuallyCorrelated="true" uuid="{bcae3291-2e43-459b-b60c-911f8274719c}">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+      <LastValue>
+        <Set>
+          <String>CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+        </Set>
+      </LastValue>
+    </AttributeMetaData>
+  </AttributeMetaDatas>
+  <Attributes>
+    <Map>
+      <entry key="IIQDisabled">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="accountFlags">
+        <value>
+          <List>
+            <String>Normal User Account</String>
+            <String>User Account is Disabled</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="businessCategory" value="Full_time"/>
+      <entry key="cn" value="kumar.sai"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="departmentNumber" value="DEPT-006"/>
+      <entry key="description" value="Terminated"/>
+      <entry key="displayName" value="Sai Kumar"/>
+      <entry key="distinguishedName" value="CN=kumar.sai,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="employeeNumber" value="8512511"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="givenName" value="Sai"/>
+      <entry key="l" value="Mumbai"/>
+      <entry key="mail" value="kumar.sai@nstechiiq.com"/>
+      <entry key="memberOf"/>
+      <entry key="mobile" value="+91-9765432109"/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\kumar.sai"/>
+      <entry key="objectClass">
+        <value>
+          <List>
+            <String>top</String>
+            <String>person</String>
+            <String>organizationalPerson</String>
+            <String>user</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1306"/>
+      <entry key="objectType" value="user"/>
+      <entry key="objectguid" value="{bcae3291-2e43-459b-b60c-911f8274719c}"/>
+      <entry key="physicalDeliveryOfficeName" value="B125"/>
+      <entry key="postalCode" value="470872"/>
+      <entry key="sAMAccountName" value="kumar.sai"/>
+      <entry key="sn" value="Kumar"/>
+      <entry key="st" value="South"/>
+      <entry key="streetAddress" value="313 Ring Road"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="userAccountControl" value="514"/>
+    </Map>
+  </Attributes>
+</Link>

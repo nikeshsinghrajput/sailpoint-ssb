@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="Intune-Win-App-PowerBiDesktop-User-Available" hash="881173a199cc585dd2a40053dacd25574bab8f27" lastRefresh="1765222932869" requestable="true" type="group" uuid="{fa8f0c30-11a7-43f4-8052-e054166b09fc}" value="CN=Intune-Win-App-PowerBiDesktop-User-Available,OU=Restricted,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="Intune-Win-App-PowerBiDesktop-User-Available"/>
+      <entry key="description" value="Intune-Win-App-PowerBiDesktop-User-Available created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\Intune-Win-App-PowerBiDesktop-User-Available"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1232"/>
+      <entry key="objectguid" value="{fa8f0c30-11a7-43f4-8052-e054166b09fc}"/>
+      <entry key="sAMAccountName" value="Intune-Win-App-PowerBiDesktop-User-Available"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

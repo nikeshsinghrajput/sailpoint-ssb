@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Corporate Learning Portal" nativeIdentity="739013" operation="Disable" provisioningState="Finished">
+  <Attributes>
+    <Map>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="db61a0d5d7ef4982a113f346f8054631">
+            <AccountRequest application="Corporate Learning Portal" nativeIdentity="739013" op="Disable"/>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

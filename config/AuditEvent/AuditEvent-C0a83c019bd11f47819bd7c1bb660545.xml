@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="identityLifecycleEvent" interface="Task" serverHost="NikeshRajput" source="Refresh Single Identity" target="Identity:db561a67-5064-475f-bedc-35bad74bb86b">
+  <Attributes>
+    <Map>
+      <entry key="objectSummary" value="sailpoint.object.Identity@196d3ffe[id=c0a83c019bc0138b819bc0ed7d6f0095,name=db561a67-5064-475f-bedc-35bad74bb86b]"/>
+    </Map>
+  </Attributes>
+  <String1>Full Condidate Joiner-rehire</String1>
+  <String3>Launched workflow 'Full Condidate Joiner-rehire: John Doe'</String3>
+  <String4>Rule 'NS_Rule_Identity_Trigger_Joiner' matched</String4>
+</AuditEvent>

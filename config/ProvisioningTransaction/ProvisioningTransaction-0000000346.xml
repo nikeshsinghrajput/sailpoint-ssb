@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="Jessica Thomas" applicationName="Hr-Workday" identityDisplayName="Jessica Thomas" identityName="071242d4-78e9-46ba-8542-c536388b251f" integration="Hr-Workday" name="0000000346" nativeIdentity="8512623" operation="Modify" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed"/>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Hr-Workday" nativeIdentity="8512623" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019af418f2819af87bc11f02ee"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="workerStatus" op="Set" value="Terminated"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while performing 'Modify' operation on identity '8512623':  Error: {&quot;timestamp&quot;:&quot;2025-12-07T11:04:11.190+00:00&quot;,&quot;status&quot;:400,&quot;error&quot;:&quot;Bad Request&quot;,&quot;path&quot;:&quot;/workday/8512623&quot;}" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

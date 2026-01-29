@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="CN=singh.nikesh,Financial Accounting &amp; Reporting,OU=Employees,OU=Users,OU=SailPoint,DC=sriiq,DC=com" applicationName="Active Directory" identityDisplayName="Nikesh Singh" identityName="9d2ae9e0-c639-40cf-ad51-d855cbfa9659" integration="Active Directory" name="0000000364" nativeIdentity="CN=singh.nikesh,Financial Accounting &amp; Reporting,OU=Employees,OU=Users,OU=SailPoint,DC=sriiq,DC=com" operation="Create" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=singh.nikesh,Financial Accounting &amp; Reporting,OU=Employees,OU=Users,OU=SailPoint,DC=sriiq,DC=com" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019afa1055819b07bd8553610c"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="employeeNumber" op="Set" value="8512500"/>
+            <AttributeRequest name="givenName" op="Set" value="Nikesh"/>
+            <AttributeRequest name="sn" op="Set" value="Singh"/>
+            <AttributeRequest name="displayName" op="Set" value="Nikesh Singh"/>
+            <AttributeRequest name="title" op="Set" value="Senior Financial Analyst"/>
+            <AttributeRequest name="company" op="Add" value="NsTech"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="135381888000000000"/>
+            <AttributeRequest name="department" op="Set" value="Financial Accounting &amp; Reporting"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="DEPT-001"/>
+            <AttributeRequest name="memberOf" op="Add" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+            <AttributeRequest name="division" op="Add" value="Division-4"/>
+            <AttributeRequest name="streetAddress" op="Set" value="243 Ring Road"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B531"/>
+            <AttributeRequest name="l" op="Set" value="Noida"/>
+            <AttributeRequest name="st" op="Set" value="West"/>
+            <AttributeRequest name="co" op="Add" value="India"/>
+            <AttributeRequest name="postalCode" op="Set" value="434863"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9156789012"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-172-27897890"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Senior Financial Analyst"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;Failed to connect to the server for Financial Accounting &amp; Reporting,OU=Employees,OU=Users,OU=SailPoint,DC=sriiq,DC=com:The server is not operational. The server is not operational. . HRESULT:[0x8007203A]Failed to connect to the server for Financial Accounting &amp; Reporting,OU=Employees,OU=Users,OU=SailPoint,DC=sriiq,DC=com:The server is not operational. The server is not operational. . HRESULT:[0x8007203A]&quot; Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

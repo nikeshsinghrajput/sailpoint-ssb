@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification certificationDefinitionId="c0a83c019a451007819a4a756ac2194b" creator="spadmin" entitlementGranularity="Value" manager="4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2" name="Manager Access Review for Saanvi Tiwari" shortName="Access Review for Saanvi Tiwari" taskScheduleId="Manager Certification Saanvi Tiwari [DATE] [03/11/25, 9:33 PM]" type="Manager">
+  <Attributes>
+    <Map>
+      <entry key="autoSignOffWhenNothingToCertify" value="false"/>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="requireReassignmentCompletion" value="true"/>
+      <entry key="suppressEmailWhenNothingToCertify" value="false"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Manager Certification Saanvi Tiwari [03/11/25, 9:33:20 PM IST]"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2</String>
+  </Certifiers>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Staged">
+      <NotificationConfig enabled="true"/>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig enabled="true"/>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig>
+        <Configs>
+          <ReminderConfig before="true" emailTemplateName="Work Item Reminder" millis="1209600000" once="true"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" maxReminders="5" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <CertificationEntity firstname="Meera" identity="2935a130-2024-466b-82c8-242177e14539" lastname="Chopra" newUser="true" snapshotId="c0a83c019a451007819a4a75729c1954" summaryStatus="Open" targetDisplayName="Meera Chopra" targetName="2935a130-2024-466b-82c8-242177e14539" type="Identity">
+    <CertificationItem exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Audit Viewer" summaryStatus="Open" type="Exception">
+      <ApplicationNames>
+        <String>Financial Planning &amp; Forecasting</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512502" nativeIdentity="8512502">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Audit Viewer"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

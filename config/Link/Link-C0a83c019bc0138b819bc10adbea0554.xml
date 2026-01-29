@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="739092" identity="739092" lastRefresh="1769027400609" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="annualHours" value="1040"/>
+      <entry key="countryCode" value="66977"/>
+      <entry key="department" value="Customer Success &amp; Support"/>
+      <entry key="empStatus" value="Active"/>
+      <entry key="employee" value="Hector Petty"/>
+      <entry key="employeeId" value="739092"/>
+      <entry key="firstName" value="Hector"/>
+      <entry key="hireDate" value="11-28-2017"/>
+      <entry key="isManager" value="No"/>
+      <entry key="jobTitle" value="Customer Success Manager"/>
+      <entry key="lastName" value="Petty"/>
+      <entry key="manager" value="Jane Smith"/>
+      <entry key="salaryClass" value="A"/>
+      <entry key="superviserId" value="739004"/>
+      <entry key="terminationDate" value="09-11-2025"/>
+      <entry key="userLevel" value="D"/>
+      <entry key="workCountry" value="Australia"/>
+      <entry key="workState" value="Canberra"/>
+    </Map>
+  </Attributes>
+</Link>

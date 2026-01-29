@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469497319" name="3f5ef1b8-8f1c-4b4b-919b-693837b8af46">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="China"/>
+      <entry key="department" value="Treasury &amp; Cash Management"/>
+      <entry key="displayName" value="Chelsea Figueroa"/>
+      <entry key="division" value="China Risk and Compliance"/>
+      <entry key="employeeId" value="739055"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="Chelsea"/>
+      <entry key="hireDate" value="08-15-2023"/>
+      <entry key="lastname" value="Figueroa"/>
+      <entry key="location" value="CN - Shanghai"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="69780"/>
+      <entry key="terminationDate" value="05-03-2026"/>
+      <entry key="title" value="Treasury Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469497274" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Chelsea Figueroa" identity="739055" lastRefresh="1768468360448">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="7797 Hill St"/>
+          <entry key="ADDRESS_WORK" value="7797 Hill St;Shanghai, Guangdong 20077;China"/>
+          <entry key="BUILDING_CODE" value="CN_GUA_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3008"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="05-03-2026"/>
+          <entry key="COUNTRY_NAME" value="China"/>
+          <entry key="DEPARTMENT" value="Treasury &amp; Cash Management"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-002"/>
+          <entry key="DIVISION" value="China Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-CN-04"/>
+          <entry key="EMAIL" value="chelsea.figueroa@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739055"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739055"/>
+          <entry key="FIRST_NAME" value="Chelsea"/>
+          <entry key="HIREDATE" value="08-15-2023"/>
+          <entry key="JOBCODE" value="JT-002-01"/>
+          <entry key="JOBTITLE" value="Treasury Analyst"/>
+          <entry key="LAST_NAME" value="Figueroa"/>
+          <entry key="LOCATION" value="CN - Shanghai"/>
+          <entry key="MANAGER_ID" value="739003"/>
+          <entry key="POSTAL_CODE" value="69780"/>
+          <entry key="REGION" value="Shanghai"/>
+          <entry key="WORKER_NAME" value="Chelsea Figueroa"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

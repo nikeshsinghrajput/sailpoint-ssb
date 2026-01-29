@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="CN=jadav.govinda,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" action="ProvisioningComplete" application="Active Directory" attributeName="sn" attributeValue="jadav" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b">
+  <Attributes>
+    <Map>
+      <entry key="op" value="Set"/>
+      <entry key="taskResultId" value="c0a83c019b4b116d819b50c2c76703c9"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

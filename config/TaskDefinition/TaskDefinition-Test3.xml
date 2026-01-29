@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition name="test3" resultAction="Rename" subType="Extended Reports" type="LiveReport">
+  <Attributes>
+    <Map>
+      <entry key="TaskDefinition.runLengthAverage" value="4"/>
+      <entry key="TaskDefinition.runLengthTotal" value="17"/>
+      <entry key="TaskDefinition.runs" value="4"/>
+      <entry key="TaskSchedule.host"/>
+      <entry key="created">
+        <value>
+          <Map>
+            <entry key="end">
+              <value>
+                <Long>1767551400000</Long>
+              </value>
+            </entry>
+            <entry key="start">
+              <value>
+                <Long>1763145000000</Long>
+              </value>
+            </entry>
+          </Map>
+        </value>
+      </entry>
+      <entry key="disableDetail" value="false"/>
+      <entry key="disableHeader" value="false"/>
+      <entry key="disableSummary" value="false"/>
+      <entry key="dontEmailEmptyReport">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="enableCsvHeader" value="false"/>
+      <entry key="reportColumnOrder" value="identityLifeCycleEvent, triggerDate, identityName, email, firstName, lastName, managerName, identityRequestId, requestType, requestee, requester, completionStatus, requestedDate, completionDate, currentStep, requestedItem"/>
+    </Map>
+  </Attributes>
+  <Description>This report provides insights into identity lifecycle activities, tracking users through access Request.</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Parent>
+    <Reference class="sailpoint.object.TaskDefinition" name="NS-New-Hire-Access-Request-Report"/>
+  </Parent>
+</TaskDefinition>

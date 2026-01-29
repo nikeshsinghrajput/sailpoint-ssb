@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469451155" name="09a15a68-217b-472f-8c95-4efcf64880e7">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Mexico"/>
+      <entry key="department" value="Identity &amp; Access Management (IAM)"/>
+      <entry key="displayName" value="Timothy Medina"/>
+      <entry key="division" value="Mexico Technology and Operations"/>
+      <entry key="employeeId" value="739016"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Hybrid"/>
+      <entry key="firstname" value="Timothy"/>
+      <entry key="hireDate" value="03-12-2021"/>
+      <entry key="lastname" value="Medina"/>
+      <entry key="location" value="MX - Monterrey"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="68615"/>
+      <entry key="terminationDate" value="11-07-2024"/>
+      <entry key="title" value="SailPoint IIQ Developer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469451107" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Timothy Medina" identity="739016" lastRefresh="1768468351002">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="574 River St"/>
+          <entry key="ADDRESS_WORK" value="574 River St;Monterrey, Jalisco 29088;Mexico"/>
+          <entry key="BUILDING_CODE" value="MX_JAL_BLDG_03"/>
+          <entry key="BUSINESS_UNIT_ID" value="3035"/>
+          <entry key="CLASS" value="Hybrid"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="11-07-2024"/>
+          <entry key="COUNTRY_NAME" value="Mexico"/>
+          <entry key="DEPARTMENT" value="Identity &amp; Access Management (IAM)"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-011"/>
+          <entry key="DIVISION" value="Mexico Technology and Operations"/>
+          <entry key="DIVISION_ID" value="DIV-MX-03"/>
+          <entry key="EMAIL" value="timothy.medina@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739016"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739016"/>
+          <entry key="FIRST_NAME" value="Timothy"/>
+          <entry key="HIREDATE" value="03-12-2021"/>
+          <entry key="JOBCODE" value="JT-011-02"/>
+          <entry key="JOBTITLE" value="SailPoint IIQ Developer"/>
+          <entry key="LAST_NAME" value="Medina"/>
+          <entry key="LOCATION" value="MX - Monterrey"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="68615"/>
+          <entry key="REGION" value="Monterrey"/>
+          <entry key="WORKER_NAME" value="Timothy Medina"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

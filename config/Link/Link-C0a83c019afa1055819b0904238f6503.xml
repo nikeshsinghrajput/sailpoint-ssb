@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Rohan Thakur" identity="8512508" lastRefresh="1765382824847">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="124 Park Street"/>
+      <entry key="ADDRESS_WORK" value="Hybrid"/>
+      <entry key="BUILDING_CODE" value="B918"/>
+      <entry key="BUSINESS_UNIT_ID" value="BU36"/>
+      <entry key="CLASS" value="Part_time"/>
+      <entry key="COMPANY_NAME" value="NsTech"/>
+      <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="Investment Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+      <entry key="DIVISION" value="Division-2"/>
+      <entry key="DIVISION_ID" value="DIV38"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512508"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="F25063"/>
+      <entry key="FIRST_NAME" value="Rohan"/>
+      <entry key="HIREDATE" value="01-08-2025"/>
+      <entry key="JOBCODE" value="JC100"/>
+      <entry key="JOBTITLE" value="Portfolio Operations Specialist"/>
+      <entry key="LAST_NAME" value="Thakur"/>
+      <entry key="LOCATION" value="Hyderabad"/>
+      <entry key="MANAGER_ID" value="8512500"/>
+      <entry key="POSTAL_CODE" value="425589"/>
+      <entry key="REGION" value="West"/>
+      <entry key="WORKER_NAME" value="Rohan Thakur"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Thomas Phelps" identity="739061" lastRefresh="1768468360810">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="6772 River Rd"/>
+      <entry key="ADDRESS_WORK" value="6772 River Rd;Fortaleza, São Paulo State 15926;Brazil"/>
+      <entry key="BUILDING_CODE" value="BR_SOP_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3038"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="01-11-2025"/>
+      <entry key="COUNTRY_NAME" value="Brazil"/>
+      <entry key="DEPARTMENT" value="Service Desk &amp; IT Support"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-027"/>
+      <entry key="DIVISION" value="Brazil Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-BR-02"/>
+      <entry key="EMAIL" value="thomas.phelps@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739061"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739061"/>
+      <entry key="FIRST_NAME" value="Thomas"/>
+      <entry key="HIREDATE" value="07-05-2021"/>
+      <entry key="JOBCODE" value="JT-027-03"/>
+      <entry key="JOBTITLE" value="Incident Coordinator"/>
+      <entry key="LAST_NAME" value="Phelps"/>
+      <entry key="LOCATION" value="BR - Fortaleza"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="90601"/>
+      <entry key="REGION" value="Fortaleza"/>
+      <entry key="WORKER_NAME" value="Thomas Phelps"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

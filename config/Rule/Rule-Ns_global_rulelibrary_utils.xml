@@ -1,0 +1,825 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Global_RuleLibrary_Utils">
+  <Source>
+    // Custom Project Imports
+	import org.SailPoint_IIQ.Utils.ADUtils;
+	import org.apache.log4j.Logger;
+
+	// Standard Java Imports
+	import java.text.SimpleDateFormat;
+	import java.util.ArrayList;
+	import java.util.Calendar;
+	import java.util.Date;
+	import java.util.Iterator;
+	import java.util.List;
+	import java.util.Map;
+	import java.util.Random;
+	import java.util.UUID;
+
+	// SailPoint API Imports
+	import sailpoint.api.IdentityService;
+	import sailpoint.api.ObjectUtil;
+	import sailpoint.api.PasswordGenerator;
+	import sailpoint.api.Provisioner;
+	import sailpoint.api.SailPointContext;
+
+	// SailPoint Object Imports
+	import sailpoint.object.ApprovalItem;
+	import sailpoint.object.IdentityEntitlement;
+	import sailpoint.object.Filter;
+	import sailpoint.object.QueryOptions;
+	import sailpoint.object.ApprovalSet;
+	import sailpoint.object.Application;
+	import sailpoint.object.Attributes;
+	import sailpoint.object.Custom;
+	import sailpoint.object.EmailOptions;
+	import sailpoint.object.EmailTemplate;
+	import sailpoint.object.Identity;
+	import sailpoint.object.Link;
+	import sailpoint.object.Message;
+	import sailpoint.object.ProvisioningPlan;
+	import sailpoint.object.ProvisioningPlan.AccountRequest;
+	import sailpoint.object.ProvisioningPlan.AttributeRequest;
+	import sailpoint.object.ProvisioningProject;
+	import sailpoint.object.ProvisioningResult;
+	import sailpoint.object.WorkItem;
+
+	// SailPoint Persistence
+	import sailpoint.persistence.Sequencer;
+
+	// SailPoint Tools
+	import sailpoint.tools.GeneralException;
+	import sailpoint.tools.Util;
+
+    Logger logs = Logger.getLogger("com.ns.rule.NS_RuleLibrary_Utils");
+    logs.debug("Enter NS_RuleLibrary_Utils");
+     
+	String areEntitlementsPresent = "No";
+    String licensedGroup = null;
+    String adAppName = null;
+
+    Iterator itr = null;
+    String idObj = null;
+    List memberOf = new ArrayList();
+
+    Custom cs = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+    IdentityService identityService = new IdentityService(context);
+
+    if (cs != null)
+    {
+        map = cs.getAttributes();
+        adAppName = map.get("AdAppName");
+        //logs.debug(" Application Name is :: "+ adAppName);
+        licensedGroup = map.get("licensedGroup");
+        //logs.debug("License group Value is:: "+ licensedGroup);
+    }
+
+
+    // --------------------------------------------------------------------------------
+    // Fetch Active Directory Link for given Identity
+    // --------------------------------------------------------------------------------
+    public Link getADAccountLink(String identityName) {
+        try {
+            Identity identity = context.getObjectByName(Identity.class, identityName);
+            Application aDApp = context.getObjectByName(Application.class, adAppName);
+            IdentityService is = new IdentityService(context);
+            List links = is.getLinks(identity, aDApp);
+
+            if (links != null &amp;&amp; !links.isEmpty()) {
+                for (Link link : links) {
+                    String adEmpId = link.getAttribute("employeeNumber");
+                    String adEmpType = link.getAttribute("employeeType");
+                    if (Util.isNotNullOrEmpty(adEmpId) &amp;&amp; Util.isNotNullOrEmpty(adEmpType)) {
+                        return link;
+                    }
+                }
+            }
+            return null;
+        } catch (GeneralException e) {
+            logs.error("getADAccountLink() failed", e);
+            return null;
+        }
+    }
+
+    // --------------------------------------------------------------------------------
+    // Generate Unique Random UUID-based String
+    // --------------------------------------------------------------------------------
+    public static String generateRandomString() throws GeneralException {
+        String name = UUID.randomUUID().toString();
+        if (context.getObjectByName(Identity.class, name) != null) {
+            return generateRandomString();
+        }
+        return name;
+    }
+
+    // --------------------------------------------------------------------------------
+    // Generic Method: Fetch Random Value from Custom Object (NS_CustomObject_Configuration_Data)
+    // --------------------------------------------------------------------------------
+    public static String getFieldValue(String keyName) {
+        try {
+            Custom co = context.getObjectByName(Custom.class, "NS_CustomObject_Configuration_Data");
+            if (co == null) {
+                logs.warn("Custom Object not found: NS_CustomObject_Configuration_Data");
+                return null;
+            }
+
+            List values = (List) co.get(keyName);
+            if (values == null || values.isEmpty()) {
+                logs.warn("Key not found or empty: " + keyName);
+                return null;
+            }
+
+            Random rand = new Random();
+            Object randomValue = values.get(rand.nextInt(values.size()));
+            return (randomValue != null) ? randomValue.toString() : null;
+        } catch (Exception e) {
+            logs.error("Error in getFieldValue()", e);
+            return null;
+        }
+    }
+	public static String getRandomFieldValue(String keyName) {
+        try {
+            Custom co = context.getObjectByName(Custom.class, "NS_CustomObject_Gloval_App");
+            if (co == null) {
+                logs.warn("Custom Object not found: NS_CustomObject_Gloval_App");
+                return null;
+            }
+
+            List values = (List) co.get(keyName);
+            if (values == null || values.isEmpty()) {
+                logs.warn("Key not found or empty: " + keyName);
+                return null;
+            }
+
+            Random rand = new Random();
+            Object randomValue = values.get(rand.nextInt(values.size()));
+            return (randomValue != null) ? randomValue.toString() : null;
+        } catch (Exception e) {
+            logs.error("Error in getFieldValue()", e);
+            return null;
+        }
+    }
+
+	public String generatePassword(String identityName) {
+		Identity userIdentity = (Identity) context.getObjectByName(Identity.class, identityName);
+		Application adApplication = (Application) context.getObjectByName(Application.class, adAppName);
+		String generatedPassword = null;
+
+		if (userIdentity != null &amp;&amp; adApplication != null) {
+			PasswordGenerator passwordGenerator = new PasswordGenerator(context);
+			generatedPassword = passwordGenerator.generatePassword(userIdentity, adApplication);
+
+			// Trim if longer than 25 characters
+			if (generatedPassword != null &amp;&amp; generatedPassword.length() &gt; 25) {
+				generatedPassword = generatedPassword.substring(0, 25);
+			}
+		}
+		return generatedPassword;
+	}
+	public String generateSamaAccountName(String identityName){
+	    logs.debug("generate samaccountname started  identityName : " + identityName);
+		Identity identity = context.getObjectByName(Identity.class, identityName);
+		
+		// Get firstname and lastname
+        String firstName = identity.getAttribute("firstname");
+        String lastName  = identity.getAttribute("lastname");
+
+        if (Util.isNullOrEmpty(firstName) || Util.isNullOrEmpty(lastName)) {
+            throw new GeneralException("Firstname or Lastname is missing for identity: " + identity.getName());
+        }
+
+        // Normalize to lowercase
+        firstName = firstName.toLowerCase().trim();
+        lastName  = lastName.toLowerCase().trim();
+
+        // Start with base username
+        String baseUser = lastName + "." + firstName;
+        String candidate = baseUser;
+		logs.debug("baseUser samaccount  : " + candidate);
+        int counter = 1;
+        // Loop until we find a unique username
+       while (true) {
+      if(!ADUtils.isExistingSAMAccountName(context, candidate, adAppName)){
+        break;
+      }
+      
+            // Otherwise, append counter and try again
+            candidate = lastName + counter + "." + firstName;
+            counter++;
+        }
+		logs.debug("candidate samaccount  : " + candidate);
+		return candidate;
+	}
+	
+	/* -------------------------------------------------------------------------------
+	    VALIDATE CANDIDATE JOINER
+	 * ------------------------------------------------------------------------------- */
+	public List validateCandidateJoiner(String identityName) throws Exception {
+		logs.debug("### NS_Global_RuleLibrary_Utils :: validateCandidateJoiner START ###");
+
+		Link managerADLink = null, adLink = null;
+		String employeeId = null, firstName = null, lastName = null, managerDN = null;
+		String nsStatus = null;
+		List errorMessage = new ArrayList();
+		int count = 0;
+
+		if (Util.isNotNullOrEmpty(identityName)) {
+			Identity identity = context.getObjectByName(Identity.class, identityName);
+
+			if (identity != null ) {
+				adLink = getADAccountLink(identityName);
+				firstName = identity.getFirstname();
+				lastName = identity.getLastname();
+				nsStatus = identity.getAttribute("nsStatus");
+
+				logs.debug("First Name : " + firstName);
+				logs.debug("Last Name  : " + lastName);
+
+				Identity manager = identity.getManager();
+				employeeId = identity.getAttribute("employeeId");
+
+				/*
+				if (Util.isNotNullOrEmpty(employeeId)) {
+					logs.debug("Employee ID : " + employeeId);
+					count = Utils.isExistingEmployeeId(context, employeeId, adNScr);
+					if (count &gt; 1)
+						errorMessage.add("Multiple Active Directory accounts with same employeeId present.");
+					if (count == 1 &amp;&amp; adLink == null)
+						errorMessage.add("Active Directory account present outside the SailPoint scope.");
+				}
+				*/
+
+				if (firstName == null || firstName.contains("null") || lastName == null || lastName.contains("null"))
+					errorMessage.add("First Name or Last Name is Null.");
+
+				if (manager != null) {
+					String managerName = manager.getName();
+					logs.debug("Manager Name : " + managerName);
+					managerADLink = getADAccountLink(managerName);
+					if (managerADLink != null) {
+						managerDN = managerADLink.getAttribute("distinguishedName");
+						logs.debug("Manager DN : " + managerDN);
+					} else {
+						errorMessage.add("Manager Active Directory account not found.");
+					}
+				}
+			}
+		}
+
+		logs.debug("### NS_Global_RuleLibrary_Utils :: validateCandidateJoiner END ###  Errors : " + errorMessage);
+		return errorMessage;
+	}
+	
+	/* -------------------------------------------------------------------------------
+	    CREATE WORK ITEM
+	 * ------------------------------------------------------------------------------- */
+	public static String createItem(String ownerName, String identityName, String appName, List errorMessages) throws Exception {
+
+		logs.debug("### NS_Global_RuleLibrary_Utils :: createWorkItem START ###");
+
+		Calendar expiration = Calendar.getInstance();
+		Identity targetIdentity = context.getObjectByName(Identity.class, identityName);
+		Identity requester = context.getObjectByName(Identity.class, "spadmin");
+
+		WorkItem item = new WorkItem();
+		item.setType(WorkItem.Type.ManualAction);
+		item.setOwner(context.getObjectByName(Identity.class, ownerName));
+		item.setRequester(requester);
+
+		Sequencer sequencer = new Sequencer();
+		String workItemName = sequencer.generateId(context, item);
+		item.setName(workItemName);
+		item.setRenderer("lcmManualActionsRenderer.xhtml");
+		item.setLevel(WorkItem.Level.Normal);
+		item.setTarget(targetIdentity);
+		item.setTargetClass(Identity.class.getName());
+		item.setDescription("Manual Changes requested for User: " + targetIdentity.getDisplayableName());
+		item.setHandler("sailpoint.api.Workflow");
+
+		Attributes attributes = new Attributes();
+		item.setAttributes(attributes);
+
+		ApprovalSet approvalSet = new ApprovalSet();
+		ApprovalItem approvalItem = new ApprovalItem();
+		approvalItem.setApplication(appName);
+		approvalItem.setNativeIdentity(targetIdentity.getName());
+		approvalItem.setOperation("Validation");
+
+		if (errorMessages != null)
+			approvalItem.setValue("Error = " + errorMessages);
+
+		approvalSet.add(approvalItem);
+
+		attributes.put("approvalSet", approvalSet);
+		attributes.put("identityDisplayName", targetIdentity.getDisplayableName());
+		attributes.put("identityName", targetIdentity.getName());
+
+		item.setExpiration(expiration.getTime());
+		context.startTransaction();
+		context.saveObject(item);
+		context.commitTransaction();
+
+		logs.debug("### NS_Global_RuleLibrary_Utils :: createWorkItem END ### WorkItem: " + workItemName);
+		return workItemName;
+	}
+	
+	/* -------------------------------------------------------------------------------
+	    GET WORKGROUP MEMBERS EMAIL
+	 * ------------------------------------------------------------------------------- */
+	public static List getWorkGroupMembersEmail(String groupName) throws Exception {
+		logs.debug("### NS_Global_RuleLibrary_Utils :: getWorkGroupMembersEmail START ###");
+
+		List workGroupMemberList = new ArrayList();
+		Identity workGroups = context.getObjectByName(Identity.class, groupName);
+
+		if (workGroups != null &amp;&amp; workGroups.isWorkgroup()) {
+			Iterator workGroupMember = ObjectUtil.getWorkgroupMembers(context, workGroups, null);
+			while (workGroupMember.hasNext()) {
+				Object[] object = (Object[]) workGroupMember.next();
+				Identity ids = (Identity) object[0];
+				workGroupMemberList.add(ids.getAttribute("email"));
+			}
+		}
+
+		logs.debug("### NS_Global_RuleLibrary_Utils :: getWorkGroupMembersEmail END ###");
+		return workGroupMemberList;
+	}
+
+
+	/* -------------------------------------------------------------------------------
+	  CREATE AD ACCOUNT REQUEST
+	 * ------------------------------------------------------------------------------- */
+	public AccountRequest createADAccount(String identityName, String applicationName) throws Exception {
+
+		
+		logs.debug("### NS_Global_RuleLibrary_Utils :: createADAccount START ###");
+		logs.debug("identityName : " + identityName);
+		logs.debug("applicationName : " + applicationName);
+
+		String password = null;
+		String firstName = null;
+		String lastName = null;
+		String adAccountOU = null;
+		String samAccountName = null;
+		String distinguishedName = null;
+
+		Custom cs = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+		if (cs != null) {
+			adAccountOU = cs.get("EmployeeOU");
+			logs.debug("adAccountOU : " + adAccountOU);
+		}
+
+		Identity identityObject = context.getObjectByName(Identity.class, identityName);
+		if (identityObject != null) {
+			firstName = identityObject.getFirstname();
+			lastName = identityObject.getLastname();
+			logs.debug("firstName : " + firstName);
+			logs.debug("lastName  : " + lastName);
+
+			if (firstName != null &amp;&amp; lastName != null)
+			    samAccountName = generateSamaAccountName(identityName);
+			else
+			    throw new Exception();
+			distinguishedName = "CN=" + samAccountName +","+adAccountOU;
+			logs.debug("samAccountName : " + samAccountName);
+			logs.debug("distinguishedName : " + distinguishedName);
+
+			password = generatePassword(identityName);
+
+			AccountRequest accountRequest = new AccountRequest();
+			accountRequest.setOperation(AccountRequest.Operation.Create);
+			accountRequest.setApplication(applicationName);
+			accountRequest.add(new AttributeRequest("sAMAccountName", samAccountName));
+			//accountRequest.add(new AttributeRequest("distinguishedName", distinguishedName));
+			//accountRequest.add(new AttributeRequest("IIQDisabled", false));
+			accountRequest.add(new AttributeRequest("password", password));
+			accountRequest.setNativeIdentity(distinguishedName);
+
+			logs.debug("### NS_Global_RuleLibrary_Utils :: createADAccount END ###");
+			return accountRequest;
+		}
+		return null;
+	}
+
+
+	/* -------------------------------------------------------------------------------
+	   ENABLE AD ACCOUNT REQUEST
+	 * ------------------------------------------------------------------------------- */
+
+	public AccountRequest enableADAccount(String distinguishedName, String applicationName, String identityName) throws Exception {
+
+		logs.debug("### NS_Global_RuleLibrary_Utils :: enableADAccount START ###");
+		logs.debug("identityName : " + identityName);
+		logs.debug("applicationName : " + applicationName);
+
+		String password = null;
+		String samAccountName = null;
+
+		Identity identityObject = context.getObjectByName(Identity.class, identityName);
+
+			password = generatePassword(identityName);
+
+			AccountRequest accountRequest = new AccountRequest();
+			accountRequest.setOperation(AccountRequest.Operation.Enable);
+			accountRequest.setApplication(applicationName);
+			accountRequest.add(new AttributeRequest("distinguishedName", distinguishedName));
+			accountRequest.add(new AttributeRequest("IIQDisabled", false));
+			accountRequest.add(new AttributeRequest("memberOf", licensedGroup));
+			accountRequest.add(new AttributeRequest("password", password));
+			accountRequest.setNativeIdentity(distinguishedName);
+
+			logs.debug("### NS_Global_RuleLibrary_Utils :: enableADAccount END ###");
+			return accountRequest;
+	}
+	
+	/* -------------------------------------------------------------------------------
+	   CHECK AD ACCOUNT IN DISABLE OU
+	 * ------------------------------------------------------------------------------- */
+	 
+	 public boolean isAccountPresentInDisabledOU(Link adLink){
+        boolean result = false;
+        Custom custom = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+        if(custom != null){
+            String disableOU = custom.get("disableOU");
+            if(adLink.getAttribute("distinguishedName").contains(disableOU)){
+                result = true;
+            }
+        }else{
+            result = false;
+        }
+        return result;
+    }
+	
+	/* -------------------------------------------------------------------------------
+	   MOVE AD ACCOUNT IN ACTIVE OU
+	 * ------------------------------------------------------------------------------- */
+	
+	public AccountRequest moveADAccountInActiveOU(String identityName, Link adLink){
+        Custom custom = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+        AccountRequest request = new AccountRequest();
+        if(custom != null){
+            String employeeOU = custom.get("EmployeeOU");
+            request.setOperation(AccountRequest.Operation.Modify);
+            request.setApplication(adLink.getApplicationName());
+            request.setNativeIdentity(adLink.getNativeIdentity());
+            request.add(new ProvisioningPlan.AttributeRequest("AC_NewParent", ProvisioningPlan.Operation.Set, employeeOU));
+        }
+        return request;
+    }
+	
+	 /*-------------------------------------------------------------------------
+	* Example - Utility Method 
+	* This  Method retruns list of errors a project is having.
+	*-------------------------------------------------------------------------*/
+  public List getRequestErrorMessages(ProvisioningProject project) throws GeneralException {
+    logs.debug(" getRequestErrorMessages started ###");
+    List errorMessages = new ArrayList();
+    List plans = project.getPlans();
+    if (plans != null) {
+      for (int i = 0; i &lt; plans.size(); i++) {
+        ProvisioningPlan plan1 = (ProvisioningPlan) plans.get(i);
+        if (plan1.getResult() != null) {
+          List planMessages = plan1.getResult().getErrors();
+          if (planMessages != null) {
+            List planWarningMessages = plan1.getResult().getWarnings();
+            if (planWarningMessages != null) {
+              planMessages.addAll(planWarningMessages);
+            }
+            for (int k = 0; k &lt; planMessages.size(); k++) {
+              Message message = (Message) planMessages.get(k);
+              errorMessages.add(message.getType().toString() + " message " + message.getMessage());
+            }
+          }
+        } else {
+          List requests = plan1.getAccountRequests();
+          if (requests != null) {
+            for (int j = 0; j &lt; requests.size(); j++) {
+              AccountRequest request = (AccountRequest) requests.get(j);
+              String appName = request.getApplicationName();
+              ProvisioningResult result = request.getResult();
+              if (result != null) {
+                List messages = result.getErrors();
+                List warnings = result.getWarnings();
+                if (messages != null) {
+                  if (warnings != null) {
+                    messages.addAll(warnings);
+                  }
+                  for (int k = 0; k &lt; messages.size(); k++) {
+                    Message message = (Message) messages.get(k);
+                    message.setKey("[" + appName + "] " + message.getMessage());
+                    errorMessages.add(message);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    logs.debug("errorMessages::::::::::::::::"+errorMessages);
+    logs.debug(" getRequestErrorMessages end ###");
+    return errorMessages;
+  }
+  /*-------------------------------------------------------------------------
+	* Example - Utility Method 
+	* This Method create manual workitem and return.
+	*-------------------------------------------------------------------------*/
+
+  public String createWorkItem(String ownerName, ProvisioningProject project){
+    logs.debug(" :: createWorkItem started ###");
+    String requester = "spadmin";
+
+    String requestee = project.getIdentity();
+    logs.debug("requestee::::::::::::::::"+requestee);
+    Calendar expiration = Calendar.getInstance();
+    expiration.add(Calendar.DAY_OF_MONTH, 7);
+    Identity targetIdentity = context.getObjectByName(Identity.class, requestee);
+    Identity requesterIdentity = context.getObjectByName(Identity.class, requester);
+    String identityRequestId = project.get("identityRequestId");
+    logs.debug("Identity RequestId : "+identityRequestId);
+    WorkItem item = new WorkItem();
+    Sequencer sequencer = new Sequencer();
+    String workItemName = sequencer.generateId(context, item);
+    logs.debug("Work Item Name : "+workItemName);
+    item.setType(WorkItem.Type.ManualAction); 
+    item.setOwner(context.getObjectByName(Identity.class, ownerName)); 
+    item.setRequester(requesterIdentity); 
+    item.setName(workItemName); 
+    item.setRenderer("lcmManualActionsRenderer.xhtml"); 
+    item.setLevel(WorkItem.Level.Normal); 
+    item.setTarget(targetIdentity); 
+    item.setTargetClass(Identity.class.getName()); 
+    item.setDescription("Manual Changes requested for User: "+targetIdentity.getDisplayableName()); 
+    item.setHandler("sailpoint.api.Workflower"); 
+    item.setIdentityRequestId(identityRequestId); 
+    Attributes attributes = new Attributes(); 
+    item.setAttributes(attributes); 
+    ApprovalSet approvalSet = new ApprovalSet(); 
+
+    List approvalItemList = new ArrayList();
+    List plan = project.getPlans();
+    for (ProvisioningPlan provisioningPlan : plan) {
+	  ProvisioningResult planResult = null;
+	  if(provisioningPlan.getResult() != null){
+		planResult = provisioningPlan.getResult();
+	  }
+      String nativeIdentity = provisioningPlan.getNativeIdentity();
+      List accountRequests = provisioningPlan.getAccountRequests();
+      for (AccountRequest ar : accountRequests) {
+        ProvisioningResult result = ar.getResult(); 
+        if((result != null &amp;&amp; result.getStatus() != null &amp;&amp; result.getStatus().equalsIgnoreCase("failed")) || (planResult != null &amp;&amp; planResult.getStatus() != null &amp;&amp; planResult.getStatus().equalsIgnoreCase("failed"))) {
+          String error = null;
+          if(planResult != null &amp;&amp; planResult.getStatus() != null &amp;&amp; planResult.getErrors() != null){
+            error = planResult.getErrors().toString();
+		  }
+          else if(result != null &amp;&amp; result.getStatus() != null &amp;&amp; result.getErrors() != null){
+            error = result.getErrors().toString();
+		  }
+          ApprovalItem approvalItem = new ApprovalItem();
+          approvalItem.setApplication(ar.getApplication()); 
+          approvalItem.setNativeIdentity(nativeIdentity); 
+          approvalItem.setOperation(ar.getOp().toString());
+          if(error != null) {
+            approvalItem.setValue("Error = "+error); 
+          }
+          approvalItemList.add(approvalItem);
+        }
+      }
+    }
+    approvalSet.setItems(approvalItemList); 
+    attributes.put("approvalSet", approvalSet); 
+    attributes.put("identityDisplayName", targetIdentity.getDisplayableName()); 
+    attributes.put("identityName", targetIdentity.getName());   
+    item.setExpiration(expiration.getTime());  
+
+    context.startTransaction(); 
+    context.saveObject(item); 
+    context.commitTransaction();
+
+    logs.debug(" createWorkItem end ###");
+    return workItemName;
+  }
+  
+    /*-------------------------------------------------------------------------
+	* Example - Utility Method 
+	* This Method update AD UPN.
+	*-------------------------------------------------------------------------*/
+  
+	public void updateADAttributes(String identityName, Link adLink, Map attributes){
+        ProvisioningPlan plan = new ProvisioningPlan();
+
+        Identity identityObject = context.getObjectByName(Identity.class,identityName);
+        List accReqList = new ArrayList();
+        AccountRequest request = new AccountRequest();
+        request.setOperation(AccountRequest.Operation.Modify);
+        request.setApplication(adLink.getApplicationName());
+        request.setNativeIdentity(adLink.getNativeIdentity());
+        request.add(new ProvisioningPlan.AttributeRequest("userPrincipalName", ProvisioningPlan.Operation.Set, attributes.get("userPrincipalName")));
+        accReqList.add(request);
+        plan.setAccountRequests(accReqList);
+        plan.setIdentity(identityObject);
+        plan.setNativeIdentity(identityName);
+
+        try {
+            Provisioner provisioner = new Provisioner(context);
+            ProvisioningProject project = provisioner.compile(plan);
+            provisioner.execute();
+        } catch (GeneralException e) {
+            throw new RuntimeException(e);
+        }
+    }
+	
+	/*-------------------------------------------------------------------------
+	* Example - Utility Method 
+	* This Method send Email Notification.
+	*-------------------------------------------------------------------------*/
+	
+	public void sendEmailNotification(String email, Map args){
+        Custom custom = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+        List templates = null;
+        if(custom != null){
+            templates = custom.get("Joiner");
+        }
+        EmailTemplate template = null;
+        if(templates != null &amp;&amp; templates.size()&gt;0){
+            for(String templateName : templates){
+                template = context.getObjectByName(EmailTemplate.class, templateName);
+                EmailOptions options = new EmailOptions(email, args);
+                context.sendEmailNotification(template, options);
+            }
+        }
+    }
+	
+	public boolean isDisabledApp(String appName, String identityName){
+		boolean result = false;
+		Identity identity = context.getObjectByName(Identity.class, identityName);
+		Application application = context.getObjectByName(Application.class, appName);
+		IdentityService service = new IdentityService(context);
+		List links = service.getLinks(identity, application);
+		if(links != null &amp;&amp; links.size()&gt;0){
+			Link link = links.get(0);
+			if(link.isDisabled()){
+			   result = true;
+			}
+		}
+		return result;
+	}
+	
+	public boolean isApplicationPresent(String identityName, String appName) {
+        Identity identity = context.getObjectByName(Identity.class, identityName);
+        Application app = context.getObjectByName(Application.class, appName);
+        IdentityService service = new IdentityService(context);
+        if(identity != null &amp;&amp; app != null){
+            List links = service.getLinks(identity, app);
+            if(links != null &amp;&amp; links.size()&gt;0){
+                return true;
+            }
+        }
+        return false;
+    }
+	
+	
+	/*------------------------------------------------------------------------
+     * Example - Leaver Method
+     * This method returns status of availability of any entitlements (Yes or No)
+     *------------------------------------------------------------------------*/
+    public String areEntitlementsPresent(String identityName)
+    {
+        logs.debug("The Workflow is in areEntitlementsPresent Method");
+        Identity entIdentityObject = context.getObjectByName(Identity.class, identityName);
+        Filter filter = Filter.eq("identity.id", entIdentityObject.getId());
+        QueryOptions qo = new QueryOptions();
+        qo.addFilter(filter);
+        qo.setDistinct(true);
+        qo.setCloneResults(true);
+
+        itr = context.search(IdentityEntitlement.class, qo, "id");
+
+        while (null != itr &amp;&amp; itr.hasNext())
+        {
+            Object[] row = (Object[]) itr.next();
+            idObj = (String) row[0];
+            IdentityEntitlement ieObj = context.getObjectById(IdentityEntitlement.class, idObj);
+
+            if (ieObj != null &amp;&amp; ieObj.getNativeIdentity() != null &amp;&amp; ieObj.getValue() != null) {
+                String entValue = ieObj.getValue();
+
+                if (!entValue.equalsIgnoreCase(licensedGroup)) {
+                    areEntitlementsPresent = "Yes";
+                }
+            }
+        }
+
+        logs.debug(" The Entitelment Present Status is "+areEntitlementsPresent);
+        return areEntitlementsPresent;
+    }
+	
+    /*------------------------------------------------------------------------
+     * Example - Leaver Method
+     * This method returns status for presence of License Group (Yes or No)
+     *------------------------------------------------------------------------*/
+    public String isLicensePresent(String identityName)
+    {
+        logs.debug("The Workflow is in isLicensePresent Method");
+        Identity identityObject = context.getObjectByName(Identity.class,identityName);
+        Application appObject = context.getObjectByName(Application.class, adAppName);
+        Link adLink=getADAccountLink(identityName);
+
+        if(identityObject!=null){
+
+            if(adLink != null) {
+                memberOf = adLink.getAttribute("memberOf");
+                logs.debug("Roles for getADAccountLink AD Account:"+memberOf);
+            }
+
+            if(memberOf != null &amp;&amp; !memberOf.isEmpty() &amp;&amp; memberOf.contains(licensedGroup)){
+                isLicensePresent="Yes";
+            }
+        }
+        logs.debug("isLicensePresent Value is: "+ isLicensePresent);
+        return isLicensePresent;
+    }
+
+    /*------------------------------------------------------------------------
+     * Example - Leaver Method
+     * This method sets the identity Status
+     *------------------------------------------------------------------------*/
+    public String setStatus(String identityName)
+    {
+        logs.debug("The Workflow is in setStatus Method");
+        Identity iden = context.getObjectByName(Identity.class, identityName);
+        String identityCurrentStatus= iden.getAttribute("nsStatus");
+        String status=identityCurrentStatus;
+        logs.debug("Previous Status is:::" +identityCurrentStatus);
+        if(iden != null &amp;&amp; identityCurrentStatus != null)
+        {
+		  if(identityCurrentStatus.equalsIgnoreCase("Leaver-Ist-Phase-Started"))
+		    {
+			status="Leaver-Ist-Phase-Completed";
+			iden.setAttribute("nsStatus", status);
+			context.startTransaction();
+		    context.saveObject(iden);
+		    context.commitTransaction();
+            }
+          if(identityCurrentStatus.equalsIgnoreCase("Leaver-Final-Phase-Started"))
+            {
+                status="Leaver-Remove-License-Started";
+                iden.setAttribute("nsStatus", status);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-Remove-License-Started"))
+            {
+                status="Leaver-Update-Attribute-Started";
+                iden.setAttribute("nsStatus", status);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+
+            }
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-Update-Attribute-Started"))
+            {
+                status="Leaver-Move-To-DisabledOU-Started";
+                iden.setAttribute("nsStatus", status);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-Move-To-DisabledOU-Started"))
+            {
+                status="Leaver-AD-Aggregation-Started";
+                iden.setAttribute("nsStatus",status);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-AD-Aggregation-Started"))
+            {
+                status="Leaver-Final-Phase-Completed";
+                iden.setAttribute("nsStatus",status);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Reinstate-Started"))
+            {
+                status="Reinstate-Completed";
+                iden.setAttribute("nsStatus",status);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+        }
+        logs.debug("Previous Status is::::" +status);
+        return status;
+    }
+	
+  </Source>
+</Rule>

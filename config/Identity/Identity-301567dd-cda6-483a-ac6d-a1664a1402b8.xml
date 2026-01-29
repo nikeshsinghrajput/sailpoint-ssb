@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469452216" name="301567dd-cda6-483a-ac6d-a1664a1402b8">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Brazil"/>
+      <entry key="department" value="Product Management Office (PMO)"/>
+      <entry key="displayName" value="Lawrence Rodgers"/>
+      <entry key="division" value="Brazil Retail Banking and Payments"/>
+      <entry key="employeeId" value="739017"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part-Time"/>
+      <entry key="firstname" value="Lawrence"/>
+      <entry key="hireDate" value="03-05-2016"/>
+      <entry key="lastname" value="Rodgers"/>
+      <entry key="location" value="BR - Rio de Janeiro"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="5347"/>
+      <entry key="terminationDate" value="05-11-2026"/>
+      <entry key="title" value="UX/UI Designer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469452163" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Lawrence Rodgers" identity="739017" lastRefresh="1768468351072">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="5269 Queen St"/>
+          <entry key="ADDRESS_WORK" value="5269 Queen St;Rio de Janeiro, São Paulo State 87483;Brazil"/>
+          <entry key="BUILDING_CODE" value="BR_SOP_BLDG_01"/>
+          <entry key="BUSINESS_UNIT_ID" value="3037"/>
+          <entry key="CLASS" value="Part-Time"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="05-11-2026"/>
+          <entry key="COUNTRY_NAME" value="Brazil"/>
+          <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+          <entry key="DIVISION" value="Brazil Retail Banking and Payments"/>
+          <entry key="DIVISION_ID" value="DIV-BR-01"/>
+          <entry key="EMAIL" value="rodgers.lawrence@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739017"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739017"/>
+          <entry key="FIRST_NAME" value="Lawrence"/>
+          <entry key="HIREDATE" value="03-05-2016"/>
+          <entry key="JOBCODE" value="JT-021-04"/>
+          <entry key="JOBTITLE" value="UX/UI Designer"/>
+          <entry key="LAST_NAME" value="Rodgers"/>
+          <entry key="LOCATION" value="BR - Rio de Janeiro"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="5347"/>
+          <entry key="REGION" value="Rio de Janeiro"/>
+          <entry key="WORKER_NAME" value="Lawrence Rodgers"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Vendor"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1768832110495" executionStatus="Completed" name="0000000328" priority="Normal" requesterDisplayName="Scheduler" source="LCM" state="End" targetClass="sailpoint.object.Identity" targetDisplayName="William Garcia" verified="1768833410536">
+  <Attributes>
+    <Map>
+      <entry key="approvalSummaries">
+        <value>
+          <List>
+            <ApprovalSummary completer="The Administrator" endDate="1768832110407" owner="spadmin" request="Manual Changes requested for User: William Garcia" startDate="1768832084387" state="Finished" workItemId="c0a83c019bd11f47819bd69b7eb102fd" workItemType="ManualAction">
+              <ApprovalSet>
+                <ApprovalItem application="Corporate Learning Portal" nativeIdentity="739013" operation="Disable" state="Finished"/>
+              </ApprovalSet>
+            </ApprovalSummary>
+          </List>
+        </value>
+      </entry>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="9bcaa225-f0c4-405a-8895-2159b92fb553">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000328"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable"/>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739013" op="Disable"/>
+                <AccountRequest application="Corporate Learning Portal" nativeIdentity="739013" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000328"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="9bcaa225-f0c4-405a-8895-2159b92fb553" targetIntegration="Active Directory" trackingId="c9187c9bab0b4079a432eca08cb16a88">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                <AttributeRequest name="accountExpires" op="Add" value="01/19/2026 05:30:00 AM IST"/>
+                <AttributeRequest name="manager" op="Set"/>
+                <AttributeRequest name="description" op="Set" value="Terminated"/>
+                <AttributeRequest name="userAccountControl" op="Set" value="514"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000328"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningPlan nativeIdentity="9bcaa225-f0c4-405a-8895-2159b92fb553" targetIntegration="Financial Planning &amp; Forecasting" trackingId="0785a579401a422bba279e8653af3e0a">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739013" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                <AttributeRequest name="empStatus" op="Set" value="Inactive"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000328"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningPlan trackingId="81d0f6c47b644d7abc3c18c2673c568f">
+              <AccountRequest application="Corporate Learning Portal" nativeIdentity="739013" op="Disable"/>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000328"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="garcia.william" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bd11f47819bd69ab53202cb"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Disable" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="03a0e848daf743a99f588078dc5f0ea7">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" nativeIdentity="739013" operation="Disable" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="21c794783c3d4faebe005e5e650e8fa6">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739013" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Corporate Learning Portal" nativeIdentity="739013" operation="Disable" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="db61a0d5d7ef4982a113f346f8054631">
+                <AccountRequest application="Corporate Learning Portal" nativeIdentity="739013" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" name="manager" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="e35793e8cf4b4b379bd398d917e41826">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                  <AttributeRequest name="manager" op="Set" trackingId="e35793e8cf4b4b379bd398d917e41826"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="description" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="Terminated">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Active Directory"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="d278f0cc52984b96a47d4c843cbce624">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                  <AttributeRequest name="description" op="Set" trackingId="d278f0cc52984b96a47d4c843cbce624" value="Terminated"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="userAccountControl" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="514">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Active Directory"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="e6329aac759c40a5b72814324a5018bb">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                  <AttributeRequest name="userAccountControl" op="Set" trackingId="e6329aac759c40a5b72814324a5018bb" value="514"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="empStatus" nativeIdentity="739013" operation="Set" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished" value="Inactive">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Financial Planning &amp; Forecasting"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="70f5b2110a754541b022864886fd2aba">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739013" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                  <AttributeRequest name="empStatus" op="Set" trackingId="70f5b2110a754541b022864886fd2aba" value="Inactive"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" name="accountExpires" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" provisioningEngine="Active Directory" provisioningState="Unverifiable" value="01/19/2026 05:30:00 AM IST">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="4c7ee9f858584963b5c8900fb0d25567">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                  <AttributeRequest name="accountExpires" op="Add" trackingId="4c7ee9f858584963b5c8900fb0d25567" value="01/19/2026 05:30:00 AM IST"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

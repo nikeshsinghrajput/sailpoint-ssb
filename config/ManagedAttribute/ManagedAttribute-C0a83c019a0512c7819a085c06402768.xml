@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Financial Approver Level 1" hash="61c6e2b48aa603cb9a3974a6791fb7e44f46ce45" lastRefresh="1768326685840" requestable="true" type="roles" value="Financial Approver Level 1">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-06-12"/>
+      <entry key="description" value="Authorized to approve financial transactions up to defined threshold."/>
+      <entry key="modifiedDate" value="2025-09-20"/>
+      <entry key="owner" value="finance.head@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_APPROVER_007"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

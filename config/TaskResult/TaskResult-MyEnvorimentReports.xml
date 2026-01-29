@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765301443642" completionStatus="Success" host="NikeshRajput" launched="1765301436345" launcher="spadmin" name="my envoriment reports" percentComplete="100" runLength="7" schedule="233fda9d539545fda4b7a5594cb8c11e" type="LiveReport">
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="my envoriment reports"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Report>
+    <Reference class="sailpoint.object.JasperResult"/>
+  </Report>
+</TaskResult>

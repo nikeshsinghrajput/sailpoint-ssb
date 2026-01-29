@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_RuleLibrary_Active_Directory_Utils">
+  <Source>
+		import java.util.ArrayList;
+        import java.util.Array;
+		import java.util.HashMap;
+		import java.util.Hashtable;
+		import java.util.List;
+		import java.util.Map;
+		import javax.naming.Context;
+		import javax.naming.NamingEnumeration;
+		import javax.naming.NamingException;
+		import javax.naming.directory.DirContext;
+		import javax.naming.directory.InitialDirContext;
+		import javax.naming.directory.SearchControls;
+		import sailpoint.api.SailPointContext;
+		import sailpoint.object.Application;
+		import sailpoint.object.Custom;
+		import sailpoint.tools.GeneralException;
+        import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.rule.NS_RuleLibrary_Active_Directory_Utils");
+
+       public synchronized DirContext getDirContext(String providerUrl, String username,String password) {
+        DirContext dirContext = null;
+        
+        Map env = new Hashtable();
+        try {
+            env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
+            env.put("com.sun.jndi.ldap.connect.pool", "true");
+            env.put(Context.PROVIDER_URL, providerUrl);
+            env.put(Context.SECURITY_AUTHENTICATION, "simple");
+            env.put(Context.SECURITY_PRINCIPAL, username); // username
+            env.put(Context.SECURITY_CREDENTIALS, context.decrypt(password)); // password
+            //env.put(Context.SECURITY_PROTOCOL, "ssl");
+            dirContext = new InitialDirContext((Hashtable) env);
+
+        } catch (GeneralException ge) {
+            logs.error("Error decrypting password: ", ge);
+            return null;
+        } catch (NamingException ne) {
+            logs.error("LDAP Error: ", ne);
+            return null;
+        }
+        return dirContext;
+    }
+
+    public NamingEnumeration getAttributeValues( Map applicationParameters, String[] returningAttributes) {
+        return getAttributeValues(applicationParameters, returningAttributes, SearchControls.SUBTREE_SCOPE);
+    }
+
+    public synchronized NamingEnumeration getAttributeValues(Map applicationParameters, String[] returningAttributes, int searchScope) {
+        NamingEnumeration result = null;
+        DirContext dir = getDirContext(applicationParameters.get("providerUrl"), applicationParameters.get("username"), applicationParameters.get("password"));
+        if (dir == null)
+            return null;
+        String rootcontext = applicationParameters.get("searchDN");
+        SearchControls ctrl = new SearchControls();
+        ctrl.setSearchScope(searchScope);
+        ctrl.setReturningAttributes(returningAttributes);
+
+        //Search string
+        try {
+            logs.debug("searchFilter = " + applicationParameters.get("searchFilter"));
+            logs.debug("searchDN = " + rootcontext);
+            result = dir.search(rootcontext, applicationParameters.get("searchFilter"), ctrl);
+            logs.debug("AD search result = " + result);
+            logs.debug("ctrl = " + ctrl);
+        } catch (NamingException ne) {
+            logs.error("Error LDAP search: ", ne);
+        }
+
+        try {
+            dir.close();
+        } catch (NamingException ne) {
+            logs.warn("Exception closing DirContext: ", ne);
+        }
+
+        return result;
+    }
+
+    public List getAttributeValuesList(Map applicationParameters, String[] returningAttributes, int searchScope) {
+        ArrayList resultlist = new ArrayList();
+        logs.debug("applicationParameters:::::::::"+applicationParameters);
+        try {
+            NamingEnumeration ne = getAttributeValues(applicationParameters, returningAttributes, searchScope);
+            if (ne == null)
+                return resultlist;
+            javax.naming.directory.SearchResult sr;
+            javax.naming.directory.Attributes attrs;
+            javax.naming.NamingEnumeration ids;
+            HashMap hashMapResult;
+            String name;
+            while (ne.hasMore()) {
+                logs.debug("Entering NamingEnumeration element processing");
+                hashMapResult = new HashMap();
+                sr = (javax.naming.directory.SearchResult) ne.next();
+                attrs = sr.getAttributes();
+                logs.debug("attrs = " + attrs);
+                ids = attrs.getIDs();
+                logs.debug("ids = " + ids);
+                while (ids.hasMore()) {
+                    name = (String) ids.next();
+                    hashMapResult.put(name, attrs.get(name).get().toString());
+                }
+                resultlist.add(hashMapResult);
+            }
+        } catch (NamingException ne) {
+            logs.error("Naming exception on result set: ", ne);
+        }
+
+        return resultlist;
+    }
+
+    public  boolean isExistingSAMAccountName(String sAMAccountName, String adAppName){
+        logs.debug("isExistingSAMAccountName  method start ");
+        Map applicationParamsMap;
+        Map applicationParams = new HashMap();
+
+        Custom config = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+        String searchDN = config.get("EmployeeOU");
+        int indexOU = searchDN.indexOf("DC=");
+        searchDN = searchDN.substring(indexOU);
+        logs.debug("searchDN for check samaccountName = " + searchDN);
+        Application adApp = null;
+        adApp = context.getObjectByName(Application.class, adAppName);
+        
+        List forestSettings = adApp.getListAttributeValue("forestSettings");
+      logs.debug("forestSettings::::::::::: "+forestSettings);
+        String gcServerValue = "";
+        String username = "";
+        String pass = "";
+       
+        for (Map oneElement : forestSettings) {
+            if (oneElement.containsKey("gcServer")) {
+                gcServerValue = "ldap://" + oneElement.get("gcServer");
+            }
+            if (oneElement.containsKey("password")) {
+                pass = oneElement.get("password");
+            }
+            if (oneElement.containsKey("user")) {
+                username = oneElement.get("user");
+            }
+        }
+
+        logs.debug("searchDN for check providerUrl = " + gcServerValue);
+        logs.debug("searchDN for check username = " + username);
+        applicationParamsMap = new HashMap ();
+        applicationParamsMap.put("providerUrl", gcServerValue);
+        applicationParamsMap.put("username", username);
+        applicationParamsMap.put("password", pass);
+        applicationParamsMap.put("searchDN", searchDN);
+        applicationParamsMap.put("searchFilter", "(sAMAccountName=" + sAMAccountName + ")");
+        String[] returnParams = { "sAMAccountName" };
+        logs.debug("applicationParamsMap = " + applicationParamsMap);
+        List resultList = getAttributeValuesList(applicationParamsMap, returnParams, 2);
+
+        if (resultList == null || resultList.isEmpty()) {
+            logs.error("sAMAccountName does not exist for: " + sAMAccountName);
+            return false;
+        } else {
+            logs.error("sAMAccountName exists for: " + sAMAccountName);
+            return true;
+        }
+    }
+  </Source>
+</Rule>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_IdentityEvent_Leaver">
+  <Attributes>
+    <Map>
+      <entry key="1stPhaseTemplate" value="NS_EmailTemplate_Manual_WorkItem_Notification"/>
+      <entry key="LeaverFinalMaxDay" value="14"/>
+      <entry key="LeaverFinalMinDay" value="7"/>
+      <entry key="LeaverIMaxDay" value="7"/>
+      <entry key="LeaverIMinDay" value="0"/>
+      <entry key="appExclusionListforEntRemoval">
+        <value>
+          <List>
+            <String>Corporate Learning Portal</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="applicationToInclude">
+        <value>
+          <List>
+            <String>Active Directory</String>
+            <String>Financial Planning &amp; Forecasting</String>
+            <String>Sales Analytics</String>
+            <String>Corporate Learning Portal</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

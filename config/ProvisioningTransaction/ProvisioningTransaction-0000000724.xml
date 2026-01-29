@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="William Garcia" applicationName="Hr-Workday" identityDisplayName="William Garcia" identityName="9bcaa225-f0c4-405a-8895-2159b92fb553" integration="Hr-Workday" name="0000000724" nativeIdentity="739013" operation="Modify" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed"/>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Hr-Workday" nativeIdentity="739013" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019bd11f47819bd6343708018a"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="EMAIL" op="Set" value="garcia.william@nsiiq.com"/>
+            <AttributeRequest name="email" op="Add" value="garcia.william@nsiiq.com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while performing 'Modify' operation on identity '739013':  Error: org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

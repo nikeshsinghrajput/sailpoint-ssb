@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CorrelationConfig PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CorrelationConfig name="NS_CorrelationConfig_Active Directory">
+  <AttributeAssignments>
+    <Filter operation="EQ" property="sAMAccountName" value="sAMAccountName"/>
+    <Filter operation="EQ" property="employeeId" value="employeeNumber"/>
+    <Filter operation="EQ" property="employeeType" value="employeeType"/>
+  </AttributeAssignments>
+</CorrelationConfig>

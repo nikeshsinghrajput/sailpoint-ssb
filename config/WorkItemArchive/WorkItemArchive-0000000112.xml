@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItemArchive PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItemArchive archived="1764262693694" completer="The Administrator" handler="sailpoint.api.Workflower" level="Normal" name="0000000112" ownerName="spadmin" renderer="lcmManualActionsRenderer.xhtml" state="Finished" targetClass="sailpoint.object.Identity" targetName="a11a419f-e11e-4597-b7ce-b6f371f15a06" type="ManualAction" workItemId="c0a83c019a8d1133819ac63fe1fe275a">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Corporate Learning Portal" nativeIdentity="8512691" operation="Enable" state="Finished"/>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Jennifer Jackson"/>
+      <entry key="identityName" value="a11a419f-e11e-4597-b7ce-b6f371f15a06"/>
+      <entry key="policyViolations"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="a11a419f-e11e-4597-b7ce-b6f371f15a06">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000242"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <Filtered>
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512691" op="Enable">
+                <AttributeRequest name="empStatus" op="Set" value="Active">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Requested</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+              </AccountRequest>
+            </Filtered>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Active Directory" nativeIdentity="CN=jackson.jennifer,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable"/>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512691" op="Enable"/>
+                <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512691" op="Enable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000242"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="a11a419f-e11e-4597-b7ce-b6f371f15a06" targetIntegration="Active Directory" trackingId="9fa5785816c1407187cb75e603cc3ebf">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=jackson.jennifer,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                <AttributeRequest name="accountExpires" op="Add" value="12/29/2025 05:30:00 AM IST"/>
+                <AttributeRequest name="manager" op="Set" value="CN=chopra.meera,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="description" op="Set" value="Created via sailpoint :Administrator"/>
+                <AttributeRequest name="userAccountControl" op="Set" value="512"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000242"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningPlan trackingId="5bfea55569db43108c7d7077ecaf4af7">
+              <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512691" op="Enable"/>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000242"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="saveUnmanagedPlan_WithProjectArgument" value="false"/>
+      <entry key="workItemPriority" value="Normal"/>
+      <entry key="workItemRequester" value="Scheduler"/>
+    </Map>
+  </Attributes>
+  <Description>Manual Changes requested for User: Jennifer Jackson</Description>
+  <SystemAttributes>
+    <Map>
+      <entry key="completionComments"/>
+    </Map>
+  </SystemAttributes>
+</WorkItemArchive>

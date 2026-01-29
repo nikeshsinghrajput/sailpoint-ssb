@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1766401741402" completionStatus="Success" host="NikeshRajput" launched="1766401741298" launcher="spadmin" name="Policy Impact Analysis: financial denger ent policy" schedule="b4d07a2daefd4532bbe7a93b93a20a05" type="System">
+  <Attributes>
+    <Map>
+      <entry key="violationResults">
+        <value>
+          <PolicyImpactAnalysis policyName="financial denger ent policy" policyType="EntitlementSOD">
+            <ViolationResults>
+              <ViolationResult identityCount="1" ruleName="financial denger ent policy rule" violationCount="1"/>
+            </ViolationResults>
+          </PolicyImpactAnalysis>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Policy Impact Analysis"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

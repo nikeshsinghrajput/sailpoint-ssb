@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469494961" name="7ecde4bf-91da-4be7-ae30-aa0dda1fddbc">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="United Arab Emirates"/>
+      <entry key="department" value="Internal Audit &amp; Controls"/>
+      <entry key="displayName" value="William Morris"/>
+      <entry key="division" value="United Arab Emirates Retail Banking and Payments"/>
+      <entry key="employeeId" value="739053"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Field"/>
+      <entry key="firstname" value="William"/>
+      <entry key="hireDate" value="06-11-2016"/>
+      <entry key="lastname" value="Morris"/>
+      <entry key="location" value="AE - Ras Al Khaimah"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="18632"/>
+      <entry key="terminationDate" value="12-17-2025"/>
+      <entry key="title" value="SOX Controls Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469494906" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="William Morris" identity="739053" lastRefresh="1768468360318">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="9280 Lake Lane"/>
+          <entry key="ADDRESS_WORK" value="9280 Lake Lane;Ras Al Khaimah, Dubai Emirate 11143;United Arab Emirates"/>
+          <entry key="BUILDING_CODE" value="AE_DUB_BLDG_01"/>
+          <entry key="BUSINESS_UNIT_ID" value="3049"/>
+          <entry key="CLASS" value="Field"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="12-17-2025"/>
+          <entry key="COUNTRY_NAME" value="United Arab Emirates"/>
+          <entry key="DEPARTMENT" value="Internal Audit &amp; Controls"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-004"/>
+          <entry key="DIVISION" value="United Arab Emirates Retail Banking and Payments"/>
+          <entry key="DIVISION_ID" value="DIV-AE-01"/>
+          <entry key="EMAIL" value="william.morris@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739053"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739053"/>
+          <entry key="FIRST_NAME" value="William"/>
+          <entry key="HIREDATE" value="06-11-2016"/>
+          <entry key="JOBCODE" value="JT-004-03"/>
+          <entry key="JOBTITLE" value="SOX Controls Analyst"/>
+          <entry key="LAST_NAME" value="Morris"/>
+          <entry key="LOCATION" value="AE - Ras Al Khaimah"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="18632"/>
+          <entry key="REGION" value="Ras Al Khaimah"/>
+          <entry key="WORKER_NAME" value="William Morris"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Vendor"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

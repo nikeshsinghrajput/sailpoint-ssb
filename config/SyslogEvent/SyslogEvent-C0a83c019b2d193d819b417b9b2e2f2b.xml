@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.rest.ApplicationResource" eventLevel="ERROR" lineNumber="217" quickKey="0000666157" server="NikeshRajput" thread="http-nio-1000-exec-6" username="spadmin">
+  <EventMessage>sailpoint.connector.ConnectorException: [ InvalidResponseException ] 
+ [ Possible suggestions ] a) Make sure ServiceNow instance is up and running. b) Make sure there is a smooth connectivity between Identity Server and ServiceNow instance. 
+ [ Error details ] Invalid Content type received from ServiceNow instance. text/html</EventMessage>
+</SyslogEvent>

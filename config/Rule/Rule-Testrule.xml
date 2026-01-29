@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestRule" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  import sailpoint.object.Identity;
+  import sailpoint.object.Link;
+  import sailpoint.object.Filter;
+  import sailpoint.object.QueryOptions;
+  import sailpoint.api.IdentityService;
+  import sailpoint.object.Application;
+  import sailpoint.api.Provisioner;
+  import sailpoint.object.ProvisioningPlan;
+  import sailpoint.object.ProvisioningPlan.AccountRequest;
+  import sailpoint.object.Bundle;
+  import sailpoint.object.TaskDefinition;
+  
+  import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+ 
+import sailpoint.object.ProvisioningProject;
+import sailpoint.tools.GeneralException;
+  
+
+ import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+  
+  List list=new ArrayList();
+// Filter frDepartment=Filter.like("department","Logistics");
+// Filter fractive=Filter.like("name.link.name","Active Directory");
+/* Filter filter = Filter.and(Filter.like("department","Logistics"),Filter.eq("inactive",false),Filter.eq("links.application.name","Active Directory"));
+  Filter filter = Filter.and(Filter.like("type","AccountAggregation"));
+  QueryOptions qo=new QueryOptions();
+ // Filter combineFilters=Filter.and(frDepartment,filter);
+  
+  qo.addFilter(filter);
+  Iterator it=context.search(Identity.class,qo);
+  while(it!=null &amp;&amp; it.hasNext()){
+   Identity identity=it.next(); 
+    list.add(identity.getName());
+  }
+  return list;
+  */
+ /* Filter filter = Filter.and(Filter.like("type","AccountAggregation"),Filter.eq("owner.name","spadmin"),Filter.eq("deltaAggregation", "false"));
+  QueryOptions qo=new QueryOptions();
+ // Filter combineFilters=Filter.and(frDepartment,filter);
+  
+  qo.addFilter(filter);
+  Iterator it=context.search(TaskDefinition.class,qo);
+  while(it!=null &amp;&amp; it.hasNext()){
+   TaskDefinition taskDefinition=it.next(); 
+    list.add(taskDefinition.getName());
+  }
+  return list;*/
+ Filter f1 = Filter.eq("inactive", false);
+Filter f2 = Filter.eq("links.application.name", "Active Directory");
+Filter f3 = Filter.eq("links.application.id", "Financial Planning & Forecasting");
+
+Filter finalFilter = Filter.and(f1, f2, f3);
+
+QueryOptions qo = new QueryOptions();
+qo.addFilter(finalFilter);
+  Iterator it=context.search(Identity.class,qo);
+  while(it!=null &amp;&amp; it.hasNext()){
+    Identity identity=it.next(); 
+    list.add(identity.getName());
+  }
+  return list;
+  </Source>
+</Rule>

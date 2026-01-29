@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1768220206274" certificationDefinitionId="c0a83c019b731761819bb2230cde24b0" creator="spadmin" entitlementGranularity="Value" expiration="1770898606274" name="Targeted Access Review for f1aea43c-892b-4f9d-be64-42557cc5650f" nextPhaseTransition="1770898606321" phase="Active" shortName="Access Review for f1aea43c-892b-4f9d-be64-42557cc5650f" totalEntities="1" totalItems="2" type="Focused">
+  <Attributes>
+    <Map>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation" value="false"/>
+      <entry key="requireReassignmentCompletion" value="true"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Targeted Certification Template [12/01/26, 5:46:40 PM IST]"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>f1aea43c-892b-4f9d-be64-42557cc5650f</String>
+  </Certifiers>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <CertificationStatistics totalEntities="1" totalExceptions="2" totalItems="2"/>
+  <WorkItemRefs>
+    <Reference class="sailpoint.object.WorkItem" name="0000000169"/>
+  </WorkItemRefs>
+  <CertificationEntity firstname="Aditya" identity="f7803391-7055-47b7-b696-aad5dd224453" lastname="Sharma" newUser="true" summaryStatus="Open" targetDisplayName="Aditya Sharma" targetName="f7803391-7055-47b7-b696-aad5dd224453" type="Identity">
+    <CertificationItem exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Accounts Payable Analyst" summaryStatus="Open" type="Exception">
+      <ApplicationNames>
+        <String>Financial Planning &amp; Forecasting</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512503" nativeIdentity="8512503">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Accounts Payable Analyst"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+    <CertificationItem exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Accounts Receivable Officer" summaryStatus="Open" type="Exception">
+      <ApplicationNames>
+        <String>Financial Planning &amp; Forecasting</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512503" nativeIdentity="8512503">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Accounts Receivable Officer"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

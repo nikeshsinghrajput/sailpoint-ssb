@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Victoria Palmer" identity="739097" lastRefresh="1768468369872">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7738 King Rd"/>
+      <entry key="ADDRESS_WORK" value="7738 King Rd;The Hague, North Holland 62024;Netherlands"/>
+      <entry key="BUILDING_CODE" value="NL_NOR_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3090"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-05-2026"/>
+      <entry key="COUNTRY_NAME" value="Netherlands"/>
+      <entry key="DEPARTMENT" value="Treasury &amp; Cash Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-002"/>
+      <entry key="DIVISION" value="Netherlands Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-NL-02"/>
+      <entry key="EMAIL" value="victoria.palmer@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739097"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739097"/>
+      <entry key="FIRST_NAME" value="Victoria"/>
+      <entry key="HIREDATE" value="07-11-2016"/>
+      <entry key="JOBCODE" value="JT-002-01"/>
+      <entry key="JOBTITLE" value="Treasury Analyst"/>
+      <entry key="LAST_NAME" value="Palmer"/>
+      <entry key="LOCATION" value="NL - The Hague"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="98839"/>
+      <entry key="REGION" value="The Hague"/>
+      <entry key="WORKER_NAME" value="Victoria Palmer"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ServerStatistic PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ServerStatistic name="openFileCount" snapshotName="1769092161010" value="0" valueType="long">
+  <Host>
+    <Reference class="sailpoint.object.Server" name="NikeshRajput"/>
+  </Host>
+  <MonitoringStatisticRef>
+    <Reference class="sailpoint.object.MonitoringStatistic" name="openFileCount"/>
+  </MonitoringStatisticRef>
+</ServerStatistic>

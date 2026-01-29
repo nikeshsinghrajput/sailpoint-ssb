@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469458139" name="14b53137-adf6-445b-af3f-5a3e15af4d30">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="China"/>
+      <entry key="department" value="Application Development &amp; Integration"/>
+      <entry key="displayName" value="Kevin Austin"/>
+      <entry key="division" value="China Technology and Operations"/>
+      <entry key="employeeId" value="739022"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Hybrid"/>
+      <entry key="firstname" value="Kevin"/>
+      <entry key="hireDate" value="09-13-2020"/>
+      <entry key="lastname" value="Austin"/>
+      <entry key="location" value="CN - Beijing"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="91092"/>
+      <entry key="terminationDate" value="07-04-2026"/>
+      <entry key="title" value="Full-Stack Developer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469458101" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Kevin Austin" identity="739022" lastRefresh="1768468353078">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="7483 Maple Lane"/>
+          <entry key="ADDRESS_WORK" value="7483 Maple Lane;Beijing, Guangdong 86709;China"/>
+          <entry key="BUILDING_CODE" value="CN_GUA_BLDG_03"/>
+          <entry key="BUSINESS_UNIT_ID" value="3007"/>
+          <entry key="CLASS" value="Hybrid"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="07-04-2026"/>
+          <entry key="COUNTRY_NAME" value="China"/>
+          <entry key="DEPARTMENT" value="Application Development &amp; Integration"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-017"/>
+          <entry key="DIVISION" value="China Technology and Operations"/>
+          <entry key="DIVISION_ID" value="DIV-CN-03"/>
+          <entry key="EMAIL" value="kevin.austin@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739022"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739022"/>
+          <entry key="FIRST_NAME" value="Kevin"/>
+          <entry key="HIREDATE" value="09-13-2020"/>
+          <entry key="JOBCODE" value="JT-017-01"/>
+          <entry key="JOBTITLE" value="Full-Stack Developer"/>
+          <entry key="LAST_NAME" value="Austin"/>
+          <entry key="LOCATION" value="CN - Beijing"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="91092"/>
+          <entry key="REGION" value="Beijing"/>
+          <entry key="WORKER_NAME" value="Kevin Austin"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Contract"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

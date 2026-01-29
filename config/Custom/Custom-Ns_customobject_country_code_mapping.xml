@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Country_Code_Mapping">
+  <Attributes>
+    <Map>
+      <entry key="Argentina" value="AR"/>
+      <entry key="Australia" value="AU"/>
+      <entry key="Brazil" value="BR"/>
+      <entry key="Canada" value="CA"/>
+      <entry key="Chile" value="CL"/>
+      <entry key="China" value="CN"/>
+      <entry key="Egypt" value="EG"/>
+      <entry key="France" value="FR"/>
+      <entry key="Germany" value="DE"/>
+      <entry key="India" value="IN"/>
+      <entry key="Italy" value="IT"/>
+      <entry key="Japan" value="JP"/>
+      <entry key="Kenya" value="KE"/>
+      <entry key="Mexico" value="MX"/>
+      <entry key="Netherlands" value="NL"/>
+      <entry key="Qatar" value="QA"/>
+      <entry key="Saudi Arabia" value="SA"/>
+      <entry key="Singapore" value="SG"/>
+      <entry key="South Africa" value="ZA"/>
+      <entry key="South Korea" value="KR"/>
+      <entry key="Spain" value="ES"/>
+      <entry key="United Arab Emirates" value="AE"/>
+      <entry key="United Kingdom" value="GB"/>
+      <entry key="United States" value="US"/>
+    </Map>
+  </Attributes>
+</Custom>

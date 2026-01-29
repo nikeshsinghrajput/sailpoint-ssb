@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="mary.cruz@NS.com" applicationName="IIQ_JDBC_Application" identityDisplayName="Mary Cruz" identityName="368debf1-6d8c-400d-87e6-35b2fc20dba9" integration="IIQ_JDBC_Application" name="0000000008" nativeIdentity="739014" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000006"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="The application script threw an exception: java.lang.NullPointerException BSF info: NS_Rule_JDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="IIQ_JDBC_Application" nativeIdentity="739014" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c0199d9117b8199d967daf90068"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c0199d9117b8199d96ed4e30082"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="roles" op="Add" value="Admin">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="first_name" op="Set" value="Mary"/>
+            <AttributeRequest name="last_name" op="Set" value="Cruz"/>
+            <AttributeRequest name="email" op="Set" value="mary.cruz@NS.com"/>
+            <AttributeRequest name="roles" op="Add" value="User"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="The application script threw an exception: java.lang.NullPointerException BSF info: NS_Rule_JDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

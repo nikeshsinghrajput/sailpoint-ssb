@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jane Lee" identity="739050" lastRefresh="1768468358339">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="3120 King Blvd"/>
+      <entry key="ADDRESS_WORK" value="3120 King Blvd;Sharjah, Dubai Emirate 60667;United Arab Emirates"/>
+      <entry key="BUILDING_CODE" value="AE_DUB_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3050"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-08-2024"/>
+      <entry key="COUNTRY_NAME" value="United Arab Emirates"/>
+      <entry key="DEPARTMENT" value="Vendor Management Office (VMO)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-028"/>
+      <entry key="DIVISION" value="United Arab Emirates Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-AE-02"/>
+      <entry key="EMAIL" value="lee.jane@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739050"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739050"/>
+      <entry key="FIRST_NAME" value="Jane"/>
+      <entry key="HIREDATE" value="11-27-2023"/>
+      <entry key="JOBCODE" value="JT-028-01"/>
+      <entry key="JOBTITLE" value="Vendor Relationship Manager"/>
+      <entry key="LAST_NAME" value="Lee"/>
+      <entry key="LOCATION" value="AE - Sharjah"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="65912"/>
+      <entry key="REGION" value="Sharjah"/>
+      <entry key="WORKER_NAME" value="Jane Lee"/>
+      <entry key="WORKER_STATUS" value="Terminated"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

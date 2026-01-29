@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - APAC - O365_E1_CoreApps" hash="231b45f3c9e7f2b89b957cc3e226c2a75d098f5e" lastRefresh="1766343452817" requestable="true" type="group" uuid="{3f5136b8-b82a-42f9-bba7-d495bf9062a4}" value="CN=O365 License - APAC - O365_E1_CoreApps,OU=Shared,OU=Groups,OU=Asia Pacific,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - APAC - O365_E1_CoreApps"/>
+      <entry key="description" value="O365 License - APAC - O365_E1_CoreApps created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - APAC - O365_E1_CoreApps"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1447"/>
+      <entry key="objectguid" value="{3f5136b8-b82a-42f9-bba7-d495bf9062a4}"/>
+      <entry key="sAMAccountName" value="O365 License - APAC - O365_E1_CoreApps"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765965617718" completionStatus="Success" host="NikeshRajput" launched="1765965617591" launcher="spadmin" name="Policy Impact Analysis: sales anylatics denger access - 2" schedule="df5c53ed7bce4141ba5d6b523a9e158e" type="System">
+  <Attributes>
+    <Map>
+      <entry key="violationResults">
+        <value>
+          <PolicyImpactAnalysis policyName="sales anylatics denger access" policyType="EntitlementSOD">
+            <ViolationResults>
+              <ViolationResult identityCount="1" ruleName="sales analytics ent voilation" violationCount="1"/>
+            </ViolationResults>
+          </PolicyImpactAnalysis>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Policy Impact Analysis"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

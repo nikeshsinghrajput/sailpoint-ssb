@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_DHPJDBC_ProvisioningRule" type="JDBCProvision">
+  <Description>This rule is used by the JDBC connector to do provisioning of the data .</Description>
+  <Signature returnType="ProvisioningResult">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="application">
+        <Description>
+                The application whose data file is being processed.
+                </Description>
+      </Argument>
+      <Argument name="schema">
+        <Description>
+                The Schema currently in use.
+                </Description>
+      </Argument>
+      <Argument name="connection">
+        <Description>
+                A connection object to connect to database.
+                </Description>
+      </Argument>
+      <Argument name="plan">
+        <Description>
+                The ProvisioningPlan created against the JDBC application.
+                </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+                A Provisioning Result object is desirable to return the status.IT can be a new object or part of  Provisioning Plan
+                </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+  import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import sailpoint.object.ProvisioningPlan.AttributeRequest;
+import sailpoint.object.ProvisioningResult;
+import sailpoint.tools.GeneralException;
+  
+  System.out.println("plan;;;;;;;;;"+plan.toXml());
+	  ProvisioningResult result = new ProvisioningResult();
+	
+	  
+	  PreparedStatement stmt = null;
+
+
+	    AccountRequest acctReq = plan.getAccountRequest("DHP JDBC Users");
+	    if (acctReq == null) {
+	        System.out.println("No account request found for DHP JDBC Users");
+	        return result;
+	    }
+	      String op = acctReq.getOperation().toString();
+	    System.out.println("Operation = " + op);
+	      if ("Create".equalsIgnoreCase(op)) {
+	        
+	        String userId =acctReq.getNativeIdentity();   
+	        
+          String username = (acctReq.getAttributeRequest("username") != null &amp;&amp; acctReq.getAttributeRequest("username").getValue() != null)
+           ? acctReq.getAttributeRequest("username").getValue().toString(): "";
+          
+          String firstname = (acctReq.getAttributeRequest("firstname") != null &amp;&amp; acctReq.getAttributeRequest("firstname").getValue() != null)
+           ? acctReq.getAttributeRequest("firstname").getValue().toString(): "";
+          
+          String lastname = (acctReq.getAttributeRequest("lastname") != null &amp;&amp; acctReq.getAttributeRequest("lastname").getValue() != null)
+           ? acctReq.getAttributeRequest("lastname").getValue().toString(): "";
+          
+          String email = (acctReq.getAttributeRequest("email") != null &amp;&amp; acctReq.getAttributeRequest("email").getValue() != null)
+           ? acctReq.getAttributeRequest("email").getValue().toString(): "";
+      
+	        System.out.println("Creating user: " + username);
+          System.out.println("Creating firstname: " + firstname);
+           System.out.println("Creating lastname: " + lastname);
+          System.out.println("Creating email: " + email);
+
+	        String insertUserSQL = "INSERT INTO tes_jdbc.users (user_id, username, firstname, lastname, email, created_at, isActive) "
+	                             + "VALUES (?, ?, ?, ?, ?, NOW(), 1)";
+	        stmt = connection.prepareStatement(insertUserSQL);
+	        stmt.setString(1, userId);
+	        stmt.setString(2, username);
+	        stmt.setString(3, firstname);
+	        stmt.setString(4, lastname);
+	        stmt.setString(5, email);
+	        stmt.executeUpdate();
+	        stmt.close();
+
+	       
+	          List attributeRequests = acctReq.getAttributeRequests();
+	        for (AttributeRequest ar : attributeRequests) {
+	            //AttributeRequest ar = (AttributeRequest) o;
+	            if ("capability_name".equalsIgnoreCase(ar.getName()) &amp;&amp;
+	                ("Add".equalsIgnoreCase(ar.getOperation().toString()) ||
+	                 "Set".equalsIgnoreCase(ar.getOperation().toString()))) {
+
+	                String capability = (String) ar.getValue();
+	                System.out.println("Assigning capability: " + capability);
+
+	                // get capability_id from capabilities table
+	                String getCapIdSQL = "SELECT capability_id FROM tes_jdbc.capabilities WHERE capability_name = ?";
+	                stmt = connection.prepareStatement(getCapIdSQL);
+	                stmt.setString(1, capability);
+	                ResultSet rs = stmt.executeQuery();
+
+	                if (rs.next()) {
+	                    int capId = rs.getInt("capability_id");
+	                    rs.close();
+	                    stmt.close();
+
+	                    // insert mapping
+	                    String insertMapSQL = "INSERT IGNORE INTO tes_jdbc.user_capability (user_id, capability_id) VALUES (?, ?)";
+	                    stmt = connection.prepareStatement(insertMapSQL);
+	                    stmt.setString(1, userId);
+	                    stmt.setInt(2, capId);
+	                    stmt.executeUpdate();
+	                    stmt.close();
+                    result.setStatus(ProvisioningResult.STATUS_COMMITTED);
+	                } else {
+	                    System.out.println("Capability not found in DB: " + capability);
+	                }
+	            }
+	        }
+
+	    }else if ("Disable".equalsIgnoreCase(op)) {
+          int isActive =0;
+          String userId =acctReq.getNativeIdentity(); 
+           System.out.println("in disabled operation userId" + userId);
+          System.out.println("in disabled operation isActive" + acctReq.getAttributeRequest("isActive").getValue());
+          isActive =  Integer.parseInt(acctReq.getAttributeRequest("isActive").getValue());
+           System.out.println("in disabled operation userId" + userId);
+          String updateQuery ="UPDATE users SET isActive = ? WHERE user_id = ?";
+          stmt = connection.prepareStatement(updateQuery);
+	        stmt.setInt(1, isActive);
+          stmt.setString(2,userId);
+          stmt.executeUpdate();
+	        stmt.close();
+          result.setStatus(ProvisioningResult.STATUS_COMMITTED);
+      }
+  return result
+  </Source>
+</Rule>

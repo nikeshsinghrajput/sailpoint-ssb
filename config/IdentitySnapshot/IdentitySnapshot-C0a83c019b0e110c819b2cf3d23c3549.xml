@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentitySnapshot PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentitySnapshot applications="Hr-Workday" identityName="a6d33d8f-203f-4a40-a574-617e63f210be">
+  <AssignedRoleSnapshots>
+    <RoleAssignmentSnapshot name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoleSnapshots>
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="displayName" value="Vihaan Gupta"/>
+      <entry key="division" value="Division-4"/>
+      <entry key="employeeId" value="8512509"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full_time"/>
+      <entry key="firstname" value="Vihaan"/>
+      <entry key="hireDate" value="01-09-2025"/>
+      <entry key="lastname" value="Gupta"/>
+      <entry key="location" value="Hyderabad"/>
+      <entry key="manager" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="postalCode" value="445632"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <LinkSnapshots>
+    <LinkSnapshot application="Hr-Workday" identity="8512509" lastRefresh="1765382824896" simpleIdentity="Vihaan Gupta">
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="723 Park Street"/>
+          <entry key="ADDRESS_WORK" value="Remote"/>
+          <entry key="BUILDING_CODE" value="B549"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU60"/>
+          <entry key="CLASS" value="Full_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs and Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="Division-4"/>
+          <entry key="DIVISION_ID" value="DIV22"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512509"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F74123"/>
+          <entry key="FIRST_NAME" value="Vihaan"/>
+          <entry key="HIREDATE" value="01-09-2025"/>
+          <entry key="JOBCODE" value="JC833"/>
+          <entry key="JOBTITLE" value="Governance Program Manager"/>
+          <entry key="LAST_NAME" value="Gupta"/>
+          <entry key="LOCATION" value="Hyderabad"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="445632"/>
+          <entry key="REGION" value="South"/>
+          <entry key="WORKER_NAME" value="Vihaan Gupta"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </LinkSnapshot>
+  </LinkSnapshots>
+</IdentitySnapshot>

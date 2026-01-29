@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.server.ScriptletEvaluator" eventLevel="ERROR" lineNumber="144" quickKey="0001243917" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>sailpoint.tools.GeneralException: BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.text.SimpleDateFormat; 	import java.util.Calendar; 	import java.util . . . '' : Attempt to resolve method: equalsIgnoreCase() on undefined variable or class name: srStatus : at Line: 43 : in file: inline evaluation of: ``import java.text.SimpleDateFormat; 	import java.util.Calendar; 	import java.util . . . '' : srStatus .e...</EventMessage>
+</SyslogEvent>

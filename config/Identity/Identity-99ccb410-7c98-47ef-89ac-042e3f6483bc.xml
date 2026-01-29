@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469507119" name="99ccb410-7c98-47ef-89ac-042e3f6483bc">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Mexico"/>
+      <entry key="department" value="Customer Success &amp; Support"/>
+      <entry key="displayName" value="Amber Jackson"/>
+      <entry key="division" value="Mexico Technology and Operations"/>
+      <entry key="employeeId" value="739063"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="Amber"/>
+      <entry key="hireDate" value="08-22-2021"/>
+      <entry key="lastname" value="Jackson"/>
+      <entry key="location" value="MX - Tijuana"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="84344"/>
+      <entry key="terminationDate" value="03-22-2025"/>
+      <entry key="title" value="Technical Support Engineer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469507052" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Amber Jackson" identity="739063" lastRefresh="1768468362643">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="1237 Maple Blvd"/>
+          <entry key="ADDRESS_WORK" value="1237 Maple Blvd;Tijuana, Jalisco 54486;Mexico"/>
+          <entry key="BUILDING_CODE" value="MX_JAL_BLDG_03"/>
+          <entry key="BUSINESS_UNIT_ID" value="3035"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="03-22-2025"/>
+          <entry key="COUNTRY_NAME" value="Mexico"/>
+          <entry key="DEPARTMENT" value="Customer Success &amp; Support"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-026"/>
+          <entry key="DIVISION" value="Mexico Technology and Operations"/>
+          <entry key="DIVISION_ID" value="DIV-MX-03"/>
+          <entry key="EMAIL" value="amber.jackson@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739063"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739063"/>
+          <entry key="FIRST_NAME" value="Amber"/>
+          <entry key="HIREDATE" value="08-22-2021"/>
+          <entry key="JOBCODE" value="JT-026-04"/>
+          <entry key="JOBTITLE" value="Technical Support Engineer"/>
+          <entry key="LAST_NAME" value="Jackson"/>
+          <entry key="LOCATION" value="MX - Tijuana"/>
+          <entry key="MANAGER_ID" value="739003"/>
+          <entry key="POSTAL_CODE" value="84344"/>
+          <entry key="REGION" value="Tijuana"/>
+          <entry key="WORKER_NAME" value="Amber Jackson"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Consultant"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

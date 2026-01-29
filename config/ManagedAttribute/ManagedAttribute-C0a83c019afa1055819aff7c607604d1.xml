@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="bgc-azure-gdpcntrl-pbi-hr-latam-uat-reader" hash="03fb72ee443717ca20aea5c13172e4648a616305" lastRefresh="1765222932597" requestable="true" type="group" uuid="{bd312c4a-f890-42a1-9ce1-d5c3d1764120}" value="CN=bgc-azure-gdpcntrl-pbi-hr-latam-uat-reader,OU=Restricted,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="bgc-azure-gdpcntrl-pbi-hr-latam-uat-reader"/>
+      <entry key="description" value="bgc-azure-gdpcntrl-pbi-hr-latam-uat-reader created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\bgc-azure-gdpcntrl-pbi-hr-latam-uat-reader"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1223"/>
+      <entry key="objectguid" value="{bd312c4a-f890-42a1-9ce1-d5c3d1764120}"/>
+      <entry key="sAMAccountName" value="bgc-azure-gdpcntrl-pbi-hr-latam-uat-reader"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

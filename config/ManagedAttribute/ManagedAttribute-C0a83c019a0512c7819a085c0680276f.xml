@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Reconciliation Analyst" hash="1bd5c1d051d273f6912aa1a6cb33983af61b1f31" lastRefresh="1768326685888" requestable="true" type="roles" value="Reconciliation Analyst">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-08-01"/>
+      <entry key="description" value="Performs account and bank reconciliations ensuring financial integrity."/>
+      <entry key="modifiedDate" value="2025-09-22"/>
+      <entry key="owner" value="recon.team@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_RECONCILE_009"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

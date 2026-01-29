@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="William Garcia" identity="739013" lastRefresh="1768468350814">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="4455 Cedar Ave"/>
+      <entry key="ADDRESS_WORK" value="4455 Cedar Ave;Salvador, São Paulo State 16315;Brazil"/>
+      <entry key="BUILDING_CODE" value="BR_SOP_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3040"/>
+      <entry key="CLASS" value="Shift-Based"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="01-29-2026"/>
+      <entry key="COUNTRY_NAME" value="Brazil"/>
+      <entry key="DEPARTMENT" value="Workplace &amp; Facilities Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-030"/>
+      <entry key="DIVISION" value="Brazil Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-BR-04"/>
+      <entry key="EMAIL" value="william.garcia@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739013"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739013"/>
+      <entry key="FIRST_NAME" value="William"/>
+      <entry key="HIREDATE" value="01-29-2024"/>
+      <entry key="JOBCODE" value="JT-030-01"/>
+      <entry key="JOBTITLE" value="Facilities Coordinator"/>
+      <entry key="LAST_NAME" value="Garcia"/>
+      <entry key="LOCATION" value="BR - Salvador"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="10815"/>
+      <entry key="REGION" value="Salvador"/>
+      <entry key="WORKER_NAME" value="William Garcia"/>
+      <entry key="WORKER_STATUS" value="Terminated"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b" action="AccessRequestStart" application="Sales Analytics" attributeName="roles" attributeValue="Incentive &amp; Compensation Analyst" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="spadmin" target="9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a0c102b819a1038f4ca0502"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="EntitlementAdd"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

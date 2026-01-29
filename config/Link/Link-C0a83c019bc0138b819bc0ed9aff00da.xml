@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Justin Thompson" identity="739037" lastRefresh="1768468355839">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="5773 Hill Blvd"/>
+      <entry key="ADDRESS_WORK" value="5773 Hill Blvd;Toulouse, Île‑de‑France 54862;France"/>
+      <entry key="BUILDING_CODE" value="FR_LED_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3083"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="08-22-2026"/>
+      <entry key="COUNTRY_NAME" value="France"/>
+      <entry key="DEPARTMENT" value="Vendor Management Office (VMO)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-028"/>
+      <entry key="DIVISION" value="France Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-FR-03"/>
+      <entry key="EMAIL" value="thompson.justin@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739037"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739037"/>
+      <entry key="FIRST_NAME" value="Justin"/>
+      <entry key="HIREDATE" value="11-28-2020"/>
+      <entry key="JOBCODE" value="JT-028-04"/>
+      <entry key="JOBTITLE" value="Contract Compliance Officer"/>
+      <entry key="LAST_NAME" value="Thompson"/>
+      <entry key="LOCATION" value="FR - Toulouse"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="3826"/>
+      <entry key="REGION" value="Toulouse"/>
+      <entry key="WORKER_NAME" value="Justin Thompson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

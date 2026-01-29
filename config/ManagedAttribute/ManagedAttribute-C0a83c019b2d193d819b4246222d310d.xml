@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="BGC - VDI VM - SNV Windows 10 Floating" hash="459a728c6efc7f11ee5f1178a4559d86307854a7" lastRefresh="1766343451179" requestable="true" type="group" uuid="{409f1f69-158b-4f6d-9391-d90ea066cfa7}" value="CN=BGC - VDI VM - SNV Windows 10 Floating,OU=Security,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="BGC - VDI VM - SNV Windows 10 Floating"/>
+      <entry key="description" value="BGC - VDI VM - SNV Windows 10 Floating created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\BGC - VDI VM - SNV Windows 10 Floating"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1478"/>
+      <entry key="objectguid" value="{409f1f69-158b-4f6d-9391-d90ea066cfa7}"/>
+      <entry key="sAMAccountName" value="BGC - VDI VM - SNV Windows 10 Floating"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

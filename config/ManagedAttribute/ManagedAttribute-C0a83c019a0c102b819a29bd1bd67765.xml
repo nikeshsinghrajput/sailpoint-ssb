@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="groups" displayName="Help Desk" hash="085bd45086e39e984060dcae00bbdf45956c50a0" lastRefresh="1761636850645" requestable="true" type="group" value="679434f053231300e321ddeeff7b12d8">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="active" value="true"/>
+      <entry key="exclude_manager" value="false"/>
+      <entry key="name" value="Help Desk"/>
+      <entry key="sys_created_by" value="admin"/>
+      <entry key="sys_created_on" value="2025-10-18 02:50:32"/>
+      <entry key="sys_mod_count" value="0"/>
+      <entry key="sys_updated_by" value="admin"/>
+      <entry key="sys_updated_on" value="2025-10-18 02:50:32"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

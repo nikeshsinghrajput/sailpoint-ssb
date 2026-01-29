@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="f7803391-7055-47b7-b696-aad5dd224453" action="AccessRequestStart" application="Corporate Learning Portal" attributeName="Access" attributeValue="Compliance Officer" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="spadmin" target="f7803391-7055-47b7-b696-aad5dd224453">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a4a1e39819a4b2351fe01e5"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="EntitlementAdd"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

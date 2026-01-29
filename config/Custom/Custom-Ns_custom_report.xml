@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_Custom_Report">
+  <Attributes>
+    <Map>
+      <entry key="country" value="India"/>
+      <entry key="division" value="Division-2"/>
+    </Map>
+  </Attributes>
+</Custom>

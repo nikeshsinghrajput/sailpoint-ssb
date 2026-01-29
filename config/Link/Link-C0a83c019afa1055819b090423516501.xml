@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Vihaan Patel" identity="8512507" lastRefresh="1765382824785">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="648 NH Road"/>
+      <entry key="ADDRESS_WORK" value="Onsite"/>
+      <entry key="BUILDING_CODE" value="B193"/>
+      <entry key="BUSINESS_UNIT_ID" value="BU79"/>
+      <entry key="CLASS" value="Full_time"/>
+      <entry key="COMPANY_NAME" value="NsTech"/>
+      <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="Investment Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+      <entry key="DIVISION" value="Division-1"/>
+      <entry key="DIVISION_ID" value="DIV38"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512507"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="F75961"/>
+      <entry key="FIRST_NAME" value="Vihaan"/>
+      <entry key="HIREDATE" value="01-07-2025"/>
+      <entry key="JOBCODE" value="JC346"/>
+      <entry key="JOBTITLE" value="Portfolio Operations Specialist"/>
+      <entry key="LAST_NAME" value="Patel"/>
+      <entry key="LOCATION" value="Mumbai"/>
+      <entry key="MANAGER_ID" value="8512500"/>
+      <entry key="POSTAL_CODE" value="688453"/>
+      <entry key="REGION" value="South"/>
+      <entry key="WORKER_NAME" value="Vihaan Patel"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

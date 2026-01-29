@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Pending" endDate="1768911010387" executionStatus="Verifying" name="0000000345" priority="Normal" requesterDisplayName="The Administrator" requesterId="c0a83c0199cf13658199cf93c73500fe" source="LCM" state="End" targetClass="Identity" targetDisplayName="John Doe" type="AccountsRequest">
+  <Attributes>
+    <Map>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="db561a67-5064-475f-bedc-35bad74bb86b">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000345"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Disable">
+                  <Attributes>
+                    <Map>
+                      <entry key="flow" value="AccountsRequest"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="Disable"/>
+                    </Map>
+                  </Attributes>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000345"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b" targetIntegration="Financial Planning &amp; Forecasting" trackingId="e56bee3a1db44655bf0780d9fbfd784e">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                <Attributes>
+                  <Map>
+                    <entry key="flow" value="AccountsRequest"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="Disable"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest name="empStatus" op="Set" value="Inactive"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000345"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="NS_Role_Corporate_Learning_Portal"/>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="doe1.john" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bd11f47819bdb4ff50108a9"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" nativeIdentity="739003" operation="Disable" ownerName="spadmin" provisioningState="Commited">
+      <Attributes>
+        <Map>
+          <entry key="flow" value="AccountsRequest"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="operation" value="Disable"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="09a71cbd4ee8455a8ea36d2a55cc8225">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Disable">
+                  <Attributes>
+                    <Map>
+                      <entry key="flow" value="AccountsRequest"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="Disable"/>
+                    </Map>
+                  </Attributes>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="empStatus" nativeIdentity="739003" operation="Set" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Commited" value="Inactive">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Financial Planning &amp; Forecasting"/>
+          <entry key="flow" value="AccountsRequest"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="operation" value="Disable"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="1e7072a42d894d9d9d6a936014e1bb2e">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                  <Attributes>
+                    <Map>
+                      <entry key="flow" value="AccountsRequest"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="Disable"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest name="empStatus" op="Set" trackingId="1e7072a42d894d9d9d6a936014e1bb2e" value="Inactive"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

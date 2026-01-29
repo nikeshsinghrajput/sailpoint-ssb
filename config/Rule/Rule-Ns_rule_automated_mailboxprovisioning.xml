@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_Automated_MailBoxProvisioning">
+  <Description>
+     Create Mail for Active Directory
+  </Description>
+  <Source>
+				
+import org.apache.log4j.Logger;
+
+import sailpoint.api.IdentityService;
+import sailpoint.api.Provisioner;
+
+import sailpoint.object.Application;
+import sailpoint.object.Custom;
+import sailpoint.object.Filter;
+import sailpoint.object.Identity;
+import sailpoint.object.Link;
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import sailpoint.object.ProvisioningPlan.AttributeRequest;
+import sailpoint.object.ProvisioningProject;
+import sailpoint.object.QueryOptions;
+import sailpoint.object.TaskDefinition;
+import sailpoint.object.WorkflowSummary;
+import sailpoint.object.*;
+  
+import sailpoint.tools.GeneralException;
+import sailpoint.tools.Message;
+import sailpoint.tools.Message.Type;
+import sailpoint.tools.Util;
+
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.List;
+
+
+
+		 
+		Logger logger = Logger.getLogger("com.ns.rule.NS_Rule_MailBoxProvisioning");
+         String identityName=null;
+		 String ADAppName=null;
+		 String ADMailDomain=null;
+		 Application adApp=null;
+		 Identity identity=null;
+		try {
+			 ZoneId uiZone = ZoneId.systemDefault();
+			  LocalDate start = LocalDate.now(uiZone).minusDays(5);
+			  Date startDate = Date.from(start.atStartOfDay(uiZone).toInstant());
+			  LocalDate today = LocalDate.now(uiZone);
+			  Date endDate = Date.from(today.atTime(23, 59, 59).atZone(uiZone).toInstant());
+
+			  Filter filter = Filter.and(Filter.ge("created", startDate), Filter.le("created", endDate),Filter.like("name", "Full Condidate Joiner"));
+
+			  QueryOptions queryOptions =new QueryOptions();
+			  queryOptions.addFilter(filter);
+			  List &lt;TaskResult&gt; taskResults = context.getObjects(TaskResult.class, queryOptions);
+
+			  for(TaskResult taskResult:taskResults){
+				Object wsObj = taskResult.get("workflowSummary");
+
+				String stepName = null;
+				boolean hasError = false;
+				boolean hasWarn = false;
+
+				if (wsObj != null) {
+				  WorkflowSummary ws = (WorkflowSummary) wsObj;
+				  stepName = ws.getStep();    
+				  logger.info("wforkflow stepName"+stepName);
+				}
+
+
+				List &lt;Message&gt; msgList = taskResult.getMessages();
+
+				
+
+				if (msgList != null &amp;&amp; !msgList.isEmpty()) {
+
+				  for (Message m : msgList) {
+
+					Type outerType = m.getType();    
+
+					if(outerType == Type.Error)
+					  hasError=true;
+					else if(outerType == Type.Warn)
+					  hasWarn=true;
+
+					// Check nested messages also
+					if (m.getParameters() != null) {
+					  for (Object p : m.getParameters()) {
+						if (p instanceof Message) {
+						  Message inner = (Message) p;
+						  Type innerType = inner.getType();
+
+						  if(outerType == Type.Error)
+							hasError=true;
+						  else if(outerType == Type.Warn)
+							hasWarn=true;
+						}
+					  }
+					}
+				  }
+				}
+				logger.info("hasError:::::::::"+hasError);
+				logger.info("hasWarn:::::::::"+hasWarn);
+			   
+			if (!hasError &amp;&amp; !hasWarn &amp;&amp; stepName!=null &amp;&amp; stepName.equalsIgnoreCase("Email Wait")) {
+                Object projObj = taskResult.get("project");
+				
+				if (projObj instanceof ProvisioningProject) {
+					ProvisioningProject proj = (ProvisioningProject) projObj;
+					identityName = proj.getIdentity();    
+					logger.info("identityName = " + identityName);
+				}
+				if(Util.isNotNullOrEmpty(identityName)){
+				identityName=identityName.trim();
+				Custom custom =context.getObjectByName(Custom.class,"NS_CustomObject_Active_Directory");
+				if(custom!=null){
+				 ADAppName=custom.get("AdAppName");
+				 ADMailDomain=custom.get("ADMailDomain");
+				 if(Util.isNotNullOrEmpty(ADAppName) &amp;&amp; Util.isNotNullOrEmpty(ADMailDomain)){
+					adApp=context.getObjectByName(Application.class,ADAppName);
+                 }				 
+				}
+				 Filter filter=Filter.and(Filter.eq("name",identityName),Filter.eq("inactive",false));
+				QueryOptions queryOption=new QueryOptions();
+				queryOption.addFilter(filter);
+				 List identityList=context.getObjects(Identity.class, queryOption);
+				 if(identityList!=null &amp;&amp; identityList.size()&gt;0) {
+					 identity=identityList.get(0);
+				 }                
+				if (identity != null &amp;&amp; adApp!=null) {
+                IdentityService is=new IdentityService(context);
+		        List ADLinks =is.getLinks(identity, adApp);
+				if(ADLinks!=null &amp;&amp; ADLinks.size()&gt;0){
+				 for(Link ADLink:ADLinks){
+					String email=ADLink.getAttribute("mail");
+				    if(Util.isNullOrEmpty(email)){
+					String samAccountName=ADLink.getAttribute("sAMAccountName");
+					email=samAccountName+ADMailDomain;
+					ProvisioningPlan plan=new ProvisioningPlan();
+					AccountRequest acr=new AccountRequest();
+					List abrlList=new ArrayList();
+					acr.setNativeIdentity(ADLink.getNativeIdentity());
+					acr.setApplication(ADAppName);
+					acr.setOperation(AccountRequest.Operation.Modify);
+					abrlList.add(new AttributeRequest("mail",ProvisioningPlan.Operation.Set,email));
+					acr.setAttributeRequests(abrlList);
+					plan.add(acr);
+					plan.setIdentity(identity);
+					logger.info("plan:::::"+plan.toXml());
+					Provisioner provisioner=new Provisioner(context);
+					ProvisioningProject provisioningProject=provisioner.compile(plan);
+					provisioner.execute(provisioningProject);
+					logger.info("MailBoxProvisioning done");
+					taskResult.setAttribute("responseCode", "200");
+					taskResult.setAttribute("message",email+" created in AD");
+					}
+				 }
+				}
+					 
+			     } else {
+                    taskResult.setAttribute("responseCode", "400");
+                    taskResult.setAttribute("message", "Account Or Identity Getting Error");
+                }
+
+            } else {
+                taskResult.setAttribute("responseCode", "400");
+                taskResult.setAttribute("message", "IdentityName must be pass");
+            }
+        }
+    }
+} catch (Exception ex) {
+    taskResult.setAttribute("responseCode", "400");
+    taskResult.setAttribute("message", "Provisioning Error");
+    logger.error("Error in NS_Rule_Change_Hr_App_Status: " + ex);
+}
+  </Source>
+</Rule>

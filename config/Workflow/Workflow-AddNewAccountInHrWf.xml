@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="Add New Account in HR WF">
+  <Variable initializer="true" name="transient"/>
+  <Variable input="true" name="ownerId"/>
+  <Variable initializer="identityModel" name="basePath"/>
+  <Variable name="identityModel"/>
+  <Variable name="wfType"/>
+  <Step icon="Start" name="Start" posX="10" posY="10">
+    <Transition to="Collect User Info"/>
+  </Step>
+  <Step icon="Message" name="Collect User Info" posX="120" posY="10">
+    <Approval name="Enter User Details" owner="ref:launcher" return="identityModel, exitWorkflow" send="launcher, identityModel">
+      <Arg name="workItemFormBasePath" value="ref:basePath"/>
+      <Arg name="ownerId" value="ref:ownerId"/>
+      <Form>
+        <Attributes>
+          <Map>
+            <entry key="pageTitle" value="Add New HR Account"/>
+            <entry key="title" value="Enter User Details"/>
+          </Map>
+        </Attributes>
+        <Button action="next" label="Next"/>
+        <Button action="cancel" label="Cancel"/>
+        <Section>
+          <Field displayName="First Name" name="firstname" required="true" type="string"/>
+          <Field displayName="Last Name" name="lastname" required="true" type="string"/>
+          <Field displayName="Email Address" name="email" required="true" type="string"/>
+        </Section>
+      </Form>
+      <Return name="wfType" to="wfType"/>
+    </Approval>
+    <Transition to="Confirm Details" when="approved"/>
+    <Transition to="Stop" when="!approved"/>
+  </Step>
+  <Step icon="Message" name="Confirm Details" posX="280" posY="10">
+    <Approval name="Confirm Details" owner="ref:launcher" return="identityModel, exitWorkflow" send="launcher, identityModel">
+      <Arg name="workItemFormBasePath" value="ref:basePath"/>
+      <Arg name="ownerId" value="ref:ownerId"/>
+      <Form>
+        <Attributes>
+          <Map>
+            <entry key="pageTitle" value="Confirm Details"/>
+            <entry key="title" value="Confirm Entered Details"/>
+          </Map>
+        </Attributes>
+        <Button action="back" label="Back"/>
+        <Button action="next" label="Confirm"/>
+        <Section columns="2" type="datatable">
+          <Field displayName="First Name" name="firstname"/>
+          <Field displayName="Last Name" name="lastname"/>
+          <Field displayName="Email Address" name="email"/>
+        </Section>
+      </Form>
+    </Approval>
+    <Transition to="Create HR Account" when="approved"/>
+    <Transition to="Collect User Info" when="!approved"/>
+  </Step>
+  <Step icon="Script" name="Create HR Account" posX="480" posY="10">
+    <Script>
+      <Source>
+import sailpoint.api.Provisioner;
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import sailpoint.object.ProvisioningPlan.AttributeRequest;
+import sailpoint.tools.Util;
+import sailpoint.object.ProvisioningProject;
+
+        List attrReqList = new ArrayList();
+    ProvisioningPlan plan = new ProvisioningPlan();
+    AccountRequest accReq = new AccountRequest();
+        accReq.setApplication("Hr-Workday");
+        accReq.setOperation(AccountRequest.Operation.Create);
+       // accReq.setNativeIdentity(identityModel.get("firstname") + " " + identityModel.get("lastname"));
+
+        attrReqList.add(new AttributeRequest("FIRST_NAME", ProvisioningPlan.Operation.Set,identityModel.get("firstname")));
+		attrReqList.add(new AttributeRequest("LAST_NAME", ProvisioningPlan.Operation.Set,identityModel.get("lastname")));
+		attrReqList.add(new AttributeRequest("EMAIL", ProvisioningPlan.Operation.Set,identityModel.get("email")));
+		attrReqList.add(new AttributeRequest("WORKER_NAME", ProvisioningPlan.Operation.Set,identityModel.get("firstname") + " " + identityModel.get("lastname")));
+		attrReqList.add(new AttributeRequest("EMPLOYEE_NUMBER", ProvisioningPlan.Operation.Set,"1000000"));
+		attrReqList.add(new AttributeRequest("WORKER_STATUS", ProvisioningPlan.Operation.Set,"Active"));
+		attrReqList.add(new AttributeRequest("EMPLOYEE_TYPE", ProvisioningPlan.Operation.Set,"Permanent"));
+         accReq.setAttributeRequests(attrReqList);
+
+        plan.add(accReq);
+
+        Provisioner p = new Provisioner(context);
+        ProvisioningProject proj = p.compile(plan);
+        System.out.println("proj:::::::" + proj.toXml());
+    return;
+        p.execute(proj);
+
+        return true;
+      </Source>
+    </Script>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="640" posY="10"/>
+</Workflow>

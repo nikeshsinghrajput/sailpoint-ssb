@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Financial Planning &amp; Forecasting" compilationStatus="Expansion" nativeIdentity="8512510" operation="Create" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a0512c7819a085c06892770"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="EntitlementAdd"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="17cfca997b114964904340398dcb0e6b">
+            <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512510" op="Create" targetIntegration="Financial Planning &amp; Forecasting">
+              <Attributes>
+                <Map>
+                  <entry key="attachmentConfigList"/>
+                  <entry key="attachments"/>
+                  <entry key="flow" value="AccessRequest"/>
+                  <entry key="id" value="c0a83c019a0512c7819a085c06892770"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="nativeIdUpdated">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                  <entry key="operation" value="EntitlementAdd"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

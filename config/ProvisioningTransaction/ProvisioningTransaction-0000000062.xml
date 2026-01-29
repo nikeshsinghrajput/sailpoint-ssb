@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="ananya.rao@cognizant.com" applicationName="Sales Analytics" identityDisplayName="Ananya Rao" identityName="22b923f1-1bbf-49a8-8791-91d5670c9a0d" integration="Sales Analytics" name="0000000062" nativeIdentity="8512513" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="The application script threw an exception: java.lang.ClassCastException: Cannot cast java.util.ArrayList to java.lang.String BSF info: NS_GlovalProvisioning_Sales_Analytics at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Sales Analytics" assignmentIds="2a0ecd0177fe459e83023bfc255a2f25" nativeIdentity="8512513" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a0c102b819a15a8a7644b69"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="roles" op="Add">
+              <Value>
+                <List>
+                  <String>Sales Manager</String>
+                  <String>Sales Data Analyst</String>
+                </List>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="firstName" op="Set" value="Ananya"/>
+            <AttributeRequest name="lastName" op="Set" value="Rao"/>
+            <AttributeRequest name="status" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Admin"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="01-13-2025"/>
+            <AttributeRequest name="salesQuota" op="Set" value="500000"/>
+            <AttributeRequest name="achievedSales" op="Set" value="0"/>
+            <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+            <AttributeRequest name="workState" op="Set" value="Pune"/>
+            <AttributeRequest name="email" op="Set" value="ananya.rao@cognizant.com"/>
+            <AttributeRequest name="region" op="Set" value="A"/>
+            <AttributeRequest name="territory" op="Set" value="A"/>
+            <AttributeRequest name="commissionRate" op="Set" value="5%"/>
+            <AttributeRequest name="managerId" op="Set" value="e72f7817-ea7e-4b7e-b9c3-b75876c54f0c"/>
+            <AttributeRequest name="annualHours" op="Set" value="720"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Manager"/>
+            <AttributeRequest name="country" op="Set" value="India"/>
+            <AttributeRequest name="isManager" op="Set" value="No"/>
+            <AttributeRequest name="businessUnit" op="Set" value="A"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="The application script threw an exception: java.lang.ClassCastException: Cannot cast java.util.ArrayList to java.lang.String BSF info: NS_GlovalProvisioning_Sales_Analytics at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

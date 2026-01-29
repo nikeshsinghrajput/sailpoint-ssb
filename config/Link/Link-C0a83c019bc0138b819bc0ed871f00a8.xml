@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Shani Rajawat" identity="739012" lastRefresh="1768468350751">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2553 Garden Rd"/>
+      <entry key="ADDRESS_WORK" value="2553 Garden Rd;Singapore, Central Region 65493;Singapore"/>
+      <entry key="BUILDING_CODE" value="SG_CEN_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3019"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="12-15-2035"/>
+      <entry key="COUNTRY_NAME" value="Singapore"/>
+      <entry key="DEPARTMENT" value="Financial Accounting &amp; Reporting"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-001"/>
+      <entry key="DIVISION" value="Singapore Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-SG-03"/>
+      <entry key="EMAIL" value="rajawat.shani@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739012"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739012"/>
+      <entry key="FIRST_NAME" value="Shani"/>
+      <entry key="HIREDATE" value="02-05-2020"/>
+      <entry key="JOBCODE" value="JT-001-01"/>
+      <entry key="JOBTITLE" value="Senior Financial Analyst"/>
+      <entry key="LAST_NAME" value="Rajawat"/>
+      <entry key="LOCATION" value="SG - Singapore"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="90232"/>
+      <entry key="REGION" value="Singapore"/>
+      <entry key="WORKER_NAME" value="Shani Rajawat"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

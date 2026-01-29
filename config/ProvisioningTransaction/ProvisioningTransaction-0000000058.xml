@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="8512514" applicationName="Financial Planning &amp; Forecasting" identityDisplayName="Ananya Gupta" identityName="91e57055-edff-48ef-9ca8-0b293f7cac98" integration="Financial Planning &amp; Forecasting" name="0000000058" nativeIdentity="8512514" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000088"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed"/>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512514" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c019a0512c7819a085c0677276e"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c019a0c102b819a1202de9146d0"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="Procurement Officer" name="roles" op="Add" value="Procurement Officer">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="first_name" op="Add" value="Ananya"/>
+            <AttributeRequest name="last_name" op="Add" value="Gupta"/>
+            <AttributeRequest name="email" op="Set" value="ananya.gupta@mindtree.com"/>
+            <AttributeRequest name="worker_type" op="Add" value="Contractor"/>
+            <AttributeRequest name="job_title" op="Add" value="Part_time"/>
+            <AttributeRequest name="roles" op="Add" value="User"/>
+            <ProvisioningResult status="failed"/>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

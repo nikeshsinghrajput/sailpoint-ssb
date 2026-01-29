@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult host="NikeshRajput" launched="1769092213185" launcher="spadmin" live="true" name="Export all xml objects" runLengthAverage="80324" schedule="0ffa3f68e28a416ebfe3c9bd67f1c1c7" type="Generic">
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Export all xml objects"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Progress>Exporting class Tag</Progress>
+</TaskResult>

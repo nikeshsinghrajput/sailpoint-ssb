@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="groups" displayName="Application Development" hash="c4065abf4de09837e24e31a0327550ed0d4ff662" lastRefresh="1761636850526" requestable="true" type="group" value="0a52d3dcd7011200f2d224837e6103f2">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="active" value="true"/>
+      <entry key="description" value="Team Develops ITSM Applications in London"/>
+      <entry key="exclude_manager" value="false"/>
+      <entry key="name" value="Application Development"/>
+      <entry key="sys_created_by" value="admin"/>
+      <entry key="sys_created_on" value="2025-10-11 09:42:02"/>
+      <entry key="sys_mod_count" value="1"/>
+      <entry key="sys_updated_by" value="admin"/>
+      <entry key="sys_updated_on" value="2025-10-11 09:42:02"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

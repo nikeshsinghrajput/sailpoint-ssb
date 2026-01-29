@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="employeeType" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="Employee">
+  <Attributes>
+    <Map>
+      <entry key="expansionInfo" value="Active Directory"/>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="90ceb561928845b6ab9d02aecb9e9882">
+            <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create" targetIntegration="Active Directory">
+              <AttributeRequest name="employeeType" op="Set" trackingId="90ceb561928845b6ab9d02aecb9e9882" value="Employee"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

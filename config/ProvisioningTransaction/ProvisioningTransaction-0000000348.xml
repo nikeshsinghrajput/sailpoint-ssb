@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="Jessica Brown" applicationName="Hr-Workday" identityDisplayName="Jessica Brown" identityName="00d0d55a-dc78-4d06-a0aa-533d9d237cd7" integration="Hr-Workday" name="0000000348" nativeIdentity="8512680" operation="Modify" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed"/>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Hr-Workday" nativeIdentity="8512680" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019afa1055819afdbff7e90228"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="EMAIL" op="Set" value="brown.jessica@nsiiq.com"/>
+            <AttributeRequest name="email" op="Add" value="brown.jessica@nsiiq.com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while performing 'Modify' operation on identity '8512680':  Error: {&quot;timestamp&quot;:&quot;2025-12-08T11:36:47.748+00:00&quot;,&quot;status&quot;:400,&quot;error&quot;:&quot;Bad Request&quot;,&quot;path&quot;:&quot;/workday/8512680&quot;}" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

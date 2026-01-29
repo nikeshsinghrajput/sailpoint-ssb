@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="CN=singh.chandanOU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" applicationName="Active Directory" identityDisplayName="Chandan Singh" identityName="Chandan Singh" integration="Active Directory" name="0000000077" nativeIdentity="CN=singh.chandanOU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Create" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=singh.chandanOU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a3b1251819a44d111911750"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="employeeNumber" op="Set" value="12345987"/>
+            <AttributeRequest name="givenName" op="Set" value="Chandan"/>
+            <AttributeRequest name="sn" op="Set" value="Singh"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="singh.chandan"/>
+            <AttributeRequest name="displayName" op="Set" value="Chandan Singh"/>
+            <AttributeRequest name="title" op="Set" value="HR"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="135062208000000000"/>
+            <AttributeRequest name="department" op="Set" value="Development"/>
+            <AttributeRequest name="division" op="Add" value="DIV12"/>
+            <AttributeRequest name="l" op="Set" value="India"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9878901234"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-20-27927890"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint HR"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_Time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Connection reset" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

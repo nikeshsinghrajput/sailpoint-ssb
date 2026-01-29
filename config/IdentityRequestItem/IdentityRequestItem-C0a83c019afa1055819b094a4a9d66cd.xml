@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Financial Planning &amp; Forecasting" nativeIdentity="8512512" operation="Create" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished">
+  <Attributes>
+    <Map>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="51ff006caf404b7e9798e541cd40cf35">
+            <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512512" op="Create" targetIntegration="Financial Planning &amp; Forecasting"/>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

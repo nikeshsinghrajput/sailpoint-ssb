@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Course Creator" hash="cbacd3c04481db31fc8480ec68de2d516dd06a51" lastRefresh="1768326681108" requestable="true" type="access" value="Course Creator">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Instructor Access"/>
+      <entry key="createdDate" value="10-02-2025"/>
+      <entry key="description" value="Permission to create and manage course content"/>
+      <entry key="modifiedDate" value="28-09-2025"/>
+      <entry key="owner" value="learning.admin@corp.com"/>
+      <entry key="roleId" value="CORP_COURSE_CREATOR_002"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

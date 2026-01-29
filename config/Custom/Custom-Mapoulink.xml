@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="MapOULink">
+  <Attributes>
+    <Map>
+      <entry key="Administrative Affairs" value="Financial and Administrative Affairs"/>
+      <entry key="Blackberry-UEM" value="CN=GLOBAL_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="EmployeeOU" value="OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="Joiner">
+        <value>
+          <List>
+            <null/>
+            <null/>
+          </List>
+        </value>
+      </entry>
+      <entry key="JoinerDayDiffMax" value="3"/>
+      <entry key="JoinerDayDiffMin" value="-5"/>
+      <entry key="NRRC STAFF" value="CN=NS_IAMQDC_VIEWER_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="NRRC-SAUDI" value="CN=Aay_CITRIX_EXTERNAL_ACCESS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="baseURL" value="http://localhost:1000/identityiq/"/>
+      <entry key="smsURL" value="http://localhost:8080/v1/Send"/>
+    </Map>
+  </Attributes>
+</Custom>

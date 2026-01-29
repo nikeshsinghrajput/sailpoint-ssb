@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="identityLifecycleEvent" interface="Task" serverHost="NikeshRajput" source="Refresh Single Identity" target="Identity:f7803391-7055-47b7-b696-aad5dd224453">
+  <Attributes>
+    <Map>
+      <entry key="objectSummary" value="sailpoint.object.Identity@3adf95ae[id=c0a83c019afa1055819b0904227464f8,name=f7803391-7055-47b7-b696-aad5dd224453]"/>
+    </Map>
+  </Attributes>
+  <String1>Client_Mover</String1>
+  <String3>Launched workflow 'Client_Mover: Aditya Sharma'</String3>
+  <String4>Rule 'NRRC_Rule_Identity_Trigger_Mover' matched</String4>
+</AuditEvent>

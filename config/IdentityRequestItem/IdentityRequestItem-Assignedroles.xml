@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="IIQ" approvalState="Finished" approverName="spadmin" name="assignedRoles" operation="Add" ownerName="spadmin" provisioningEngine="IIQ" provisioningState="Finished" value="External VDI Access">
+  <Attributes>
+    <Map>
+      <entry key="assignmentId" value="498dcb5c0de5481f9614ff98aa512265"/>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="displayableValue" value="External VDI Access"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019ae91354819ae996cb4c0038"/>
+      <entry key="identityEntitlementId" value="c0a83c019b731761819b994f7af8070b"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="RoleAdd"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="77479c3a1b944557a3d0a1fa4b319114">
+            <AccountRequest application="IIQ" op="Modify">
+              <Attributes>
+                <Map>
+                  <entry key="attachmentConfigList"/>
+                  <entry key="attachments"/>
+                  <entry key="flow" value="AccessRequest"/>
+                  <entry key="id" value="c0a83c019ae91354819ae996cb4c0038"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="operation" value="RoleAdd"/>
+                </Map>
+              </Attributes>
+              <AttributeRequest name="assignedRoles" op="Add" trackingId="77479c3a1b944557a3d0a1fa4b319114" value="External VDI Access"/>
+            </AccountRequest>
+            <AccountRequest application="Active Directory" op="Create">
+              <AttributeRequest name="memberOf" op="Add" trackingId="77479c3a1b944557a3d0a1fa4b319114" value="CN=VDI_ExternalAccess,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</IdentityRequestItem>

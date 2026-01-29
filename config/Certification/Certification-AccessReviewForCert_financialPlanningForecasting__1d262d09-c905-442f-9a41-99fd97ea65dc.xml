@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1768226120004" certificationDefinitionId="c0a83c019b731761819bb27d59752661" complete="true" completedEntities="1" completedItems="1" creator="spadmin" entitlementGranularity="Value" expiration="1770904520004" finished="1768226229066" itemPercentComplete="100" name="Access Review for cert:Financial Planning &amp; Forecasting::1d262d09-c905-442f-9a41-99fd97ea65dc" nextPhaseTransition="1773323720042" percentComplete="100" phase="Remediation" remediationsCompleted="1" remediationsKickedOff="1" shortName="Access Review for cert:Financial Planning &amp; Forecasting::1d262d09-c905-442f-9a41-99fd97ea65dc" signed="1768226222540" totalEntities="1" totalItems="1" type="Focused">
+  <Attributes>
+    <Map>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation" value="false"/>
+      <entry key="requireReassignmentCompletion" value="true"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Access Review for cert:Financial Planning &amp; Forecasting::1d262d09-c905-442f-9a41-99fd97ea65dc"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>f1aea43c-892b-4f9d-be64-42557cc5650f</String>
+  </Certifiers>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <SignOffHistory>
+    <SignOffHistoryItem date="1768226222540" signerDisplayName="The Administrator" signerId="c0a83c0199cf13658199cf93c73500fe" signerName="spadmin"/>
+  </SignOffHistory>
+  <CertificationStatistics completedEntities="1" completedItems="1" exceptionsRemediated="1" itemPercentComplete="100" percentComplete="100" remediationsCompleted="1" remediationsKickedOff="1" totalEntities="1" totalExceptions="1" totalItems="1"/>
+  <CertificationEntity completed="1768226221260" firstname="sohan" identity="1d262d09-c905-442f-9a41-99fd97ea65dc" lastname="singh" newUser="true" summaryStatus="Complete" targetDisplayName="sohan singh" targetName="1d262d09-c905-442f-9a41-99fd97ea65dc" type="Identity">
+    <CertificationItem completed="1768226221255" exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Audit Viewer" summaryStatus="Complete" type="Exception">
+      <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019b731761819bb27d60ef2674" decisionDate="1768226221199" remediationAction="SendProvisionRequest" remediationCompleted="true" remediationKickedOff="true" reviewed="true" status="Remediated">
+        <Description>Remove the 'Financial Planning &amp;amp; Forecasting' entitlement on  'sohan singh'</Description>
+        <RemediationPlan>
+          <ProvisioningPlan>
+            <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512514" op="Modify" targetIntegration="Financial Planning &amp; Forecasting">
+              <AttributeRequest name="roles" op="Remove" value="Audit Viewer"/>
+            </AccountRequest>
+            <Requesters>
+              <Reference class="sailpoint.object.Identity" name="spadmin"/>
+            </Requesters>
+          </ProvisioningPlan>
+        </RemediationPlan>
+      </CertificationAction>
+      <ApplicationNames>
+        <String>Financial Planning &amp; Forecasting</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512514" nativeIdentity="8512514">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Audit Viewer"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

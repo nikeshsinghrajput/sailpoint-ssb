@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.api.Correlator" eventLevel="ERROR" lineNumber="1129" quickKey="0000448000" server="NikeshRajput" thread="Thread-68" username="RequestHandler">
+  <EventMessage>Found more than one object of type sailpoint.object.Link using Filter [(application == sailpoint.object.Application@51416728[id=c0a83c0199d210e38199d26b71640024,name=Hr-Workday] &amp;&amp; nativeIdentity i== "8512501")]</EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: Found more than one object of type sailpoint.object.Link using Filter [(application == sailpoint.object.Application@51416728[id=c0a83c0199d210e38199d26b71640024,name=Hr-Workday] &amp;&amp; nativeIdentity i== "8512501")]
+	at sailpoint.api.Correlator.findOneObject(Correlator.java:1129)
+	at sailpoint.api.Correlator.findLink(Correlator.java:352)
+	at sailpoint.api.Correlator.findLinkByNativeIdentity(Correlator.java:295)
+	at sailpoint.api.Identitizer.getCurrentLink(Identitizer.java:5069)
+	at sailpoint.api.Aggregator.aggregateAccount(Aggregator.java:3735)
+	at sailpoint.api.Aggregator.aggregateAccounts(Aggregator.java:3404)
+	at sailpoint.api.Aggregator.primaryAccountAggregation(Aggregator.java:2988)
+	at sailpoint.api.Aggregator.aggregateApplication(Aggregator.java:2836)
+	at sailpoint.api.Aggregator.phaseAggregate(Aggregator.java:2703)
+	at sailpoint.api.Aggregator.execute(Aggregator.java:2290)
+	at sailpoint.request.AggregationRequestExecutor.execute(AggregationRequestExecutor.java:95)
+	at sailpoint.request.RequestHandler.run(RequestHandler.java:163)
+</Stacktrace>
+</SyslogEvent>

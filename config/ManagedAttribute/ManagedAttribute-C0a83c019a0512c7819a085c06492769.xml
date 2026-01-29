@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Accounts Receivable Officer" hash="5ee69001b1703e2bdb7e182778fe14bd169bd17e" lastRefresh="1768326685847" requestable="true" type="roles" value="Accounts Receivable Officer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-02-05"/>
+      <entry key="description" value="Manages customer invoicing, collections, and credit adjustments in AR module."/>
+      <entry key="modifiedDate" value="2025-09-22"/>
+      <entry key="owner" value="receivables.lead@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_AR_OFFICER_002"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

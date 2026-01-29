@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Alvin Harris" identity="739047" lastRefresh="1768468358162">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7354 Queen Blvd"/>
+      <entry key="ADDRESS_WORK" value="7354 Queen Blvd;La Serena, Santiago Metropolitan 55248;Chile"/>
+      <entry key="BUILDING_CODE" value="CL_SAN_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3047"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="09-14-2025"/>
+      <entry key="COUNTRY_NAME" value="Chile"/>
+      <entry key="DEPARTMENT" value="Identity &amp; Access Management (IAM)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-011"/>
+      <entry key="DIVISION" value="Chile Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-CL-03"/>
+      <entry key="EMAIL" value="alvin.harris@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739047"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739047"/>
+      <entry key="FIRST_NAME" value="Alvin"/>
+      <entry key="HIREDATE" value="06-28-2016"/>
+      <entry key="JOBCODE" value="JT-011-02"/>
+      <entry key="JOBTITLE" value="SailPoint IIQ Developer"/>
+      <entry key="LAST_NAME" value="Harris"/>
+      <entry key="LOCATION" value="CL - La Serena"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="63305"/>
+      <entry key="REGION" value="La Serena"/>
+      <entry key="WORKER_NAME" value="Alvin Harris"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1766397022625" name="aea74bcb-7990-4583-9366-4d5ca5d8c672">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="displayName" value="Krishna Nair"/>
+      <entry key="division" value="Division-2"/>
+      <entry key="employeeId" value="8512510"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part_time"/>
+      <entry key="firstname" value="Krishna"/>
+      <entry key="hireDate" value="01-10-2025"/>
+      <entry key="lastname" value="Nair"/>
+      <entry key="location" value="Delhi"/>
+      <entry key="postalCode" value="572748"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="attributeAssignments">
+        <value>
+          <List>
+            <AttributeAssignment applicationCaseInsensitive="true" applicationId="c0a83c0199d9117b8199d942b544000a" applicationName="Financial Planning &amp; Forecasting" assigner="spadmin" name="roles" nativeIdentity="8512510" source="LCM" type="Entitlement" value="Reconciliation Analyst"/>
+            <AttributeAssignment applicationCaseInsensitive="true" applicationId="c0a83c0199d9117b8199d942b544000a" applicationName="Financial Planning &amp; Forecasting" assigner="spadmin" name="roles" nativeIdentity="8512510" source="LCM" type="Entitlement" value="Treasury Specialist"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1765385846664" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Krishna Nair" identity="8512510" lastRefresh="1765382826627">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="591 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Hybrid"/>
+          <entry key="BUILDING_CODE" value="B116"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU78"/>
+          <entry key="CLASS" value="Part_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs and Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="Division-2"/>
+          <entry key="DIVISION_ID" value="DIV48"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512510"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F94010"/>
+          <entry key="FIRST_NAME" value="Krishna"/>
+          <entry key="HIREDATE" value="01-10-2025"/>
+          <entry key="JOBCODE" value="JC176"/>
+          <entry key="JOBTITLE" value="Governance Program Manager"/>
+          <entry key="LAST_NAME" value="Nair"/>
+          <entry key="LOCATION" value="Delhi"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="572748"/>
+          <entry key="REGION" value="South"/>
+          <entry key="WORKER_NAME" value="Krishna Nair"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="8512510" identity="8512510" manuallyCorrelated="true">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="annualHours" value="1040"/>
+          <entry key="countryCode" value="572748"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="empStatus" value="Active"/>
+          <entry key="employee" value="Krishna Nair"/>
+          <entry key="employeeId" value="8512510"/>
+          <entry key="firstName" value="Krishna"/>
+          <entry key="hireDate" value="01-10-2025"/>
+          <entry key="isManager" value="No"/>
+          <entry key="jobTitle" value="Governance Program Manager"/>
+          <entry key="lastName" value="Nair"/>
+          <entry key="manager" value="Nikesh Singh"/>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Audit Viewer</String>
+                <String>Reconciliation Analyst</String>
+                <String>Treasury Specialist</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="salaryClass" value="C"/>
+          <entry key="superviserId" value="8512500"/>
+          <entry key="terminationDate" value="18-07-2027"/>
+          <entry key="userLevel" value="A"/>
+          <entry key="workCountry" value="India"/>
+          <entry key="workState" value="South"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

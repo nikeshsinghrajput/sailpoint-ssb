@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469454620" name="af21af12-0391-4e1e-999f-5b672d184375">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="United Kingdom"/>
+      <entry key="department" value="Human Resources &amp; Talent Acquisition"/>
+      <entry key="displayName" value="Lauren Wright"/>
+      <entry key="division" value="United Kingdom Corporate and Investment Services"/>
+      <entry key="employeeId" value="739019"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="Lauren"/>
+      <entry key="hireDate" value="08-27-2016"/>
+      <entry key="lastname" value="Wright"/>
+      <entry key="location" value="GB - Bristol"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="74972"/>
+      <entry key="terminationDate" value="11-26-2026"/>
+      <entry key="title" value="HR Operations Executive"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469454577" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Lauren Wright" identity="739019" lastRefresh="1768468351193">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="8275 Garden St"/>
+          <entry key="ADDRESS_WORK" value="8275 Garden St;Bristol, England UK6 1NG;United Kingdom"/>
+          <entry key="BUILDING_CODE" value="GB_ENG_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3074"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="11-26-2026"/>
+          <entry key="COUNTRY_NAME" value="United Kingdom"/>
+          <entry key="DEPARTMENT" value="Human Resources &amp; Talent Acquisition"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-029"/>
+          <entry key="DIVISION" value="United Kingdom Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-GB-02"/>
+          <entry key="EMAIL" value="lauren.wright@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739019"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739019"/>
+          <entry key="FIRST_NAME" value="Lauren"/>
+          <entry key="HIREDATE" value="08-27-2016"/>
+          <entry key="JOBCODE" value="JT-029-03"/>
+          <entry key="JOBTITLE" value="HR Operations Executive"/>
+          <entry key="LAST_NAME" value="Wright"/>
+          <entry key="LOCATION" value="GB - Bristol"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="74972"/>
+          <entry key="REGION" value="Bristol"/>
+          <entry key="WORKER_NAME" value="Lauren Wright"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

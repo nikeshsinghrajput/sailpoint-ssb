@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" compilationStatus="Expansion" name="IIQDisabled" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="false">
+  <Attributes>
+    <Map>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="715afd3506044f69b1332b7dec6b7415">
+            <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+              <AttributeRequest name="IIQDisabled" op="Set" trackingId="715afd3506044f69b1332b7dec6b7415" value="false"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

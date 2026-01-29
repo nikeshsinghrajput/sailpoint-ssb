@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469445222" name="91b4c162-0ded-496f-90e1-ee7b7fba6cec">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Mexico"/>
+      <entry key="department" value="Quality Engineering &amp; Test Automation"/>
+      <entry key="displayName" value="Thomas Clark"/>
+      <entry key="division" value="Mexico Technology and Operations"/>
+      <entry key="employeeId" value="739011"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Remote"/>
+      <entry key="firstname" value="Thomas"/>
+      <entry key="hireDate" value="01-10-2023"/>
+      <entry key="lastname" value="Clark"/>
+      <entry key="location" value="MX - Leon"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="90045-9209"/>
+      <entry key="terminationDate" value="12-15-2023"/>
+      <entry key="title" value="Quality Assurance Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469445179" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Thomas Clark" identity="739011" lastRefresh="1768468348921">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="3659 Queen Ave"/>
+          <entry key="ADDRESS_WORK" value="3659 Queen Ave;Leon, Jalisco 47826;Mexico"/>
+          <entry key="BUILDING_CODE" value="MX_JAL_BLDG_03"/>
+          <entry key="BUSINESS_UNIT_ID" value="3035"/>
+          <entry key="CLASS" value="Remote"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="12-15-2023"/>
+          <entry key="COUNTRY_NAME" value="Mexico"/>
+          <entry key="DEPARTMENT" value="Quality Engineering &amp; Test Automation"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-019"/>
+          <entry key="DIVISION" value="Mexico Technology and Operations"/>
+          <entry key="DIVISION_ID" value="DIV-MX-03"/>
+          <entry key="EMAIL" value="clark.thomas@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739011"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739011"/>
+          <entry key="FIRST_NAME" value="Thomas"/>
+          <entry key="HIREDATE" value="01-10-2023"/>
+          <entry key="JOBCODE" value="JT-019-03"/>
+          <entry key="JOBTITLE" value="Quality Assurance Manager"/>
+          <entry key="LAST_NAME" value="Clark"/>
+          <entry key="LOCATION" value="MX - Leon"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="90045-9209"/>
+          <entry key="REGION" value="Leon"/>
+          <entry key="WORKER_NAME" value="Thomas Clark"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Temporary"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

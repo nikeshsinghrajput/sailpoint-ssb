@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="bsh.Reflect" eventLevel="ERROR" lineNumber="166" quickKey="0001243727" server="NikeshRajput" thread="http-nio-1000-exec-2" username="spadmin">
+  <EventMessage>sql: SELECT employee, firstName, lastName, empStatus, department, userLevel, hireDate, salaryClass, terminationDate, workState, email, countryCode, workCountry, manager, superviserId, employeeId, bussinessUnit, annualHours, jobTitle, isManager FROM financial_planning_and_forecasting.employees WHERE employeeId = '735000' ;</EventMessage>
+</SyslogEvent>

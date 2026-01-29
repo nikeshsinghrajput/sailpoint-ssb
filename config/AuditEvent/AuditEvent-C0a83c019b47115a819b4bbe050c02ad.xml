@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="41a860cd-e169-4c36-ae48-0c95660ed05e" action="AccessRequestStart" application="Financial Planning &amp; Forecasting" attributeName="roles" attributeValue="Budget Controller" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="41a860cd-e169-4c36-ae48-0c95660ed05e" target="41a860cd-e169-4c36-ae48-0c95660ed05e">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a0512c7819a085c0665276c"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="EntitlementAdd"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

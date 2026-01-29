@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction applicationName="Active Directory" identityDisplayName="Erik Rowe" identityName="116da659-3293-4de2-8eac-8308031ea45a" integration="Active Directory" name="0000000673" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" assignmentIds="c8b2d5653fc342d6bd589114876674ea" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019bc0138b819bc0ff42120488"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="memberOf" op="Add">
+              <Value>
+                <List>
+                  <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                </List>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="employeeNumber" op="Set" value="739068"/>
+            <AttributeRequest name="givenName" op="Set" value="Erik"/>
+            <AttributeRequest name="sn" op="Set" value="Rowe"/>
+            <AttributeRequest name="displayName" op="Set" value="Erik Rowe"/>
+            <AttributeRequest name="title" op="Set" value="Policy &amp; Standards Analyst"/>
+            <AttributeRequest name="company" op="Add" value="Nsiiq corp"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="133663392000000000"/>
+            <AttributeRequest name="department" op="Set" value="Regulatory Affairs &amp; Governance"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="DEPT-006"/>
+            <AttributeRequest name="division" op="Add" value="United States Risk and Compliance"/>
+            <AttributeRequest name="streetAddress" op="Set" value="8066 Cedar Ave"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="US_CAL_BLDG_04"/>
+            <AttributeRequest name="l" op="Set" value="US - New York"/>
+            <AttributeRequest name="st" op="Set" value="New York"/>
+            <AttributeRequest name="co" op="Add" value="United States"/>
+            <AttributeRequest name="postalCode" op="Set" value="42315"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9201234567"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-135-27892345"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Policy &amp; Standards Analyst"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Part-Time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Native Identity should not be null or empty" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

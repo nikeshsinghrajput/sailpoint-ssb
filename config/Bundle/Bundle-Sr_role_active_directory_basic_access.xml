@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Bundle PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Bundle displayName="Active Directory Basic Access" name="SR_Role_Active_Directory_Basic_Access" type="business">
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="false"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Requirements>
+    <Reference class="sailpoint.object.Bundle" name="Active Directory Basic IT Role"/>
+  </Requirements>
+  <Selector>
+    <IdentitySelector>
+      <MatchExpression and="true">
+        <MatchTerm and="true" container="true">
+          <MatchTerm name="userAccountControl" negative="true" type="Entitlement" value="514">
+            <ApplicationRef>
+              <Reference class="sailpoint.object.Application" name="Active Directory"/>
+            </ApplicationRef>
+          </MatchTerm>
+          <MatchTerm name="employeeType" type="IdentityAttribute" value="Employee"/>
+          <MatchTerm name="type" type="IdentityAttribute" value="Internal"/>
+          <MatchTerm name="sAMAccountName" negative="true" type="IdentityAttribute" value="null"/>
+        </MatchTerm>
+      </MatchExpression>
+    </IdentitySelector>
+  </Selector>
+</Bundle>

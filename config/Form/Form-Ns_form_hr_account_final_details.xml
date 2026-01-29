@@ -1,0 +1,507 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="NS_Form_Hr_Account_Final_Details">
+  <Attributes>
+    <Map>
+      <entry key="pageTitle" value="Create Hr Account Final Details"/>
+      <entry key="title" value="Create Hr Account Final Details"/>
+    </Map>
+  </Attributes>
+  <Button action="next" label="Next"/>
+  <Button action="cancel" label="Cancel"/>
+  <Section columns="2">
+    <Field displayName="Department" displayType="combobox" name="department" postBack="true" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Department_jobtitle_Mapping");
+			Attributes attributes = custom.getAttributes();
+			List departments = attributes.getKeys();
+			return departments;
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+    </Field>
+    <Field displayName="Job Title" displayType="combobox" name="jobTitle" postBack="true" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Department_jobtitle_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String department = form.getField("department").getValue();
+			if(department != null){
+				Map title = attributes.get(department);
+				List valuesList = title.values().stream().collect(Collectors.toList());
+				return valuesList;
+			}
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String department = form.getField("department").getValue();
+                if (department != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Job Code" dynamic="true" name="jobCode" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String jobTitle = form.getField("jobTitle").getValue();
+                if (jobTitle != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Department_jobtitle_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String key = "";
+			String jobTitle = form.getField("jobTitle").getValue();
+			String department = form.getField("department").getValue();
+			if(jobTitle != null &amp;&amp; department != null){
+				Map title = attributes.get(department);
+				for (Map.Entry entry : title.entrySet()) {
+					if (entry.getValue().equals(jobTitle)) {
+						key = entry.getKey();
+						break;
+					}
+				}
+			}
+			return key;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Continent" displayType="combobox" name="continent" postBack="true" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Continent_Country_Mapping");
+			Attributes attributes = custom.getAttributes();
+			List continents = attributes.getKeys();
+			return continents;
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+    </Field>
+    <Field displayName="Select Country" displayType="combobox" name="country" postBack="true" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Continent_Country_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String continent = form.getField("continent").getValue();
+			if(continent != null){
+				List valuesList = attributes.get(continent);
+				return valuesList;
+			}
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String continent = form.getField("continent").getValue();
+                if (continent != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Select Division" displayType="combobox" name="division" postBack="true" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Country_Division_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String country = form.getField("country").getValue();
+			if(country != null){
+				List valuesList = attributes.get(country);
+				return valuesList;
+			}
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String country = form.getField("country").getValue();
+                if (country != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Division Id" dynamic="true" name="divisionId" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String division = form.getField("division").getValue();
+                if (division != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Division_Values_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String divisionId = "";
+			String division = form.getField("division").getValue();
+			if(division != null){
+				String value = attributes.get(division);
+				String[] parts = value.split(",");
+				divisionId = parts[0];
+			}
+			return divisionId;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Building Code" dynamic="true" name="buildingCode" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String division = form.getField("division").getValue();
+                if (division != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Division_Values_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String buildingCode = "";
+			String division = form.getField("division").getValue();
+			if(division != null){
+				String value = attributes.get(division);
+				String[] parts = value.split(",");
+				buildingCode = parts[1];
+			}
+			return buildingCode;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Bussiness Unit Id" dynamic="true" name="businessUnitId" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String division = form.getField("division").getValue();
+                if (division != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Division_Values_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String businessUnitId = "";
+			String division = form.getField("division").getValue();
+			if(division != null){
+				String value = attributes.get(division);
+				String[] parts = value.split(",");
+				businessUnitId = parts[2];
+			}
+			return businessUnitId;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Select Address" displayType="combobox" name="address_work" postBack="true" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Division_AddressWork_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String division = form.getField("division").getValue();
+			if(division != null){
+				List valuesList = attributes.get(division);
+				return valuesList;
+			}
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String division = form.getField("division").getValue();
+                if (division != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Address Lane 1" dynamic="true" name="address_lane_1" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String address_work = form.getField("address_work").getValue();
+                if (address_work != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			
+			String address_lane_1 = "";
+			String address = form.getField("address_work").getValue();
+			if(address != null){
+				String[] parts = address.split(";");
+				address_lane_1 = parts[0].trim();
+			}
+			return address_lane_1;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Region" dynamic="true" name="region" postBack="true" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String address_work = form.getField("address_work").getValue();
+                if (address_work != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Division_Values_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String city = "";
+			String address = form.getField("address_work").getValue();
+			if(address != null){
+				String[] parts = address.split(";");
+
+				String address_lane_1 = parts[0].trim();
+				String cityStateZip = parts[1].trim();
+
+				String[] cityAndRest = cityStateZip.split(",");
+
+				city = cityAndRest[0].trim();
+			}
+			return city;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Postal Code" dynamic="true" name="postalCode" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String address_work = form.getField("address_work").getValue();
+                if (address_work != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			String postalCode = "";
+			String address = form.getField("address_work").getValue();
+			if(address != null){
+				String[] parts = address.split(";");
+
+				String address_lane_1 = parts[0].trim();
+				String cityStateZip = parts[1].trim();
+
+				String[] cityAndRest = cityStateZip.split(",");
+
+				String city = cityAndRest[0].trim();
+
+				String[] stateAndZip = cityAndRest[1].trim().split(" ");
+
+				String state = stateAndZip[0].trim();
+				postalCode = stateAndZip[1].trim();
+			}
+			return postalCode;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Location" dynamic="true" name="location" readOnly="true" required="true" type="string">
+      <Attributes>
+        <Map>
+          <entry key="hidden">
+            <value>
+              <Script>
+                <Source>				
+				String address_work = form.getField("address_work").getValue();
+                if (address_work != null){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+              </Script>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Country_Code_Mapping");
+			Attributes attributes = custom.getAttributes();
+			String country = form.getField("country").getValue();
+			String region = form.getField("region").getValue();
+			String result = "";
+			if(region != null &amp;&amp; country != null){
+				result = attributes.get(country) +" - "+region;
+			}
+			return result;
+		  </Source>
+      </Script>
+    </Field>
+  </Section>
+</Form>

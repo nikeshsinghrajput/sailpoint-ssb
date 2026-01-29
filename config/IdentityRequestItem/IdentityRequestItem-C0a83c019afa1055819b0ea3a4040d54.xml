@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Disable" provisioningState="Finished">
+  <Attributes>
+    <Map>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="3da22c3b9ffd4d2f925cceb10a8f9cd9">
+            <AccountRequest application="Active Directory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable"/>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

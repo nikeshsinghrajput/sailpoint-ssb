@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_CorporateLearing_IdentitySelector_WriteRule" type="IdentitySelector">
+  <Description>This rule is used to select an Identity that is related to the given Identity</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </ReferencedRules>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="identity" type="Identity">
+        <Description>
+          The identity.
+        </Description>
+      </Argument>
+      <Argument name="roleName" type="String">
+        <Description>
+          The name of the sailpoint.object.Bundle (role) that is being selected for the Identity. 
+          If roles are not applicable to this Identity selection, this value will be void.
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="success">
+        <Description>
+          True if the selection was successful; false otherwise.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>import org.apache.log4j.Logger;
+  import sailpoint.api.SailPointContext;
+  import sailpoint.object.Identity;
+  import sailpoint.object.Link;
+  import org.SailPoint_IIQ.Utils.Utils;
+  import sailpoint.object.Application;
+  import sailpoint.object.Link;
+  import java.io.BufferedWriter;
+  import java.io.IOException;
+  import java.nio.file.Files;
+  import java.nio.file.Path;
+  import java.nio.file.Paths;
+  import java.nio.file.StandardOpenOption;
+  import java.util.ArrayList;
+  import java.util.List;
+
+  Logger logs = Logger.getLogger("com.ns.rule.NS_Rule_CorporateLearing_IdentitySelector_WriteRule");
+  logs.debug("Entering Rule NS_Rule_CorporateLearing_IdentitySelector_WriteRule");
+
+  String path = "A:\\software\\java\\corporateLearning\\corporateLearningUsers.csv";
+  boolean flag = false;
+   boolean alreadyExists = false;
+   List existingLinks =null;
+   Application app = context.getObjectByName(Application.class, "Corporate Learning Portal");
+        if (app == null) {
+            logs.error("Corporate Learning Portal application not found in IIQ.");
+            return flag;
+        }
+  if (identity != null) {
+    boolean uAcFlag = false;
+    String type = identity.getType();
+    Link adLink = getADAccountLink(identity.getName());
+    if (adLink != null &amp;&amp; adLink.getAttribute("userAccountControl") != null &amp;&amp; !(adLink.getAttribute("userAccountControl").equalsIgnoreCase("514"))) {
+      uAcFlag = true;
+    }
+    if (!identity.isInactive() &amp;&amp; uAcFlag &amp;&amp; type.equalsIgnoreCase("Internal")) {
+      flag = true;
+    }
+  }
+  logs.debug("flag::::::"+flag);
+  if(flag) {
+      existingLinks = identity.getLinks();
+        if (existingLinks != null) {
+            for (Link link : existingLinks) {
+                if (link.getApplication().getName().equalsIgnoreCase("Corporate Learning Portal")) {
+                    alreadyExists = true;
+                    logs.debug("Link already exists for Corporate Learning Portal.");
+                    break;
+                }
+            }
+        }
+		if(!alreadyExists){
+    String employeeId = identity.getAttribute("employeeId");
+    if (employeeId == null) employeeId = "";
+    String firstName = identity.getAttribute("firstname");
+    if (firstName == null) firstName = "";
+    String lastName = identity.getAttribute("lastname");
+    if (lastName == null) lastName = "";
+    String status = "ACTIVE";
+    String department = identity.getAttribute("department");
+    if (department == null) department = "";
+    String jobTitle = identity.getAttribute("title");
+    if (jobTitle == null) jobTitle = "";
+    String hireDate = identity.getAttribute("hireDate");
+    if (hireDate == null) hireDate = "";
+    String terminationDate = identity.getAttribute("terminationDate");
+    if (terminationDate == null) terminationDate = "";
+    Link hrLink = Utils.getHrLink(context, identity.getName());
+    String workState = "";
+    if (hrLink != null &amp;&amp; hrLink.getAttribute("REGION") != null) {
+      workState = hrLink.getAttribute("REGION");
+    }
+
+    String email = identity.getAttribute("email");
+    if (email == null) email = "";
+    String workCountry = identity.getAttribute("workCountry");
+    if (workCountry == null) workCountry = "";
+    String managerId = "";
+    String managerName = "";
+    if (identity.getManager() != null) {
+      managerId = identity.getManager().getAttribute("employeeId");
+      if (managerId == null) managerId = "";
+      managerName = identity.getManager().getDisplayName();
+      if (managerName == null) managerName = "";
+    }
+
+    String learningGroup = getFieldValue("learningGroup");
+    String roleLevel = getFieldValue("roleLevel");
+    String isInstructor = "No";
+    String country = identity.getAttribute("country");
+    if (country == null) country = "";
+    String access = "Learner";
+
+    String[] newRow = {
+      employeeId, firstName, lastName, status, department, jobTitle, hireDate, terminationDate,
+      workState, email, workCountry, learningGroup, managerId, managerName,
+      roleLevel, isInstructor, country, access
+      };
+	
+	try {
+		Path filePath = Paths.get(path);
+
+		if (!Files.exists(filePath)) {
+			logs.error("Application file not found. Skipping write operation.");
+			return;
+		}
+		
+		BufferedWriter writer = null;
+		try {
+			writer = Files.newBufferedWriter(filePath, StandardOpenOption.APPEND);
+			writer.write(String.join(",", newRow));
+			writer.newLine();
+			logs.debug("Row appended successfully for employeeId: " + employeeId);
+		} finally {
+			if (writer != null) {
+				writer.close();
+			}
+		}
+          Link newLink = new Link();
+            newLink.setApplication(app);
+            newLink.setDisplayName(email);
+            newLink.setIdentity(identity);
+			newLink.setNativeIdentity(employeeId);
+            newLink.setAttribute("employeeId", employeeId);
+            newLink.setAttribute("firstName", firstName);
+            newLink.setAttribute("lastName", lastName);
+            newLink.setAttribute("status", status);
+            newLink.setAttribute("department", department);
+            newLink.setAttribute("jobTitle", jobTitle);
+            newLink.setAttribute("hireDate", hireDate);
+            newLink.setAttribute("terminationDate", terminationDate);
+            newLink.setAttribute("workState", workState);
+            newLink.setAttribute("email", email);
+            newLink.setAttribute("workCountry", workCountry);
+            newLink.setAttribute("learningGroup", learningGroup);
+            newLink.setAttribute("managerId", managerId);
+            newLink.setAttribute("managerDisplayName", managerName);
+            newLink.setAttribute("roleLevel", roleLevel);
+            newLink.setAttribute("isInstructor", isInstructor);
+            newLink.setAttribute("country", country);
+            newLink.setAttribute("Access", java.util.Collections.singletonList(access));
+  
+            existingLinks.add(newLink);
+            // Add Link to Identity
+            identity.assignLinks(existingLinks);
+            context.saveObject(identity);
+            context.commitTransaction();
+
+            logs.debug("Corporate Learning Portal Link added successfully for " + identity.getName());
+		logs.debug("Exit from Rule SR_Rule_CorporateLearing_IdentitySelector_WriteRule");
+
+	} catch (IOException e) {
+	   flag=false;
+		logs.error("Error while writing to CSV file: " + e.getMessage(), e);
+	} catch (Exception ex) {
+	   flag=false;
+		logs.error("Unexpected error while processing CSV file: " + ex.getMessage(), ex);
+	}
+	}		
+	return flag;
+  }
+  return flag;</Source>
+</Rule>

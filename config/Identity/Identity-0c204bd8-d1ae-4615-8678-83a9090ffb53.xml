@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1766397022445" name="0c204bd8-d1ae-4615-8678-83a9090ffb53">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Financial Risk Management"/>
+      <entry key="displayName" value="Meera Chopra"/>
+      <entry key="division" value="Division-1"/>
+      <entry key="employeeId" value="8512502"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part_time"/>
+      <entry key="firstname" value="Meera"/>
+      <entry key="hireDate" value="01-02-2025"/>
+      <entry key="lastname" value="Chopra"/>
+      <entry key="location" value="Mumbai"/>
+      <entry key="postalCode" value="527185"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Credit Risk Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1765385837880" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Meera Chopra" identity="8512502" lastRefresh="1765382824506">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="427 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Hybrid"/>
+          <entry key="BUILDING_CODE" value="B423"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU96"/>
+          <entry key="CLASS" value="Part_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Financial Risk Management"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-003"/>
+          <entry key="DIVISION" value="Division-1"/>
+          <entry key="DIVISION_ID" value="DIV81"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512502"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F25255"/>
+          <entry key="FIRST_NAME" value="Meera"/>
+          <entry key="HIREDATE" value="01-02-2025"/>
+          <entry key="JOBCODE" value="JC623"/>
+          <entry key="JOBTITLE" value="Credit Risk Analyst"/>
+          <entry key="LAST_NAME" value="Chopra"/>
+          <entry key="LOCATION" value="Mumbai"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="527185"/>
+          <entry key="REGION" value="East"/>
+          <entry key="WORKER_NAME" value="Meera Chopra"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

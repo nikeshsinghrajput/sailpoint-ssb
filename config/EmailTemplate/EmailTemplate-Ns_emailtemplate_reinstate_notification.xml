@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="NS_EmailTemplate_Reinstate_Notification">
+  <Body>
+Hello $!managerDisplayName,
+
+The following user has been reinstated in the organization:
+
+User Name      : $!identityDisplayName
+Email          : $!employeeEmail
+Manager        : $!managerDisplayName
+Reinstate Date : $!reinstateDate
+
+Kindly review and take necessary action if required.
+
+Regards,
+Identity Management Team
+  </Body>
+  <Description>
+      Notification to Manager after user reinstatement.
+  </Description>
+  <Signature>
+    <Inputs>
+      <Argument name="identityDisplayName" type="string"/>
+      <Argument name="reinstateDate" type="string"/>
+      <Argument name="managerDisplayName" type="string"/>
+      <Argument name="employeeEmail" type="string"/>
+    </Inputs>
+  </Signature>
+  <Subject>
+    User Reinstatement Notification: $!identityDisplayName
+  </Subject>
+</EmailTemplate>

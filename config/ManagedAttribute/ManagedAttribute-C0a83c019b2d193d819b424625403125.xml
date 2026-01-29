@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="ITContractors-Vigilant-Infra" hash="2b72b94aed3d22b2703d78c3f998cdd9f5e82548" lastRefresh="1766343451968" requestable="true" type="group" uuid="{33005af2-884b-4e17-91ef-e6d8e96c000b}" value="CN=ITContractors-Vigilant-Infra,OU=Security,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="ITContractors-Vigilant-Infra"/>
+      <entry key="description" value="ITContractors-Vigilant-Infra created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\ITContractors-Vigilant-Infra"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1409"/>
+      <entry key="objectguid" value="{33005af2-884b-4e17-91ef-e6d8e96c000b}"/>
+      <entry key="sAMAccountName" value="ITContractors-Vigilant-Infra"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

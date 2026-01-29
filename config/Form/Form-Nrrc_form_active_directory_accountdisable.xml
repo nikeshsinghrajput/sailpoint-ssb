@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="NRRC_Form_Active_Directory_AccountDisable" type="Application">
+  <Attributes>
+    <Map>
+      <entry key="pageTitle" value="NRRC_Form_Active_Directory_AccountDisable"/>
+    </Map>
+  </Attributes>
+  <Section label="Disable Account Details" name="disableAccountSection">
+    <Field displayName="Account Expiry" name="accountExpires" required="true" type="string">
+      <Script>
+        <Source>
+		    import sailpoint.object.Identity;
+		    
+			import java.text.SimpleDateFormat;
+		  import java.util.Date;
+		  import java.util.TimeZone;
+
+		  String dateStr = identity.getAttribute("terminationDate");
+		  if (dateStr == null || dateStr.trim().length() == 0) return null;
+
+		  SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a z");
+		  sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		  Date parsedDate = sdf.parse(dateStr);
+
+		  long ldapEpochDiff = 11644473600000L;
+		  long fileTime = (parsedDate.getTime() + ldapEpochDiff) * 10000;
+
+		  return String.valueOf(fileTime);
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Description" name="description" type="string">
+      <Script>
+        <Source>
+          return "Terminated";
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="User Principal Name" name="userPrincipalName" type="string">
+      <Script>
+        <Source>
+          return "";
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="User Account Control" name="userAccountControl" type="string">
+      <Script>
+        <Source>
+          return "514";
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Groups" name="memberOf" type="string">
+      <Script>
+        <Source>
+          return "";
+        </Source>
+      </Script>
+    </Field>
+  </Section>
+</Form>

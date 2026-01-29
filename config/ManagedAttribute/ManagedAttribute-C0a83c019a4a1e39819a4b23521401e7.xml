@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Certification Manager" hash="9d4fa91e129581e5e55749cd29b0594228488de7" lastRefresh="1768326681149" requestable="true" type="access" value="Certification Manager">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Operational"/>
+      <entry key="createdDate" value="12-07-2025"/>
+      <entry key="description" value="Manages course certifications and renewals"/>
+      <entry key="modifiedDate" value="30-09-2025"/>
+      <entry key="owner" value="certification.team@corp.com"/>
+      <entry key="roleId" value="CORP_CERTIFICATION_008"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

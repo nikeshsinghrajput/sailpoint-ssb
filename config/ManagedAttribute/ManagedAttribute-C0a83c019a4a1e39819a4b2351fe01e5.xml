@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Compliance Officer" hash="4c8e3c78550ccbaae13500edfad7eb0002f98257" lastRefresh="1768326681135" requestable="true" type="access" value="Compliance Officer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Governance"/>
+      <entry key="createdDate" value="08-05-2025"/>
+      <entry key="description" value="Tracks completion of mandatory compliance courses"/>
+      <entry key="modifiedDate" value="18-09-2025"/>
+      <entry key="owner" value="compliance@corp.com"/>
+      <entry key="roleId" value="CORP_COMPLIANCE_006"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

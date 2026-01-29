@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="singh.nikesh@nstechiiq.com" entitlements="true" identity="735000">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="Access">
+        <value>
+          <List>
+            <String>Learner</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="country" value="United Kingdom"/>
+      <entry key="department" value="Product Management Office (PMO)"/>
+      <entry key="email" value="singh.nikesh@nstechiiq.com"/>
+      <entry key="employeeId" value="735000"/>
+      <entry key="firstName" value="Nikesh"/>
+      <entry key="hireDate" value="01-16-2026"/>
+      <entry key="isInstructor" value="No"/>
+      <entry key="jobTitle" value="Product Manager"/>
+      <entry key="lastName" value="Singh"/>
+      <entry key="learningGroup" value="Soft Skills Enhancement"/>
+      <entry key="managerDisplayName" value="Nikesh Singh"/>
+      <entry key="managerId" value="735000"/>
+      <entry key="roleLevel" value="Executive"/>
+      <entry key="status" value="ACTIVE"/>
+      <entry key="terminationDate" value="09-15-2026"/>
+      <entry key="workCountry"/>
+      <entry key="workState" value="Bristol"/>
+    </Map>
+  </Attributes>
+</Link>

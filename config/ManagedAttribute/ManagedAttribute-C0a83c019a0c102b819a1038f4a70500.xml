@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Sales Executive" hash="b92d6879e5f565e7d81f96728a6d300d15998b1a" lastRefresh="1768326689992" requestable="true" type="roles" value="Sales Executive">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="02-10-2025"/>
+      <entry key="description" value="Manages direct client interactions, achieves sales targets, and updates CRM records."/>
+      <entry key="modifiedDate" value="09-28-2025"/>
+      <entry key="owner" value="sales.manager@nsiiq.com"/>
+      <entry key="roleId" value="ROL_SALES_EXEC_002"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Operational"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

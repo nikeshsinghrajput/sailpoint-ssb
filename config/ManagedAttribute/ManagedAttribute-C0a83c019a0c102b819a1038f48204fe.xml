@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Sales Dashboard Viewer" hash="16494771924d4cb6550587e262ee1c04fd7211fe" lastRefresh="1768326689978" requestable="true" type="roles" value="Sales Dashboard Viewer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="08-03-2025"/>
+      <entry key="description" value="Read-only access to sales analytics dashboards and KPI reports."/>
+      <entry key="modifiedDate" value="09-27-2025"/>
+      <entry key="owner" value="report.viewer@nsiiq.com"/>
+      <entry key="roleId" value="ROL_SALES_DASHBOARD_009"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Analytics"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Internal Auditor" hash="8f8544c1e547fde041baa41318525ed1cecf8508" lastRefresh="1768326685860" requestable="true" type="roles" value="Internal Auditor">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-05-07"/>
+      <entry key="description" value="Conducts internal audit of financial transactions, ensures compliance with GAAP and SOX."/>
+      <entry key="modifiedDate" value="2025-09-28"/>
+      <entry key="owner" value="audit.controller@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_AUDITOR_006"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Governance"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

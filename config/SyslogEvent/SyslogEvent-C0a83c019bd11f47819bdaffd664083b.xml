@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.api.nativeidentitychange.NativeIdentityChangeUtil" eventLevel="ERROR" lineNumber="1500" quickKey="0001243955" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>NativeIdentityChangeEvent has not been completed yet:NativeIdentityChangeEvent,Type=Account,OldNativeIdentity=CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com,NewNativeIdentity=CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com,ApplicationID=Active Directory,UUID={96deb622-f1fd-4138-acaf-41fdd06ea41d},Status=Pending</EventMessage>
+</SyslogEvent>

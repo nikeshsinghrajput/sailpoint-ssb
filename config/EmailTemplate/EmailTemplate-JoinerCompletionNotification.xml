@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="Joiner Completion Notification">
+  <Body>
+Hello $!managerDisplayName,
+
+The onboarding process for $!identityDisplayName has been successfully completed.
+
+------------------------------------------------------------
+Employee Details
+------------------------------------------------------------
+Employee ID          : $!employeeId
+Name                 : $!firstName $!lastName
+Email                : $!email
+Username (AD)        : $!NS_samAccountName
+Temporary Password   : $!password
+Is Rehire            : $!isRehire
+------------------------------------------------------------
+
+#if($!managerFirstName)
+Please ensure that $!firstName receives the required onboarding guidance.
+#end
+
+Thank you,
+Identity Management Team
+    </Body>
+  <Description>
+      Email notification sent to manager when a new joiner account provisioning is completed.
+    </Description>
+  <Signature>
+    <Inputs>
+      <Argument name="managerDisplayName" type="string">
+        <Description>The display name of the manager receiving the notification.</Description>
+      </Argument>
+      <Argument name="identityDisplayName" type="string">
+        <Description>The display name of the onboarded employee.</Description>
+      </Argument>
+      <Argument name="email" type="string">
+        <Description>The email address of the onboarded employee.</Description>
+      </Argument>
+      <Argument name="isRehire" type="string">
+        <Description>Indicates if the employee is a rehire.</Description>
+      </Argument>
+      <Argument name="firstName" type="string">
+        <Description>First name of the onboarded employee.</Description>
+      </Argument>
+      <Argument name="lastName" type="string">
+        <Description>Last name of the onboarded employee.</Description>
+      </Argument>
+      <Argument name="employeeId" type="string">
+        <Description>Employee ID of the onboarded employee.</Description>
+      </Argument>
+      <Argument name="managerFirstName" type="string">
+        <Description>First name of the manager.</Description>
+      </Argument>
+      <Argument name="password" type="string">
+        <Description>Temporary password for the new account.</Description>
+      </Argument>
+      <Argument name="NS_samAccountName" type="string">
+        <Description>The AD account username (sAMAccountName).</Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Subject>
+      Joiner Completed: $!firstName $!lastName ($!employeeId)
+    </Subject>
+</EmailTemplate>

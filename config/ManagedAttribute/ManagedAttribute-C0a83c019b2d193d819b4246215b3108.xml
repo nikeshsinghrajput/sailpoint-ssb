@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="America - SSL VPN RDP Access" hash="59ee0b47d3592b3892594e0044cc1f58023c7502" lastRefresh="1766343450969" requestable="true" type="group" uuid="{57ead30e-3b1a-467b-92be-02a27b052101}" value="CN=America - SSL VPN RDP Access,OU=Security,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="America - SSL VPN RDP Access"/>
+      <entry key="description" value="America - SSL VPN RDP Access created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\America - SSL VPN RDP Access"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1476"/>
+      <entry key="objectguid" value="{57ead30e-3b1a-467b-92be-02a27b052101}"/>
+      <entry key="sAMAccountName" value="America - SSL VPN RDP Access"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

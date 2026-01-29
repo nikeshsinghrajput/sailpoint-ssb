@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1766397022563" name="21c6451f-207e-40c8-828c-8c982fa0f4c7">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Investment Operations"/>
+      <entry key="displayName" value="Vihaan Patel"/>
+      <entry key="division" value="Division-1"/>
+      <entry key="employeeId" value="8512507"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full_time"/>
+      <entry key="firstname" value="Vihaan"/>
+      <entry key="hireDate" value="01-07-2025"/>
+      <entry key="lastname" value="Patel"/>
+      <entry key="location" value="Mumbai"/>
+      <entry key="postalCode" value="688453"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Portfolio Operations Specialist"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1765385843490" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Vihaan Patel" identity="8512507" lastRefresh="1765382824785">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="648 NH Road"/>
+          <entry key="ADDRESS_WORK" value="Onsite"/>
+          <entry key="BUILDING_CODE" value="B193"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU79"/>
+          <entry key="CLASS" value="Full_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Investment Operations"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+          <entry key="DIVISION" value="Division-1"/>
+          <entry key="DIVISION_ID" value="DIV38"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512507"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F75961"/>
+          <entry key="FIRST_NAME" value="Vihaan"/>
+          <entry key="HIREDATE" value="01-07-2025"/>
+          <entry key="JOBCODE" value="JC346"/>
+          <entry key="JOBTITLE" value="Portfolio Operations Specialist"/>
+          <entry key="LAST_NAME" value="Patel"/>
+          <entry key="LOCATION" value="Mumbai"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="688453"/>
+          <entry key="REGION" value="South"/>
+          <entry key="WORKER_NAME" value="Vihaan Patel"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

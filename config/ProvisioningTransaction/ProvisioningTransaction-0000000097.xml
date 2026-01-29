@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="jones.susan" applicationName="Active Directory" identityDisplayName="Susan Jones" identityName="4df298ed-0cba-4084-a574-9d000cc20e4f" integration="Active Directory" name="0000000097" nativeIdentity="CN=Susan Jones,OU=Financial and Administrative Affairs,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000172"/>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=Susan Jones,OU=Financial and Administrative Affairs,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create" targetIntegration="Active Directory">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a671ea5819a8314d21817b8"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="memberOf" op="Set">
+              <Value>
+                <List>
+                  <String>CN=Aay_CITRIX_EXTERNAL_ACCESS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=GLOBAL_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=NRRC-SAUDI,OU=Security-Groups,DC=NRRCSTG,DC=gov,DC=local</String>
+                </List>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="employeeNumber" op="Set" value="8512695"/>
+            <AttributeRequest name="givenName" op="Set" value="Susan"/>
+            <AttributeRequest name="sn" op="Set" value="Jones"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="jones.susan"/>
+            <AttributeRequest name="displayName" op="Set" value="Susan Jones"/>
+            <AttributeRequest name="title" op="Set" value="Engineer"/>
+            <AttributeRequest name="company" op="Add" value="NsTech"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="06/07/2028 05:30:00 AM IST"/>
+            <AttributeRequest name="department" op="Set" value="R&amp;D"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="DPT654"/>
+            <AttributeRequest name="division" op="Add" value="Division-2"/>
+            <AttributeRequest name="manager" op="Set" value="CN=reddy.aarav,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+            <AttributeRequest name="streetAddress" op="Set" value="9101 Elm St"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B630"/>
+            <AttributeRequest name="l" op="Set" value="San Francisco"/>
+            <AttributeRequest name="st" op="Set" value="West"/>
+            <AttributeRequest name="co" op="Add" value="United States"/>
+            <AttributeRequest name="postalCode" op="Set" value="50040"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9190123456"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-40-23456789"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Engineer"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="committed"/>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

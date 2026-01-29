@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="garcia.william@nsiiq.com" entitlements="true" identity="739013">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="Access">
+        <value>
+          <List>
+            <String>Learner</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="country" value="Brazil"/>
+      <entry key="department" value="Workplace &amp; Facilities Management"/>
+      <entry key="email" value="garcia.william@nsiiq.com"/>
+      <entry key="employeeId" value="739013"/>
+      <entry key="firstName" value="William"/>
+      <entry key="hireDate" value="01-27-2026"/>
+      <entry key="isInstructor" value="No"/>
+      <entry key="jobTitle" value="Facilities Coordinator"/>
+      <entry key="lastName" value="Garcia"/>
+      <entry key="learningGroup" value="Compliance Training"/>
+      <entry key="managerDisplayName" value="Nikesh Singh"/>
+      <entry key="managerId" value="735000"/>
+      <entry key="roleLevel" value="Executive"/>
+      <entry key="status" value="ACTIVE"/>
+      <entry key="terminationDate" value="03-09-2029"/>
+      <entry key="workCountry"/>
+      <entry key="workState" value="Salvador"/>
+    </Map>
+  </Attributes>
+</Link>

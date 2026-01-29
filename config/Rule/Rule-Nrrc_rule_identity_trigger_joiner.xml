@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NRRC_Rule_Identity_Trigger_Joiner" type="IdentityTrigger">
+  <Description>This rule can be used for Certification Events that use rule triggers. The previousIdentity and newIdentity hold snapshots of the identity before the update has occurred and the state of the identity after the update, respectively.</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NRRC_RuleLibrary_Active_Directory"/>
+  </ReferencedRules>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="previousIdentity">
+        <Description>
+          The identity before the refresh/aggregation (this will be null when an
+          identity is created).
+        </Description>
+      </Argument>
+      <Argument name="newIdentity">
+        <Description>
+          The identity after the refresh/aggregation (this will be null when an
+          identity is deleted).
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+          A boolean describing the result of the rule.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+  import java.text.SimpleDateFormat;
+   import java.util.Calendar;
+   import java.util.Date;
+   import sailpoint.tools.Util;
+   import sailpoint.object.Link;
+  boolean result = false;
+  int JoinerDayDiffMax=0;
+  int JoinerDayDiffMin=0;
+  Logger logs = Logger.getLogger("com.ns.rule.NRRC_Rule_Identity_Trigger_Joiner");
+   System.out.println("Joiner_Trigger_rule started");
+  try {
+   
+    String newHireDate =  newIdentity.getAttribute("hireDate");
+	String status =  newIdentity.getAttribute("status");
+    System.out.println("newHireDate:::::"+newHireDate);
+	System.out.println("status:::::"+status);
+	Link hrLink=getPrimaryAccountLink(newIdentity.getName());
+	Custom cs = context.getObjectByName(Custom.class, "MapOULink");
+		if (cs != null) {
+			JoinerDayDiffMax =Integer.parseInt(cs.get("JoinerDayDiffMax"));
+			JoinerDayDiffMin =Integer.parseInt(cs.get("JoinerDayDiffMin"));
+			logs.debug("JoinerDayDiffMax : " + JoinerDayDiffMax);
+			logs.debug("JoinerDayDiffMin : " + JoinerDayDiffMin);
+		}
+		if(hrLink!=null &amp;&amp; hrLink.getAttribute("StatusEmployee")!= null &amp;&amp; hrLink.getAttribute("StatusEmployee").equalsIgnoreCase("1")){
+    if (newHireDate != null &amp;&amp; Util.isNotNullOrEmpty(status)) {
+
+        SimpleDateFormat f = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a z");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        Date today = calendar.getTime();
+        System.out.println(today+"Current Date is::::::"+f.format(today));
+        Date hireDate = f.parse(newHireDate);
+		   long diffInMillis = hireDate.getTime() - today.getTime();
+		    long diffInDays = diffInMillis / (1000 * 60 * 60 * 24);
+        logs.debug("diffInDays : " + diffInDays);
+        if (diffInDays &lt;= JoinerDayDiffMax &amp;&amp; diffInDays &gt;= JoinerDayDiffMin &amp;&amp; status.equalsIgnoreCase("Joiner_Active")) {
+          String newStatus = "Joiner-Started";
+          newIdentity.setAttribute("status", newStatus);
+          context.saveObject(newIdentity);
+          context.commitTransaction();
+          System.out.println("Joiner is able to trigger");
+          result = true;
+        }
+      }
+	 }
+    }catch (Exception e) {
+	System.out.println("Exception occured in Joiner_Trigger_rule"+e);
+    }
+  return result;</Source>
+</Rule>

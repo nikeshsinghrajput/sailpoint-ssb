@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="singh.nikesh" entitlements="true" identity="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1765384921903" manuallyCorrelated="true" uuid="{272eb720-1ddc-4dc9-827d-d02c9b80a25e}">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="NetBIOSName"/>
+      <entry key="accountFlags">
+        <value>
+          <List>
+            <String>Normal User Account</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="businessCategory" value="Full_time"/>
+      <entry key="cn" value="singh.nikesh"/>
+      <entry key="department" value="Financial Accounting and Reporting"/>
+      <entry key="departmentNumber" value="DEPT-001"/>
+      <entry key="description" value="Created via sailpoint Senior Financial Analyst"/>
+      <entry key="displayName" value="Nikesh Singh"/>
+      <entry key="distinguishedName" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="employeeNumber" value="8512500"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="givenName" value="Nikesh"/>
+      <entry key="l" value="Noida"/>
+      <entry key="mail" value="singh.nikesh@nstechiiq.com"/>
+      <entry key="memberOf">
+        <value>
+          <List>
+            <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="mobile" value="+91-9234567890"/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\singh.nikesh"/>
+      <entry key="objectClass">
+        <value>
+          <List>
+            <String>top</String>
+            <String>person</String>
+            <String>organizationalPerson</String>
+            <String>user</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1304"/>
+      <entry key="objectType" value="user"/>
+      <entry key="objectguid" value="{272eb720-1ddc-4dc9-827d-d02c9b80a25e}"/>
+      <entry key="physicalDeliveryOfficeName" value="B531"/>
+      <entry key="postalCode" value="434863"/>
+      <entry key="sAMAccountName" value="singh.nikesh"/>
+      <entry key="sn" value="Singh"/>
+      <entry key="st" value="West"/>
+      <entry key="streetAddress" value="243 Ring Road"/>
+      <entry key="telephoneNumber" value="+91-141-27451234"/>
+      <entry key="title" value="Senior Financial Analyst"/>
+      <entry key="userAccountControl" value="512"/>
+    </Map>
+  </Attributes>
+</Link>

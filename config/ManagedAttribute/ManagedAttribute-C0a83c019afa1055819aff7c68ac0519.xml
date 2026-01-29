@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="VDI_ExternalAccess" hash="8f5ad4e9d42b9e4ca531dda7476400f912e2ea12" lastRefresh="1765222934699" requestable="true" type="group" uuid="{9f76b571-9139-40ec-b9e3-f3365216bd1e}" value="CN=VDI_ExternalAccess,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="VDI_ExternalAccess"/>
+      <entry key="description" value="VDI_ExternalAccess created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\VDI_ExternalAccess"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1283"/>
+      <entry key="objectguid" value="{9f76b571-9139-40ec-b9e3-f3365216bd1e}"/>
+      <entry key="sAMAccountName" value="VDI_ExternalAccess"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

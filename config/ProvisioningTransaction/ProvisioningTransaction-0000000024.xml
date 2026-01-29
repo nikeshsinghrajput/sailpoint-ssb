@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="739004" applicationName="DHP JDBC Users" identityDisplayName="Jane Smith" identityName="17c03a6c-fea2-44d6-94f5-a1658f2f5226" integration="DHP JDBC Users" name="0000000024" nativeIdentity="739004" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000027"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : Undefined argument: email  : at Line: 52 : in file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : ( 5 , email ) &#10; BSF info: NS_DHPJDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="DHP JDBC Users" nativeIdentity="739004" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c0199e61e6b8199e6a8df1e00e0"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c0199e61e6b8199e78f72ae02f3"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="capability_name" op="Add" value="ADMIN_PRIVILEGE">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="capability_name" op="Add" value="READ_ACCESS">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="username" op="Set" value="smith.jane"/>
+            <AttributeRequest name="firstname" op="Set" value="Jane"/>
+            <AttributeRequest name="lastname" op="Set" value="Smith"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : Undefined argument: email  : at Line: 52 : in file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : ( 5 , email ) &#10; BSF info: NS_DHPJDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

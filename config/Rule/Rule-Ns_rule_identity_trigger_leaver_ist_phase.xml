@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_Identity_Trigger_Leaver_Ist_Phase" type="IdentityTrigger">
+  <Description>This rule can be used for Certification Events that use rule triggers. The previousIdentity and newIdentity hold snapshots of the identity before the update has occurred and the state of the identity after the update, respectively.</Description>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="previousIdentity">
+        <Description>
+          The identity before the refresh/aggregation (this will be null when an
+          identity is created).
+        </Description>
+      </Argument>
+      <Argument name="newIdentity">
+        <Description>
+          The identity after the refresh/aggregation (this will be null when an
+          identity is deleted).
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+          A boolean describing the result of the rule.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+    import java.text.SimpleDateFormat;
+	import java.util.Calendar;
+	import java.util.Date;
+	import sailpoint.object.Identity;
+	import sailpoint.tools.Util;
+	import org.apache.log4j.Logger;
+
+	Logger logs = Logger.getLogger("com.ns.rule.NS_Rule_Identity_Trigger_Leaver_I_Phase");
+	logs.debug("Entering into NS_Rule_Identity_Trigger_Leaver_I_Phase");
+
+	boolean result = false;
+
+	try {
+	String terminationDate = newIdentity.getAttribute("terminationDate");
+	String nsStatus =  newIdentity.getAttribute("nsStatus");
+	    logs.debug("enter in Leaver_I_Phase rule:::nsStatus::::::"+nsStatus);
+		  if(Util.isNotNullOrEmpty(nsStatus) &amp;&amp; Util.isNotNullOrEmpty(terminationDate)) {
+       
+			SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
+			Calendar calendar = Calendar.getInstance();
+			calendar.set(Calendar.HOUR_OF_DAY, 0);
+			calendar.set(Calendar.MINUTE, 0);
+			calendar.set(Calendar.SECOND, 0);
+			calendar.set(Calendar.MILLISECOND, 0);
+			Date today = calendar.getTime();
+			Date terminationDateObj = f.parse(terminationDate);
+			long diffInMillis =  terminationDateObj.getTime()-today.getTime();
+			long diffInDays = diffInMillis / (1000 * 60 * 60 * 24);
+
+			logs.debug("Leaver_I_Phase Days difference between today and termination date: " + diffInDays);
+			if (diffInDays &gt;-1 &amp;&amp; diffInDays &lt;=7 &amp;&amp; nsStatus.equalsIgnoreCase("Leaver_Active")) {
+			  String newStatus = "Leaver-Ist-Phase-Started";
+			  newIdentity.setAttribute("nsStatus", newStatus);
+			  context.saveObject(newIdentity);
+			  context.commitTransaction();
+			  logs.debug("Leaver is able to trigger");
+			  result = true;
+			}
+		  }
+	  } catch (Exception e) {
+		logs.error("Error in Joiner Trigger Rule: " + e);
+	  }
+
+	return result;
+</Source>
+</Rule>

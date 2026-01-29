@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="identityLifecycleEvent" interface="Task" serverHost="NikeshRajput" source="Refresh Single Identity" target="Identity:9bcaa225-f0c4-405a-8895-2159b92fb553">
+  <Attributes>
+    <Map>
+      <entry key="objectSummary" value="sailpoint.object.Identity@7698e6ab[id=c0a83c019bc0138b819bc0ed875d00a9,name=9bcaa225-f0c4-405a-8895-2159b92fb553]"/>
+    </Map>
+  </Attributes>
+  <String1>Leaver final Phase</String1>
+  <String3>Launched workflow 'Leaver final Phase: William Garcia'</String3>
+  <String4>Rule 'NS_Rule_Identity_Trigger_Leaver_Final_Phase' matched</String4>
+</AuditEvent>

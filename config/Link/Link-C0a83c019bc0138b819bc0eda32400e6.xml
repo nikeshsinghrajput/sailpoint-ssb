@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jessica Smith" identity="739043" lastRefresh="1768468357924">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="3354 Garden Lane"/>
+      <entry key="ADDRESS_WORK" value="3354 Garden Lane;Singapore, Central Region 94260;Singapore"/>
+      <entry key="BUILDING_CODE" value="SG_CEN_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3019"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="02-06-2026"/>
+      <entry key="COUNTRY_NAME" value="Singapore"/>
+      <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+      <entry key="DIVISION" value="Singapore Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-SG-03"/>
+      <entry key="EMAIL" value="jessica.smith@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739043"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739043"/>
+      <entry key="FIRST_NAME" value="Jessica"/>
+      <entry key="HIREDATE" value="06-04-2016"/>
+      <entry key="JOBCODE" value="JT-021-04"/>
+      <entry key="JOBTITLE" value="UX/UI Designer"/>
+      <entry key="LAST_NAME" value="Smith"/>
+      <entry key="LOCATION" value="SG - Singapore"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="97836"/>
+      <entry key="REGION" value="Singapore"/>
+      <entry key="WORKER_NAME" value="Jessica Smith"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

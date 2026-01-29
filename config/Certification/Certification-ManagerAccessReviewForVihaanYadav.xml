@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1761848873896" certificationDefinitionId="c0a83c019a3617d6819a365ee7c30034" complete="true" creator="spadmin" entitlementGranularity="Value" expiration="1764527273896" finished="1762164901497" itemPercentComplete="100" manager="d37a65dd-9837-455e-b3fe-b49339412c82" name="Manager Access Review for Vihaan Yadav" nextPhaseTransition="1767119273954" percentComplete="100" phase="Remediation" shortName="Access Review for Vihaan Yadav" signed="1762164745994" taskScheduleId="Manager Certification [DATE] [30/10/25, 11:56 PM]" type="Manager">
+  <Attributes>
+    <Map>
+      <entry key="autoSignOffWhenNothingToCertify" value="false"/>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="requireReassignmentCompletion" value="true"/>
+      <entry key="suppressEmailWhenNothingToCertify" value="false"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Manager Certification [30/10/25, 11:56:20 PM IST]"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>d37a65dd-9837-455e-b3fe-b49339412c82</String>
+  </Certifiers>
+  <Parent>
+    <Reference class="sailpoint.object.Certification" name="Manager Access Review for Diya Gupta"/>
+  </Parent>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Staged"/>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig>
+        <Configs>
+          <ReminderConfig before="true" emailTemplateName="Work Item Reminder" millis="1209600000" once="true"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" maxReminders="5" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <SignOffHistory>
+    <SignOffHistoryItem date="1762164745993" signerDisplayName="The Administrator" signerId="c0a83c0199cf13658199cf93c73500fe" signerName="spadmin"/>
+  </SignOffHistory>
+  <CertificationStatistics itemPercentComplete="100" percentComplete="100"/>
+  <CertificationRefs>
+    <Reference class="sailpoint.object.Certification" name="Manager Access Review for Vihaan Singh"/>
+  </CertificationRefs>
+</Certification>

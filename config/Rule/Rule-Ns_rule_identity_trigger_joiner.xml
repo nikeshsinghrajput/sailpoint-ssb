@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_Identity_Trigger_Joiner" type="IdentityTrigger">
+  <Description>This rule can be used for Certification Events that use rule triggers. The previousIdentity and newIdentity hold snapshots of the identity before the update has occurred and the state of the identity after the update, respectively.</Description>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="previousIdentity">
+        <Description>
+          The identity before the refresh/aggregation (this will be null when an
+          identity is created).
+        </Description>
+      </Argument>
+      <Argument name="newIdentity">
+        <Description>
+          The identity after the refresh/aggregation (this will be null when an
+          identity is deleted).
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+          A boolean describing the result of the rule.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+ import java.text.SimpleDateFormat;
+	import java.util.Calendar;
+	import java.util.Date;
+	import sailpoint.object.Identity;
+	import sailpoint.tools.Util;
+	import org.apache.log4j.Logger;
+
+	Logger logs = Logger.getLogger("com.ns.workflow.NS_Rule_Identity_Trigger_Joiner");
+	logs.debug("Entering NS_Rule_Identity_Trigger_Joiner ");
+
+	boolean result = false;
+
+	try {
+	String newHireDate =  newIdentity.getAttribute("hireDate");
+	String nsStatus =  newIdentity.getAttribute("nsStatus");
+	String terminationDate =  newIdentity.getAttribute("terminationDate");
+	logs.debug("enter in joiner rule ;nsStatus;"+nsStatus);
+		if (newHireDate != null &amp; nsStatus != null  ) {
+		  if (Util.isNotNullOrEmpty(nsStatus) &amp;&amp; Util.isNotNullOrEmpty(newHireDate)) {
+			SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
+			Calendar calendar = Calendar.getInstance();
+			calendar.set(Calendar.HOUR_OF_DAY, 0);
+			calendar.set(Calendar.MINUTE, 0);
+			calendar.set(Calendar.SECOND, 0);
+			calendar.set(Calendar.MILLISECOND, 0);
+			Date today = calendar.getTime();
+			logs.debug("Current Date is::::::"+f.format(today));
+			Date hireDate = f.parse(newHireDate);
+			Date endDate = f.parse(terminationDate);
+			long hireDiffInMillis = hireDate.getTime() - today.getTime();
+			long hireDiffInDays = hireDiffInMillis / (1000 * 60 * 60 * 24);
+			
+			long termdiffInMillis = endDate.getTime() - today.getTime();
+			long termdiffInDays = termdiffInMillis / (1000 * 60 * 60 * 24);
+			logs.debug("Days difference between today and hire date: " + hireDiffInDays);
+			if (hireDiffInDays &gt;0 &amp;&amp; hireDiffInDays &lt;=22 &amp;&amp; nsStatus.equalsIgnoreCase("Joiner_Active")) {
+			  String newStatus = "Joiner-Started " + f.format(today);
+			  newIdentity.setAttribute("nsStatus", newStatus);
+			  context.saveObject(newIdentity);
+			  context.commitTransaction();
+			  logs.debug("Joiner is able to trigger");
+			  result = true;
+			}else if(hireDiffInDays &gt;0 &amp;&amp; hireDiffInDays &lt;=22 &amp;&amp; nsStatus.equalsIgnoreCase("Leaver-Final-Phase-Completed") &amp;&amp; termdiffInDays &gt;0) {
+			  String newStatus = "Rehire-Started " + f.format(today);
+			  newIdentity.setAttribute("nsStatus", newStatus);
+			  context.saveObject(newIdentity);
+			  context.commitTransaction();
+			  result = true;
+			}
+		  }
+		}
+	  } catch (Exception e) {
+		logs.error("Error in Joiner Trigger Rule: " + e);
+	  }
+
+	return result;
+</Source>
+</Rule>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" compilationStatus="Expansion" name="telephoneNumber" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="">
+  <Attributes>
+    <Map>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="42565d65ccf44a8cb565c681f5e075c5">
+            <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify" targetIntegration="Active Directory">
+              <AttributeRequest name="telephoneNumber" op="Set" trackingId="42565d65ccf44a8cb565c681f5e075c5" value=""/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Sean Harper" identity="739091" lastRefresh="1768468367800">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="4532 River Ave"/>
+      <entry key="ADDRESS_WORK" value="4532 River Ave;Bengaluru, Maharashtra 34902;India"/>
+      <entry key="BUILDING_CODE" value="IN_MAH_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3004"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="09-27-2024"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="Treasury &amp; Cash Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-002"/>
+      <entry key="DIVISION" value="India Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-IN-04"/>
+      <entry key="EMAIL" value="sean.harper@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739091"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739091"/>
+      <entry key="FIRST_NAME" value="Sean"/>
+      <entry key="HIREDATE" value="01-01-2022"/>
+      <entry key="JOBCODE" value="JT-002-03"/>
+      <entry key="JOBTITLE" value="Treasury Operations Manager"/>
+      <entry key="LAST_NAME" value="Harper"/>
+      <entry key="LOCATION" value="IN - Bengaluru"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="90683"/>
+      <entry key="REGION" value="Bengaluru"/>
+      <entry key="WORKER_NAME" value="Sean Harper"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.web.policy.PolicyBean" eventLevel="ERROR" lineNumber="1445" quickKey="0000448253" server="NikeshRajput" thread="http-nio-1000-exec-10" username="spadmin">
+  <EventMessage>Unable to get status of task with taskresultID[ c0a83c019b0e110c819b28278d8e309d ]</EventMessage>
+</SyslogEvent>

@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="NS_Workflow_Candidate_Joiner_Validation" type="LCMProvisioning">
+  <Variable input="true" name="project">
+    <Description>ProvisioningProject which is just a compiled version of the ProvisioningPlan.</Description>
+  </Variable>
+  <Variable input="true" name="plan">
+    <Description>The provisioning plan, which is built by a service method.</Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable initializer="script:(identityDisplayName != void) ? identityDisplayName : resolveDisplayName(identityName)" input="true" name="identityDisplayName">
+    <Description>The displayName of the identity being updated.</Description>
+  </Variable>
+  <Variable initializer="false" input="true" name="foregroundProvisioning">
+    <Description>Normally provisioning is done in a step that uses the &amp;quot;background&amp;quot; option to force the workflow 
+      to be suspended and resumed in a background task thread. This prevents the browser session from hanging 
+      since provisioning can take a long time. For demos and testing, it can be better to do this in the foreground 
+      so that provisioning will have been performed when control is returned to the user.</Description>
+  </Variable>
+  <Variable initializer="spadmin" input="true" name="fallbackApprover">
+    <Description>A string specifying the name of the Identity that will be assigned any approvals where the owner of 
+      the approver can’t be resolved. Example if the scheme is &amp;quot;owner&amp;quot; and the application doesn&amp;#39;t specify an owner.</Description>
+  </Variable>
+  <Variable initializer="false" input="true" name="optimisticProvisioning">
+    <Description>Set to true to enable optimistic provisioning. This will cause entitlement changes to apply immediately
+      rather than waiting for the next refresh/reaggregation after the provisioning system completes.</Description>
+  </Variable>
+  <Variable initializer="LCM" input="true" name="source">
+    <Description>String version of sailpoint.object.Source to indicate where the request originated.</Description>
+  </Variable>
+  <Variable initializer="Normal" input="true" name="workItemPriority">
+    <Description>The String version of a WorkItem.Priority. This variable is used to set the priority on all of the work items 
+      generated as part of this workflow.</Description>
+  </Variable>
+  <Variable initializer="Active Directory" name="activeDirectory"/>
+  <Variable initializer="false" input="true" name="doRefresh"/>
+  <Variable initializer="false" input="true" name="trace"/>
+  <Variable initializer="none" input="true" name="policyScheme"/>
+  <Variable initializer="none" input="true" name="approvalsScheme"/>
+  <Variable initializer="none" input="true" name="notificationScheme"/>
+  <Variable name="workItemName"/>
+  <Variable name="workItemStatus"/>
+  <Variable name="errorMessages"/>
+  <Variable initializer="NS_EmailTemplate_Manual_WorkItem_Notification" name="manualWorkItemEmailTemplate"/>
+  <Variable initializer="Exception_Management_Team" name="errorHandlingGroup"/>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </RuleLibraries>
+  <Step icon="start" name="start" posX="39" posY="40">
+    <Transition to="Check If Errors"/>
+  </Step>
+  <Step icon="Task" name="Check If Errors" posX="210" posY="35" resultVariable="errorMessages">
+    <Script>
+      <Source>
+        import java.util.ArrayList;
+        import java.util.List;
+        import org.apache.log4j.Logger;
+
+        Logger log = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner_Validation");
+        log.debug("Enter into the step Check If Errors");
+        List errorMessages = validateCandidateJoiner(identityName);
+        log.debug("Error Messages: " + errorMessages);
+        log.debug("Exit from the step Check If Errors");
+        return errorMessages;
+      </Source>
+    </Script>
+    <Transition to="Create WorkItem">
+      <Script>
+        <Source>
+          if (errorMessages != null &amp;&amp; !errorMessages.isEmpty()) {
+            return true;
+          }
+          return false;
+        </Source>
+      </Script>
+    </Transition>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Default" name="Create WorkItem" posX="324" posY="141" resultVariable="workItemName">
+    <Script>
+      <Source>
+        return createItem(errorHandlingGroup, identityName, activeDirectory, errorMessages);
+      </Source>
+    </Script>
+    <Transition to="Manual Item Email Notification"/>
+  </Step>
+  <Step action="sendEmail" icon="Default" name="Manual Item Email Notification" posX="428" posY="203">
+    <Arg name="template" value="ref:manualWorkItemEmailTemplate"/>
+    <Arg name="identityDisplayName" value="ref:identityDisplayName"/>
+    <Arg name="workItemOwner" value="ref:errorHandlingGroup"/>
+    <Arg name="to">
+      <Script>
+        <Source>
+          import org.apache.log4j.Logger;
+		  
+          Logger log = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner_Validation");
+          log.debug("Enter into the step Manual Item Email Notification");
+          List groupMembersEmailList = getWorkGroupMembersEmail(errorHandlingGroup);
+          String emails = null;
+          if (groupMembersEmailList.size() &gt; 0) {
+            emails = String.join(",", groupMembersEmailList);
+          } else {
+            emails = "IAM@NStech.com";
+          }
+          log.debug("Exit from the step Manual Item Email Notification " + emails);
+          return emails;
+        </Source>
+      </Script>
+    </Arg>
+    <Arg name="workItemName" value="ref:workItemName"/>
+    <Arg name="workItemLink">
+      <Script>
+        <Source>
+          import sailpoint.object.WorkItem;
+          import sailpoint.object.Custom;
+          import org.apache.log4j.Logger;
+
+          Logger log = Logger.getLogger("com.NS.workflow.NS_Workflow_Candidate_Joiner_Validation");
+          log.debug("Enter into the step Manual WorkItem Email Notification (link generation)");
+
+          WorkItem workItem = context.getObjectByName(WorkItem.class, workItemName);
+          if (workItem != null) {
+            Custom bu = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+            String baseURL = bu.get("baseURL") + "/workitem/workItem.jsf?id=" + workItem.getId();
+            log.debug("Work Item Base URL: " + baseURL);
+            return baseURL;
+          }
+          log.debug("Exit from Manual WorkItem Email Notification");
+        </Source>
+      </Script>
+    </Arg>
+    <Transition to="Wait and Check WorkItem Status"/>
+  </Step>
+  <Step icon="Task" name="Wait and Check WorkItem Status" posX="691" posY="283" resultVariable="workItemStatus" wait="1">
+    <Script>
+      <Source>
+        import sailpoint.object.WorkItemArchive;
+        import org.apache.log4j.Logger;
+
+        Logger log = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner_Validation");
+        log.debug("Enter into the step Wait and Check WorkItem Status");
+
+        WorkItemArchive archive = context.getObjectByName(WorkItemArchive.class, workItemName);
+        if (archive != null) {
+          log.debug("Exit from the step Wait and Check WorkItem Status");
+          return true;
+        }
+
+        log.debug("Exit from the step Wait and Check WorkItem Status - Pending");
+        return false;
+      </Source>
+    </Script>
+    <Transition to="Stop" when="script:workItemStatus == true"/>
+    <Transition to="Wait and Check WorkItem Status"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="701" posY="35"/>
+</Workflow>

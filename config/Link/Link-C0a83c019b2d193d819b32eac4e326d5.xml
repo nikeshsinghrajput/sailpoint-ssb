@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="govinda jadav" identity="8512518" lastRefresh="1766085805283">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="1453 Park Ln"/>
+      <entry key="ADDRESS_WORK" value="1453 Park Ln;Munich, Bavaria 80331;Germany"/>
+      <entry key="BUILDING_CODE" value="DE_BAV_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3079"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="NS Soft Tech"/>
+      <entry key="CONTRACT_END_DATE" value="12-25-2025"/>
+      <entry key="COUNTRY_NAME" value="Germany"/>
+      <entry key="DEPARTMENT" value="Financial Risk Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-003"/>
+      <entry key="DIVISION" value="Germany Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-DE-03"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512518"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FIRST_NAME" value="govinda"/>
+      <entry key="HIREDATE" value="12-08-2025"/>
+      <entry key="JOBCODE" value="JT-003-02"/>
+      <entry key="JOBTITLE" value="Market Risk Specialist"/>
+      <entry key="LAST_NAME" value="jadav"/>
+      <entry key="LOCATION" value="DE - Munich"/>
+      <entry key="MANAGER_ID" value="8512512"/>
+      <entry key="POSTAL_CODE" value="80331"/>
+      <entry key="REGION" value="Munich"/>
+      <entry key="WORKER_NAME" value="govinda jadav"/>
+      <entry key="WORKER_STATUS" value="ACTIVE"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

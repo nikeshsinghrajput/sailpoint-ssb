@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Emily Wilson" identity="739008" lastRefresh="1768468348672">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="8003 Queen Lane"/>
+      <entry key="ADDRESS_WORK" value="8003 Queen Lane;Busan, Gyeonggi Province 91859;South Korea"/>
+      <entry key="BUILDING_CODE" value="KR_GYE_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3022"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="07-31-2023"/>
+      <entry key="COUNTRY_NAME" value="South Korea"/>
+      <entry key="DEPARTMENT" value="Business Operations &amp; Support"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-025"/>
+      <entry key="DIVISION" value="South Korea Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-KR-02"/>
+      <entry key="EMAIL" value="emily.wilson@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739008"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739008"/>
+      <entry key="FIRST_NAME" value="Emily"/>
+      <entry key="HIREDATE" value="09-30-2022"/>
+      <entry key="JOBCODE" value="JT-025-04"/>
+      <entry key="JOBTITLE" value="MIS Reporting Analyst"/>
+      <entry key="LAST_NAME" value="Wilson"/>
+      <entry key="LOCATION" value="KR - Busan"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="90232"/>
+      <entry key="REGION" value="Busan"/>
+      <entry key="WORKER_NAME" value="Emily Wilson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Contract"/>
+    </Map>
+  </Attributes>
+</Link>

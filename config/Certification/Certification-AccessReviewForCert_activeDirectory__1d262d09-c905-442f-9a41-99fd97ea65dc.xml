@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1768226119990" certificationDefinitionId="c0a83c019b731761819bb27d59192660" complete="true" completedEntities="1" completedItems="1" creator="spadmin" entitlementGranularity="Value" expiration="1770904519990" finished="1768226188587" itemPercentComplete="100" name="Access Review for cert:Active Directory::1d262d09-c905-442f-9a41-99fd97ea65dc" nextPhaseTransition="1773323720022" percentComplete="100" phase="Remediation" shortName="Access Review for cert:Active Directory::1d262d09-c905-442f-9a41-99fd97ea65dc" signed="1768226167545" totalEntities="1" totalItems="1" type="Focused">
+  <Attributes>
+    <Map>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation" value="false"/>
+      <entry key="requireReassignmentCompletion" value="true"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Access Review for cert:Active Directory::1d262d09-c905-442f-9a41-99fd97ea65dc"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>f1aea43c-892b-4f9d-be64-42557cc5650f</String>
+  </Certifiers>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <SignOffHistory>
+    <SignOffHistoryItem date="1768226167544" signerDisplayName="The Administrator" signerId="c0a83c0199cf13658199cf93c73500fe" signerName="spadmin"/>
+  </SignOffHistory>
+  <CertificationStatistics completedEntities="1" completedItems="1" exceptionsApproved="1" itemPercentComplete="100" percentComplete="100" totalEntities="1" totalExceptions="1" totalItems="1"/>
+  <CertificationEntity completed="1768226166058" firstname="sohan" identity="1d262d09-c905-442f-9a41-99fd97ea65dc" lastname="singh" newUser="true" summaryStatus="Complete" targetDisplayName="sohan singh" targetName="1d262d09-c905-442f-9a41-99fd97ea65dc" type="Identity">
+    <CertificationItem completed="1768226166052" exceptionApplication="Active Directory" exceptionAttributeName="memberOf" exceptionAttributeValue="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com" summaryStatus="Complete" type="Exception">
+      <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019b731761819bb27d60df2672" decisionDate="1768226166017" reviewed="true" status="Approved"/>
+      <ApplicationNames>
+        <String>Active Directory</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Active Directory" displayName="singh.sohan" nativeIdentity="CN=singh.sohan,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+          <Attributes>
+            <Map>
+              <entry key="memberOf" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

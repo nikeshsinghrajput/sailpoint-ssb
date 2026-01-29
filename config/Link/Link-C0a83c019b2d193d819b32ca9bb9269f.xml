@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="sohan singh" identity="8512514" lastRefresh="1766083697593">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="1452 Market Ave"/>
+      <entry key="ADDRESS_WORK" value="1452 Market Ave;Guangzhou, Guangdong 510000;China"/>
+      <entry key="BUILDING_CODE" value="CN_GUA_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3006"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="NS IIQ Inc."/>
+      <entry key="CONTRACT_END_DATE" value="01-01-2026"/>
+      <entry key="COUNTRY_NAME" value="China"/>
+      <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+      <entry key="DIVISION" value="China Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-CN-02"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512514"/>
+      <entry key="EMPLOYEE_TYPE" value="Partner"/>
+      <entry key="FIRST_NAME" value="sohan"/>
+      <entry key="HIREDATE" value="12-17-2025"/>
+      <entry key="JOBCODE" value="JT-021-04"/>
+      <entry key="JOBTITLE" value="UX/UI Designer"/>
+      <entry key="LAST_NAME" value="singh"/>
+      <entry key="LOCATION" value="CN - Guangzhou"/>
+      <entry key="MANAGER_ID" value="8512512"/>
+      <entry key="POSTAL_CODE" value="510000"/>
+      <entry key="REGION" value="Guangzhou"/>
+      <entry key="WORKER_NAME" value="sohan singh"/>
+      <entry key="WORKER_STATUS" value="ACTIVE"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

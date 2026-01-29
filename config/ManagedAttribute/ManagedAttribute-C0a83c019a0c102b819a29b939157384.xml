@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="role_delegator" hash="1cb03d4223d1db1de1984d9668a9f50aa28e066b" lastRefresh="1761636595988" requestable="true" type="role" value="011ba5aa0a0a0b3001a439c580549134">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="can_delegate" value="false"/>
+      <entry key="description" value="Can delegate roles to group members"/>
+      <entry key="elevated_privilege" value="false"/>
+      <entry key="grantable" value="false"/>
+      <entry key="name" value="role_delegator"/>
+      <entry key="sys_class_name" value="Role"/>
+      <entry key="sys_created_by" value="james.capaldo"/>
+      <entry key="sys_created_on" value="2010-02-24 09:52:45"/>
+      <entry key="sys_mod_count" value="6"/>
+      <entry key="sys_name" value="role_delegator"/>
+      <entry key="sys_package" value="System (glidesoft)"/>
+      <entry key="sys_scope" value="Global"/>
+      <entry key="sys_update_name" value="sys_user_role_011ba5aa0a0a0b3001a439c580549134"/>
+      <entry key="sys_updated_by" value="system"/>
+      <entry key="sys_updated_on" value="2025-10-12 12:50:18"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

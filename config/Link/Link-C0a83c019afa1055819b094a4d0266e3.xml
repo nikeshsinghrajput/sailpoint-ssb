@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="8512512" entitlements="true" identity="8512512" lastRefresh="1766037062836" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="annualHours" value="1040"/>
+      <entry key="countryCode" value="513552"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+      <entry key="empStatus" value="Active"/>
+      <entry key="employee" value="Arjun Naidu"/>
+      <entry key="employeeId" value="8512512"/>
+      <entry key="firstName" value="Arjun"/>
+      <entry key="hireDate" value="12-12-2025"/>
+      <entry key="isManager" value="No"/>
+      <entry key="jobTitle" value="Governance Program Manager"/>
+      <entry key="lastName" value="Naidu"/>
+      <entry key="manager" value="Nikesh Singh"/>
+      <entry key="roles">
+        <value>
+          <List>
+            <String>Audit Viewer</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="salaryClass" value="A"/>
+      <entry key="superviserId" value="8512500"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="userLevel" value="D"/>
+      <entry key="workCountry" value="India"/>
+      <entry key="workState" value="East"/>
+    </Map>
+  </Attributes>
+</Link>

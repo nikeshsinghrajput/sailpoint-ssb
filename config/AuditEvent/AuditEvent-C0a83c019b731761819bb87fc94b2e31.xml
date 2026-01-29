@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="21c6451f-207e-40c8-828c-8c982fa0f4c7" action="AccountsRequestStart" application="Financial Planning &amp; Forecasting" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="spadmin" target="21c6451f-207e-40c8-828c-8c982fa0f4c7">
+  <Attributes>
+    <Map>
+      <entry key="flow" value="AccountsRequest"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="Create"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

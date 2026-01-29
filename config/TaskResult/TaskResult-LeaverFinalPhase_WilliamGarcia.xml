@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768832388328" completionStatus="Success" launched="1768832357325" launcher="Scheduler" name="Leaver final Phase: William Garcia" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="cart"/>
+      <entry key="identityRequestId"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="9bcaa225-f0c4-405a-8895-2159b92fb553">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000332"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <Filtered>
+              <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+                <AttributeRequest name="title" op="Set" value="Facilities Coordinator">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="department" op="Set" value="Workplace &amp; Facilities Management">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="manager" op="Set" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+              </AccountRequest>
+            </Filtered>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+                  <AttributeRequest name="AC_NewParent" op="Set" value="OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000332"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="9bcaa225-f0c4-405a-8895-2159b92fb553" targetIntegration="Active Directory" trackingId="651e2b91ea304a9fa93dfbbd022adfba">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify" targetIntegration="Active Directory">
+                <AttributeRequest name="AC_NewParent" op="Set" value="OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000332"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="retries">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019bd11f47819bd69fd45a0313"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="Stop"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+</TaskResult>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="SEC_PRWWIP_EXCLUSION" hash="fdf12e3f3d259553b7ee3ddfbb241a4790fd40d7" lastRefresh="1765222934673" requestable="true" type="group" uuid="{ecaf0cba-09a1-4eec-b8a1-7a728a947a9e}" value="CN=SEC_PRWWIP_EXCLUSION,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="SEC_PRWWIP_EXCLUSION"/>
+      <entry key="description" value="SEC_PRWWIP_EXCLUSION created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\SEC_PRWWIP_EXCLUSION"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1290"/>
+      <entry key="objectguid" value="{ecaf0cba-09a1-4eec-b8a1-7a728a947a9e}"/>
+      <entry key="sAMAccountName" value="SEC_PRWWIP_EXCLUSION"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

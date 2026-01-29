@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="8512579" applicationName="Financial Planning &amp; Forecasting" identityDisplayName="Aadhya Rao" identityName="62f8ef21-8a86-43ea-ad3d-322015149e9d" integration="Financial Planning &amp; Forecasting" name="0000000069" nativeIdentity="8512579" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000120"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="java.sql.SQLSyntaxErrorException: Unknown column 'description' in 'field list'" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512579" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c019a0512c7819a085c06492769"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c019a2c1fe4819a2c42a8d6002d"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="Accounts Payable Analyst" name="roles" op="Add" value="Accounts Payable Analyst">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest displayValue="Accounts Receivable Officer" name="roles" op="Add" value="Accounts Receivable Officer">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="employee" op="Set" value="Aadhya Rao"/>
+            <AttributeRequest name="firstName" op="Set" value="Aadhya"/>
+            <AttributeRequest name="lastName" op="Set" value="Rao"/>
+            <AttributeRequest name="empStatus" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Logistics"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="03-20-2025"/>
+            <AttributeRequest name="salaryClass" op="Set" value="A"/>
+            <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+            <AttributeRequest name="workState" op="Set" value="West"/>
+            <AttributeRequest name="email" op="Set" value="aadhya.rao@wipro.com"/>
+            <AttributeRequest name="countryCode" op="Set" value="685525"/>
+            <AttributeRequest name="workCountry" op="Set" value="India"/>
+            <AttributeRequest name="manager" op="Set" value="Vivaan Das"/>
+            <AttributeRequest name="superviserId" op="Set" value="Aadhya8512579"/>
+            <AttributeRequest name="bussinessUnit" op="Set" value="BU24"/>
+            <AttributeRequest name="annualHours" op="Set" value="1920"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Consultant"/>
+            <AttributeRequest name="isManager" op="Set" value="Yes"/>
+            <AttributeRequest name="description" op="Add" value="Financial Planning account created for Aadhya Rao"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="java.sql.SQLSyntaxErrorException: Unknown column 'description' in 'field list'" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

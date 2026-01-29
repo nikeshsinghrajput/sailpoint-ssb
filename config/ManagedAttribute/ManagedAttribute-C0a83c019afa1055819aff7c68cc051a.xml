@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="XA_MYDESK_AME_SFEUDC" hash="f91be1f5515435a284e19b25a828aa1a762efb92" lastRefresh="1765222934731" requestable="true" type="group" uuid="{10cad1ae-eed3-422f-9a75-52196366db6d}" value="CN=XA_MYDESK_AME_SFEUDC,OU=Workspace,OU=Groups,OU=Africa &amp; Middle East,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="XA_MYDESK_AME_SFEUDC"/>
+      <entry key="description" value="XA_MYDESK_AME_SFEUDC created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\XA_MYDESK_AME_SFEUDC"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1295"/>
+      <entry key="objectguid" value="{10cad1ae-eed3-422f-9a75-52196366db6d}"/>
+      <entry key="sAMAccountName" value="XA_MYDESK_AME_SFEUDC"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

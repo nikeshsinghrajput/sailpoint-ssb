@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application caseInsensitive="true" connector="sailpoint.connector.JDBCConnector" featuresString="DISCOVER_SCHEMA, PROVISIONING, SYNC_PROVISIONING, DIRECT_PERMISSIONS, SEARCH, ENABLE, UNLOCK, ACCOUNT_ONLY_REQUEST" icon="databaseIcon" name="Financial Planning &amp; Forecasting" profileClass="" type="JDBC">
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig" name="NS_JDBC_CorrelationConfig"/>
+  </AccountCorrelationConfig>
+  <Attributes>
+    <Map>
+      <entry key="SQL" value="SELECT &#13;&#10;    e.employee,&#13;&#10;    e.firstName,&#13;&#10;    e.lastName,&#13;&#10;    e.empStatus,&#13;&#10;    e.department,&#13;&#10;    e.userLevel,&#13;&#10;    e.hireDate,&#13;&#10;    e.salaryClass,&#13;&#10;    e.terminationDate,&#13;&#10;    e.workState,&#13;&#10;    e.email,&#13;&#10;    e.countryCode,&#13;&#10;    e.workCountry,&#13;&#10;    e.manager,&#13;&#10;    e.superviserId,&#13;&#10;    e.employeeId,&#13;&#10;    e.bussinessUnit,&#13;&#10;    e.annualHours,&#13;&#10;    e.jobTitle,&#13;&#10;    e.isManager,&#13;&#10;    GROUP_CONCAT(r.name SEPARATOR ', ') AS roles&#13;&#10;FROM &#13;&#10;    employees e&#13;&#10;LEFT JOIN &#13;&#10;    employee_roles er ON e.employeeId = er.employeeId&#13;&#10;LEFT JOIN &#13;&#10;    roles r ON r.roleId = er.roleId&#13;&#10;GROUP BY &#13;&#10;    e.employee,&#13;&#10;    e.firstName,&#13;&#10;    e.lastName,&#13;&#10;    e.empStatus,&#13;&#10;    e.department,&#13;&#10;    e.userLevel,&#13;&#10;    e.hireDate,&#13;&#10;    e.salaryClass,&#13;&#10;    e.terminationDate,&#13;&#10;    e.workState,&#13;&#10;    e.email,&#13;&#10;    e.countryCode,&#13;&#10;    e.workCountry,&#13;&#10;    e.manager,&#13;&#10;    e.superviserId,&#13;&#10;    e.employeeId,&#13;&#10;    e.bussinessUnit,&#13;&#10;    e.annualHours,&#13;&#10;    e.jobTitle,&#13;&#10;    e.isManager;"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1768911826865</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1768911826698</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationPartitioned">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationType" value="account"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="compositeDefinition"/>
+      <entry key="connMaxRetry" value="3"/>
+      <entry key="connRetryEnable">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="connWaitTimeForRetry" value="2"/>
+      <entry key="deltaTable"/>
+      <entry key="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+      <entry key="getDeltaSQL"/>
+      <entry key="getObjectSQL" value=" SELECT &#13;&#10;    e.employee,&#13;&#10;    e.firstName,&#13;&#10;    e.lastName,&#13;&#10;    e.empStatus,&#13;&#10;    e.department,&#13;&#10;    e.userLevel,&#13;&#10;    e.hireDate,&#13;&#10;    e.salaryClass,&#13;&#10;    e.terminationDate,&#13;&#10;    e.workState,&#13;&#10;    e.email,&#13;&#10;    e.countryCode,&#13;&#10;    e.workCountry,&#13;&#10;    e.manager,&#13;&#10;    e.superviserId,&#13;&#10;    e.employeeId,&#13;&#10;    e.bussinessUnit,&#13;&#10;    e.annualHours,&#13;&#10;    e.jobTitle,&#13;&#10;    e.isManager,&#13;&#10;    GROUP_CONCAT(r.name SEPARATOR ', ') AS roles&#13;&#10;FROM &#13;&#10;    employees e&#13;&#10;LEFT JOIN &#13;&#10;    employee_roles er ON e.employeeId = er.employeeId&#13;&#10;LEFT JOIN &#13;&#10;    roles r ON r.roleId = er.roleId&#13;&#10;WHERE e.employeeId ='$(identity)';"/>
+      <entry key="isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="jdbcExceptionBucketing">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="jdbcProvisionRule" value="NS_Rule_FinancialAndForecasting_ProvisioningRule"/>
+      <entry key="mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="noPermissions" value="false"/>
+      <entry key="operations" value="Create, Modify, Delete, Enable, Disable, Unlock"/>
+      <entry key="partitionMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="partitionStatements"/>
+      <entry key="password" value="2:ACP:dgRVQElfCG5JrI1W+teVJS1hwknyPAwSJxPUwmLNQoU="/>
+      <entry key="provisionRule" value="globalRule"/>
+      <entry key="requestable" value="true"/>
+      <entry key="roles.SQL" value="select * from roles;"/>
+      <entry key="roles.aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.deltaTable"/>
+      <entry key="roles.driverClass" value="com.mysql.cj.jdbc.Driver"/>
+      <entry key="roles.getDeltaSQL"/>
+      <entry key="roles.getDirectPermObjectSQL"/>
+      <entry key="roles.getObjectSQL"/>
+      <entry key="roles.isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.password" value="1:ACP:t1JynB58ztMhuXDEJRL7gCOs542pnUPKYVCF1ocarvY="/>
+      <entry key="roles.url" value="jdbc:mysql://localhost:3306/financial_planning_and_forecasting"/>
+      <entry key="roles.useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.user" value="root"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="JDBC Template"/>
+      <entry key="testConnSQL" value="select * from employees where employeeId='739070';"/>
+      <entry key="url" value="jdbc:mysql://localhost:3306/financial_planning_and_forecasting"/>
+      <entry key="useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedurePartition">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureTestConn">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="user" value="root"/>
+    </Map>
+  </Attributes>
+  <CustomizationRule>
+    <Reference class="sailpoint.object.Rule" name="NS_Financial_Planing_CustomizationRule"/>
+  </CustomizationRule>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="NS_Disable_Form_JDBC" objectType="account" type="Disable">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="NS_Disable_Form_JDBC"/>
+        </Map>
+      </Attributes>
+      <Section label="Disable Form" name="NS_Disable_Form_JDBC">
+        <Field name="empStatus" type="string" value="Inactive"/>
+      </Section>
+    </Form>
+    <Form name="NS_Form_Financial_Planning_AccountCreate" objectType="account" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="NS_Form_Financial_Planning_AccountCreate"/>
+        </Map>
+      </Attributes>
+      <FormRef name="NS_Form_Financial_Planning_AccountCreate"/>
+    </Form>
+    <Form name="NS_Form_Financial_Planing_AccountDisable" objectType="account" type="Enable">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="NS_Form_Financial_Planing_AccountDisable"/>
+        </Map>
+      </Attributes>
+      <Section name="NS_Form_Financial_Planing_AccountDisable">
+        <Field name="empStatus" type="string" value="Active"/>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Schemas>
+    <Schema displayAttribute="employeeId" identityAttribute="employeeId" instanceAttribute="" nativeObjectType="account" objectType="account" permissionsRemediationModificationType="None">
+      <AttributeDefinition name="employee" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="firstName" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="lastName" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="empStatus" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="department" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="userLevel" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="hireDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="salaryClass" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="terminationDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="workState" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="email" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="countryCode" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="workCountry" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="manager" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="superviserId" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="employeeId" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="bussinessUnit" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="annualHours" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="jobTitle" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="isManager" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="roles" schemaObjectType="roles" type="string">
+        <Description/>
+      </AttributeDefinition>
+    </Schema>
+    <Schema aggregationType="group" descriptionAttribute="description" displayAttribute="name" identityAttribute="name" instanceAttribute="" nativeObjectType="roles" objectType="roles" permissionsRemediationModificationType="None">
+      <AttributeDefinition name="roleId" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="name" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="type" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="status" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="owner" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="createdDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="modifiedDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+    </Schema>
+  </Schemas>
+  <ApplicationScorecard/>
+</Application>

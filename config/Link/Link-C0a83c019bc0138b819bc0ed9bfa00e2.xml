@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Daniel Hernandez" identity="739041" lastRefresh="1768468356090">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7904 Lake St"/>
+      <entry key="ADDRESS_WORK" value="7904 Lake St;Fukuoka, Tokyo Prefecture 47799;Japan"/>
+      <entry key="BUILDING_CODE" value="JP_TOK_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3012"/>
+      <entry key="CLASS" value="Field"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="07-27-2024"/>
+      <entry key="COUNTRY_NAME" value="Japan"/>
+      <entry key="DEPARTMENT" value="Data Privacy &amp; Compliance (DPC)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-008"/>
+      <entry key="DIVISION" value="Japan Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-JP-04"/>
+      <entry key="EMAIL" value="daniel.hernandez@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739041"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739041"/>
+      <entry key="FIRST_NAME" value="Daniel"/>
+      <entry key="HIREDATE" value="11-26-2023"/>
+      <entry key="JOBCODE" value="JT-008-02"/>
+      <entry key="JOBTITLE" value="Compliance Analyst"/>
+      <entry key="LAST_NAME" value="Hernandez"/>
+      <entry key="LOCATION" value="JP - Fukuoka"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="33013"/>
+      <entry key="REGION" value="Fukuoka"/>
+      <entry key="WORKER_NAME" value="Daniel Hernandez"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

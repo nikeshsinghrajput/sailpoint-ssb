@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItem certification="Manager Access Review for Nikesh Singh" expiration="1768664147932" handler="sailpoint.api.Certificationer" level="Normal" name="0000000120" type="Certification" wakeUpDate="1766590547969">
+  <Description>Manager Access Review for Nikesh Singh</Description>
+  <NotifConfig>
+    <NotificationConfig enabled="true" endDate="1768664147932" escalationEnabled="true" reminderFrequency="259200000" remindersEnabled="true" startDate="1765985747969">
+      <Configs>
+        <ReminderConfig emailTemplateName="Work Item Reminder" enabled="true" frequency="259200000" millis="604800000"/>
+        <EscalationConfig before="true" emailTemplateName="Work Item Escalation" enabled="true" escalationRuleName="Escalation rule for policy" millis="604800000"/>
+      </Configs>
+    </NotificationConfig>
+  </NotifConfig>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+  </Owner>
+  <Requester>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Requester>
+</WorkItem>

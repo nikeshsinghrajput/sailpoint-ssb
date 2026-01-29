@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="8512503" action="ProvisioningComplete" application="Financial Planning &amp; Forecasting" attributeName="roles" attributeValue="Accounts Payable Analyst" interface="LCM" serverHost="NikeshRajput" source="The Administrator" target="f7803391-7055-47b7-b696-aad5dd224453">
+  <Attributes>
+    <Map>
+      <entry key="op" value="Add"/>
+      <entry key="taskResultId" value="c0a83c019b731761819ba1e663f814e4"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="tiwari.saanvi" applicationName="Active Directory" identityDisplayName="Saanvi Tiwari" identityName="4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2" integration="Active Directory" name="0000000088" nativeIdentity="CN=tiwari.saanvi,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" assignmentIds="579247c15fef417f97c21543e19fec62" nativeIdentity="CN=tiwari.saanvi,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a671ea5819a6dcde83e06e6"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="memberOf" op="Add">
+              <Value>
+                <List>
+                  <String>CN=CITRIX_EXTERNAL_ACCESS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_NS_PWD_POLICY_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=XA_MYDESK_O365_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=XA_MYDESK_OFFICE2016_SFAPDC_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_PRA_PASSWORD_RESET_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_PAMP_SLPNT_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                </List>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="employeeNumber" op="Set" value="8512501"/>
+            <AttributeRequest name="givenName" op="Set" value="Saanvi"/>
+            <AttributeRequest name="sn" op="Set" value="Tiwari"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="tiwari.saanvi"/>
+            <AttributeRequest name="displayName" op="Set" value="Saanvi Tiwari"/>
+            <AttributeRequest name="title" op="Set" value="Software Engineer"/>
+            <AttributeRequest name="company" op="Add" value="NsTech"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="134434944000000000"/>
+            <AttributeRequest name="department" op="Set" value="Sales"/>
+            <AttributeRequest name="division" op="Add" value="Division-4"/>
+            <AttributeRequest name="l" op="Set" value="Noida"/>
+            <AttributeRequest name="co" op="Add" value="India"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9876543210"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-20-24451234"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Software Engineer"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;The object already exists. The object already exists. 00000524: UpdErr: DSID-031A11DA, problem 6005 (ENTRY_EXISTS), data 0 00000524: UpdErr: DSID-031A11DA, problem 6005 (ENTRY_EXISTS), data 0 . HRESULT:[0x80071392] For identity: CN=tiwari.saanvi,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com&quot;" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

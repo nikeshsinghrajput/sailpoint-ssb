@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE LocalizedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<LocalizedAttribute attribute="description" locale="en_US" name="External VDI Access:description:en_US" targetClass="Bundle" targetName="External VDI Access" value="External VDI Access Business Role"/>

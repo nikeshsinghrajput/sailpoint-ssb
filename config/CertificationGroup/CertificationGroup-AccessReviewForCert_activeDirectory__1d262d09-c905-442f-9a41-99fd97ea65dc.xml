@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationGroup PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationGroup completedCertifications="1" name="Access Review for cert:Active Directory::1d262d09-c905-442f-9a41-99fd97ea65dc" percentComplete="100" status="Complete" totalCertifications="1" type="Certification">
+  <Definition>
+    <Reference class="sailpoint.object.CertificationDefinition" name="Access Review for cert:Active Directory::1d262d09-c905-442f-9a41-99fd97ea65dc [Mon Jan 12 19:25:17 IST 2026]"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</CertificationGroup>

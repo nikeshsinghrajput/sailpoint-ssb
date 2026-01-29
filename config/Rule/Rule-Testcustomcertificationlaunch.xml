@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestCustomCertificationLaunch" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+
+import sailpoint.api.CertificationScheduler;
+  import sailpoint.object.CertificationGroup;
+import sailpoint.api.SailPointContext;
+import sailpoint.object.Application;
+import sailpoint.object.CertificationDefinition;
+import sailpoint.object.CertificationSchedule;
+import sailpoint.object.Identity;
+import sailpoint.object.TaskSchedule;
+import sailpoint.tools.GeneralException;
+import sailpoint.object.*;
+  import sailpoint.object.QueryOptions;
+  import sailpoint.object.CertificationAction.Status;
+  
+  
+//  Certification certItems=context.getObjectByName(Certification.class,"Access Review for :Financial Planning &amp; Forecasting::f7803391-7055-47b7-b696-aad5dd224453");
+  Identity identityObject = context.getObjectByName(Identity.class,"9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b");
+ Filter filter=Filter.eq("certificationGroups.name","Access Review for cert:Sales Analytics::9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b");
+		 QueryOptions qo=new QueryOptions();
+		 qo.addFilter(filter);
+		 Iterator certificationRes = context.search(Certification.class, qo);
+		 while(certificationRes!=null &amp;&amp; certificationRes.hasNext()) {
+			 Certification cert=(Certification) certificationRes.next();
+		    			  CertificationEntity entity = cert.getEntity(identityObject);
+		    			  List items = entity.getItems();
+		    			  CertificationAction action = items.get(0).getAction();
+		    			  Status status = action.getStatus();
+		    			  System.out.println("success:::"+status);
+		    			  if(status.compareTo(Status.Remediated)==0) {
+		    				  System.out.println("success");
+		    			  }
+		    		   
+			// System.out.println("certification names ::"+certificationRes.next().getName());
+		 }
+   
+    return "";    
+   String identityName="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69",launcherIdentity="spadmin",applicationName="Sales Analytics";
+	 String certificationDefinitionTemplateName ="Targeted Certification template for financial App1 [07/01/26, 12:13:18 AM IST]";
+	 List identitiesToCertify = new ArrayList();
+	  identitiesToCertify.add(identityName);
+	    System.out.println("TestCustomCertificationLaunch start");
+	    Identity requestor = context.getObjectByName(Identity.class, launcherIdentity);
+	  Identity identity   = context.getObjectByName(Identity.class, identityName);
+
+	  if (requestor == null) {
+	    throw new GeneralException("Requestor identity not found: launcherIdentity:"+launcherIdentity);
+	  }
+	  if (identity == null) {
+	    throw new GeneralException("Target identity not found: " + identityName);
+	  }
+	 
+	   CertificationGroup certificationGroup = context.getObjectByName(CertificationGroup.class, certificationDefinitionTemplateName);
+	  CertificationDefinition templateCert = certificationGroup.getDefinition();
+      
+		  if (templateCert == null) {
+		    throw new GeneralException("Certification definition template not found: "
+		        + certificationDefinitionTemplateName);
+		  }
+      CertificationDefinition definition = (CertificationDefinition) templateCert.derive(context);
+      String certNameBase = "1Access Review for " + identityName;
+      String certNameFull = certNameBase + " [" + new Date().toString() + "]";
+System.out.println("certNameFull:::::::"+certNameFull);
+      definition.setNameTemplate(certNameBase);
+      definition.setShortNameTemplate(certNameBase);
+      definition.setCertificationNameTemplate(certNameBase);
+
+      definition.setName(certNameFull);
+
+     
+     // definition.setCertifierName(appOwner.getName());
+  //     definition.setOwner(appOwner);
+  //    definition.setCertificationOwner(appOwner);
+      // If owner expects an Identity (preferred), set the Identity. If it expects String, set name.
+      // Choose ONE based on your IIQ object model / API.
+      // definition.setOwner(certGroupOwner); 
+      
+
+   //   definition.setDescription("Access review for :" + appOwner.getName());
+  //    definition.setIdentitiesToCertify(Collections.singletonList(identity.getId()));
+//definition.setIncludedApplicationIds(Collections.singletonList(application.getId()));
+      context.saveObject(definition);
+      context.commitTransaction();
+
+      /*
+       * Build schedule from definition and run immediately
+       */
+      CertificationSchedule certSchedule = new CertificationSchedule(context, requestor, definition);
+      certSchedule.setRunNow(true);
+
+      CertificationScheduler scheduler = new CertificationScheduler(context);
+      TaskSchedule taskSchedule = scheduler.saveSchedule(certSchedule, false);
+  
+   
+    
+  return "success";
+  </Source>
+</Rule>

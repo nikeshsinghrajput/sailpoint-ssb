@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentitySnapshot PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentitySnapshot applications="Hr-Workday" identityName="4b1c6129-577a-4bfc-ab69-bf5562b1e7d7">
+  <AssignedRoleSnapshots>
+    <RoleAssignmentSnapshot name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoleSnapshots>
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Investment Operations"/>
+      <entry key="displayName" value="Sai Tiwari"/>
+      <entry key="division" value="Division-3"/>
+      <entry key="employeeId" value="8512505"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full_time"/>
+      <entry key="firstname" value="Sai"/>
+      <entry key="hireDate" value="01-05-2025"/>
+      <entry key="lastname" value="Tiwari"/>
+      <entry key="location" value="Bangalore"/>
+      <entry key="manager" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="postalCode" value="667701"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Portfolio Operations Specialist"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <LinkSnapshots>
+    <LinkSnapshot application="Hr-Workday" identity="8512505" lastRefresh="1765382824693" simpleIdentity="Sai Tiwari">
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="544 MG Road"/>
+          <entry key="ADDRESS_WORK" value="Hybrid"/>
+          <entry key="BUILDING_CODE" value="B447"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU25"/>
+          <entry key="CLASS" value="Full_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Investment Operations"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+          <entry key="DIVISION" value="Division-3"/>
+          <entry key="DIVISION_ID" value="DIV91"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512505"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F90864"/>
+          <entry key="FIRST_NAME" value="Sai"/>
+          <entry key="HIREDATE" value="01-05-2025"/>
+          <entry key="JOBCODE" value="JC298"/>
+          <entry key="JOBTITLE" value="Portfolio Operations Specialist"/>
+          <entry key="LAST_NAME" value="Tiwari"/>
+          <entry key="LOCATION" value="Bangalore"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="667701"/>
+          <entry key="REGION" value="West"/>
+          <entry key="WORKER_NAME" value="Sai Tiwari"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </LinkSnapshot>
+  </LinkSnapshots>
+</IdentitySnapshot>

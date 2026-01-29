@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="DebugObjectBrowserChange" attributeName="op" attributeValue="update" interface="UI" serverHost="NikeshRajput" source="spadmin" target="Identity: daa41f97-5236-4984-a9ef-d2f01f9e0045">
+  <Attributes>
+    <Map>
+      <entry key="DebugObjectBrowserChange" value="Class: Identity Id/Name: daa41f97-5236-4984-a9ef-d2f01f9e0045 Action: Update in Debug Object Browser by User spadmin"/>
+      <entry key="Object Name" value="daa41f97-5236-4984-a9ef-d2f01f9e0045"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

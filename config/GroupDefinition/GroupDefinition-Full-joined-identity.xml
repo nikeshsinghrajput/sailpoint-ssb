@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE GroupDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<GroupDefinition indexed="true" name="full-joined-identity" private="true">
+  <Description>whuch has ad application</Description>
+  <GroupFilter>
+    <CompositeFilter operation="AND">
+      <Filter operation="EQ" property="inactive">
+        <Value>
+          <Boolean/>
+        </Value>
+      </Filter>
+      <Filter ignoreCase="true" operation="EQ" property="links.application.name" value="Active Directory"/>
+      <Filter ignoreCase="true" operation="EQ" property="links.application.id" value="c0a83c0199d9117b8199d942b544000a"/>
+    </CompositeFilter>
+  </GroupFilter>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</GroupDefinition>

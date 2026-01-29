@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Lisa Jones" identity="739029" lastRefresh="1768468353554">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9283 King Rd"/>
+      <entry key="ADDRESS_WORK" value="9283 King Rd;Bordeaux, Île‑de‑France 72231;France"/>
+      <entry key="BUILDING_CODE" value="FR_LED_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3083"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="04-09-2026"/>
+      <entry key="COUNTRY_NAME" value="France"/>
+      <entry key="DEPARTMENT" value="Investment Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+      <entry key="DIVISION" value="France Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-FR-03"/>
+      <entry key="EMAIL" value="lisa.jones@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739029"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739029"/>
+      <entry key="FIRST_NAME" value="Lisa"/>
+      <entry key="HIREDATE" value="01-14-2021"/>
+      <entry key="JOBCODE" value="JT-005-04"/>
+      <entry key="JOBTITLE" value="Trade Settlement Officer"/>
+      <entry key="LAST_NAME" value="Jones"/>
+      <entry key="LOCATION" value="FR - Bordeaux"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="33091"/>
+      <entry key="REGION" value="Bordeaux"/>
+      <entry key="WORKER_NAME" value="Lisa Jones"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

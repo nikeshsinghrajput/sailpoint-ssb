@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="BGC - Cisco Teams - Teams Mode Only" hash="ceb53ba3135524050ea473429ed61dc778199576" lastRefresh="1765222932195" requestable="true" type="group" uuid="{dac21446-3a81-4b4a-b229-2f22d7233099}" value="CN=BGC - Cisco Teams - Teams Mode Only,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="BGC - Cisco Teams - Teams Mode Only"/>
+      <entry key="description" value="BGC - Cisco Teams - Teams Mode Only created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\BGC - Cisco Teams - Teams Mode Only"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1278"/>
+      <entry key="objectguid" value="{dac21446-3a81-4b4a-b229-2f22d7233099}"/>
+      <entry key="sAMAccountName" value="BGC - Cisco Teams - Teams Mode Only"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

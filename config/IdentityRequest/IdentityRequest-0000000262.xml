@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1765899235445" executionStatus="Completed" name="0000000262" priority="Normal" requesterDisplayName="The Administrator" requesterId="c0a83c0199cf13658199cf93c73500fe" source="LCM" state="End" targetClass="Identity" targetDisplayName="Arjun Naidu" type="AccessRequest" verified="1765905779674">
+  <Attributes>
+    <Map>
+      <entry key="policyViolationMaps">
+        <value>
+          <List>
+            <Map>
+              <entry key="entitlements">
+                <value>
+                  <List>
+                    <Map>
+                      <entry key="application" value="Sales Analytics"/>
+                      <entry key="name" value="roles"/>
+                      <entry key="value" value="Sales Director"/>
+                    </Map>
+                    <Map>
+                      <entry key="application" value="Sales Analytics"/>
+                      <entry key="name" value="roles"/>
+                      <entry key="value" value="Sales Executive"/>
+                    </Map>
+                  </List>
+                </value>
+              </entry>
+              <entry key="leftBundles"/>
+              <entry key="policyName" value="sales anylatics denger access"/>
+              <entry key="policyType" value="EntitlementSOD"/>
+              <entry key="rightBundles"/>
+              <entry key="ruleName" value="sales analytics ent voilation"/>
+            </Map>
+          </List>
+        </value>
+      </entry>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000262"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Sales Analytics" nativeIdentity="8512512" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f49504ff"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Director" name="roles" op="Add" value="Sales Director">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000262"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+                <ProvisioningTargets>
+                  <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Sales Director">
+                    <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" selection="8512512">
+                      <AccountInfo displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512"/>
+                    </AccountSelection>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+                    <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                      <AccountInfo displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                    </AccountSelection>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget retain="true" role="NS_Role_Corporate_Learning_Portal"/>
+                </ProvisioningTargets>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" targetIntegration="Sales Analytics" trackingId="03ca8295f443469cb67cfa82adc69d59">
+              <AccountRequest application="Sales Analytics" nativeIdentity="8512512" op="Modify" targetIntegration="Sales Analytics">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a0c102b819a1038f49504ff"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="EntitlementAdd"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Sales Director" name="roles" op="Add" value="Sales Director">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000262"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Sales Director">
+              <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" selection="8512512">
+                <AccountInfo displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+            <ProvisioningTarget retain="true" role="NS_Role_Corporate_Learning_Portal"/>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019b0e110c819b27cbebea2f83"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" name="roles" nativeIdentity="8512512" operation="Add" ownerName="spadmin" provisioningEngine="Sales Analytics" provisioningState="Finished" value="Sales Director">
+      <Attributes>
+        <Map>
+          <entry key="assignmentId" value="44f3f2cfaa6647f3b0d58503f088c4be"/>
+          <entry key="attachmentConfigList"/>
+          <entry key="attachments"/>
+          <entry key="flow" value="AccessRequest"/>
+          <entry key="id" value="c0a83c019a0c102b819a1038f49504ff"/>
+          <entry key="identityEntitlementId" value="c0a83c019b0e110c819b27cbee772f88"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="operation" value="EntitlementAdd"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="ee93f8229a2c4660afcd7d9d920c6a31">
+                <AccountRequest application="Sales Analytics" nativeIdentity="8512512" op="Modify" targetIntegration="Sales Analytics">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f49504ff"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Director" name="roles" op="Add" trackingId="ee93f8229a2c4660afcd7d9d920c6a31" value="Sales Director">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

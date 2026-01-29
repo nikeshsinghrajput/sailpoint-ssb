@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="businessCategory" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="Hybrid">
+  <Attributes>
+    <Map>
+      <entry key="expansionInfo" value="Active Directory"/>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="d4a23dbbec764f9389862a8e794b98f3">
+            <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create" targetIntegration="Active Directory">
+              <AttributeRequest name="businessCategory" op="Set" trackingId="d4a23dbbec764f9389862a8e794b98f3" value="Hybrid"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

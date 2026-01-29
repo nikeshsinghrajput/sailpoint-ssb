@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765968290498" completionStatus="Success" host="NikeshRajput" launched="1765968290458" launcher="spadmin" name="Full Text Index Refresh" schedule="a6026dda61e94cc0a4acc6f137d01505" type="System">
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Full Text Index Refresh"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Timothy Medina" identity="739016" lastRefresh="1768468351002">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="574 River St"/>
+      <entry key="ADDRESS_WORK" value="574 River St;Monterrey, Jalisco 29088;Mexico"/>
+      <entry key="BUILDING_CODE" value="MX_JAL_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3035"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="11-07-2024"/>
+      <entry key="COUNTRY_NAME" value="Mexico"/>
+      <entry key="DEPARTMENT" value="Identity &amp; Access Management (IAM)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-011"/>
+      <entry key="DIVISION" value="Mexico Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-MX-03"/>
+      <entry key="EMAIL" value="timothy.medina@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739016"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739016"/>
+      <entry key="FIRST_NAME" value="Timothy"/>
+      <entry key="HIREDATE" value="03-12-2021"/>
+      <entry key="JOBCODE" value="JT-011-02"/>
+      <entry key="JOBTITLE" value="SailPoint IIQ Developer"/>
+      <entry key="LAST_NAME" value="Medina"/>
+      <entry key="LOCATION" value="MX - Monterrey"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="68615"/>
+      <entry key="REGION" value="Monterrey"/>
+      <entry key="WORKER_NAME" value="Timothy Medina"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

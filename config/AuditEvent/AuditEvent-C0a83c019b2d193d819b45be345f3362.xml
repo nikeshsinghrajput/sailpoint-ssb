@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="aea74bcb-7990-4583-9366-4d5ca5d8c672" action="AccessRequestStart" application="Financial Planning &amp; Forecasting" attributeName="roles" attributeValue="Reconciliation Analyst" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="spadmin" target="aea74bcb-7990-4583-9366-4d5ca5d8c672">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a0512c7819a085c0680276f"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="EntitlementAdd"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

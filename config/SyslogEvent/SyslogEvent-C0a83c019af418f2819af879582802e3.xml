@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.provisioning.TemplateCompiler" eventLevel="ERROR" lineNumber="1351" quickKey="0000447777" server="NikeshRajput" thread="http-nio-1000-exec-3" username="spadmin">
+  <EventMessage>There was a problem evaluating the field named email with value definition :&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;!DOCTYPE DynamicValue PUBLIC "sailpoint.dtd" "sailpoint.dtd"&gt;
+&lt;DynamicValue&gt;
+  &lt;Script&gt;
+    &lt;Source&gt;identitty.getAttribute("email");&lt;/Source&gt;
+  &lt;/Script&gt;
+&lt;/DynamicValue&gt;
+</EventMessage>
+</SyslogEvent>

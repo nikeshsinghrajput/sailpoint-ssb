@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="verma.sumit@nstechiiq.com" applicationName="Sales Analytics" identityDisplayName="sumit verma" identityName="83824b7f-2498-498f-acef-16fc78db0097" integration="Sales Analytics" name="0000000475" nativeIdentity="8512519" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512519' for key 'salesemployee.PRIMARY'" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Sales Analytics" nativeIdentity="8512519" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019b731761819bb23c8cfb2544"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="roles" op="Add" value="Incentive &amp; Compensation Analyst">
+              <Attributes>
+                <Map>
+                  <entry key="assignment">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="firstName" op="Set" value="sumit"/>
+            <AttributeRequest name="lastName" op="Set" value="verma"/>
+            <AttributeRequest name="status" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Financial Risk Management"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="02-01-2026"/>
+            <AttributeRequest name="salesQuota" op="Set" value="500000"/>
+            <AttributeRequest name="achievedSales" op="Set" value="0"/>
+            <AttributeRequest name="terminationDate" op="Set" value="12-26-2027"/>
+            <AttributeRequest name="workState" op="Set" value="CN - Guangzhou"/>
+            <AttributeRequest name="email" op="Set" value="verma.sumit@nstechiiq.com"/>
+            <AttributeRequest name="region" op="Set" value="A"/>
+            <AttributeRequest name="territory" op="Set" value="A"/>
+            <AttributeRequest name="commissionRate" op="Set" value="5%"/>
+            <AttributeRequest name="managerId" op="Set" value="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69"/>
+            <AttributeRequest name="annualHours" op="Set" value="720"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Product Manager"/>
+            <AttributeRequest name="country" op="Set" value="China"/>
+            <AttributeRequest name="isManager" op="Set" value="No"/>
+            <AttributeRequest name="businessUnit" op="Set" value="A"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512519' for key 'salesemployee.PRIMARY'" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

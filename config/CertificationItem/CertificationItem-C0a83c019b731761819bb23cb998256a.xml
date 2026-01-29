@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem completed="1768222011473" exceptionApplication="Active Directory" exceptionAttributeName="memberOf" exceptionAttributeValue="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com" summaryStatus="Complete" type="Exception">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019b731761819bb23cb9762566" decisionDate="1768222011403" remediationAction="SendProvisionRequest" remediationCompleted="true" remediationKickedOff="true" reviewed="true" status="Remediated">
+    <Description>Remove the 'Active Directory' entitlement on  'sumit verma'</Description>
+    <RemediationPlan>
+      <ProvisioningPlan>
+        <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify" targetIntegration="Active Directory">
+          <AttributeRequest name="memberOf" op="Remove" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+        </AccountRequest>
+        <Requesters>
+          <Reference class="sailpoint.object.Identity" name="spadmin"/>
+        </Requesters>
+      </ProvisioningPlan>
+    </RemediationPlan>
+  </CertificationAction>
+  <ApplicationNames>
+    <String>Active Directory</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Active Directory" displayName="verma.sumit" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="memberOf" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>

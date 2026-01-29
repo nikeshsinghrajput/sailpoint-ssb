@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="8512545" applicationName="DHP" identityDisplayName="Aadhya Gupta" identityName="dc14eeda-f657-4f8f-a152-4ccea08ec044" integration="DHP" name="0000000066" nativeIdentity="8512545" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : Typed variable declaration : Error in method invocation: Method getAccountRequest(sailpoint.object.Application) not found in class'sailpoint.object.ProvisioningPlan' : at Line: 20 : in file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : plan .getAccountRequest ( application ) &#10; BSF info: NS_DHPJDBC_CreateProvisioningRule at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="DHP" nativeIdentity="8512545" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a0c102b819a177a48b46ba0"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="capability_name" op="Add" value="READ_ACCESS">
+              <Attributes>
+                <Map>
+                  <entry key="assignment">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="firstname" op="Set" value="Aadhya"/>
+            <AttributeRequest name="lastname" op="Set" value="Gupta"/>
+            <AttributeRequest name="email" op="Set" value="aadhya.gupta@techneonsolutions.com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : Typed variable declaration : Error in method invocation: Method getAccountRequest(sailpoint.object.Application) not found in class'sailpoint.object.ProvisioningPlan' : at Line: 20 : in file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : plan .getAccountRequest ( application ) &#10; BSF info: NS_DHPJDBC_CreateProvisioningRule at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

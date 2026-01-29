@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.ADLDAPConnector" eventLevel="ERROR" lineNumber="5018" quickKey="0001199264" server="NikeshRajput" thread="http-nio-1000-exec-1" username="spadmin">
+  <EventMessage>1195720730 Test configuration failed for application: Active Directory Partner Cause for failure: sailpoint.tools.GeneralException: Connection reset</EventMessage>
+</SyslogEvent>

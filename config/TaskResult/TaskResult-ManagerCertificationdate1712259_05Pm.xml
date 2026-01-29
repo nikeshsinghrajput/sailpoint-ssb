@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765985736102" completionStatus="Success" host="NikeshRajput" launched="1765985734575" launcher="spadmin" name="Manager Certification [DATE] [17/12/25, 9:05 PM]" runLength="1" runLengthAverage="37" runLengthDeviation="-97" schedule="Manager Certification [DATE] [17/12/25, 9:05 PM]" type="Certification">
+  <Attributes>
+    <Map>
+      <entry key="activePeriodDurationAmount" value="1"/>
+      <entry key="activePeriodDurationScale" value="months"/>
+      <entry key="elapsedTime" value="1483"/>
+      <entry key="emailsSuppressed">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="manager" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="remediationPeriodDurationAmount" value="1"/>
+      <entry key="remediationPeriodDurationScale" value="months"/>
+      <entry key="resultingCertGroupIds" value="Manager Certification [17/12/25, 9:05:34 PM IST]"/>
+      <entry key="total">
+        <value>
+          <Integer>1</Integer>
+        </value>
+      </entry>
+      <entry key="type" value="Manager"/>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Certification Manager"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

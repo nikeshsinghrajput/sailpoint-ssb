@@ -1,0 +1,1239 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_Shared_Library">
+  <Signature>
+    <Inputs>
+      <Argument name="log">
+        <Description>The log object associated with the SailPointContext (not used; using log4j instead).</Description>
+      </Argument>
+      <Argument name="context">
+        <Description>SailPointContext – used throughout this shared library.</Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Source>
+
+/**
+ * NS_Rule_Shared_Library
+ *
+ * Unified shared methods library combining:
+ *  - File/CSV/ZIP/ServiceNow utilities
+ *  - Identity / Link / AD / Role / Entitlement helpers
+ *  - Email helpers
+ *  - Misc utilities
+ *
+ * All logging uses org.apache.log4j.Logger via "logs".
+ */
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ByteArrayOutputStream;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.PosixFilePermissions;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipOutputStream;
+
+import javax.faces.application.FacesMessage;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
+import org.apache.log4j.Logger;
+
+import sailpoint.api.IdentityArchiver;
+import sailpoint.api.IdentityService;
+import sailpoint.api.PasswordGenerator;
+import sailpoint.api.Provisioner;
+import sailpoint.connector.Connector;
+import sailpoint.connector.ConnectorException;
+import sailpoint.connector.ConnectorFactory;
+import sailpoint.object.AccountRequest;
+import sailpoint.object.Application;
+import sailpoint.object.AuditEvent;
+import sailpoint.object.Attributes;
+import sailpoint.object.Custom;
+import sailpoint.object.EmailFileAttachment;
+import sailpoint.object.EmailOptions;
+import sailpoint.object.EmailTemplate;
+import sailpoint.object.Filter;
+import sailpoint.object.Identity;
+import sailpoint.object.IdentityEntitlement;
+import sailpoint.object.IdentitySnapshot;
+import sailpoint.object.Link;
+import sailpoint.object.ManagedAttribute;
+import sailpoint.object.PasswordPolicy;
+import sailpoint.object.ProvisioningPlan;
+import sailpoint.object.ProvisioningProject;
+import sailpoint.object.QueryOptions;
+import sailpoint.object.ResourceObject;
+import sailpoint.workflow.WorkflowContext;
+import sailpoint.tools.CloseableIterator;
+import sailpoint.tools.EmailException;
+import sailpoint.tools.GeneralException;
+import sailpoint.tools.Message;
+import sailpoint.tools.Util;
+
+/** Unified logger for the shared library. */
+static Logger logs = Logger.getLogger("com.ns.rule.NS_Rule_Shared_Library");
+
+
+/* ============================================================================
+ *  SECTION 1: FILE IO / CSV / ZIP UTILITIES
+ * ==========================================================================*/
+
+/**
+ * Write content to a file (overwrite).
+ */
+public void writeToFile(String content, String filePath) {
+  BufferedWriter writer = null;
+  try {
+    writer = new BufferedWriter(new FileWriter(filePath, false));
+    if (content != null) {
+      writer.append(content);
+    }
+    writer.newLine();
+    writer.flush();
+    logs.debug("writeToFile: wrote to " + filePath);
+  } catch (IOException e) {
+    logs.error("writeToFile error: " + filePath, e);
+  } finally {
+    try {
+      if (writer != null) {
+        writer.close();
+      }
+    } catch (IOException e) {
+      logs.error("writeToFile close error: " + filePath, e);
+    }
+  }
+}
+
+/**
+ * Append content to an existing file.
+ */
+public void appendToFile(String content, String filePath) {
+  BufferedWriter writer = null;
+  try {
+    writer = new BufferedWriter(new FileWriter(filePath, true));
+    if (content != null) {
+      writer.append(content);
+    }
+    writer.newLine();
+    writer.flush();
+    logs.debug("appendToFile: appended to " + filePath);
+  } catch (IOException e) {
+    logs.error("appendToFile error: " + filePath, e);
+  } finally {
+    try {
+      if (writer != null) {
+        writer.close();
+      }
+    } catch (IOException e) {
+      logs.error("appendToFile close error: " + filePath, e);
+    }
+  }
+}
+
+/**
+ * Add quotes around a CSV value and escape inner quotes.
+ */
+public String addQuote(String value) {
+  if (value == null) {
+    value = "";
+  }
+  // Escape existing quotes by doubling them
+  value = value.replace("\"", "\"\"");
+  return "\"" + value + "\"";
+}
+
+/**
+ * Simple ZIP creator: &lt;sourceFile&gt; -&gt; &lt;sourceFile&gt;.zip
+ */
+public void compressFile(String sourceFile) {
+  FileInputStream fis = null;
+  ZipOutputStream zipOut = null;
+  FileOutputStream fos = null;
+  try {
+    File fileToZip = new File(sourceFile);
+    if (!fileToZip.exists()) {
+      logs.error("compressFile: file does not exist: " + sourceFile);
+      return;
+    }
+
+    String zipName = sourceFile + ".zip";
+    fos = new FileOutputStream(zipName);
+    zipOut = new ZipOutputStream(fos);
+
+    ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
+    zipOut.putNextEntry(zipEntry);
+
+    fis = new FileInputStream(fileToZip);
+    byte[] buffer = new byte[4096];
+    int len;
+    while ((len = fis.read(buffer)) &gt;= 0) {
+      zipOut.write(buffer, 0, len);
+    }
+    logs.info("compressFile: created " + zipName);
+  } catch (Exception e) {
+    logs.error("compressFile error: " + sourceFile, e);
+  } finally {
+    try { if (fis != null) fis.close(); } catch (Exception e) {}
+    try { if (zipOut != null) zipOut.close(); } catch (Exception e) {}
+    try { if (fos != null) fos.close(); } catch (Exception e) {}
+  }
+}
+
+/**
+ * Change file permissions to rwx for owner/group/others.
+ * Note: Useful on Unix; may not have effect on Windows.
+ */
+public void changeFilePermission(String fileName) {
+  try {
+    File file = new File(fileName);
+    if (file.exists()) {
+      // Owner
+      file.setReadable(true, true);
+      file.setWritable(true, true);
+      file.setExecutable(true, true);
+
+      // Group &amp; others (best-effort)
+      file.setReadable(true, false);
+      file.setWritable(true, false);
+      file.setExecutable(true, false);
+
+      logs.debug("changeFilePermission: set rwx for " + fileName);
+    } else {
+      logs.warn("changeFilePermission: file not found: " + fileName);
+    }
+  } catch (Exception e) {
+    logs.error("changeFilePermission error: " + fileName, e);
+  }
+}
+
+/**
+ * Move/copy a file to an archive destination with timestamp and set wide permissions.
+ */
+public void moveFileToArchive(String archiveDest, String fileSource) {
+  logs.debug("moveFileToArchive: START, source=" + fileSource + ", dest=" + archiveDest);
+  try {
+    StringBuilder archiveFileName = new StringBuilder(archiveDest);
+    File file = new File(fileSource);
+    String fileName = file.getName();
+    if (fileName.contains(".csv")) {
+      fileName = fileName.replace(".csv", "");
+    }
+    archiveFileName.append(fileName);
+    archiveFileName.append("-" + Util.dateToString(new Date(), "MM-dd-yyyy-hh-mm-ss"));
+    archiveFileName.append(".csv");
+    Path source = Paths.get(fileSource);
+    Path target = Paths.get(archiveFileName.toString());
+    Files.copy(source, target);
+    try {
+      Files.setPosixFilePermissions(target, PosixFilePermissions.fromString("rwxrwxrwx"));
+    } catch (Exception ex) {
+      // On Windows or non-POSIX FS this may fail; ignore.
+      logs.debug("moveFileToArchive: unable to set POSIX permissions (expected on Windows): " + ex.getMessage());
+    }
+    logs.debug("moveFileToArchive: archived as " + archiveFileName.toString());
+  } catch (IOException ex) {
+    logs.error("moveFileToArchive: Exception when moving file to archive location.", ex);
+  }
+}
+
+/**
+ * Send CSV data as an email attachment.
+ */
+public void sendCSVDataAsEmailAttachment(String data, String fileName, String to, String cc,
+                                         EmailTemplate emailTemplate, Map emailData)
+                                         throws EmailException, GeneralException, IOException {
+
+  if (!fileName.endsWith(".csv") &amp;&amp; !fileName.endsWith(".CSV")) {
+    fileName = fileName + ".csv";
+  }
+  byte[] bytes = (data != null) ? data.getBytes() : new byte[0];
+  EmailFileAttachment attachment =
+    new EmailFileAttachment(fileName, EmailFileAttachment.MimeType.MIME_CSV, bytes);
+
+  EmailOptions options = new EmailOptions();
+  options.setTo(to);
+  if (Util.isNotNullOrEmpty(cc)) {
+    options.setCc(cc);
+  }
+  options.setSendImmediate(true);
+  if (emailData != null) {
+    options.addVariables(emailData);
+  }
+  options.addAttachment(attachment);
+
+  context.sendEmailNotification(emailTemplate, options);
+  logs.info("sendCSVDataAsEmailAttachment: Sent CSV to " + to);
+}
+
+/**
+ * Send an existing ZIP file as email attachment.
+ */
+public void sendZipDataAsEmailAttachment(String zipfileName, String entryFile, String to, String cc,
+                                         EmailTemplate emailTemplate, Map emailData)
+                                         throws EmailException, GeneralException, IOException {
+
+  if (!zipfileName.endsWith(".zip") &amp;&amp; !zipfileName.endsWith(".ZIP")) {
+    zipfileName = zipfileName + ".zip";
+  }
+  String fileName = zipfileName.substring(zipfileName.lastIndexOf("/") + 1);
+  byte[] fileData = Files.readAllBytes(Paths.get(zipfileName));
+  EmailFileAttachment attachment =
+    new EmailFileAttachment(fileName, EmailFileAttachment.MimeType.MIME_ZIP, fileData);
+
+  EmailOptions options = new EmailOptions();
+  options.setTo(to);
+  if (Util.isNotNullOrEmpty(cc)) {
+    options.setCc(cc);
+  }
+  options.setSendImmediate(true);
+  if (emailData != null) {
+    options.addVariables(emailData);
+  }
+  options.addAttachment(attachment);
+
+  context.sendEmailNotification(emailTemplate, options);
+  logs.info("sendZipDataAsEmailAttachment: Sent ZIP " + zipfileName + " to " + to);
+}
+
+/**
+ * SQL helper: Get last ServiceNow ticket (ticketId) for Identity+App+Operation.
+ */
+public String getLastSNOWReq(String id, String app, String op) {
+
+  String idName = Util.isNotNullOrEmpty(id) ? id : "X";
+  String appName = Util.isNotNullOrEmpty(app) ? app : "X";
+  String opName = Util.isNotNullOrEmpty(op) ? op : "X";
+  String reqNumber = "";
+
+  String sqlQuery =
+    "select extractvalue(attributes, '/Attributes/Map/entry[@key=\"ticketId\"]/@value') \"REQ\" ,identity_name " +
+    "from spt_provisioning_transaction " +
+    "where identity_name = '" + idName + "' " +
+    "and application_name = '" + appName + "' " +
+    "and operation = '" + opName + "' " +
+    "and integration = 'IdentityIQ for ServiceNow Service Desk' " +
+    "order by created limit 1";
+
+  Iterator itr = null;
+  try {
+    itr = context.search("sql:" + sqlQuery, null, null);
+    if (itr != null &amp;&amp; !Util.isEmpty(itr)) {
+      while (itr.hasNext()) {
+        Object[] row = (Object[]) itr.next();
+        if (row != null &amp;&amp; row.length &gt; 0 &amp;&amp; row[0] != null) {
+          reqNumber = row[0].toString();
+          logs.debug("getLastSNOWReq: Found ticketId=" + reqNumber);
+        }
+      }
+    }
+  } catch (Exception e) {
+    logs.error("getLastSNOWReq: Exception while executing SQL", e);
+  } finally {
+    if (itr != null) {
+      Util.flushIterator(itr);
+    }
+    context.decache();
+  }
+  return reqNumber;
+}
+
+
+/* ============================================================================
+ *  SECTION 2: DATE FILTER / GENERAL UTILS
+ * ==========================================================================*/
+
+/**
+ * Build a filter for date ranges, supporting either epoch or string dates.
+ */
+public static Filter getDateFilter(String attribute, Date from, Date to,
+                                   boolean fromInclusive, boolean toInclusive,
+                                   String dbDatePattern) {
+  List filters = new ArrayList();
+  logs.debug("getDateFilter: From=" + from + ", To=" + to + ", pattern=" + dbDatePattern);
+
+  if ("epoch".equals(dbDatePattern)) {
+    // Epoch-based (millis)
+    if (fromInclusive) {
+      from = DateUtils.setHours(from, 0);
+      from = DateUtils.setMinutes(from, 0);
+      from = DateUtils.setSeconds(from, 1);
+    } else {
+      from = DateUtils.addDays(from, 1);
+      from = DateUtils.setHours(from, 0);
+      from = DateUtils.setMinutes(from, 0);
+      from = DateUtils.setSeconds(from, 1);
+    }
+
+    if (toInclusive) {
+      to = DateUtils.setHours(to, 23);
+      to = DateUtils.setMinutes(to, 59);
+      to = DateUtils.setSeconds(to, 59);
+    } else {
+      to = DateUtils.addDays(to, -1);
+      to = DateUtils.setHours(to, 23);
+      to = DateUtils.setMinutes(to, 59);
+      to = DateUtils.setSeconds(to, 59);
+    }
+
+    filters.add(Filter.ge(attribute, from.getTime()));
+    filters.add(Filter.le(attribute, to.getTime()));
+    logs.debug("getDateFilter: Final filter (epoch) = " + Filter.and(filters));
+    return Filter.and(filters);
+
+  } else {
+    // String-based date pattern
+    if (from.before(to)) {
+      if (fromInclusive) {
+        filters.add(Filter.eq(attribute, Util.dateToString(from, dbDatePattern)));
+      }
+      if (DateUtils.addDays(from, 1).before(to)) {
+        for (Date d = DateUtils.addDays(from, 1); d.before(to); d = DateUtils.addDays(d, 1)) {
+          filters.add(Filter.eq(attribute, Util.dateToString(d, dbDatePattern)));
+        }
+      }
+      if (toInclusive) {
+        filters.add(Filter.eq(attribute, Util.dateToString(to, dbDatePattern)));
+      }
+    }
+    logs.debug("getDateFilter: Final filter (string) = " + Filter.or(filters));
+    return Filter.or(filters);
+  }
+}
+
+
+/* ============================================================================
+ *  SECTION 3: IDENTITY SNAPSHOT / AD UNIQUE / OBJECT FETCH
+ * ==========================================================================*/
+
+/**
+ * Take an Identity snapshot using IdentityArchiver.
+ */
+public void takeIdentitySnapshot(String identityName) {
+  try {
+    Identity identity = context.getObjectByName(Identity.class, identityName);
+    IdentityArchiver identityArchiver = new IdentityArchiver(context);
+    IdentitySnapshot identitySnapshot = identityArchiver.createSnapshot(identity);
+    context.saveObject(identitySnapshot);
+    context.commitTransaction();
+    logs.debug("takeIdentitySnapshot: Snapshot taken for Identity=" + identityName);
+  } catch (GeneralException ex) {
+    logs.error("takeIdentitySnapshot: Error taking snapshot for identity=" + identityName, ex);
+  }
+}
+
+/**
+ * Check uniqueness of a given attribute in an application (typically AD).
+ */
+public boolean isUniqueInAD(String appName, String attrName, String attrValue)
+                            throws GeneralException, ConnectorException {
+
+  Application app = context.getObjectByName(Application.class, appName);
+  Connector connector = ConnectorFactory.getConnector(app, null);
+
+  Filter filter = Filter.eq(attrName, attrValue);
+  logs.trace("isUniqueInAD: Checking in app=" + appName + " for " + attrName + "=" + attrValue);
+
+  CloseableIterator ci = connector.iterateObjects("account", filter, null);
+  boolean foundMatch = ci.hasNext();
+  ci.close();
+  logs.trace("isUniqueInAD: Found match? " + foundMatch);
+  return !foundMatch;
+}
+
+/**
+ * Get a ResourceObject from AD-like app by attribute.
+ */
+public ResourceObject getObjectAD(String appName, String attrName, String attrValue)
+                                  throws GeneralException, ConnectorException {
+
+  Application app = context.getObjectByName(Application.class, appName);
+  Connector connector = ConnectorFactory.getConnector(app, null);
+
+  Filter filter = Filter.eq(attrName, attrValue);
+  logs.trace("getObjectAD: Checking in app=" + appName + " for " + attrName + "=" + attrValue);
+
+  CloseableIterator ci = connector.iterateObjects("account", filter, null);
+  ResourceObject ret = new ResourceObject();
+  if (ci.hasNext()) {
+    ret = (ResourceObject) ci.next();
+  }
+  ci.close();
+  logs.trace("getObjectAD: Returning --&gt; " + (ret != null ? ret.toXml() : "null"));
+  return ret;
+}
+
+
+/* ============================================================================
+ *  SECTION 4: LINK / NATIVE ID / ATTRIBUTE HELPERS
+ * ==========================================================================*/
+
+/**
+ * Return non-admin, non-service application link for identity/app name.
+ */
+public Link getApplicationLink(Identity identity, String appName) throws GeneralException {
+  Application app = context.getObjectByName(Application.class, appName);
+  return getApplicationLink(identity, app);
+}
+
+/**
+ * Return non-admin, non-service application link for identity/application object.
+ */
+public Link getApplicationLink(Identity identity, Application application) throws GeneralException {
+
+  IdentityService is = new IdentityService(context);
+  List links = is.getLinks(identity, application);
+
+  if (!links.isEmpty()) {
+    return (Link) links.get(0);
+  }
+  return null;
+}
+
+/**
+ * Return non-admin, non-service link by identityName/app name.
+ */
+public Link getApplicationLink(String identityName, String application) throws GeneralException {
+  Identity identity = context.getObjectByName(Identity.class, identityName);
+  return getApplicationLink(identity, application);
+}
+
+/**
+ * Get native identity where there is only one account.
+ */
+public String getNativeIdentity(String identityName, String application) throws GeneralException {
+  Identity identity = context.getObjectByName(Identity.class, identityName);
+  return getNativeIdentity(identity, application);
+}
+
+/**
+ * Get native identity for given Identity/app.
+ */
+public String getNativeIdentity(Identity identity, String application) throws GeneralException {
+  Link link = getApplicationLink(identity, application);
+  if (null != link) {
+    return link.getNativeIdentity();
+  }
+  return "link_is_empty";
+}
+
+/**
+ * Get link attribute by appName.
+ */
+public Object getLinkAttribute(Identity identity, String appName, String attrName)
+                               throws GeneralException {
+
+  Link link = getApplicationLink(identity, appName);
+  if (null != link) {
+    return link.getAttribute(attrName);
+  }
+  return "link_is_empty";
+}
+
+/**
+ * Get link attribute by Application object.
+ */
+public Object getLinkAttribute(Identity identity, Application app, String attrName)
+                               throws GeneralException {
+
+  Link link = getApplicationLink(identity, app);
+  if (null != link) {
+    return link.getAttribute(attrName);
+  }
+  return "link_is_empty";
+}
+
+
+/* ============================================================================
+ *  SECTION 5: LANID GENERATION + VALIDATION
+ * ==========================================================================*/
+
+/**
+ * Generate LANID using next-available number logic (prefix from first/middle/last name).
+ */
+public String generateLanId(Identity identity) {
+
+  String fn = identity.getFirstname();
+  String mn = (String) identity.getAttribute("middleinitial");
+  String ln = identity.getLastname();
+
+  logs.trace("generateLanId: fn=" + fn + ", mn=" + mn + ", ln=" + ln);
+
+  StringBuilder lanidprefixsb = new StringBuilder();
+  lanidprefixsb.append(fn.substring(0, 1));
+  if (Util.isNotNullOrEmpty(mn)) {
+    lanidprefixsb.append(mn.substring(0, 1));
+  } else {
+    lanidprefixsb.append("X");
+  }
+  lanidprefixsb.append(ln.substring(0, 1));
+
+  String lanidprefix = lanidprefixsb.toString().toUpperCase();
+  logs.trace("generateLanId: lanidprefix=" + lanidprefix);
+
+  // Exception for STC as it could conflict with STC ID on MainFrame
+  if ("STC".equals(lanidprefix)) {
+    lanidprefix = "SXC";
+  }
+
+  Integer maxlanid = 0;
+  String lanid = lanidprefix + "000";
+  boolean exists = true;
+
+  while (exists) {
+    QueryOptions qo = new QueryOptions();
+    qo.add(Filter.eq("LANID", lanid));
+    List ids = context.getObjects(Identity.class, qo);
+    if (ids == null || ids.isEmpty()) {
+      logs.trace("generateLanId: Found available LANID candidate: " + lanid);
+      // Validate against AD custom objects
+      exists = validateLanId(lanid);
+    }
+    if (exists) {
+      maxlanid++;
+      lanid = lanidprefix + StringUtils.leftPad(String.valueOf(maxlanid), 3, "0");
+      logs.trace("generateLanId: Incrementing LANID to " + lanid);
+    }
+
+    if (maxlanid == 1000) {
+      logs.error("generateLanId: Circuit breaker hit for prefix=" + lanidprefix);
+      exists = false;
+    }
+  }
+
+  logs.trace("generateLanId: final LANID=" + lanid);
+  return lanid;
+}
+
+/**
+ * Validate LANID against AD, using custom objects that store used sAMAccountNames.
+ */
+public boolean validateLanId(String lanId) {
+  boolean exists = false;
+  logs.trace("validateLanId: Validating LANID=" + lanId);
+
+  List adAppNames = new ArrayList();
+  adAppNames.add("Active Directory (COMERICA)");
+  adAppNames.add("Active Directory (CMA)");
+  adAppNames.add("Active Directory (US)");
+  adAppNames.add("Active Directory (DMZ)");
+
+  for (int i = 0; i &lt; adAppNames.size(); i++) {
+    if (!exists) {
+      String adAppName = (String) adAppNames.get(i);
+      logs.trace("validateLanId: Validating against app=" + adAppName);
+
+      String custObjName = "CMA-Custom-sAMAccountNames-" + adAppName;
+      Custom c = context.getObjectByName(Custom.class, custObjName);
+      if (null != c) {
+        logs.trace("validateLanId: Found custom object=" + custObjName);
+        List sams = (List) c.get("sAMAccountNames");
+        if (null != sams &amp;&amp; !sams.isEmpty()) {
+          exists = sams.contains(lanId);
+          if (exists) {
+            logs.trace("validateLanId: LANID already exists in app=" + adAppName);
+          }
+        } else {
+          logs.trace("validateLanId: No sAMAccountNames attribute in custom object=" + custObjName);
+        }
+      } else {
+        logs.trace("validateLanId: Custom object not found=" + custObjName);
+      }
+    }
+  }
+
+  return exists;
+}
+
+
+/* ============================================================================
+ *  SECTION 6: ROLE LOOKUP / IDENTITY ATTRIBUTE UPDATES
+ * ==========================================================================*/
+
+/**
+ * Find birthright role name using Identity attributes via custom object lookup.
+ */
+public String findBirthrightRole(Identity identity) {
+
+  String userType = (String) identity.getAttribute("userType");
+  String jobCode = (String) identity.getAttribute("jobCode");
+  String state = (String) identity.getAttribute("state");
+  String costCenter = (String) identity.getAttribute("costCenter");
+
+  return findBirthrightRole(userType, jobCode, state, costCenter);
+}
+
+/**
+ * Find birthright role name using userType/jobCode/state/costCenter via custom object.
+ */
+public String findBirthrightRole(String userType, String jobCode, String state, String costCenter) {
+
+  String key = jobCode + "-" + state;
+  if ("Other User".equals(userType)) {
+    key = key + "-" + costCenter;
+  }
+
+  logs.trace("findBirthrightRole: lookup key=" + key);
+  Custom custObj = context.getObjectByName(Custom.class, "CMA-Custom-Role Assignment Lookup");
+  if (custObj != null) {
+    Object roleName = custObj.get(key);
+    return (roleName != null) ? roleName.toString() : null;
+  }
+  return null;
+}
+
+/**
+ * Update a single Identity attribute via provisioning plan.
+ */
+public void updateIdentityAttribute(Identity identity, String attributeName, String attributeValue)
+                                    throws GeneralException {
+
+  ProvisioningPlan plan = new ProvisioningPlan();
+  plan.setIdentity(identity);
+  plan.add(ProvisioningPlan.APP_IIQ, identity.getName(),
+           attributeName, ProvisioningPlan.Operation.Set, attributeValue);
+
+  logs.debug("updateIdentityAttribute: plan=" + plan.toXml());
+  Provisioner provisioner = new Provisioner(context);
+  ProvisioningProject project = provisioner.compile(plan);
+  if (null != project) {
+    provisioner.execute(project);
+  }
+}
+
+/**
+ * Update multiple Identity attributes via provisioning plan.
+ */
+public void updateIdentityAttributes(Identity identity, Map attributes) throws GeneralException {
+
+  ProvisioningPlan plan = new ProvisioningPlan();
+  plan.setIdentity(identity);
+  for (Object keyObj : attributes.keySet()) {
+    String attributeName = (String) keyObj;
+    String attributeValue = (String) attributes.get(attributeName);
+    plan.add(ProvisioningPlan.APP_IIQ, identity.getName(),
+             attributeName, ProvisioningPlan.Operation.Set, attributeValue);
+  }
+  logs.debug("updateIdentityAttributes: plan=" + plan.toXml());
+  Provisioner provisioner = new Provisioner(context);
+  ProvisioningProject project = provisioner.compile(plan);
+  if (null != project) {
+    provisioner.execute(project);
+  }
+}
+
+/**
+ * Overload: set Identity attribute as formatted date MM/dd/yyyy.
+ */
+public void updateIdentityAttribute(Identity identity, String attributeName, Date attributeValue) {
+  try {
+    updateIdentityAttribute(identity, attributeName,
+                            Util.dateToString(attributeValue, "MM/dd/yyyy"));
+  } catch (GeneralException e) {
+    logs.error("updateIdentityAttribute(Date) error for identity=" + identity.getName(), e);
+  }
+}
+
+
+/* ============================================================================
+ *  SECTION 7: NON-AUTHORITATIVE LINKS / ENTITLEMENTS / EXCEPTIONAL APPS
+ * ==========================================================================*/
+
+/**
+ * Return list of non-authoritative links for given Identity and iiqDisabled flag.
+ */
+public List getNonAuthLinks(Identity id, boolean iiqDisabled) {
+  List returnList = new ArrayList();
+  List links = id.getLinks();
+  logs.warn("getNonAuthLinks: " + id.getDisplayableName());
+  if (links != null) {
+    Iterator iter = links.iterator();
+    while (iter.hasNext()) {
+      Link l = (Link) iter.next();
+      if ((l.getApplication() != null) &amp;&amp;
+          (!l.getApplication().isAuthoritative()) &amp;&amp;
+          (l.getIiqDisabled().booleanValue() == iiqDisabled)) {
+
+        returnList.add(l);
+      }
+    }
+  }
+  logs.warn("getNonAuthLinks: found nonauth accounts : " + returnList.size());
+  return returnList;
+}
+
+/**
+ * Return count of non-authoritative links for given Identity and iiqDisabled flag.
+ */
+public int getNonAuthLinksCount(Identity id, boolean iiqDisabled) {
+  List returnList = new ArrayList();
+  List links = id.getLinks();
+  logs.warn("getNonAuthLinksCount: " + id.getDisplayableName());
+  if (links != null) {
+    Iterator iter = links.iterator();
+    while (iter.hasNext()) {
+      Link l = (Link) iter.next();
+      if ((l.getApplication() != null) &amp;&amp;
+          (!l.getApplication().isAuthoritative()) &amp;&amp;
+          (l.getIiqDisabled().booleanValue() == iiqDisabled)) {
+
+        returnList.add(l);
+      }
+    }
+  }
+  logs.warn("getNonAuthLinksCount: found for iiqDisabled=" + iiqDisabled +
+            " count=" + returnList.size());
+  return returnList.size();
+}
+
+/**
+ * Return list of all non-authoritative links for given Identity.
+ */
+public List getNonAuthLinks(Identity id) {
+  logs.warn("getNonAuthLinks (all): " + id.getDisplayableName());
+  List returnList = new ArrayList();
+  List links = id.getLinks();
+  if (links != null) {
+    Iterator iter = links.iterator();
+    while (iter.hasNext()) {
+      Link l = (Link) iter.next();
+      if ((l.getApplication() != null) &amp;&amp; !l.getApplication().isAuthoritative()) {
+        returnList.add(l);
+      }
+    }
+  }
+  logs.warn("getNonAuthLinks (all): found nonauth accounts : " + returnList.size());
+  return returnList;
+}
+
+/**
+ * Return count of all non-authoritative links for given Identity.
+ */
+public int getNonAuthLinksCount(Identity id) {
+  logs.warn("getNonAuthLinksCount (all): " + id.getDisplayableName());
+  List returnList = new ArrayList();
+  List links = id.getLinks();
+  if (links != null) {
+    Iterator iter = links.iterator();
+    while (iter.hasNext()) {
+      Link l = (Link) iter.next();
+      if ((l.getApplication() != null) &amp;&amp; !l.getApplication().isAuthoritative()) {
+        returnList.add(l);
+      }
+    }
+  }
+  logs.warn("getNonAuthLinksCount (all): found nonauth accounts : " + returnList.size());
+  return returnList.size();
+}
+
+/**
+ * Check if a user entitlement exists (by nativeIdentity/appName/entitlementValue).
+ */
+public boolean isUserEntitlementExists(String nativeIdentity, String appName,
+                                       String entitlementValue) {
+  logs.debug("isUserEntitlementExists: nativeIdentity=" + nativeIdentity +
+             ", appName=" + appName + ", entitlementValue=" + entitlementValue);
+  QueryOptions ops = new QueryOptions();
+  List filterList = new ArrayList();
+
+  filterList.add(Filter.eq("nativeIdentity", nativeIdentity));
+  filterList.add(Filter.eq("value", entitlementValue));
+  filterList.add(Filter.eq("application.name", appName));
+  ops.addFilter(Filter.and(filterList));
+
+  Iterator identityEntitlements =
+    context.search(IdentityEntitlement.class, ops);
+
+  boolean flag = identityEntitlements.hasNext();
+  Util.flushIterator(identityEntitlements);
+  logs.debug("isUserEntitlementExists: result=" + flag);
+  return flag;
+}
+
+/**
+ * Return list of exceptional application names for given operation + workflow reference.
+ */
+public List getExceptionalApplicationListByOperation(String operation,
+                                                     String workflowReference) {
+  String objectName = "CMA-Custom-" + operation + "_Exceptional_Applications";
+  Custom custom = context.getObjectByName(Custom.class, objectName);
+  if (custom == null) {
+    logs.warn("getExceptionalApplicationListByOperation: Custom object not found: " + objectName);
+    return new ArrayList();
+  }
+  Attributes attributes = custom.getAttributes();
+  Map map = attributes.getMap();
+  List exceptionAppNames = (List) map.get(workflowReference);
+  return (exceptionAppNames != null) ? exceptionAppNames : new ArrayList();
+}
+
+/**
+ * From assigned roles list, return only roles that have profiles for given application.
+ */
+public List getDeletedAppsRoleAssignmentList(String applicationName, List assignedRolesList) {
+  List finalAssignedRoles = new ArrayList();
+  logs.debug("getDeletedAppsRoleAssignmentList: Starting for app=" + applicationName);
+  Application appObj = context.getObjectByName(Application.class, applicationName);
+  logs.debug("getDeletedAppsRoleAssignmentList: Application Object=" + appObj);
+  if (appObj != null &amp;&amp; assignedRolesList != null &amp;&amp; !Util.isEmpty(assignedRolesList)) {
+    List newList = new ArrayList();
+    newList.add(appObj);
+    Iterator it = assignedRolesList.iterator();
+    while (it.hasNext()) {
+      sailpoint.object.Bundle bundleObj = (sailpoint.object.Bundle) it.next();
+      if ("IT".equalsIgnoreCase(bundleObj.getType())) {
+        List profilesForApplications = bundleObj.getProfilesForApplications(newList);
+        if (profilesForApplications != null &amp;&amp; !Util.isEmpty(profilesForApplications)) {
+          finalAssignedRoles.add(bundleObj);
+        }
+      }
+    }
+  }
+  logs.debug("getDeletedAppsRoleAssignmentList: finalAssignedRoles=" + finalAssignedRoles);
+  return finalAssignedRoles;
+}
+
+
+/* ============================================================================
+ *  SECTION 8: UI HELPERS / LOA / AUDIT LOOKUP / PASSWORD RESET
+ * ==========================================================================*/
+
+/**
+ * Put a FacesMessage into the HTTP session for LOA event notifications.
+ */
+public void getDisplaySubmissionMessage(HttpSession httpSession) {
+  logs.trace("getDisplaySubmissionMessage: START httpSession=" + httpSession);
+  if (httpSession != null) {
+    FacesMessage submissionMessage =
+      new FacesMessage("Return From LOA Event has been triggered successfully.");
+    httpSession.setAttribute("sailpoint.web.PageCodeBase.sessionMessages",
+                             Arrays.asList(new FacesMessage[] { submissionMessage }));
+  }
+  logs.trace("getDisplaySubmissionMessage: END");
+}
+
+/**
+ * From AuditEvent, fetch map of disabled apps and IDs and put in workflow context.
+ */
+public Map getDisableAppAndIds(WorkflowContext wfcontext, String identityName) {
+  logs.trace("getDisableAppAndIds: START for identityName=" + identityName);
+  Iterator auditEventItr = null;
+  Map disabledAppAndIdsMap = null;
+  try {
+    Identity identity = context.getObjectByName(Identity.class, identityName);
+    if (null != identity) {
+      QueryOptions queryOptions = new QueryOptions();
+      queryOptions.add(Filter.eq("action", "Disabled - LOA"));
+      queryOptions.add(Filter.eq("target", identity.getAttribute("displayName")));
+      queryOptions.add(Filter.eq("accountName", identity.getName()));
+      queryOptions.addOrdering("created", false);
+      queryOptions.setResultLimit(1);
+      auditEventItr = context.search(AuditEvent.class, queryOptions, "attributes");
+      while (auditEventItr.hasNext()) {
+        Object[] row = (Object[]) auditEventItr.next();
+        if (row != null &amp;&amp; row.length &gt; 0 &amp;&amp; row[0] instanceof Attributes) {
+          Attributes attrs = (Attributes) row[0];
+          disabledAppAndIdsMap = (Map) attrs.get("DisableAppandIds");
+        }
+      }
+    }
+  } catch (Exception e) {
+    logs.error("getDisableAppAndIds: caught Exception", e);
+  } finally {
+    if (auditEventItr != null) {
+      Util.flushIterator(auditEventItr);
+      context.decache();
+    }
+  }
+  wfcontext.setVariable("disabledAppAndIdsMap", disabledAppAndIdsMap);
+  logs.debug("getDisableAppAndIds: disabledAppAndIdsMap=" + disabledAppAndIdsMap);
+  logs.trace("getDisableAppAndIds: END");
+  return disabledAppAndIdsMap;
+}
+
+/**
+ * Generate password based on a configured PasswordPolicy.
+ */
+public String generatePassword() {
+  logs.trace("generatePassword: START");
+  String returnValue = null;
+  String policyName = "CMA AD Password Policy";
+  try {
+    PasswordPolicy pwdPolicy = context.getObjectByName(PasswordPolicy.class, policyName);
+    if (pwdPolicy == null) {
+      throw new Exception("Password Policy '" + policyName + "' not found");
+    }
+    PasswordGenerator pg = new PasswordGenerator(context);
+    returnValue = pg.generatePassword(pwdPolicy);
+  } catch (Exception e) {
+    logs.error("generatePassword: caught Exception", e);
+  }
+  logs.trace("generatePassword: END, generated=" + (returnValue != null));
+  return returnValue;
+}
+
+/**
+ * Create a provisioning plan to reset password on primary AD (US) account during LOA return.
+ */
+public void adPrimaryAccountProvisioningPlan(WorkflowContext wfcontext) {
+  logs.trace("adPrimaryAccountProvisioningPlan: START");
+  try {
+    String identityName = (String) wfcontext.getVariable("identityName");
+    Identity identity = context.getObjectByName(Identity.class, identityName);
+    if (identity != null) {
+      Link primaryADLink =
+        context.getUniqueObject(Link.class,
+          Filter.and(
+            Filter.eq("application.name", "Active Directory (US)"),
+            Filter.eq("identity.name", identity.getName()),
+            Filter.eq("displayName", identity.getExtended8())
+          )
+        );
+      if (primaryADLink != null) {
+        String newPassword = generatePassword();
+        if (Util.isNotNullOrEmpty(newPassword)) {
+          wfcontext.setVariable("newPassword", newPassword);
+          ProvisioningPlan plan = new ProvisioningPlan();
+          AccountRequest acctReq = new AccountRequest();
+          List acctReqs = new ArrayList();
+          plan.setIdentity(identity);
+          Application app = primaryADLink.getApplication();
+          acctReq.setOperation(AccountRequest.Operation.Modify);
+          acctReq.setApplication(app.getName());
+          acctReq.setNativeIdentity(primaryADLink.getNativeIdentity());
+          acctReq.add(new ProvisioningPlan.AttributeRequest("password",
+                                                            ProvisioningPlan.Operation.Set,
+                                                            newPassword));
+          acctReq.add(new ProvisioningPlan.AttributeRequest("pwdLastSet",
+                                                            ProvisioningPlan.Operation.Set,
+                                                            Boolean.TRUE));
+          acctReqs.add(acctReq);
+          plan.setAccountRequests(acctReqs);
+          Provisioner provisioner = new Provisioner(context);
+          ProvisioningProject compliedPlan = provisioner.compile(plan);
+          provisioner.execute(compliedPlan);
+          wfcontext.setVariable("isPasswordProvSuccess", Boolean.TRUE);
+        }
+      }
+    }
+  } catch (Exception e) {
+    logs.error("adPrimaryAccountProvisioningPlan: caught Exception", e);
+    wfcontext.setVariable("isPasswordProvSuccess", Boolean.FALSE);
+  }
+  logs.trace("adPrimaryAccountProvisioningPlan: END");
+}
+
+/**
+ * Determine if an Identity is in "Executive" list from a custom object.
+ */
+public boolean isExecutive(String identityName) {
+  logs.trace("isExecutive: START for " + identityName);
+  boolean returnFlag = false;
+  try {
+    Custom customObject =
+      context.getObjectByName(Custom.class,
+                              "CMA-Custom-Access_Attestation_Executive_Information");
+    if (customObject != null) {
+      Map tempExecutiveEntityConfig =
+        (Map) customObject.get("executiveEntities");
+      if (!Util.isEmpty(tempExecutiveEntityConfig)) {
+        Set keys = tempExecutiveEntityConfig.keySet();
+        if (!Util.isEmpty(keys)) {
+          List tempValList = null;
+          Object tempValObj = null;
+          Iterator it = keys.iterator();
+          while (it.hasNext() &amp;&amp; !returnFlag) {
+            String key = (String) it.next();
+            tempValObj = tempExecutiveEntityConfig.get(key);
+            tempValList = null;
+            if (tempValObj instanceof List) {
+              tempValList = (List) tempValObj;
+            } else if (tempValObj instanceof String) {
+              tempValList = new ArrayList();
+              tempValList.add((String) tempValObj);
+            }
+            if (!Util.isEmpty(tempValList) &amp;&amp; tempValList.contains(identityName)) {
+              returnFlag = true;
+              break;
+            }
+          }
+        }
+      }
+    }
+  } catch (Exception e) {
+    logs.error("isExecutive: caught Exception", e);
+  }
+  logs.debug("isExecutive: returnFlag=" + returnFlag);
+  logs.trace("isExecutive: END");
+  return returnFlag;
+}
+
+/**
+ * Internal notification method.
+ */
+public void sendNotification(Identity identity, Identity managerIdentity, String password) {
+  logs.trace("sendNotification: START for manager=" + managerIdentity.getName());
+  EmailTemplate et =
+    context.getObjectByName(EmailTemplate.class,
+                            "CMA-EmailTemplate-Return From LOA Password Change Notification");
+  Map vars = new HashMap();
+  vars.put("managerName", managerIdentity.getAttribute("displayName"));
+  vars.put("identity", identity);
+  vars.put("password", password);
+
+  EmailOptions eo = new EmailOptions(managerIdentity.getEmail(), vars);
+  context.sendEmailNotification(et, eo);
+  logs.trace("sendNotification: END");
+}
+
+/**
+ * Send notification to Manager.
+ */
+public void sendNotificationToManager(Identity identity, Identity managerIdentity, String password) {
+  logs.trace("sendNotificationToManager: START");
+  sendNotification(identity, managerIdentity, password);
+  logs.trace("sendNotificationToManager: END");
+}
+
+/**
+ * Send notification to Requestor.
+ */
+public void sendNotificationToRequestor(Identity identity, String requestorName, String password) {
+  logs.trace("sendNotificationToRequestor: START, requestorName=" + requestorName);
+  Identity requestorIdentity = context.getObjectByName(Identity.class, requestorName);
+  String email = requestorIdentity.getEmail();
+  if (Util.isNotNullOrEmpty(email)) {
+    sendNotification(identity, requestorIdentity, password);
+  } else {
+    logs.warn("sendNotificationToRequestor: Requestor does not have an email");
+  }
+  logs.trace("sendNotificationToRequestor: END");
+}
+
+
+/* ============================================================================
+ *  SECTION 9: AD TIMESTAMP / INACTIVE ACCOUNT CHECK
+ * ==========================================================================*/
+
+/**
+ * Convert AD 64-bit timestamp to Java Date.
+ */
+public Date ADtimestamptoJavaDate(String adTimestamp) {
+  Date date = null;
+  try {
+    if (Util.isNotNullOrEmpty(adTimestamp) &amp;&amp; !"0".equals(adTimestamp)) {
+      // AD timestamp is 100-nanosecond intervals since 1601-01-01
+      date = new Date(((Long.parseLong(adTimestamp) - 0x19db1ded53e8000L) / 10000L));
+    }
+  } catch (Exception e) {
+    logs.error("ADtimestamptoJavaDate: error parsing " + adTimestamp, e);
+  }
+  return date;
+}
+
+/**
+ * For given AD Link, check if it's inactive for given number of days.
+ */
+public boolean isADLinkInactiveForDays(Identity id, Link link, int noOfDays) {
+  int subtractor = noOfDays * -1;
+  boolean returnValue = false;
+
+  String lanid = Util.otos(id.getAttribute("LANID"));
+  String nativeId = Util.otos(link.getNativeIdentity());
+  boolean isAdmin =
+    Util.nullSafeCaseInsensitiveEq(lanid,
+                                   Util.otos(link.getAttribute("sAMAccountName")))
+    ? false : true;
+  String lastLogonTimeStamp = Util.otos(link.getAttribute("lastLogonTimeStamp"));
+  String pwdLastSet = Util.otos(link.getAttribute("pwdLastSet"));
+  String whenChanged = Util.otos(link.getAttribute("whenChanged"));
+  String whenCreated = Util.otos(link.getAttribute("whenCreated"));
+
+  try {
+
+    if (isAdmin) {
+      // Admin / secondary accounts
+      if (Util.isNotNullOrEmpty(lastLogonTimeStamp) &amp;&amp;
+          !"0".equals(lastLogonTimeStamp)) {
+        Date loginAge = ADtimestamptoJavaDate(lastLogonTimeStamp);
+        Date loginAgeLimit = DateUtils.addDays(new Date(), subtractor);
+        if (loginAge != null &amp;&amp; loginAge.before(loginAgeLimit)) {
+          returnValue = true;
+        }
+      } else if (Util.isNotNullOrEmpty(whenCreated) &amp;&amp;
+                 !"0".equals(whenCreated)) {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyyMMdd");
+        Date createAge = sf.parse(whenCreated.substring(0, 8));
+        Date createAgeLimit = DateUtils.addDays(new Date(), subtractor);
+        if (createAge.before(createAgeLimit)) {
+          returnValue = true;
+        }
+      }
+    } else {
+      // Non-admin primary/secondary
+      if (Util.isNotNullOrEmpty(lastLogonTimeStamp) &amp;&amp;
+          !"0".equals(lastLogonTimeStamp)) {
+        Date loginAge = ADtimestamptoJavaDate(lastLogonTimeStamp);
+        Date loginAgeLimit = DateUtils.addDays(new Date(), subtractor);
+        if (loginAge != null &amp;&amp; loginAge.before(loginAgeLimit)) {
+          returnValue = true;
+        }
+      } else if (Util.isNotNullOrEmpty(pwdLastSet) &amp;&amp;
+                 !"0".equals(pwdLastSet)) {
+        Date pwdAge = ADtimestamptoJavaDate(pwdLastSet);
+        Date pwdAgeLimit = DateUtils.addDays(new Date(), subtractor);
+        if (pwdAge != null &amp;&amp; pwdAge.before(pwdAgeLimit)) {
+          returnValue = true;
+        }
+      } else if (Util.isNotNullOrEmpty(whenChanged) &amp;&amp;
+                 !"0".equals(whenChanged)) {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyyMMdd");
+        Date chgAge = sf.parse(whenChanged.substring(0, 8));
+        Date chgAgeLimit = DateUtils.addDays(new Date(), subtractor);
+        if (chgAge.before(chgAgeLimit)) {
+          returnValue = true;
+        }
+      }
+    }
+
+  } catch (Exception e) {
+    logs.error("isADLinkInactiveForDays: exception for LANID=" + lanid, e);
+  }
+
+  if (returnValue) {
+    logs.warn("isADLinkInactiveForDays: LANID=" + lanid + ", nativeId=" + nativeId +
+              ", noOfDays=" + noOfDays +
+              ", lastLogonTimeStamp=" + lastLogonTimeStamp +
+              ", pwdLastSet=" + pwdLastSet +
+              ", whenChanged=" + whenChanged +
+              ", whenCreated=" + whenCreated);
+  }
+  return returnValue;
+}
+
+  </Source>
+</Rule>

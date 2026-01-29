@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="NS_Form_Hr_Account_Initial_Details">
+  <Attributes>
+    <Map>
+      <entry key="pageTitle" value="Create Hr Account Initial Details"/>
+      <entry key="title" value="Create Hr Account Initial Details"/>
+    </Map>
+  </Attributes>
+  <Button action="next" label="Next"/>
+  <Button action="cancel" label="Cancel"/>
+  <Section columns="2" label="User Details">
+    <Field displayName="First Name" name="firstname" postBack="true" required="true" type="string"/>
+    <Field displayName="Last Name" name="lastname" postBack="true" required="true" type="string"/>
+    <Field displayName="Status" dynamic="true" name="workerStatus" readOnly="true" type="string">
+      <Script>
+        <Source>
+          return "ACTIVE";
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Full Name" dynamic="true" name="fullName" readOnly="true" required="true" type="string">
+      <Script>
+        <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import java.util.stream.Collectors;
+			
+			String name = "";
+			String firstname = form.getField("firstname").getValue();
+			String lastname = form.getField("lastname").getValue();
+			if(firstname != null &amp;&amp; lastname != null){
+				name = firstname +" "+lastname;
+			}
+			return name;
+		  </Source>
+      </Script>
+    </Field>
+    <Field displayName="Hire Date" name="hireDate" required="true" type="date">
+      <Attributes>
+        <Map>
+          <entry key="displayFormat" value="MM-dd-yyyy"/>
+          <entry key="returnFormat" value="MM-dd-yyyy"/>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Termination Date" name="terminationDate" type="date">
+      <Attributes>
+        <Map>
+          <entry key="displayFormat" value="MM-dd-yyyy"/>
+          <entry key="returnFormat" value="MM-dd-yyyy"/>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Employee Type" displayType="combobox" name="employeeType" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Employee_Workforce_Type");
+			Attributes attributes = custom.getAttributes();
+			List employeeTypeList = attributes.get("EmployeeTypeList");
+			return employeeTypeList;
+		  </Source>
+        </Script>
+      </AllowedValuesDefinition>
+    </Field>
+    <Field displayName="Workforce Type" displayType="combobox" name="workforceType" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Employee_Workforce_Type");
+			Attributes attributes = custom.getAttributes();
+			List workforceTypeList = attributes.get("WorkforceTypeList");
+			return workforceTypeList;
+		</Source>
+        </Script>
+      </AllowedValuesDefinition>
+    </Field>
+    <Field displayName="Company" displayType="combobox" name="company" required="true">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Employee_Workforce_Type");
+			Attributes attributes = custom.getAttributes();
+			List companyList = attributes.get("CompanyList");
+			return companyList;
+		</Source>
+        </Script>
+      </AllowedValuesDefinition>
+    </Field>
+    <Field displayName="Employment Type" displayType="combobox" name="classType" required="true" type="string">
+      <AllowedValuesDefinition>
+        <Script>
+          <Source>
+			import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Employee_Workforce_Type");
+			Attributes attributes = custom.getAttributes();
+			List classTypelist = attributes.get("ClassList");
+			return classTypelist;
+		</Source>
+        </Script>
+      </AllowedValuesDefinition>
+    </Field>
+    <Field columnSpan="2" displayName="Manager" filterString="workgroup != true" name="manager" postBack="true" required="true" type="Identity">
+      <Attributes>
+        <Map>
+          <entry key="valueProperty" value="id"/>
+        </Map>
+      </Attributes>
+    </Field>
+    <Field displayName="Show Manager Details" name="chkMgrDetails" postBack="true" type="boolean"/>
+  </Section>
+  <Section columns="2" label="Manager Details" type="datatable">
+    <Attributes>
+      <Map>
+        <entry key="hidden">
+          <value>
+            <Script>
+              <Source>
+                import sailpoint.object.Identity;
+                if (manager != null &amp;&amp; chkMgrDetails == true){
+                return false;
+                }else {
+                return true;
+                }
+              </Source>
+            </Script>
+          </value>
+        </entry>
+      </Map>
+    </Attributes>
+    <Field displayName="User Name" dynamic="true" name="userID_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getName();
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="First Name" dynamic="true" name="firstname_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getFirstname();
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Last Name" dynamic="true" name="lastname_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getLastname();
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Email Address" dynamic="true" name="email_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getEmail();
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Workforce Type" dynamic="true" name="employeeType_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("workforceType");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Hire Date" dynamic="true" name="hiredate_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("hiredDate");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Termination Date" dynamic="true" name="terminationDate_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("terminationDate");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Department" dynamic="true" name="department_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("department");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Title" dynamic="true" name="title_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("title");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Manager" dynamic="true" name="manager_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          if (context.getObjectById(Identity.class,manager).getManager() != null){
+          return context.getObjectById(Identity.class,manager).getManager().getDisplayName();
+          }
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Display Name" dynamic="true" name="displayName_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("displayName");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="Employee Id" dynamic="true" name="employeeId_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("employeeId");
+          }
+        </Source>
+      </Script>
+    </Field>
+    <Field displayName="SaMAccount Name" dynamic="true" name="samaAccountName_rp" readOnly="true" type="string">
+      <Script>
+        <Source>
+          import sailpoint.object.Identity;
+
+          if (manager != null){
+          return context.getObjectById(Identity.class,manager).getAttribute("samaAccountName");
+          }
+        </Source>
+      </Script>
+    </Field>
+  </Section>
+</Form>

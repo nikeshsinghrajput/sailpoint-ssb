@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765386504411" completionStatus="Error" launched="1765386476205" launcher="Scheduler" name="Full Condidate Joiner: Arjun Naidu - 1" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="identityRequestId" value="0000000249"/>
+      <entry key="password"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000249"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan nativeIdentity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=naidu.arjun,Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create">
+                  <AttributeRequest name="sAMAccountName" value="naidu.arjun"/>
+                  <AttributeRequest name="password"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000249"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" targetIntegration="Active Directory" trackingId="14552062a90044c58cc4067141fbff2a">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=naidu.arjun,Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create">
+                <Attributes>
+                  <Map>
+                    <entry key="provisioningTransactionId" value="c0a83c019afa1055819b093c43716637"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest name="sAMAccountName" op="Set" value="naidu.arjun"/>
+                <AttributeRequest name="password" op="Set"/>
+                <AttributeRequest name="employeeNumber" op="Set" value="8512512"/>
+                <AttributeRequest name="givenName" op="Set" value="Arjun"/>
+                <AttributeRequest name="sn" op="Set" value="Naidu"/>
+                <AttributeRequest name="displayName" op="Set" value="Arjun Naidu"/>
+                <AttributeRequest name="title" op="Set" value="Governance Program Manager"/>
+                <AttributeRequest name="company" op="Add" value="NsTech"/>
+                <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+                <AttributeRequest name="accountExpires" op="Add" value="134884224000000000"/>
+                <AttributeRequest name="department" op="Set" value="Regulatory Affairs and Governance"/>
+                <AttributeRequest name="departmentNumber" op="Set" value="DEPT-006"/>
+                <AttributeRequest name="memberOf" op="Add" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="division" op="Add" value="Division-1"/>
+                <AttributeRequest name="manager" op="Set" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="streetAddress" op="Set" value="39 NH Road"/>
+                <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B373"/>
+                <AttributeRequest name="l" op="Set" value="Hyderabad"/>
+                <AttributeRequest name="st" op="Set" value="East"/>
+                <AttributeRequest name="co" op="Add" value="India"/>
+                <AttributeRequest name="postalCode" op="Set" value="513552"/>
+                <AttributeRequest name="mobile" op="Set" value="+91-9901234567"/>
+                <AttributeRequest name="telephoneNumber" op="Set" value="+91-161-26671234"/>
+                <AttributeRequest name="description" op="Set" value="Created via sailpoint Governance Program Manager"/>
+                <AttributeRequest name="businessCategory" op="Set" value="Part_time"/>
+                <ProvisioningResult status="failed">
+                  <Errors>
+                    <Message key="Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;Failed to connect to the server for Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:An invalid dn syntax has been specified. An invalid dn syntax has been specified. 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072032]Failed to connect to the server for Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:An invalid dn syntax has been specified. An invalid dn syntax has been specified. 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072032]&quot; Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+                  </Errors>
+                </ProvisioningResult>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000249"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="retries">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019afa1055819b093bdca565f9"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="Provision Accounts"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+  <Messages>
+    <Message key="[Active Directory] Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;Failed to connect to the server for Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:An invalid dn syntax has been specified. An invalid dn syntax has been specified. 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072032]Failed to connect to the server for Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:An invalid dn syntax has been specified. An invalid dn syntax has been specified. 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072032]&quot; Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+    <Message key="err_exception" type="Error">
+      <Parameters>
+        <Message key="String emails = null &#10; BSF info: script at line: 0 column: columnNo" type="Error"/>
+      </Parameters>
+    </Message>
+  </Messages>
+</TaskResult>

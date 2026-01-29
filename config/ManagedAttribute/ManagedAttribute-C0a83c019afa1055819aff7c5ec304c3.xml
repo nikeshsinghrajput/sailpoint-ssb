@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="Americas - All Planners" hash="f3d01ea7fdd531eb0a9006a7f7812d64ae6d6fe9" lastRefresh="1765222932163" requestable="true" type="group" uuid="{dd08828a-d009-440b-8406-e39a6ddb6828}" value="CN=Americas - All Planners,OU=Distribution Lists,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Distribution"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="Americas - All Planners"/>
+      <entry key="description" value="Americas - All Planners created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\Americas - All Planners"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1208"/>
+      <entry key="objectguid" value="{dd08828a-d009-440b-8406-e39a6ddb6828}"/>
+      <entry key="sAMAccountName" value="Americas - All Planners"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

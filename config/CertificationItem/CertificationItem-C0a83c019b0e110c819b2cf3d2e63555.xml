@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem exceptionApplication="Sales Analytics" exceptionAttributeName="roles" exceptionAttributeValue="Sales Dashboard Viewer" summaryStatus="Open" type="Exception">
+  <ApplicationNames>
+    <String>Sales Analytics</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Sales Analytics" displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512">
+      <Attributes>
+        <Map>
+          <entry key="roles" value="Sales Dashboard Viewer"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>

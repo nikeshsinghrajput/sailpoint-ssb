@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Stuart Russell" identity="739105" lastRefresh="1768468372027">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2635 Sunset St"/>
+      <entry key="ADDRESS_WORK" value="2635 Sunset St;Pretoria, Gauteng 67630;South Africa"/>
+      <entry key="BUILDING_CODE" value="ZA_GAU_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3058"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="07-19-2025"/>
+      <entry key="COUNTRY_NAME" value="South Africa"/>
+      <entry key="DEPARTMENT" value="Customer Success &amp; Support"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-026"/>
+      <entry key="DIVISION" value="South Africa Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-ZA-02"/>
+      <entry key="EMAIL" value="stuart.russell@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739105"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739105"/>
+      <entry key="FIRST_NAME" value="Stuart"/>
+      <entry key="HIREDATE" value="12-31-2021"/>
+      <entry key="JOBCODE" value="JT-026-03"/>
+      <entry key="JOBTITLE" value="Customer Experience Lead"/>
+      <entry key="LAST_NAME" value="Russell"/>
+      <entry key="LOCATION" value="ZA - Pretoria"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="44282"/>
+      <entry key="REGION" value="Pretoria"/>
+      <entry key="WORKER_NAME" value="Stuart Russell"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

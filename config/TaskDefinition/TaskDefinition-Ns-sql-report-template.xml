@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition executor="sailpoint.task.RuleExecutor" name="NS-SQL-Report-Template" resultAction="Rename" subType="task_item_type_generic" template="true" type="Generic">
+  <Attributes>
+    <Map>
+      <entry key="OutputFile"/>
+      <entry key="delimiter"/>
+      <entry key="emailNotes"/>
+      <entry key="emailRecipients"/>
+      <entry key="emailSubject"/>
+      <entry key="headers"/>
+      <entry key="ruleName" value="NS_Rule_SQL_Report_Template"/>
+      <entry key="sqlQuery"/>
+      <entry key="taskCompletionEmailNotify" value="Disabled"/>
+      <entry key="taskCompletionEmailRecipients"/>
+      <entry key="taskCompletionEmailTemplate"/>
+    </Map>
+  </Attributes>
+  <Description>Generic template for SQL-based CSV/ZIP reports.</Description>
+  <Signature>
+    <Inputs>
+      <Argument helpKey="Provide a valid SELECT query." name="sqlQuery" required="true" type="string">
+        <Prompt>SQL Query</Prompt>
+      </Argument>
+      <Argument helpKey="Base filename for the CSV report (no path)." name="OutputFile" required="true" type="string">
+        <Prompt>Output File Name</Prompt>
+      </Argument>
+      <Argument helpKey="Comma-separated header names for the CSV." name="headers" type="string">
+        <Prompt>CSV Headers</Prompt>
+      </Argument>
+      <Argument helpKey="Comma-separated email recipients (optional)." name="emailRecipients" type="string">
+        <Prompt>Email Recipients</Prompt>
+      </Argument>
+      <Argument helpKey="Subject line for report email." name="emailSubject" type="string">
+        <Prompt>Email Subject</Prompt>
+      </Argument>
+      <Argument helpKey="Extra notes to include in email body." name="emailNotes" type="string">
+        <Prompt>Email Notes</Prompt>
+      </Argument>
+      <Argument helpKey="Defaults to comma if blank." name="delimiter" type="string">
+        <Prompt>CSV Delimiter</Prompt>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="sqlQuery" type="string">
+        <Prompt>Query Used</Prompt>
+      </Argument>
+      <Argument name="reportFile" type="string">
+        <Prompt>Full path of generated report</Prompt>
+      </Argument>
+      <Argument name="recordCount" type="string">
+        <Prompt>Total Number of Records</Prompt>
+      </Argument>
+      <Argument name="emailFlag" type="string">
+        <Prompt>Was Email Sent?</Prompt>
+      </Argument>
+      <Argument name="emailRecipients" type="string">
+        <Prompt>Email Recipients</Prompt>
+      </Argument>
+    </Returns>
+  </Signature>
+</TaskDefinition>

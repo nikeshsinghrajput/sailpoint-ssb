@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE GroupDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<GroupDefinition indexed="true" name="special filter" private="true">
+  <Description/>
+  <GroupFilter>
+    <CompositeFilter operation="AND">
+      <Filter ignoreCase="true" operation="NOTNULL" property="manager.name"/>
+      <Filter operation="EQ" property="inactive">
+        <Value>
+          <Boolean/>
+        </Value>
+      </Filter>
+      <Filter operation="NOTNULL" property="sAMAccountName"/>
+      <Filter ignoreCase="true" matchMode="ANYWHERE" operation="LIKE" property="links.application.name" value="Hr"/>
+      <Filter ignoreCase="true" matchMode="ANYWHERE" operation="LIKE" property="assignedRoles.name" value="SR_Role_Active_Directory_Basic_Access"/>
+    </CompositeFilter>
+  </GroupFilter>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</GroupDefinition>

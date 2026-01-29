@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768910902264" completionStatus="Success" host="NikeshRajput" launched="1768910896154" launcher="spadmin" name="AA : Active Directory" runLength="6" runLengthAverage="2" runLengthDeviation="200" schedule="d1adff6ca37440349cf445e072280c62" type="AccountAggregation">
+  <Attributes>
+    <Map>
+      <entry key="accountNativeIdentityChanges">
+        <value>
+          <Integer>1</Integer>
+        </value>
+      </entry>
+      <entry key="applications" value="Active Directory"/>
+      <entry key="identityEntitlementsUpdated" value="1"/>
+      <entry key="internalUpdates" value="1"/>
+      <entry key="optimized" value="2"/>
+      <entry key="total" value="3"/>
+      <entry key="updated" value="1"/>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="AA : Active Directory"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

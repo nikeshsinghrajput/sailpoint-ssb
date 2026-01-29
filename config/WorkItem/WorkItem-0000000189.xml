@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItem expiration="1768492017198" handler="sailpoint.api.Workflow" level="Normal" name="0000000189" renderer="lcmManualActionsRenderer.xhtml" state="Finished" targetClass="sailpoint.object.Identity" targetName="6be3425d-333a-43fb-89c0-192721ba4f84" type="ManualAction">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Active Directory" nativeIdentity="6be3425d-333a-43fb-89c0-192721ba4f84" operation="Validation" value="Error = [Manager Active Directory account not found.]"/>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Nikesh Singh"/>
+      <entry key="identityName" value="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+      <entry key="workItemCompletedBy" value="The Administrator"/>
+    </Map>
+  </Attributes>
+  <WorkItemComments>
+    <Comment author="The Administrator" comment="done" date="1768492117621"/>
+  </WorkItemComments>
+  <CompletionComments/>
+  <Description>Manual Changes requested for User: Nikesh Singh</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <OwnerHistory newOwner="spadmin" newOwnerDisplayName="The Administrator" oldOwner="Exception_Management_Team" oldOwnerDisplayName="Exception_Management_Team" source="spadmin" sourceDisplayName="The Administrator" startDate="1768492169626"/>
+  <Requester>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Requester>
+</WorkItem>

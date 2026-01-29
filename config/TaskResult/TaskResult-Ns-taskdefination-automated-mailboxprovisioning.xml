@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768911555699" completionStatus="Success" host="NikeshRajput" launched="1768911555609" launcher="spadmin" name="NS-TaskDefination-Automated-MailBoxProvisioning" schedule="33114565e59f49cd9b8321b603565a13" type="Generic">
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="NS-TaskDefination-Automated-MailBoxProvisioning"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

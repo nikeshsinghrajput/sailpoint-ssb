@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Danny Allen" identity="739089" lastRefresh="1768468367634">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="6635 Hill St"/>
+      <entry key="ADDRESS_WORK" value="6635 Hill St;Abu Dhabi, Dubai Emirate 42762;United Arab Emirates"/>
+      <entry key="BUILDING_CODE" value="AE_DUB_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3052"/>
+      <entry key="CLASS" value="Field"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="01-15-2024"/>
+      <entry key="COUNTRY_NAME" value="United Arab Emirates"/>
+      <entry key="DEPARTMENT" value="DevOps &amp; Release Engineering"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-014"/>
+      <entry key="DIVISION" value="United Arab Emirates Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-AE-04"/>
+      <entry key="EMAIL" value="danny.allen@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739089"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739089"/>
+      <entry key="FIRST_NAME" value="Danny"/>
+      <entry key="HIREDATE" value="07-06-2019"/>
+      <entry key="JOBCODE" value="JT-014-01"/>
+      <entry key="JOBTITLE" value="DevOps Engineer"/>
+      <entry key="LAST_NAME" value="Allen"/>
+      <entry key="LOCATION" value="AE - Abu Dhabi"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="9995"/>
+      <entry key="REGION" value="Abu Dhabi"/>
+      <entry key="WORKER_NAME" value="Danny Allen"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

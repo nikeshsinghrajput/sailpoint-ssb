@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1769020220600" completionStatus="Success" host="NikeshRajput" launched="1769020200084" launcher="System" name="Dispatch Access History daily" partitioned="true" runLength="20" runLengthAverage="8" runLengthDeviation="150" schedule="Dispatch Access History daily" type="System">
+  <Attributes>
+    <Map>
+      <entry key="taskResultPartitions">
+        <value>
+          <List>
+            <TaskResult completed="1769020203278" completionStatus="Success" host="NikeshRajput" launched="1769020203119" name="Intercepted Delete Processor">
+              <Attributes>
+                <Map>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Deletion Objects Published Types">
+                          <TaskStatistics name="publishedDeletedObject type">
+                            <TaskStatistic data="1" name="identityEntitlement"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalDeletionExtractedObjects" value="5"/>
+                  <entry key="totalDeletionExtractedObjectsDispatched" value="1"/>
+                </Map>
+              </Attributes>
+            </TaskResult>
+            <TaskResult completed="1769020219866" completionStatus="Success" host="NikeshRajput" launched="1769020203297" name="Extract Partition Creation">
+              <Attributes>
+                <Map>
+                  <entry key="totalObjectMessages">
+                    <value>
+                      <Integer>58</Integer>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </TaskResult>
+            <TaskResult completed="1769020220362" completionStatus="Success" host="NikeshRajput" launched="1769020219884" name="Data Extract processor 002 for account, identity, identityRequest">
+              <Attributes>
+                <Map>
+                  <entry key="executionTimeMilliseconds" value="407"/>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Published Object Types">
+                          <TaskStatistics name="extractedObject type">
+                            <TaskStatistic data="1" name="account"/>
+                            <TaskStatistic data="2" name="identity"/>
+                            <TaskStatistic data="7" name="identityRequest"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalExtractedObjects" value="10"/>
+                  <entry key="totalExtractedObjectsPublished" value="10"/>
+                  <entry key="totalSeenObjects" value="10"/>
+                </Map>
+              </Attributes>
+              <Progress>Initializing</Progress>
+            </TaskResult>
+            <TaskResult completed="1769020220272" completionStatus="Success" host="NikeshRajput" launched="1769020219902" name="Data Extract processor 001 for Identity Request Item">
+              <Attributes>
+                <Map>
+                  <entry key="executionTimeMilliseconds" value="306"/>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Published Object Types">
+                          <TaskStatistics name="extractedObject type">
+                            <TaskStatistic data="11" name="identityRequestItem"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalExtractedObjects" value="11"/>
+                  <entry key="totalExtractedObjectsPublished" value="11"/>
+                  <entry key="totalSeenObjects" value="11"/>
+                </Map>
+              </Attributes>
+              <Progress>Initializing</Progress>
+            </TaskResult>
+            <TaskResult completed="1769020220351" completionStatus="Success" host="NikeshRajput" launched="1769020219918" name="Data Extract processor 003 for Identity Request Item">
+              <Attributes>
+                <Map>
+                  <entry key="executionTimeMilliseconds" value="321"/>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Published Object Types">
+                          <TaskStatistics name="extractedObject type">
+                            <TaskStatistic data="11" name="identityRequestItem"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalExtractedObjects" value="11"/>
+                  <entry key="totalExtractedObjectsPublished" value="11"/>
+                  <entry key="totalSeenObjects" value="11"/>
+                </Map>
+              </Attributes>
+              <Progress>Initializing</Progress>
+            </TaskResult>
+            <TaskResult completed="1769020220321" completionStatus="Success" host="NikeshRajput" launched="1769020219966" name="Data Extract processor 004 for Identity Request Item">
+              <Attributes>
+                <Map>
+                  <entry key="executionTimeMilliseconds" value="280"/>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Published Object Types">
+                          <TaskStatistics name="extractedObject type">
+                            <TaskStatistic data="11" name="identityRequestItem"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalExtractedObjects" value="11"/>
+                  <entry key="totalExtractedObjectsPublished" value="11"/>
+                  <entry key="totalSeenObjects" value="11"/>
+                </Map>
+              </Attributes>
+              <Progress>Initializing</Progress>
+            </TaskResult>
+            <TaskResult completed="1769020220342" completionStatus="Success" host="NikeshRajput" launched="1769020219985" name="Data Extract processor 005 for Identity Request Item">
+              <Attributes>
+                <Map>
+                  <entry key="executionTimeMilliseconds" value="278"/>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Published Object Types">
+                          <TaskStatistics name="extractedObject type">
+                            <TaskStatistic data="11" name="identityRequestItem"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalExtractedObjects" value="11"/>
+                  <entry key="totalExtractedObjectsPublished" value="11"/>
+                  <entry key="totalSeenObjects" value="11"/>
+                </Map>
+              </Attributes>
+              <Progress>Initializing</Progress>
+            </TaskResult>
+            <TaskResult completed="1769020220494" completionStatus="Success" host="NikeshRajput" launched="1769020220309" name="Data Extract processor 006 for Identity Request Item">
+              <Attributes>
+                <Map>
+                  <entry key="executionTimeMilliseconds" value="106"/>
+                  <entry key="extractDetails">
+                    <value>
+                      <List>
+                        <TaskStatistics name="Published Object Types">
+                          <TaskStatistics name="extractedObject type">
+                            <TaskStatistic data="4" name="identityRequestItem"/>
+                          </TaskStatistics>
+                        </TaskStatistics>
+                      </List>
+                    </value>
+                  </entry>
+                  <entry key="totalExtractedObjects" value="4"/>
+                  <entry key="totalExtractedObjectsPublished" value="4"/>
+                  <entry key="totalSeenObjects" value="4"/>
+                </Map>
+              </Attributes>
+              <Progress>Initializing</Progress>
+            </TaskResult>
+            <TaskResult completed="1769020220600" completionStatus="Success" host="NikeshRajput" launched="1769020220544" name="Finish Request"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Dispatch Access History"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

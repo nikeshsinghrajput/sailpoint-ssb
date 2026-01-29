@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.fulltext.Builder" eventLevel="ERROR" lineNumber="377" quickKey="0001199297" server="NikeshRajput" thread="ServerThread" username="Services">
+  <EventMessage>Exception during index close</EventMessage>
+  <Stacktrace>java.nio.channels.ClosedByInterruptException
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:199)
+	at java.base/sun.nio.ch.FileChannelImpl.endBlocking(FileChannelImpl.java:162)
+	at java.base/sun.nio.ch.FileChannelImpl.size(FileChannelImpl.java:388)
+	at org.apache.lucene.store.NativeFSLockFactory$NativeFSLock.ensureValid(NativeFSLockFactory.java:169)
+	at org.apache.lucene.store.LockValidatingDirectoryWrapper.createOutput(LockValidatingDirectoryWrapper.java:42)
+	at org.apache.lucene.store.TrackingDirectoryWrapper.createOutput(TrackingDirectoryWrapper.java:41)
+	at org.apache.lucene.codecs.lucene90.Lucene90NormsConsumer.&lt;init&gt;(Lucene90NormsConsumer.java:50)
+	at org.apache.lucene.codecs.lucene90.Lucene90NormsFormat.normsConsumer(Lucene90NormsFormat.java:90)
+	at org.apache.lucene.index.IndexingChain.writeNorms(IndexingChain.java:450)
+	at org.apache.lucene.index.IndexingChain.flush(IndexingChain.java:245)
+	at org.apache.lucene.index.DocumentsWriterPerThread.flush(DocumentsWriterPerThread.java:392)
+	at org.apache.lucene.index.DocumentsWriter.doFlush(DocumentsWriter.java:492)
+	at org.apache.lucene.index.DocumentsWriter.flushAllThreads(DocumentsWriter.java:671)
+	at org.apache.lucene.index.IndexWriter.doFlush(IndexWriter.java:4212)
+	at org.apache.lucene.index.IndexWriter.flush(IndexWriter.java:4186)
+	at org.apache.lucene.index.IndexWriter.shutdown(IndexWriter.java:1322)
+	at org.apache.lucene.index.IndexWriter.close(IndexWriter.java:1362)
+	at sailpoint.fulltext.Builder.stopLucene(Builder.java:370)
+	at sailpoint.fulltext.Builder.refreshIndex(Builder.java:231)
+	at sailpoint.fulltext.Builder.refreshAll(Builder.java:170)
+	at sailpoint.api.FullTextifier.refreshAll(FullTextifier.java:200)
+	at sailpoint.server.FullTextService.refresh(FullTextService.java:179)
+	at sailpoint.server.FullTextService.execute(FullTextService.java:134)
+	at sailpoint.server.Servicer.execute(Servicer.java:1162)
+	at sailpoint.server.Servicer.processServices(Servicer.java:1113)
+	at sailpoint.server.Servicer.run(Servicer.java:831)
+	Suppressed: java.nio.channels.ClosedChannelException
+		at java.base/sun.nio.ch.FileLockImpl.release(FileLockImpl.java:58)
+		at java.base/java.nio.channels.FileLock.close(FileLock.java:317)
+		at org.apache.lucene.store.NativeFSLockFactory$NativeFSLock.close(NativeFSLockFactory.java:195)
+		at org.apache.lucene.util.IOUtils.close(IOUtils.java:85)
+		at org.apache.lucene.util.IOUtils.close(IOUtils.java:72)
+		at org.apache.lucene.index.IndexWriter.rollbackInternalNoCommit(IndexWriter.java:2533)
+		at org.apache.lucene.index.IndexWriter.rollbackInternal(IndexWriter.java:2449)
+		at org.apache.lucene.index.IndexWriter.shutdown(IndexWriter.java:1328)
+		... 10 more
+</Stacktrace>
+</SyslogEvent>

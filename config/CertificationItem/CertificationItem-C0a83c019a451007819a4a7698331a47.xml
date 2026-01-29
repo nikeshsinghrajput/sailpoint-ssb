@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Audit Viewer" summaryStatus="Open" type="Exception">
+  <ApplicationNames>
+    <String>Financial Planning &amp; Forecasting</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512502" nativeIdentity="8512502">
+      <Attributes>
+        <Map>
+          <entry key="roles" value="Audit Viewer"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>

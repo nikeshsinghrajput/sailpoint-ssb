@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItemArchive PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItemArchive archived="1763188391976" completer="The Administrator" handler="sailpoint.api.Workflower" level="Normal" name="0000000095" ownerName="spadmin" renderer="lcmManualActionsRenderer.xhtml" requester="spadmin" state="Finished" targetClass="sailpoint.object.Identity" targetName="4df298ed-0cba-4084-a574-9d000cc20e4f" type="ManualAction" workItemId="c0a83c019a671ea5819a86366ccb0130">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Active Directory" nativeIdentity="4df298ed-0cba-4084-a574-9d000cc20e4f" operation="Validation" value="Error = [First Name, Last Name or mobileNumber is Null.]"/>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Susan Jones"/>
+      <entry key="identityName" value="4df298ed-0cba-4084-a574-9d000cc20e4f"/>
+    </Map>
+  </Attributes>
+  <Description>Manual Changes requested for User: Susan Jones</Description>
+  <SystemAttributes>
+    <Map>
+      <entry key="completionComments"/>
+    </Map>
+  </SystemAttributes>
+</WorkItemArchive>

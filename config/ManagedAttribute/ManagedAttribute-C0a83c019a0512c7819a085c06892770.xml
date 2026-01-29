@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Treasury Specialist" hash="09fa197a3f20511ea7ed75a009ea5589017cf92b" lastRefresh="1768326685894" requestable="true" type="roles" value="Treasury Specialist">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-04-10"/>
+      <entry key="description" value="Handles bank reconciliation, cash forecasting, and fund transfers across business units."/>
+      <entry key="modifiedDate" value="2025-09-25"/>
+      <entry key="owner" value="treasury@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_TREASURY_005"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

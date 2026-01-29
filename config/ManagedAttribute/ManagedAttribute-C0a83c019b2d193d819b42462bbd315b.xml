@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="SEC_ns_PWD_POLICY_ADMINS" hash="b4ab2a415b5706f2787c59a2bc92fecdfa2eea0d" lastRefresh="1766343453628" requestable="true" type="group" uuid="{b4918a3a-68bc-4831-ab3b-95146b0fc237}" value="CN=SEC_ns_PWD_POLICY_ADMINS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="SEC_ns_PWD_POLICY_ADMINS"/>
+      <entry key="description" value="SEC_ns_PWD_POLICY_ADMINS created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\SEC_ns_PWD_POLICY_ADMINS"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1494"/>
+      <entry key="objectguid" value="{b4918a3a-68bc-4831-ab3b-95146b0fc237}"/>
+      <entry key="sAMAccountName" value="SEC_ns_PWD_POLICY_ADMINS"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

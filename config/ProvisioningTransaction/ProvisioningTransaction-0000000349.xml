@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="brown.jessica" applicationName="Active Directory" identityDisplayName="Jessica Brown" identityName="00d0d55a-dc78-4d06-a0aa-533d9d237cd7" integration="Active Directory" name="0000000349" nativeIdentity="CN=brown.jessica,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Modify" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=brown.jessica,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019afa1055819aff251b6203b7"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="sAMAccountName" op="Set" value="brown.jessica@nstechiiq.com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Error(s) reported back from the IQService - Failed to update attributes for identity CN=brown.jessica,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com. A device attached to the system is not functioning.&#10;" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

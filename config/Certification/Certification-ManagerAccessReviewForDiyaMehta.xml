@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1761848874573" certificationDefinitionId="c0a83c019a3617d6819a365ee7c30034" complete="true" completedEntities="1" completedItems="2" creator="spadmin" entitlementGranularity="Value" expiration="1764527274573" finished="1761849301233" itemPercentComplete="100" manager="721bf631-a1a5-46ac-8227-2813e25365b8" name="Manager Access Review for Diya Mehta" nextPhaseTransition="1767119274657" percentComplete="100" phase="Remediation" shortName="Access Review for Diya Mehta" signed="1761849271108" taskScheduleId="Manager Certification [DATE] [30/10/25, 11:56 PM]" totalEntities="1" totalItems="2" type="Manager">
+  <Attributes>
+    <Map>
+      <entry key="autoSignOffWhenNothingToCertify" value="false"/>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="requireReassignmentCompletion" value="true"/>
+      <entry key="suppressEmailWhenNothingToCertify" value="false"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Manager Certification [30/10/25, 11:56:20 PM IST]"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>721bf631-a1a5-46ac-8227-2813e25365b8</String>
+  </Certifiers>
+  <Parent>
+    <Reference class="sailpoint.object.Certification" name="Manager Access Review for Rohan Mehta"/>
+  </Parent>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Staged"/>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig>
+        <Configs>
+          <ReminderConfig before="true" emailTemplateName="Work Item Reminder" millis="1209600000" once="true"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" maxReminders="5" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <SignOffHistory>
+    <SignOffHistoryItem date="1761849271107" signerDisplayName="The Administrator" signerId="c0a83c0199cf13658199cf93c73500fe" signerName="spadmin"/>
+  </SignOffHistory>
+  <CertificationStatistics completedEntities="1" completedItems="2" itemPercentComplete="100" percentComplete="100" rolesApproved="2" totalEntities="1" totalItems="2" totalRoles="2"/>
+  <CertificationRefs>
+    <Reference class="sailpoint.object.Certification" name="Manager Access Review for Ananya Pandey"/>
+  </CertificationRefs>
+  <CertificationEntity completed="1761849269009" compositeScore="250" firstname="Ananya" identity="d268b5bf-6056-4b32-ab30-67880c3701fd" lastname="Pandey" newUser="true" snapshotId="c0a83c019a3617d6819a365ef89d0060" summaryStatus="Complete" targetDisplayName="Ananya Pandey" targetName="d268b5bf-6056-4b32-ab30-67880c3701fd" type="Identity">
+    <CertificationItem bundle="A1" bundleAssignmentId="f0ef056e2c354112a39b9c8abfbb7804" completed="1761849268971" subType="AssignedRole" summaryStatus="Complete" targetDisplayName="A1" targetName="A1" type="Bundle">
+      <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019a3617d6819a365ef7f3005f" decisionDate="1761849268858" reviewed="true" status="Approved"/>
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1761279063897" roleName="A1" source="LCM">
+                <RoleTarget applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" displayName="ananya.pandey@mindtree.com" nativeIdentity="8512595"/>
+              </RoleAssignment>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <BundleEntitlements>
+        <EntitlementSnapshot application="Sales Analytics" displayName="ananya.pandey@mindtree.com" nativeIdentity="8512595">
+          <Attributes>
+            <Map>
+              <entry key="roles">
+                <value>
+                  <Set>
+                    <String>Sales Manager</String>
+                  </Set>
+                </value>
+              </entry>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </BundleEntitlements>
+    </CertificationItem>
+    <CertificationItem bundle="B" bundleAssignmentId="e29966c0d7904e3d9db18bf07c54ee3a" completed="1761849268972" subType="AssignedRole" summaryStatus="Complete" targetDisplayName="B" targetName="B" type="Bundle">
+      <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019a3617d6819a365ef7f3005f" decisionDate="1761849268885" reviewed="true" status="Approved"/>
+      <ApplicationNames>
+        <String>Sales Analytics</String>
+      </ApplicationNames>
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1761279183037" roleName="B" source="LCM">
+                <RoleTarget applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" displayName="ananya.pandey@mindtree.com" nativeIdentity="8512595"/>
+              </RoleAssignment>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

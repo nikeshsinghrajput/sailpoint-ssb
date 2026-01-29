@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" compilationStatus="Expansion" operation="Create" provisioningEngine="Active Directory" provisioningState="Failed">
+  <Attributes>
+    <Map>
+      <entry key="errors">
+        <value>
+          <List>
+            <Message key="Native Identity should not be null or empty" type="Error"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="5ddaba19bad041eba1ff638fd3c0aac8">
+            <AccountRequest application="Active Directory" assignmentIds="498dcb5c0de5481f9614ff98aa512265" op="Create">
+              <Attributes>
+                <Map>
+                  <entry key="provisioningTransactionId" value="c0a83c019b731761819b994f7ded070f"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

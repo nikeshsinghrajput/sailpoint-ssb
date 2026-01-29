@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="NS_Report_Identity_AccessRequest_Form">
+  <Section columns="1" label="Report Filters" name="filterProperties">
+    <Field columnSpan="2" displayName="created" helpKey="created" name="created" type="string" value="ref:created">
+      <Attributes>
+        <Map>
+          <entry key="xtype" value="daterange"/>
+        </Map>
+      </Attributes>
+    </Field>
+  </Section>
+</Form>

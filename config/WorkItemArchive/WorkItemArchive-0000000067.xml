@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItemArchive PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItemArchive archived="1762621606666" completer="The Administrator" handler="sailpoint.api.Workflower" identityRequestId="0000000164" level="Normal" name="0000000067" ownerName="spadmin" renderer="lcmManualActionsRenderer.xhtml" requester="spadmin" state="Finished" targetClass="sailpoint.object.Identity" targetName="2935a130-2024-466b-82c8-242177e14539" type="ManualAction" workItemId="c0a83c019a5c1879819a6464721f0872">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Corporate Learning Portal" name="Access" nativeIdentity="8512502" operation="Add" state="Finished" value="Certification Manager">
+              <Attributes>
+                <Map>
+                  <entry key="attachmentConfigList"/>
+                  <entry key="attachments"/>
+                  <entry key="flow" value="AccessRequest"/>
+                  <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="op" value="Add"/>
+                  <entry key="operation" value="EntitlementAdd"/>
+                  <entry key="requester" value="spadmin"/>
+                </Map>
+              </Attributes>
+            </ApprovalItem>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Meera Chopra"/>
+      <entry key="identityName" value="2935a130-2024-466b-82c8-242177e14539"/>
+      <entry key="policyViolations"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="2935a130-2024-466b-82c8-242177e14539">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000164"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512502" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Certification Manager" name="Access" op="Add" value="Certification Manager">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000164"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+                <ProvisioningTargets>
+                  <ProvisioningTarget application="Corporate Learning Portal" attribute="Access" value="Certification Manager">
+                    <AccountSelection applicationId="c0a83c019a2f10b6819a3175b2500287" applicationName="Corporate Learning Portal" selection="8512502">
+                      <AccountInfo displayName="chopra.meera@nsiiq.com" nativeIdentity="8512502"/>
+                    </AccountSelection>
+                  </ProvisioningTarget>
+                </ProvisioningTargets>
+                <Requesters>
+                  <Reference class="sailpoint.object.Identity" name="spadmin"/>
+                </Requesters>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan trackingId="20a584434066455aabb8cf107f1bb451">
+              <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512502" op="Modify">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="EntitlementAdd"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Certification Manager" name="Access" op="Add" value="Certification Manager">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000164"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <Requesters>
+                <Reference class="sailpoint.object.Identity" name="spadmin"/>
+              </Requesters>
+            </ProvisioningPlan>
+            <ProvisioningTarget application="Corporate Learning Portal" attribute="Access" value="Certification Manager">
+              <AccountSelection applicationId="c0a83c019a2f10b6819a3175b2500287" applicationName="Corporate Learning Portal" selection="8512502">
+                <AccountInfo displayName="chopra.meera@nsiiq.com" nativeIdentity="8512502"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="saveUnmanagedPlan_WithProjectArgument" value="false"/>
+      <entry key="workItemPriority">
+        <value>
+          <WorkItemLevel>Normal</WorkItemLevel>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Description>Manual Changes requested for User: Meera Chopra</Description>
+  <SystemAttributes>
+    <Map>
+      <entry key="completionComments"/>
+    </Map>
+  </SystemAttributes>
+</WorkItemArchive>

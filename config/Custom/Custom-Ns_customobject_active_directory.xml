@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Active_Directory">
+  <Attributes>
+    <Map>
+      <entry key="ADMailDomain" value="@nstechiiq.com"/>
+      <entry key="AdAppName" value="Active Directory"/>
+      <entry key="EmployeeOU" value="OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="Joiner">
+        <value>
+          <List>
+            <String>NS_EmailTemplate_Manual_WorkItem_Notification</String>
+            <String>NS_EmailTemplate_Joiner_PasswordNotification</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="baseURL" value="http://localhost:1000/identityiq/"/>
+      <entry key="disableOU" value="OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="excludedApplications">
+        <value>
+          <List>
+            <String>Active Directory</String>
+            <String>Hr-Workday</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="licensedGroup" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="mobile">
+        <value>
+          <List>
+            <String>+91-9876543210</String>
+            <String>+91-9765432109</String>
+            <String>+91-9654321098</String>
+            <String>+91-9543210987</String>
+            <String>+91-9123456780</String>
+            <String>+91-9812345678</String>
+            <String>+91-9823456789</String>
+            <String>+91-9834567890</String>
+            <String>+91-9845678901</String>
+            <String>+91-9856789012</String>
+            <String>+91-9867890123</String>
+            <String>+91-9878901234</String>
+            <String>+91-9889012345</String>
+            <String>+91-9890123456</String>
+            <String>+91-9901234567</String>
+            <String>+91-9912345678</String>
+            <String>+91-9923456789</String>
+            <String>+91-9934567890</String>
+            <String>+91-9945678901</String>
+            <String>+91-9956789012</String>
+            <String>+91-9967890123</String>
+            <String>+91-9978901234</String>
+            <String>+91-9989012345</String>
+            <String>+91-9990123456</String>
+            <String>+91-9001234567</String>
+            <String>+91-9012345678</String>
+            <String>+91-9023456789</String>
+            <String>+91-9034567890</String>
+            <String>+91-9045678901</String>
+            <String>+91-9056789012</String>
+            <String>+91-9067890123</String>
+            <String>+91-9078901234</String>
+            <String>+91-9089012345</String>
+            <String>+91-9090123456</String>
+            <String>+91-9101234567</String>
+            <String>+91-9112345678</String>
+            <String>+91-9123456789</String>
+            <String>+91-9134567890</String>
+            <String>+91-9145678901</String>
+            <String>+91-9156789012</String>
+            <String>+91-9167890123</String>
+            <String>+91-9178901234</String>
+            <String>+91-9189012345</String>
+            <String>+91-9190123456</String>
+            <String>+91-9201234567</String>
+            <String>+91-9212345678</String>
+            <String>+91-9223456789</String>
+            <String>+91-9234567890</String>
+            <String>+91-9245678901</String>
+            <String>+91-9256789012</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="telephoneNumber">
+        <value>
+          <List>
+            <String>+91-11-22551234</String>
+            <String>+91-11-24381211</String>
+            <String>+91-22-24891234</String>
+            <String>+91-22-27803456</String>
+            <String>+91-33-22151234</String>
+            <String>+91-33-23372211</String>
+            <String>+91-44-25671234</String>
+            <String>+91-44-23457890</String>
+            <String>+91-80-26781234</String>
+            <String>+91-80-22223344</String>
+            <String>+91-20-24451234</String>
+            <String>+91-20-24221199</String>
+            <String>+91-40-23341234</String>
+            <String>+91-40-23456789</String>
+            <String>+91-79-26581234</String>
+            <String>+91-79-26894567</String>
+            <String>+91-172-26651234</String>
+            <String>+91-172-27789012</String>
+            <String>+91-141-27451234</String>
+            <String>+91-141-27567890</String>
+            <String>+91-161-26671234</String>
+            <String>+91-161-27894567</String>
+            <String>+91-40-27894567</String>
+            <String>+91-22-27651234</String>
+            <String>+91-11-27894567</String>
+            <String>+91-33-27671234</String>
+            <String>+91-44-27684567</String>
+            <String>+91-80-27697890</String>
+            <String>+91-20-27895678</String>
+            <String>+91-79-27893456</String>
+            <String>+91-172-27892345</String>
+            <String>+91-141-27895678</String>
+            <String>+91-120-27671234</String>
+            <String>+91-135-27892345</String>
+            <String>+91-265-27894567</String>
+            <String>+91-291-27891234</String>
+            <String>+91-512-27894567</String>
+            <String>+91-731-27674567</String>
+            <String>+91-551-27892345</String>
+            <String>+91-261-27893456</String>
+            <String>+91-141-27896789</String>
+            <String>+91-172-27897890</String>
+            <String>+91-20-27901234</String>
+            <String>+91-33-27904567</String>
+            <String>+91-44-27907890</String>
+            <String>+91-80-27911234</String>
+            <String>+91-11-27914567</String>
+            <String>+91-22-27917890</String>
+            <String>+91-40-27921234</String>
+            <String>+91-79-27924567</String>
+            <String>+91-20-27927890</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

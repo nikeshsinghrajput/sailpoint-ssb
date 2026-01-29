@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="naidu.arjun@nstechiiq.com" entitlements="true" identity="8512512">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="Access">
+        <value>
+          <List>
+            <String>Learner</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+      <entry key="employeeId" value="8512512"/>
+      <entry key="firstName" value="Arjun"/>
+      <entry key="hireDate" value="12-12-2025"/>
+      <entry key="isInstructor" value="No"/>
+      <entry key="jobTitle" value="Governance Program Manager"/>
+      <entry key="lastName" value="Naidu"/>
+      <entry key="learningGroup" value="Soft Skills Enhancement"/>
+      <entry key="managerDisplayName" value="Nikesh Singh"/>
+      <entry key="managerId" value="8512500"/>
+      <entry key="roleLevel" value="Expert"/>
+      <entry key="status" value="ACTIVE"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="workCountry"/>
+      <entry key="workState" value="East"/>
+    </Map>
+  </Attributes>
+</Link>

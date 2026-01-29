@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_Hr_WorkDay_CreationRule" type="IdentityCreation">
+  <Description>Identity creation rules are used to set attributes on new Identity objects when they are created.  New identities may be created during the aggregation of application accounts, or optionally created after pass-through authentication. One common operation is to change the name property of the identity when the default application name is complex (such as a directory DN). Another common operation is to assign a set of initial capabilities based on the attributes pulled from the application account.</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </ReferencedRules>
+  <Signature returnType="void">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="environment" type="Map">
+        <Description>
+          Arguments passed to the aggregation task.
+        </Description>
+      </Argument>
+      <Argument name="application">
+        <Description>
+          Application being aggregated.
+        </Description>
+      </Argument>
+      <Argument name="account" type="ResourceObject">
+        <Description>
+          The resource account for the identity being created.
+        </Description>
+      </Argument>
+      <Argument name="identity" type="Identity">
+        <Description>
+          The identity that is being created.
+        </Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Source>import sailpoint.object.Identity;
+  import sailpoint.tools.Util;
+  import java.text.SimpleDateFormat;
+  import java.util.Calendar;
+  import java.util.Date;
+  import org.apache.log4j.Logger;
+
+	Logger logs = Logger.getLogger("com.ns.rule.NS_Rule_Hr_WorkDay_CreationRule");
+	logs.debug("Entering into NS_Rule_Hr_WorkDay_CreationRule");
+    try{
+    String name = generateRandomString();
+    identity.setName(name);
+    SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
+    Calendar calendar = Calendar.getInstance();
+    calendar.set(Calendar.HOUR_OF_DAY, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+    Date datep = calendar.getTime();
+    logs.debug("Current Date is:"+f.format(datep));
+    String hireDate = account.getStringAttribute("HIREDATE");
+    int daysDifference = 0;
+    if(hireDate!=null){
+      Date hireDateFormat = f.parse(hireDate);
+      logs.debug("Hire Date is:"+hireDate);
+      String employeeType = account.getStringAttribute("EMPLOYEE_TYPE");
+      if(Util.isNotNullOrEmpty(employeeType)&amp;&amp;employeeType.equalsIgnoreCase("Partner")){
+        if(hireDateFormat.compareTo(datep) == 0){
+          identity.setAttribute("nsStatus","Partner_Joiner_Active");
+        }else{
+          identity.setAttribute("nsStatus","Partner_Joiner_Pending");
+        }
+      }else{
+          //For Now changing to Joiner-COmpleted
+        if(hireDateFormat.compareTo(datep) == 0){
+          identity.setAttribute("nsStatus","Joiner_Active");
+        }else{
+          identity.setAttribute("nsStatus","Joiner_Pending");
+        }
+      }
+    }
+  }catch(Exception e){
+    logs.error("Exception in processing Hire Date logic", e);
+  }</Source>
+</Rule>

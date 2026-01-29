@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="739092" action="ApproveLineItem" application="Financial Planning &amp; Forecasting" attributeName="roles" attributeValue="Audit Viewer" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="The Administrator" target="3ae9ccae-0c70-4dda-a43e-2654222f32a8">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a0512c7819a085c0653276a"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="Remove"/>
+      <entry key="requester" value="spadmin"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

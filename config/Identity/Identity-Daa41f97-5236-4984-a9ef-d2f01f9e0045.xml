@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity correlated="true" lastRefresh="1766397022646" name="daa41f97-5236-4984-a9ef-d2f01f9e0045">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="displayName" value="Sai Kumar"/>
+      <entry key="distinguishedName" value="CN=kumar.sai,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="division" value="Division-4"/>
+      <entry key="email" value="kumar.sai@nstechiiq.com"/>
+      <entry key="employeeId" value="8512511"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full_time"/>
+      <entry key="firstname" value="Sai"/>
+      <entry key="hireDate" value="11-13-2025"/>
+      <entry key="inactive" value="true"/>
+      <entry key="lastname" value="Kumar"/>
+      <entry key="location" value="Mumbai"/>
+      <entry key="nsStatus" value="Leaver_Active"/>
+      <entry key="postalCode" value="470872"/>
+      <entry key="sAMAccountName" value="kumar.sai"/>
+      <entry key="terminationDate" value="12-20-2025"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+    <AttributeMetaData attribute="distinguishedName" source="Active Directory:distinguishedName"/>
+    <AttributeMetaData attribute="sAMAccountName" source="Active Directory:sAMAccountName"/>
+    <AttributeMetaData attribute="email" source="Active Directory:AppRule: NS_Rule_IdentityMapping_Email Active Directory$NS_Rule_IdentityMapping_Email"/>
+  </AttributeMetaDatas>
+  <Exceptions>
+    <EntitlementGroup displayName="8512511" nativeIdentity="8512511">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+  </Exceptions>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments"/>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Sai Kumar" identity="8512511" lastRefresh="1765382826673">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="313 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Onsite"/>
+          <entry key="BUILDING_CODE" value="B125"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU74"/>
+          <entry key="CLASS" value="Full_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="12-20-2025"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs and Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="Division-4"/>
+          <entry key="DIVISION_ID" value="DIV86"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512511"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F11045"/>
+          <entry key="FIRST_NAME" value="Sai"/>
+          <entry key="HIREDATE" value="11-13-2025"/>
+          <entry key="JOBCODE" value="JC473"/>
+          <entry key="JOBTITLE" value="Governance Program Manager"/>
+          <entry key="LAST_NAME" value="Kumar"/>
+          <entry key="LOCATION" value="Mumbai"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="470872"/>
+          <entry key="REGION" value="South"/>
+          <entry key="WORKER_NAME" value="Sai Kumar"/>
+          <entry key="WORKER_STATUS" value="Terminated"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link disabled="true" displayName="kumar.sai" identity="CN=kumar.sai,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1765476002471" manuallyCorrelated="true" uuid="{bcae3291-2e43-459b-b60c-911f8274719c}">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <AttributeMetaDatas>
+        <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+          <LastValue>
+            <Set>
+              <String>CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+            </Set>
+          </LastValue>
+        </AttributeMetaData>
+      </AttributeMetaDatas>
+      <Attributes>
+        <Map>
+          <entry key="IIQDisabled">
+            <value>
+              <Boolean>true</Boolean>
+            </value>
+          </entry>
+          <entry key="accountFlags">
+            <value>
+              <List>
+                <String>Normal User Account</String>
+                <String>User Account is Disabled</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="businessCategory" value="Full_time"/>
+          <entry key="cn" value="kumar.sai"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="departmentNumber" value="DEPT-006"/>
+          <entry key="description" value="Terminated"/>
+          <entry key="displayName" value="Sai Kumar"/>
+          <entry key="distinguishedName" value="CN=kumar.sai,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="employeeNumber" value="8512511"/>
+          <entry key="employeeType" value="Employee"/>
+          <entry key="givenName" value="Sai"/>
+          <entry key="l" value="Mumbai"/>
+          <entry key="mail" value="kumar.sai@nstechiiq.com"/>
+          <entry key="memberOf"/>
+          <entry key="mobile" value="+91-9765432109"/>
+          <entry key="msDS-PrincipalName" value="NSIIQ\kumar.sai"/>
+          <entry key="objectClass">
+            <value>
+              <List>
+                <String>top</String>
+                <String>person</String>
+                <String>organizationalPerson</String>
+                <String>user</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1306"/>
+          <entry key="objectType" value="user"/>
+          <entry key="objectguid" value="{bcae3291-2e43-459b-b60c-911f8274719c}"/>
+          <entry key="physicalDeliveryOfficeName" value="B125"/>
+          <entry key="postalCode" value="470872"/>
+          <entry key="sAMAccountName" value="kumar.sai"/>
+          <entry key="sn" value="Kumar"/>
+          <entry key="st" value="South"/>
+          <entry key="streetAddress" value="313 Ring Road"/>
+          <entry key="title" value="Governance Program Manager"/>
+          <entry key="userAccountControl" value="514"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="" entitlements="true" identity="8512511">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="country" value="India"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="email"/>
+          <entry key="employeeId" value="8512511"/>
+          <entry key="firstName" value="Sai"/>
+          <entry key="hireDate" value="12-13-2025"/>
+          <entry key="isInstructor" value="No"/>
+          <entry key="jobTitle" value="Governance Program Manager"/>
+          <entry key="lastName" value="Kumar"/>
+          <entry key="learningGroup" value="Technical Learning"/>
+          <entry key="managerDisplayName" value="Nikesh Singh"/>
+          <entry key="managerId" value="8512500"/>
+          <entry key="roleLevel" value="Intermediate"/>
+          <entry key="status" value="ACTIVE"/>
+          <entry key="terminationDate" value="18-07-2027"/>
+          <entry key="workCountry"/>
+          <entry key="workState" value="South"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link disabled="true" displayName="8512511" identity="8512511" lastRefresh="1766125782628" manuallyCorrelated="true">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="IIQDisabled">
+            <value>
+              <Boolean>true</Boolean>
+            </value>
+          </entry>
+          <entry key="annualHours" value="1920"/>
+          <entry key="countryCode" value="470872"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="email" value="kumar.sai@nstechiiq.com"/>
+          <entry key="empStatus" value="Inactive"/>
+          <entry key="employee" value="Sai Kumar"/>
+          <entry key="employeeId" value="8512511"/>
+          <entry key="firstName" value="Sai"/>
+          <entry key="hireDate" value="12-13-2025"/>
+          <entry key="isManager" value="No"/>
+          <entry key="jobTitle" value="Governance Program Manager"/>
+          <entry key="lastName" value="Kumar"/>
+          <entry key="manager" value="Nikesh Singh"/>
+          <entry key="salaryClass" value="A"/>
+          <entry key="superviserId" value="8512500"/>
+          <entry key="terminationDate" value="18-07-2027"/>
+          <entry key="userLevel" value="B"/>
+          <entry key="workCountry" value="India"/>
+          <entry key="workState" value="South"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Rachel Rhodes" identity="739052" lastRefresh="1768468360201">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7894 King St"/>
+      <entry key="ADDRESS_WORK" value="7894 King St;Turin, Lombardy 73564;Italy"/>
+      <entry key="BUILDING_CODE" value="IT_LOM_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3086"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="03-12-2024"/>
+      <entry key="COUNTRY_NAME" value="Italy"/>
+      <entry key="DEPARTMENT" value="Enterprise Architecture"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-015"/>
+      <entry key="DIVISION" value="Italy Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-IT-02"/>
+      <entry key="EMAIL" value="rachel.rhodes@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739052"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739052"/>
+      <entry key="FIRST_NAME" value="Rachel"/>
+      <entry key="HIREDATE" value="01-13-2017"/>
+      <entry key="JOBCODE" value="JT-015-03"/>
+      <entry key="JOBTITLE" value="IT Strategy Consultant"/>
+      <entry key="LAST_NAME" value="Rhodes"/>
+      <entry key="LOCATION" value="IT - Turin"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="51185"/>
+      <entry key="REGION" value="Turin"/>
+      <entry key="WORKER_NAME" value="Rachel Rhodes"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

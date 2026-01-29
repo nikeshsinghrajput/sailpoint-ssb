@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentitySnapshot PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentitySnapshot applications="Hr-Workday" identityName="41a860cd-e169-4c36-ae48-0c95660ed05e">
+  <AssignedRoleSnapshots>
+    <RoleAssignmentSnapshot name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoleSnapshots>
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Financial Risk Management"/>
+      <entry key="displayName" value="Myra Tiwari"/>
+      <entry key="division" value="Division-4"/>
+      <entry key="employeeId" value="8512504"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part_time"/>
+      <entry key="firstname" value="Myra"/>
+      <entry key="hireDate" value="01-04-2025"/>
+      <entry key="lastname" value="Tiwari"/>
+      <entry key="location" value="Chennai"/>
+      <entry key="manager" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="postalCode" value="502592"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Credit Risk Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <LinkSnapshots>
+    <LinkSnapshot application="Hr-Workday" identity="8512504" lastRefresh="1765382824620" simpleIdentity="Myra Tiwari">
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="752 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Hybrid"/>
+          <entry key="BUILDING_CODE" value="B486"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU47"/>
+          <entry key="CLASS" value="Part_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Financial Risk Management"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-003"/>
+          <entry key="DIVISION" value="Division-4"/>
+          <entry key="DIVISION_ID" value="DIV94"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512504"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F69238"/>
+          <entry key="FIRST_NAME" value="Myra"/>
+          <entry key="HIREDATE" value="01-04-2025"/>
+          <entry key="JOBCODE" value="JC664"/>
+          <entry key="JOBTITLE" value="Credit Risk Analyst"/>
+          <entry key="LAST_NAME" value="Tiwari"/>
+          <entry key="LOCATION" value="Chennai"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="502592"/>
+          <entry key="REGION" value="North"/>
+          <entry key="WORKER_NAME" value="Myra Tiwari"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </LinkSnapshot>
+  </LinkSnapshots>
+</IdentitySnapshot>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationGroup PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationGroup name="Access Review for cert:Financial Planning &amp; Forecasting::21c6451f-207e-40c8-828c-8c982fa0f4c7" percentComplete="100" status="Complete" type="Certification">
+  <Definition>
+    <Reference class="sailpoint.object.CertificationDefinition" name="Access Review for cert:Financial Planning &amp; Forecasting::21c6451f-207e-40c8-828c-8c982fa0f4c7 [Tue Jan 13 23:50:45 IST 2026]"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</CertificationGroup>

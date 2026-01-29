@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="ProvisioningFailure" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="sumit verma">
+  <Attributes>
+    <Map>
+      <entry key="error1" value="Error(s) reported back from the IQService - Failed to connect to the server for CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:There is no such object on the server. There is no such object on the server. 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072030] Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation "/>
+      <entry key="taskResultId" value="c0a83c019b731761819bb23c9369255a"/>
+    </Map>
+  </Attributes>
+  <String1>FailedApplications=Active Directory</String1>
+</AuditEvent>

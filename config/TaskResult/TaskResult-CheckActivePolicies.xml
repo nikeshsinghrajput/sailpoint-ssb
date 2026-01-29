@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1766411560200" completionStatus="Success" host="NikeshRajput" launched="1766411559535" launcher="spadmin" name="Check Active Policies" schedule="e5195229be0641989db83f422580d092" type="Identity">
+  <Attributes>
+    <Map>
+      <entry key="policies" value="financial denger ent policy, sales anylatics denger access"/>
+      <entry key="policyChecks" value="34"/>
+      <entry key="policyViolations" value="2"/>
+      <entry key="total" value="17"/>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Check Active Policies"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

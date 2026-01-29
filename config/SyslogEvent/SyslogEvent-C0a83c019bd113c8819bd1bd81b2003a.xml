@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.scheduler.JobAdapter" eventLevel="ERROR" lineNumber="138" quickKey="0001243891" server="NikeshRajput" thread="QuartzScheduler_Worker-4" username="Scheduler">
+  <EventMessage>The 5a86e547b8db4ba9b04c899546f70a89 task failed to execute</EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: An instance of task 'AA : Sales Analytics' is already running.
+	at sailpoint.api.TaskManager.createResult(TaskManager.java:1275)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:757)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+</Stacktrace>
+</SyslogEvent>

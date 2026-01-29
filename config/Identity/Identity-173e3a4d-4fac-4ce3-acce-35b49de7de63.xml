@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469459381" name="173e3a4d-4fac-4ce3-acce-35b49de7de63">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Argentina"/>
+      <entry key="department" value="Investment Operations"/>
+      <entry key="displayName" value="Emma Ewing"/>
+      <entry key="division" value="Argentina Risk and Compliance"/>
+      <entry key="employeeId" value="739023"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="Emma"/>
+      <entry key="hireDate" value="07-21-2019"/>
+      <entry key="lastname" value="Ewing"/>
+      <entry key="location" value="AR - Buenos Aires"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="37742"/>
+      <entry key="terminationDate" value="01-03-2026"/>
+      <entry key="title" value="Investment Operations Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469459331" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Emma Ewing" identity="739023" lastRefresh="1768468353167">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="1697 Hill Lane"/>
+          <entry key="ADDRESS_WORK" value="1697 Hill Lane;Buenos Aires, Buenos Aires Province 63863;Argentina"/>
+          <entry key="BUILDING_CODE" value="AR_BUE_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3044"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="01-03-2026"/>
+          <entry key="COUNTRY_NAME" value="Argentina"/>
+          <entry key="DEPARTMENT" value="Investment Operations"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+          <entry key="DIVISION" value="Argentina Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-AR-04"/>
+          <entry key="EMAIL" value="emma.ewing@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739023"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739023"/>
+          <entry key="FIRST_NAME" value="Emma"/>
+          <entry key="HIREDATE" value="07-21-2019"/>
+          <entry key="JOBCODE" value="JT-005-01"/>
+          <entry key="JOBTITLE" value="Investment Operations Analyst"/>
+          <entry key="LAST_NAME" value="Ewing"/>
+          <entry key="LOCATION" value="AR - Buenos Aires"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="37742"/>
+          <entry key="REGION" value="Buenos Aires"/>
+          <entry key="WORKER_NAME" value="Emma Ewing"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Contract"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

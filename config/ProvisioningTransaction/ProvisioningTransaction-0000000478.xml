@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="8512507" applicationName="Sales Analytics" identityDisplayName="Vihaan Patel" identityName="21c6451f-207e-40c8-828c-8c982fa0f4c7" integration="Sales Analytics" name="0000000478" nativeIdentity="8512507" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000306"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512507' for key 'salesemployee.PRIMARY'" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Sales Analytics" nativeIdentity="8512507" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="comments" value="hii"/>
+                <entry key="flow" value="AccountsRequest"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="Create"/>
+                <entry key="provisioningTransactionId" value="c0a83c019b731761819bb85f8c9e2d47"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="firstName" op="Set" value="Vihaan"/>
+            <AttributeRequest name="lastName" op="Set" value="Patel"/>
+            <AttributeRequest name="status" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Investment Operations"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="01-07-2025"/>
+            <AttributeRequest name="salesQuota" op="Set" value="500000"/>
+            <AttributeRequest name="achievedSales" op="Set" value="0"/>
+            <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+            <AttributeRequest name="workState" op="Set" value="Mumbai"/>
+            <AttributeRequest name="region" op="Set" value="A"/>
+            <AttributeRequest name="territory" op="Set" value="A"/>
+            <AttributeRequest name="commissionRate" op="Set" value="5%"/>
+            <AttributeRequest name="managerId" op="Set" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+            <AttributeRequest name="annualHours" op="Set" value="720"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Portfolio Operations Specialist"/>
+            <AttributeRequest name="country" op="Set" value="India"/>
+            <AttributeRequest name="isManager" op="Set" value="No"/>
+            <AttributeRequest name="businessUnit" op="Set" value="A"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512507' for key 'salesemployee.PRIMARY'" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

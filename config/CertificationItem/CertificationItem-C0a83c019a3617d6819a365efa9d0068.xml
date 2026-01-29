@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem bundle="A1" bundleAssignmentId="f123c73c8786489cb6b7a8f9272a4465" completed="1761849289117" subType="AssignedRole" summaryStatus="Complete" targetDisplayName="A1" targetName="A1" type="Bundle">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019a3617d6819a365efa360066" decisionDate="1761849289037" reviewed="true" status="Approved"/>
+  <Attributes>
+    <Map>
+      <entry key="IIQ_roleAssignment">
+        <value>
+          <RoleAssignment assigner="spadmin" date="1761300085800" roleName="A1" source="LCM">
+            <RoleTarget applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" nativeIdentity="8512598"/>
+            <RoleTarget applicationId="c0a83c0199e61e6b8199e68aa06d0095" applicationName="DHP" nativeIdentity="8512598"/>
+          </RoleAssignment>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</CertificationItem>

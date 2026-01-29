@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition executor="sailpoint.task.RuleExecutor" name="NS-HR-Status-Report-Template" resultAction="Rename" subType="task_item_type_generic" template="true" type="Generic">
+  <Attributes>
+    <Map>
+      <entry key="identityName"/>
+      <entry key="ruleName" value="NS_Rule_Change_Hr_App_Status"/>
+      <entry key="taskCompletionEmailNotify" value="Disabled"/>
+      <entry key="taskCompletionEmailRecipients"/>
+      <entry key="taskCompletionEmailTemplate"/>
+    </Map>
+  </Attributes>
+  <Description>Generic template</Description>
+  <Signature>
+    <Inputs>
+      <Argument helpKey="Provide identity name to update" name="identityName" required="true" type="string">
+        <Prompt>Identity Name</Prompt>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="responseCode" type="string">
+        <Prompt>response Code</Prompt>
+      </Argument>
+      <Argument name="responseBody" type="string">
+        <Prompt>response Code</Prompt>
+      </Argument>
+    </Returns>
+  </Signature>
+</TaskDefinition>

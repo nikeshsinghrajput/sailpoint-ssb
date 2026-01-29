@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="NS_Workflow_Candidate_Accounts_Joiner" type="IdentityLifecycle">
+  <Variable input="true" name="trigger">
+    <Description>The IdentityTrigger</Description>
+  </Variable>
+  <Variable input="true" name="event">
+    <Description>The IdentityChangeEvent</Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable initializer="string:AccountsRequest" input="true" name="flow">
+    <Description>What type of LCM flow is this</Description>
+  </Variable>
+  <Variable name="plan">
+    <Description>The provisioning plan which is built during the workflow.</Description>
+  </Variable>
+  <Variable name="enablePlan">
+    <Description>The provisioning plan which is built during the workflow.</Description>
+  </Variable>
+  <Variable initializer="string:LCM" input="true" name="source">
+    <Description>String version of sailpoint.object.Source to indicate where the request originated. Defaults to LCM.</Description>
+  </Variable>
+  <Variable initializer="string:true" input="true" name="trace">
+    <Description>Used for debugging this workflow and when set to true trace Birthright Provisioning.</Description>
+  </Variable>
+  <Variable name="project">
+    <Description>ProvisioningProject which is just a compiled version of the ProvisioningPlan.</Description>
+  </Variable>
+  <Variable editable="true" initializer="true" name="foregroundProvisioning"/>
+  <Variable input="true" name="activeDirectory"/>
+  <Variable input="true" name="identityDisplayName"/>
+  <Variable input="true" name="isRehire"/>
+  <Variable name="isRehireScriptProcessed"/>
+  <Variable input="true" name="password" output="true"/>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </RuleLibraries>
+  <Step icon="start" name="start" posX="112" posY="16">
+    <Transition to="Enable Active Directory in IIQ">
+      <Script>
+        <Source>
+	      import org.apache.log4j.Logger;
+          logs.error("isRihre::::::::NS_Workflow_Candidate_Accounts_Joiner::::::::::"+isRehire);
+		   if(isRehire.equalsIgnoreCase("Yes")){
+			  return true;
+			}
+			return false;
+		</Source>
+      </Script>
+    </Transition>
+    <Transition to="Create Active Directory in IIQ"/>
+  </Step>
+  <Step icon="Task" name="Create Active Directory in IIQ" posX="578" posY="160" resultVariable="plan">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+        import sailpoint.object.ProvisioningPlan;
+        import sailpoint.object.ProvisioningPlan.AccountRequest;
+        import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Accounts_Joiner");
+        logs.debug("Entering into the Create Active Directory in IIQ Step");
+
+        ProvisioningPlan plan = new ProvisioningPlan();
+        List accountRequestList = new ArrayList();
+        Identity identityObject = context.getObjectByName(Identity.class,identityName);
+        AccountRequest accountRequest = createADAccount(identityName, activeDirectory);
+        AttributeRequest attrReq = accountRequest.getAttributeRequest("password");
+        String password = attrReq.getValue();
+        if(password!=null) {
+          wfcontext.getWorkflowCase().put("password", password);
+        }
+        accountRequestList.add(accountRequest);
+        plan.setAccountRequests(accountRequestList);
+        plan.setIdentity(identityObject);
+        plan.setNativeIdentity(identityName);
+
+        logs.debug("Exit from the Create Active Directory in IIQ Step"+plan.toXml());
+        return plan;
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Task" name="Enable Active Directory in IIQ" posX="319" posY="254" resultVariable="plan">
+    <Script>
+      <Source>
+		import sailpoint.object.Identity;
+		import sailpoint.object.ProvisioningPlan;
+		import sailpoint.object.ProvisioningPlan.AccountRequest;
+		import sailpoint.object.ProvisioningPlan.AttributeRequest;
+		import sailpoint.object.Link;
+		import java.util.ArrayList;
+		import java.util.List;
+		import org.apache.log4j.Logger;
+
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Accounts_Joiner");
+		logs.debug("Entering into the Step Enable Active Directory in IIQ");
+
+		String distinguishedName = null;
+		ProvisioningPlan enPlan = new ProvisioningPlan();
+		List accountRequestList = new ArrayList();
+
+		Link adLink = getADAccountLink(identityName);
+		Identity identityObject = context.getObjectByName(Identity.class, identityName);
+		if (adLink != null) {
+		  distinguishedName = adLink.getAttribute("distinguishedName");
+		}
+		logs.debug("DistinguishedName ::::::::: " + distinguishedName);
+
+		// Enable account
+		AccountRequest enableAccountRequest = enableADAccount(distinguishedName, activeDirectory, identityName);
+
+		// Setting password for Mail Notification
+		AttributeRequest attrReq = enableAccountRequest.getAttributeRequest("password");
+		String password = attrReq != null ? (String) attrReq.getValue() : null;
+		if (password != null) {
+		  wfcontext.getWorkflowCase().put("password", password);
+		}
+
+		accountRequestList.add(enableAccountRequest);
+		enPlan.setAccountRequests(accountRequestList);
+		enPlan.setIdentity(identityObject);
+		enPlan.setNativeIdentity(identityName);
+
+		logs.debug("Exit from the Step Build Plan to Enable Account in NS Active Directory::::::: " + enPlan.toXml());
+		return enPlan;
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Provision" name="Provision" posX="677" posY="112">
+    <Arg name="approvalScheme" value="none"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="notificationScheme" value="none"/>
+    <Arg name="fallbackApprover"/>
+    <Arg name="errorDescription"/>
+    <Arg name="workItemPriority"/>
+    <Arg name="workItemStatus"/>
+    <Arg name="source"/>
+    <Arg name="policyScheme" value="none"/>
+    <Arg name="manualWorkItemEmailTemplate"/>
+    <Arg name="identityDisplayName"/>
+    <Arg name="foregroundProvisioning" value="false"/>
+    <Arg name="errorMessages"/>
+    <Arg name="errorManagementGroup"/>
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="doRefresh" value="false"/>
+    <Arg name="optimisticProvisioning" value="false"/>
+    <Arg name="workItemName"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Return name="project" to="project"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="NS_Workflow_LCM_Provisioning_With_Errors_Handling"/>
+    </WorkflowRef>
+    <Transition to="Move AD to Default OU">
+      <Script>
+        <Source>
+		import sailpoint.object.Link;
+		import org.apache.log4j.Logger;
+
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Accounts_Joiner");
+		logs.debug("Entering into step 'Check account present in default OU'");
+
+		Link adLink = getADAccountLink(identityName);
+		boolean result = isAccountPresentInDisabledOU(adLink);
+		return result;
+        </Source>
+      </Script>
+    </Transition>
+    <Transition to="Execute AD Rehire PowerShell script">
+      <Script>
+        <Source>
+		   if(isRehire.equalsIgnoreCase("Yes")){
+			  return true;
+			}
+			return false;
+		</Source>
+      </Script>
+    </Transition>
+    <Transition to="end"/>
+  </Step>
+  <Step icon="Task" name="Move AD to Default OU" posX="499" posY="242" resultVariable="plan">
+    <Script>
+      <Source>
+		import sailpoint.object.Link;
+		import sailpoint.object.Identity;
+		import sailpoint.object.ProvisioningPlan;
+		import sailpoint.object.ProvisioningPlan.AccountRequest;
+		import java.util.ArrayList;
+		import java.util.List;
+		import org.apache.log4j.Logger;
+
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Accounts_Joiner");
+		logs.debug("Entering into Step Move AD to Default OU");
+
+		ProvisioningPlan movePlan = new ProvisioningPlan();
+		List accountRequestList = new ArrayList();
+		Identity identityObject = context.getObjectByName(Identity.class, identityName);
+
+		Link adLink = getADAccountLink(identityName);
+		if (adLink != null) {
+		  AccountRequest moveADOU = moveADAccountInActiveOU(identityName, adLink);
+		  accountRequestList.add(moveADOU);
+		}
+
+		movePlan.setAccountRequests(accountRequestList);
+		movePlan.setIdentity(identityObject);
+		movePlan.setNativeIdentity(identityName);
+
+		logs.debug("Exit from Build Plan to Move AD to Default OU :: " + movePlan.toXml());
+		return movePlan;
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step name="Execute AD Rehire PowerShell script" posX="308" posY="139" resultVariable="isRehireScriptProcessed">
+    <Script>
+      <Source>
+		import sailpoint.object.Application;
+		import sailpoint.object.Attributes;
+		import sailpoint.object.ResourceObject;
+		import sailpoint.object.Rule;
+		import sailpoint.object.Link;
+		import sailpoint.object.ProvisioningPlan.AccountRequest;
+		import sailpoint.object.ProvisioningPlan.AttributeRequest;
+		import sailpoint.object.ProvisioningPlan.Operation;
+		import sailpoint.object.ProvisioningProject;
+		import sailpoint.connector.Connector;
+		import sailpoint.connector.RPCService;
+		import sailpoint.connector.DefaultConnectorServices;
+		import sailpoint.tools.Util;
+		import sailpoint.tools.GeneralException;
+		import sailpoint.tools.RpcRequest;
+		import sailpoint.tools.RpcResponse;
+		import java.util.Map;
+		import java.util.List;
+		import java.util.HashMap;
+		import java.util.ArrayList;
+		import org.apache.log4j.Logger;
+
+		/*
+		
+		Logger logs = Logger.getLogger("com.NS.workflow.NS_Workflow_Candidate_Accounts_Joiner");
+		logs.debug("Entering step Execute AD NS CR Rehire PowerShell script");
+
+		// Build a 'fake' request payload to pass to IQService ScriptExecutor
+		Map data = new HashMap();
+		List fakeAttributeRequests = new ArrayList();
+		Rule rule = context.getObjectByName(Rule.class, "NS-Rule-NSCR_AD-RehirePowerShell-After-Create");
+
+		String NSdistinguishedName = null;
+		String NSsAMAccountName = null;
+		String NSUPN = null;
+
+		Link adLink = getADAccountLink(identityName);
+		if (adLink != null) {
+		  NSdistinguishedName = adLink.getAttribute("distinguishedName");
+		  NSsAMAccountName   = adLink.getAttribute("sAMAccountName");
+		  NSUPN              = adLink.getAttribute("userPrincipalName");
+		}
+		log.error("=========================== NSUPN = " + NSUPN);
+
+		// Fake account request
+		AccountRequest accountRequest = new AccountRequest();
+		accountRequest.setApplication("ITQ");
+		accountRequest.setNativeIdentity("*FAKE*");
+		accountRequest.setOperation(AccountRequest.Operation.Modify);
+
+		// Fake attribute requests
+		AttributeRequest fakeAttribute = new AttributeRequest();
+		fakeAttribute.setOperation(Operation.Add);
+		fakeAttribute.setName("distinguishedName");
+		fakeAttribute.setValue(NSdistinguishedName);
+		fakeAttributeRequests.add(fakeAttribute);
+
+		AttributeRequest fakeAttribute2 = new AttributeRequest();
+		fakeAttribute2.setOperation(Operation.Add);
+		fakeAttribute2.setName("sAMAccountName");
+		fakeAttribute2.setValue(NSsAMAccountName);
+		fakeAttributeRequests.add(fakeAttribute2);
+
+		AttributeRequest fakeAttribute3 = new AttributeRequest();
+		fakeAttribute3.setOperation(Operation.Add);
+		fakeAttribute3.setName("userPrincipalName");
+		fakeAttribute3.setValue(NSUPN);
+		fakeAttributeRequests.add(fakeAttribute3);
+
+		accountRequest.setAttributeRequests(fakeAttributeRequests);
+
+		Application ad = context.getObjectByName(Application.class, activeDirectory);
+
+		try {
+		  log.debug("NSdistinguishedName = " + NSdistinguishedName);
+		  log.debug("NSsAMAccountName = " + NSsAMAccountName);
+		  log.debug("NSUPN = " + NSUPN);
+
+		  // Add to the IQService params
+		  data.put("Application", ad.getAttributes());
+		  data.put("Request", accountRequest);
+		  data.put("postScript", rule);
+
+		  List&lt;Map&gt; configurationList = (List) ad.getAttributeValue("IQServiceConfiguration");
+		  String serviceHost = (String) configurationList.get(0).get("IQServiceHost");
+		  RPCService service = new RPCService(serviceHost, 5050, false, false);
+		  service.setConnectorServices(new DefaultConnectorServices());
+
+		  RpcRequest request = new RpcRequest("ScriptExecutor", "runAfterScript", data);
+		  RpcResponse response = service.execute(request);
+
+		  if (response != null &amp;&amp; response.getErrors() != null &amp;&amp; response.getErrors().size() &gt; 0) {
+			log.error("The Rehire NSCR AD PowerShell Script returned the following error : "
+					  + response.getErrors());
+			return "No";
+		  }
+
+		  wfcontext.setVariable("isRehireScriptProcessed", "Yes");
+		  log.debug("isRehireScriptProcessed Value is: Yes");
+		  return "Yes";
+		} catch (GeneralException e) {
+		  log.error("The Rehire NSCR AD PowerShell Script failed with following error: " + e.getMessage());
+		  return "No";
+		} */
+		
+		return "Yes";
+      </Source>
+    </Script>
+    <Transition to="Enable Account Except Active Directory" when="(isRehireScriptProcessed.equalsIgnoreCase(&quot;Yes&quot;))"/>
+    <Transition to="Execute AD Rehire PowerShell script"/>
+  </Step>
+  <Step action="call:buildEventPlan" icon="Start" name="Enable Account Except Active Directory" posX="563" posY="134" resultVariable="enablePlan">
+    <Arg name="op" value="Enable"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="trigger" value="ref:trigger"/>
+    <Arg name="event" value="ref:event"/>
+    <Description>Go through all of the user's links and build a plan.</Description>
+    <Transition to="Update Enable Plan"/>
+  </Step>
+  <Step icon="Message" name="Update Enable Plan" posX="1124" posY="185" resultVariable="enablePlan">
+    <Description>This step can be used to remove the request for disable application from plan</Description>
+    <Script>
+      <Source>
+		import sailpoint.object.ProvisioningPlan;
+		import sailpoint.object.Identity;
+		import sailpoint.object.Custom;
+		import sailpoint.object.ProvisioningPlan.AccountRequest;
+		import sailpoint.object.ProvisioningPlan.Operation;
+		import sailpoint.object.Application;
+		import sailpoint.object.Attributes;
+		import sailpoint.tools.GeneralException;
+		import java.util.ArrayList;
+		import java.util.List;
+		import java.util.Map;
+		import org.apache.log4j.Logger;
+		import org.apache.log4j.Level;
+
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Accounts_Joiner");
+		logs.debug("Entering into the step Update Enable Plan");
+
+		List applicationToExclude = null;
+		Custom customObject = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+		if (customObject != null) {
+		  Attributes attributes = customObject.getAttributes();
+		  Map customObjectMap = attributes.getMap();
+		  if (customObjectMap != null) {
+			applicationToExclude = (List) customObjectMap.get("excludedApplications");
+			logs.debug("applicationToExclude : " + applicationToExclude);
+		  }
+		}
+
+		if (applicationToExclude != null) {
+		  for (String application : applicationToExclude) {
+			List accReqs = enablePlan.getAccountRequests(application);
+			if (accReqs != null &amp;&amp; accReqs.size() &gt; 0) {
+			  for (Object o : accReqs) {
+				AccountRequest ar = (AccountRequest) o;
+				enablePlan.remove(ar);
+			  }
+			}
+		  }
+		}
+
+		logs.debug("\n********************************************************");
+		logs.debug("\nPlan for Enable identity '" + identityName + "' :: " + enablePlan.toXml());
+		logs.debug("\n********************************************************");
+		return enablePlan;
+      </Source>
+    </Script>
+    <Transition to="Provision Enable Account"/>
+  </Step>
+  <Step icon="Provision" name="Provision Enable Account" posX="677" posY="112">
+    <Arg name="approvalScheme" value="none"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="notificationScheme" value="none"/>
+    <Arg name="fallbackApprover"/>
+    <Arg name="errorDescription"/>
+    <Arg name="workItemPriority"/>
+    <Arg name="workItemStatus"/>
+    <Arg name="source"/>
+    <Arg name="policyScheme" value="none"/>
+    <Arg name="manualWorkItemEmailTemplate"/>
+    <Arg name="identityDisplayName"/>
+    <Arg name="foregroundProvisioning" value="false"/>
+    <Arg name="errorMessages"/>
+    <Arg name="errorManagementGroup"/>
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="doRefresh" value="false"/>
+    <Arg name="optimisticProvisioning" value="false"/>
+    <Arg name="workItemName"/>
+    <Arg name="plan" value="ref:enablePlan"/>
+    <Return name="project" to="project"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="NS_Workflow_LCM_Provisioning_With_Errors_Handling"/>
+    </WorkflowRef>
+    <Transition to="end"/>
+  </Step>
+  <Step icon="Stop" name="end" posX="846" posY="231"/>
+</Workflow>

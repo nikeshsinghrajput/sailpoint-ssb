@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Division_Values_Mapping">
+  <Attributes>
+    <Map>
+      <entry key="Argentina Corporate and Investment Services" value="DIV-AR-02,AR_BUE_BLDG_02,3042"/>
+      <entry key="Argentina Retail Banking and Payments" value="DIV-AR-01,AR_BUE_BLDG_01,3041"/>
+      <entry key="Argentina Risk and Compliance" value="DIV-AR-04,AR_BUE_BLDG_04,3044"/>
+      <entry key="Argentina Technology and Operations" value="DIV-AR-03,AR_BUE_BLDG_03,3043"/>
+      <entry key="Australia Corporate and Investment Services" value="DIV-AU-02,AU_NEW_BLDG_02,3014"/>
+      <entry key="Australia Retail Banking and Payments" value="DIV-AU-01,AU_NEW_BLDG_01,3013"/>
+      <entry key="Australia Risk and Compliance" value="DIV-AU-04,AU_NEW_BLDG_04,3016"/>
+      <entry key="Australia Technology and Operations" value="DIV-AU-03,AU_NEW_BLDG_03,3015"/>
+      <entry key="Brazil Corporate and Investment Services" value="DIV-BR-02,BR_SOP_BLDG_02,3038"/>
+      <entry key="Brazil Retail Banking and Payments" value="DIV-BR-01,BR_SOP_BLDG_01,3037"/>
+      <entry key="Brazil Risk and Compliance" value="DIV-BR-04,BR_SOP_BLDG_04,3040"/>
+      <entry key="Brazil Technology and Operations" value="DIV-BR-03,BR_SOP_BLDG_03,3039"/>
+      <entry key="Canada Corporate and Investment Services" value="DIV-CA-02,CA_ONT_BLDG_02,3030"/>
+      <entry key="Canada Retail Banking and Payments" value="DIV-CA-01,CA_ONT_BLDG_01,3029"/>
+      <entry key="Canada Risk and Compliance" value="DIV-CA-04,CA_ONT_BLDG_04,3032"/>
+      <entry key="Canada Technology and Operations" value="DIV-CA-03,CA_ONT_BLDG_03,3031"/>
+      <entry key="Chile Corporate and Investment Services" value="DIV-CL-02,CL_SAN_BLDG_02,3046"/>
+      <entry key="Chile Retail Banking and Payments" value="DIV-CL-01,CL_SAN_BLDG_01,3045"/>
+      <entry key="Chile Risk and Compliance" value="DIV-CL-04,CL_SAN_BLDG_04,3048"/>
+      <entry key="Chile Technology and Operations" value="DIV-CL-03,CL_SAN_BLDG_03,3047"/>
+      <entry key="China Corporate and Investment Services" value="DIV-CN-02,CN_GUA_BLDG_02,3006"/>
+      <entry key="China Retail Banking and Payments" value="DIV-CN-01,CN_GUA_BLDG_01,3005"/>
+      <entry key="China Risk and Compliance" value="DIV-CN-04,CN_GUA_BLDG_04,3008"/>
+      <entry key="China Technology and Operations" value="DIV-CN-03,CN_GUA_BLDG_03,3007"/>
+      <entry key="Egypt Corporate and Investment Services" value="DIV-EG-02,EG_CAI_BLDG_02,3062"/>
+      <entry key="Egypt Retail Banking and Payments" value="DIV-EG-01,EG_CAI_BLDG_01,3061"/>
+      <entry key="Egypt Risk and Compliance" value="DIV-EG-04,EG_CAI_BLDG_04,3064"/>
+      <entry key="Egypt Technology and Operations" value="DIV-EG-03,EG_CAI_BLDG_03,3063"/>
+      <entry key="France Corporate and Investment Services" value="DIV-FR-02,FR_LED_BLDG_02,3082"/>
+      <entry key="France Retail Banking and Payments" value="DIV-FR-01,FR_LED_BLDG_01,3081"/>
+      <entry key="France Risk and Compliance" value="DIV-FR-04,FR_LED_BLDG_04,3084"/>
+      <entry key="France Technology and Operations" value="DIV-FR-03,FR_LED_BLDG_03,3083"/>
+      <entry key="Germany Corporate and Investment Services" value="DIV-DE-02,DE_BAV_BLDG_02,3078"/>
+      <entry key="Germany Retail Banking and Payments" value="DIV-DE-01,DE_BAV_BLDG_01,3077"/>
+      <entry key="Germany Risk and Compliance" value="DIV-DE-04,DE_BAV_BLDG_04,3080"/>
+      <entry key="Germany Technology and Operations" value="DIV-DE-03,DE_BAV_BLDG_03,3079"/>
+      <entry key="India Corporate and Investment Services" value="DIV-IN-02,IN_MAH_BLDG_02,3002"/>
+      <entry key="India Retail Banking and Payments" value="DIV-IN-01,IN_MAH_BLDG_01,3001"/>
+      <entry key="India Risk and Compliance" value="DIV-IN-04,IN_MAH_BLDG_04,3004"/>
+      <entry key="India Technology and Operations" value="DIV-IN-03,IN_MAH_BLDG_03,3003"/>
+      <entry key="Italy Corporate and Investment Services" value="DIV-IT-02,IT_LOM_BLDG_02,3086"/>
+      <entry key="Italy Retail Banking and Payments" value="DIV-IT-01,IT_LOM_BLDG_01,3085"/>
+      <entry key="Italy Risk and Compliance" value="DIV-IT-04,IT_LOM_BLDG_04,3088"/>
+      <entry key="Italy Technology and Operations" value="DIV-IT-03,IT_LOM_BLDG_03,3087"/>
+      <entry key="Japan Corporate and Investment Services" value="DIV-JP-02,JP_TOK_BLDG_02,3010"/>
+      <entry key="Japan Retail Banking and Payments" value="DIV-JP-01,JP_TOK_BLDG_01,3009"/>
+      <entry key="Japan Risk and Compliance" value="DIV-JP-04,JP_TOK_BLDG_04,3012"/>
+      <entry key="Japan Technology and Operations" value="DIV-JP-03,JP_TOK_BLDG_03,3011"/>
+      <entry key="Kenya Corporate and Investment Services" value="DIV-KE-02,KE_NAI_BLDG_02,3066"/>
+      <entry key="Kenya Retail Banking and Payments" value="DIV-KE-01,KE_NAI_BLDG_01,3065"/>
+      <entry key="Kenya Risk and Compliance" value="DIV-KE-04,KE_NAI_BLDG_04,3068"/>
+      <entry key="Kenya Technology and Operations" value="DIV-KE-03,KE_NAI_BLDG_03,3067"/>
+      <entry key="Mexico Corporate and Investment Services" value="DIV-MX-02,MX_JAL_BLDG_02,3034"/>
+      <entry key="Mexico Retail Banking and Payments" value="DIV-MX-01,MX_JAL_BLDG_01,3033"/>
+      <entry key="Mexico Risk and Compliance" value="DIV-MX-04,MX_JAL_BLDG_04,3036"/>
+      <entry key="Mexico Technology and Operations" value="DIV-MX-03,MX_JAL_BLDG_03,3035"/>
+      <entry key="Netherlands Corporate and Investment Services" value="DIV-NL-02,NL_NOR_BLDG_02,3090"/>
+      <entry key="Netherlands Retail Banking and Payments" value="DIV-NL-01,NL_NOR_BLDG_01,3089"/>
+      <entry key="Netherlands Risk and Compliance" value="DIV-NL-04,NL_NOR_BLDG_04,3092"/>
+      <entry key="Netherlands Technology and Operations" value="DIV-NL-03,NL_NOR_BLDG_03,3091"/>
+      <entry key="Qatar Corporate and Investment Services" value="DIV-QA-02,QA_DOH_BLDG_02,3070"/>
+      <entry key="Qatar Retail Banking and Payments" value="DIV-QA-01,QA_DOH_BLDG_01,3069"/>
+      <entry key="Qatar Risk and Compliance" value="DIV-QA-04,QA_DOH_BLDG_04,3072"/>
+      <entry key="Qatar Technology and Operations" value="DIV-QA-03,QA_DOH_BLDG_03,3071"/>
+      <entry key="Saudi Arabia Corporate and Investment Services" value="DIV-SA-02,SA_RIY_BLDG_02,3054"/>
+      <entry key="Saudi Arabia Retail Banking and Payments" value="DIV-SA-01,SA_RIY_BLDG_01,3053"/>
+      <entry key="Saudi Arabia Risk and Compliance" value="DIV-SA-04,SA_RIY_BLDG_04,3056"/>
+      <entry key="Saudi Arabia Technology and Operations" value="DIV-SA-03,SA_RIY_BLDG_03,3055"/>
+      <entry key="Singapore Corporate and Investment Services" value="DIV-SG-02,SG_CEN_BLDG_02,3018"/>
+      <entry key="Singapore Retail Banking and Payments" value="DIV-SG-01,SG_CEN_BLDG_01,3017"/>
+      <entry key="Singapore Risk and Compliance" value="DIV-SG-04,SG_CEN_BLDG_04,3020"/>
+      <entry key="Singapore Technology and Operations" value="DIV-SG-03,SG_CEN_BLDG_03,3019"/>
+      <entry key="South Africa Corporate and Investment Services" value="DIV-ZA-02,ZA_GAU_BLDG_02,3058"/>
+      <entry key="South Africa Retail Banking and Payments" value="DIV-ZA-01,ZA_GAU_BLDG_01,3057"/>
+      <entry key="South Africa Risk and Compliance" value="DIV-ZA-04,ZA_GAU_BLDG_04,3060"/>
+      <entry key="South Africa Technology and Operations" value="DIV-ZA-03,ZA_GAU_BLDG_03,3059"/>
+      <entry key="South Korea Corporate and Investment Services" value="DIV-KR-02,KR_GYE_BLDG_02,3022"/>
+      <entry key="South Korea Retail Banking and Payments" value="DIV-KR-01,KR_GYE_BLDG_01,3021"/>
+      <entry key="South Korea Risk and Compliance" value="DIV-KR-04,KR_GYE_BLDG_04,3024"/>
+      <entry key="South Korea Technology and Operations" value="DIV-KR-03,KR_GYE_BLDG_03,3023"/>
+      <entry key="Spain Corporate and Investment Services" value="DIV-ES-02,ES_MAD_BLDG_02,3094"/>
+      <entry key="Spain Retail Banking and Payments" value="DIV-ES-01,ES_MAD_BLDG_01,3093"/>
+      <entry key="Spain Risk and Compliance" value="DIV-ES-04,ES_MAD_BLDG_04,3096"/>
+      <entry key="Spain Technology and Operations" value="DIV-ES-03,ES_MAD_BLDG_03,3095"/>
+      <entry key="United Arab Emirates Corporate and Investment Services" value="DIV-AE-02,AE_DUB_BLDG_02,3050"/>
+      <entry key="United Arab Emirates Retail Banking and Payments" value="DIV-AE-01,AE_DUB_BLDG_01,3049"/>
+      <entry key="United Arab Emirates Risk and Compliance" value="DIV-AE-04,AE_DUB_BLDG_04,3052"/>
+      <entry key="United Arab Emirates Technology and Operations" value="DIV-AE-03,AE_DUB_BLDG_03,3051"/>
+      <entry key="United Kingdom Corporate and Investment Services" value="DIV-GB-02,GB_ENG_BLDG_02,3074"/>
+      <entry key="United Kingdom Retail Banking and Payments" value="DIV-GB-01,GB_ENG_BLDG_01,3073"/>
+      <entry key="United Kingdom Risk and Compliance" value="DIV-GB-04,GB_ENG_BLDG_04,3076"/>
+      <entry key="United Kingdom Technology and Operations" value="DIV-GB-03,GB_ENG_BLDG_03,3075"/>
+      <entry key="United States Corporate and Investment Services" value="DIV-US-02,US_CAL_BLDG_02,3026"/>
+      <entry key="United States Retail Banking and Payments" value="DIV-US-01,US_CAL_BLDG_01,3025"/>
+      <entry key="United States Risk and Compliance" value="DIV-US-04,US_CAL_BLDG_04,3028"/>
+      <entry key="United States Technology and Operations" value="DIV-US-03,US_CAL_BLDG_03,3027"/>
+    </Map>
+  </Attributes>
+</Custom>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Michelle Johnson" identity="739065" lastRefresh="1768468362765">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="4288 Sunset Rd"/>
+      <entry key="ADDRESS_WORK" value="4288 Sunset Rd;Port Said, Cairo Governorate 92525;Egypt"/>
+      <entry key="BUILDING_CODE" value="EG_CAI_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3061"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="09-22-2026"/>
+      <entry key="COUNTRY_NAME" value="Egypt"/>
+      <entry key="DEPARTMENT" value="Core Banking Technology"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-024"/>
+      <entry key="DIVISION" value="Egypt Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-EG-01"/>
+      <entry key="EMAIL" value="michelle.johnson@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739065"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739065"/>
+      <entry key="FIRST_NAME" value="Michelle"/>
+      <entry key="HIREDATE" value="12-17-2019"/>
+      <entry key="JOBCODE" value="JT-024-03"/>
+      <entry key="JOBTITLE" value="Banking Solutions Developer"/>
+      <entry key="LAST_NAME" value="Johnson"/>
+      <entry key="LOCATION" value="EG - Port Said"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="1010"/>
+      <entry key="REGION" value="Port Said"/>
+      <entry key="WORKER_NAME" value="Michelle Johnson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

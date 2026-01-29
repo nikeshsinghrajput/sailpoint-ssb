@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition name="test ad status" resultAction="Rename" subType="Access Review and Certification Reports" type="LiveReport">
+  <Attributes>
+    <Map>
+      <entry key="TaskSchedule.host"/>
+      <entry key="applications">
+        <value>
+          <List>
+            <String>Financial Planning & Forecasting</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="disableDetail" value="false"/>
+      <entry key="disableHeader" value="false"/>
+      <entry key="disableSummary" value="false"/>
+      <entry key="dontEmailEmptyReport">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="enableCsvHeader" value="false"/>
+      <entry key="exclusions">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="reportColumnOrder" value="nativeIdentity, firstName, lastName, manager, certName, certGroupName, tags, entitlementType, entitlements, application, instance, identity, status, decision, newValue, remediationCompleted, decisionMaker, comments, exclusionExplanation, recommendation, recommendationReasons, recommendationTimestamp, autoDecisionGenerated, autoDecisionAccepted, classifications, elevatedAccess"/>
+    </Map>
+  </Attributes>
+  <Description>Displays information about all application owner certifications in detailed format.</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Parent>
+    <Reference class="sailpoint.object.TaskDefinition" name="Application Owner Access Review Live Report"/>
+  </Parent>
+</TaskDefinition>

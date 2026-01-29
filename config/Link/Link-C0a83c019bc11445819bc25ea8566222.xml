@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="singh.nikesh" entitlements="true" identity="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1768910900525" manuallyCorrelated="true" uuid="{87ebee8a-4c18-4b8d-9f5d-528db146b357}">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+      <LastValue>
+        <Set>
+          <String>CN=singh.nikesh,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+        </Set>
+      </LastValue>
+    </AttributeMetaData>
+  </AttributeMetaDatas>
+  <Attributes>
+    <Map>
+      <entry key="NetBIOSName"/>
+      <entry key="accountFlags">
+        <value>
+          <List>
+            <String>Normal User Account</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="businessCategory" value="Full-Time"/>
+      <entry key="cn" value="singh.nikesh"/>
+      <entry key="department" value="Product Management Office (PMO)"/>
+      <entry key="departmentNumber" value="DEPT-021"/>
+      <entry key="description" value="Created via sailpoint Product Manager"/>
+      <entry key="displayName" value="Nikesh Singh"/>
+      <entry key="distinguishedName" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="employeeNumber" value="735000"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="givenName" value="Nikesh"/>
+      <entry key="l" value="GB - Bristol"/>
+      <entry key="mail" value="nikeshsingh0981@gmail.com"/>
+      <entry key="manager" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="memberOf">
+        <value>
+          <List>
+            <String>CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="mobile" value="+91-9923456789"/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\singh.nikesh"/>
+      <entry key="objectClass">
+        <value>
+          <List>
+            <String>top</String>
+            <String>person</String>
+            <String>organizationalPerson</String>
+            <String>user</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1504"/>
+      <entry key="objectType" value="user"/>
+      <entry key="objectguid" value="{87ebee8a-4c18-4b8d-9f5d-528db146b357}"/>
+      <entry key="physicalDeliveryOfficeName" value="GB_ENG_BLDG_03"/>
+      <entry key="postalCode" value="823001"/>
+      <entry key="sAMAccountName" value="singh.nikesh"/>
+      <entry key="sn" value="Singh"/>
+      <entry key="st" value="Bristol"/>
+      <entry key="streetAddress" value="7392 Park St"/>
+      <entry key="telephoneNumber" value="+91-141-27567890"/>
+      <entry key="title" value="Product Manager"/>
+      <entry key="userAccountControl" value="512"/>
+      <entry key="userPrincipalName" value="singh.nikesh@nstechiiq.com"/>
+    </Map>
+  </Attributes>
+</Link>

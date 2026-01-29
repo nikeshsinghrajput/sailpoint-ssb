@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="NS_Workflow_Candidate_Joiner" type="IdentityLifecycle">
+  <Variable input="true" name="trigger">
+    <Description>The IdentityTrigger</Description>
+  </Variable>
+  <Variable input="true" name="event">
+    <Description>The IdentityChangeEvent</Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable name="plan">
+    <Description>The provisioning plan which is built during the workflow.</Description>
+  </Variable>
+  <Variable initializer="script:(identityDisplayName != void) ? identityDisplayName : resolveDisplayName(identityName)" input="true" name="identityDisplayName">
+    <Description>The displayName of the identity being updated. Query for this using a projection query and fall back to the name.</Description>
+  </Variable>
+  <Variable initializer="string:false" input="true" name="trace">
+    <Description>Used for debugging this workflow and when set to true trace Birthright Provisioning.</Description>
+  </Variable>
+  <Variable initializer="NS_EmailTemplate_Manual_WorkItem_Notification" name="emailTemplate"/>
+  <Variable initializer="Active Directory" name="activeDirectory"/>
+  <Variable name="isEmailPresent"/>
+  <Variable initializer="Hr-Workday" name="hrWorkday"/>
+  <Variable name="managerDisplayName"/>
+  <Variable name="managerEmail"/>
+  <Variable name="employeeId"/>
+  <Variable name="project"/>
+  <Variable input="true" name="password" output="true"/>
+  <Variable initializer="No" name="isRehire"/>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </RuleLibraries>
+  <Step icon="Start" name="start" posX="33" posY="19">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+        import sailpoint.object.Link;
+        import org.apache.log4j.Logger;
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Entering into the Start step");
+        String managerDisplayName = null;
+        String managerEmail = null;
+        String employeeId = null;
+        Identity identity = context.getObjectByName(Identity.class, identityName);
+        Identity manager = identity.getManager();
+        if(manager.getDisplayName() != null)
+          managerDisplayName = manager.getDisplayName();
+        else
+          managerDisplayName = "spadmin";
+        logs.debug("managerDisplayName :::::::::::::::::: "+managerDisplayName);
+        wfcontext.getWorkflowCase().put("managerDisplayName", managerDisplayName);
+        if(manager.getEmail() != null)
+          managerEmail = manager.getEmail();
+        else
+          managerEmail = "IAMTeam@test.com";
+        logs.debug("managerEmail :::::::::::::::::: "+managerEmail);
+        wfcontext.getWorkflowCase().put("managerEmail", managerEmail);
+        if(identity.getAttribute("employeeId") != null)
+          employeeId = identity.getAttribute("employeeId");
+        logs.debug("employeeId :::::::::::::::::: "+employeeId);
+        wfcontext.getWorkflowCase().put("employeeId", employeeId);
+        logs.debug("Exit from the Start step");
+      </Source>
+    </Script>
+    <Transition to="Pre Joiner Validation"/>
+  </Step>
+  <Step icon="Default" name="Pre Joiner Validation" posX="162" posY="24">
+    <Arg name="approvalScheme"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="notificationScheme"/>
+    <Arg name="fallbackApprover"/>
+    <Arg name="errorHandlingGroup"/>
+    <Arg name="approvalsScheme"/>
+    <Arg name="project"/>
+    <Arg name="workItemPriority"/>
+    <Arg name="workItemStatus"/>
+    <Arg name="source"/>
+    <Arg name="policyScheme"/>
+    <Arg name="manualWorkItemEmailTemplate"/>
+    <Arg name="identityDisplayName"/>
+    <Arg name="foregroundProvisioning"/>
+    <Arg name="errorMessages"/>
+    <Arg name="trace"/>
+    <Arg name="doRefresh"/>
+    <Arg name="optimisticProvisioning"/>
+    <Arg name="workItemName"/>
+    <Arg name="plan"/>
+    <Arg name="activeDirectory"/>
+    <Arg name="ErrorManagementGroup"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="NS_Workflow_Candidate_Joiner_Validation"/>
+    </WorkflowRef>
+    <Transition to="Provision Accounts">
+      <Script>
+        <Source>
+          import sailpoint.object.Link;
+
+          Link adLink = getADAccountLink(identityName);
+          if(adLink != null){
+          	wfcontext.getWorkflowCase().put("isRehire", "Yes");
+          }
+          return true;
+        </Source>
+      </Script>
+    </Transition>
+  </Step>
+  <Step icon="Task" name="Provision Accounts" posX="265" posY="21">
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="isRehire"/>
+    <Arg name="project"/>
+    <Arg name="trigger"/>
+    <Arg name="source"/>
+    <Arg name="foregroundProvisioning" value="ref:foregroundProvisioning"/>
+    <Arg name="identityDisplayName" value="ref:identityDisplayName"/>
+    <Arg name="trace"/>
+    <Arg name="password"/>
+    <Arg name="isRehireScriptProcessed"/>
+    <Arg name="enablePlan"/>
+    <Arg name="event"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Arg name="activeDirectory" value="ref:activeDirectory"/>
+    <Arg name="flow"/>
+    <Return name="password" to="password"/>
+    <Return name="project" to="project"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="NS_Workflow_Candidate_Accounts_Joiner"/>
+    </WorkflowRef>
+    <Transition to="Email Wait"/>
+  </Step>
+  <Step icon="Message" name="Email Wait" posX="363" posY="31" wait="1">
+    <Transition to="Check Email"/>
+  </Step>
+  <Step icon="Message" name="Check Email" posX="550" posY="49" resultVariable="isEmailPresent">
+    <Script>
+      <Source>
+        import sailpoint.object.Link;
+        import org.SailPoint_IIQ.Utils.AggregationHelper;
+        import sailpoint.tools.Util;
+        import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Entering into the Step Check Email");
+        String distinguishedName = null;
+        String email = null;
+        boolean isEmailPresent = false;
+        Link AdLink = getADAccountLink(identityName);
+        if(AdLink.getAttribute("distinguishedName") != null)
+          distinguishedName = AdLink.getAttribute("distinguishedName");
+        logs.debug("distinguishedName :::::::::::::::::: "+distinguishedName);
+        if(distinguishedName!=null){
+          String taskAggregation = AggregationHelper.singleADAggregation(context,activeDirectory,distinguishedName);
+          logs.debug("AD Single Account Aggregation is "+ taskAggregation);
+        }else{
+          logs.debug("Distinguished Name inside AD Single Account Aggregation is null");
+        }
+        Link link = getADAccountLink(identityName);
+        if(link.getAttribute("mail") != null)
+          email = link.getAttribute("mail");
+        logs.debug("email :::::::::::::::::: "+email);
+        if(Util.isNotNullOrEmpty(email))
+          isEmailPresent = true;
+        wfcontext.setVariable("isEmailPresent", isEmailPresent);
+        wfcontext.setVariable("email", email);
+        logs.debug("IsEmailPresent :::::::::::::::::: "+isEmailPresent);
+        logs.debug("Exit from the the Step Check Email");
+        return isEmailPresent;
+      </Source>
+    </Script>
+    <Transition to="Notify Status">
+      <Script>
+        <Source>
+          if(isRehire.equalsIgnoreCase("Yes")){
+          return true;
+          }
+          return false;
+        </Source>
+      </Script>
+    </Transition>
+    <Transition to="Create Financial and Forcasting app" when="script:isEmailPresent == true"/>
+    <Transition to="Email Wait" when="script:isEmailPresent == false"/>
+  </Step>
+  <Step icon="Task" name="Create Financial and Forcasting app" posX="642" posY="181" resultVariable="plan">
+    <Script>
+      <Source>
+		import sailpoint.object.Identity;
+		import sailpoint.object.ProvisioningPlan;
+		import sailpoint.object.ProvisioningProject;
+		import sailpoint.object.ProvisioningPlan.AccountRequest;
+		import sailpoint.object.ProvisioningPlan.AttributeRequest;
+	    import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Entering into the Step Create Financial and Forcasting app");
+		Identity identity =context.getObjectByName(Identity.class,identityName); 
+		ProvisioningPlan plan = new ProvisioningPlan();
+		AccountRequest accReq = new AccountRequest();
+		accReq.setOperation(AccountRequest.Operation.Create);
+		accReq.setApplication("Financial Planning &amp; Forecasting");
+		String nativeIdentity = identity.getAttribute("employeeId");
+		accReq.setNativeIdentity(nativeIdentity);   
+		plan.add(accReq);
+		plan.setIdentity(identity);
+		logs.debug("plan::::::::"+plan.toXml());
+		return plan;
+	  </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Provision" name="Provision" posX="701" posY="35">
+    <Arg name="approvalScheme" value="none"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="notificationScheme" value="none"/>
+    <Arg name="fallbackApprover"/>
+    <Arg name="errorDescription"/>
+    <Arg name="workItemPriority"/>
+    <Arg name="workItemStatus"/>
+    <Arg name="source"/>
+    <Arg name="policyScheme" value="none"/>
+    <Arg name="manualWorkItemEmailTemplate"/>
+    <Arg name="identityDisplayName"/>
+    <Arg name="foregroundProvisioning" value="false"/>
+    <Arg name="errorMessages"/>
+    <Arg name="errorManagementGroup"/>
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="doRefresh" value="true"/>
+    <Arg name="optimisticProvisioning" value="false"/>
+    <Arg name="workItemName"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Return name="project" to="project"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="NS_Workflow_LCM_Provisioning_With_Errors_Handling"/>
+    </WorkflowRef>
+    <Transition to="Update AD UPN"/>
+  </Step>
+  <Step icon="Task" name="Update AD UPN" posX="765" posY="161">
+    <Script>
+      <Source>
+        import sailpoint.object.Link;
+        import org.apache.log4j.Logger;
+
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Entering into the Step Update AD UPN");
+        Map attributes = new HashMap();
+        String prEmail = null;
+
+        Link AdLink = getADAccountLink(identityName);
+        if(AdLink != null &amp;&amp; AdLink.getAttribute("mail") != null)
+          prEmail = AdLink.getAttribute("mail");
+
+        attributes.put("userPrincipalName", prEmail);
+        updateADAttributes(identityName, AdLink, attributes);
+		logs.debug("Exit from the Step Update AD UPN");
+      </Source>
+    </Script>
+    <Transition to="Notify Status"/>
+  </Step>
+  <Step icon="Email" name="Notify Status" posX="844" posY="34">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+        import sailpoint.object.Link;
+        import java.util.Date;
+        import java.util.Map;
+        import java.util.HashMap;
+        import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Start step ::::::::::::::::::::: sendEmail");
+        Identity identity = context.getObjectByName(Identity.class, identityName);
+
+        Map args = new HashMap();
+
+        args.put("managerDisplayName",managerDisplayName);
+        args.put("identityDisplayName",identityDisplayName);
+        args.put("email",identity.getEmail());
+        args.put("isRehire",isRehire);
+        args.put("firstName", identity.getAttribute("firstname"));
+        args.put("lastName", identity.getAttribute("lastname"));
+        args.put("employeeId",identity.getAttribute("employeeId"));
+
+        if(identity.getManager() != null){
+          args.put("managerFirstName", identity.getManager().getAttribute("firstname"));
+        }
+
+        args.put("password",password);
+
+        Link link = getADAccountLink(identityName);
+        if(link != null){
+          String samAccountName = link.getAttribute("sAMAccountName");
+          logs.debug("NS_samAccountName :::::::::::::::::: "+samAccountName);
+          args.put("NS_samAccountName", samAccountName);
+        }
+
+        sendEmailNotification(managerEmail,args);
+        logs.debug("End step ::::::::::::::::::::: sendEmail");
+      </Source>
+    </Script>
+    <Transition to="Set Status"/>
+  </Step>
+  <Step icon="Task" name="Set Status" posX="911" posY="152">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+        import org.apache.log4j.Logger;
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Entering into the step Set Status");
+        String setStatus=null;
+        Identity identity = context.getObjectByName(Identity.class, identityName);
+        String status = identity.getAttribute("nsStatus");
+        if(status != null &amp;&amp; status.contains("Joiner-Started")){
+          setStatus="Joiner-Completed"+identity.getAttribute("hireDate");
+        }
+        else if(status != null &amp;&amp; status.contains("Rehire-Started")){
+          setStatus="Rehire-Completed"+identity.getAttribute("hireDate");
+        }
+        logs.debug("Set status:::::::"+setStatus);
+        identity.setAttribute("nsStatus", setStatus);
+        context.startTransaction();
+        context.saveObject(identity);
+        context.commitTransaction();
+
+        logs.debug("Exit from the step Set Status");
+      </Source>
+    </Script>
+    <Transition to="Refresh Identity"/>
+  </Step>
+  <Step action="call:refreshIdentity" icon="Task" name="Refresh Identity" posX="1000" posY="33">
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="provision" value="true"/>
+    <Arg name="correlateEntitlements" value="true"/>
+    <Arg name="doRefresh" value="true"/>
+    <Arg name="refreshIdentityEntitlements" value="true"/>
+    <Arg name="synchronizeAttributes" value="true"/>
+    <Description>
+      Add arguments as necessary to enable refresh features. Typically you only want this
+      to correlate roles and possibly provision if we notice new assigned roles.
+      Note that provisioning will be done in the Identity Refresh workflow so if there
+      are any provisioning forms to display we won't feed them directly to the
+      current user, they'll have to return to the inbox.
+    </Description>
+    <Transition to="Create New Hire Request in ServiceNow"/>
+  </Step>
+  <Step icon="Task" name="Create New Hire Request in ServiceNow" posX="1096" posY="39">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+        import sailpoint.object.Application;
+		
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Candidate_Joiner");
+        logs.debug("Entering into the step Create New Hire Request in ServiceNow");
+		
+		/*
+        if(resultCode.equals("200") &amp;&amp; requestNum != null){
+          log.debug("New Hire Ticket Number ::::: " + requestNum);
+          ServiceNow.addSnowReRequestNumberInAccessRequest(requestNum, identityName, project, "New Hire", customObjectName, context);
+        }*/
+		
+        logs.debug("Exit from the step Create ServiceNow New Hire Request");
+      </Source>
+    </Script>
+    <Transition to="end"/>
+  </Step>
+  <Step icon="Stop" name="end" posX="1156" posY="152"/>
+</Workflow>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768750420786" completionStatus="Success" host="NikeshRajput" launched="1768750420715" launcher="spadmin" name="NS-TaskDefination-TerminateIdentity" schedule="433451e95f544e98b6062bb0b0ed073e" type="Generic">
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="NS-TaskDefination-TerminateIdentity"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

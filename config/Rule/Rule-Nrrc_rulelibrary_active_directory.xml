@@ -1,0 +1,516 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NRRC_RuleLibrary_Active_Directory">
+  <Source>
+    import sailpoint.api.SailPointContext;
+	import sailpoint.api.IdentityService;
+	import sailpoint.api.PasswordGenerator;
+	import sailpoint.api.ObjectUtil;
+	import sailpoint.api.Provisioner;
+	import sailpoint.api.Aggregator;
+    import sailpoint.object.ProvisioningProject;
+	import sailpoint.connector.Connector;
+	import sailpoint.connector.ConnectorException;
+	import sailpoint.connector.ConnectorFactory;
+	import sailpoint.tools.Message;
+
+	import sailpoint.object.Application;
+	import sailpoint.object.Link;
+	import sailpoint.object.Attributes;
+	import sailpoint.object.Identity;
+	import sailpoint.object.ProvisioningPlan;
+	import sailpoint.object.ProvisioningPlan.AccountRequest;
+	import sailpoint.object.ProvisioningPlan.AttributeRequest;
+	import sailpoint.object.ResourceObject;
+	import sailpoint.object.Rule;
+	import sailpoint.object.TaskResult;
+	import sailpoint.object.Custom;
+	import sailpoint.object.ProvisioningResult;
+
+	import sailpoint.persistence.Sequencer;
+	import sailpoint.tools.GeneralException;
+	import sailpoint.tools.Util;
+    import sailpoint.object.WorkItem;
+	import sailpoint.object.ApprovalSet;
+	import sailpoint.object.ApprovalItem;
+	import org.apache.log4j.Logger;
+
+	import java.text.SimpleDateFormat;
+	import java.util.Calendar;
+	import java.util.Date;
+	import java.util.List;
+	import java.util.Random;
+	import java.util.UUID;
+	import java.util.*;
+  import java.lang.StringBuffer;
+import java.lang.StringBuilder;
+  
+  import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import sailpoint.api.CertificationScheduler;
+import sailpoint.api.SailPointContext;
+import sailpoint.object.Application;
+import sailpoint.object.CertificationDefinition;
+import sailpoint.object.CertificationGroup;
+import sailpoint.object.CertificationSchedule;
+import sailpoint.object.Custom;
+import sailpoint.object.Identity;
+import sailpoint.object.TaskSchedule;
+import sailpoint.tools.GeneralException;
+  import sailpoint.object.Filter;
+
+
+    Logger logs = Logger.getLogger("com.ns.rule.NRRC_RuleLibrary_Active_Directory");
+    logs.debug("Enter NS_RuleLibrary_Utils");
+     
+    String adAppName = "Active Directory";
+	String hrAppName = "Hr-Workday";
+
+    // --------------------------------------------------------------------------------
+    // Fetch Active Directory Link for given Identity
+    // --------------------------------------------------------------------------------
+    public Link getADAccountLink(String identityName) {
+        try {
+            Identity identity = context.getObjectByName(Identity.class, identityName);
+            Application aDApp = context.getObjectByName(Application.class, adAppName);
+            IdentityService is = new IdentityService(context);
+            List links = is.getLinks(identity, aDApp);
+
+            if (links != null &amp;&amp; !links.isEmpty()) {
+                for (Link link : links) {
+                    String userAccountControl = link.getAttribute("userAccountControl");
+                    if (Util.isNotNullOrEmpty(userAccountControl)) {
+                        return link;
+                    }
+                }
+            }
+            return null;
+        } catch (GeneralException e) {
+            logs.error("getADAccountLink() failed", e);
+            return null;
+        }
+    }
+    // --------------------------------------------------------------------------------
+    // Fetch GRP-HR Link for given Identity
+    // --------------------------------------------------------------------------------
+    public Link getPrimaryAccountLink(String identityName) {
+        try {
+            Identity identity = context.getObjectByName(Identity.class, identityName);
+            Application aDApp = context.getObjectByName(Application.class, hrAppName);
+            IdentityService is = new IdentityService(context);
+            List links = is.getLinks(identity, aDApp);
+
+            if (links != null &amp;&amp; !links.isEmpty()) {
+                for (Link link : links) {
+                     return link;
+                }
+            }
+            return null;
+        } catch (GeneralException e) {
+            logs.error("getADAccountLink() failed", e);
+            return null;
+        }
+    }
+    
+	/* -------------------------------------------------------------------------------
+	    VALIDATE CANDIDATE JOINER
+	 * ------------------------------------------------------------------------------- */
+	public List validateCandidateJoiner(String identityName) throws Exception {
+		logs.debug("### NRRC_RuleLibrary_Active_Directory :: validateCandidateJoiner START ###");
+
+		Link managerADLink = null;
+		String employeeId = null, firstName = null, lastName = null, managerDN = null;
+		String mobileNumber = null;
+		List errorMessage = new ArrayList();
+		int count = 0;
+
+		if (Util.isNotNullOrEmpty(identityName)) {
+			Identity identity = context.getObjectByName(Identity.class, identityName);
+
+			if (identity != null ) {
+				firstName = identity.getFirstname();
+				lastName = identity.getLastname();
+				status = identity.getAttribute("status");
+
+				logs.debug("First Name : " + firstName);
+				logs.debug("Last Name  : " + lastName);
+
+                mobileNumber = identity.getAttribute("phone");
+				logs.debug("mobileNumber : " + mobileNumber);
+				Identity manager = identity.getManager();
+				
+				if (firstName == null || firstName.contains("null") || lastName == null || lastName.contains("null")|| mobileNumber == null || mobileNumber.contains("null"))
+					errorMessage.add("First Name, Last Name or mobileNumber is Null.");
+
+				if (manager != null) {
+					String managerName = manager.getName();
+					logs.debug("Manager Name : " + managerName);
+					managerADLink = getADAccountLink(managerName);
+					if (managerADLink != null) {
+						managerDN = managerADLink.getAttribute("distinguishedName");
+						logs.debug("Manager DN : " + managerDN);
+					} else {
+						errorMessage.add("Manager Active Directory account not found.");
+					}
+				}
+			}
+		}
+
+		logs.debug("### NRRC_RuleLibrary_Active_Directory :: validateCandidateJoiner END ###  Errors : " + errorMessage);
+		return errorMessage;
+	}
+	
+     /* -------------------------------------------------------------------------------
+	    CREATE WORK ITEM
+	 * ------------------------------------------------------------------------------- */
+	public static String createItem(String ownerName, String identityName, String appName, List errorMessages) throws Exception {
+
+		logs.debug("### NRRC_RuleLibrary_Active_Directory :: createWorkItem START ###");
+
+		Calendar expiration = Calendar.getInstance();
+		Identity targetIdentity = context.getObjectByName(Identity.class, identityName);
+		Identity requester = context.getObjectByName(Identity.class, "spadmin");
+
+		WorkItem item = new WorkItem();
+		item.setType(WorkItem.Type.ManualAction);
+		item.setOwner(context.getObjectByName(Identity.class, ownerName));
+		item.setRequester(requester);
+
+		Sequencer sequencer = new Sequencer();
+		String workItemName = sequencer.generateId(context, item);
+		item.setName(workItemName);
+		item.setRenderer("lcmManualActionsRenderer.xhtml");
+		item.setLevel(WorkItem.Level.Normal);
+		item.setTarget(targetIdentity);
+		item.setTargetClass(Identity.class.getName());
+		item.setDescription("Manual Changes requested for User: " + targetIdentity.getDisplayableName());
+		item.setHandler("sailpoint.api.Workflower");
+
+		Attributes attributes = new Attributes();
+		item.setAttributes(attributes);
+
+		ApprovalSet approvalSet = new ApprovalSet();
+		ApprovalItem approvalItem = new ApprovalItem();
+		approvalItem.setApplication(appName);
+		approvalItem.setNativeIdentity(targetIdentity.getName());
+		approvalItem.setOperation("Validation");
+
+		if (errorMessages != null)
+			approvalItem.setValue("Error = " + errorMessages);
+
+		approvalSet.add(approvalItem);
+
+		attributes.put("approvalSet", approvalSet);
+		attributes.put("identityDisplayName", targetIdentity.getDisplayableName());
+		attributes.put("identityName", targetIdentity.getName());
+
+		item.setExpiration(expiration.getTime());
+		context.startTransaction();
+		context.saveObject(item);
+		context.commitTransaction();
+
+		logs.debug("### NRRC_RuleLibrary_Active_Directory :: createWorkItem END ### WorkItem: " + workItemName);
+		return workItemName;
+	}
+	public String getDepartment(Identity identity){
+       String DepartmentNameEnglish = identity.getAttribute("DepartmentNameEnglish")!=null ? (String) identity.getAttribute("DepartmentNameEnglish"): "";
+       return DepartmentNameEnglish ;
+	}
+	public String getUserName(Identity identity){
+	   String firstName = identity.getAttribute("firstname");
+	   String middleName = identity.getAttribute("middlename");
+	   String lastName = identity.getAttribute("lastname");
+	   if(Util.isNotNullOrEmpty(middleName))
+		return firstName+" "+middleName+" "+lastName;
+	   else
+		return firstName+" "+lastName;
+	}
+	/* -------------------------------------------------------------------------------
+	  CREATE AD ACCOUNT REQUEST
+	 * ------------------------------------------------------------------------------- */
+ 	public AccountRequest createADAccount(String identityName, String applicationName) throws Exception {
+		logs.debug("### NS_Global_RuleLibrary_Utils :: createADAccount START ###");
+		logs.debug("identityName : " + identityName);
+		logs.debug("applicationName : " + applicationName);
+
+		String password = null;
+		String firstName = null;
+		String department = null;
+		String lastName = null;
+		String adAccountOU = null;
+		String username = null;
+		String distinguishedName = null;
+		String requiredGroup = null;
+		// groups
+		String NRRC_STAFF = null;
+		String Blackberry_UEM = null;
+		String NRRC_SAUDI = null;
+		//Lisks
+		Link hrLink=getPrimaryAccountLink(identityName);
+         
+		Custom cs = context.getObjectByName(Custom.class, "MapOULink");
+		Identity identityObject = context.getObjectByName(Identity.class, identityName);
+		if (identityObject != null) {
+			firstName = identityObject.getFirstname();
+			lastName = identityObject.getLastname();
+			department = "Administrative Affairs";//getDepartment(identityObject);
+			logs.debug("firstName : " + firstName);
+			logs.debug("lastName  : " + lastName);
+			logs.debug("department Key  : " + department);
+			if (cs != null) {
+			adAccountOU = cs.get("EmployeeOU");
+			logs.debug("adAccountOU : " + adAccountOU);
+			requiredGroup = cs.get("requiredGroup");
+			logs.debug("requiredGroup : " + requiredGroup);
+			department = cs.get(department);
+			logs.debug("department Value : " + department);
+			// groups 
+			NRRC_STAFF = cs.get("NRRC STAFF");
+			logs.debug("NRRC_STAFF Value : " + NRRC_STAFF);
+			Blackberry_UEM = cs.get("Blackberry-UEM");
+			logs.debug("Blackberry_UEM Value : " + Blackberry_UEM);
+			NRRC_SAUDI = cs.get("NRRC-SAUDI");
+			logs.debug("NRRC_SAUDI Value : " + NRRC_SAUDI);
+		    }
+             
+			if (firstName != null &amp;&amp; lastName != null)
+			    username = getUserName(identityObject);
+			else
+			    throw new Exception();
+
+			distinguishedName = "CN=" + username + ",OU=" +department + ","+ adAccountOU;
+			logs.debug("username : " + username);
+			logs.debug("distinguishedName : " + distinguishedName);
+
+			password = generatePassword(identityName);
+
+			AccountRequest accountRequest = new AccountRequest();
+			accountRequest.setOperation(AccountRequest.Operation.Create);
+			accountRequest.setApplication(applicationName);
+			accountRequest.add(new AttributeRequest("memberOf", NRRC_STAFF));
+			accountRequest.add(new AttributeRequest("memberOf", Blackberry_UEM));
+			if(hrLink!=null &amp;&amp; hrLink.getAttribute("Country")!= null &amp;&amp; hrLink.getAttribute("Nationality").equalsIgnoreCase("Saudi"))
+			accountRequest.add(new AttributeRequest("memberOf", NRRC_SAUDI));
+			accountRequest.add(new AttributeRequest("password", password));
+		 
+	
+			accountRequest.setNativeIdentity(distinguishedName);
+
+			logs.debug("### NS_Global_RuleLibrary_Utils :: createADAccount END ###");
+			return accountRequest;
+		}
+		return null;
+	} 
+	public String generatePassword(String identityName) {
+		Identity userIdentity = (Identity) context.getObjectByName(Identity.class, identityName);
+		Application adApplication = (Application) context.getObjectByName(Application.class, adAppName);
+		String generatedPassword = null;
+
+		if (userIdentity != null &amp;&amp; adApplication != null) {
+			PasswordGenerator passwordGenerator = new PasswordGenerator(context);
+			generatedPassword = passwordGenerator.generatePassword(userIdentity, adApplication);
+
+			// Trim if longer than 25 characters
+			if (generatedPassword != null &amp;&amp; generatedPassword.length() &gt; 25) {
+				generatedPassword = generatedPassword.substring(0, 25);
+			}
+		}
+		return generatedPassword;
+	}
+	
+    
+	/*-------------------------------------------------------------------------
+	* Example - Utility Method 
+	* This  Method retruns list of errors a project is having.
+	*-------------------------------------------------------------------------*/
+  public List getRequestErrorMessages(ProvisioningProject project) throws GeneralException {
+    logs.debug("check error");
+    List errorMessages = new ArrayList();
+    List plans = project.getPlans();
+    if (plans != null) {
+      for (int i = 0; i &lt; plans.size(); i++) {
+        ProvisioningPlan plan1 = (ProvisioningPlan) plans.get(i);
+        if (plan1.getResult() != null) {
+          List planMessages = plan1.getResult().getErrors();
+          if (planMessages != null) {
+            List planWarningMessages = plan1.getResult().getWarnings();
+            if (planWarningMessages != null) {
+              planMessages.addAll(planWarningMessages);
+            }
+            for (int k = 0; k &lt; planMessages.size(); k++) {
+              Message message = (Message) planMessages.get(k);
+              errorMessages.add(message.getType().toString() + " message " + message.getMessage());
+            }
+          }
+        } else {
+          List requests = plan1.getAccountRequests();
+          if (requests != null) {
+            for (int j = 0; j &lt; requests.size(); j++) {
+              AccountRequest request = (AccountRequest) requests.get(j);
+              String appName = request.getApplicationName();
+              ProvisioningResult result = request.getResult();
+              if (result != null) {
+                List messages = result.getErrors();
+                List warnings = result.getWarnings();
+                if (messages != null) {
+                  if (warnings != null) {
+                    messages.addAll(warnings);
+                  }
+                  for (int k = 0; k &lt; messages.size(); k++) {
+                    Message message = (Message) messages.get(k);
+                    message.setKey("[" + appName + "] " + message.getMessage());
+                    errorMessages.add(message);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    logs.debug("errorMessages::::::::::::::::"+errorMessages);
+    logs.debug("### ICON-RuleLibrary-Common-Utils :: getRequestErrorMessages end ###");
+    return errorMessages;
+  }
+  public String getNormilizedPassword(String input) {
+    if (input == null) return "";
+
+    StringBuffer sb = new StringBuffer();
+
+    for (int i = 0; i &lt; input.length(); i++) {
+        char c = input.charAt(i);
+
+        switch (c) {
+            case '\\':
+                sb.append("\\\\");
+                break;
+            case '"':
+                sb.append("\\\"");
+                break;
+            case '/':
+                sb.append("\\/");
+                break;
+            case '\b':
+                sb.append("\\b");
+                break;
+            case '\f':
+                sb.append("\\f");
+                break;
+            case '\n':
+                sb.append("\\n");
+                break;
+            case '\r':
+                sb.append("\\r");
+                break;
+            case '\t':
+                sb.append("\\t");
+                break;
+            default:
+                if (((int)c) &lt; 32) {
+                    sb.append(String.format("\\u%04x", (int)c));
+                } else {
+                    sb.append(c);
+                }
+        }
+    }
+
+    return sb.toString();
+}
+   public String extractCN(String dn) {
+    if (dn == null || dn.trim().isEmpty()) {
+        return null;
+    }
+
+    // Split by comma to get first part
+    String[] parts = dn.split(",");
+
+    if (parts.length &gt; 0 &amp;&amp; parts[0].startsWith("CN=")) {
+        return parts[0].substring(3).trim();  // Remove "CN="
+    }
+
+    return null; // If CN not found
+}
+  
+   public boolean isDisabledApp(String appName, String identityName){
+		boolean result = false;
+		Identity identity = context.getObjectByName(Identity.class, identityName);
+		Application application = context.getObjectByName(Application.class, appName);
+		IdentityService service = new IdentityService(context);
+		List links = service.getLinks(identity, application);
+		if(links != null &amp;&amp; links.size()&gt;0){
+			Link link = links.get(0);
+			if(link.isDisabled()){
+			   result = true;
+			}
+		}
+		return result;
+	}
+  public String reviewAccess(String identityName,String applicationName) throws GeneralException{
+	   String certificationDefinitionTemplateName=null;
+	   List identitiesToCertify = new ArrayList();
+	  identitiesToCertify.add(identityName);
+	    logs.error("TestCustomCertificationLaunch start");
+		 Custom cs = context.getObjectByName(Custom.class, "NRRC_CustomObject_IdentityEvent_Mover");
+		  if (cs != null) {
+			certificationDefinitionTemplateName = (String) cs.get("certificationDefinitionTemplateName");
+			logs.error("certificationDefinitionTemplateName : " + certificationDefinitionTemplateName);
+	      }
+	    Identity requestor = context.getObjectByName(Identity.class, "spadmin");
+	  Identity identity   = context.getObjectByName(Identity.class, identityName);
+
+	  if (identity == null) {
+	    throw new GeneralException("Target identity not found: " + identityName);
+	  }
+	  Application application =context.getObjectByName(Application.class, applicationName);
+		 if (application == null)
+		   throw new GeneralException("Application not found");
+	  CertificationGroup certificationGroup = context.getObjectByName(CertificationGroup.class, certificationDefinitionTemplateName);
+	  CertificationDefinition templateCert = certificationGroup.getDefinition();
+   logs.error("templateCert := " + templateCert);
+		  if (templateCert == null) {
+		    throw new GeneralException("Certification definition template not found: "
+		        + certificationDefinitionTemplateName);
+		  }
+	  CertificationDefinition definition = (CertificationDefinition) templateCert.derive(context);
+    logs.error("definition := " + definition);
+   String certNameBase = "Access Review for cert:" +applicationName+"::"+ identityName;
+   String certNameFull = certNameBase + " [" + new Date().toString() + "]";
+   logs.error("certNameFull:::::::"+certNameFull);
+   definition.setNameTemplate(certNameBase);
+   definition.setShortNameTemplate(certNameBase);
+   definition.setCertificationNameTemplate(certNameBase);
+   //definition.setIncludedApplicationIds(Collections.singletonList(application.getId()));
+    definition.setEntitlementFilter(Filter.eq("application.name", applicationName));
+   definition.setEntityFilter(Filter.eq("name", identityName));
+     List entitlementFilterValues = new ArrayList();
+   Map filterMapEnt = new HashMap();
+   filterMapEnt.put("operation", "Equals");
+   filterMapEnt.put("property", "application.name");
+   filterMapEnt.put("value", applicationName);
+   entitlementFilterValues.add(filterMapEnt);
+   definition.setEntitlementFilterValues(entitlementFilterValues);
+   
+   List entityFilterValues = new ArrayList();
+   Map filterMapEntity = new HashMap();
+   filterMapEntity.put("operation", "Equals");
+   filterMapEntity.put("property", "name");
+   filterMapEntity.put("value", identityName);
+   entityFilterValues.add(filterMapEntity);
+   definition.setEntityFilterValues(entityFilterValues);
+   definition.setName(certNameFull);
+   context.saveObject(definition);
+   context.commitTransaction();
+   logs.error("certification save:::::::");
+   CertificationSchedule certSchedule = new CertificationSchedule(context, requestor, definition);
+   certSchedule.setRunNow(true);
+
+   CertificationScheduler scheduler = new CertificationScheduler(context);
+   TaskSchedule taskSchedule = scheduler.saveSchedule(certSchedule, false);
+    logs.error("certification execute:::::::");
+	  return certNameBase;
+	 }
+  </Source>
+</Rule>

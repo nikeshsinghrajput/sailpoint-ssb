@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition name="NS Report Links without Owner Identity" resultAction="Rename" subType="task_item_type_generic" type="Generic">
+  <Attributes>
+    <Map>
+      <entry key="OutputFile" value="Links_without_ID.csv"/>
+      <entry key="TaskDefinition.runLengthAverage" value="11"/>
+      <entry key="TaskDefinition.runLengthTotal" value="11"/>
+      <entry key="TaskDefinition.runs" value="1"/>
+      <entry key="TaskSchedule.host"/>
+      <entry key="delimiter" value=","/>
+      <entry key="emailNotes" value="Please review the accounts that do not have an owning Identity in IIQ."/>
+      <entry key="emailRecipients" value="nikeshsingh0981@gmail.com"/>
+      <entry key="emailSubject" value="NS Report : Links without Owner Identity"/>
+      <entry key="headers" value="Application,Account Display Name,Native Identity,Account Status,Aggregated On,Last Refresh,Manually Correlated"/>
+      <entry key="ruleName" value="NS_Rule_SQL_Report_Template"/>
+      <entry key="sqlQuery" value="select app.name 'Application',                            link.display_name 'Account Display Name',                            link.native_identity 'Native Identity',                            case when link.iiq_disabled = 0 then 'Enabled' else 'Disabled' end as 'Account Status',                            FROM_UNIXTIME(link.created/1000, '%m/%d/%Y') 'Aggregated On',                            FROM_UNIXTIME(link.last_refresh/1000, '%m/%d/%Y') 'Last Refresh',                            link.manually_correlated 'Manually Correlated'                     from spt_link link                     left join spt_identity id on link.identity_id = id.id                     left join spt_application app on link.application = app.id                     where id.id is null"/>
+      <entry key="taskCompletionEmailNotify" value="Disabled"/>
+      <entry key="taskCompletionEmailRecipients"/>
+      <entry key="taskCompletionEmailTemplate"/>
+    </Map>
+  </Attributes>
+  <Description>Daily report of account links without an owning Identity.</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Parent>
+    <Reference class="sailpoint.object.TaskDefinition" name="NS-SQL-Report-Template"/>
+  </Parent>
+</TaskDefinition>

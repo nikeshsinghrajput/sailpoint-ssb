@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="739010" applicationName="DHP JDBC Users" identityDisplayName="Lisa Martinez" identityName="24a4f222-4708-4581-93a3-6419e5f1215a" integration="DHP JDBC Users" name="0000000020" nativeIdentity="739010" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000023"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="The application script threw an exception: java.lang.NullPointerException: Attempt to invoke method getValue on null value BSF info: NS_DHPJDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="DHP JDBC Users" nativeIdentity="739010" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c0199e61e6b8199e6a1ba1700ca"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c0199e61e6b8199e77272b70251"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="capability_name" op="Add" value="ADMIN_PRIVILEGE">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="username" op="Set" value="martinez1.lisa"/>
+            <AttributeRequest name="firstname" op="Set" value="Lisa"/>
+            <AttributeRequest name="lastname" op="Set" value="Martinez"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="The application script threw an exception: java.lang.NullPointerException: Attempt to invoke method getValue on null value BSF info: NS_DHPJDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

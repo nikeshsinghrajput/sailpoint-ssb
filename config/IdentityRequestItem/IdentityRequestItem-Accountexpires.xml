@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" name="accountExpires" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" provisioningEngine="Active Directory" provisioningState="Unverifiable" value="01/29/2028 05:30:00 AM IST">
+  <Attributes>
+    <Map>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="ac3a8ca214d04e5b95ee6de5bb1ddffb">
+            <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+              <AttributeRequest name="accountExpires" op="Add" trackingId="ac3a8ca214d04e5b95ee6de5bb1ddffb" value="01/29/2028 05:30:00 AM IST"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

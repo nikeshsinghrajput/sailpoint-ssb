@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem bundle="A1" bundleAssignmentId="f0ef056e2c354112a39b9c8abfbb7804" completed="1761849268971" subType="AssignedRole" summaryStatus="Complete" targetDisplayName="A1" targetName="A1" type="Bundle">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019a3617d6819a365ef7f3005f" decisionDate="1761849268858" reviewed="true" status="Approved"/>
+  <Attributes>
+    <Map>
+      <entry key="IIQ_roleAssignment">
+        <value>
+          <RoleAssignment date="1761279063897" roleName="A1" source="LCM">
+            <RoleTarget applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" displayName="ananya.pandey@mindtree.com" nativeIdentity="8512595"/>
+          </RoleAssignment>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <BundleEntitlements>
+    <EntitlementSnapshot application="Sales Analytics" displayName="ananya.pandey@mindtree.com" nativeIdentity="8512595">
+      <Attributes>
+        <Map>
+          <entry key="roles">
+            <value>
+              <Set>
+                <String>Sales Manager</String>
+              </Set>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </BundleEntitlements>
+</CertificationItem>

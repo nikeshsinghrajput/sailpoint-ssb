@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Report Viewer" hash="eaed0cfc2a19ff3a00a81b435b83cd0981ca531f" lastRefresh="1768326681129" requestable="true" type="access" value="Report Viewer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Analytics"/>
+      <entry key="createdDate" value="10-04-2025"/>
+      <entry key="description" value="Read-only access to training analytics and completion dashboards"/>
+      <entry key="modifiedDate" value="22-09-2025"/>
+      <entry key="owner" value="reporting.team@corp.com"/>
+      <entry key="roleId" value="CORP_REPORT_VIEWER_005"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

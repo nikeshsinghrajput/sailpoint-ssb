@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768750421220" completionStatus="Error" host="NikeshRajput" launched="1768750416874" launcher="spadmin" name="AA : Hr-Workday" partitioned="true" runLength="4" runLengthAverage="8" runLengthDeviation="-50" schedule="829a0e483765498da6a615d993965fcc" type="AccountAggregation">
+  <Attributes>
+    <Map>
+      <entry key="taskResultPartitions">
+        <value>
+          <List>
+            <TaskResult completed="1768750421153" completionStatus="Error" name="Partitioning"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="AA : Hr-Workday"/>
+  </Definition>
+  <Messages>
+    <Message key="task_result_warn_create_partition_error" type="Error">
+      <Parameters>
+        <List>
+          <String>sailpoint.connector.ConnectorException: Url: http://localhost:9091/workday, Message: 0 : org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, HTTP Error Code: 0</String>
+          <String>Hr-Workday</String>
+        </List>
+      </Parameters>
+    </Message>
+  </Messages>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

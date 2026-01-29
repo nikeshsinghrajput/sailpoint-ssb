@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestWorkItemGenerate" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import sailpoint.api.SailPointContext;
+import sailpoint.object.ApprovalItem;
+import sailpoint.object.ApprovalSet;
+import sailpoint.object.Attributes;
+import sailpoint.object.Identity;
+import sailpoint.object.ProvisioningPlan.AccountRequest;
+import sailpoint.object.WorkItem;
+import sailpoint.persistence.Sequencer;
+import sailpoint.tools.GeneralException;  
+  
+  String requester = "spadmin";
+	String requestee = "36849621-6a3e-4fb1-9c72-c0348ae8a9ba";
+    Calendar expiration = Calendar.getInstance();
+    expiration.add(Calendar.DAY_OF_MONTH, 7);
+    Identity targetIdentity = context.getObjectByName(Identity.class, requestee);
+    Identity requesterIdentity = context.getObjectByName(Identity.class, requester);
+    if(targetIdentity!=null &amp;&amp; requesterIdentity!=null) {
+    String identityRequestId = targetIdentity.getStringAttribute("employeeId");
+    System.out.println("Identity RequestId : "+identityRequestId);
+    WorkItem item = new WorkItem();
+    Sequencer sequencer = new Sequencer();
+    String workItemName = sequencer.generateId(context, item);
+    System.out.println("Work Item Name : "+workItemName);
+    item.setType(WorkItem.Type.ManualAction); 
+    item.setOwner(context.getObjectByName(Identity.class, "Nikesh Singh")); 
+    item.setRequester(requesterIdentity); 
+    item.setName(workItemName); 
+    item.setRenderer("lcmManualActionNSenderer.xhtml"); 
+    item.setLevel(WorkItem.Level.Normal); 
+    item.setTarget(targetIdentity); 
+    item.setTargetClass(Identity.class.getName()); 
+    item.setDescription("Manual Changes requested for User: "+targetIdentity.getDisplayableName()); 
+    item.setHandler("sailpoint.api.Workflower"); 
+    item.setIdentityRequestId(identityRequestId); 
+    Attributes attributes = new Attributes(); 
+    item.setAttributes(attributes); 
+    ApprovalSet approvalSet = new ApprovalSet(); 
+    List approvalItemList = new ArrayList();
+    ApprovalItem approvalItem = new ApprovalItem();
+    approvalItem.setApplication("Sales Analytics"); 
+    approvalItem.setNativeIdentity(targetIdentity.getStringAttribute("employeeId")); 
+    approvalItem.setOperation(AccountRequest.Operation.Create.toString());
+    approvalItemList.add(approvalItem);
+    approvalSet.setItems(approvalItemList); 
+    attributes.put("approvalSet", approvalSet); 
+    attributes.put("identityDisplayName", targetIdentity.getDisplayableName()); 
+    attributes.put("identityName", targetIdentity.getName());   
+    item.setExpiration(expiration.getTime());  
+   
+    context.startTransaction(); 
+    context.saveObject(item); 
+    context.commitTransaction();
+      return "workitem commited successfull";
+    }
+  </Source>
+</Rule>

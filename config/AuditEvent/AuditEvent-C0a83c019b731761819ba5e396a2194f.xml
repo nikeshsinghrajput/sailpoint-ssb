@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="ProvisioningFailure" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="Aditya Sharma">
+  <Attributes>
+    <Map>
+      <entry key="error1" value="Exception occurred while performing 'Disable' operation on identity '8512503':  Error: No configuration found for'Disable Account'. Please add at least one operation and try again."/>
+      <entry key="taskResultId" value="c0a83c019b731761819ba29b1d3e16ef"/>
+    </Map>
+  </Attributes>
+  <String1>FailedApplications=Hr-Workday</String1>
+</AuditEvent>

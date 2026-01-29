@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469565337" name="029db217-4e1c-4696-ab6d-4ff8a6ad3e2f">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Japan"/>
+      <entry key="department" value="Cloud Infrastructure Services"/>
+      <entry key="displayName" value="Chelsea Lucas"/>
+      <entry key="division" value="Japan Technology and Operations"/>
+      <entry key="employeeId" value="739112"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Field"/>
+      <entry key="firstname" value="Chelsea"/>
+      <entry key="hireDate" value="02-18-2017"/>
+      <entry key="lastname" value="Lucas"/>
+      <entry key="location" value="JP - Fukuoka"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="21076"/>
+      <entry key="terminationDate" value="10-27-2024"/>
+      <entry key="title" value="Site Reliability Engineer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="e6de8967-8f15-495a-8212-d3338c0c7ff0"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469565284" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Chelsea Lucas" identity="739112" lastRefresh="1768468374188">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="2100 Sunset Ave"/>
+          <entry key="ADDRESS_WORK" value="2100 Sunset Ave;Fukuoka, Tokyo Prefecture 62413;Japan"/>
+          <entry key="BUILDING_CODE" value="JP_TOK_BLDG_03"/>
+          <entry key="BUSINESS_UNIT_ID" value="3011"/>
+          <entry key="CLASS" value="Field"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="10-27-2024"/>
+          <entry key="COUNTRY_NAME" value="Japan"/>
+          <entry key="DEPARTMENT" value="Cloud Infrastructure Services"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-013"/>
+          <entry key="DIVISION" value="Japan Technology and Operations"/>
+          <entry key="DIVISION_ID" value="DIV-JP-03"/>
+          <entry key="EMAIL" value="chelsea.lucas@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739112"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739112"/>
+          <entry key="FIRST_NAME" value="Chelsea"/>
+          <entry key="HIREDATE" value="02-18-2017"/>
+          <entry key="JOBCODE" value="JT-013-04"/>
+          <entry key="JOBTITLE" value="Site Reliability Engineer"/>
+          <entry key="LAST_NAME" value="Lucas"/>
+          <entry key="LOCATION" value="JP - Fukuoka"/>
+          <entry key="MANAGER_ID" value="739005"/>
+          <entry key="POSTAL_CODE" value="21076"/>
+          <entry key="REGION" value="Fukuoka"/>
+          <entry key="WORKER_NAME" value="Chelsea Lucas"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Consultant"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

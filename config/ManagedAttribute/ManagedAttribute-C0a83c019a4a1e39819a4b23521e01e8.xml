@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Learning Data Analyst" hash="8064b5fb81ac34b89a002c2888797ce8f86e7612" lastRefresh="1768326681156" requestable="true" type="access" value="Learning Data Analyst">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Analytics"/>
+      <entry key="createdDate" value="03-08-2025"/>
+      <entry key="description" value="Analyzes training performance and engagement trends"/>
+      <entry key="modifiedDate" value="27-09-2025"/>
+      <entry key="owner" value="analytics.lead@corp.com"/>
+      <entry key="roleId" value="CORP_ANALYTICS_009"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

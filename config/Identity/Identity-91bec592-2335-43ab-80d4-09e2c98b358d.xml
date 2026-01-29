@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469493774" name="91bec592-2335-43ab-80d4-09e2c98b358d">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Italy"/>
+      <entry key="department" value="Enterprise Architecture"/>
+      <entry key="displayName" value="Rachel Rhodes"/>
+      <entry key="division" value="Italy Corporate and Investment Services"/>
+      <entry key="employeeId" value="739052"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Onsite"/>
+      <entry key="firstname" value="Rachel"/>
+      <entry key="hireDate" value="01-13-2017"/>
+      <entry key="lastname" value="Rhodes"/>
+      <entry key="location" value="IT - Turin"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="51185"/>
+      <entry key="terminationDate" value="03-12-2024"/>
+      <entry key="title" value="IT Strategy Consultant"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469493732" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Rachel Rhodes" identity="739052" lastRefresh="1768468360201">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="7894 King St"/>
+          <entry key="ADDRESS_WORK" value="7894 King St;Turin, Lombardy 73564;Italy"/>
+          <entry key="BUILDING_CODE" value="IT_LOM_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3086"/>
+          <entry key="CLASS" value="Onsite"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="03-12-2024"/>
+          <entry key="COUNTRY_NAME" value="Italy"/>
+          <entry key="DEPARTMENT" value="Enterprise Architecture"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-015"/>
+          <entry key="DIVISION" value="Italy Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-IT-02"/>
+          <entry key="EMAIL" value="rachel.rhodes@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739052"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739052"/>
+          <entry key="FIRST_NAME" value="Rachel"/>
+          <entry key="HIREDATE" value="01-13-2017"/>
+          <entry key="JOBCODE" value="JT-015-03"/>
+          <entry key="JOBTITLE" value="IT Strategy Consultant"/>
+          <entry key="LAST_NAME" value="Rhodes"/>
+          <entry key="LOCATION" value="IT - Turin"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="51185"/>
+          <entry key="REGION" value="Turin"/>
+          <entry key="WORKER_NAME" value="Rachel Rhodes"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Consultant"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

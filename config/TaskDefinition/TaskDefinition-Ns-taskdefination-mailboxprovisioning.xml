@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition name="NS-TaskDefination-MailBoxProvisioning" resultAction="Delete" subType="task_item_type_generic" type="Generic">
+  <Attributes>
+    <Map>
+      <entry key="TaskDefinition.runLengthAverage" value="0"/>
+      <entry key="TaskDefinition.runLengthTotal" value="4"/>
+      <entry key="TaskDefinition.runs" value="9"/>
+      <entry key="TaskSchedule.host"/>
+      <entry key="identityName" value="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69"/>
+      <entry key="ruleName" value="NS_Rule_MailBoxProvisioning"/>
+      <entry key="taskCompletionEmailNotify" value="Disabled"/>
+      <entry key="taskCompletionEmailRecipients"/>
+      <entry key="taskCompletionEmailTemplate"/>
+    </Map>
+  </Attributes>
+  <Description>Daily report of account links without an owning Identity.</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Parent>
+    <Reference class="sailpoint.object.TaskDefinition" name="Run Rule"/>
+  </Parent>
+  <Signature>
+    <Inputs>
+      <Argument helpKey="Provide identity name to update" name="identityName" required="true" type="string">
+        <Prompt>Identity Name</Prompt>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="responseCode" type="string">
+        <Prompt>response Code</Prompt>
+      </Argument>
+      <Argument name="message" type="string">
+        <Prompt>message</Prompt>
+      </Argument>
+    </Returns>
+  </Signature>
+</TaskDefinition>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="IDMUATGRP_Webex" hash="d905fafcbea298bd3a72f2716764fc289c48a38d" lastRefresh="1766343451836" requestable="true" type="group" uuid="{5051f49b-4e25-4115-9c0d-cce0283e182d}" value="CN=IDMUATGRP_Webex,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="IDMUATGRP_Webex"/>
+      <entry key="description" value="IDMUATGRP_Webex created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\IDMUATGRP_Webex"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1479"/>
+      <entry key="objectguid" value="{5051f49b-4e25-4115-9c0d-cce0283e182d}"/>
+      <entry key="sAMAccountName" value="IDMUATGRP_Webex"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

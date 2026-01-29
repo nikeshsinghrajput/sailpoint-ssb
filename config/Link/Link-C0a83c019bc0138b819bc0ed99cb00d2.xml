@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Roberta Moreno" identity="739033" lastRefresh="1768468355531">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9741 King Blvd"/>
+      <entry key="ADDRESS_WORK" value="9741 King Blvd;Antofagasta, Santiago Metropolitan 92711;Chile"/>
+      <entry key="BUILDING_CODE" value="CL_SAN_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3045"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="05-13-2025"/>
+      <entry key="COUNTRY_NAME" value="Chile"/>
+      <entry key="DEPARTMENT" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-012"/>
+      <entry key="DIVISION" value="Chile Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-CL-01"/>
+      <entry key="EMAIL" value="roberta.moreno@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739033"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739033"/>
+      <entry key="FIRST_NAME" value="Roberta"/>
+      <entry key="HIREDATE" value="06-06-2023"/>
+      <entry key="JOBCODE" value="JT-012-04"/>
+      <entry key="JOBTITLE" value="Incident Response Lead"/>
+      <entry key="LAST_NAME" value="Moreno"/>
+      <entry key="LOCATION" value="CL - Antofagasta"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="95767"/>
+      <entry key="REGION" value="Antofagasta"/>
+      <entry key="WORKER_NAME" value="Roberta Moreno"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

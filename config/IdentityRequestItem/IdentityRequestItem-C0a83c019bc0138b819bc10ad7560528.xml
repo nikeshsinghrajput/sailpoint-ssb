@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" nativeIdentity="739092" operation="Create" ownerName="spadmin" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished">
+  <Attributes>
+    <Map>
+      <entry key="comments" value="test"/>
+      <entry key="flow" value="AccountsRequest"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="Create"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="5d7737d6d6354570a1fb67ae28a7d44f">
+            <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739092" op="Create" targetIntegration="Financial Planning &amp; Forecasting">
+              <Attributes>
+                <Map>
+                  <entry key="comments" value="test"/>
+                  <entry key="flow" value="AccountsRequest"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="nativeIdUpdated">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                  <entry key="operation" value="Create"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+      <entry key="requesterComments" value="test"/>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</IdentityRequestItem>

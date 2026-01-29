@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jason Riley" identity="739069" lastRefresh="1768468362972">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="1900 Cedar Blvd"/>
+      <entry key="ADDRESS_WORK" value="1900 Cedar Blvd;Mecca, Riyadh Province 91176;Saudi Arabia"/>
+      <entry key="BUILDING_CODE" value="SA_RIY_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3053"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-25-2024"/>
+      <entry key="COUNTRY_NAME" value="Saudi Arabia"/>
+      <entry key="DEPARTMENT" value="Human Resources &amp; Talent Acquisition"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-029"/>
+      <entry key="DIVISION" value="Saudi Arabia Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-SA-01"/>
+      <entry key="EMAIL" value="jason.riley@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739069"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739069"/>
+      <entry key="FIRST_NAME" value="Jason"/>
+      <entry key="HIREDATE" value="01-10-2023"/>
+      <entry key="JOBCODE" value="JT-029-04"/>
+      <entry key="JOBTITLE" value="Compensation &amp; Benefits Analyst"/>
+      <entry key="LAST_NAME" value="Riley"/>
+      <entry key="LOCATION" value="SA - Mecca"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="58854"/>
+      <entry key="REGION" value="Mecca"/>
+      <entry key="WORKER_NAME" value="Jason Riley"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

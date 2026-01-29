@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="CN=singh.nikesh,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" action="PasswordChange" application="Active Directory" attributeName="password" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="6be3425d-333a-43fb-89c0-192721ba4f84">
+  <Attributes>
+    <Map>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</AuditEvent>

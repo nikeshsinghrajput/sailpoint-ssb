@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jeremy Schmidt" identity="739108" lastRefresh="1768468372200">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2836 King Rd"/>
+      <entry key="ADDRESS_WORK" value="2836 King Rd;Beijing, Guangdong 98490;China"/>
+      <entry key="BUILDING_CODE" value="CN_GUA_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3005"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-07-2024"/>
+      <entry key="COUNTRY_NAME" value="China"/>
+      <entry key="DEPARTMENT" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-012"/>
+      <entry key="DIVISION" value="China Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-CN-01"/>
+      <entry key="EMAIL" value="jeremy.schmidt@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739108"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739108"/>
+      <entry key="FIRST_NAME" value="Jeremy"/>
+      <entry key="HIREDATE" value="09-08-2020"/>
+      <entry key="JOBCODE" value="JT-012-03"/>
+      <entry key="JOBTITLE" value="Threat Intelligence Specialist"/>
+      <entry key="LAST_NAME" value="Schmidt"/>
+      <entry key="LOCATION" value="CN - Beijing"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="29461"/>
+      <entry key="REGION" value="Beijing"/>
+      <entry key="WORKER_NAME" value="Jeremy Schmidt"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

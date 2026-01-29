@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1768904705101" executionStatus="Completed" name="0000000340" priority="Normal" requesterDisplayName="Scheduler" source="LCM" state="End" targetClass="sailpoint.object.Identity" targetDisplayName="John Doe" verified="1768979682250">
+  <Attributes>
+    <Map>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="db561a67-5064-475f-bedc-35bad74bb86b">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000340"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable">
+                  <AttributeRequest name="distinguishedName" value="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                  <AttributeRequest name="IIQDisabled">
+                    <Value>
+                      <Boolean/>
+                    </Value>
+                  </AttributeRequest>
+                  <AttributeRequest name="memberOf" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                  <AttributeRequest name="password"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000340"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b" targetIntegration="Active Directory" trackingId="b348bf9296df4a91872695b01bb3c4b1">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                <AttributeRequest name="distinguishedName" op="Set" value="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="IIQDisabled" op="Set">
+                  <Value>
+                    <Boolean/>
+                  </Value>
+                </AttributeRequest>
+                <AttributeRequest name="memberOf" op="Set" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="password" op="Set"/>
+                <AttributeRequest name="accountExpires" op="Add" value="01/29/2028 05:30:00 AM IST"/>
+                <AttributeRequest name="manager" op="Set" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="description" op="Set" value="Created via sailpoint :Threat Intelligence Specialist"/>
+                <AttributeRequest name="userAccountControl" op="Set" value="512"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000340"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bd11f47819bdaee8c410793"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="manager" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Active Directory"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="554142f01f05476e9e2769c0ef64fe9e">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="manager" op="Set" trackingId="554142f01f05476e9e2769c0ef64fe9e" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="description" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="Created via sailpoint :Threat Intelligence Specialist">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Active Directory"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="289ee6e64ca2484b9f78bef90b2ae999">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="description" op="Set" trackingId="289ee6e64ca2484b9f78bef90b2ae999" value="Created via sailpoint :Threat Intelligence Specialist"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="userAccountControl" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="512">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Active Directory"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="21c54fca0c1244bf976ecb0550a6f7ec">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="userAccountControl" op="Set" trackingId="21c54fca0c1244bf976ecb0550a6f7ec" value="512"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" compilationStatus="Expansion" name="distinguishedName" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="baec704b422f4aa2b4c4083428286001">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="distinguishedName" op="Set" trackingId="baec704b422f4aa2b4c4083428286001" value="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" compilationStatus="Expansion" name="IIQDisabled" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="false">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="f91181a97c8040b7b85ef2fbb7c17433">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="IIQDisabled" op="Set" trackingId="f91181a97c8040b7b85ef2fbb7c17433" value="false"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" compilationStatus="Expansion" name="memberOf" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="cf60ee798c434c979186b0b57e5551fa">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="memberOf" op="Set" trackingId="cf60ee798c434c979186b0b57e5551fa" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" compilationStatus="Expansion" name="password" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Active Directory" approvalState="Finished" compilationStatus="Expansion" name="accountExpires" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" provisioningEngine="Active Directory" provisioningState="Unverifiable" value="01/29/2028 05:30:00 AM IST">
+      <Attributes>
+        <Map>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="a27e8248ab024a1fac6e548f256dfb15">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Enable" targetIntegration="Active Directory">
+                  <AttributeRequest name="accountExpires" op="Add" trackingId="a27e8248ab024a1fac6e548f256dfb15" value="01/29/2028 05:30:00 AM IST"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

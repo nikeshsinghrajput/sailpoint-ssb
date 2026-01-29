@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Melinda Stein" identity="739057" lastRefresh="1768468360563">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="6493 Cedar Ave"/>
+      <entry key="ADDRESS_WORK" value="6493 Cedar Ave;Zaragoza, Madrid Community 45252;Spain"/>
+      <entry key="BUILDING_CODE" value="ES_MAD_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3095"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="01-15-2025"/>
+      <entry key="COUNTRY_NAME" value="Spain"/>
+      <entry key="DEPARTMENT" value="Service Desk &amp; IT Support"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-027"/>
+      <entry key="DIVISION" value="Spain Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-ES-03"/>
+      <entry key="EMAIL" value="stein.melinda@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739057"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739057"/>
+      <entry key="FIRST_NAME" value="Melinda"/>
+      <entry key="HIREDATE" value="08-28-2016"/>
+      <entry key="JOBCODE" value="JT-027-04"/>
+      <entry key="JOBTITLE" value="Desktop Support Technician"/>
+      <entry key="LAST_NAME" value="Stein"/>
+      <entry key="LOCATION" value="ES - Zaragoza"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="86588"/>
+      <entry key="REGION" value="Zaragoza"/>
+      <entry key="WORKER_NAME" value="Melinda Stein"/>
+      <entry key="WORKER_STATUS" value="Terminated"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

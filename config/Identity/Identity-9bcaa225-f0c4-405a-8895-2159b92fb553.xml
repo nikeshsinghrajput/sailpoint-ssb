@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity correlated="true" lastRefresh="1769027548243" name="9bcaa225-f0c4-405a-8895-2159b92fb553">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Brazil"/>
+      <entry key="department" value="Workplace &amp; Facilities Management"/>
+      <entry key="displayName" value="William Garcia"/>
+      <entry key="distinguishedName" value="CN=garcia.william,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="division" value="Brazil Risk and Compliance"/>
+      <entry key="email" value="garcia.william@nsiiq.com"/>
+      <entry key="employeeId" value="739013"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="William"/>
+      <entry key="hireDate" value="01-29-2024"/>
+      <entry key="inactive" value="true"/>
+      <entry key="lastname" value="Garcia"/>
+      <entry key="location" value="BR - Salvador"/>
+      <entry key="nsStatus" value="Leaver-Final-Phase-Completed"/>
+      <entry key="postalCode" value="10815"/>
+      <entry key="sAMAccountName" value="garcia.william"/>
+      <entry key="terminationDate" value="01-29-2026"/>
+      <entry key="title" value="Facilities Coordinator"/>
+      <entry key="triggerSnapshots">
+        <value>
+          <Map>
+            <entry key="Rule" value="9bcaa225-f0c4-405a-8895-2159b92fb553"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+    <AttributeMetaData attribute="email" source="Active Directory:AppRule: NS_Rule_IdentityMapping_Email Active Directory$NS_Rule_IdentityMapping_Email"/>
+    <AttributeMetaData attribute="distinguishedName" source="Active Directory:distinguishedName"/>
+    <AttributeMetaData attribute="sAMAccountName" source="Active Directory:sAMAccountName"/>
+  </AttributeMetaDatas>
+  <Exceptions>
+    <EntitlementGroup displayName="garcia.william" nativeIdentity="CN=garcia.william,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="memberOf">
+            <value>
+              <List>
+                <String>CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+    <EntitlementGroup displayName="garcia.william@nsiiq.com" nativeIdentity="739013">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+  </Exceptions>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments"/>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="William Garcia" identity="739013" lastRefresh="1768468350814">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="4455 Cedar Ave"/>
+          <entry key="ADDRESS_WORK" value="4455 Cedar Ave;Salvador, São Paulo State 16315;Brazil"/>
+          <entry key="BUILDING_CODE" value="BR_SOP_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3040"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="01-29-2026"/>
+          <entry key="COUNTRY_NAME" value="Brazil"/>
+          <entry key="DEPARTMENT" value="Workplace &amp; Facilities Management"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-030"/>
+          <entry key="DIVISION" value="Brazil Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-BR-04"/>
+          <entry key="EMAIL" value="william.garcia@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739013"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739013"/>
+          <entry key="FIRST_NAME" value="William"/>
+          <entry key="HIREDATE" value="01-29-2024"/>
+          <entry key="JOBCODE" value="JT-030-01"/>
+          <entry key="JOBTITLE" value="Facilities Coordinator"/>
+          <entry key="LAST_NAME" value="Garcia"/>
+          <entry key="LOCATION" value="BR - Salvador"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="10815"/>
+          <entry key="REGION" value="Salvador"/>
+          <entry key="WORKER_NAME" value="William Garcia"/>
+          <entry key="WORKER_STATUS" value="Terminated"/>
+          <entry key="WORKFORCE_TYPE" value="Temporary"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link disabled="true" displayName="garcia.william" entitlements="true" identity="CN=garcia.william,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1768910900525" manuallyCorrelated="true" uuid="{323015b6-7fb4-464a-b1d4-d9ebefc375c8}">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <AttributeMetaDatas>
+        <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+          <LastValue>
+            <Set>
+              <String>CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+            </Set>
+          </LastValue>
+        </AttributeMetaData>
+      </AttributeMetaDatas>
+      <Attributes>
+        <Map>
+          <entry key="IIQDisabled">
+            <value>
+              <Boolean>true</Boolean>
+            </value>
+          </entry>
+          <entry key="NetBIOSName"/>
+          <entry key="accountFlags">
+            <value>
+              <List>
+                <String>Normal User Account</String>
+                <String>User Account is Disabled</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="businessCategory" value="Shift-Based"/>
+          <entry key="cn" value="garcia.william"/>
+          <entry key="department" value="Workplace &amp; Facilities Management"/>
+          <entry key="departmentNumber" value="DEPT-030"/>
+          <entry key="description" value="Terminated"/>
+          <entry key="displayName" value="William Garcia"/>
+          <entry key="distinguishedName" value="CN=garcia.william,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="employeeNumber" value="739013"/>
+          <entry key="employeeType" value="Employee"/>
+          <entry key="givenName" value="William"/>
+          <entry key="l" value="BR - Salvador"/>
+          <entry key="mail" value="garcia.william@nsiiq.com"/>
+          <entry key="memberOf">
+            <value>
+              <List>
+                <String>CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="mobile" value="+91-9012345678"/>
+          <entry key="msDS-PrincipalName" value="NSIIQ\garcia.william"/>
+          <entry key="objectClass">
+            <value>
+              <List>
+                <String>top</String>
+                <String>person</String>
+                <String>organizationalPerson</String>
+                <String>user</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1505"/>
+          <entry key="objectType" value="user"/>
+          <entry key="objectguid" value="{323015b6-7fb4-464a-b1d4-d9ebefc375c8}"/>
+          <entry key="physicalDeliveryOfficeName" value="BR_SOP_BLDG_04"/>
+          <entry key="postalCode" value="10815"/>
+          <entry key="sAMAccountName" value="garcia.william"/>
+          <entry key="sn" value="Garcia"/>
+          <entry key="st" value="Salvador"/>
+          <entry key="streetAddress" value="4455 Cedar Ave"/>
+          <entry key="title" value="Facilities Coordinator"/>
+          <entry key="userAccountControl" value="514"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link disabled="true" displayName="739013" identity="739013" lastRefresh="1769027548175" manuallyCorrelated="true">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="IIQDisabled">
+            <value>
+              <Boolean>true</Boolean>
+            </value>
+          </entry>
+          <entry key="annualHours" value="1040"/>
+          <entry key="countryCode" value="10815"/>
+          <entry key="department" value="Workplace &amp; Facilities Management"/>
+          <entry key="email" value="garcia.william@nsiiq.com"/>
+          <entry key="empStatus" value="Inactive"/>
+          <entry key="employee" value="William Garcia"/>
+          <entry key="employeeId" value="739013"/>
+          <entry key="firstName" value="William"/>
+          <entry key="hireDate" value="01-27-2026"/>
+          <entry key="isManager" value="No"/>
+          <entry key="jobTitle" value="Facilities Coordinator"/>
+          <entry key="lastName" value="Garcia"/>
+          <entry key="manager" value="Nikesh Singh"/>
+          <entry key="salaryClass" value="B"/>
+          <entry key="superviserId" value="735000"/>
+          <entry key="terminationDate" value="03-09-2029"/>
+          <entry key="userLevel" value="C"/>
+          <entry key="workCountry" value="Brazil"/>
+          <entry key="workState" value="Salvador"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="garcia.william@nsiiq.com" entitlements="true" identity="739013">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="country" value="Brazil"/>
+          <entry key="department" value="Workplace &amp; Facilities Management"/>
+          <entry key="email" value="garcia.william@nsiiq.com"/>
+          <entry key="employeeId" value="739013"/>
+          <entry key="firstName" value="William"/>
+          <entry key="hireDate" value="01-27-2026"/>
+          <entry key="isInstructor" value="No"/>
+          <entry key="jobTitle" value="Facilities Coordinator"/>
+          <entry key="lastName" value="Garcia"/>
+          <entry key="learningGroup" value="Compliance Training"/>
+          <entry key="managerDisplayName" value="Nikesh Singh"/>
+          <entry key="managerId" value="735000"/>
+          <entry key="roleLevel" value="Executive"/>
+          <entry key="status" value="ACTIVE"/>
+          <entry key="terminationDate" value="03-09-2029"/>
+          <entry key="workCountry"/>
+          <entry key="workState" value="Salvador"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

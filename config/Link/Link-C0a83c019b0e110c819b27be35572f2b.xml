@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="naidu.arjun@nstechiiq.com" entitlements="true" identity="8512512" lastRefresh="1765947423909" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="achievedSales" value="0"/>
+      <entry key="annualHours" value="720"/>
+      <entry key="businessUnit" value="A"/>
+      <entry key="commissionRate" value="5%"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+      <entry key="employeeId" value="8512512"/>
+      <entry key="firstName" value="Arjun"/>
+      <entry key="hireDate" value="12-12-2025"/>
+      <entry key="isManager" value="No"/>
+      <entry key="jobTitle" value="Governance Program Manager"/>
+      <entry key="lastName" value="Naidu"/>
+      <entry key="managerId" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="region" value="A"/>
+      <entry key="roles">
+        <value>
+          <List>
+            <String>Sales Dashboard Viewer</String>
+            <String>Sales Director</String>
+            <String>Sales Executive</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="salesQuota" value="500000"/>
+      <entry key="status" value="Active"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="territory" value="A"/>
+      <entry key="userLevel" value="A"/>
+      <entry key="workState" value="Hyderabad"/>
+    </Map>
+  </Attributes>
+</Link>

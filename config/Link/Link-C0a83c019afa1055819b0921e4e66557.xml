@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="" entitlements="true" identity="8512500">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="Access">
+        <value>
+          <List>
+            <String>Learner</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Financial Accounting and Reporting"/>
+      <entry key="email"/>
+      <entry key="employeeId" value="8512500"/>
+      <entry key="firstName" value="Nikesh"/>
+      <entry key="hireDate" value="12-11-2025"/>
+      <entry key="isInstructor" value="No"/>
+      <entry key="jobTitle" value="Senior Financial Analyst"/>
+      <entry key="lastName" value="Singh"/>
+      <entry key="learningGroup" value="Leadership Development"/>
+      <entry key="managerDisplayName"/>
+      <entry key="managerId"/>
+      <entry key="roleLevel" value="Manager"/>
+      <entry key="status" value="ACTIVE"/>
+      <entry key="terminationDate" value="01-04-2030"/>
+      <entry key="workCountry"/>
+      <entry key="workState" value="West"/>
+    </Map>
+  </Attributes>
+</Link>

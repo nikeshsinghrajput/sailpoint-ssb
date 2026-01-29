@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="CN=Lawrence Rodgers,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" applicationName="Active Directory" identityDisplayName="Lawrence Rodgers" identityName="118ec4f4-3b00-49fa-82bd-3b4f5e6f7758" integration="Active Directory" name="0000000002" nativeIdentity="CN=Lawrence Rodgers,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" operation="Create" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=Lawrence Rodgers,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" op="Create" targetIntegration="Active Directory">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c0199d415f68199d4cfb77002c3"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="sAMAccountName" op="Set" value="lawrence.rodgers"/>
+            <AttributeRequest name="userPrincipalName" op="Set" value="lawrence.rodgers@nsiiq.com"/>
+            <AttributeRequest name="givenName" op="Set" value="Lawrence"/>
+            <AttributeRequest name="sn" op="Set" value="Rodgers"/>
+            <AttributeRequest name="displayName" op="Set" value="Lawrence Rodgers"/>
+            <AttributeRequest name="container" op="Set" value="OU=Employee Account,OU=Dev,DC=nsiiq,DC=com"/>
+            <AttributeRequest name="userAccountControl" op="Set" value="512"/>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="description" op="Set" value="Created via SailPoint"/>
+            <AttributeRequest name="pwdLastSet" op="Set">
+              <Value>
+                <Boolean/>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="Head Office"/>
+            <ProvisioningResult status="committed"/>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

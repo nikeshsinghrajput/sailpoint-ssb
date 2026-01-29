@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Request PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Request completionStatus="TempError" host="NikeshRajput" name="LCM Requester Notification" nextLaunch="1766412830512" retryCount="2" string1="nikeshsingh0981@gmail.com">
+  <Attributes>
+    <Map>
+      <entry key="attachments"/>
+      <entry key="template">
+        <value>
+          <EmailTemplate host="smtp.gmail.com" name="LCM Requester Notification" to="nikeshsingh0981@gmail.com">
+            <Body>
+      
+The following changes you requested for identity 'Krishna Nair' were APPROVED.
+
+        Application: Financial Planning &amp; Forecasting
+           Account : 8512510
+          Operation: Add
+          Attribute: roles
+           Value(s): Reconciliation Analyst
+
+        Application: Financial Planning &amp; Forecasting
+           Account : 8512510
+          Operation: Add
+          Attribute: roles
+           Value(s): Treasury Specialist
+
+      
+    </Body>
+            <Description>
+      Email Template for notifying requesters when their employee's account(s) are modified.
+      Note that in addition to the declared arguments, all workflow variables,
+      Step arguments, and Approval arguments defined in the Workflow are
+      also available.
+    </Description>
+            <From>nikeshsingh9631973678@gmail.com</From>
+            <Signature>
+              <Inputs>
+                <Argument name="workflow" type="Workflow">
+                  <Description>The Workflow object being executed.</Description>
+                </Argument>
+                <Argument name="approvalSet" type="ApprovalSet">
+                  <Description>The ApprovalSet object contained in the workflow.</Description>
+                </Argument>
+                <Argument name="launcher" type="string">
+                  <Description>The name of the Identity that launched the workflow.</Description>
+                </Argument>
+                <Argument name="identityDisplayName" type="string">
+                  <Description>The display name of the Identity that is being changed.</Description>
+                </Argument>
+              </Inputs>
+            </Signature>
+            <Subject>Account changes you requested for Krishna Nair were processed</Subject>
+          </EmailTemplate>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.RequestDefinition" name="Email Request"/>
+  </Definition>
+  <Messages>
+    <Message key="msg_plain_text" type="Error">
+      <Parameters>
+        <String>Could not send email: nikeshsingh0981@gmail.com. The e-mail has been queued. Reason: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout 30000;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com</String>
+      </Parameters>
+    </Message>
+    <Message key="msg_plain_text" type="Error">
+      <Parameters>
+        <String>Could not send email: nikeshsingh0981@gmail.com. The e-mail has been queued. Reason: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout 30000;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com</String>
+      </Parameters>
+    </Message>
+  </Messages>
+  <Stack>sailpoint.request.RequestTemporaryException: Could not send email: nikeshsingh0981@gmail.com. The e-mail has been queued. Reason: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout 30000;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com
+	at sailpoint.request.EmailRequestExecutor.execute(EmailRequestExecutor.java:84)
+	at sailpoint.request.RequestHandler.run(RequestHandler.java:163)
+Caused by: sailpoint.tools.RetryableEmailException: Could not send email: nikeshsingh0981@gmail.com. The e-mail has been queued. Reason: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.gmail.com, 587; timeout 30000;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com
+	at sailpoint.server.SMTPEmailNotifier.sendEmailNotification(SMTPEmailNotifier.java:178)
+	at sailpoint.server.InternalContext$EmailSender.sendInternal(InternalContext.java:1183)
+	at sailpoint.server.InternalContext$EmailSender.send(InternalContext.java:1135)
+	at sailpoint.server.InternalContext.sendEmailNotification(InternalContext.java:1074)
+	at sailpoint.request.EmailRequestExecutor.execute(EmailRequestExecutor.java:81)
+	... 1 more
+</Stack>
+</Request>

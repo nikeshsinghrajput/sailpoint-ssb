@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="NS_Form_Active_Directory_AccountCreate" type="Application">
+  <Attributes>
+    <Map>
+      <entry key="pageTitle" value="NS_Form_Active_Directory_AccountCreate"/>
+    </Map>
+  </Attributes>
+  <Section label="Account Details" name="activeDirectoryAccountSection">
+    <Field displayName="Employee Number" name="employeeNumber" type="string">
+      <Script>
+        <Source>return identity.getAttribute("employeeId");</Source>
+      </Script>
+    </Field>
+    <Field displayName="First Name" name="givenName" type="string">
+      <Script>
+        <Source>return identity.getAttribute("firstname");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Last Name" name="sn" type="string">
+      <Script>
+        <Source>return identity.getAttribute("lastname");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Display Name" name="displayName" type="string">
+      <Script>
+        <Source>return identity.getAttribute("displayName");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Job Title" name="title" type="string">
+      <Script>
+        <Source>return identity.getAttribute("title");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Company" name="company" type="string">
+      <Script>
+        <Source>return identity.getAttribute("company");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Employee Type" name="employeeType" type="string">
+      <Script>
+        <Source>return identity.getAttribute("employeeType");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Contract End Date" name="accountExpires" type="datetime">
+      <Script>
+        <Source>
+		  import java.text.SimpleDateFormat;
+		  import java.util.Date;
+		  import java.util.TimeZone;
+
+		  String dateStr = identity.getAttribute("terminationDate");
+		  if (dateStr == null || dateStr.trim().length() == 0) return null;
+
+		  SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+		  sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		  Date parsedDate = sdf.parse(dateStr);
+
+		  long ldapEpochDiff = 11644473600000L;
+		  long fileTime = (parsedDate.getTime() + ldapEpochDiff) * 10000;
+
+		  return String.valueOf(fileTime);
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Department" name="department" type="string">
+      <Script>
+        <Source>return identity.getAttribute("department");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Department ID" name="departmentNumber" type="string">
+      <Script>
+        <Source>
+			import org.SailPoint_IIQ.Utils.Utils;
+			import sailpoint.object.Link;
+
+			Link link = Utils.getHrLink(context,identity.getName());
+			if(link != null &amp;&amp; link.getAttribute("DEPARTMENT_ID")!= null) {
+				return link.getAttribute("DEPARTMENT_ID");
+			}else{
+				return "";
+			}
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Basic User Liscence" name="memberOf" type="string">
+      <Script>
+        <Source>
+        import sailpoint.object.Custom;
+      
+      Custom custom = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+      if(custom != null){
+        return custom.get("licensedGroup");
+      }
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Division" name="division" type="string">
+      <Script>
+        <Source>return identity.getAttribute("division");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Manager DN" name="manager" type="string">
+      <RuleRef>
+        <Reference class="sailpoint.object.Rule" name="NS_Rule_Active_Directory_FieldValue_Manager"/>
+      </RuleRef>
+    </Field>
+    <Field displayName="Address Line 1" name="streetAddress" type="string">
+      <Script>
+        <Source>
+			import org.SailPoint_IIQ.Utils.Utils;
+			import sailpoint.object.Link;
+
+			Link link = Utils.getHrLink(context,identity.getName());
+			if(link != null &amp;&amp; link.getAttribute("ADDRESS_LINE_1")!= null) {
+				return link.getAttribute("ADDRESS_LINE_1");
+			}else{
+				return "";
+			}
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Office Location" name="physicalDeliveryOfficeName" type="string">
+      <Script>
+        <Source>
+		    import org.SailPoint_IIQ.Utils.Utils;
+			import sailpoint.object.Link;
+
+			Link link = Utils.getHrLink(context,identity.getName());
+			if(link != null &amp;&amp; link.getAttribute("BUILDING_CODE")!= null) {
+				return link.getAttribute("BUILDING_CODE");
+			}else{
+				return "";
+			}
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="City / Location" name="l" type="string">
+      <Script>
+        <Source>return identity.getAttribute("location");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Region" name="st" type="string">
+      <Script>
+        <Source>
+		    import org.SailPoint_IIQ.Utils.Utils;
+			import sailpoint.object.Link;
+
+			Link link = Utils.getHrLink(context,identity.getName());
+			if(link != null &amp;&amp; link.getAttribute("REGION")!= null) {
+				return link.getAttribute("REGION");
+			}else{
+				return "";
+			}
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Country" name="co" type="string">
+      <Script>
+        <Source>return identity.getAttribute("country");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Postal Code" name="postalCode" type="string">
+      <Script>
+        <Source>
+	        import org.SailPoint_IIQ.Utils.Utils;
+			import sailpoint.object.Link;
+
+			Link link = Utils.getHrLink(context,identity.getName());
+			if(link != null &amp;&amp; link.getAttribute("POSTAL_CODE")!= null) {
+				return link.getAttribute("POSTAL_CODE");
+			}else{
+				return "";
+			}
+      </Source>
+      </Script>
+    </Field>
+    <Field displayName="Mobile" name="mobile" type="string">
+      <RuleRef>
+        <Reference class="sailpoint.object.Rule" name="NS_Rule_Active_Directory_FieldValue_mobile"/>
+      </RuleRef>
+    </Field>
+    <Field displayName="Phone Number" name="telephoneNumber" type="string">
+      <RuleRef>
+        <Reference class="sailpoint.object.Rule" name="NS_Rule_Active_Directory_FieldValue_telephoneNumber"/>
+      </RuleRef>
+    </Field>
+    <Field displayName="Description" name="description" type="string">
+      <Script>
+        <Source>return "Created via sailpoint "+ identity.getAttribute("title");</Source>
+      </Script>
+    </Field>
+    <Field displayName="Business Category" name="businessCategory" type="string">
+      <Script>
+        <Source>return identity.getAttribute("employmentType");</Source>
+      </Script>
+    </Field>
+  </Section>
+</Form>

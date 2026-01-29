@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="739092" entitlements="true" identity="739092" lastRefresh="1769027400918" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="achievedSales" value="0"/>
+      <entry key="annualHours" value="720"/>
+      <entry key="businessUnit" value="A"/>
+      <entry key="commissionRate" value="5%"/>
+      <entry key="country" value="Australia"/>
+      <entry key="department" value="Customer Success &amp; Support"/>
+      <entry key="employeeId" value="739092"/>
+      <entry key="firstName" value="Hector"/>
+      <entry key="hireDate" value="11-28-2017"/>
+      <entry key="isManager" value="No"/>
+      <entry key="jobTitle" value="Customer Success Manager"/>
+      <entry key="lastName" value="Petty"/>
+      <entry key="managerId" value="ab80aa85-02a0-4a8e-bd7a-2a709f4f1e19"/>
+      <entry key="region" value="A"/>
+      <entry key="roles">
+        <value>
+          <List>
+            <String>Sales Manager</String>
+            <String>Sales Operations Specialist</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="salesQuota" value="500000"/>
+      <entry key="status" value="Active"/>
+      <entry key="terminationDate" value="09-11-2025"/>
+      <entry key="territory" value="A"/>
+      <entry key="userLevel" value="A"/>
+      <entry key="workState" value="AU - Canberra"/>
+    </Map>
+  </Attributes>
+</Link>

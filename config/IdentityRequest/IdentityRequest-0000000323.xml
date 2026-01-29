@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1768640496283" executionStatus="Completed" name="0000000323" priority="Normal" requesterDisplayName="The Administrator" requesterId="c0a83c0199cf13658199cf93c73500fe" source="LCM" state="End" targetClass="Identity" targetDisplayName="Hector Petty" type="AccountsRequest" verified="1768750420749">
+  <Attributes>
+    <Map>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="3ae9ccae-0c70-4dda-a43e-2654222f32a8">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000323"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Enable">
+                  <Attributes>
+                    <Map>
+                      <entry key="flow" value="AccountsRequest"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="Enable"/>
+                    </Map>
+                  </Attributes>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000323"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="3ae9ccae-0c70-4dda-a43e-2654222f32a8" targetIntegration="Sales Analytics" trackingId="298272a0e86d4935879d27c964aab71c">
+              <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Enable" targetIntegration="Sales Analytics">
+                <Attributes>
+                  <Map>
+                    <entry key="flow" value="AccountsRequest"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="Enable"/>
+                  </Map>
+                </Attributes>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000323"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bcb1baa819bcb303c03003f"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" nativeIdentity="739092" operation="Enable" ownerName="spadmin" provisioningEngine="Sales Analytics" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="flow" value="AccountsRequest"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="operation" value="Enable"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="6b326144e8bb4f198aa280a597128ea1">
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Enable" targetIntegration="Sales Analytics">
+                  <Attributes>
+                    <Map>
+                      <entry key="flow" value="AccountsRequest"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="Enable"/>
+                    </Map>
+                  </Attributes>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Ryan Skinner" identity="739103" lastRefresh="1768468371899">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="3481 River Rd"/>
+      <entry key="ADDRESS_WORK" value="3481 River Rd;Hyderabad, Maharashtra 49002;India"/>
+      <entry key="BUILDING_CODE" value="IN_MAH_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3003"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="02-23-2026"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="DevOps &amp; Release Engineering"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-014"/>
+      <entry key="DIVISION" value="India Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-IN-03"/>
+      <entry key="EMAIL" value="ryan.skinner@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739103"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739103"/>
+      <entry key="FIRST_NAME" value="Ryan"/>
+      <entry key="HIREDATE" value="05-16-2017"/>
+      <entry key="JOBCODE" value="JT-014-01"/>
+      <entry key="JOBTITLE" value="DevOps Engineer"/>
+      <entry key="LAST_NAME" value="Skinner"/>
+      <entry key="LOCATION" value="IN - Hyderabad"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="59383"/>
+      <entry key="REGION" value="Hyderabad"/>
+      <entry key="WORKER_NAME" value="Ryan Skinner"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="NRRC_NewHire_Computer_Preparation_Request">
+  <Body>
+
+الموضوع: طلب تجهيز جهاز كمبيوتر لموظف جديد
+
+السادة / فريق تقنية المعلومات المحترمين،
+
+السلام عليكم ورحمة الله وبركاته،
+
+نفيدكم بانضمام الموظف الموضحة بياناته أدناه، ونأمل منكم التكرم بتجهيز جهاز كمبيوتر له وفق السياسات المعتمدة:
+
+الاسم: $identityFullname
+الاسم بالإنجليزي: $identityEnglishName
+الإدارة العامة: $identityDepartment
+رقم الجوال: $identityPhone
+البريد الإلكتروني: $identityEmail
+
+يرجى إشعارنا حال تجهيز الجهاز أو في حال وجود أي ملاحظات.
+
+وتفضلوا بقبول فائق الاحترام والتقدير،
+
+تم إصدار هذا الطلب تلقائيًا من نظام إدارة الهوية والوصول (IAM System).
+
+  </Body>
+  <Signature>
+    <Inputs>
+      <Argument name="identityFullname" type="string"/>
+      <Argument name="identityEnglishName" type="string"/>
+      <Argument name="identityDepartment" type="string"/>
+      <Argument name="identityPhone" type="string"/>
+      <Argument name="identityEmail" type="string"/>
+    </Inputs>
+  </Signature>
+  <Subject>طلب تجهيز جهاز كمبيوتر لموظف جديد - $identityFullname</Subject>
+</EmailTemplate>

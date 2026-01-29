@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Carl Diaz" identity="739021" lastRefresh="1768468351324">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2388 Garden St"/>
+      <entry key="ADDRESS_WORK" value="2388 Garden St;Singapore, Central Region 54969;Singapore"/>
+      <entry key="BUILDING_CODE" value="SG_CEN_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3017"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="04-16-2024"/>
+      <entry key="COUNTRY_NAME" value="Singapore"/>
+      <entry key="DEPARTMENT" value="Workplace &amp; Facilities Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-030"/>
+      <entry key="DIVISION" value="Singapore Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-SG-01"/>
+      <entry key="EMAIL" value="carl.diaz@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739021"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739021"/>
+      <entry key="FIRST_NAME" value="Carl"/>
+      <entry key="HIREDATE" value="06-26-2023"/>
+      <entry key="JOBCODE" value="JT-030-01"/>
+      <entry key="JOBTITLE" value="Facilities Coordinator"/>
+      <entry key="LAST_NAME" value="Diaz"/>
+      <entry key="LOCATION" value="SG - Singapore"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="86112"/>
+      <entry key="REGION" value="Singapore"/>
+      <entry key="WORKER_NAME" value="Carl Diaz"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

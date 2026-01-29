@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="NS_Workflow_Create_Hr_ACC">
+  <Variable initializer="false" input="true" name="trace">
+    <Description>The Workflow will be used to Create Hr Account in WorkDay</Description>
+  </Variable>
+  <Variable initializer="true" name="transient"/>
+  <Variable initializer="identityModel" name="basePath"/>
+  <Variable initializer="NS_Form_Hr_Account_Initial_Details" name="initialForm"/>
+  <Variable initializer="NS_Form_Hr_Account_Final_Details" name="finalForm"/>
+  <Description>Create a HR account.</Description>
+  <Step icon="Start" name="Start" posX="28" posY="10">
+    <Transition to="Get Identity Model"/>
+  </Step>
+  <Step action="call:getIdentityModel" icon="Default" name="Get Identity Model" posX="28" posY="10" resultVariable="identityModel">
+    <Transition to="Enter User Initial Details"/>
+  </Step>
+  <Step icon="Message" name="Enter User Initial Details" posX="148" posY="10">
+    <Approval name="Enter User Details" owner="ref:launcher" return="identityModel, exitWorkflow" send="launcher, identityModel">
+      <Arg name="workItemFormBasePath" value="ref:basePath"/>
+      <Arg name="workItemForm" value="ref:initialForm"/>
+    </Approval>
+    <Transition to="Enter User Final Details"/>
+    <Transition to="Stop" when="!approved"/>
+  </Step>
+  <Step icon="Message" name="Enter User Final Details" posX="148" posY="10">
+    <Approval name="Enter User Details" owner="ref:launcher" return="identityModel, exitWorkflow" send="launcher, identityModel">
+      <Arg name="workItemFormBasePath" value="ref:basePath"/>
+      <Arg name="workItemForm" value="ref:finalForm"/>
+    </Approval>
+    <Transition to="Confirm Account Details"/>
+    <Transition to="Stop" when="!approved"/>
+  </Step>
+  <Step icon="Message" name="Confirm Account Details" posX="449" posY="180">
+    <Approval name="Confirm Account Details" owner="ref:launcher" return="exitWorkflow" send="launcher, identityModel">
+      <Arg name="workItemFormBasePath" value="ref:basePath"/>
+      <Form>
+        <Attributes>
+          <Map>
+            <entry key="pageTitle" value="Confirm Account Details"/>
+            <entry key="title" value="Confirm Account Details"/>
+          </Map>
+        </Attributes>
+        <Button action="back" label="Back"/>
+        <Button action="next" label="Confirm"/>
+        <Section columns="2" type="datatable">
+          <Field displayName="First Name" name="firstname" readOnly="true"/>
+          <Field displayName="Last Name" name="lastname" readOnly="true"/>
+          <Field displayName="Full Name" name="fullName" readOnly="true"/>
+          <Field displayName="Status" name="workerStatus" readOnly="true"/>
+          <Field displayName="Hire Date" name="hireDate" readOnly="true"/>
+          <Field displayName="Termination Date" name="terminationDate" readOnly="true"/>
+          <Field displayName="Employee Type" name="employeeType" readOnly="true"/>
+          <Field displayName="Workforce Type" name="workforceType" readOnly="true"/>
+          <Field displayName="Company" name="company" readOnly="true"/>
+          <Field displayName="Employment Type" name="classType" readOnly="true"/>
+          <Field displayName="Manager ID" name="employeeId_rp" readOnly="true"/>
+          <Field displayName="Manager Name" name="displayName_rp" readOnly="true"/>
+          <Field displayName="Department" name="department" readOnly="true"/>
+          <Field displayName="Job Title" name="jobTitle" readOnly="true"/>
+          <Field displayName="Job Code" name="jobCode" readOnly="true"/>
+          <Field displayName="Division" name="division" readOnly="true"/>
+          <Field displayName="Division ID" name="divisionId" readOnly="true"/>
+          <Field displayName="Business Unit ID" name="businessUnitId" readOnly="true"/>
+          <Field displayName="Building Code" name="buildingCode" readOnly="true"/>
+          <Field displayName="Continent" name="continent" readOnly="true"/>
+          <Field displayName="Country" name="country" readOnly="true"/>
+          <Field displayName="Region" name="region" readOnly="true"/>
+          <Field displayName="Location" name="location" readOnly="true"/>
+          <Field displayName="Address (Work)" name="address_work" readOnly="true"/>
+          <Field displayName="Address Line 1" name="address_lane_1" readOnly="true"/>
+          <Field displayName="Postal Code" name="postalCode" readOnly="true"/>
+        </Section>
+      </Form>
+    </Approval>
+    <Transition to="Call Api to Create Account in Workday" when="approved"/>
+    <Transition to="Enter User Details" when="!approved"/>
+  </Step>
+  <Step icon="Default" name="Call Api to Create Account in Workday" posX="481" posY="17">
+    <Script>
+      <Source>
+	        import sailpoint.object.Custom;
+			import sailpoint.object.Attributes;
+			import okhttp3.OkHttpClient;
+			import okhttp3.Request;
+			import okhttp3.RequestBody;
+			import okhttp3.MediaType;
+			import okhttp3.Response;
+			import com.google.gson.Gson;
+			import com.google.gson.JsonObject;
+			import java.util.Base64;
+			import java.nio.charset.StandardCharsets;
+			import org.apache.log4j.Logger;
+			import java.text.SimpleDateFormat;
+            import java.util.Date;
+		
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Create_Hr_ACC");
+			
+			
+        logs.debug("identityModel:::::::::::"+identityModel);
+		String country = identityModel.get("country");
+		String jobTitle = identityModel.get("jobTitle");
+		String postalCode = identityModel.get("postalCode");
+		String jobCode = identityModel.get("jobCode");
+		String workerStatus = identityModel.get("workerStatus");
+		
+		Date terminationDateObj = identityModel.get("terminationDate");
+		String division = identityModel.get("division");
+		String divisionId = identityModel.get("divisionId");
+		String buildingCode = identityModel.get("buildingCode");
+		String lastname = identityModel.get("lastname");
+		
+		String region = identityModel.get("region");
+		String firstname = identityModel.get("firstname");
+		String businessUnitId = identityModel.get("businessUnitId");
+		String classType = identityModel.get("classType");
+		String addressWork = identityModel.get("address_work");
+		
+		String addressLane1 = identityModel.get("address_lane_1");
+		String workforceType = identityModel.get("workforceType");
+		String company = identityModel.get("company");
+		String managerId = identityModel.get("employeeId_rp");
+		String department = identityModel.get("department");
+		
+		String fullName = identityModel.get("fullName");
+		Date hireDateObj = identityModel.get("hireDate");
+		String employeeType = identityModel.get("employeeType");
+		String location = identityModel.get("location");
+		String departmentId = null,userName=null,password=null,Url=null,fileNumber=null,hireDate=null,terminationDate=null;
+		
+		
+			String []split =department.split(",");
+			departmentId=split[0];
+			department=split[1];
+			Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Workday");
+			if (custom != null) {
+			userName = custom.get("userName");
+			password = custom.get("Password");
+			Url = custom.get("hostUrl");
+			logs.debug("Url : " + Url);	 
+		    }
+			if(hireDateObj!=null &amp;&amp;terminationDateObj!=null){
+			 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+             hireDate = sdf.format(hireDateObj);
+			 terminationDate = sdf.format(terminationDateObj);
+			 logs.debug("hireDate : " + hireDate);	
+             logs.debug("terminationDate : " + terminationDate);				 
+			}
+			// ==========================
+			// 2. Build JSON Body
+			// ==========================
+			JsonObject json = new JsonObject();
+			json.addProperty("firstName", firstname);
+			json.addProperty("lastName", lastname);
+			json.addProperty("workerName", fullName);
+			json.addProperty("employeeType", employeeType);
+			json.addProperty("workforceType", workforceType);
+			json.addProperty("workerStatus", workerStatus);
+			json.addProperty("companyName", company);
+			json.addProperty("businessUnitId", businessUnitId);
+			json.addProperty("department", department);
+			json.addProperty("departmentId", departmentId);
+			json.addProperty("division", division);
+			json.addProperty("divisionId", divisionId);
+			json.addProperty("jobTitle", jobTitle);
+			json.addProperty("jobCode", jobCode);
+			json.addProperty("managerId", managerId);
+			json.addProperty("location", location);
+			json.addProperty("region", region);
+			json.addProperty("countryName", country);
+			json.addProperty("addressLine1", addressLane1);
+			json.addProperty("addressWork", addressWork);
+			json.addProperty("buildingCode", buildingCode);
+			json.addProperty("postalCode", postalCode);
+			json.addProperty("hireDate", hireDate);
+			json.addProperty("contractEndDate", terminationDate);
+			json.addProperty("fileNumber", fileNumber);
+			json.addProperty("employeeClass", classType);
+            
+			logs.info("Workday Request JSON : " + json.toString());
+			// ==========================
+			// 3. Basic Authorization
+			// ==========================
+			String auth = userName + ":" + password;
+			String encodedAuth = Base64.getEncoder()
+					.encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+
+			// ==========================
+			// 4. OkHttp Call
+			// ==========================
+			OkHttpClient client = new OkHttpClient();
+
+			MediaType mediaType = MediaType.parse("application/json");
+			RequestBody body = RequestBody.create(
+					mediaType,
+					json.toString()
+			);
+
+			Request request = new Request.Builder()
+					.url(Url)
+					.post(body)
+					.addHeader("Content-Type", "application/json")
+					.addHeader("Authorization", "Basic " + encodedAuth)
+					.build();
+
+			Response response = client.newCall(request).execute();
+
+			// ==========================
+			// 5. Handle Response
+			// ==========================
+			String responseStr = response.body().string();
+
+			Gson gson = new Gson();
+			JsonObject responseJson = gson.fromJson(responseStr, JsonObject.class);
+            logs.info("responseStr::::"+responseStr);
+			String message = responseJson.get("message").getAsString();
+			int statusCode = responseJson.get("statusCode").getAsInt();
+			String employeeId = responseJson.get("employeeId").getAsString();
+			identityModel.put("employeeId", employeeId);
+			 
+      </Source>
+    </Script>
+    <Transition to="Single Workday Aggregation"/>
+  </Step>
+  <Step icon="Task" name="Single Workday Aggregation" posX="449" posY="180" resultVariable="identityModel">
+    <Script>
+      <Source>
+	    import org.SailPoint_IIQ.Utils.AggregationHelper;
+		import org.apache.log4j.Logger;
+		import sailpoint.object.Identity;
+        import sailpoint.object.Filter;
+		import sailpoint.object.Custom;
+		
+		Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_Create_Hr_ACC");
+		String employeeId= identityModel.get("employeeId");
+		
+		String hrAppName=null;
+           Custom custom = context.getObjectByName(Custom.class,"NS_CustomObject_Workday");
+			if (custom != null) {
+			hrAppName = custom.get("appName");
+			}
+			logs.debug("hrAppName::::"+hrAppName);
+	   String taskAggregation = AggregationHelper.singleADAggregation(context,hrAppName,employeeId);
+	   logs.debug("single aggregation Result::::"+taskAggregation);
+         Identity identity = context.getUniqueObject(Identity.class, Filter.eq("employeeId",employeeId));
+        if(identity != null){
+         identityModel.put("identityName",identity.getName());
+        }
+      </Source>
+    </Script>
+    <Transition to="Refresh Identity"/>
+  </Step>
+  <Step action="call:refreshIdentity" icon="Task" name="Refresh Identity" posX="933" posY="14">
+    <Arg name="identityName" value="script:return identityModel.get(&quot;identityName&quot;)"/>
+    <Arg name="refreshLinks" value="string:true"/>
+    <Arg name="provision" value="string:true"/>
+    <Arg name="correlateEntitlements" value="string:true"/>
+    <Arg name="correlateScope" value="string:true"/>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="449" posY="180"/>
+</Workflow>

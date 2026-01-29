@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469555979" name="456fdb87-f645-4c55-841e-f77dca776094">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Egypt"/>
+      <entry key="department" value="Legal &amp; Corporate Affairs"/>
+      <entry key="displayName" value="Meghan Barry"/>
+      <entry key="division" value="Egypt Risk and Compliance"/>
+      <entry key="employeeId" value="739104"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part-Time"/>
+      <entry key="firstname" value="Meghan"/>
+      <entry key="hireDate" value="06-11-2015"/>
+      <entry key="lastname" value="Barry"/>
+      <entry key="location" value="EG - Luxor"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="95422"/>
+      <entry key="terminationDate" value="08-26-2026"/>
+      <entry key="title" value="Contract Management Specialist"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="e6de8967-8f15-495a-8212-d3338c0c7ff0"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469555936" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Meghan Barry" identity="739104" lastRefresh="1768468371964">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="109 Cedar St"/>
+          <entry key="ADDRESS_WORK" value="109 Cedar St;Luxor, Cairo Governorate 19645;Egypt"/>
+          <entry key="BUILDING_CODE" value="EG_CAI_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3064"/>
+          <entry key="CLASS" value="Part-Time"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="08-26-2026"/>
+          <entry key="COUNTRY_NAME" value="Egypt"/>
+          <entry key="DEPARTMENT" value="Legal &amp; Corporate Affairs"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-009"/>
+          <entry key="DIVISION" value="Egypt Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-EG-04"/>
+          <entry key="EMAIL" value="barry.meghan@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739104"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739104"/>
+          <entry key="FIRST_NAME" value="Meghan"/>
+          <entry key="HIREDATE" value="06-11-2015"/>
+          <entry key="JOBCODE" value="JT-009-02"/>
+          <entry key="JOBTITLE" value="Contract Management Specialist"/>
+          <entry key="LAST_NAME" value="Barry"/>
+          <entry key="LOCATION" value="EG - Luxor"/>
+          <entry key="MANAGER_ID" value="739005"/>
+          <entry key="POSTAL_CODE" value="95422"/>
+          <entry key="REGION" value="Luxor"/>
+          <entry key="WORKER_NAME" value="Meghan Barry"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Temporary"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

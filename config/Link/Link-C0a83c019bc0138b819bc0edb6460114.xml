@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Kenneth Wilson" identity="739066" lastRefresh="1768468362823">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="4342 Sunset Ave"/>
+      <entry key="ADDRESS_WORK" value="4342 Sunset Ave;Berlin, Bavaria 12235;Germany"/>
+      <entry key="BUILDING_CODE" value="DE_BAV_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3077"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-01-2024"/>
+      <entry key="COUNTRY_NAME" value="Germany"/>
+      <entry key="DEPARTMENT" value="IT Governance, Risk &amp; Compliance (IT-GRC)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-020"/>
+      <entry key="DIVISION" value="Germany Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-DE-01"/>
+      <entry key="EMAIL" value="kenneth.wilson@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739066"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739066"/>
+      <entry key="FIRST_NAME" value="Kenneth"/>
+      <entry key="HIREDATE" value="04-24-2017"/>
+      <entry key="JOBCODE" value="JT-020-01"/>
+      <entry key="JOBTITLE" value="IT Risk Analyst"/>
+      <entry key="LAST_NAME" value="Wilson"/>
+      <entry key="LOCATION" value="DE - Berlin"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="75935"/>
+      <entry key="REGION" value="Berlin"/>
+      <entry key="WORKER_NAME" value="Kenneth Wilson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

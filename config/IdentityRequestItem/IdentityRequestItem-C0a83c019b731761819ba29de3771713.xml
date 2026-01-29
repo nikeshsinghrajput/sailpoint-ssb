@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Hr-Workday" nativeIdentity="8512503" operation="Disable" provisioningEngine="Hr-Workday" provisioningState="Failed">
+  <Attributes>
+    <Map>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="bea581ee64984301a01defa84794a55d">
+            <AccountRequest application="Hr-Workday" nativeIdentity="8512503" op="Disable">
+              <Attributes>
+                <Map>
+                  <entry key="provisioningTransactionId" value="c0a83c019b731761819ba29deae1171c"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

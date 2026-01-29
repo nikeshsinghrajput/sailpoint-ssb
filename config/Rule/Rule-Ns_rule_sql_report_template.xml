@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_SQL_Report_Template">
+  <Description>
+    Generic SQL report engine: executes a SELECT query,
+    writes results to CSV, compresses to ZIP, and optionally emails it.
+  </Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NS_Rule_Shared_Library"/>
+  </ReferencedRules>
+  <Source>
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import sailpoint.tools.Util;
+import sailpoint.object.EmailTemplate;
+import sailpoint.object.EmailOptions;
+import sailpoint.object.TaskResult;
+import sailpoint.tools.GeneralException;
+import sailpoint.tools.Message;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+// -------- CONFIG (edit as you like) -----------------
+
+// Base directory where reports are stored.
+// For Windows, you can change to: "C:/iiq/reports/"
+String baseReportDir = "A:/software/sailpoint all files/reports/task-report";
+
+// ----------------------------------------------------
+
+// These variables come from TaskDefinition inputs:
+Log logger = LogFactory.getLog("NS_Rule_SQL_Report_Template");
+
+// Expected task arguments (names match TaskDefinition Inputs):
+ String sqlQuery;
+ String OutputFile;
+ String headers;
+ String emailRecipients;
+ String emailSubject;
+ String emailNotes;
+ String delimiter;
+
+// Safely extract each argument
+String sqlQuery        = Util.otos(config.get("sqlQuery")).trim();
+String OutputFile      = Util.otos(config.get("OutputFile")).trim();
+String headers         = Util.otos(config.get("headers")).trim();
+String emailRecipients = Util.otos(config.get("emailRecipients")).trim();
+String emailSubject    = Util.otos(config.get("emailSubject")).trim();
+String emailNotes      = Util.otos(config.get("emailNotes")).trim();
+String delimiter       = Util.otos(config.get("delimiter")).trim();
+
+if (Util.isNullOrEmpty(delimiter)) {
+    delimiter = ",";
+}
+
+int recordCount = 0;
+String emailFlag = "Not Sent";
+String newLine = System.getProperty("line.separator");
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd-HHmmss");
+String timestamp = sdf.format(new Date());
+
+String outputFileName = (Util.isNotNullOrEmpty(OutputFile) ? OutputFile.trim() : "sql_report.csv");
+String[] fileParts = outputFileName.split("\\.(?=[^\\.]+$)");
+outputFileName = fileParts[0] + "_" + timestamp + ".csv";
+
+StringBuilder absPath = new StringBuilder();
+absPath.append(baseReportDir);
+if (!baseReportDir.endsWith("/") &amp;&amp; !baseReportDir.endsWith("\\")) {
+  absPath.append(File.separator);
+}
+absPath.append(outputFileName);
+
+logger.info("NS SQL Report: output file = " + absPath.toString());
+logger.info("NS SQL Report: query = " + sqlQuery);
+
+if (Util.isNullOrEmpty(sqlQuery) || !sqlQuery.toUpperCase().startsWith("SELECT")) {
+  throw new GeneralException("Only SELECT queries are allowed.");
+}
+
+// Prepare CSV header
+StringBuilder rowBuilder = new StringBuilder();
+if (Util.isNotNullOrEmpty(headers)) {
+  rowBuilder.append(headers);
+} else {
+  // Let DB column order be header-less – optional
+  logger.warn("No headers provided; CSV will not have a header row.");
+}
+rowBuilder.append(newLine);
+
+// Write header row (if any)
+if (rowBuilder.length() &gt; 0 &amp;&amp; Util.isNotNullOrEmpty(headers)) {
+  writeToFile(rowBuilder.toString(), absPath.toString());
+  rowBuilder.delete(0, rowBuilder.length());
+}
+
+// Execute SQL
+Iterator itr = null;
+try {
+
+  itr = context.search("sql:" + sqlQuery, null, null);
+
+  if (itr != null &amp;&amp; !Util.isEmpty(itr)) {
+    while (itr.hasNext()) {
+      Object[] row = (Object[]) itr.next();
+      int i = 0;
+      for (Object col : row) {
+        String strVal = (col != null) ? col.toString() : "";
+        strVal = addQuote(strVal); 
+        if (i == 0) {
+          rowBuilder.append(strVal);
+        } else {
+          rowBuilder.append(delimiter);
+          rowBuilder.append(strVal);
+        }
+        i++;
+      }
+      rowBuilder.append(newLine);
+      appendToFile(rowBuilder.toString(), absPath.toString()); // from NS-Rule-IO-Util
+      rowBuilder.delete(0, rowBuilder.length());
+      recordCount++;
+    }
+  }
+
+  logger.info("NS SQL Report: total records = " + recordCount);
+
+  // If any rows &amp; email recipients present -&gt; email ZIP
+  if (recordCount &gt; 0 &amp;&amp; Util.isNotNullOrEmpty(emailRecipients)) {
+    // Zip the CSV file
+    compressFile(absPath.toString()); // from NS-Rule-IO-Util
+
+    String zipPath = absPath.toString() + ".zip";
+    String zipName = new File(zipPath).getName();
+
+    EmailTemplate et = new EmailTemplate();
+    String subject = Util.isNotNullOrEmpty(emailSubject) ? emailSubject : "SQL Report";
+    et.setSubject(subject + " :: " + timestamp);
+
+    StringBuilder body = new StringBuilder();
+    body.append(subject).append(" :: ").append(timestamp).append(newLine).append(newLine);
+    body.append("SQL Used: ").append(sqlQuery.replace("\n", "\\n")).append(newLine).append(newLine);
+    body.append("Record Count: ").append(String.valueOf(recordCount)).append(newLine).append(newLine);
+    if (Util.isNotNullOrEmpty(emailNotes)) {
+      body.append(emailNotes);
+    }
+    et.setBody(body.toString());
+
+    byte[] fileData = java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(zipPath));
+    sailpoint.object.EmailFileAttachment attachment =
+      new sailpoint.object.EmailFileAttachment(
+        zipName,
+        sailpoint.object.EmailFileAttachment.MimeType.MIME_ZIP,
+        fileData);
+
+    EmailOptions eo = new EmailOptions();
+    eo.setTo(emailRecipients);
+    eo.setSendImmediate(true);
+    eo.addAttachment(attachment);
+
+    Map vars = new HashMap();
+    eo.addVariables(vars);
+
+    context.sendEmailNotification(et, eo);
+    emailFlag = "Sent";
+  }
+
+} catch (Exception ex) {
+  logger.error("NS SQL Report: Exception", ex);
+  taskResult.addMessage(new Message(Message.Type.Error, "Exception: " + ex.getMessage(), null));
+} finally {
+  if (itr != null) {
+    Util.flushIterator(itr);
+    context.decache();
+  }
+}
+
+// Set task result attributes
+taskResult.setAttribute("sqlQuery", sqlQuery != null ? sqlQuery.replace("\n", "\\n") : "");
+taskResult.setAttribute("reportFile", absPath.toString());
+taskResult.setAttribute("recordCount", String.valueOf(recordCount));
+taskResult.setAttribute("emailFlag", emailFlag);
+taskResult.setAttribute("emailRecipients", emailRecipients);
+
+  </Source>
+</Rule>

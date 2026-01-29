@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="NRRC_EmailTemplate_Manual_WorkItem">
+  <Body>
+Hello Team,
+
+A manual work item has been generated due to validation issues while processing the onboarding steps for:
+
+Identity: $!identityDisplayName
+
+------------------------------------------------------------
+Work Item Details
+------------------------------------------------------------
+Work Item Name  : $!workItemName
+Assigned To     : $!workItemOwner
+Work Item Link  : $!workItemLink
+------------------------------------------------------------
+
+Please review the work item and complete the required validation to continue the onboarding process.
+
+Thank you,
+Identity Management Team
+    </Body>
+  <Description>
+      Email notification sent when manual work item is created due to validation issues.
+    </Description>
+  <Signature>
+    <Inputs>
+      <Argument name="identityDisplayName" type="string">
+        <Description>The name of the identity for which validation failed.</Description>
+      </Argument>
+      <Argument name="workItemOwner" type="string">
+        <Description>The group or owner responsible for the work item.</Description>
+      </Argument>
+      <Argument name="workItemName" type="string">
+        <Description>The name of the generated work item.</Description>
+      </Argument>
+      <Argument name="workItemLink" type="string">
+        <Description>Direct link to the work item.</Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Subject>
+      Action Required: Manual Validation Needed for $!identityDisplayName
+    </Subject>
+</EmailTemplate>

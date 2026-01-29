@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link disabled="true" displayName="8512511" identity="8512511" lastRefresh="1766125782628" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="IIQDisabled">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="annualHours" value="1920"/>
+      <entry key="countryCode" value="470872"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="email" value="kumar.sai@nstechiiq.com"/>
+      <entry key="empStatus" value="Inactive"/>
+      <entry key="employee" value="Sai Kumar"/>
+      <entry key="employeeId" value="8512511"/>
+      <entry key="firstName" value="Sai"/>
+      <entry key="hireDate" value="12-13-2025"/>
+      <entry key="isManager" value="No"/>
+      <entry key="jobTitle" value="Governance Program Manager"/>
+      <entry key="lastName" value="Kumar"/>
+      <entry key="manager" value="Nikesh Singh"/>
+      <entry key="salaryClass" value="A"/>
+      <entry key="superviserId" value="8512500"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="userLevel" value="B"/>
+      <entry key="workCountry" value="India"/>
+      <entry key="workState" value="South"/>
+    </Map>
+  </Attributes>
+</Link>

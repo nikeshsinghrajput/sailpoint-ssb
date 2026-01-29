@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Incentive &amp; Compensation Analyst" hash="a13efd81bb79595364890b86f2311f5535b14669" lastRefresh="1768326690007" requestable="true" type="roles" value="Incentive &amp; Compensation Analyst">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="07-12-2025"/>
+      <entry key="description" value="Calculates sales commissions and incentive payouts."/>
+      <entry key="modifiedDate" value="09-30-2025"/>
+      <entry key="owner" value="compensation@nsiiq.com"/>
+      <entry key="roleId" value="ROL_SALES_INCENTIVE_008"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Finance"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

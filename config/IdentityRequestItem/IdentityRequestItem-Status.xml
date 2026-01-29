@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Sales Analytics" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="status" nativeIdentity="739092" operation="Set" provisioningEngine="Sales Analytics" provisioningState="Finished" value="Inactive">
+  <Attributes>
+    <Map>
+      <entry key="expansionInfo" value="Sales Analytics"/>
+      <entry key="flow" value="AccountsRequest"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="operation" value="Disable"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="0936915cb982438f9ba1541e147eb2d2">
+            <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Disable" targetIntegration="Sales Analytics">
+              <Attributes>
+                <Map>
+                  <entry key="flow" value="AccountsRequest"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="operation" value="Disable"/>
+                </Map>
+              </Attributes>
+              <AttributeRequest name="status" op="Set" trackingId="0936915cb982438f9ba1541e147eb2d2" value="Inactive"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE QuickLink PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<QuickLink action="workflow" category="Custom" messageKey="Launch_Workflow" name="Launch Workflow" ordering="2">
+  <Attributes>
+    <Map>
+      <entry key="workflowName" value="demoLaunchWorkflow"/>
+    </Map>
+  </Attributes>
+  <Description>Launch Demo Workflow</Description>
+  <QuickLinkOptions allowOther="true" allowSelf="true">
+    <DynamicScopeRef>
+      <Reference class="sailpoint.object.DynamicScope" name="special tasks"/>
+    </DynamicScopeRef>
+  </QuickLinkOptions>
+</QuickLink>

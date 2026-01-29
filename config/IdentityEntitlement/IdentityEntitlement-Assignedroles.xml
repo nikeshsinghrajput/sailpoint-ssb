@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityEntitlement PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityEntitlement name="assignedRoles" source="Rule" value="SR_Role_Active_Directory_Basic_Access">
+  <IdentityRef>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </IdentityRef>
+</IdentityEntitlement>

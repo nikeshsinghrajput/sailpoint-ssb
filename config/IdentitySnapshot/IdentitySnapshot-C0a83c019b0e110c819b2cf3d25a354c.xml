@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentitySnapshot PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentitySnapshot applications="Hr-Workday" identityName="aea74bcb-7990-4583-9366-4d5ca5d8c672">
+  <AssignedRoleSnapshots>
+    <RoleAssignmentSnapshot name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoleSnapshots>
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="displayName" value="Krishna Nair"/>
+      <entry key="division" value="Division-2"/>
+      <entry key="employeeId" value="8512510"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part_time"/>
+      <entry key="firstname" value="Krishna"/>
+      <entry key="hireDate" value="01-10-2025"/>
+      <entry key="lastname" value="Nair"/>
+      <entry key="location" value="Delhi"/>
+      <entry key="manager" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="postalCode" value="572748"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <LinkSnapshots>
+    <LinkSnapshot application="Hr-Workday" identity="8512510" lastRefresh="1765382826627" simpleIdentity="Krishna Nair">
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="591 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Hybrid"/>
+          <entry key="BUILDING_CODE" value="B116"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU78"/>
+          <entry key="CLASS" value="Part_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs and Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="Division-2"/>
+          <entry key="DIVISION_ID" value="DIV48"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512510"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F94010"/>
+          <entry key="FIRST_NAME" value="Krishna"/>
+          <entry key="HIREDATE" value="01-10-2025"/>
+          <entry key="JOBCODE" value="JC176"/>
+          <entry key="JOBTITLE" value="Governance Program Manager"/>
+          <entry key="LAST_NAME" value="Nair"/>
+          <entry key="LOCATION" value="Delhi"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="572748"/>
+          <entry key="REGION" value="South"/>
+          <entry key="WORKER_NAME" value="Krishna Nair"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </LinkSnapshot>
+  </LinkSnapshots>
+</IdentitySnapshot>

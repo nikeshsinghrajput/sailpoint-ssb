@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="ProvisioningFailure" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="govinda jadav">
+  <Attributes>
+    <Map>
+      <entry key="error1" value="Exception occurred while performing 'Disable' operation on identity '8512518':  Error: No configuration found for'Disable Account'. Please add at least one operation and try again."/>
+      <entry key="error2" value="Connection timed out: connect"/>
+      <entry key="error3" value="No route to host: connect"/>
+      <entry key="error4" value="Item failed due to retry timeout."/>
+      <entry key="taskResultId" value="c0a83c019b731761819ba75c61a51a29"/>
+    </Map>
+  </Attributes>
+  <String1>FailedApplications=Hr-Workday,Active Directory</String1>
+</AuditEvent>

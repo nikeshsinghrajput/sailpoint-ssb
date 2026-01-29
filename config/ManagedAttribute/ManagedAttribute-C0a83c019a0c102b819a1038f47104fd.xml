@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Sales Audit &amp; Compliance Officer" hash="b40df77b15ba5d10e568f5065e0dad5848c6db18" lastRefresh="1768326689971" requestable="true" type="roles" value="Sales Audit &amp; Compliance Officer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="08-20-2025"/>
+      <entry key="description" value="Monitors sales data accuracy, audit logs, and compliance with policies."/>
+      <entry key="modifiedDate" value="09-28-2025"/>
+      <entry key="owner" value="audit.sales@nsiiq.com"/>
+      <entry key="roleId" value="ROL_SALES_AUDIT_010"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Governance"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

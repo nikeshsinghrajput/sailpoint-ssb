@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="8512561" applicationName="Financial Planning &amp; Forecasting" identityDisplayName="Anika Joshi" identityName="a857938d-586f-4083-8192-8b616c0d979b" integration="Financial Planning &amp; Forecasting" name="0000000072" nativeIdentity="8512561" operation="Modify" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000127"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="The application script threw an exception: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(employeeId,roleId) VALUES ('8512561', 'ROL_FIN_AP_ANALYST_001')' at line 1 BSF info: NS_Rule_JDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512561" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c019a0512c7819a085c06362767"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="operation" value="EntitlementRemove"/>
+                <entry key="provisioningTransactionId" value="c0a83c019a351092819a364e8d8c01f5"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="Accounts Payable Analyst" name="roles" op="Remove" value="Accounts Payable Analyst">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="The application script threw an exception: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(employeeId,roleId) VALUES ('8512561', 'ROL_FIN_AP_ANALYST_001')' at line 1 BSF info: NS_Rule_JDBC_ProvisioningRule at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

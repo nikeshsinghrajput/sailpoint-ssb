@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Philip Perez" identity="739049" lastRefresh="1768468358279">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2042 Cedar Blvd"/>
+      <entry key="ADDRESS_WORK" value="2042 Cedar Blvd;Frankfurt, Bavaria 24162;Germany"/>
+      <entry key="BUILDING_CODE" value="DE_BAV_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3078"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="11-24-2025"/>
+      <entry key="COUNTRY_NAME" value="Germany"/>
+      <entry key="DEPARTMENT" value="Application Development &amp; Integration"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-017"/>
+      <entry key="DIVISION" value="Germany Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-DE-02"/>
+      <entry key="EMAIL" value="perez.philip@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739049"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739049"/>
+      <entry key="FIRST_NAME" value="Philip"/>
+      <entry key="HIREDATE" value="11-28-2023"/>
+      <entry key="JOBCODE" value="JT-017-03"/>
+      <entry key="JOBTITLE" value="Application Architect"/>
+      <entry key="LAST_NAME" value="Perez"/>
+      <entry key="LOCATION" value="DE - Frankfurt"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="86719"/>
+      <entry key="REGION" value="Frankfurt"/>
+      <entry key="WORKER_NAME" value="Philip Perez"/>
+      <entry key="WORKER_STATUS" value="Terminated"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

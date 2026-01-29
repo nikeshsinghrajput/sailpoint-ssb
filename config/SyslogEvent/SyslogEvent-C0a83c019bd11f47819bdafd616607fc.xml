@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.api.Workflower" eventLevel="ERROR" lineNumber="4709" quickKey="0001243952" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>An unexpected error occurred: Typed variable declaration : Command not found: moveADAccountInActiveOU(java.lang.String, java.lang.String) : at Line: 18 </EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: Typed variable declaration : Command not found: moveADAccountInActiveOU(java.lang.String, java.lang.String) : at Line: 18 
+	at sailpoint.server.ScriptletEvaluator.doScript(ScriptletEvaluator.java:268)
+	at sailpoint.server.ScriptletEvaluator.evalSource(ScriptletEvaluator.java:71)
+	at sailpoint.api.Workflower.evalSource(Workflower.java:6041)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5280)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.advanceSubcase(Workflower.java:5607)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5200)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.assimilate(Workflower.java:4317)
+	at sailpoint.api.Workflower.handleWorkItem(Workflower.java:7755)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2018)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2000)
+	at sailpoint.task.WorkflowerThread.process(WorkflowerThread.java:363)
+	at sailpoint.task.WorkflowerThread.run(WorkflowerThread.java:288)
+Caused by: sailpoint.tools.GeneralException: BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import sailpoint.object.Link; 		import sailpoint.object.Identity; 		import sailp . . . '' : Typed variable declaration : Command not found: moveADAccountInActiveOU(java.lang.String, java.lang.String) : at Line: 18 : in file: inline evaluation of: ``import sailpoint.object.Link; 		import sailpoint.object.Identity; 		import sailp . . . '' : moveADAccountInActiveOU ( identityName , activeDirectory ) 
+ BSF info: script at line: 0 column: columnNo
+	at sailpoint.server.BSFRuleRunner.runScript(BSFRuleRunner.java:350)
+	at sailpoint.server.InternalContext.runScript(InternalContext.java:1359)
+	at sailpoint.server.ScriptletEvaluator.doScript(ScriptletEvaluator.java:263)
+	... 13 more
+Caused by: org.apache.bsf.BSFException: BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import sailpoint.object.Link; 		import sailpoint.object.Identity; 		import sailp . . . '' : Typed variable declaration : Command not found: moveADAccountInActiveOU(java.lang.String, java.lang.String) : at Line: 18 : in file: inline evaluation of: ``import sailpoint.object.Link; 		import sailpoint.object.Identity; 		import sailp . . . '' : moveADAccountInActiveOU ( identityName , activeDirectory ) 
+ BSF info: script at line: 0 column: columnNo
+	at bsh.util.BeanShellBSFEngine.eval(BeanShellBSFEngine.java:202)
+	at org.apache.bsf.BSFManager$5.run(BSFManager.java:445)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:551)
+	at org.apache.bsf.BSFManager.eval(BSFManager.java:442)
+	at sailpoint.server.BSFRuleRunner.runScript(BSFRuleRunner.java:348)
+	... 15 more
+</Stacktrace>
+</SyslogEvent>

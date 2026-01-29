@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Debra Calhoun" identity="739094" lastRefresh="1768468369691">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="565 King Lane"/>
+      <entry key="ADDRESS_WORK" value="565 King Lane;Al Wakrah, Doha Municipality 16950;Qatar"/>
+      <entry key="BUILDING_CODE" value="QA_DOH_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3070"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="07-17-2024"/>
+      <entry key="COUNTRY_NAME" value="Qatar"/>
+      <entry key="DEPARTMENT" value="Core Platform Engineering"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-010"/>
+      <entry key="DIVISION" value="Qatar Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-QA-02"/>
+      <entry key="EMAIL" value="debra.calhoun@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739094"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739094"/>
+      <entry key="FIRST_NAME" value="Debra"/>
+      <entry key="HIREDATE" value="09-25-2022"/>
+      <entry key="JOBCODE" value="JT-010-02"/>
+      <entry key="JOBTITLE" value="Software Development Engineer"/>
+      <entry key="LAST_NAME" value="Calhoun"/>
+      <entry key="LOCATION" value="QA - Al Wakrah"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="26831"/>
+      <entry key="REGION" value="Al Wakrah"/>
+      <entry key="WORKER_NAME" value="Debra Calhoun"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

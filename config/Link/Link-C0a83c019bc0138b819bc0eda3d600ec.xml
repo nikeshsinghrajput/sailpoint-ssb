@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jeffrey Ramos" identity="739046" lastRefresh="1768468358102">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7566 Maple Rd"/>
+      <entry key="ADDRESS_WORK" value="7566 Maple Rd;Incheon, Gyeonggi Province 63782;South Korea"/>
+      <entry key="BUILDING_CODE" value="KR_GYE_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3021"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-20-2026"/>
+      <entry key="COUNTRY_NAME" value="South Korea"/>
+      <entry key="DEPARTMENT" value="Digital Payments &amp; Wallet Solutions"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-023"/>
+      <entry key="DIVISION" value="South Korea Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-KR-01"/>
+      <entry key="EMAIL" value="jeffrey.ramos@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739046"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739046"/>
+      <entry key="FIRST_NAME" value="Jeffrey"/>
+      <entry key="HIREDATE" value="05-11-2020"/>
+      <entry key="JOBCODE" value="JT-023-02"/>
+      <entry key="JOBTITLE" value="Digital Wallet Engineer"/>
+      <entry key="LAST_NAME" value="Ramos"/>
+      <entry key="LOCATION" value="KR - Incheon"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="76803"/>
+      <entry key="REGION" value="Incheon"/>
+      <entry key="WORKER_NAME" value="Jeffrey Ramos"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

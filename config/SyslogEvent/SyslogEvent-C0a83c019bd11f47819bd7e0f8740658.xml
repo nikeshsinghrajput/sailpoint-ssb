@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.workflow.IdentityLibrary" eventLevel="ERROR" lineNumber="1873" quickKey="0001243944" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>Unable to release lock; Decache and try again</EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect) : [sailpoint.object.IdentityEntitlement#memberOf]
+	at sailpoint.persistence.HibernatePersistenceManager.commitTransaction(HibernatePersistenceManager.java:586)
+	at sailpoint.persistence.ClassPersistenceManager.commitTransaction(ClassPersistenceManager.java:211)
+	at sailpoint.server.InternalContext.commitTransaction(InternalContext.java:608)
+	at sailpoint.api.ObjectUtil.unlockIdentity(ObjectUtil.java:2749)
+	at sailpoint.workflow.IdentityLibrary.refreshInternal(IdentityLibrary.java:1871)
+	at sailpoint.workflow.IdentityLibrary.refreshIdentity(IdentityLibrary.java:1919)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at sailpoint.server.ScriptletEvaluator.doCall(ScriptletEvaluator.java:134)
+	at sailpoint.server.ScriptletEvaluator.evalSource(ScriptletEvaluator.java:63)
+	at sailpoint.api.Workflower.evalSource(Workflower.java:6041)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5280)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.assimilate(Workflower.java:4317)
+	at sailpoint.api.Workflower.handleWorkItem(Workflower.java:7755)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2018)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2000)
+	at sailpoint.task.WorkflowerThread.process(WorkflowerThread.java:363)
+	at sailpoint.task.WorkflowerThread.run(WorkflowerThread.java:288)
+Caused by: javax.persistence.OptimisticLockException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect) : [sailpoint.object.IdentityEntitlement#memberOf]
+	at org.hibernate.internal.ExceptionConverterImpl.wrapStaleStateException(ExceptionConverterImpl.java:223)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:93)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+	at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1395)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:482)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3274)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2409)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at sailpoint.persistence.HibernatePersistenceManager.commitTransaction(HibernatePersistenceManager.java:571)
+	... 20 more
+Caused by: org.hibernate.StaleObjectStateException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect) : [sailpoint.object.IdentityEntitlement#memberOf]
+	at org.hibernate.persister.entity.AbstractEntityPersister.check(AbstractEntityPersister.java:2728)
+	at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3573)
+	at org.hibernate.persister.entity.AbstractEntityPersister.updateOrInsert(AbstractEntityPersister.java:3436)
+	at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3850)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:201)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1391)
+	... 29 more
+</Stacktrace>
+</SyslogEvent>

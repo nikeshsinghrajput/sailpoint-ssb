@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="firstName" nativeIdentity="739003" operation="Set" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished" value="John">
+  <Attributes>
+    <Map>
+      <entry key="expansionInfo" value="Financial Planning &amp; Forecasting"/>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="470752e9e2e848d4a5bb581e96f13761">
+            <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Create" targetIntegration="Financial Planning &amp; Forecasting">
+              <AttributeRequest name="firstName" op="Set" trackingId="470752e9e2e848d4a5bb581e96f13761" value="John"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

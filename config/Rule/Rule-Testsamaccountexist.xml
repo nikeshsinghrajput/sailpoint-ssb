@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestSamAccountExist" type="IdentityTrigger">
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NS_RuleLibrary_Active_Directory_Utils"/>
+  </ReferencedRules>
+  <Signature returnType="String">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  
+  System.out.println("HI");
+  boolean samaccountcheck = isExistingSAMAccountName("mehta.aarav","Active Directory");
+  
+  return "samaccount status"+samaccountcheck;
+ 
+  
+  </Source>
+</Rule>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.task.IdentityRefreshExecutor$RefreshWorker" eventLevel="ERROR" lineNumber="1655" quickKey="0000447815" server="NikeshRajput" thread="QuartzScheduler_Worker-5" username="Scheduler">
+  <EventMessage>RefreshWorker 1 exception: could not resolve property: employeeId of: sailpoint.object.Identity</EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: could not resolve property: employeeId of: sailpoint.object.Identity
+	at sailpoint.persistence.HibernatePersistenceManager.getUniqueObject(HibernatePersistenceManager.java:1413)
+	at sailpoint.persistence.ClassPersistenceManager.getUniqueObject(ClassPersistenceManager.java:286)
+	at sailpoint.server.InternalContext.getUniqueObject(InternalContext.java:696)
+	at sailpoint.api.Identitizer.correlateManager(Identitizer.java:4730)
+	at sailpoint.api.Identitizer.promoteManager(Identitizer.java:4541)
+	at sailpoint.api.Identitizer.promoteAttribute(Identitizer.java:4150)
+	at sailpoint.api.Identitizer.promoteAttributes(Identitizer.java:3781)
+	at sailpoint.api.Identitizer.refresh(Identitizer.java:2325)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorker.refreshAndProcess(IdentityRefreshExecutor.java:1616)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorkerPool.queue(IdentityRefreshExecutor.java:1934)
+	at sailpoint.task.IdentityRefreshExecutor.refresh(IdentityRefreshExecutor.java:1113)
+	at sailpoint.task.IdentityRefreshExecutor.execute(IdentityRefreshExecutor.java:856)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.hibernate.QueryException: could not resolve property: employeeId of: sailpoint.object.Identity
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:71)
+	at org.hibernate.persister.entity.AbstractEntityPersister.getPropertyType(AbstractEntityPersister.java:5114)
+	at sailpoint.persistence.HQLAliasContextImpl.getPropertyInfo(HQLAliasContextImpl.java:214)
+	at sailpoint.persistence.HQLAliasContextImpl.parseProperty(HQLAliasContextImpl.java:242)
+	at sailpoint.persistence.HQLAliasContextImpl.substituteAlias(HQLAliasContextImpl.java:117)
+	at sailpoint.persistence.HQLAliasContextStack.substituteAlias(HQLAliasContextStack.java:101)
+	at sailpoint.persistence.HQLFilterVisitor.visitComparison(HQLFilterVisitor.java:1211)
+	at sailpoint.persistence.HQLFilterVisitor.visitComparison(HQLFilterVisitor.java:1200)
+	at sailpoint.persistence.HQLFilterVisitor.visitEQ(HQLFilterVisitor.java:1252)
+	at sailpoint.object.Filter$LeafFilter.accept(Filter.java:1024)
+	at sailpoint.persistence.HQLFilterVisitor.visitComposite(HQLFilterVisitor.java:1960)
+	at sailpoint.persistence.HQLFilterVisitor.visitAnd(HQLFilterVisitor.java:2048)
+	at sailpoint.object.Filter$CompositeFilter.accept(Filter.java:1141)
+	at sailpoint.persistence.HibernatePersistenceManager.visitHQLFilter(HibernatePersistenceManager.java:2360)
+	at sailpoint.persistence.HibernatePersistenceManager.getUniqueObject(HibernatePersistenceManager.java:1397)
+	... 16 more
+</Stacktrace>
+</SyslogEvent>

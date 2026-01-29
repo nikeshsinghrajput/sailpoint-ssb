@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jane Smith" identity="739004" lastRefresh="1768468348357">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2419 Park St"/>
+      <entry key="ADDRESS_WORK" value="2419 Park St;Singapore, Central Region 88979;Singapore"/>
+      <entry key="BUILDING_CODE" value="SG_CEN_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3020"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="12-31-2024"/>
+      <entry key="COUNTRY_NAME" value="Singapore"/>
+      <entry key="DEPARTMENT" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-012"/>
+      <entry key="DIVISION" value="Singapore Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-SG-04"/>
+      <entry key="EMAIL" value="jane.smith@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739004"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739004"/>
+      <entry key="FIRST_NAME" value="Jane"/>
+      <entry key="HIREDATE" value="08-22-2019"/>
+      <entry key="JOBCODE" value="JT-012-04"/>
+      <entry key="JOBTITLE" value="Incident Response Lead"/>
+      <entry key="LAST_NAME" value="Smith"/>
+      <entry key="LOCATION" value="SG - Singapore"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="90232"/>
+      <entry key="REGION" value="Singapore"/>
+      <entry key="WORKER_NAME" value="Jane Smith"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_CorporateLearning_CustomizationRule" type="ResourceObjectCustomization">
+  <Description>This rule is configured on the application and is called after the connector has build a ResourceObject from the native application data.
+
+Initially designed for non-rule based connectors to add SPPrivileged flag to an object, but could be used to do any transformations.</Description>
+  <Signature returnType="ResourceObject"/>
+  <Source>
+ import sailpoint.object.ResourceObject;
+import sailpoint.tools.Util;
+  
+  if(object!=null){
+    
+    String status =object.getAttribute("status");
+    System.out.println("status;;;;;;;"+status);
+    if(Util.isNotNullOrEmpty(status) &amp;&amp; status.equalsIgnoreCase("Inactive")){
+    object.setAttribute("IIQDisabled",true);
+    }
+  }
+return object;
+  </Source>
+</Rule>

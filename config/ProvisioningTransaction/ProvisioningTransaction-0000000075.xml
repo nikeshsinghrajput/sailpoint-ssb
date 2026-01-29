@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction applicationName="Active Directory" identityDisplayName="Aadhya Tiwari" identityName="5ffa1eb7-8c61-45e2-8aae-d5cbb2080ffa" integration="Active Directory" name="0000000075" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000135"/>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="flow" value="AccountsRequest"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="operation" value="Create"/>
+                <entry key="provisioningTransactionId" value="c0a83c019a3b1251819a3f26aa530489"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="employeeNumber" op="Set" value="8512519"/>
+            <AttributeRequest name="givenName" op="Set" value="Aadhya"/>
+            <AttributeRequest name="sn" op="Set" value="Tiwari"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="tiwari.aadhya"/>
+            <AttributeRequest name="displayName" op="Set" value="Aadhya Tiwari"/>
+            <AttributeRequest name="title" op="Set" value="Software Engineer"/>
+            <AttributeRequest name="company" op="Add" value="TCS"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="134884224000000000"/>
+            <AttributeRequest name="department" op="Set" value="Admin"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="DPT332"/>
+            <AttributeRequest name="division" op="Add" value="Division-4"/>
+            <AttributeRequest name="streetAddress" op="Set" value="948 NH Road"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B513"/>
+            <AttributeRequest name="l" op="Set" value="Noida"/>
+            <AttributeRequest name="st" op="Set" value="East"/>
+            <AttributeRequest name="co" op="Add" value="India"/>
+            <AttributeRequest name="postalCode" op="Set" value="432450"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9145678901"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-120-27671234"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Software Engineer"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Native Identity should not be null or empty" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

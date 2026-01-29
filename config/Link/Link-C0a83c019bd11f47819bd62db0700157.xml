@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link disabled="true" displayName="garcia.william" entitlements="true" identity="CN=garcia.william,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1768910900525" manuallyCorrelated="true" uuid="{323015b6-7fb4-464a-b1d4-d9ebefc375c8}">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+      <LastValue>
+        <Set>
+          <String>CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+        </Set>
+      </LastValue>
+    </AttributeMetaData>
+  </AttributeMetaDatas>
+  <Attributes>
+    <Map>
+      <entry key="IIQDisabled">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="NetBIOSName"/>
+      <entry key="accountFlags">
+        <value>
+          <List>
+            <String>Normal User Account</String>
+            <String>User Account is Disabled</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="businessCategory" value="Shift-Based"/>
+      <entry key="cn" value="garcia.william"/>
+      <entry key="department" value="Workplace &amp; Facilities Management"/>
+      <entry key="departmentNumber" value="DEPT-030"/>
+      <entry key="description" value="Terminated"/>
+      <entry key="displayName" value="William Garcia"/>
+      <entry key="distinguishedName" value="CN=garcia.william,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="employeeNumber" value="739013"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="givenName" value="William"/>
+      <entry key="l" value="BR - Salvador"/>
+      <entry key="mail" value="garcia.william@nsiiq.com"/>
+      <entry key="memberOf">
+        <value>
+          <List>
+            <String>CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="mobile" value="+91-9012345678"/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\garcia.william"/>
+      <entry key="objectClass">
+        <value>
+          <List>
+            <String>top</String>
+            <String>person</String>
+            <String>organizationalPerson</String>
+            <String>user</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1505"/>
+      <entry key="objectType" value="user"/>
+      <entry key="objectguid" value="{323015b6-7fb4-464a-b1d4-d9ebefc375c8}"/>
+      <entry key="physicalDeliveryOfficeName" value="BR_SOP_BLDG_04"/>
+      <entry key="postalCode" value="10815"/>
+      <entry key="sAMAccountName" value="garcia.william"/>
+      <entry key="sn" value="Garcia"/>
+      <entry key="st" value="Salvador"/>
+      <entry key="streetAddress" value="4455 Cedar Ave"/>
+      <entry key="title" value="Facilities Coordinator"/>
+      <entry key="userAccountControl" value="514"/>
+    </Map>
+  </Attributes>
+</Link>

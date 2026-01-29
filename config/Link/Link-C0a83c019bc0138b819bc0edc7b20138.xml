@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Amy Bullock" identity="739084" lastRefresh="1768468367282">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="3905 Sunset St"/>
+      <entry key="ADDRESS_WORK" value="3905 Sunset St;Utrecht, North Holland 25296;Netherlands"/>
+      <entry key="BUILDING_CODE" value="NL_NOR_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3090"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-26-2026"/>
+      <entry key="COUNTRY_NAME" value="Netherlands"/>
+      <entry key="DEPARTMENT" value="Database Administration &amp; Data Engineering"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-018"/>
+      <entry key="DIVISION" value="Netherlands Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-NL-02"/>
+      <entry key="EMAIL" value="amy.bullock@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739084"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739084"/>
+      <entry key="FIRST_NAME" value="Amy"/>
+      <entry key="HIREDATE" value="08-05-2019"/>
+      <entry key="JOBCODE" value="JT-018-01"/>
+      <entry key="JOBTITLE" value="Database Administrator"/>
+      <entry key="LAST_NAME" value="Bullock"/>
+      <entry key="LOCATION" value="NL - Utrecht"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="15945"/>
+      <entry key="REGION" value="Utrecht"/>
+      <entry key="WORKER_NAME" value="Amy Bullock"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

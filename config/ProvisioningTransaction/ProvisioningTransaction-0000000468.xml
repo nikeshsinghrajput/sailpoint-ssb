@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="govinda jadav" applicationName="Hr-Workday" identityDisplayName="govinda jadav" identityName="9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b" integration="Hr-Workday" name="0000000468" nativeIdentity="8512518" operation="Disable" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000294"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed"/>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Hr-Workday" nativeIdentity="8512518" op="Disable">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019b731761819ba75f62541a5e"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="email" op="Add" value="pritamkusiyait77@gmail.com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while performing 'Disable' operation on identity '8512518':  Error: No configuration found for'Disable Account'. Please add at least one operation and try again." type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

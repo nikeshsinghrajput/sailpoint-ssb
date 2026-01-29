@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="SafNet AccountGroup AfterRule" type="WebServiceAfterOperationRule">
+  <Description>The Web Services connector will call this rule after performing ANY defined operation. This rule can be used to update the parsed resource object and/or add persistent values to the application's data.
+    (See information about what to return for more information)</Description>
+  <Signature returnType="Object"/>
+  <Source>
+
+
+  List groups=new ArrayList();
+  List data=new ArrayList();
+
+  for(Map entryMap : processedResponseObject){
+    String groupName= entryMap .get("id");
+    groups.add(groupName);
+  }
+
+  Map groupsMap=new HashMap();
+  groupsMap.put("groups",groups);
+  data.add(groupsMap);
+
+  Map newProcessedResponseObjectMap=new HashMap();
+  newProcessedResponseObjectMap.put("data",data);
+
+  return newProcessedResponseObjectMap;</Source>
+</Rule>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Meagan Jones" identity="739085" lastRefresh="1768468367353">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="5350 Cedar Lane"/>
+      <entry key="ADDRESS_WORK" value="5350 Cedar Lane;Daejeon, Gyeonggi Province 99059;South Korea"/>
+      <entry key="BUILDING_CODE" value="KR_GYE_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3022"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="05-19-2026"/>
+      <entry key="COUNTRY_NAME" value="South Korea"/>
+      <entry key="DEPARTMENT" value="Financial Risk Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-003"/>
+      <entry key="DIVISION" value="South Korea Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-KR-02"/>
+      <entry key="EMAIL" value="meagan.jones@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739085"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739085"/>
+      <entry key="FIRST_NAME" value="Meagan"/>
+      <entry key="HIREDATE" value="05-29-2019"/>
+      <entry key="JOBCODE" value="JT-003-04"/>
+      <entry key="JOBTITLE" value="Risk Reporting Manager"/>
+      <entry key="LAST_NAME" value="Jones"/>
+      <entry key="LOCATION" value="KR - Daejeon"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="48143"/>
+      <entry key="REGION" value="Daejeon"/>
+      <entry key="WORKER_NAME" value="Meagan Jones"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

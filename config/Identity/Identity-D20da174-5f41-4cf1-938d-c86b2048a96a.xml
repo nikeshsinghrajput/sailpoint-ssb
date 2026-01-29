@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469444102" name="d20da174-5f41-4cf1-938d-c86b2048a96a">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Egypt"/>
+      <entry key="department" value="Cloud Infrastructure Services"/>
+      <entry key="displayName" value="Lisa Martinez"/>
+      <entry key="division" value="Egypt Corporate and Investment Services"/>
+      <entry key="employeeId" value="739010"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="Lisa"/>
+      <entry key="hireDate" value="07-22-2021"/>
+      <entry key="lastname" value="Martinez"/>
+      <entry key="location" value="EG - Cairo"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="90232"/>
+      <entry key="terminationDate" value="10-15-2024"/>
+      <entry key="title" value="Infrastructure Architect"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469444046" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Lisa Martinez" identity="739010" lastRefresh="1768468348844">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="1260 Lake Ave"/>
+          <entry key="ADDRESS_WORK" value="1260 Lake Ave;Cairo, Cairo Governorate 35766;Egypt"/>
+          <entry key="BUILDING_CODE" value="EG_CAI_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3062"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="10-15-2024"/>
+          <entry key="COUNTRY_NAME" value="Egypt"/>
+          <entry key="DEPARTMENT" value="Cloud Infrastructure Services"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-013"/>
+          <entry key="DIVISION" value="Egypt Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-EG-02"/>
+          <entry key="EMAIL" value="lisa.martinez@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739010"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739010"/>
+          <entry key="FIRST_NAME" value="Lisa"/>
+          <entry key="HIREDATE" value="07-22-2021"/>
+          <entry key="JOBCODE" value="JT-013-03"/>
+          <entry key="JOBTITLE" value="Infrastructure Architect"/>
+          <entry key="LAST_NAME" value="Martinez"/>
+          <entry key="LOCATION" value="EG - Cairo"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="90232"/>
+          <entry key="REGION" value="Cairo"/>
+          <entry key="WORKER_NAME" value="Lisa Martinez"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Contract"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

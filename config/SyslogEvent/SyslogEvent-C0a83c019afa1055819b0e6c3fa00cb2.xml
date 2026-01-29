@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.api.TaskManager" eventLevel="ERROR" lineNumber="1007" quickKey="0000448100" server="NikeshRajput" thread="QuartzScheduler_Worker-3" username="Scheduler">
+  <EventMessage>Exception: [sailpoint.tools.GeneralException: BeanShell script error: bsh.ParseException: Parse error at line 165, column 19.  Encountered: catch BSF info: NS_Rule_Automated_MailBoxProvisioning at line: 0 column: columnNo]</EventMessage>
+  <Stacktrace>java.lang.Exception: sailpoint.tools.GeneralException: BeanShell script error: bsh.ParseException: Parse error at line 165, column 19.  Encountered: catch BSF info: NS_Rule_Automated_MailBoxProvisioning at line: 0 column: columnNo
+	at sailpoint.task.RuleExecutor.execute(RuleExecutor.java:133)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: sailpoint.tools.GeneralException: BeanShell script error: bsh.ParseException: Parse error at line 165, column 19.  Encountered: catch BSF info: NS_Rule_Automated_MailBoxProvisioning at line: 0 column: columnNo
+	at sailpoint.task.RuleExecutor.runRule(RuleExecutor.java:187)
+	at sailpoint.task.RuleExecutor.execute(RuleExecutor.java:121)
+	... 5 more
+Caused by: sailpoint.tools.GeneralException: BeanShell script error: bsh.ParseException: Parse error at line 165, column 19.  Encountered: catch BSF info: NS_Rule_Automated_MailBoxProvisioning at line: 0 column: columnNo
+	at sailpoint.server.BSFRuleRunner.runRule(BSFRuleRunner.java:236)
+	at sailpoint.server.InternalContext.runRule(InternalContext.java:1331)
+	at sailpoint.server.InternalContext.runRule(InternalContext.java:1303)
+	at sailpoint.task.RuleExecutor.runRule(RuleExecutor.java:181)
+	... 6 more
+Caused by: org.apache.bsf.BSFException: BeanShell script error: bsh.ParseException: Parse error at line 165, column 19.  Encountered: catch BSF info: NS_Rule_Automated_MailBoxProvisioning at line: 0 column: columnNo
+	at bsh.util.BeanShellBSFEngine.eval(BeanShellBSFEngine.java:202)
+	at org.apache.bsf.BSFManager$5.run(BSFManager.java:445)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:551)
+	at org.apache.bsf.BSFManager.eval(BSFManager.java:442)
+	at sailpoint.server.BSFRuleRunner.eval(BSFRuleRunner.java:264)
+	at sailpoint.server.BSFRuleRunner.runRule(BSFRuleRunner.java:233)
+	... 9 more
+</Stacktrace>
+</SyslogEvent>

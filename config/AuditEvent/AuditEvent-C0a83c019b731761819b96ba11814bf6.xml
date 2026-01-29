@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="f781f359-be5e-4d5b-9638-8adf46be0aaa" action="AccessRequestStart" application="IIQ" attributeName="assignedRoles" attributeValue="External VDI Access" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="spadmin" target="f781f359-be5e-4d5b-9638-8adf46be0aaa">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019ae91354819ae996cb4c0038"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="RoleAdd"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="doe1.john@nstechiiq.com" entitlements="true" identity="739003">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="Access">
+        <value>
+          <List>
+            <String>Learner</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="country" value="Singapore"/>
+      <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="email" value="doe1.john@nstechiiq.com"/>
+      <entry key="employeeId" value="739003"/>
+      <entry key="firstName" value="John"/>
+      <entry key="hireDate" value="01-21-2026"/>
+      <entry key="isInstructor" value="No"/>
+      <entry key="jobTitle" value="Threat Intelligence Specialist"/>
+      <entry key="lastName" value="Doe"/>
+      <entry key="learningGroup" value="Leadership Development"/>
+      <entry key="managerDisplayName" value="Nikesh Singh"/>
+      <entry key="managerId" value="735000"/>
+      <entry key="roleLevel" value="Advanced"/>
+      <entry key="status" value="ACTIVE"/>
+      <entry key="terminationDate" value="12-31-2028"/>
+      <entry key="workCountry"/>
+      <entry key="workState" value="Singapore"/>
+    </Map>
+  </Attributes>
+</Link>

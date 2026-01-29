@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="tiwari.saanvi@nksiiq.com" applicationName="Sales Analytics" identityDisplayName="Saanvi Tiwari" identityName="4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2" integration="Sales Analytics" name="0000000087" nativeIdentity="8512501" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512501' for key 'salesemployee.PRIMARY'" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Sales Analytics" assignmentIds="2f381c25eda946b9802fbaa484733fbe" nativeIdentity="8512501" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a671ea5819a6dcde7d806e2"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="firstName" op="Set" value="Saanvi"/>
+            <AttributeRequest name="lastName" op="Set" value="Tiwari"/>
+            <AttributeRequest name="status" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Sales"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="01-01-2025"/>
+            <AttributeRequest name="salesQuota" op="Set" value="500000"/>
+            <AttributeRequest name="achievedSales" op="Set" value="0"/>
+            <AttributeRequest name="terminationDate" op="Set" value="01-04-2027"/>
+            <AttributeRequest name="workState" op="Set" value="Noida"/>
+            <AttributeRequest name="email" op="Set" value="tiwari.saanvi@nksiiq.com"/>
+            <AttributeRequest name="region" op="Set" value="A"/>
+            <AttributeRequest name="territory" op="Set" value="A"/>
+            <AttributeRequest name="commissionRate" op="Set" value="5%"/>
+            <AttributeRequest name="annualHours" op="Set" value="720"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Software Engineer"/>
+            <AttributeRequest name="country" op="Set" value="India"/>
+            <AttributeRequest name="isManager" op="Set" value="No"/>
+            <AttributeRequest name="businessUnit" op="Set" value="A"/>
+            <AttributeRequest name="managerId" op="Set" value="6b04258c-218e-4ab6-b992-bb4702a3daa5"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512501' for key 'salesemployee.PRIMARY'" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

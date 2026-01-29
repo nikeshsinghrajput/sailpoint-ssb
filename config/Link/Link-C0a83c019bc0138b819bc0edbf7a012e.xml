@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Rachel Buck" identity="739079" lastRefresh="1768468365179">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9338 Lake Rd"/>
+      <entry key="ADDRESS_WORK" value="9338 Lake Rd;Nakuru, Nairobi County 21640;Kenya"/>
+      <entry key="BUILDING_CODE" value="KE_NAI_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3067"/>
+      <entry key="CLASS" value="Field"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="02-26-2025"/>
+      <entry key="COUNTRY_NAME" value="Kenya"/>
+      <entry key="DEPARTMENT" value="Financial Accounting &amp; Reporting"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-001"/>
+      <entry key="DIVISION" value="Kenya Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-KE-03"/>
+      <entry key="EMAIL" value="rachel.buck@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739079"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739079"/>
+      <entry key="FIRST_NAME" value="Rachel"/>
+      <entry key="HIREDATE" value="05-23-2022"/>
+      <entry key="JOBCODE" value="JT-001-04"/>
+      <entry key="JOBTITLE" value="General Ledger Accountant"/>
+      <entry key="LAST_NAME" value="Buck"/>
+      <entry key="LOCATION" value="KE - Nakuru"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="82462"/>
+      <entry key="REGION" value="Nakuru"/>
+      <entry key="WORKER_NAME" value="Rachel Buck"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

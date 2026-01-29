@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="739003" entitlements="true" identity="739003" lastRefresh="1769027695463" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="annualHours" value="1040"/>
+      <entry key="countryCode" value="90232"/>
+      <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="email" value="doe1.john@nstechiiq.com"/>
+      <entry key="empStatus" value="Active"/>
+      <entry key="employee" value="John Doe"/>
+      <entry key="employeeId" value="739003"/>
+      <entry key="firstName" value="John"/>
+      <entry key="hireDate" value="01-21-2026"/>
+      <entry key="isManager" value="Yes"/>
+      <entry key="jobTitle" value="Threat Intelligence Specialist"/>
+      <entry key="lastName" value="Doe"/>
+      <entry key="manager" value="Nikesh Singh"/>
+      <entry key="roles">
+        <value>
+          <List>
+            <String>Audit Viewer</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="salaryClass" value="C"/>
+      <entry key="superviserId" value="735000"/>
+      <entry key="terminationDate" value="12-31-2028"/>
+      <entry key="userLevel" value="E"/>
+      <entry key="workCountry" value="Singapore"/>
+      <entry key="workState" value="Singapore"/>
+    </Map>
+  </Attributes>
+</Link>

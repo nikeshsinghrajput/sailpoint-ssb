@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Scott Mcdonald" identity="739032" lastRefresh="1768468355445">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9703 River St"/>
+      <entry key="ADDRESS_WORK" value="9703 River St;Hamburg, Bavaria 88770;Germany"/>
+      <entry key="BUILDING_CODE" value="DE_BAV_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3079"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="12-28-2024"/>
+      <entry key="COUNTRY_NAME" value="Germany"/>
+      <entry key="DEPARTMENT" value="Financial Accounting &amp; Reporting"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-001"/>
+      <entry key="DIVISION" value="Germany Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-DE-03"/>
+      <entry key="EMAIL" value="scott.mcdonald@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739032"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739032"/>
+      <entry key="FIRST_NAME" value="Scott"/>
+      <entry key="HIREDATE" value="07-15-2017"/>
+      <entry key="JOBCODE" value="JT-001-01"/>
+      <entry key="JOBTITLE" value="Senior Financial Analyst"/>
+      <entry key="LAST_NAME" value="Mcdonald"/>
+      <entry key="LOCATION" value="DE - Hamburg"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="57980"/>
+      <entry key="REGION" value="Hamburg"/>
+      <entry key="WORKER_NAME" value="Scott Mcdonald"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

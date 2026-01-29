@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768832463851" completionStatus="Error" host="NikeshRajput" launched="1768832397580" name="Native Identity Change Propagation Request for Account - 2026-01-19 19:49:47.939" partitioned="true" runLength="66" type="NativeIdentityChangePropagation">
+  <Attributes>
+    <Map>
+      <entry key="applicationsUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="correlationConfigsUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="dynamicScopesUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="formsUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="groupDefinitionsUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="identityTriggersUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="passwordPolicyHoldersUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="restartable" value="true"/>
+      <entry key="taskResultPartitions">
+        <value>
+          <List>
+            <TaskResult completed="1768832463851" completionStatus="Error" host="NikeshRajput" launched="1768832397554" name="Native Identity Change Propagation Request for Account">
+              <Messages>
+                <Message key="msg_plain_text" type="Error">
+                  <Parameters>
+                    <String>Timeout waiting for lock on object: sailpoint.object.Identity:9bcaa225-f0c4-405a-8895-2159b92fb553 from Leaver final Phase: William Garcia</String>
+                  </Parameters>
+                </Message>
+              </Messages>
+              <Stack>sailpoint.request.RequestPermanentException: Timeout waiting for lock on object: sailpoint.object.Identity:9bcaa225-f0c4-405a-8895-2159b92fb553 from Leaver final Phase: William Garcia
+	at sailpoint.request.NativeIdentityChangePropagationRequestExecutor.execute(NativeIdentityChangePropagationRequestExecutor.java:190)
+	at sailpoint.request.RequestHandler.run(RequestHandler.java:163)
+Caused by: sailpoint.api.ObjectAlreadyLockedException: Timeout waiting for lock on object: sailpoint.object.Identity:9bcaa225-f0c4-405a-8895-2159b92fb553 from Leaver final Phase: William Garcia
+	at sailpoint.api.ObjectUtil.lockObject(ObjectUtil.java:2355)
+	at sailpoint.api.ObjectUtil.lockObject(ObjectUtil.java:2397)
+	at sailpoint.api.ObjectUtil.lockIdentityById(ObjectUtil.java:2603)
+	at sailpoint.api.ObjectUtil.lockIdentityById(ObjectUtil.java:2625)
+	at sailpoint.api.nativeidentitychange.AccountNativeIdentityChangeIdentityPropagator.processEvents(AccountNativeIdentityChangeIdentityPropagator.java:66)
+	at sailpoint.request.NativeIdentityChangePropagationRequestExecutor.execute(NativeIdentityChangePropagationRequestExecutor.java:134)
+	... 1 more
+</Stack>
+            </TaskResult>
+          </List>
+        </value>
+      </entry>
+      <entry key="totalPoliciesUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="totalRolesFound">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="totalRolesUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="totalRolesWithUpdatedAssignmentRule">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="totalRolesWithUpdatedProfiles">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="totalRolesWithUpdatedProvisioningPolicies">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="totalRulesUpdated">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Native Identity Change Propagation"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.ADLDAPConnector" eventLevel="ERROR" lineNumber="5622" quickKey="0001174574" server="NikeshRajput" thread="QuartzScheduler_Worker-1" username="Scheduler">
+  <EventMessage>280600786 Exception occurred in handling Object Request </EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: Native Identity should not be null or empty
+	at sailpoint.connector.ADLDAPConnector.validate(ADLDAPConnector.java:6186)
+	at sailpoint.connector.ADLDAPConnector.provision(ADLDAPConnector.java:5570)
+	at sailpoint.connector.ConnectorProxy.provision(ConnectorProxy.java:1222)
+	at sailpoint.integration.ConnectorExecutor.provision(ConnectorExecutor.java:160)
+	at sailpoint.provisioning.PlanEvaluator.provision(PlanEvaluator.java:1825)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:1145)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:849)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:741)
+	at sailpoint.api.Provisioner.execute(Provisioner.java:1732)
+	at sailpoint.api.Identitizer.finishRefresh(Identitizer.java:2915)
+	at sailpoint.api.Identitizer.refresh(Identitizer.java:2491)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorker.refreshAndProcess(IdentityRefreshExecutor.java:1616)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorkerPool.queue(IdentityRefreshExecutor.java:1934)
+	at sailpoint.task.IdentityRefreshExecutor.refresh(IdentityRefreshExecutor.java:1113)
+	at sailpoint.task.IdentityRefreshExecutor.execute(IdentityRefreshExecutor.java:856)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+</Stacktrace>
+</SyslogEvent>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Policy PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Policy certificationActions="Remediated,Mitigated,Delegated" configPage="entitlementPolicy.xhtml" executor="sailpoint.policy.EntitlementSODPolicyExecutor" name="sales anylatics denger access" state="Active" type="EntitlementSOD" typeKey="policy_type_entitlement_sod" violationOwnerType="None">
+  <PolicyAlert escalationStyle="none" noWorkItem="true">
+    <NotificationEmailTemplateRef>
+      <Reference class="sailpoint.object.EmailTemplate" name="Policy Violation"/>
+    </NotificationEmailTemplateRef>
+  </PolicyAlert>
+  <Attributes>
+    <Map>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019b2d193d819b45769cb532f4"/>
+    </Map>
+  </Attributes>
+  <GenericConstraints>
+    <GenericConstraint name="sales analytics ent voilation" violationOwnerType="None">
+      <Attributes>
+        <Map>
+          <entry key="taskResultId" value="c0a83c019b2d193d819b4576da7632f7"/>
+        </Map>
+      </Attributes>
+      <IdentitySelector>
+        <MatchExpression>
+          <MatchTerm name="roles" type="Entitlement" value="Sales Director">
+            <ApplicationRef>
+              <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+            </ApplicationRef>
+          </MatchTerm>
+          <MatchTerm name="Access" type="Entitlement" value="Learner">
+            <ApplicationRef>
+              <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+            </ApplicationRef>
+          </MatchTerm>
+        </MatchExpression>
+      </IdentitySelector>
+      <IdentitySelector>
+        <MatchExpression>
+          <MatchTerm name="roles" type="Entitlement" value="Sales Executive">
+            <ApplicationRef>
+              <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+            </ApplicationRef>
+          </MatchTerm>
+        </MatchExpression>
+      </IdentitySelector>
+    </GenericConstraint>
+  </GenericConstraints>
+</Policy>

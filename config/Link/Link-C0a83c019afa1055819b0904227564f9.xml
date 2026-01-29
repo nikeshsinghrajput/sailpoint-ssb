@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Aditya Sharma" identity="8512503" lastRefresh="1765382824565">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="535 MG Road"/>
+      <entry key="ADDRESS_WORK" value="Remote"/>
+      <entry key="BUILDING_CODE" value="B415"/>
+      <entry key="BUSINESS_UNIT_ID" value="BU14"/>
+      <entry key="CLASS" value="Full_time"/>
+      <entry key="COMPANY_NAME" value="NsTech"/>
+      <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="Financial Risk Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-003"/>
+      <entry key="DIVISION" value="Division-1"/>
+      <entry key="DIVISION_ID" value="DIV28"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512503"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="F69472"/>
+      <entry key="FIRST_NAME" value="Aditya"/>
+      <entry key="HIREDATE" value="01-03-2025"/>
+      <entry key="JOBCODE" value="JC428"/>
+      <entry key="JOBTITLE" value="Credit Risk Analyst"/>
+      <entry key="LAST_NAME" value="Sharma"/>
+      <entry key="LOCATION" value="Delhi"/>
+      <entry key="MANAGER_ID" value="8512500"/>
+      <entry key="POSTAL_CODE" value="556368"/>
+      <entry key="REGION" value="North"/>
+      <entry key="WORKER_NAME" value="Aditya Sharma"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,518 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application authoritative="true" connector="sailpoint.connector.webservices.WebServicesConnector" featuresString="PROVISIONING, ENABLE, PASSWORD, AUTHENTICATE, UNLOCK" name="Hr-Workday" profileClass="" type="Web Services">
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig" name="NS_CorrelationConfig_HrWorkday"/>
+  </AccountCorrelationConfig>
+  <Attributes>
+    <Map>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1768468377378</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1768468346881</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="aggregationPartitioned">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="aggregationType" value="account"/>
+      <entry key="authenticationMethod" value="BasicLogin"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="clientCertAuthEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="compositeDefinition"/>
+      <entry key="connectionParameters">
+        <value>
+          <List>
+            <Map>
+              <entry key="afterRule"/>
+              <entry key="beforeRule"/>
+              <entry key="body">
+                <value>
+                  <Map>
+                    <entry key="bodyFormData"/>
+                    <entry key="bodyFormat" value="raw"/>
+                    <entry key="jsonBody"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="contextUrl" value="/workday?pageNumber=1&amp;pageSize=1"/>
+              <entry key="curlCommand"/>
+              <entry key="curlEnabled">
+                <value>
+                  <Boolean/>
+                </value>
+              </entry>
+              <entry key="customAuthUrl"/>
+              <entry key="header"/>
+              <entry key="httpMethodType" value="GET"/>
+              <entry key="operationType" value="Test Connection"/>
+              <entry key="paginationSteps"/>
+              <entry key="pagingInitialOffset">
+                <value>
+                  <Integer>0</Integer>
+                </value>
+              </entry>
+              <entry key="pagingSize">
+                <value>
+                  <Integer>50</Integer>
+                </value>
+              </entry>
+              <entry key="parentEndpointName"/>
+              <entry key="resMappingObj"/>
+              <entry key="rootPath"/>
+              <entry key="sequenceNumberForEndpoint" value="1"/>
+              <entry key="uniqueNameForEndPoint"/>
+              <entry key="xpathNamespaces"/>
+            </Map>
+            <Map>
+              <entry key="afterRule"/>
+              <entry key="beforeRule"/>
+              <entry key="body">
+                <value>
+                  <Map>
+                    <entry key="bodyFormData"/>
+                    <entry key="bodyFormat" value="raw"/>
+                    <entry key="jsonBody"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="contextUrl" value="/workday"/>
+              <entry key="curlCommand"/>
+              <entry key="curlEnabled">
+                <value>
+                  <Boolean/>
+                </value>
+              </entry>
+              <entry key="customAuthUrl"/>
+              <entry key="header"/>
+              <entry key="httpMethodType" value="GET"/>
+              <entry key="operationType" value="Account Aggregation"/>
+              <entry key="paginationSteps" value="# Increment page number&#13;&#10;$next_page$ = $response.pageNumber$ + 1&#13;&#10;&#13;&#10;# Stop when last page reached&#13;&#10;TERMINATE_IF $next_page$ &gt; $response.totalPages$&#13;&#10;&#13;&#10;# Use fixed page size (10)&#13;&#10;$page_size$ = 10&#13;&#10;&#13;&#10;# Build the full URL (don't override contextUrl)&#13;&#10;$endpoint.fullUrl$ = $application.baseUrl$ + &quot;/workday?pageNumber=&quot; + $next_page$ + &quot;&amp;pageSize=&quot; + $page_size$&#13;&#10;"/>
+              <entry key="pagingInitialOffset">
+                <value>
+                  <Integer>0</Integer>
+                </value>
+              </entry>
+              <entry key="pagingSize">
+                <value>
+                  <Integer>10</Integer>
+                </value>
+              </entry>
+              <entry key="parentEndpointName"/>
+              <entry key="resMappingObj">
+                <value>
+                  <Map>
+                    <entry key="ADDRESS_LINE_1" value="addressLine1"/>
+                    <entry key="ADDRESS_WORK" value="addressWork"/>
+                    <entry key="BUILDING_CODE" value="buildingCode"/>
+                    <entry key="BUSINESS_UNIT_ID" value="businessUnitId"/>
+                    <entry key="CLASS" value="employeeClass"/>
+                    <entry key="COMPANY_NAME" value="companyName"/>
+                    <entry key="CONTRACT_END_DATE" value="contractEndDate"/>
+                    <entry key="COUNTRY_NAME" value="countryName"/>
+                    <entry key="DEPARTMENT" value="department"/>
+                    <entry key="DEPARTMENT_ID" value="departmentId"/>
+                    <entry key="DIVISION" value="division"/>
+                    <entry key="DIVISION_ID" value="divisionId"/>
+                    <entry key="EMAIL" value="email"/>
+                    <entry key="EMPLOYEE_NUMBER" value="employeeNumber"/>
+                    <entry key="EMPLOYEE_TYPE" value="employeeType"/>
+                    <entry key="FILENUMBER" value="fileNumber"/>
+                    <entry key="FIRST_NAME" value="firstName"/>
+                    <entry key="HIREDATE" value="hireDate"/>
+                    <entry key="JOBCODE" value="jobCode"/>
+                    <entry key="JOBTITLE" value="jobTitle"/>
+                    <entry key="LAST_NAME" value="lastName"/>
+                    <entry key="LOCATION" value="location"/>
+                    <entry key="MANAGER_ID" value="managerId"/>
+                    <entry key="POSTAL_CODE" value="postalCode"/>
+                    <entry key="REGION" value="region"/>
+                    <entry key="WORKER_NAME" value="workerName"/>
+                    <entry key="WORKER_STATUS" value="workerStatus"/>
+                    <entry key="WORKFORCE_TYPE" value="workforceType"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="responseCode">
+                <value>
+                  <List>
+                    <String>2**</String>
+                  </List>
+                </value>
+              </entry>
+              <entry key="rootPath" value="$.employees[*]"/>
+              <entry key="sequenceNumberForEndpoint" value="2"/>
+              <entry key="uniqueNameForEndPoint"/>
+              <entry key="xpathNamespaces"/>
+            </Map>
+            <Map>
+              <entry key="afterRule"/>
+              <entry key="beforeRule"/>
+              <entry key="body">
+                <value>
+                  <Map>
+                    <entry key="bodyFormData"/>
+                    <entry key="bodyFormat" value="raw"/>
+                    <entry key="jsonBody" value="{&#13;&#10;  &quot;employeeNumber&quot;: &quot;${identity.employeeNumber}&quot;,&#13;&#10;  &quot;firstName&quot;: &quot;${identity.firstname}&quot;,&#13;&#10;  &quot;lastName&quot;: &quot;${identity.lastname}&quot;,&#13;&#10;  &quot;workerName&quot;: &quot;${identity.displayName}&quot;,&#13;&#10;  &quot;email&quot;: &quot;${identity.email}&quot;,&#13;&#10;  &quot;addressLine1&quot;: &quot;${identity.addressLine1}&quot;,&#13;&#10;  &quot;addressWork&quot;: &quot;${identity.addressWork}&quot;,&#13;&#10;  &quot;buildingCode&quot;: &quot;${identity.buildingCode}&quot;,&#13;&#10;  &quot;businessUnitId&quot;: &quot;${identity.businessUnitId}&quot;,&#13;&#10;  &quot;region&quot;: &quot;${identity.region}&quot;,&#13;&#10;  &quot;employeeClass&quot;: &quot;${identity.employeeClass}&quot;,&#13;&#10;  &quot;companyName&quot;: &quot;${identity.companyName}&quot;,&#13;&#10;  &quot;contractEndDate&quot;: &quot;${identity.contractEndDate}&quot;,&#13;&#10;  &quot;countryName&quot;: &quot;${identity.countryName}&quot;,&#13;&#10;  &quot;department&quot;: &quot;${identity.department}&quot;,&#13;&#10;  &quot;departmentId&quot;: &quot;${identity.departmentId}&quot;,&#13;&#10;  &quot;division&quot;: &quot;${identity.division}&quot;,&#13;&#10;  &quot;divisionId&quot;: &quot;${identity.divisionId}&quot;,&#13;&#10;  &quot;fileNumber&quot;: &quot;${identity.fileNumber}&quot;,&#13;&#10;  &quot;hireDate&quot;: &quot;${identity.hireDate}&quot;,&#13;&#10;  &quot;workerStatus&quot;: &quot;${identity.workerStatus}&quot;,&#13;&#10;  &quot;jobCode&quot;: &quot;${identity.jobCode}&quot;,&#13;&#10;  &quot;jobTitle&quot;: &quot;${identity.jobTitle}&quot;,&#13;&#10;  &quot;location&quot;: &quot;${identity.location}&quot;,&#13;&#10;  &quot;managerId&quot;: &quot;${identity.manager}&quot;,&#13;&#10;  &quot;postalCode&quot;: &quot;${identity.postalCode}&quot;,&#13;&#10;  &quot;workforceType&quot;: &quot;${identity.workforceType}&quot;,&#13;&#10;  &quot;employeeType&quot;: &quot;${identity.employeeType}&quot;&#13;&#10;}&#13;&#10;"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="contextUrl" value="/workday"/>
+              <entry key="curlCommand"/>
+              <entry key="curlEnabled">
+                <value>
+                  <Boolean/>
+                </value>
+              </entry>
+              <entry key="customAuthUrl"/>
+              <entry key="header"/>
+              <entry key="httpMethodType" value="POST"/>
+              <entry key="operationType" value="Create Account"/>
+              <entry key="paginationSteps"/>
+              <entry key="pagingInitialOffset">
+                <value>
+                  <Integer>0</Integer>
+                </value>
+              </entry>
+              <entry key="pagingSize">
+                <value>
+                  <Integer>50</Integer>
+                </value>
+              </entry>
+              <entry key="parentEndpointName"/>
+              <entry key="resMappingObj"/>
+              <entry key="rootPath"/>
+              <entry key="sequenceNumberForEndpoint" value="3"/>
+              <entry key="uniqueNameForEndPoint"/>
+              <entry key="xpathNamespaces"/>
+            </Map>
+            <Map>
+              <entry key="afterRule"/>
+              <entry key="beforeRule"/>
+              <entry key="body">
+                <value>
+                  <Map>
+                    <entry key="bodyFormData"/>
+                    <entry key="bodyFormat" value="raw"/>
+                    <entry key="jsonBody" value="{&#13;&#10;  &quot;email&quot; : &quot;$plan.EMAIL$&quot;&#13;&#10;}"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="contextUrl" value="/workday/$plan.nativeIdentity$"/>
+              <entry key="curlCommand"/>
+              <entry key="curlEnabled">
+                <value>
+                  <Boolean/>
+                </value>
+              </entry>
+              <entry key="customAuthUrl"/>
+              <entry key="header"/>
+              <entry key="httpMethodType" value="PUT"/>
+              <entry key="operationType" value="Update Account"/>
+              <entry key="paginationSteps"/>
+              <entry key="pagingInitialOffset">
+                <value>
+                  <Integer>0</Integer>
+                </value>
+              </entry>
+              <entry key="pagingSize">
+                <value>
+                  <Integer>50</Integer>
+                </value>
+              </entry>
+              <entry key="parentEndpointName"/>
+              <entry key="resMappingObj"/>
+              <entry key="responseCode">
+                <value>
+                  <List>
+                    <String>2**</String>
+                  </List>
+                </value>
+              </entry>
+              <entry key="rootPath"/>
+              <entry key="sequenceNumberForEndpoint" value="4"/>
+              <entry key="uniqueNameForEndPoint"/>
+              <entry key="xpathNamespaces"/>
+            </Map>
+            <Map>
+              <entry key="afterRule"/>
+              <entry key="beforeRule"/>
+              <entry key="body">
+                <value>
+                  <Map>
+                    <entry key="bodyFormData"/>
+                    <entry key="bodyFormat" value="raw"/>
+                    <entry key="jsonBody"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="contextUrl" value="/workday/$plan.nativeIdentity$"/>
+              <entry key="curlCommand"/>
+              <entry key="curlEnabled">
+                <value>
+                  <Boolean/>
+                </value>
+              </entry>
+              <entry key="customAuthUrl"/>
+              <entry key="header"/>
+              <entry key="httpMethodType" value="GET"/>
+              <entry key="operationType" value="Get Object"/>
+              <entry key="paginationSteps"/>
+              <entry key="pagingInitialOffset">
+                <value>
+                  <Integer>0</Integer>
+                </value>
+              </entry>
+              <entry key="pagingSize">
+                <value>
+                  <Integer>50</Integer>
+                </value>
+              </entry>
+              <entry key="parentEndpointName"/>
+              <entry key="resMappingObj">
+                <value>
+                  <Map>
+                    <entry key="ADDRESS_LINE_1" value="addressLine1"/>
+                    <entry key="ADDRESS_WORK" value="addressWork"/>
+                    <entry key="BUILDING_CODE" value="buildingCode"/>
+                    <entry key="BUSINESS_UNIT_ID" value="businessUnitId"/>
+                    <entry key="CLASS" value="employeeClass"/>
+                    <entry key="COMPANY_NAME" value="companyName"/>
+                    <entry key="CONTRACT_END_DATE" value="contractEndDate"/>
+                    <entry key="COUNTRY_NAME" value="countryName"/>
+                    <entry key="DEPARTMENT" value="department"/>
+                    <entry key="DEPARTMENT_ID" value="departmentId"/>
+                    <entry key="DIVISION" value="division"/>
+                    <entry key="DIVISION_ID" value="divisionId"/>
+                    <entry key="EMAIL" value="email"/>
+                    <entry key="EMPLOYEE_NUMBER" value="employeeNumber"/>
+                    <entry key="EMPLOYEE_TYPE" value="employeeType"/>
+                    <entry key="FILENUMBER" value="fileNumber"/>
+                    <entry key="FIRST_NAME" value="firstName"/>
+                    <entry key="HIREDATE" value="hireDate"/>
+                    <entry key="JOBCODE" value="jobCode"/>
+                    <entry key="JOBTITLE" value="jobTitle"/>
+                    <entry key="LAST_NAME" value="lastName"/>
+                    <entry key="LOCATION" value="location"/>
+                    <entry key="MANAGER_ID" value="managerId"/>
+                    <entry key="POSTAL_CODE" value="postalCode"/>
+                    <entry key="REGION" value="region"/>
+                    <entry key="WORKER_NAME" value="workerName"/>
+                    <entry key="WORKER_STATUS" value="workerStatus"/>
+                    <entry key="WORKFORCE_TYPE" value="workforceType"/>
+                  </Map>
+                </value>
+              </entry>
+              <entry key="responseCode">
+                <value>
+                  <List>
+                    <String>2**</String>
+                  </List>
+                </value>
+              </entry>
+              <entry key="rootPath"/>
+              <entry key="sequenceNumberForEndpoint" value="5"/>
+              <entry key="uniqueNameForEndPoint"/>
+              <entry key="xpathNamespaces"/>
+            </Map>
+          </List>
+        </value>
+      </entry>
+      <entry key="createAccountWithEntReq">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="enableHasMore" value="true"/>
+      <entry key="enableStatus"/>
+      <entry key="encrypted" value="accesstoken,refresh_token,oauth_token_info,client_secret,private_key,private_key_password,clientCertificate,clientKeySpec,resourceOwnerPassword,custom_auth_token_info"/>
+      <entry key="fixedPlanMultivaluedAttribute" value="true"/>
+      <entry key="genericWebServiceBaseUrl" value="http://localhost:9091"/>
+      <entry key="httpCookieSpecsStandard" value="true"/>
+      <entry key="isGetObjectRequiredForPTA">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="lastAggregationDate_account" value="2026-01-15T09:12:26Z"/>
+      <entry key="managerCorrelationFilter">
+        <value>
+          <Filter operation="EQ" property="employeeId" value="MANAGER_ID"/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="oAuthJwtHeader">
+        <value>
+          <Map>
+            <entry key="alg" value="RS256"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="oAuthJwtPayload">
+        <value>
+          <Map>
+            <entry key="aud"/>
+            <entry key="exp" value="15f"/>
+            <entry key="iss"/>
+            <entry key="sub"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="password" value="2:ACP:tl5P93hujfbcvP/7Kv3fdliyvZg35MdNCKcUea/HLgs="/>
+      <entry key="private_key_to_update"/>
+      <entry key="saml_assertion_url"/>
+      <entry key="saml_request_body"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="Web Services"/>
+      <entry key="throwProvAfterRuleException">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="throwProvBeforeRuleException">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="timeoutInSeconds"/>
+      <entry key="username" value="admin"/>
+      <entry key="version" value="v2"/>
+    </Map>
+  </Attributes>
+  <CreationRule>
+    <Reference class="sailpoint.object.Rule" name="NS_Rule_Hr_WorkDay_CreationRule"/>
+  </CreationRule>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="NS_Form_Hr-Workday_Update_Form" objectType="account" type="Update">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="NS_Form_Hr-Workday_Update_Form"/>
+        </Map>
+      </Attributes>
+      <Section label="NS_Form_Hr-Workday_Update_Form" name="NS_Form_Hr-Workday_Update_Form">
+        <Field displayName="Email" name="email" type="string">
+          <Script>
+            <Source>identity.getAttribute("email");</Source>
+          </Script>
+        </Field>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Schemas>
+    <Schema displayAttribute="WORKER_NAME" groupAttribute="" identityAttribute="EMPLOYEE_NUMBER" instanceAttribute="" nativeObjectType="user" objectType="account">
+      <AttributeDefinition name="ADDRESS_LINE_1" type="string">
+        <Description>Address line 1</Description>
+      </AttributeDefinition>
+      <AttributeDefinition name="ADDRESS_WORK" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="BUILDING_CODE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="BUSINESS_UNIT_ID" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="REGION" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="CLASS" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="COMPANY_NAME" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="CONTRACT_END_DATE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="COUNTRY_NAME" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="DEPARTMENT" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="DEPARTMENT_ID" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="DIVISION_ID" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="FILENUMBER" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="FIRST_NAME" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="HIREDATE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="WORKER_STATUS" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="JOBCODE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="JOBTITLE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="LAST_NAME" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="LOCATION" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="MANAGER_ID" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="POSTAL_CODE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="WORKER_NAME" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="WORKFORCE_TYPE" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="EMPLOYEE_NUMBER" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="EMAIL" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="DIVISION" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="EMPLOYEE_TYPE" type="string">
+        <Description/>
+      </AttributeDefinition>
+    </Schema>
+    <Schema descriptionAttribute="" displayAttribute="" identityAttribute="" instanceAttribute="" nativeObjectType="group" objectType="group"/>
+  </Schemas>
+  <ApplicationScorecard/>
+</Application>

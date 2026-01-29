@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Matthew Gonzalez" identity="739093" lastRefresh="1768468369626">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="6719 Garden Blvd"/>
+      <entry key="ADDRESS_WORK" value="6719 Garden Blvd;Vancouver, Ontario Y9T 9B3;Canada"/>
+      <entry key="BUILDING_CODE" value="CA_ONT_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3029"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="01-26-2025"/>
+      <entry key="COUNTRY_NAME" value="Canada"/>
+      <entry key="DEPARTMENT" value="IT Governance, Risk &amp; Compliance (IT-GRC)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-020"/>
+      <entry key="DIVISION" value="Canada Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-CA-01"/>
+      <entry key="EMAIL" value="matthew.gonzalez@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739093"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739093"/>
+      <entry key="FIRST_NAME" value="Matthew"/>
+      <entry key="HIREDATE" value="12-06-2015"/>
+      <entry key="JOBCODE" value="JT-020-03"/>
+      <entry key="JOBTITLE" value="Compliance Program Manager"/>
+      <entry key="LAST_NAME" value="Gonzalez"/>
+      <entry key="LOCATION" value="CA - Vancouver"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="11474"/>
+      <entry key="REGION" value="Vancouver"/>
+      <entry key="WORKER_NAME" value="Matthew Gonzalez"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

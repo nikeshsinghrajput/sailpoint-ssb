@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity lastLogin="1769092040668" lastRefresh="1768469433264" name="spadmin" password="1:ACP:BHcklJ34OkjEuI4W3NUkgm4aes8JhK0laGSb4urTe1Y=" protected="true">
+  <Attributes>
+    <Map>
+      <entry key="displayName" value="The Administrator"/>
+      <entry key="email" value="nikeshsingh0981@gmail.com"/>
+      <entry key="firstname" value="The"/>
+      <entry key="lastname" value="Administrator"/>
+      <entry key="type" value="External"/>
+    </Map>
+  </Attributes>
+  <UIPreferencesRef>
+    <Reference class="sailpoint.object.UIPreferences"/>
+  </UIPreferencesRef>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Capabilities>
+    <Reference class="sailpoint.object.Capability" name="SystemAdministrator"/>
+  </Capabilities>
+  <Scorecard/>
+</Identity>

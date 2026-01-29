@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="b39ed8a2b14748e8b2ef1ffce7eaf859" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+  <Attributes>
+    <Map>
+      <entry key="IIQ_roleAssignment">
+        <value>
+          <RoleAssignment date="1765385840211" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</CertificationItem>

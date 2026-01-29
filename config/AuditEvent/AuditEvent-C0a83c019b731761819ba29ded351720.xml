@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="8512503" action="Disable" application="Hr-Workday" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="f7803391-7055-47b7-b696-aad5dd224453">
+  <Attributes>
+    <Map>
+      <entry key="interface" value="LCM"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

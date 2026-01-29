@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Connie Frank" identity="739087" lastRefresh="1768468367480">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7066 Maple Lane"/>
+      <entry key="ADDRESS_WORK" value="7066 Maple Lane;Bengaluru, Maharashtra 49158;India"/>
+      <entry key="BUILDING_CODE" value="IN_MAH_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3002"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="08-19-2025"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="IT Infrastructure &amp; Network Services"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-016"/>
+      <entry key="DIVISION" value="India Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-IN-02"/>
+      <entry key="EMAIL" value="connie.frank@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739087"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739087"/>
+      <entry key="FIRST_NAME" value="Connie"/>
+      <entry key="HIREDATE" value="01-10-2016"/>
+      <entry key="JOBCODE" value="JT-016-01"/>
+      <entry key="JOBTITLE" value="Network Engineer"/>
+      <entry key="LAST_NAME" value="Frank"/>
+      <entry key="LOCATION" value="IN - Bengaluru"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="57869"/>
+      <entry key="REGION" value="Bengaluru"/>
+      <entry key="WORKER_NAME" value="Connie Frank"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

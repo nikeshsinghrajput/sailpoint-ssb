@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1768221882900" certificationDefinitionId="c0a83c019b731761819bb23c91fd254c" complete="true" completedEntities="1" completedItems="1" creator="spadmin" entitlementGranularity="Value" expiration="1770900282900" finished="1768222044496" itemPercentComplete="100" name="Access Review for cert:Active Directory::83824b7f-2498-498f-acef-16fc78db0097" nextPhaseTransition="1773319482956" percentComplete="100" phase="Remediation" remediationsCompleted="1" remediationsKickedOff="1" shortName="Access Review for cert:Active Directory::83824b7f-2498-498f-acef-16fc78db0097" signed="1768222012877" totalEntities="1" totalItems="1" type="Focused">
+  <Attributes>
+    <Map>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation" value="false"/>
+      <entry key="requireReassignmentCompletion" value="true"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Access Review for cert:Active Directory::83824b7f-2498-498f-acef-16fc78db0097"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>f1aea43c-892b-4f9d-be64-42557cc5650f</String>
+  </Certifiers>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <SignOffHistory>
+    <SignOffHistoryItem date="1768222012876" signerDisplayName="The Administrator" signerId="c0a83c0199cf13658199cf93c73500fe" signerName="spadmin"/>
+  </SignOffHistory>
+  <CertificationStatistics completedEntities="1" completedItems="1" exceptionsRemediated="1" itemPercentComplete="100" percentComplete="100" remediationsCompleted="1" remediationsKickedOff="1" totalEntities="1" totalExceptions="1" totalItems="1"/>
+  <CertificationEntity completed="1768222011482" compositeScore="250" firstname="sumit" identity="83824b7f-2498-498f-acef-16fc78db0097" lastname="verma" newUser="true" summaryStatus="Complete" targetDisplayName="sumit verma" targetName="83824b7f-2498-498f-acef-16fc78db0097" type="Identity">
+    <CertificationItem completed="1768222011473" exceptionApplication="Active Directory" exceptionAttributeName="memberOf" exceptionAttributeValue="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com" summaryStatus="Complete" type="Exception">
+      <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019b731761819bb23cb9762566" decisionDate="1768222011403" remediationAction="SendProvisionRequest" remediationCompleted="true" remediationKickedOff="true" reviewed="true" status="Remediated">
+        <Description>Remove the 'Active Directory' entitlement on  'sumit verma'</Description>
+        <RemediationPlan>
+          <ProvisioningPlan>
+            <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify" targetIntegration="Active Directory">
+              <AttributeRequest name="memberOf" op="Remove" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </AccountRequest>
+            <Requesters>
+              <Reference class="sailpoint.object.Identity" name="spadmin"/>
+            </Requesters>
+          </ProvisioningPlan>
+        </RemediationPlan>
+      </CertificationAction>
+      <ApplicationNames>
+        <String>Active Directory</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Active Directory" displayName="verma.sumit" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+          <Attributes>
+            <Map>
+              <entry key="memberOf" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

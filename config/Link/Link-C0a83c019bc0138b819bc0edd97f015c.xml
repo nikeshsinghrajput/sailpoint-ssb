@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Holly Shaw" identity="739102" lastRefresh="1768468371839">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="8966 River Rd"/>
+      <entry key="ADDRESS_WORK" value="8966 River Rd;Mendoza, Buenos Aires Province 69977;Argentina"/>
+      <entry key="BUILDING_CODE" value="AR_BUE_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3041"/>
+      <entry key="CLASS" value="Field"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-03-2026"/>
+      <entry key="COUNTRY_NAME" value="Argentina"/>
+      <entry key="DEPARTMENT" value="Cloud Infrastructure Services"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-013"/>
+      <entry key="DIVISION" value="Argentina Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-AR-01"/>
+      <entry key="EMAIL" value="holly.shaw@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739102"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739102"/>
+      <entry key="FIRST_NAME" value="Holly"/>
+      <entry key="HIREDATE" value="09-07-2023"/>
+      <entry key="JOBCODE" value="JT-013-01"/>
+      <entry key="JOBTITLE" value="Cloud Engineer"/>
+      <entry key="LAST_NAME" value="Shaw"/>
+      <entry key="LOCATION" value="AR - Mendoza"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="44903"/>
+      <entry key="REGION" value="Mendoza"/>
+      <entry key="WORKER_NAME" value="Holly Shaw"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="4257718f45914814a0aed709e48d5517" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+  <Attributes>
+    <Map>
+      <entry key="IIQ_roleAssignment">
+        <value>
+          <RoleAssignment date="1765385848774" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule">
+            <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          </RoleAssignment>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <BundleEntitlements>
+    <EntitlementSnapshot application="Active Directory" displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="memberOf">
+            <value>
+              <Set>
+                <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+              </Set>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </BundleEntitlements>
+</CertificationItem>

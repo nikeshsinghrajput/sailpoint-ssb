@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.webservices.v2.WebServiceFacadeV2" eventLevel="ERROR" lineNumber="687" quickKey="0000448223" server="NikeshRajput" thread="QuartzScheduler_Worker-3" username="Scheduler">
+  <EventMessage>Set status retry: for all attributesfalse</EventMessage>
+</SyslogEvent>

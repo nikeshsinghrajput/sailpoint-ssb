@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469469035" name="819879d0-4f9c-431d-8b30-2cb79f4b77a6">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs &amp; Governance"/>
+      <entry key="displayName" value="Meagan Brooks"/>
+      <entry key="division" value="India Retail Banking and Payments"/>
+      <entry key="employeeId" value="739031"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Onsite"/>
+      <entry key="firstname" value="Meagan"/>
+      <entry key="hireDate" value="09-02-2018"/>
+      <entry key="lastname" value="Brooks"/>
+      <entry key="location" value="IN - Mumbai"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="12794"/>
+      <entry key="terminationDate" value="09-07-2024"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469468992" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Meagan Brooks" identity="739031" lastRefresh="1768468353695">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="4789 Lake Ave"/>
+          <entry key="ADDRESS_WORK" value="4789 Lake Ave;Mumbai, Maharashtra 78760;India"/>
+          <entry key="BUILDING_CODE" value="IN_MAH_BLDG_01"/>
+          <entry key="BUSINESS_UNIT_ID" value="3001"/>
+          <entry key="CLASS" value="Onsite"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="09-07-2024"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs &amp; Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="India Retail Banking and Payments"/>
+          <entry key="DIVISION_ID" value="DIV-IN-01"/>
+          <entry key="EMAIL" value="meagan.brooks@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739031"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739031"/>
+          <entry key="FIRST_NAME" value="Meagan"/>
+          <entry key="HIREDATE" value="09-02-2018"/>
+          <entry key="JOBCODE" value="JT-006-02"/>
+          <entry key="JOBTITLE" value="Governance Program Manager"/>
+          <entry key="LAST_NAME" value="Brooks"/>
+          <entry key="LOCATION" value="IN - Mumbai"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="12794"/>
+          <entry key="REGION" value="Mumbai"/>
+          <entry key="WORKER_NAME" value="Meagan Brooks"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Temporary"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityEntitlement PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityEntitlement aggregationState="Connected" name="Access" nativeIdentity="739003" source="Aggregation" type="Entitlement" value="Learner">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <IdentityRef>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </IdentityRef>
+</IdentityEntitlement>

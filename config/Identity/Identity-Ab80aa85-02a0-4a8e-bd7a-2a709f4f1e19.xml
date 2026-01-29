@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469436748" managerStatus="true" name="ab80aa85-02a0-4a8e-bd7a-2a709f4f1e19">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Singapore"/>
+      <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="displayName" value="Jane Smith"/>
+      <entry key="division" value="Singapore Risk and Compliance"/>
+      <entry key="employeeId" value="739004"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full-Time"/>
+      <entry key="firstname" value="Jane"/>
+      <entry key="hireDate" value="08-22-2019"/>
+      <entry key="lastname" value="Smith"/>
+      <entry key="location" value="SG - Singapore"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="90232"/>
+      <entry key="terminationDate" value="12-31-2024"/>
+      <entry key="title" value="Incident Response Lead"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469436698" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Jane Smith" identity="739004" lastRefresh="1768468348357">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="2419 Park St"/>
+          <entry key="ADDRESS_WORK" value="2419 Park St;Singapore, Central Region 88979;Singapore"/>
+          <entry key="BUILDING_CODE" value="SG_CEN_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3020"/>
+          <entry key="CLASS" value="Full-Time"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="12-31-2024"/>
+          <entry key="COUNTRY_NAME" value="Singapore"/>
+          <entry key="DEPARTMENT" value="Cybersecurity &amp; Threat Operations"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-012"/>
+          <entry key="DIVISION" value="Singapore Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-SG-04"/>
+          <entry key="EMAIL" value="jane.smith@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739004"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739004"/>
+          <entry key="FIRST_NAME" value="Jane"/>
+          <entry key="HIREDATE" value="08-22-2019"/>
+          <entry key="JOBCODE" value="JT-012-04"/>
+          <entry key="JOBTITLE" value="Incident Response Lead"/>
+          <entry key="LAST_NAME" value="Smith"/>
+          <entry key="LOCATION" value="SG - Singapore"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="90232"/>
+          <entry key="REGION" value="Singapore"/>
+          <entry key="WORKER_NAME" value="Jane Smith"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

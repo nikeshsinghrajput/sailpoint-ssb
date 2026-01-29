@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="ns_IAMQDC_VIEWER" hash="c8d907c4bd2a0494d9004d443eeabe869b5b4f25" lastRefresh="1766343452095" requestable="true" type="group" uuid="{fe39f919-e0e5-4644-a9c6-f7ec14bbf58b}" value="CN=ns_IAMQDC_VIEWER,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="ns_IAMQDC_VIEWER"/>
+      <entry key="description" value="ns_IAMQDC_VIEWER created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\ns_IAMQDC_VIEWER"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1487"/>
+      <entry key="objectguid" value="{fe39f919-e0e5-4644-a9c6-f7ec14bbf58b}"/>
+      <entry key="sAMAccountName" value="ns_IAMQDC_VIEWER"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

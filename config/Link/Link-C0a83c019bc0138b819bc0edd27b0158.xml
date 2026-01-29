@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Elaine Lopez" identity="739100" lastRefresh="1768468370044">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7060 Queen Ave"/>
+      <entry key="ADDRESS_WORK" value="7060 Queen Ave;Fukuoka, Tokyo Prefecture 75567;Japan"/>
+      <entry key="BUILDING_CODE" value="JP_TOK_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3009"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="06-27-2024"/>
+      <entry key="COUNTRY_NAME" value="Japan"/>
+      <entry key="DEPARTMENT" value="Quality Engineering &amp; Test Automation"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-019"/>
+      <entry key="DIVISION" value="Japan Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-JP-01"/>
+      <entry key="EMAIL" value="elaine.lopez@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739100"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739100"/>
+      <entry key="FIRST_NAME" value="Elaine"/>
+      <entry key="HIREDATE" value="01-23-2019"/>
+      <entry key="JOBCODE" value="JT-019-01"/>
+      <entry key="JOBTITLE" value="QA Engineer"/>
+      <entry key="LAST_NAME" value="Lopez"/>
+      <entry key="LOCATION" value="JP - Fukuoka"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="68080"/>
+      <entry key="REGION" value="Fukuoka"/>
+      <entry key="WORKER_NAME" value="Elaine Lopez"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

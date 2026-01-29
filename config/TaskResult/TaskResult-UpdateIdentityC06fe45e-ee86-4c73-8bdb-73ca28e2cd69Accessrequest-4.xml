@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765901802606" completionStatus="Error" launched="1765901742711" launcher="spadmin" name="Update Identity c06fe45e-ee86-4c73-8bdb-73ca28e2cd69 AccessRequest - 4" targetClass="Identity" targetName="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" type="LCM">
+  <Attributes>
+    <Map>
+      <entry key="identityRequestId"/>
+      <entry key="workflowCaseId" value="c0a83c019b0e110c819b27f233572fdf"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="end">
+            <Interactions>
+              <ApprovalSummary endDate="1765901802342" owner="spadmin" request="Policy Violation Review - Account Changes for User: Arjun Naidu" startDate="1765901743016" state="Canceled" workItemId="c0a83c019b0e110c819b27f2338b2fe0" workItemType="ViolationReview">
+                <ApprovalSet>
+                  <ApprovalItem application="Sales Analytics" displayValue="Sales Director" name="roles" nativeIdentity="8512512" operation="Add" value="Sales Director">
+                    <Attributes>
+                      <Map>
+                        <entry key="attachmentConfigList"/>
+                        <entry key="attachments"/>
+                        <entry key="id" value="c0a83c019a0c102b819a1038f49504ff"/>
+                      </Map>
+                    </Attributes>
+                  </ApprovalItem>
+                </ApprovalSet>
+              </ApprovalSummary>
+            </Interactions>
+          </WorkflowSummary>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+  <Messages>
+    <Message key="Failed due to policy violation(s)" type="Error"/>
+  </Messages>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

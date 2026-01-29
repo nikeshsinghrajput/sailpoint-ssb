@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.server.ScriptletEvaluator" eventLevel="ERROR" lineNumber="143" quickKey="0001243916" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>Step call threw an exception:</EventMessage>
+</SyslogEvent>

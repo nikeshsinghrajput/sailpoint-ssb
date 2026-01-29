@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.ADLDAPConnector" eventLevel="ERROR" lineNumber="5018" quickKey="0000447803" server="NikeshRajput" thread="http-nio-1000-exec-6" username="spadmin">
+  <EventMessage>1053969724 Test configuration failed for application: Active Directory Cause for failure: Failed to connect to  - dc=nsiiq,dc=com : java.lang.Exception: [ERROR 1] Failed to connect to server:ldap://192.168.1.10:389 - java.net.ConnectException: Connection timed out: connect
+</EventMessage>
+</SyslogEvent>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Jaime Yang" identity="739056" lastRefresh="1768468360506">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2049 River Blvd"/>
+      <entry key="ADDRESS_WORK" value="2049 River Blvd;Florence, Lombardy 94405;Italy"/>
+      <entry key="BUILDING_CODE" value="IT_LOM_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3086"/>
+      <entry key="CLASS" value="Shift-Based"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-06-2025"/>
+      <entry key="COUNTRY_NAME" value="Italy"/>
+      <entry key="DEPARTMENT" value="Quality Engineering &amp; Test Automation"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-019"/>
+      <entry key="DIVISION" value="Italy Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-IT-02"/>
+      <entry key="EMAIL" value="jaime.yang@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739056"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739056"/>
+      <entry key="FIRST_NAME" value="Jaime"/>
+      <entry key="HIREDATE" value="12-06-2021"/>
+      <entry key="JOBCODE" value="JT-019-01"/>
+      <entry key="JOBTITLE" value="QA Engineer"/>
+      <entry key="LAST_NAME" value="Yang"/>
+      <entry key="LOCATION" value="IT - Florence"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="67223"/>
+      <entry key="REGION" value="Florence"/>
+      <entry key="WORKER_NAME" value="Jaime Yang"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

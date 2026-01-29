@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Territory Planner" hash="74827c83fcfae711540a3f1a72058f7391e2af5f" lastRefresh="1768326690027" requestable="true" type="roles" value="Territory Planner">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="06-15-2025"/>
+      <entry key="description" value="Defines and maintains sales territories and account distributions."/>
+      <entry key="modifiedDate" value="09-29-2025"/>
+      <entry key="owner" value="territory.admin@nsiiq.com"/>
+      <entry key="roleId" value="ROL_SALES_TERRITORY_007"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

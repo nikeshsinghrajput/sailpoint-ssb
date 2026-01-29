@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="groups" displayName="Procurement" hash="83c19375bc355add3582c724ef83a9a8033190e3" lastRefresh="1761636850669" requestable="true" type="group" value="8a4cb6d4c61122780043b1642efcd52b">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="active" value="true"/>
+      <entry key="description" value="Responsible for ordering catalog items, or moving them&#10;&#9;&#9;&#9;from inventory that are &quot;In Stock&quot;"/>
+      <entry key="exclude_manager" value="false"/>
+      <entry key="name" value="Procurement"/>
+      <entry key="sys_created_by" value="glide.maint"/>
+      <entry key="sys_created_on" value="2021-03-17 18:50:16"/>
+      <entry key="sys_mod_count" value="0"/>
+      <entry key="sys_updated_by" value="glide.maint"/>
+      <entry key="sys_updated_on" value="2021-03-17 18:50:16"/>
+      <entry key="type" value="catalog"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

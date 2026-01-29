@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="ProvisioningFailure" interface="LCM" serverHost="NikeshRajput" source="The Administrator" target="Vihaan Patel">
+  <Attributes>
+    <Map>
+      <entry key="error1" value="Access request verification failed, the identity Vihaan Patel was no longer found. Marking request verified with failures."/>
+      <entry key="taskResultId" value="c0a83c019b731761819bb87fc95a2e32"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

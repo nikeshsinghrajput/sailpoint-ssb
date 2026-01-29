@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469481640" name="e1fc398d-cf06-4fa8-9acb-43377aa2dd54">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Germany"/>
+      <entry key="department" value="Application Development &amp; Integration"/>
+      <entry key="displayName" value="Michelle Spencer"/>
+      <entry key="division" value="Germany Retail Banking and Payments"/>
+      <entry key="employeeId" value="739042"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Shift-Based"/>
+      <entry key="firstname" value="Michelle"/>
+      <entry key="hireDate" value="08-14-2019"/>
+      <entry key="lastname" value="Spencer"/>
+      <entry key="location" value="DE - Cologne"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="18745"/>
+      <entry key="terminationDate" value="08-29-2024"/>
+      <entry key="title" value="Full-Stack Developer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469481599" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Michelle Spencer" identity="739042" lastRefresh="1768468357858">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="8084 River Lane"/>
+          <entry key="ADDRESS_WORK" value="8084 River Lane;Cologne, Bavaria 37096;Germany"/>
+          <entry key="BUILDING_CODE" value="DE_BAV_BLDG_01"/>
+          <entry key="BUSINESS_UNIT_ID" value="3077"/>
+          <entry key="CLASS" value="Shift-Based"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="08-29-2024"/>
+          <entry key="COUNTRY_NAME" value="Germany"/>
+          <entry key="DEPARTMENT" value="Application Development &amp; Integration"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-017"/>
+          <entry key="DIVISION" value="Germany Retail Banking and Payments"/>
+          <entry key="DIVISION_ID" value="DIV-DE-01"/>
+          <entry key="EMAIL" value="michelle.spencer@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739042"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739042"/>
+          <entry key="FIRST_NAME" value="Michelle"/>
+          <entry key="HIREDATE" value="08-14-2019"/>
+          <entry key="JOBCODE" value="JT-017-01"/>
+          <entry key="JOBTITLE" value="Full-Stack Developer"/>
+          <entry key="LAST_NAME" value="Spencer"/>
+          <entry key="LOCATION" value="DE - Cologne"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="18745"/>
+          <entry key="REGION" value="Cologne"/>
+          <entry key="WORKER_NAME" value="Michelle Spencer"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Consultant"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

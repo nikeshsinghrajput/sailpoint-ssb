@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItem expiration="1765991303811" handler="sailpoint.api.Workflower" identityRequestId="0000000249" level="Normal" name="0000000117" renderer="lcmManualActionsRenderer.xhtml" targetClass="sailpoint.object.Identity" targetName="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" type="ManualAction">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Active Directory" nativeIdentity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" operation="Create" value="Error = [[Active Directory] Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;Failed to connect to the server for Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:An invalid dn syntax has been specified. An invalid dn syntax has been specified. 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072032]Failed to connect to the server for Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:An invalid dn syntax has been specified. An invalid dn syntax has been specified. 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208F: NameErr: DSID-03100232, problem 2006 (BAD_NAME), data 8350, best match of: &#9;'Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072032]&quot; Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation ]"/>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Arjun Naidu"/>
+      <entry key="identityName" value="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69"/>
+    </Map>
+  </Attributes>
+  <Description>Manual Changes requested for User: Arjun Naidu</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="Exception_Management_Team"/>
+  </Owner>
+  <Requester>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Requester>
+</WorkItem>

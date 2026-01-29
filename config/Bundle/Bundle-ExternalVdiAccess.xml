@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Bundle PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Bundle displayName="External VDI Access" name="External VDI Access" type="business">
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="app_name"/>
+      <entry key="company_code"/>
+      <entry key="criticality" value="Simple"/>
+      <entry key="dependenciesRule"/>
+      <entry key="mailbox_type"/>
+      <entry key="mergeTemplates" value="false"/>
+      <entry key="office365LicenseType"/>
+      <entry key="office365RoleRegion"/>
+      <entry key="role_application_name"/>
+      <entry key="specialApproval" value="None"/>
+      <entry key="special_approver"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US" value="External VDI Access Business Role"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="user_group_name"/>
+    </Map>
+  </Attributes>
+  <Requirements>
+    <Reference class="sailpoint.object.Bundle" name="External VDI Access IT Role"/>
+  </Requirements>
+  <RoleIndex/>
+</Bundle>

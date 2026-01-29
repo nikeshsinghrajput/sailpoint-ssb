@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentitySnapshot PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentitySnapshot applications="Hr-Workday" identityName="2d9cbd9e-3607-40ff-97cf-6515bf42d828">
+  <AssignedRoleSnapshots>
+    <RoleAssignmentSnapshot name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoleSnapshots>
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Investment Operations"/>
+      <entry key="displayName" value="Meera Nair"/>
+      <entry key="division" value="Division-2"/>
+      <entry key="employeeId" value="8512506"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part_time"/>
+      <entry key="firstname" value="Meera"/>
+      <entry key="hireDate" value="01-06-2025"/>
+      <entry key="lastname" value="Nair"/>
+      <entry key="location" value="Hyderabad"/>
+      <entry key="manager" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="postalCode" value="671593"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Portfolio Operations Specialist"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <LinkSnapshots>
+    <LinkSnapshot application="Hr-Workday" identity="8512506" lastRefresh="1765382824732" simpleIdentity="Meera Nair">
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="416 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Onsite"/>
+          <entry key="BUILDING_CODE" value="B915"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU99"/>
+          <entry key="CLASS" value="Part_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Investment Operations"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+          <entry key="DIVISION" value="Division-2"/>
+          <entry key="DIVISION_ID" value="DIV99"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512506"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F22072"/>
+          <entry key="FIRST_NAME" value="Meera"/>
+          <entry key="HIREDATE" value="01-06-2025"/>
+          <entry key="JOBCODE" value="JC738"/>
+          <entry key="JOBTITLE" value="Portfolio Operations Specialist"/>
+          <entry key="LAST_NAME" value="Nair"/>
+          <entry key="LOCATION" value="Hyderabad"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="671593"/>
+          <entry key="REGION" value="East"/>
+          <entry key="WORKER_NAME" value="Meera Nair"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </LinkSnapshot>
+  </LinkSnapshots>
+</IdentitySnapshot>

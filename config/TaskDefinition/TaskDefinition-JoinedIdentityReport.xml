@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition formPath="/analyze/analyzeTabs.jsf" name="joined identity report" resultAction="Rename" subType="Search" type="GridReport">
+  <Attributes>
+    <Map>
+      <entry key="IdentitySearchTaskItem">
+        <value>
+          <SearchItem operation="AND" type="Identity">
+            <IdentityFields>
+              <String>userName</String>
+            </IdentityFields>
+            <InputDefinitions>
+              <SearchInputDefinition description="srch_input_def_detected_role_include_descr" headerKey="srch_input_def_detected_role_include" inputType="Equal" name="roleHierarchy" nullPropertyName="bundleSummary" nullPropertyType="String" propertyName="roleHierarchy" propertyType="None" searchType="Identity">
+                <Value>
+                  <Boolean/>
+                </Value>
+              </SearchInputDefinition>
+              <SearchInputDefinition description="srch_input_def_assigned_role_include_descr" headerKey="srch_input_def_assigned_role_include" inputType="Equal" name="assignedRoleHierarchy" nullPropertyName="assignedRoleSummary" nullPropertyType="String" propertyName="assignedRoleHierarchy" propertyType="None" searchType="Identity">
+                <Value>
+                  <Boolean/>
+                </Value>
+              </SearchInputDefinition>
+              <SearchInputDefinition description="srch_input_def_inactive" headerKey="srch_input_def_inactive" inputType="Equal" name="inactive" propertyName="inactive" propertyType="Boolean" searchType="Identity">
+                <Value>
+                  <String>false</String>
+                </Value>
+              </SearchInputDefinition>
+              <SearchInputDefinition description="srch_input_def_application" headerKey="srch_input_def_application" ignoreCase="true" inputType="Equal" name="application" nullPropertyName="links" nullPropertyType="Collection" propertyName="SPT_links.application.id" propertyType="Collection" searchType="Identity">
+                <Value>
+                  <List>
+                    <String>Active Directory</String>
+                  </List>
+                </Value>
+              </SearchInputDefinition>
+            </InputDefinitions>
+            <SearchFilters>
+              <SearchItemFilter booleanOperation="AND" property="srch_input_def_inactive">
+                <SearchFilter>
+                  <Filter operation="EQ" property="inactive">
+                    <Value>
+                      <Boolean/>
+                    </Value>
+                  </Filter>
+                </SearchFilter>
+                <Value>
+                  <String>false</String>
+                </Value>
+              </SearchItemFilter>
+              <SearchItemFilter booleanOperation="AND" property="srch_input_def_application">
+                <SearchFilter>
+                  <Filter ignoreCase="true" operation="EQ" property="SPT_links.application.id" value="Active Directory"/>
+                </SearchFilter>
+                <Value>
+                  <List>
+                    <String>Active Directory</String>
+                  </List>
+                </Value>
+              </SearchItemFilter>
+            </SearchFilters>
+          </SearchItem>
+        </value>
+      </entry>
+      <entry key="SearchReportFilters">
+        <value>
+          <CompositeFilter operation="AND">
+            <Filter operation="EQ" property="inactive">
+              <Value>
+                <Boolean/>
+              </Value>
+            </Filter>
+            <Filter ignoreCase="true" operation="EQ" property="links.application.id" value="Active Directory"/>
+          </CompositeFilter>
+        </value>
+      </entry>
+      <entry key="SearchReportInputDefinitions">
+        <value>
+          <List>
+            <SearchInputDefinition description="srch_input_def_user_name" headerKey="srch_input_def_user_name" ignoreCase="true" inputType="Like" matchMode="START" name="userName" propertyName="name" propertyType="String" searchType="None"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="SearchReportOwner">
+        <value>
+          <Reference class="sailpoint.object.Identity" name="spadmin"/>
+        </value>
+      </entry>
+      <entry key="SearchReportType" value="Identity"/>
+    </Map>
+  </Attributes>
+  <Description/>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Parent>
+    <Reference class="sailpoint.object.TaskDefinition" name="Search Report"/>
+  </Parent>
+</TaskDefinition>

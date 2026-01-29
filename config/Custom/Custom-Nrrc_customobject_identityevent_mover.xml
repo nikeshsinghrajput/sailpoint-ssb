@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NRRC_CustomObject_IdentityEvent_Mover">
+  <Attributes>
+    <Map>
+      <entry key="LeaverDayDiffMax" value="3"/>
+      <entry key="LeaverDayDiffMin" value="-5"/>
+      <entry key="certExcludeApp">
+        <value>
+          <List>
+            <String>Hr-Workday</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="certificationDefinitionTemplateName" value="Targeted Certification Template [12/01/26, 5:46:40 PM IST]"/>
+      <entry key="disableOU" value="OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+    </Map>
+  </Attributes>
+</Custom>

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469488751" name="772dcc1a-f8dd-40a2-88fe-09b955eb8a19">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Saudi Arabia"/>
+      <entry key="department" value="Database Administration &amp; Data Engineering"/>
+      <entry key="displayName" value="Kimberly Gibbs"/>
+      <entry key="division" value="Saudi Arabia Risk and Compliance"/>
+      <entry key="employeeId" value="739048"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Onsite"/>
+      <entry key="firstname" value="Kimberly"/>
+      <entry key="hireDate" value="09-18-2019"/>
+      <entry key="lastname" value="Gibbs"/>
+      <entry key="location" value="SA - Jeddah"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="34997"/>
+      <entry key="terminationDate" value="10-27-2026"/>
+      <entry key="title" value="Database Administrator"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469488703" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Kimberly Gibbs" identity="739048" lastRefresh="1768468358220">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="5184 Garden Rd"/>
+          <entry key="ADDRESS_WORK" value="5184 Garden Rd;Jeddah, Riyadh Province 95463;Saudi Arabia"/>
+          <entry key="BUILDING_CODE" value="SA_RIY_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3056"/>
+          <entry key="CLASS" value="Onsite"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="10-27-2026"/>
+          <entry key="COUNTRY_NAME" value="Saudi Arabia"/>
+          <entry key="DEPARTMENT" value="Database Administration &amp; Data Engineering"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-018"/>
+          <entry key="DIVISION" value="Saudi Arabia Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-SA-04"/>
+          <entry key="EMAIL" value="kimberly.gibbs@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739048"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739048"/>
+          <entry key="FIRST_NAME" value="Kimberly"/>
+          <entry key="HIREDATE" value="09-18-2019"/>
+          <entry key="JOBCODE" value="JT-018-01"/>
+          <entry key="JOBTITLE" value="Database Administrator"/>
+          <entry key="LAST_NAME" value="Gibbs"/>
+          <entry key="LOCATION" value="SA - Jeddah"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="34997"/>
+          <entry key="REGION" value="Jeddah"/>
+          <entry key="WORKER_NAME" value="Kimberly Gibbs"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE QuickLink PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<QuickLink action="workflow" category="Manage" messageKey="Create Hr Account" name="NS_QuickLink_Create_Hr_Account" ordering="5">
+  <Attributes>
+    <Map>
+      <entry key="ownerId">
+        <value>
+          <Script>
+            <Source>
+               return currentUser.getId();
+            </Source>
+          </Script>
+        </value>
+      </entry>
+      <entry key="workflowName" value="NS_Workflow_Create_Hr_ACC"/>
+    </Map>
+  </Attributes>
+  <QuickLinkOptions allowSelf="true">
+    <DynamicScopeRef>
+      <Reference class="sailpoint.object.DynamicScope" name="NS_DynamicScope_SysAdmin"/>
+    </DynamicScopeRef>
+  </QuickLinkOptions>
+</QuickLink>

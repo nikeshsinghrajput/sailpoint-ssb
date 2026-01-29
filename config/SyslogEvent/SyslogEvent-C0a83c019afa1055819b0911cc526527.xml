@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.ADLDAPConnector" eventLevel="ERROR" lineNumber="5018" quickKey="0000448003" server="NikeshRajput" thread="http-nio-1000-exec-1" username="spadmin">
+  <EventMessage>138412844 Test configuration failed for application: Active Directory Cause for failure: sailpoint.tools.GeneralException: Exception occurred while executing the RPCRequest: Errors returned from IQService. "Failed to connect to the server for ou=financial and administrative affairs,ou=employees,ou=users,ou=sailpoint,dc=nsiiq,dc=com:There is no such object on the server. There is no such object on the server. 0000208D: NameErr: DSID-0310028C, p...</EventMessage>
+</SyslogEvent>

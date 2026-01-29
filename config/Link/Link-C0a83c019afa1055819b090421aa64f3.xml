@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Nikesh Singh" identity="8512500" lastRefresh="1765382824363">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="243 Ring Road"/>
+      <entry key="ADDRESS_WORK" value="Onsite"/>
+      <entry key="BUILDING_CODE" value="B531"/>
+      <entry key="BUSINESS_UNIT_ID" value="BU83"/>
+      <entry key="CLASS" value="Full_time"/>
+      <entry key="COMPANY_NAME" value="NsTech"/>
+      <entry key="CONTRACT_END_DATE" value="01-04-2030"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="Financial Accounting and Reporting"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-001"/>
+      <entry key="DIVISION" value="Division-4"/>
+      <entry key="DIVISION_ID" value="DIV23"/>
+      <entry key="EMAIL" value="singh.nikesh@nstechiiq.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512500"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="F85013"/>
+      <entry key="FIRST_NAME" value="Nikesh"/>
+      <entry key="HIREDATE" value="12-11-2025"/>
+      <entry key="JOBCODE" value="JC688"/>
+      <entry key="JOBTITLE" value="Senior Financial Analyst"/>
+      <entry key="LAST_NAME" value="Singh"/>
+      <entry key="LOCATION" value="Noida"/>
+      <entry key="POSTAL_CODE" value="434863"/>
+      <entry key="REGION" value="West"/>
+      <entry key="WORKER_NAME" value="Nikesh Singh"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

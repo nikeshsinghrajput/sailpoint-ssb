@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="NRRC_NewHire_EmailCreation_Request">
+  <Body>
+
+الموضوع: طلب إنشاء بريد إلكتروني لموظف جديد
+
+السادة / فريق تقنية المعلومات المحترمين،
+
+السلام عليكم ورحمة الله وبركاته،
+
+نفيدكم بانضمام الموظف الموضحة بياناته أدناه، ونأمل منكم التكرم بإنشاء بريد إلكتروني رسمي له وفق السياسات المعتمدة:
+
+الاسم: $identityFullname
+الاسم بالإنجليزي: $identityEnglishName
+الإدارة العامة: $identityDepartment
+رقم الجوال: $identityPhone
+البريد المقترح: $identityEmail
+
+يرجى إشعارنا في حال كان البريد المقترح غير متاح ليتم اقتراح بديل مناسب.
+
+وتفضلوا بقبول فائق الاحترام والتقدير،
+
+تم إصدار هذا الطلب تلقائيًا من نظام إدارة الهوية والوصول (IAM System).
+
+  </Body>
+  <Signature>
+    <Inputs>
+      <Argument name="identityFullname" type="string"/>
+      <Argument name="identityEnglishName" type="string"/>
+      <Argument name="identityDepartment" type="string"/>
+      <Argument name="identityPhone" type="string"/>
+      <Argument name="identityEmail" type="string"/>
+    </Inputs>
+  </Signature>
+  <Subject>طلب إنشاء بريد إلكتروني لموظف جديد - $identityFullname</Subject>
+</EmailTemplate>

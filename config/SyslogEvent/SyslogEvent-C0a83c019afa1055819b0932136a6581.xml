@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.webservices.v2.WebServiceFacadeV2" eventLevel="ERROR" lineNumber="1692" quickKey="0000448008" server="NikeshRajput" thread="QuartzScheduler_Worker-5" username="Scheduler">
+  <EventMessage>Error performing update operation: {"timestamp":"2025-12-10T16:57:15.329+00:00","status":400,"error":"Bad Request","path":"/workday/8512500"}</EventMessage>
+</SyslogEvent>

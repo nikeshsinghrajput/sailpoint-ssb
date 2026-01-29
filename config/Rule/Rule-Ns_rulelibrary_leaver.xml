@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_RuleLibrary_Leaver">
+  <Description>This rule can be used as rule Library to support Leaver Workflows</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </ReferencedRules>
+  <Source>
+    import sailpoint.object.Identity;
+    import sailpoint.object.Application;
+    import sailpoint.tools.Util;
+    import org.apache.log4j.Logger;
+    import sailpoint.object.Link;
+    import sailpoint.tools.GeneralException;
+    import sailpoint.object.Attributes;
+    import sailpoint.object.Custom;
+    import sailpoint.object.EntitlementGroup;
+    import sailpoint.object.QueryOptions;
+    import sailpoint.object.Filter;
+    import sailpoint.object.IdentityEntitlement;
+    import java.util.Iterator;
+    import sailpoint.object.Link;
+    import sailpoint.api.IdentityService;
+
+    Logger logs = Logger.getLogger("com.ns.rule.NS_Global_RuleLibrary_Utils");
+
+    String areEntitlementsPresent = "No";
+    String licensedGroup = null;
+    String AdAppName = null;
+
+    Iterator itr = null;
+    String idObj = null;
+    List memberOf = new ArrayList();
+
+    Custom cs = context.getObjectByName(Custom.class, "NS_CustomObject_Active_Directory");
+    IdentityService identityService = new IdentityService(context);
+
+    if (cs != null)
+    {
+        map = cs.getAttributes();
+        AdAppName = map.get("AdAppName");
+        logs.debug(" Application Name is :: "+ AdAppName);
+        licensedGroup = map.get("licensedGroup");
+        logs.debug("License group Value is:: "+ licensedGroup);
+    }
+
+    /*------------------------------------------------------------------------
+     * Example - Leaver Method
+     * This method returns status of availability of any entitlements (Yes or No)
+     *------------------------------------------------------------------------*/
+    public String areEntitlementsPresent(String identityName)
+    {
+        logs.debug("The Workflow is in areEntitlementsPresent Method");
+        Identity entIdentityObject = context.getObjectByName(Identity.class, identityName);
+        Filter filter = Filter.eq("identity.id", entIdentityObject.getId());
+        QueryOptions qo = new QueryOptions();
+        qo.addFilter(filter);
+        qo.setDistinct(true);
+        qo.setCloneResults(true);
+
+        itr = context.search(IdentityEntitlement.class, qo, "id");
+
+        while (null != itr &amp;&amp; itr.hasNext())
+        {
+            Object[] row = (Object[]) itr.next();
+            idObj = (String) row[0];
+            IdentityEntitlement ieObj = context.getObjectById(IdentityEntitlement.class, idObj);
+
+            if (ieObj != null &amp;&amp; ieObj.getNativeIdentity() != null &amp;&amp; ieObj.getValue() != null) {
+                String entValue = ieObj.getValue();
+
+                if (!entValue.equalsIgnoreCase(licensedGroup)) {
+                    areEntitlementsPresent = "Yes";
+                }
+            }
+        }
+
+        logs.debug(" The Entitelment Present Status is "+areEntitlementsPresent);
+        return areEntitlementsPresent;
+    }
+	
+    /*------------------------------------------------------------------------
+     * Example - Leaver Method
+     * This method returns status for presence of License Group (Yes or No)
+     *------------------------------------------------------------------------*/
+    public String isLicensePresent(String identityName)
+    {
+        logs.debug("The Workflow is in isLicensePresent Method");
+        Identity identityObject = context.getObjectByName(Identity.class,identityName);
+        Application appObject = context.getObjectByName(Application.class, AdAppName);
+        Link adLink=getADAccountLink(identityName);
+
+        if(identityObject!=null){
+
+            if(adlink != null) {
+                memberOf = adLink.getAttribute("memberOf");
+                logs.debug("Roles for getADAccountLink AD Account:"+memberOf);
+            }
+
+            if(memberOf != null &amp;&amp; !memberOf.isEmpty() &amp;&amp; memberOf.contains(licensedGroup)){
+                isLicensePresent="Yes";
+            }
+        }
+        logs.debug("isLicensePresent Value is: "+ isLicensePresent);
+        return isLicensePresent;
+    }
+
+    /*------------------------------------------------------------------------
+     * Example - Leaver Method
+     * This method sets the identity Status
+     *------------------------------------------------------------------------*/
+    public String setStatus(String identityName)
+    {
+        logs.debug("The Workflow is in setStatus Method");
+        Identity iden = context.getObjectByName(Identity.class, identityName);
+        String identityCurrentStatus= iden.getAttribute("nsStatus");
+        String leaverStatus=identityCurrentStatus;
+        logs.debug("Previous Status is:::" +identityCurrentStatus);
+        if(iden != null &amp;&amp; identityCurrentStatus != null)
+        {
+          if(identityCurrentStatus.equalsIgnoreCase("Leaver-Final-Phase-Started"))
+            {
+                leaverStatus="Leaver-Remove-License-Started";
+                iden.setAttribute("nsStatus", leaverStatus);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-Remove-License-Started"))
+            {
+                leaverStatus="Leaver-Update-Attribute-Started";
+                iden.setAttribute("nsStatus", leaverStatus);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+
+            }
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-Update-Attribute-Started"))
+            {
+                leaverStatus="Leaver-Move-To-DisabledOU-Started";
+                iden.setAttribute("nsStatus", leaverStatus);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-Move-To-DisabledOU-Started"))
+            {
+                leaverStatus="Leaver-AD-Aggregation-Started";
+                iden.setAttribute("nsStatus",leaverStatus);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Leaver-AD-Aggregation-Started"))
+            {
+                leaverStatus="Leaver-Final-Phase-Completed";
+                iden.setAttribute("nsStatus",leaverStatus);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+
+            else if(identityCurrentStatus.equalsIgnoreCase("Reinstate-Started"))
+            {
+                leaverStatus="Reinstate-Completed";
+                iden.setAttribute("nsStatus",leaverStatus);
+                context.startTransaction();
+                context.saveObject(iden);
+                context.commitTransaction();
+            }
+        }
+        logs.debug("Previous Status is::::" +leaverStatus);
+        return leaverStatus;
+    }
+
+  </Source>
+</Rule>

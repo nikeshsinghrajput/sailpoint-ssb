@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" action="EntitlementAdd" application="Active Directory" attributeName="sAMAccountName" attributeValue="naidu.arjun" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69">
+  <Attributes>
+    <Map>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</AuditEvent>

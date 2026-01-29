@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="Joiner AD 1" type="IdentityLifecycle">
+  <Variable input="true" name="trigger">
+    <Description>The IdentityTrigger</Description>
+  </Variable>
+  <Variable input="true" name="event" transient="true">
+    <Description>
+      The IdentityChangeEvent.  It can be used to build
+      the provisioning plan, but does not need to be
+      persisted with the case, so marked as transient.
+    </Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable name="identityDisplayName">
+    <Script>
+      <Source>
+			import sailpoint.object.Identity;
+			Identity identity =  context.getObjectByName( Identity.class, identityName );
+			if( identity != null )
+			{
+			System.out.println("identity.getDisplayName();;;"+identity.getDisplayName());
+				return identity.getDisplayName() ;
+			}
+		</Source>
+    </Script>
+  </Variable>
+  <Variable initializer="string:Joiner" name="flow">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable initializer="LCM" input="true" name="source"/>
+  <Variable editable="true" initializer="String:none" name="approvalScheme"/>
+  <Variable initializer="spadmin" name="fallbackApprover"/>
+  <Variable editable="true" initializer="true" name="foregroundProvisioning">
+    <Description>
+			 IIQ is busy in processing workflow ,Workflow says
+			 let put myself on hold/sleep . workflow doesn't know awake This
+			 workflow .Preform mintanance task will trigger it
+	</Description>
+  </Variable>
+  <Variable editable="true" initializer="false" name="optimisticProvisioning">
+    <Description>
+			 IIQ is busy in processing workflow ,Workflow says
+			 let first complete myself and another workflow on hold. workflow doesn't 
+			 know awake This workflow .Preform mintanance task will trigger it
+		</Description>
+  </Variable>
+  <Variable name="cart" output="true">
+    <Description>
+			This variable includes all ApprovalItems that are part of
+			the request process and is updated during the AfterScript
+			of the
+			approval process by assimilating the decisions
+			and comments from the
+			Approvals copy of the ApprovalItem.
+		</Description>
+  </Variable>
+  <Variable input="true" name="plan">
+    <Description>
+	The provisioning plan, which is built by a service
+	method.
+	</Description>
+  </Variable>
+  <Variable initializer="string:Joiner Email Template" input="true" name="emailTemplateName">
+    <Description>The email template used for joiner mail
+		</Description>
+  </Variable>
+  <Variable name="project">
+    <Description>
+			ProvisioningProject which is just a compiled version of
+			the ProvisioningPlan.
+		</Description>
+  </Variable>
+  <Variable name="identityRequestId" output="true">
+    <Description>
+			The sequence id of the Identity request object which is
+			stored in
+			the name field of the identity request.
+		</Description>
+  </Variable>
+  <Description>Process a new employee.</Description>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </RuleLibraries>
+  <Step icon="Start" name="Start" posX="28" posY="10">
+    <Script>
+      <Source>
+		    import sailpoint.object.*;
+			Identity identity = context.getObjectByName(Identity.class, identityName);
+		</Source>
+    </Script>
+    <Transition to="Build Plan"/>
+  </Step>
+  <Step icon="Message" name="Build Plan" posX="148" posY="10" resultVariable="plan">
+    <Description>Process the user that joined.</Description>
+    <Script>
+      <Source>
+	  import sailpoint.object.Link;
+	  import sailpoint.object.Identity;
+	  import sailpoint.object.ProvisioningPlan;
+	  import sailpoint.object.ProvisioningPlan.AccountRequest;
+	  import sailpoint.object.ProvisioningPlan.AttributeRequest;
+	  import sailpoint.object.ProvisioningPlan.Operation;
+	  import sailpoint.object.ProvisioningPlan.AccountRequest.Operation;
+	  import java.util.List;
+	  import java.util.ArrayList;
+	  
+	  Link hrLink=null;
+	  Link ADLink=null;
+	  List links=null;
+	  ProvisioningPlan plan = new ProvisioningPlan();
+	  List accountRequests=new LinkedList();
+	  Identity identity=context.getObjectByName(Identity.class,identityName);
+	  if(identity!=null){
+		links = identity.getLinks();
+		if(links!=null &amp;&amp; !links.isEmpty()){
+			for(Link link:links){
+				if(link.getApplicationName().equalsIgnoreCase("Hr-Workday")){
+					hrLink=link;
+				}
+				if(link.getApplicationName().equalsIgnoreCase("Active Directory")){
+					ADLink=link;
+				}
+			}
+		}
+		System.out.println("hrLink  :"+hrLink+" ADLink : "+ADLink);
+		if(ADLink==null &amp;&amp; hrLink!=null){
+		AccountRequest accountRequestAD=new AccountRequest();
+		List attributeRequestsAD=new LinkedList();
+		String password = generatePassword(identityName);
+		String samAccountName = generateUserName(identity);
+		plan.setIdentity(identity);
+		String nativeIdentity = "CN=" + samAccountName + ",OU=Employee Account,OU=Dev,DC=nsiiq,DC=com";
+		accountRequestAD.setNativeIdentity(nativeIdentity);
+		accountRequestAD.setApplication("Active Directory");
+		accountRequestAD.setOperation(AccountRequest.Operation.Create);
+		attributeRequestsAD.add(new AttributeRequest("password",ProvisioningPlan.Operation.Set,password));
+		attributeRequestsAD.add(new AttributeRequest("mail",ProvisioningPlan.Operation.Set,samAccountName+"@nsiiq.com"));
+		accountRequestAD.setAttributeRequests(attributeRequestsAD);
+		plan.add(accountRequestAD);
+		workflow.put("plan", plan);
+		System.out.println("after joiner plan created:"+plan.toXml());
+		}
+	  }
+	  
+	  
+	  return plan;
+	  
+	 
+      </Source>
+    </Script>
+    <Transition to="Initialize"/>
+  </Step>
+  <Step icon="Task" name="Initialize" posX="562" posY="126">
+    <Arg name="formTemplate" value="Identity Update"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="enableRetryRequest"/>
+    <Arg name="allowRequestsWithViolations"/>
+    <Arg name="endOnManualWorkItems"/>
+    <Arg name="policiesToCheck"/>
+    <Arg name="workItemPriority">
+      <Script>
+        <Source>	 
+			System.out.println("under Initialize;;;");		 
+		</Source>
+      </Script>
+    </Arg>
+    <Arg name="workItemComments"/>
+    <Arg name="source" value="ref:source"/>
+    <Arg name="violationReviewDecision"/>
+    <Arg name="policyScheme" value="none"/>
+    <Arg name="priority" value="ref:workItemPriority"/>
+    <Arg name="identityDisplayName" value="ref:identityDisplayName"/>
+    <Arg name="requireViolationReviewComments"/>
+    <Arg name="identityRequest"/>
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="asyncCacheRefresh"/>
+    <Arg name="endOnProvisioningForms"/>
+    <Arg name="optimisticProvisioning" value="ref:optimisticProvisioning"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Arg name="flow" value="ref:flow"/>
+    <Arg name="launcher" value="ref:launcher"/>
+    <Description>
+			Call the standard subprocess to initialize the request,
+			this includes
+			auditing, building the approvalset, compiling the plan
+			into
+			project and checking policy violations.
+		</Description>
+    <Return name="project" to="project"/>
+    <Return name="approvalSet" to="cart"/>
+    <Return name="identityRequestId" to="identityRequestId"/>
+    <Return name="policyViolations" to="policyViolations"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="Identity Request Initialize"/>
+    </WorkflowRef>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Task" name="Provision" posX="696" posY="126" wait="-1">
+    <Arg name="formTemplate" value="Identity Update"/>
+    <Arg name="approvalScheme" value="ref:approvalScheme"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="fallbackApprover" value="ref:fallbackApprover"/>
+    <Arg name="approvalSet"/>
+    <Arg name="manualActionsEmailTemplate"/>
+    <Arg name="workItemComments"/>
+    <Arg name="workItemPriority">
+      <Script>
+        <Source>	 
+	  System.out.println("under Provision;;;identityName;;"+identityName+" launcher;;; "+launcher+"   identityRequestId:"+identityRequestId);		
+      System.out.println("DEBUG &gt;&gt;&gt; identityRequestId: " + identityRequestId);
+      System.out.println("DEBUG &gt;&gt;&gt; project: " + project.toXml());
+      System.out.println("DEBUG &gt;&gt;&gt; plan: " + plan.toXml());			
+		</Source>
+      </Script>
+    </Arg>
+    <Arg name="project" value="ref:project"/>
+    <Arg name="identityRequestId"/>
+    <Arg name="policyScheme" value="ref:policyScheme"/>
+    <Arg name="splitProvisioning"/>
+    <Arg name="saveUnmanagedPlan"/>
+    <Arg name="foregroundProvisioning" value="ref:foregroundProvisioning"/>
+    <Arg name="identityDisplayName" value="ref:identityDisplayName"/>
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="recompile"/>
+    <Arg name="optimisticProvisioning" value="ref:optimisticProvisioning"/>
+    <Arg name="plan"/>
+    <Arg name="launcher" value="ref:launcher"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="Identity Request Provision"/>
+    </WorkflowRef>
+    <Transition to="Update Identity"/>
+  </Step>
+  <Step icon="Script" name="Update Identity" posX="850" posY="126">
+    <Script>
+      <Source>
+	import java.text.SimpleDateFormat;
+    import java.util.Calendar;
+    import java.util.Date;  
+    import sailpoint.object.Identity;
+
+      System.out.println("=== Inside Update nsStatus Step ===");
+
+      try {
+          // Get the identity object
+          Identity identity = context.getObjectByName(Identity.class, identityName);
+          if (identity != null) {
+              // Format today's date
+                SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
+				Calendar calendar = Calendar.getInstance();
+				calendar.set(Calendar.HOUR_OF_DAY, 0);
+				calendar.set(Calendar.MINUTE, 0);
+				calendar.set(Calendar.SECOND, 0);
+				calendar.set(Calendar.MILLISECOND, 0);
+				Date today = calendar.getTime();
+				logs.debug("Current Date is:"+f.format(today));
+              // Set nsStatus attribute
+              String newStatus = "Joiner Completed - " + f.format(today);
+              identity.setAttribute("nsStatus", newStatus);
+
+              // Save identity to DB
+              context.saveObject(identity);
+              context.commitTransaction();
+
+              System.out.println("nsStatus updated successfully to: " + newStatus);
+          } else {
+              System.out.println("Identity not found: " + identityName);
+          }
+      } catch (Exception e) {
+          System.out.println("Error updating nsStatus: " + e);
+          e.printStackTrace();
+      }
+    </Source>
+    </Script>
+    <Transition to="Finalize"/>
+  </Step>
+  <Step catches="complete" icon="Task" name="Finalize" posX="992" posY="10">
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="autoVerifyIdentityRequest"/>
+    <Arg name="approvalSet" value="ref:cart"/>
+    <Arg name="ticketManagementApplication"/>
+    <Arg name="project" value="ref:project"/>
+    <Arg name="workItemPriority">
+      <Script>
+        <Source>	 
+			System.out.println("under Finalize;;;");		 
+		</Source>
+      </Script>
+    </Arg>
+    <Arg name="identityRequestId" value="ref:identityRequestId"/>
+    <Arg name="ticketDataGenerationRule"/>
+    <Description>
+			Call the standard subprocess that can audit/finalize the
+			request.
+		</Description>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="Identity Request Finalize"/>
+    </WorkflowRef>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="268" posY="10"/>
+</Workflow>

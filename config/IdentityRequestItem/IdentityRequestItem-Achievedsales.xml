@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Sales Analytics" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="achievedSales" nativeIdentity="739092" operation="Set" provisioningEngine="Sales Analytics" provisioningState="Finished" value="0">
+  <Attributes>
+    <Map>
+      <entry key="expansionInfo" value="Sales Analytics"/>
+      <entry key="flow" value="AccountsRequest"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="Create"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="2d92b080a410484792a29125b3d2a15a">
+            <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Create" targetIntegration="Sales Analytics">
+              <Attributes>
+                <Map>
+                  <entry key="flow" value="AccountsRequest"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="nativeIdUpdated">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                  <entry key="operation" value="Create"/>
+                </Map>
+              </Attributes>
+              <AttributeRequest name="achievedSales" op="Set" trackingId="2d92b080a410484792a29125b3d2a15a" value="0"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

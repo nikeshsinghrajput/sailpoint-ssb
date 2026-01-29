@@ -1,0 +1,495 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="NRRC_Workflow_Leaver" type="IdentityLifecycle">
+  <Variable input="true" name="trigger">
+    <Description>The IdentityTrigger</Description>
+  </Variable>
+  <Variable input="true" name="event">
+    <Description>The IdentityChangeEvent.  It can be used to build
+      the provisioning plan, but does not need to be
+      persisted with the case, so marked as transient.</Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable initializer="script:(identityDisplayName != void) ? identityDisplayName : resolveDisplayName(identityName)" input="true" name="identityDisplayName">
+    <Description>The displayName of the identity being updated.
+      Query for this using a projection query and fall back to the name.</Description>
+  </Variable>
+  <Variable name="plan">
+    <Description>The provisioning plan, which is built by a service method.</Description>
+  </Variable>
+  <Variable editable="true" name="doRefresh">
+    <Description>Set to true to cause an identity refresh after the changes in the plan
+      have been provisioned.  This is normally off, you might want this on
+      if you want modification of identity or link attributes to result in
+      an immediate re-evaluation of assigned and detected roles.</Description>
+  </Variable>
+  <Variable editable="true" initializer="false" name="optimisticProvisioning">
+    <Description>Set to true to enable optimistic provisioning.  This will cause
+      changes to the entitlements compiled from role assignments to be
+      applied immediately to the identity cube rather than waiting
+      for the next refresh/reaggregation after the provisioning system
+      completes the request.</Description>
+  </Variable>
+  <Variable editable="true" initializer="true" name="foregroundProvisioning">
+    <Description>Normally provisioning is done in a step that uses the &amp;quot;background&amp;quot;
+      option to force the workflow to be suspend and be resumed in a
+      background task thread.  This prevents the browser session from
+      hanging since provision can sometimes take a long time.  For demos
+      and testing it can be better to do this in the foreground so that
+      provisioning will have been performed when control is returned to the
+      user.  This prevents having to run the Perform Maintenance task to
+      see the results of the request.</Description>
+  </Variable>
+  <Variable initializer="spadmin" input="true" name="fallbackApprover">
+    <Description>A String that specifies the name of the Identity that will
+      be assigned any approvals where the owner of the approver
+      can&amp;#39;t be resolved. Example if the scheme is &amp;quot;owner&amp;quot; and the
+      application doesn&amp;#39;t specify and owner.</Description>
+  </Variable>
+  <Variable initializer="LCM" input="true" name="source">
+    <Description>String version of sailpoint.object.Source to indicate
+      where the request originated.  Defaults to LCM.</Description>
+  </Variable>
+  <Variable initializer="false" input="true" name="trace">
+    <Description>Used for debugging this workflow and when set to true trace
+      will be sent to stdout.</Description>
+  </Variable>
+  <Variable name="project">
+    <Description>ProvisioningProject which is just a compiled version of the ProvisioningPlan.</Description>
+  </Variable>
+  <Variable name="identityRequestId" output="true">
+    <Description>The sequence id of the Identity request object which is stored in
+      the name field of the identity request.</Description>
+  </Variable>
+  <Variable name="cart" output="true">
+    <Description>This variable includes all ApprovalItems that are part of
+      the request process and is updated during the AfterScript
+      of the approval process by assimilating the decisions
+      and comments from the Approvals copy of the ApprovalItem.</Description>
+  </Variable>
+  <Variable initializer="Normal" input="true" name="workItemPriority">
+    <Description>The String version of a WorkItem.Priority. This variable is
+      used to set the priority on all of the workitems generated
+      as part of this workflow and also set on the IdentityRequest
+      object.</Description>
+  </Variable>
+  <Variable initializer="none" input="true" name="approvalScheme"/>
+  <Variable initializer="NRRC_EmailTemplate_Leaver_Notification" name="emailTemplate"/>
+  <Variable name="managerEmail"/>
+  <Variable name="managerName"/>
+  <Variable name="employeeEmail"/>
+  <Variable name="terminationDate"/>
+  <Variable name="wfCurrentStatus"/>
+  <Variable initializer="nikeshsingh0981@gmail.com" name="IAMTeam"/>
+  <Variable initializer="Active Directory" name="activeDirectory"/>
+  <Description>Disable all accounts when an employee leaves the company.</Description>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="LCM Workflow Library"/>
+    <Reference class="sailpoint.object.Rule" name="NRRC_RuleLibrary_Active_Directory"/>
+  </RuleLibraries>
+  <Step icon="Start" name="Start" posX="11" posY="79">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+        import java.util.Date;
+        import org.apache.log4j.Logger;
+        import sailpoint.tools.Util;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+
+        String terminationDate=null;
+        String managerName = null;
+        String managerEmail = null;
+        String employeeEmail = null;
+        logs.debug("Entering into the step Start");
+
+        if(identityName!=null){
+        Identity iden = context.getObjectByName(Identity.class, identityName);
+        terminationDate = iden.getAttribute("terminationDate");
+		employeeEmail = iden.getAttribute("email");
+        if(terminationDate!=null){
+        wfcontext.getWorkflowCase().put("terminationDate", terminationDate);
+        logs.debug("Termination Date::::::::"+terminationDate);
+        }
+		if(employeeEmail!=null){
+        wfcontext.getWorkflowCase().put("employeeEmail", employeeEmail);
+        logs.debug("employeeEmail ::::::::"+employeeEmail);
+        }
+        Identity manager = iden.getManager();
+        if ( manager != null ) {
+        managerName = manager.getDisplayName();
+        if (Util.isNullOrEmpty(managerName)) {
+        managerName = "spadmin";
+        }  
+        } else {
+        managerName = "spadmin";
+        }
+        wfcontext.getWorkflowCase().put("managerName", managerName);
+        logs.debug("Manager Name:::::::::::::::::"+managerName);
+
+        managerEmail = manager.getEmail();
+        if(managerEmail != null){
+        wfcontext.getWorkflowCase().put("managerEmail", managerEmail);
+        logs.debug("Manager Email:::::::::::::::::"+managerEmail);
+        }
+        } 
+        logs.debug("Exit from the step Start");		  
+      </Source>
+    </Script>
+    <Transition to="Build Event Plan"/>
+  </Step>
+  <Step action="call:buildEventPlan" icon="Message" name="Build Event Plan" posX="107" posY="77" resultVariable="plan">
+    <Arg name="op" value="Disable"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="trigger" value="ref:trigger"/>
+    <Arg name="event" value="ref:event"/>
+    <Description>Go through all of the user's links and build a plan.</Description>
+    <Transition to="Update Plan"/>
+  </Step>
+  <Step icon="Message" name="Update Plan" posX="202" posY="78" resultVariable="plan">
+    <Description>This step can be used to remove the request for disable application from plan</Description>
+    <Script>
+      <Source>
+	    import sailpoint.object.ProvisioningPlan;
+        import sailpoint.object.Identity;
+        import sailpoint.object.Custom;
+		import sailpoint.object.Attributes;
+        import sailpoint.object.ProvisioningPlan.AccountRequest;
+        import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+        
+        logs.debug("Entering into the step Leaver Disable plan update");
+        List applicationToExclude=null;
+		Set accReqToBeRemoved = new HashSet();
+        Custom customObject = context.getObjectByName(Custom.class,"NRRC_CustomObject_IdentityEvent_Leaver");
+        if(customObject !=null){
+        Attributes attributes = customObject.getAttributes();
+        Map customObjectMap = attributes.getMap();
+			if(customObjectMap != null){
+			  applicationToExclude = customObjectMap.get("applicationToExclude");
+			}
+        }
+		logs.debug("applicationToExclude :: "+applicationToExclude);
+        List accountRequests = plan.getAccountRequests();
+		if(accountRequests != null &amp;&amp; accountRequests.size()&gt;0){
+			for (AccountRequest accountRequest: accountRequests){
+				if((applicationToExclude.contains(accountRequest.getApplicationName()))){
+					accReqToBeRemoved.add(accountRequest);
+				}
+			}
+		}
+		
+		for(AccountRequest req : accReqToBeRemoved){
+			plan.remove(req);
+		}
+		wfcontext.getWorkflowCase().put("wfCurrentStatus", "Update Plan");
+		logs.debug("plan:::::::::"+plan.toXml());
+        return plan;
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Provision" name="Provision" posX="298" posY="82">
+    <Arg name="identityEmailTemplate"/>
+    <Arg name="enableRetryRequest"/>
+    <Arg name="securityOfficerElectronicSignature"/>
+    <Arg name="fallbackApprover" value="ref:fallbackApprover"/>
+    <Arg name="endOnManualWorkItems"/>
+    <Arg name="userEmailTemplate"/>
+    <Arg name="policiesToCheck"/>
+    <Arg name="workItemComments"/>
+    <Arg name="identityRequestId"/>
+    <Arg name="approvalSplitPoint"/>
+    <Arg name="source" value="ref:source"/>
+    <Arg name="identityDisplayName"/>
+    <Arg name="foregroundProvisioning" value="ref:foregroundProvisioning"/>
+    <Arg name="ownerElectronicSignature"/>
+    <Arg name="batchRequestItemId"/>
+    <Arg name="saveUnmanagedPlan_WithProjectArgument"/>
+    <Arg name="splitPlans"/>
+    <Arg name="doRefresh" value="ref:doRefresh"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Arg name="flow"/>
+    <Arg name="identityElectronicSignature"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="approvalSet"/>
+    <Arg name="violationReviewDecision"/>
+    <Arg name="filterRejects"/>
+    <Arg name="splitProjects"/>
+    <Arg name="requireCommentsForDenial"/>
+    <Arg name="requesterEmailTemplate"/>
+    <Arg name="approvalEmailTemplate"/>
+    <Arg name="ticketManagementApplication"/>
+    <Arg name="securityOfficerName"/>
+    <Arg name="approvingIdentities"/>
+    <Arg name="managerEmailTemplate"/>
+    <Arg name="ticketId"/>
+    <Arg name="approvalScheme" value="ref:approvalScheme"/>
+    <Arg name="allowRequestsWithViolations"/>
+    <Arg name="workItemPriority" value="ref:workItemPriority"/>
+    <Arg name="managerElectronicSignature"/>
+    <Arg name="requireViolationReviewComments"/>
+    <Arg name="splitApprovalSet"/>
+    <Arg name="approvalMode"/>
+    <Arg name="trace" value="ref:trace"/>
+    <Arg name="endOnProvisioningForms"/>
+    <Arg name="splitWorkItemComments"/>
+    <Arg name="requireCommentsForApproval"/>
+    <Arg name="notificationScheme" value="none"/>
+    <Arg name="policyViolations"/>
+    <Arg name="policyScheme" value="none"/>
+    <Arg name="setPreviousApprovalDecisions"/>
+    <Arg name="optimisticProvisioning" value="ref:optimisticProvisioning"/>
+    <Arg name="securityOfficerEmailTemplate"/>
+    <Return name="project" to="project"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="LCM Provisioning"/>
+    </WorkflowRef>
+    <Transition to="Check If Errors"/>
+  </Step>
+  <Step icon="Task" name="Check If Errors" posX="395" posY="82" resultVariable="errorMessages">
+    <Script>
+      <Source>
+        import java.util.ArrayList;
+        import java.util.List;
+        import org.apache.log4j.Logger;
+        Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+        logs.debug("Enter into the step Check If Errors");
+        List errorMessages = getRequestErrorMessages(project);
+        logs.error("Error Messages : "+errorMessages);
+        logs.debug("Exit from the step Check If Errors");
+        return  errorMessages;
+      </Source>
+    </Script>
+    <Transition to="Stop">
+      <Script>
+        <Source>
+			import org.apache.log4j.Logger;
+			Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+        
+          if(errorMessages != null &amp;&amp; !errorMessages.isEmpty()){
+		  logs.error("error during provisioning");
+          return true;
+          }
+          return false;
+        </Source>
+      </Script>
+    </Transition>
+    <Transition to="Remove Entitlements" when="script:&quot;Update Plan&quot;.equalsIgnoreCase(wfCurrentStatus)"/>
+    <Transition to="Move AD OU to disable OU" when="script:&quot;Remove Entitlements&quot;.equalsIgnoreCase(wfCurrentStatus)"/>
+    <Transition to="Send Email Notification For Mail Stop" when="script:&quot;Move AD OU to disable OU&quot;.equalsIgnoreCase(wfCurrentStatus)"/>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Message" name="Remove Entitlements" posX="347" posY="289" resultVariable="plan">
+    <Description>Removes the Entitlement Except the Licenced Group and Excludes the Entitlements which are present in applicationExclusionList .</Description>
+    <Script>
+      <Source>
+        import java.util.List;
+        import java.util.ArrayList;
+        import sailpoint.object.Identity;
+        import sailpoint.object.Attributes;
+        import sailpoint.object.EntitlementGroup;
+        import sailpoint.object.Custom;
+        import sailpoint.object.*;
+        import sailpoint.api.Provisioner;
+        import org.apache.log4j.Logger;
+        import org.apache.log4j.Level;
+        import sailpoint.tools.GeneralException;
+        import sailpoint.object.QueryOptions;
+        import sailpoint.object.Filter;
+        import sailpoint.object.IdentityEntitlement;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+        /****This Step Removes Entitlements*********/
+
+        logs.debug("\n************************Entering Remove Entitlements step");
+        Iterator itr = null;
+        String idObj = null;
+        List applicationToExclude = null;
+
+        try{
+            ProvisioningPlan rePlan = new ProvisioningPlan();
+            List accountRequestList = new ArrayList();
+            Custom customObject = context.getObjectByName(Custom.class, "NRRC_CustomObject_IdentityEvent_Leaver");
+            if(customObject !=null)
+            {
+                Attributes attributes = customObject.getAttributes();
+                Map customObjectMap = attributes.getMap();
+                if(customObjectMap != null){
+
+                    applicationToExclude = customObjectMap.get("applicationToExclude");
+                    logs.debug("applicationToExclude :: "+applicationToExclude);
+                }
+
+       
+                Identity identityObject = context.getObjectByName(Identity.class,identityName);
+                Filter filter = Filter.eq("identity.id",identityObject.getId());
+                QueryOptions qo = new QueryOptions();
+                qo.addFilter(filter);
+                qo.setDistinct(true);
+                qo.setCloneResults(true);
+                itr = context.search(IdentityEntitlement.class, qo, "id");
+
+                while(null != itr &amp;&amp; itr.hasNext())
+                {
+                    Object[] row = (Object[]) itr.next();
+                    idObj = (String) row[0];
+                    IdentityEntitlement ieObj = context.getObjectById(IdentityEntitlement.class, idObj);
+                    if(ieObj != null &amp;&amp; ieObj.getNativeIdentity()!= null &amp;&amp; ieObj.getValue() != null &amp;&amp; ieObj.getApplication() != null){
+                        String entValue = ieObj.getValue();
+                        String entAttr = ieObj.getName();
+                        String entApp = ieObj.getAppName();
+                        if(!applicationToExclude.contains(entApp)) {
+                            ProvisioningPlan.AccountRequest accountRequest = new ProvisioningPlan.AccountRequest();
+                            accountRequest.setOperation(ProvisioningPlan.AccountRequest.Operation.Modify);
+                            accountRequest.add(new ProvisioningPlan.AttributeRequest(entAttr, ProvisioningPlan.Operation.Remove, entValue));
+                            accountRequest.setApplication(ieObj.getApplication().getName());
+                            accountRequest.setNativeIdentity(ieObj.getNativeIdentity());
+                            accountRequestList.add(accountRequest);
+                        }
+                    }
+                }
+                rePlan.setAccountRequests(accountRequestList);
+                rePlan.setIdentity(identityObject);
+                rePlan.setNativeIdentity(identityName);
+                logs.debug("Plan of Remove Entitlements step :: "+rePlan.toXml());
+                wfcontext.getWorkflowCase().put("wfCurrentStatus", "Remove Entitlements");
+                return rePlan;
+
+            }
+        }
+        catch(GeneralException e){
+            logs.error("Removal of entitlements step failed");
+        }
+
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Message" name="Move AD OU to disable OU" posX="490" posY="258" resultVariable="plan">
+    <Description>This step moves the account(Which is present in Parent Domain) to Disabled OU</Description>
+    <Script>
+      <Source>
+        import sailpoint.object.ProvisioningPlan;
+        import sailpoint.object.ProvisioningPlan.AccountRequest;
+        import sailpoint.object.ProvisioningPlan.AttributeRequest;
+        import sailpoint.object.ProvisioningPlan.Operation;
+        import java.util.List;
+        import java.util.ArrayList;
+        import sailpoint.object.Identity;
+        import sailpoint.object.Attributes;
+        import sailpoint.object.Link;
+        import sailpoint.object.Application;
+        import sailpoint.object.Custom;
+        import sailpoint.api.IdentityService;
+        import sailpoint.api.Provisioner;
+        import org.apache.log4j.Logger;
+        import org.apache.log4j.Level;
+        import sailpoint.tools.GeneralException;
+        import sailpoint.object.ProvisioningProject;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+        logs.debug("Entering into the step Leaver OU Move");
+
+        /*****This Step Moves account to disable OU*********/
+        ProvisioningPlan ouMovePlan = new ProvisioningPlan();
+        String cnValue= null;
+        String disabledAccountOU = null;
+        String compareOU = null;
+        String description = "master account OU is moved to disabled OU";
+        Identity identityObject = context.getObjectByName(Identity.class, identityName);
+        try {
+
+            Custom cs = context.getObjectByName(Custom.class, "NRRC_CustomObject_IdentityEvent_Leaver");
+            if (cs != null) {
+                Map map = cs.getAttributes();
+                
+				disabledAccountOU = map.get("disableOU");
+                logs.debug("disabled OU Value is :: " + disableOU);
+            }
+            List accountRequestList = new ArrayList();
+            IdentityService identityService = new IdentityService(context);
+            Application appObject = context.getObjectByName(Application.class, activeDirectory);
+            if(identityObject != null &amp;&amp; appObject != null ){
+                List accountList = identityService.getLinks(identityObject, appObject);
+                logs.debug("Link Size is........ :: " + accountList.size());
+                if(accountList != null &amp;&amp; accountList.size() &gt; 0 ){
+                    for (Link link: accountList) {
+                        if (link != null ) {
+                        
+                            distinguishedName = link.getAttribute("distinguishedName");
+							 logs.debug("Move the master account OU to disable OU distinguishedName: " + distinguishedName);
+                             cnValue = extractCN(distinguishedName);                           
+						   logs.debug("cnValue::::: " + cnValue);
+                            compareOU = "CN=" + cnValue + "," + disabledAccountOU;
+
+                            if (distinguishedName != null &amp;&amp; !compareOU.equalsIgnoreCase(distinguishedName)) {
+
+                                AccountRequest accountRequest = new AccountRequest();
+                                accountRequest.setApplication(activeDirectory);
+
+                                accountRequest.setOperation(AccountRequest.Operation.Modify);
+                                accountRequest.add(new AttributeRequest("AC_NewParent", ProvisioningPlan.Operation.Set, disabledAccountOU));
+                                accountRequest.setNativeIdentity(distinguishedName);
+
+                                accountRequestList.add(accountRequest);
+                            }
+                        }
+                    }
+                    ouMovePlan.setAccountRequests(accountRequestList);
+                    ouMovePlan.setIdentity(identityObject);
+
+                    logs.debug("Move the master account OU to disable OU plan: " + ouMovePlan.toXml());
+                }
+            }
+			wfcontext.getWorkflowCase().put("wfCurrentStatus", "Move AD OU to disable OU");
+            return ouMovePlan;
+        }
+        catch (GeneralException e) {
+            logs.error("Move the master account OU to disable OU step is failed");
+        }
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step action="sendEmail" icon="Task" name="Send Email Notification For Mail Stop" posX="572" posY="83">
+    <Arg name="template" value="ref:emailTemplate"/>
+    <Arg name="identityDisplayName" value="ref:identityDisplayName"/>
+    <Arg name="terminationDate" value="ref:terminationDate"/>
+    <Arg name="managerDisplayName" value="ref:managerName"/>
+    <Arg name="employeeEmail" value="ref:employeeEmail"/>
+    <Arg name="to" value="ref:IAMTeam"/>
+    <Transition to="setStatus"/>
+  </Step>
+  <Step icon="Task" name="setStatus" posX="713" posY="85">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+		import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NRRC_Workflow_Leaver");
+        
+        Identity identity = context.getObjectByName(Identity.class, identityName);
+        String currentStatus=identity.getAttribute("status");
+        if(currentStatus != null &amp;&amp; currentStatus.equalsIgnoreCase("Leaver-Started")){
+			identity.setAttribute("status", "Leaver-Completed");
+			logs.debug("status updated to :::Leaver-Completed");
+		    context.saveObject(identity);
+		    context.commitTransaction();
+        }
+      </Source>
+    </Script>
+    <Transition to="Refresh Identity"/>
+  </Step>
+  <Step action="call:refreshIdentity" condition="ref:doRefresh" icon="Task" name="Refresh Identity" posX="872" posY="94">
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="provision" value="true"/>
+    <Arg name="correlateEntitlements" value="true"/>
+    <Arg name="refreshIdentityEntitlements" value="true"/>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="600" posY="270"/>
+</Workflow>

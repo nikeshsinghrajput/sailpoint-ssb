@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768750569696" completionStatus="Success" launched="1768750567559" launcher="RequestHandler" name="Identity Refresh Request : Native Identity Change Propagation Request for Account - 2026-01-18 21:06:07.559" partitioned="true" runLength="2" type="Identity">
+  <Attributes>
+    <Map>
+      <entry key="restartable" value="true"/>
+      <entry key="taskResultPartitions">
+        <value>
+          <List>
+            <TaskResult completed="1768750569696" completionStatus="Success" host="NikeshRajput" launched="1768750569317" name="Identity Refresh Request">
+              <Attributes>
+                <Map>
+                  <entry key="identityEntitlementsRoleAssignmentsUpdates" value="2"/>
+                  <entry key="total" value="1"/>
+                </Map>
+              </Attributes>
+              <Progress>Refreshing 1 6be3425d-333a-43fb-89c0-192721ba4f84</Progress>
+            </TaskResult>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Refresh Identity Cube Concurrent"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

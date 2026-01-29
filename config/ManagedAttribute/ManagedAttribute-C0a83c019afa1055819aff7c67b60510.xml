@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365-SPO-Finance-Members" hash="50277c8e55cc32daa060a53aec373395a568f386" lastRefresh="1765222934453" requestable="true" type="group" uuid="{eda407f8-dfc2-4e1a-b152-7bb735cbd396}" value="CN=O365-SPO-Finance-Members,OU=Groups,OU=Europe,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365-SPO-Finance-Members"/>
+      <entry key="description" value="O365-SPO-Finance-Members created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365-SPO-Finance-Members"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1237"/>
+      <entry key="objectguid" value="{eda407f8-dfc2-4e1a-b152-7bb735cbd396}"/>
+      <entry key="sAMAccountName" value="O365-SPO-Finance-Members"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

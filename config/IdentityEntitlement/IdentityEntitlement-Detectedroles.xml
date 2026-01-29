@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityEntitlement PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityEntitlement allowed="true" name="detectedRoles" value="Active Directory Basic IT Role">
+  <IdentityRef>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </IdentityRef>
+</IdentityEntitlement>

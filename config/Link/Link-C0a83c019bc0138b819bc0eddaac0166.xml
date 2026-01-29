@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Scott Martin" identity="739107" lastRefresh="1768468372140">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="7091 Garden Ave"/>
+      <entry key="ADDRESS_WORK" value="7091 Garden Ave;Seville, Madrid Community 80756;Spain"/>
+      <entry key="BUILDING_CODE" value="ES_MAD_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3096"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-20-2025"/>
+      <entry key="COUNTRY_NAME" value="Spain"/>
+      <entry key="DEPARTMENT" value="IT Governance, Risk &amp; Compliance (IT-GRC)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-020"/>
+      <entry key="DIVISION" value="Spain Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-ES-04"/>
+      <entry key="EMAIL" value="scott.martin@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739107"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739107"/>
+      <entry key="FIRST_NAME" value="Scott"/>
+      <entry key="HIREDATE" value="06-24-2022"/>
+      <entry key="JOBCODE" value="JT-020-04"/>
+      <entry key="JOBTITLE" value="Policy &amp; Controls Advisor"/>
+      <entry key="LAST_NAME" value="Martin"/>
+      <entry key="LOCATION" value="ES - Seville"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="97280"/>
+      <entry key="REGION" value="Seville"/>
+      <entry key="WORKER_NAME" value="Scott Martin"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

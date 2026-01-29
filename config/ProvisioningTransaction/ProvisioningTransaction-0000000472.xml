@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="verma.sumit" applicationName="Active Directory" identityDisplayName="sumit verma" identityName="83824b7f-2498-498f-acef-16fc78db0097" integration="Active Directory" name="0000000472" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Modify" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000298"/>
+      <entry key="filtered">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+            <AttributeRequest name="title" op="Set" value="Product Manager-test">
+              <Attributes>
+                <Map>
+                  <entry key="reason">
+                    <value>
+                      <FilterReason>Exists</FilterReason>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="department" op="Set" value="Financial Risk Management">
+              <Attributes>
+                <Map>
+                  <entry key="reason">
+                    <value>
+                      <FilterReason>Exists</FilterReason>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="manager" op="Set" value="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+              <Attributes>
+                <Map>
+                  <entry key="reason">
+                    <value>
+                      <FilterReason>Exists</FilterReason>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+          </AccountRequest>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019b731761819bb20c571a247e"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="AC_NewParent" op="Set" value="CN=verma.sumit,OU=null,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Error(s) reported back from the IQService - Failed to connect to the server for CN=verma.sumit,OU=null,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:There is no such object on the server. There is no such object on the server. 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072030] Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

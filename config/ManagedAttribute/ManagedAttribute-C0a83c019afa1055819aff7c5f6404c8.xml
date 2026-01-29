@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="bgc-azure-gdpcntrl-ita-pbi-selfanlys-contributor" hash="39a65e4140d757a6f7ae75e9626cb722e2ef309d" lastRefresh="1765222932324" requestable="true" type="group" uuid="{5138d6e6-7635-41aa-989b-e7dfc3de6bfc}" value="CN=bgc-azure-gdpcntrl-ita-pbi-selfanlys-contributor,OU=Restricted,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="bgc-azure-gdpcntrl-ita-pbi-selfanlys-contributor"/>
+      <entry key="description" value="bgc-azure-gdpcntrl-ita-pbi-selfanlys-contributor created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\bgc-azure-gdpcntrl-ita-pbi-selfanlys-contributor"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1226"/>
+      <entry key="objectguid" value="{5138d6e6-7635-41aa-989b-e7dfc3de6bfc}"/>
+      <entry key="sAMAccountName" value="bgc-azure-gdpcntrl-ita-pbi-selfanlys-contributor"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Veronica Guerra" identity="739025" lastRefresh="1768468353305">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9283 Hill Blvd"/>
+      <entry key="ADDRESS_WORK" value="9283 Hill Blvd;Salvador, São Paulo State 52067;Brazil"/>
+      <entry key="BUILDING_CODE" value="BR_SOP_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3040"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="09-16-2026"/>
+      <entry key="COUNTRY_NAME" value="Brazil"/>
+      <entry key="DEPARTMENT" value="Legal &amp; Corporate Affairs"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-009"/>
+      <entry key="DIVISION" value="Brazil Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-BR-04"/>
+      <entry key="EMAIL" value="veronica.guerra@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739025"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739025"/>
+      <entry key="FIRST_NAME" value="Veronica"/>
+      <entry key="HIREDATE" value="06-17-2020"/>
+      <entry key="JOBCODE" value="JT-009-01"/>
+      <entry key="JOBTITLE" value="Legal Counsel"/>
+      <entry key="LAST_NAME" value="Guerra"/>
+      <entry key="LOCATION" value="BR - Salvador"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="73972"/>
+      <entry key="REGION" value="Salvador"/>
+      <entry key="WORKER_NAME" value="Veronica Guerra"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="John Doe" identity="739003" lastRefresh="1768468348273">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9715 Cedar St"/>
+      <entry key="ADDRESS_WORK" value="9715 Cedar St;Singapore, Central Region 23102;Singapore"/>
+      <entry key="BUILDING_CODE" value="SG_CEN_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3018"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="01-29-2028"/>
+      <entry key="COUNTRY_NAME" value="Singapore"/>
+      <entry key="DEPARTMENT" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-012"/>
+      <entry key="DIVISION" value="Singapore Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-SG-02"/>
+      <entry key="EMAIL" value="john.doe@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739003"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739003"/>
+      <entry key="FIRST_NAME" value="John"/>
+      <entry key="HIREDATE" value="01-21-2026"/>
+      <entry key="JOBCODE" value="JT-012-03"/>
+      <entry key="JOBTITLE" value="Threat Intelligence Specialist"/>
+      <entry key="LAST_NAME" value="Doe"/>
+      <entry key="LOCATION" value="SG - Singapore"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="90232"/>
+      <entry key="REGION" value="Singapore"/>
+      <entry key="WORKER_NAME" value="John Doe"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

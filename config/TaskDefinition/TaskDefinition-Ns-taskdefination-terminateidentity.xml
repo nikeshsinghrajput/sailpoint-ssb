@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskDefinition name="NS-TaskDefination-TerminateIdentity" resultAction="Delete" subType="task_item_type_generic" type="Generic">
+  <Attributes>
+    <Map>
+      <entry key="TaskDefinition.runLengthAverage" value="0"/>
+      <entry key="TaskDefinition.runLengthTotal" value="0"/>
+      <entry key="TaskDefinition.runs" value="2"/>
+      <entry key="TaskSchedule.host"/>
+      <entry key="identityName" value="071242d4-78e9-46ba-8542-c536388b251f"/>
+      <entry key="ruleName" value="NS_Rule_Change_Hr_App_Status"/>
+      <entry key="taskCompletionEmailNotify" value="Disabled"/>
+      <entry key="taskCompletionEmailRecipients"/>
+      <entry key="taskCompletionEmailTemplate"/>
+      <entry key="terminationDate" value="12/7/2025 16:19:0 PM IST"/>
+    </Map>
+  </Attributes>
+  <Description>Daily report of account links without an owning Identity.</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Parent>
+    <Reference class="sailpoint.object.TaskDefinition" name="Run Rule"/>
+  </Parent>
+  <Signature>
+    <Inputs>
+      <Argument helpKey="Provide identity name to update" name="identityName" required="true" type="string">
+        <Prompt>Identity Name</Prompt>
+      </Argument>
+      <Argument helpKey="Provide terminationDate name to update" name="terminationDate" required="true" type="date">
+        <Prompt>Termination Date</Prompt>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="responseCode" type="string">
+        <Prompt>response Code</Prompt>
+      </Argument>
+    </Returns>
+  </Signature>
+</TaskDefinition>

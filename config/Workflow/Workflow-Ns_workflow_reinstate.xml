@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="NS_Workflow_ReInstate" type="IdentityLifecycle">
+  <Variable input="true" name="trigger">
+    <Description>The IdentityTrigger</Description>
+  </Variable>
+  <Variable input="true" name="event">
+    <Description>The IdentityChangeEvent.  It can be used to build
+      the provisioning plan, but does not need to be
+      persisted with the case, so marked as transient.</Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable initializer="script:(identityDisplayName != void) ? identityDisplayName : resolveDisplayName(identityName)" input="true" name="identityDisplayName">
+    <Description>The displayName of the identity being updated.
+      Query for this using a projection query and fall back to the name.</Description>
+  </Variable>
+  <Variable name="plan">
+    <Description>The provisioning plan, which is built by a service method.</Description>
+  </Variable>
+  <Variable editable="true" name="doRefresh">
+    <Description>
+      Set to true to cause an identity refresh after the changes in the plan
+      have been provisioned.  This is normally off, you might want this on
+      if you want modification of identity or link attributes to result in
+      an immediate re-evaluation of assigned and detected roles.
+    </Description>
+  </Variable>
+  <Variable editable="true" initializer="false" name="optimisticProvisioning">
+    <Description>Set to true to enable optimistic provisioning.  This will cause
+      changes to the entitlements compiled from role assignments to be
+      applied immediately to the identity cube rather than waiting
+      for the next refresh/reaggregation after the provisioning system
+      completes the request.</Description>
+  </Variable>
+  <Variable editable="true" initializer="true" name="foregroundProvisioning">
+    <Description>Normally provisioning is done in a step that uses the &amp;quot;background&amp;quot;
+      option to force the workflow to be suspend and be resumed in a
+      background task thread.  This prevents the browser session from
+      hanging since provision can sometimes take a long time.  For demos
+      and testing it can be better to do this in the foreground so that
+      provisioning will have been performed when control is returned to the
+      user.  This prevents having to run the Perform Maintenance task to
+      see the results of the request.</Description>
+  </Variable>
+  <Variable initializer="spadmin" input="true" name="fallbackApprover">
+    <Description>A String that specifies the name of the Identity that will
+      be assigned any approvals where the owner of the approver
+      can&amp;#39;t be resolved. Example if the scheme is &amp;quot;owner&amp;quot; and the
+      application doesn&amp;#39;t specify and owner.</Description>
+  </Variable>
+  <Variable initializer="LCM" input="true" name="source">
+    <Description>String version of sailpoint.object.Source to indicate
+      where the request originated.  Defaults to LCM.</Description>
+  </Variable>
+  <Variable initializer="false" input="true" name="trace">
+    <Description>Used for debugging this workflow and when set to true trace
+      will be sent to stdout.</Description>
+  </Variable>
+  <Variable name="project">
+    <Description>ProvisioningProject which is just a compiled version of the ProvisioningPlan.</Description>
+  </Variable>
+  <Variable name="identityRequestId" output="true">
+    <Description>The sequence id of the Identity request object which is stored in
+      the name field of the identity request.</Description>
+  </Variable>
+  <Variable name="cart" output="true">
+    <Description>This variable includes all ApprovalItems that are part of
+      the request process and is updated during the AfterScript
+      of the approval process by assimilating the decisions
+      and comments from the Approvals copy of the ApprovalItem.</Description>
+  </Variable>
+  <Variable initializer="NS_EmailTemplate_Reinstate_Notification" name="emailTemplate"/>
+  <Variable name="userEmail"/>
+  <Variable name="managerEmail"/>
+  <Variable name="managerName"/>
+  <Variable name="reinstateDate"/>
+  <Description>Disable all accounts when an employee leaves the company.</Description>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="LCM Workflow Library"/>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </RuleLibraries>
+  <Step icon="Start" name="Start" posX="18" posY="11">
+    <Script>
+      <Source>
+	      import sailpoint.object.Identity;
+		  import java.util.Date;
+		  import org.apache.log4j.Logger;
+		  import sailpoint.tools.Util;
+
+          Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_ReInstate");
+		  
+		  String hireDate=null;
+		  String managerName = null;
+		  String managerEmail = null;
+		  
+		  logs.debug("Entering into the step Start");
+                                           
+		  if(identityName!=null){
+			  Identity iden = context.getObjectByName(Identity.class, identityName);
+			  hireDate = iden.getAttribute("hireDate");
+			  userEmail = iden.getAttribute("email");
+			  if(hireDate!=null){
+			  wfcontext.getWorkflowCase().put("reinstateDate", hireDate);
+			  logs.debug("reinstateDate Date::::::::"+hireDate);
+			  }
+			  if(userEmail!=null){
+			  wfcontext.getWorkflowCase().put("userEmail", userEmail);
+			  logs.debug("reinstateDate Date::::::::"+hireDate);
+			  }
+			  Identity manager = iden.getManager();
+			  if ( manager != null ) {
+					  managerName = manager.getDisplayName();
+					  if (Util.isNullOrEmpty(managerName)) {
+						managerName = "spadmin";
+					  }  
+				  } else {
+						managerName = "spadmin";
+				  }
+			  wfcontext.getWorkflowCase().put("managerName", managerName);
+			  logs.debug("Manager Name:::::::::::::::::"+managerName);
+			  
+			  managerEmail = manager.getEmail();
+			  managerEmail="nikeshsingh0981@gmail.com";
+			  if(managerEmail != null){
+			    //managerEmail="nikeshsingh0981@gmail.com";
+				wfcontext.getWorkflowCase().put("managerEmail", managerEmail);
+				logs.debug("Manager Email:::::::::::::::::"+managerEmail);
+			  }
+			  logs.debug("managerEmail:::::::::::::"+managerEmail);
+		      logs.debug("managerName:::::::::::::"+managerName);
+		     
+		  } 
+          logs.debug("Exit from the step Start");		  
+       </Source>
+    </Script>
+    <Transition to="Build Event Plan"/>
+  </Step>
+  <Step action="call:buildEventPlan" icon="Start" name="Build Event Plan" posX="63" posY="134" resultVariable="plan">
+    <Arg name="op" value="Enable"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="trigger" value="ref:trigger"/>
+    <Arg name="event" value="ref:event"/>
+    <Description>Go through all of the user's links and build a plan.</Description>
+    <Transition to="Update Plan"/>
+  </Step>
+  <Step icon="Message" name="Update Plan" posX="124" posY="185" resultVariable="plan">
+    <Description>This step can be used to remove the request for disable application from plan</Description>
+    <Script>
+      <Source>
+	    import sailpoint.object.ProvisioningPlan;
+        import sailpoint.object.Identity;
+        import sailpoint.object.Custom;
+		import sailpoint.object.Attributes;
+        import sailpoint.object.ProvisioningPlan.AccountRequest;
+        import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_ReInstate");
+        
+        logs.debug("Entering into the step Leaver Disable plan update");
+        List applicationToInclude=null;
+		Set accReqToBeRemoved = new HashSet();
+        Custom customObject = context.getObjectByName(Custom.class,"NS_CustomObject_IdentityEvent_Leaver");
+        if(customObject !=null){
+        Attributes attributes = customObject.getAttributes();
+        Map customObjectMap = attributes.getMap();
+			if(customObjectMap != null){
+			  applicationToInclude = customObjectMap.get("applicationToInclude");
+			}
+        }
+		logs.debug("applicationToInclude :: "+applicationToInclude);
+        List accountRequests = plan.getAccountRequests();
+		if(accountRequests != null &amp;&amp; accountRequests.size()&gt;0){
+			for (AccountRequest accountRequest: accountRequests){
+				if(!(applicationToInclude.contains(accountRequest.getApplicationName()))){
+					accReqToBeRemoved.add(accountRequest);
+				}
+				
+			}
+		}
+		
+		for(AccountRequest req : accReqToBeRemoved){
+			plan.remove(req);
+		}
+		logs.debug("Final Reinstate plan:::::::::"+plan.toXml());
+        return plan;
+      </Source>
+    </Script>
+    <Transition to="Provision"/>
+  </Step>
+  <Step icon="Provision" name="Provision" posX="275" posY="12">
+    <Arg name="foregroundProvisioning" value="false"/>
+    <Arg name="doRefresh" value="false"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="approvalScheme" value="none"/>
+    <Arg name="trace" value="true"/>
+    <Arg name="notificationScheme" value="none"/>
+    <Arg name="policyScheme" value="none"/>
+    <Return name="project" to="project"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="NS_Workflow_LCM_Provisioning_With_Errors_Handling"/>
+    </WorkflowRef>
+    <Transition to="Notify"/>
+  </Step>
+  <Step action="sendEmail" icon="Default" name="Notify" posX="546" posY="9">
+    <Arg name="template" value="ref:emailTemplate"/>
+    <Arg name="identityDisplayName" value="ref:identityDisplayName"/>
+    <Arg name="reinstateDate" value="reinstateDate"/>
+    <Arg name="managerDisplayName" value="managerName"/>
+    <Arg name="employeeEmail" value="userEmail"/>
+    <Arg name="to">
+      <Script>
+        <Source>
+		return managerEmail;
+		</Source>
+      </Script>
+    </Arg>
+    <Transition to="setStatus"/>
+  </Step>
+  <Step icon="Task" name="setStatus" posX="636" posY="10">
+    <Script>
+      <Source>
+        import sailpoint.object.Identity;
+		import org.apache.log4j.Logger;
+
+        Logger logs = Logger.getLogger("com.ns.workflow.NS_Workflow_ReInstate");
+        
+        Identity iden = context.getObjectByName(Identity.class, identityName);
+        String currentNsStatus=iden.getAttribute("nsStatus");
+        if(currentNsStatus != null &amp;&amp; currentNsStatus.equalsIgnoreCase("ReInstate-Started")){
+			iden.setAttribute("nsStatus", "ReInstate-Completed");
+			logs.debug("nsStatus updated to :::ReInstate-Completed");
+		    context.saveObject(iden);
+		    context.commitTransaction();
+        }
+      </Source>
+    </Script>
+    <Transition to="Refresh Identity"/>
+  </Step>
+  <Step action="call:refreshIdentity" condition="ref:doRefresh" icon="Task" name="Refresh Identity" posX="1028" posY="7">
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="correlateEntitlements" value="true"/>
+    <Arg name="provision" value="true"/>
+    <Arg name="refreshIdentityEntitlements" value="true"/>
+    <Description>
+      Add arguments as necessary to enable refresh features.  Typically you
+      only want this to correlate roles.  Don't ask for provisioning  since that
+      can result in provisioning policies that need to be presented and it's
+      too late for that.  This is only to get role detection and exception
+      entitlements in the cube.
+    </Description>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="736" posY="13"/>
+</Workflow>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Steven Thomas" identity="739054" lastRefresh="1768468360386">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="4246 Hill Ave"/>
+      <entry key="ADDRESS_WORK" value="4246 Hill Ave;Singapore, Central Region 23593;Singapore"/>
+      <entry key="BUILDING_CODE" value="SG_CEN_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3020"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-14-2024"/>
+      <entry key="COUNTRY_NAME" value="Singapore"/>
+      <entry key="DEPARTMENT" value="Human Resources &amp; Talent Acquisition"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-029"/>
+      <entry key="DIVISION" value="Singapore Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-SG-04"/>
+      <entry key="EMAIL" value="steven.thomas@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739054"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739054"/>
+      <entry key="FIRST_NAME" value="Steven"/>
+      <entry key="HIREDATE" value="05-03-2019"/>
+      <entry key="JOBCODE" value="JT-029-03"/>
+      <entry key="JOBTITLE" value="HR Operations Executive"/>
+      <entry key="LAST_NAME" value="Thomas"/>
+      <entry key="LOCATION" value="SG - Singapore"/>
+      <entry key="MANAGER_ID" value="739003"/>
+      <entry key="POSTAL_CODE" value="6168"/>
+      <entry key="REGION" value="Singapore"/>
+      <entry key="WORKER_NAME" value="Steven Thomas"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

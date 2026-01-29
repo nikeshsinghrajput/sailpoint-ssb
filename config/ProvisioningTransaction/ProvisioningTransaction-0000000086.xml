@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="tiwari.myra" applicationName="Active Directory" identityDisplayName="Myra Tiwari" identityName="33610da4-7b04-450b-8bcc-b136909f3640" integration="Active Directory" name="0000000086" nativeIdentity="CN=tiwari.myra,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Modify" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=tiwari.myra,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a671ea5819a6d153f1f0560"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="memberOf" op="Add" value="CN=SEC_NS_BASIC_USER_LICENCE_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+              <Attributes>
+                <Map>
+                  <entry key="assignment">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Connection reset" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

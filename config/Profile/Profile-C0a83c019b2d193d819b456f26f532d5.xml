@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Profile PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Profile>
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Constraints>
+    <Filter operation="CONTAINS_ALL" property="memberOf">
+      <Value>
+        <List>
+          <String>CN=O365 License - AM - O365_E1_CoreApps,OU=Shared,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+        </List>
+      </Value>
+    </Filter>
+  </Constraints>
+</Profile>

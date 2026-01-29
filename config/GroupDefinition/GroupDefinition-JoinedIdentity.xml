@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE GroupDefinition PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<GroupDefinition indexed="true" name="joined identity" private="true">
+  <GroupFilter>
+    <CompositeFilter operation="AND">
+      <Filter operation="EQ" property="inactive">
+        <Value>
+          <Boolean/>
+        </Value>
+      </Filter>
+      <CompositeFilter operation="AND">
+        <Filter operation="COLLECTION_CONDITION" property="links">
+          <CollectionCondition>
+            <CompositeFilter operation="AND">
+              <Filter ignoreCase="true" operation="EQ" property="application.name" value="Active Directory"/>
+              <Filter ignoreCase="true" operation="EQ" property="application.id" value="c0a83c0199d9117b8199d942b544000a"/>
+              <Filter ignoreCase="true" operation="EQ" property="application.id" value="c0a83c0199d210e38199d26b71640024"/>
+            </CompositeFilter>
+          </CollectionCondition>
+        </Filter>
+      </CompositeFilter>
+    </CompositeFilter>
+  </GroupFilter>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</GroupDefinition>

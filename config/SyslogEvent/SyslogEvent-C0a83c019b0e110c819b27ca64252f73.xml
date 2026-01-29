@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.webservices.v2.WebServiceFacadeV2" eventLevel="ERROR" lineNumber="678" quickKey="0000448225" server="NikeshRajput" thread="QuartzScheduler_Worker-1" username="Scheduler">
+  <EventMessage>Exception occurred in handling object request for ''8512512'' for operation ''Modify''</EventMessage>
+  <Stacktrace>sailpoint.connector.ConnectorException: org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.handleAttributeRequests(WebServiceFacadeV2.java:1697)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.update(WebServiceFacadeV2.java:1161)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.provision(WebServiceFacadeV2.java:632)
+	at sailpoint.connector.webservices.WebServicesConnector.provision(WebServicesConnector.java:109)
+	at sailpoint.connector.ConnectorProxy.provision(ConnectorProxy.java:1222)
+	at sailpoint.integration.ConnectorExecutor.provision(ConnectorExecutor.java:160)
+	at sailpoint.provisioning.PlanEvaluator.provision(PlanEvaluator.java:1825)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:1145)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:849)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:741)
+	at sailpoint.api.Provisioner.execute(Provisioner.java:1732)
+	at sailpoint.api.Identitizer.finishRefresh(Identitizer.java:2915)
+	at sailpoint.api.Identitizer.refresh(Identitizer.java:2491)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorker.refreshAndProcess(IdentityRefreshExecutor.java:1616)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorkerPool.queue(IdentityRefreshExecutor.java:1934)
+	at sailpoint.task.IdentityRefreshExecutor.refresh(IdentityRefreshExecutor.java:1113)
+	at sailpoint.task.IdentityRefreshExecutor.execute(IdentityRefreshExecutor.java:856)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: connector.sdk.webservices.exception.WebServicesSdkException: org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:659)
+	at connector.sdk.webservices.ExecutionMediator.process(ExecutionMediator.java:356)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.handleAttributeRequests(WebServiceFacadeV2.java:1685)
+	... 21 more
+Caused by: HttpException [url=http://localhost:9091/workday/8512512, errorCode=0, getMessage()=org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, getCause()=org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, responseHeaders=null]
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.sendRequest(ApacheHttpClientWrapper.java:709)
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.execute(ApacheHttpClientWrapper.java:320)
+	at connector.common.http.client.HttpClientWrapper.execute(HttpClientWrapper.java:137)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$1$1.execute(WebServiceFacadeV2.java:266)
+	at connector.common.http.client.impl.ThrottledHttpClient.execute(ThrottledHttpClient.java:95)
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:628)
+	... 23 more
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.sendRequest(ApacheHttpClientWrapper.java:688)
+	... 28 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 37 more
+</Stacktrace>
+</SyslogEvent>

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469512771" name="116da659-3293-4de2-8eac-8308031ea45a">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="United States"/>
+      <entry key="department" value="Regulatory Affairs &amp; Governance"/>
+      <entry key="displayName" value="Erik Rowe"/>
+      <entry key="division" value="United States Risk and Compliance"/>
+      <entry key="employeeId" value="739068"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part-Time"/>
+      <entry key="firstname" value="Erik"/>
+      <entry key="hireDate" value="02-15-2018"/>
+      <entry key="lastname" value="Rowe"/>
+      <entry key="location" value="US - New York"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="42315"/>
+      <entry key="terminationDate" value="07-25-2024"/>
+      <entry key="title" value="Policy &amp; Standards Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="ab80aa85-02a0-4a8e-bd7a-2a709f4f1e19"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469512733" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Erik Rowe" identity="739068" lastRefresh="1768468362918">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="8066 Cedar Ave"/>
+          <entry key="ADDRESS_WORK" value="8066 Cedar Ave;New York, California 71689;United States"/>
+          <entry key="BUILDING_CODE" value="US_CAL_BLDG_04"/>
+          <entry key="BUSINESS_UNIT_ID" value="3028"/>
+          <entry key="CLASS" value="Part-Time"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="07-25-2024"/>
+          <entry key="COUNTRY_NAME" value="United States"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs &amp; Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="United States Risk and Compliance"/>
+          <entry key="DIVISION_ID" value="DIV-US-04"/>
+          <entry key="EMAIL" value="erik.rowe@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739068"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739068"/>
+          <entry key="FIRST_NAME" value="Erik"/>
+          <entry key="HIREDATE" value="02-15-2018"/>
+          <entry key="JOBCODE" value="JT-006-04"/>
+          <entry key="JOBTITLE" value="Policy &amp; Standards Analyst"/>
+          <entry key="LAST_NAME" value="Rowe"/>
+          <entry key="LOCATION" value="US - New York"/>
+          <entry key="MANAGER_ID" value="739004"/>
+          <entry key="POSTAL_CODE" value="42315"/>
+          <entry key="REGION" value="New York"/>
+          <entry key="WORKER_NAME" value="Erik Rowe"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Contract"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

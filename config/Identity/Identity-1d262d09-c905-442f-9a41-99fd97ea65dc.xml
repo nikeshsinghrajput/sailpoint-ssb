@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity correlated="true" lastRefresh="1766397022697" name="1d262d09-c905-442f-9a41-99fd97ea65dc">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NS IIQ Inc."/>
+      <entry key="country" value="China"/>
+      <entry key="department" value="Product Management Office (PMO)"/>
+      <entry key="displayName" value="sohan singh"/>
+      <entry key="division" value="China Corporate and Investment Services"/>
+      <entry key="employeeId" value="8512514"/>
+      <entry key="employeeType" value="Partner"/>
+      <entry key="employmentType" value="Hybrid"/>
+      <entry key="firstname" value="sohan"/>
+      <entry key="hireDate" value="12-17-2025"/>
+      <entry key="lastname" value="singh"/>
+      <entry key="location" value="CN - Guangzhou"/>
+      <entry key="postalCode" value="510000"/>
+      <entry key="terminationDate" value="01-01-2026"/>
+      <entry key="title" value="UX/UI Designer"/>
+      <entry key="type" value="NS Partner"/>
+    </Map>
+  </Attributes>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69"/>
+  </Manager>
+  <Links>
+    <Link displayName="sohan singh" identity="8512514" lastRefresh="1766083697593">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="1452 Market Ave"/>
+          <entry key="ADDRESS_WORK" value="1452 Market Ave;Guangzhou, Guangdong 510000;China"/>
+          <entry key="BUILDING_CODE" value="CN_GUA_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3006"/>
+          <entry key="CLASS" value="Hybrid"/>
+          <entry key="COMPANY_NAME" value="NS IIQ Inc."/>
+          <entry key="CONTRACT_END_DATE" value="01-01-2026"/>
+          <entry key="COUNTRY_NAME" value="China"/>
+          <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+          <entry key="DIVISION" value="China Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-CN-02"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512514"/>
+          <entry key="EMPLOYEE_TYPE" value="Partner"/>
+          <entry key="FIRST_NAME" value="sohan"/>
+          <entry key="HIREDATE" value="12-17-2025"/>
+          <entry key="JOBCODE" value="JT-021-04"/>
+          <entry key="JOBTITLE" value="UX/UI Designer"/>
+          <entry key="LAST_NAME" value="singh"/>
+          <entry key="LOCATION" value="CN - Guangzhou"/>
+          <entry key="MANAGER_ID" value="8512512"/>
+          <entry key="POSTAL_CODE" value="510000"/>
+          <entry key="REGION" value="Guangzhou"/>
+          <entry key="WORKER_NAME" value="sohan singh"/>
+          <entry key="WORKER_STATUS" value="ACTIVE"/>
+          <entry key="WORKFORCE_TYPE" value="Consultant"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

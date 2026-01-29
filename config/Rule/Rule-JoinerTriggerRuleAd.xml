@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="joiner trigger rule AD" type="IdentityTrigger">
+  <Description>This rule can be used for Certification Events that use rule triggers. The previousIdentity and newIdentity hold snapshots of the identity before the update has occurred and the state of the identity after the update, respectively.</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </ReferencedRules>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="previousIdentity">
+        <Description>
+          The identity before the refresh/aggregation (this will be null when an
+          identity is created).
+        </Description>
+      </Argument>
+      <Argument name="newIdentity">
+        <Description>
+          The identity after the refresh/aggregation (this will be null when an
+          identity is deleted).
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+          A boolean describing the result of the rule.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+  import java.text.SimpleDateFormat;
+  import java.util.Calendar;
+  import java.util.Date;
+
+  boolean result = false;
+
+  try {
+    String newHireDate =  newIdentity.getAttribute("hireDate");
+    String nsStatus =  newIdentity.getAttribute("nsStatus");
+    Link hrLink=getPrimaryAccountLink(newIdentity.getName());
+    System.out.println("enter in joiner rule ;nsStatus;"+nsStatus);
+    if (newHireDate != null &amp;&amp; nsStatus != null &amp;&amp; hrLink!=null ) {
+      String hrWorkerStatus=hrLink.getAttribute("WORKER_STATUS");
+      System.out.println("hrWorkerStatus;;;;;"+hrWorkerStatus);
+      if (hrWorkerStatus!=null &amp;&amp; hrWorkerStatus.equalsIgnoreCase("Active")) {
+
+        SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        Date today = calendar.getTime();
+        System.out.println("Current Date is::::::"+f.format(today));
+        Date hireDate = f.parse(newHireDate);
+
+        if (hireDate.equals(today) &amp;&amp; nsStatus.equalsIgnoreCase("Joiner Active")) {
+          String newStatus = "Joiner Started - " + f.format(today);
+          newIdentity.setAttribute("nsStatus", newStatus);
+          context.saveObject(newIdentity);
+          context.commitTransaction();
+
+          System.out.println("Joiner is able to trigger");
+          result = true;
+        }
+      }
+    }
+  } catch (Exception e) {
+    log.error("Error in Joiner Trigger Rule: " + e);
+  }
+
+  return result;
+  </Source>
+</Rule>

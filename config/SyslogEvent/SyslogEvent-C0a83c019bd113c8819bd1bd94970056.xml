@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.task.ResourceIdentityScan" eventLevel="ERROR" lineNumber="404" quickKey="0001243903" server="NikeshRajput" thread="QuartzScheduler_Worker-2" username="Scheduler">
+  <EventMessage>Connector threw exception when trying to create partitions for Application: Hr-Workday</EventMessage>
+  <Stacktrace>java.lang.RuntimeException: sailpoint.connector.ConnectorException: Url: http://localhost:9091/workday, Message: 0 : org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, HTTP Error Code: 0
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$WebServiceIterator.hasNext(WebServiceFacadeV2.java:2162)
+	at sailpoint.connector.ConnectorProxy$CustomizingIterator.peek(ConnectorProxy.java:1446)
+	at sailpoint.connector.ConnectorProxy$CustomizingIterator.hasNext(ConnectorProxy.java:1473)
+	at sailpoint.task.ResourceIdentityScan.doPartitionedForAccount(ResourceIdentityScan.java:373)
+	at sailpoint.task.ResourceIdentityScan.execute(ResourceIdentityScan.java:226)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: sailpoint.connector.ConnectorException: Url: http://localhost:9091/workday, Message: 0 : org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, HTTP Error Code: 0
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$WebServiceIterator.getIterator(WebServiceFacadeV2.java:2110)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$WebServiceIterator.hasNext(WebServiceFacadeV2.java:2137)
+	... 9 more
+Caused by: connector.sdk.webservices.exception.WebServicesSdkException: org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:659)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$WebServiceIterator.getIterator(WebServiceFacadeV2.java:2096)
+	... 10 more
+Caused by: HttpException [url=http://localhost:9091/workday, errorCode=0, getMessage()=org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, getCause()=org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect, responseHeaders=null]
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.sendRequest(ApacheHttpClientWrapper.java:709)
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.execute(ApacheHttpClientWrapper.java:320)
+	at connector.common.http.client.HttpClientWrapper.execute(HttpClientWrapper.java:137)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$1$1.execute(WebServiceFacadeV2.java:266)
+	at connector.common.http.client.impl.ThrottledHttpClient.execute(ThrottledHttpClient.java:95)
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:628)
+	... 11 more
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to localhost:9091 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.sendRequest(ApacheHttpClientWrapper.java:688)
+	... 16 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 25 more
+</Stacktrace>
+</SyslogEvent>

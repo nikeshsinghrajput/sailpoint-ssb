@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application connector="sailpoint.connector.DefaultLogicalConnector" featuresString="COMPOSITE, DISCOVER_SCHEMA" icon="enterpriseIcon" name="test-Logical-Application" profileClass="" type="Logical">
+  <Attributes>
+    <Map>
+      <entry key="RetainEntitlementOverRemove">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="compositeDefinition">
+        <value>
+          <CompositeDefinition accountRule="" primaryTier="Active Directory" remediationRule="">
+            <Tiers>
+              <Tier application="Active Directory" correlationRule="">
+                <IdentitySelector>
+                  <MatchExpression>
+                    <MatchTerm name="memberOf" type="Entitlement" value="CN=VDI_ExternalAccess,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+                      <ApplicationRef>
+                        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+                      </ApplicationRef>
+                    </MatchTerm>
+                    <MatchTerm name="userAccountControl" type="Entitlement" value="512">
+                      <ApplicationRef>
+                        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+                      </ApplicationRef>
+                    </MatchTerm>
+                  </MatchExpression>
+                </IdentitySelector>
+              </Tier>
+            </Tiers>
+          </CompositeDefinition>
+        </value>
+      </entry>
+      <entry key="disableLinkFiltering">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="disableManagedEntitlementFiltering">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="onDeleteRemoveEntitlements">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="Logical Template"/>
+    </Map>
+  </Attributes>
+  <Schemas>
+    <Schema displayAttribute="" identityAttribute="" instanceAttribute="" nativeObjectType="" objectType="account"/>
+  </Schemas>
+  <ApplicationScorecard/>
+</Application>

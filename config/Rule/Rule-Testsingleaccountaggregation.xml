@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestSingleAccountAggregation" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+  import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.jboss.logging.Logger;
+import sailpoint.api.Aggregator;
+import sailpoint.api.SailPointContext;
+import sailpoint.connector.Connector;
+import sailpoint.connector.ConnectorException;
+import sailpoint.connector.ConnectorFactory;
+import sailpoint.object.Application;
+import sailpoint.object.Attributes;
+import sailpoint.object.Identity;
+import sailpoint.object.ResourceObject;
+import sailpoint.object.Rule;
+import sailpoint.object.TaskResult;
+import sailpoint.tools.GeneralException;
+Logger log = Logger.getLogger("com.rule.TestSingleAccountAggregation");
+
+          
+		   
+ String applicationName="Hr-Workday";
+  String accountName="8512514";
+
+	      Application appObject = (Application)context.getObjectByName(Application.class, applicationName);
+	      String appConnName = appObject.getConnector();
+	      System.out.println("Application " + applicationName + " uses connector " + appConnName);
+	      Connector appConnector = ConnectorFactory.getConnector(appObject, (String)null);
+	      String errorMessage;
+	      if (null == appConnector) {
+	         errorMessage = "Failed to construct an instance of connector [" + appConnName + "]";
+	         return errorMessage;
+	      } else {
+	         System.out.println("Connector instantiated, calling getObject() to read account details...");
+	         ResourceObject rObj = null;
+
+	         try {
+	            rObj = appConnector.getObject("account", accountName, (Map)null);
+	         } catch (ConnectorException var13) {
+	            errorMessage = "Connector could not find account: [" + accountName + "]";
+	            errorMessage = errorMessage + " in application  [" + applicationName + "]";
+	            log.error(errorMessage);
+	            log.error(var13);
+	            return errorMessage;
+	         }
+
+	         if (null == rObj) {
+	            errorMessage = "ERROR: Could not get ResourceObject for account: " + accountName;
+	            log.error(errorMessage);
+	            return errorMessage;
+	         } else {
+	            System.out.println("Got raw resourceObject: " + rObj.toXml());
+	            Rule customizationRule = appObject.getCustomizationRule();
+	            if (null != customizationRule) {
+	               System.out.println("Customization rule found for applicaiton " + applicationName);
+
+	               try {
+	                  HashMap ruleArgs = new HashMap();
+	                  ruleArgs.put("context", context);
+	                  ruleArgs.put("log", log);
+	                  ruleArgs.put("object", rObj);
+	                  ruleArgs.put("application", appObject);
+	                  ruleArgs.put("connector", appConnector);
+	                  ruleArgs.put("state", new HashMap());
+	                  ResourceObject newRObj = (ResourceObject)context.runRule(customizationRule, ruleArgs, (List)null);
+	                  if (null != newRObj) {
+	                     rObj = newRObj;
+	                     System.out.println("Got post-customization resourceObject: " + newRObj.toXml());
+	                  }
+	               } catch (Exception var12) {
+	                  log.error("Error while running Customization rule for " + applicationName);
+	               }
+	            }
+
+	            Attributes argMap = new Attributes();
+	            argMap.put("noOptimizeReaggregation", "true");
+	            Aggregator agg = new Aggregator(context, argMap);
+	            if (null == agg) {
+	               errorMessage = "Null Aggregator returned from constructor.  Unable to Aggregate!";
+	               log.error(errorMessage);
+	               return errorMessage;
+	            } else {
+	               System.out.println("Calling aggregate() method... ");
+	               TaskResult taskResult = agg.aggregate(appObject, rObj);
+	               System.out.println("aggregation complete.");
+	               if (null == taskResult) {
+	                  errorMessage = "ERROR: Null taskResult returned from aggregate() call.";
+	                  log.error(errorMessage);
+	                  return errorMessage;
+	               } else {
+	                  System.out.println("TaskResult details: \n" + taskResult.toXml());
+	                  return "Success";
+	               }
+	            }
+	         }
+	      }
+		     return "Aggregation success";
+  </Source>
+</Rule>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE DynamicScope PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<DynamicScope name="PAMAdministrator">
+  <Selector>
+    <IdentitySelector>
+      <MatchExpression>
+        <MatchTerm name="rights" value="FullAccessPAM"/>
+        <MatchTerm name="rights" value="ViewPAMDetail"/>
+      </MatchExpression>
+    </IdentitySelector>
+  </Selector>
+</DynamicScope>

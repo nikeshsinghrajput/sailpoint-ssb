@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469522031" name="f954df17-684d-49d2-ac8f-f4fa724d0ee3">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Japan"/>
+      <entry key="department" value="Quality Engineering &amp; Test Automation"/>
+      <entry key="displayName" value="Amanda Price"/>
+      <entry key="division" value="Japan Corporate and Investment Services"/>
+      <entry key="employeeId" value="739076"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part-Time"/>
+      <entry key="firstname" value="Amanda"/>
+      <entry key="hireDate" value="10-09-2023"/>
+      <entry key="lastname" value="Price"/>
+      <entry key="location" value="JP - Sapporo"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="27566"/>
+      <entry key="terminationDate" value="01-01-2025"/>
+      <entry key="title" value="QA Engineer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="ab80aa85-02a0-4a8e-bd7a-2a709f4f1e19"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469521985" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Amanda Price" identity="739076" lastRefresh="1768468364995">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="4061 Maple St"/>
+          <entry key="ADDRESS_WORK" value="4061 Maple St;Sapporo, Tokyo Prefecture 20719;Japan"/>
+          <entry key="BUILDING_CODE" value="JP_TOK_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3010"/>
+          <entry key="CLASS" value="Part-Time"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="01-01-2025"/>
+          <entry key="COUNTRY_NAME" value="Japan"/>
+          <entry key="DEPARTMENT" value="Quality Engineering &amp; Test Automation"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-019"/>
+          <entry key="DIVISION" value="Japan Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-JP-02"/>
+          <entry key="EMAIL" value="amanda.price@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739076"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739076"/>
+          <entry key="FIRST_NAME" value="Amanda"/>
+          <entry key="HIREDATE" value="10-09-2023"/>
+          <entry key="JOBCODE" value="JT-019-01"/>
+          <entry key="JOBTITLE" value="QA Engineer"/>
+          <entry key="LAST_NAME" value="Price"/>
+          <entry key="LOCATION" value="JP - Sapporo"/>
+          <entry key="MANAGER_ID" value="739004"/>
+          <entry key="POSTAL_CODE" value="27566"/>
+          <entry key="REGION" value="Sapporo"/>
+          <entry key="WORKER_NAME" value="Amanda Price"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Contract"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

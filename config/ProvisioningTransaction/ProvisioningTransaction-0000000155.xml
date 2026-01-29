@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction applicationName="Active Directory" identityDisplayName="Myra Naidu" identityName="f7d7cfb4-00b7-4187-bdb1-4df86a6df535" integration="Active Directory" name="0000000155" operation="Create" source="IdentityRefresh" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" assignmentIds="382e09ba8a004fd0a10f948c356705e7" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a8d1133819ac14a6e921d38"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="memberOf" op="Add">
+              <Value>
+                <List>
+                  <String>CN=CITRIX_EXTERNAL_ACCESS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_NS_PWD_POLICY_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=XA_MYDESK_O365_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=XA_MYDESK_OFFICE2016_SFAPDC_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_PRA_PASSWORD_RESET_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  <String>CN=SEC_PAMP_SLPNT_USERS_DEV,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                </List>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="employeeNumber" op="Set" value="8512543"/>
+            <AttributeRequest name="givenName" op="Set" value="Myra"/>
+            <AttributeRequest name="sn" op="Set" value="Naidu"/>
+            <AttributeRequest name="displayName" op="Set" value="Myra Naidu"/>
+            <AttributeRequest name="title" op="Set" value="Software Engineer"/>
+            <AttributeRequest name="company" op="Add" value="NsTech"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="134884224000000000"/>
+            <AttributeRequest name="department" op="Set" value="Sales"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="DPT752"/>
+            <AttributeRequest name="division" op="Add" value="Division-1"/>
+            <AttributeRequest name="streetAddress" op="Set" value="810 NH Road"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B194"/>
+            <AttributeRequest name="l" op="Set" value="Chennai"/>
+            <AttributeRequest name="st" op="Set" value="East"/>
+            <AttributeRequest name="co" op="Add" value="India"/>
+            <AttributeRequest name="postalCode" op="Set" value="568719"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9856789012"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-40-23456789"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Software Engineer"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Native Identity should not be null or empty" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Failure" endDate="1768222101278" executionStatus="Completed" name="0000000301" priority="Normal" requesterDisplayName="Scheduler" source="LCM" state="End" targetClass="sailpoint.object.Identity" targetDisplayName="sumit verma" verified="1768272636297">
+  <Attributes>
+    <Map>
+      <entry key="approvalSummaries">
+        <value>
+          <List>
+            <ApprovalSummary completer="The Administrator" endDate="1768222098590" owner="spadmin" request="Manual Changes requested for User: sumit verma" startDate="1768222039724" state="Finished" workItemId="c0a83c019b731761819bb23eef602589" workItemType="ManualAction">
+              <ApprovalSet>
+                <ApprovalItem application="Corporate Learning Portal" nativeIdentity="8512519" operation="Disable" state="Finished"/>
+              </ApprovalSet>
+            </ApprovalSummary>
+          </List>
+        </value>
+      </entry>
+      <entry key="messages">
+        <value>
+          <List>
+            <Message key="Error(s) reported back from the IQService - Failed to connect to the server for CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:There is no such object on the server. There is no such object on the server. 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072030] Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="83824b7f-2498-498f-acef-16fc78db0097">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000301"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <Filtered>
+              <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+                <Attributes>
+                  <Map>
+                    <entry key="logged" value="true"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest name="title" op="Set" value="Product Manager">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="department" op="Set" value="Financial Risk Management">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="manager" op="Set" value="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                  <Attributes>
+                    <Map>
+                      <entry key="reason">
+                        <value>
+                          <FilterReason>Exists</FilterReason>
+                        </value>
+                      </entry>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+              </AccountRequest>
+            </Filtered>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+                  <AttributeRequest name="AC_NewParent" op="Set" value="CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000301"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="83824b7f-2498-498f-acef-16fc78db0097" targetIntegration="Active Directory" trackingId="96ae89d98d0b4a51898e6cc3ea80163a">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+                <Attributes>
+                  <Map>
+                    <entry key="provisioningTransactionId" value="c0a83c019b731761819bb2400d99259d"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest name="AC_NewParent" op="Set" value="CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <ProvisioningResult status="failed">
+                  <Errors>
+                    <Message key="Error(s) reported back from the IQService - Failed to connect to the server for CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:There is no such object on the server. There is no such object on the server. 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072030] Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+                  </Errors>
+                </ProvisioningResult>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000301"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="NS_Role_Corporate_Learning_Portal"/>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="verma.sumit" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019b731761819bb23c9369255a"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Active Directory" name="AC_NewParent" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" provisioningEngine="Active Directory" provisioningState="Failed" value="CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="errors">
+            <value>
+              <List>
+                <Message key="Error(s) reported back from the IQService - Failed to connect to the server for CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com:There is no such object on the server. There is no such object on the server. 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' 0000208D: NameErr: DSID-0310028C, problem 2001 (NO_OBJECT), data 0, best match of: &#9;'OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com' . HRESULT:[0x80072030] Possible reasons for failure include a) The Domain Controller is currently not reachable b) The object has either been moved or renamed c) The object has been deleted &#10; Please Ensure the data has been aggregated before performing the operation " type="Error"/>
+              </List>
+            </value>
+          </entry>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="78da996cb554424e829361972bb4b694">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="provisioningTransactionId" value="c0a83c019b731761819bb2400d99259d"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest name="AC_NewParent" op="Set" trackingId="78da996cb554424e829361972bb4b694" value="CN=verma.sumit,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

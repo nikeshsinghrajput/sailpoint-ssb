@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Michael Hardy" identity="739077" lastRefresh="1768468365066">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="3555 Queen Rd"/>
+      <entry key="ADDRESS_WORK" value="3555 Queen Rd;Bristol, England QF7 7BU;United Kingdom"/>
+      <entry key="BUILDING_CODE" value="GB_ENG_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3076"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="11-05-2025"/>
+      <entry key="COUNTRY_NAME" value="United Kingdom"/>
+      <entry key="DEPARTMENT" value="Legal &amp; Corporate Affairs"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-009"/>
+      <entry key="DIVISION" value="United Kingdom Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-GB-04"/>
+      <entry key="EMAIL" value="michael.hardy@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739077"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739077"/>
+      <entry key="FIRST_NAME" value="Michael"/>
+      <entry key="HIREDATE" value="06-03-2023"/>
+      <entry key="JOBCODE" value="JT-009-01"/>
+      <entry key="JOBTITLE" value="Legal Counsel"/>
+      <entry key="LAST_NAME" value="Hardy"/>
+      <entry key="LOCATION" value="GB - Bristol"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="64889"/>
+      <entry key="REGION" value="Bristol"/>
+      <entry key="WORKER_NAME" value="Michael Hardy"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,376 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access, Corporate Learning Basic Role" bundleSummary="Active Directory Basic IT Role" correlated="true" lastLogin="1765553339510" lastRefresh="1766397022675" managerStatus="true" name="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Regulatory Affairs and Governance"/>
+      <entry key="displayName" value="Arjun Naidu"/>
+      <entry key="distinguishedName" value="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="division" value="Division-1"/>
+      <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+      <entry key="employeeId" value="8512512"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part_time"/>
+      <entry key="firstname" value="Arjun"/>
+      <entry key="hireDate" value="12-12-2025"/>
+      <entry key="lastname" value="Naidu"/>
+      <entry key="location" value="Hyderabad"/>
+      <entry key="nsStatus" value="Joiner-Completed12-12-2025"/>
+      <entry key="postalCode" value="513552"/>
+      <entry key="sAMAccountName" value="naidu.arjun"/>
+      <entry key="terminationDate" value="18-07-2027"/>
+      <entry key="title" value="Governance Program Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+    <Reference class="sailpoint.object.Bundle" name="NS_Role_Corporate_Learning_Portal"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+    <AttributeMetaData attribute="email" source="Active Directory:AppRule: NS_Rule_IdentityMapping_Email Active Directory$NS_Rule_IdentityMapping_Email"/>
+    <AttributeMetaData attribute="distinguishedName" source="Active Directory:distinguishedName"/>
+    <AttributeMetaData attribute="sAMAccountName" source="Active Directory:sAMAccountName"/>
+  </AttributeMetaDatas>
+  <Bundles>
+    <Reference class="sailpoint.object.Bundle" name="Active Directory Basic IT Role"/>
+  </Bundles>
+  <Exceptions>
+    <EntitlementGroup displayName="8512512" nativeIdentity="8512512">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Audit Viewer</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+    <EntitlementGroup displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+    <EntitlementGroup displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Sales Dashboard Viewer</String>
+                <String>Sales Director</String>
+                <String>Sales Executive</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+  </Exceptions>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="attributeAssignments">
+        <value>
+          <List>
+            <AttributeAssignment applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" assigner="spadmin" name="roles" nativeIdentity="8512512" source="LCM" type="Entitlement" value="Sales Dashboard Viewer"/>
+            <AttributeAssignment applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" assigner="spadmin" name="roles" nativeIdentity="8512512" source="LCM" type="Entitlement" value="Sales Director"/>
+            <AttributeAssignment applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" assigner="spadmin" name="roles" nativeIdentity="8512512" source="LCM" type="Entitlement" value="Sales Executive"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1765385848774" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule">
+              <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </RoleAssignment>
+            <RoleAssignment date="1765387423222" roleName="NS_Role_Corporate_Learning_Portal" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="roleDetections">
+        <value>
+          <List>
+            <RoleDetection assignmentIds="4257718f45914814a0aed709e48d5517" date="1765387424414" roleName="Active Directory Basic IT Role">
+              <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountItem name="memberOf">
+                  <value>
+                    <Set>
+                      <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    </Set>
+                  </value>
+                </AccountItem>
+              </RoleTarget>
+            </RoleDetection>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Arjun Naidu" identity="8512512" lastRefresh="1765387424440">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="39 NH Road"/>
+          <entry key="ADDRESS_WORK" value="Hybrid"/>
+          <entry key="BUILDING_CODE" value="B373"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU37"/>
+          <entry key="CLASS" value="Part_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Regulatory Affairs and Governance"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+          <entry key="DIVISION" value="Division-1"/>
+          <entry key="DIVISION_ID" value="DIV28"/>
+          <entry key="EMAIL" value="naidu.arjun@nstechiiq.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512512"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F11551"/>
+          <entry key="FIRST_NAME" value="Arjun"/>
+          <entry key="HIREDATE" value="12-12-2025"/>
+          <entry key="JOBCODE" value="JC402"/>
+          <entry key="JOBTITLE" value="Governance Program Manager"/>
+          <entry key="LAST_NAME" value="Naidu"/>
+          <entry key="LOCATION" value="Hyderabad"/>
+          <entry key="MANAGER_ID" value="8512500"/>
+          <entry key="POSTAL_CODE" value="513552"/>
+          <entry key="REGION" value="East"/>
+          <entry key="WORKER_NAME" value="Arjun Naidu"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="naidu.arjun" entitlements="true" identity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1765387424440" manuallyCorrelated="true" uuid="{1651e4dd-fdb4-4364-b42c-74a3a43e205c}">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="accountFlags">
+            <value>
+              <List>
+                <String>Normal User Account</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="businessCategory" value="Part_time"/>
+          <entry key="cn" value="naidu.arjun"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="departmentNumber" value="DEPT-006"/>
+          <entry key="description" value="Created via sailpoint Governance Program Manager"/>
+          <entry key="displayName" value="Arjun Naidu"/>
+          <entry key="distinguishedName" value="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="employeeNumber" value="8512512"/>
+          <entry key="employeeType" value="Employee"/>
+          <entry key="givenName" value="Arjun"/>
+          <entry key="l" value="Hyderabad"/>
+          <entry key="mail" value="naidu.arjun@nstechiiq.com"/>
+          <entry key="manager" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="memberOf">
+            <value>
+              <List>
+                <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="mobile" value="+91-9156789012"/>
+          <entry key="msDS-PrincipalName" value="NSIIQ\naidu.arjun"/>
+          <entry key="objectClass">
+            <value>
+              <List>
+                <String>top</String>
+                <String>person</String>
+                <String>organizationalPerson</String>
+                <String>user</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1305"/>
+          <entry key="objectType" value="user"/>
+          <entry key="objectguid" value="{1651e4dd-fdb4-4364-b42c-74a3a43e205c}"/>
+          <entry key="physicalDeliveryOfficeName" value="B373"/>
+          <entry key="postalCode" value="513552"/>
+          <entry key="sAMAccountName" value="naidu.arjun"/>
+          <entry key="sn" value="Naidu"/>
+          <entry key="st" value="East"/>
+          <entry key="streetAddress" value="39 NH Road"/>
+          <entry key="telephoneNumber" value="+91-44-23457890"/>
+          <entry key="title" value="Governance Program Manager"/>
+          <entry key="userAccountControl" value="512"/>
+          <entry key="userPrincipalName" value="naidu.arjun@nstechiiq.com"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="8512512" entitlements="true" identity="8512512" lastRefresh="1766037062836" manuallyCorrelated="true">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="annualHours" value="1040"/>
+          <entry key="countryCode" value="513552"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+          <entry key="empStatus" value="Active"/>
+          <entry key="employee" value="Arjun Naidu"/>
+          <entry key="employeeId" value="8512512"/>
+          <entry key="firstName" value="Arjun"/>
+          <entry key="hireDate" value="12-12-2025"/>
+          <entry key="isManager" value="No"/>
+          <entry key="jobTitle" value="Governance Program Manager"/>
+          <entry key="lastName" value="Naidu"/>
+          <entry key="manager" value="Nikesh Singh"/>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Audit Viewer</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="salaryClass" value="A"/>
+          <entry key="superviserId" value="8512500"/>
+          <entry key="terminationDate" value="18-07-2027"/>
+          <entry key="userLevel" value="D"/>
+          <entry key="workCountry" value="India"/>
+          <entry key="workState" value="East"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="naidu.arjun@nstechiiq.com" entitlements="true" identity="8512512">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="country" value="India"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+          <entry key="employeeId" value="8512512"/>
+          <entry key="firstName" value="Arjun"/>
+          <entry key="hireDate" value="12-12-2025"/>
+          <entry key="isInstructor" value="No"/>
+          <entry key="jobTitle" value="Governance Program Manager"/>
+          <entry key="lastName" value="Naidu"/>
+          <entry key="learningGroup" value="Soft Skills Enhancement"/>
+          <entry key="managerDisplayName" value="Nikesh Singh"/>
+          <entry key="managerId" value="8512500"/>
+          <entry key="roleLevel" value="Expert"/>
+          <entry key="status" value="ACTIVE"/>
+          <entry key="terminationDate" value="18-07-2027"/>
+          <entry key="workCountry"/>
+          <entry key="workState" value="East"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="naidu.arjun@nstechiiq.com" entitlements="true" identity="8512512" lastRefresh="1765947423909" manuallyCorrelated="true">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="achievedSales" value="0"/>
+          <entry key="annualHours" value="720"/>
+          <entry key="businessUnit" value="A"/>
+          <entry key="commissionRate" value="5%"/>
+          <entry key="country" value="India"/>
+          <entry key="department" value="Regulatory Affairs and Governance"/>
+          <entry key="email" value="naidu.arjun@nstechiiq.com"/>
+          <entry key="employeeId" value="8512512"/>
+          <entry key="firstName" value="Arjun"/>
+          <entry key="hireDate" value="12-12-2025"/>
+          <entry key="isManager" value="No"/>
+          <entry key="jobTitle" value="Governance Program Manager"/>
+          <entry key="lastName" value="Naidu"/>
+          <entry key="managerId" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+          <entry key="region" value="A"/>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Sales Dashboard Viewer</String>
+                <String>Sales Director</String>
+                <String>Sales Executive</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="salesQuota" value="500000"/>
+          <entry key="status" value="Active"/>
+          <entry key="terminationDate" value="18-07-2027"/>
+          <entry key="territory" value="A"/>
+          <entry key="userLevel" value="A"/>
+          <entry key="workState" value="Hyderabad"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+  <Scorecard certificationScore="1000" compositeScore="251" entitlementScore="4" rawEntitlementScore="4">
+    <ScoreItem compositePercentage="100" displayName="score_def_certificationAge_name" score="1000" scorePercentage="100" type="score_def_certificationAge_shortname">
+      <TargetMessage>
+        <Message key="cert_scorer_target_id_not_certified" type="Info"/>
+      </TargetMessage>
+    </ScoreItem>
+  </Scorecard>
+</Identity>

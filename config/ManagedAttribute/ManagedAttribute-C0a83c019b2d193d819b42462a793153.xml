@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - EU - O365_F1_CoreApps" hash="9e89597fd1a70736ee8bdc06d8b00c66a2b43f06" lastRefresh="1766343453303" requestable="true" type="group" uuid="{c386e961-34bc-4c40-8d8a-25a52062bdfe}" value="CN=O365 License - EU - O365_F1_CoreApps,OU=Shared,OU=Groups,OU=Europe,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - EU - O365_F1_CoreApps"/>
+      <entry key="description" value="O365 License - EU - O365_F1_CoreApps created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - EU - O365_F1_CoreApps"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1465"/>
+      <entry key="objectguid" value="{c386e961-34bc-4c40-8d8a-25a52062bdfe}"/>
+      <entry key="sAMAccountName" value="O365 License - EU - O365_F1_CoreApps"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="8512518" action="ProvisioningComplete" application="Financial Planning &amp; Forecasting" attributeName="annualHours" attributeValue="1040" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="9c2ee0ea-b7a5-4a1d-936d-ef12cc1ddb0b">
+  <Attributes>
+    <Map>
+      <entry key="op" value="Set"/>
+      <entry key="taskResultId" value="c0a83c019b4b116d819b50c2c76703c9"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

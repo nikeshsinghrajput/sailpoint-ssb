@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Sales Director" hash="5c6131301dad8bb3751c16a6cfadb9df6b015d8c" lastRefresh="1768326689985" requestable="true" type="roles" value="Sales Director">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="03-25-2025"/>
+      <entry key="description" value="Oversees regional or global sales strategy and forecasting."/>
+      <entry key="modifiedDate" value="09-30-2025"/>
+      <entry key="owner" value="vp.sales@nsiiq.com"/>
+      <entry key="roleId" value="ROL_SALES_DIRECTOR_004"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Executive"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

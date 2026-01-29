@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Incomplete" endDate="1767959817545" executionStatus="Completed" name="0000000293" priority="Normal" requesterDisplayName="Scheduler" source="LCM" state="End" targetClass="sailpoint.object.Identity" targetDisplayName="Aditya Sharma" verified="1768014714527">
+  <Attributes>
+    <Map>
+      <entry key="messages">
+        <value>
+          <List>
+            <Message key="Exception occurred while performing 'Disable' operation on identity '8512503':  Error: No configuration found for'Disable Account'. Please add at least one operation and try again." type="Error"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="f7803391-7055-47b7-b696-aad5dd224453">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000293"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan nativeIdentity="f7803391-7055-47b7-b696-aad5dd224453">
+                <AccountRequest application="Hr-Workday" nativeIdentity="8512503" op="Disable"/>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512503" op="Disable"/>
+                <AccountRequest application="Sales Analytics" nativeIdentity="8512503" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000293"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="f7803391-7055-47b7-b696-aad5dd224453" targetIntegration="Financial Planning &amp; Forecasting" trackingId="378f2a1d75324065bc31b9f8aa527af1">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512503" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                <AttributeRequest name="empStatus" op="Set" value="Inactive"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000293"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningPlan nativeIdentity="f7803391-7055-47b7-b696-aad5dd224453" targetIntegration="Hr-Workday" trackingId="0ebd0224efb9421ba583c35affc0fd7d">
+              <AccountRequest application="Hr-Workday" nativeIdentity="8512503" op="Disable">
+                <Attributes>
+                  <Map>
+                    <entry key="provisioningTransactionId" value="c0a83c019b731761819ba29deae1171c"/>
+                  </Map>
+                </Attributes>
+                <ProvisioningResult status="failed">
+                  <Errors>
+                    <Message key="Exception occurred while performing 'Disable' operation on identity '8512503':  Error: No configuration found for'Disable Account'. Please add at least one operation and try again." type="Error"/>
+                  </Errors>
+                </ProvisioningResult>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000293"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="failed"/>
+            </ProvisioningPlan>
+            <ProvisioningPlan nativeIdentity="f7803391-7055-47b7-b696-aad5dd224453" targetIntegration="Sales Analytics" trackingId="0b9ea0ed9bda49869f17426e99a1df63">
+              <AccountRequest application="Sales Analytics" nativeIdentity="8512503" op="Disable" targetIntegration="Sales Analytics">
+                <AttributeRequest name="status" op="Set" value="Inactive"/>
+                <AttributeRequest name="terminationDate" op="Set" value="01-09-2026"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000293"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019b731761819ba29b1d3e16ef"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Hr-Workday" nativeIdentity="8512503" operation="Disable" provisioningEngine="Hr-Workday" provisioningState="Failed">
+      <Attributes>
+        <Map>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="bea581ee64984301a01defa84794a55d">
+                <AccountRequest application="Hr-Workday" nativeIdentity="8512503" op="Disable">
+                  <Attributes>
+                    <Map>
+                      <entry key="provisioningTransactionId" value="c0a83c019b731761819ba29deae1171c"/>
+                    </Map>
+                  </Attributes>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" nativeIdentity="8512503" operation="Disable" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="ebb0511d807f465a8d650860f362adc0">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512503" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Sales Analytics" nativeIdentity="8512503" operation="Disable" provisioningState="Finished">
+      <Attributes>
+        <Map>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="f3408045ed764b98aa439af29905d3c2">
+                <AccountRequest application="Sales Analytics" nativeIdentity="8512503" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="empStatus" nativeIdentity="8512503" operation="Set" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished" value="Inactive">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Financial Planning &amp; Forecasting"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="a644702dc49f43f0b925e4e9f1d83a16">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512503" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                  <AttributeRequest name="empStatus" op="Set" trackingId="a644702dc49f43f0b925e4e9f1d83a16" value="Inactive"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="status" nativeIdentity="8512503" operation="Set" provisioningEngine="Sales Analytics" provisioningState="Finished" value="Inactive">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Sales Analytics"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="f917b93c77ff4d098c8f5edd0f0da48a">
+                <AccountRequest application="Sales Analytics" nativeIdentity="8512503" op="Disable" targetIntegration="Sales Analytics">
+                  <AttributeRequest name="status" op="Set" trackingId="f917b93c77ff4d098c8f5edd0f0da48a" value="Inactive"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="terminationDate" nativeIdentity="8512503" operation="Set" provisioningEngine="Sales Analytics" provisioningState="Finished" value="01-09-2026">
+      <Attributes>
+        <Map>
+          <entry key="expansionInfo" value="Sales Analytics"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="7f06294bfa654039935d4e0268fbdacf">
+                <AccountRequest application="Sales Analytics" nativeIdentity="8512503" op="Disable" targetIntegration="Sales Analytics">
+                  <AttributeRequest name="terminationDate" op="Set" trackingId="7f06294bfa654039935d4e0268fbdacf" value="01-09-2026"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

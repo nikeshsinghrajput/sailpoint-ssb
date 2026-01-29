@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="LinkedInLearning_SSO" hash="48e070d39cf399957732dbd1f4f647cd124d2d0d" lastRefresh="1765222932978" requestable="true" type="group" uuid="{a9476660-ff79-4ae0-9293-e4f6bc9f8bf3}" value="CN=LinkedInLearning_SSO,OU=Restricted,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="LinkedInLearning_SSO"/>
+      <entry key="description" value="LinkedInLearning_SSO created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\LinkedInLearning_SSO"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1229"/>
+      <entry key="objectguid" value="{a9476660-ff79-4ae0-9293-e4f6bc9f8bf3}"/>
+      <entry key="sAMAccountName" value="LinkedInLearning_SSO"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

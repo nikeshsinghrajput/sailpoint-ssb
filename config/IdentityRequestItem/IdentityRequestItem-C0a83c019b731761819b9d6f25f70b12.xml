@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Corporate Learning Portal" compilationStatus="Expansion" operation="Create" provisioningState="Failed">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="errors">
+        <value>
+          <List>
+            <Message key="task_msg_identity_request_verification_noaccountId" type="Error"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="EntitlementAdd"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="993bce4570254d46a4996529023bca70">
+            <AccountRequest application="Corporate Learning Portal" op="Create">
+              <Attributes>
+                <Map>
+                  <entry key="attachmentConfigList"/>
+                  <entry key="attachments"/>
+                  <entry key="flow" value="AccessRequest"/>
+                  <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="operation" value="EntitlementAdd"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

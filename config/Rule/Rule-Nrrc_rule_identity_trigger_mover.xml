@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NRRC_Rule_Identity_Trigger_Mover" type="IdentityTrigger">
+  <Description>This rule can be used for Certification Events that use rule triggers. The previousIdentity and newIdentity hold snapshots of the identity before the update has occurred and the state of the identity after the update, respectively.</Description>
+  <ReferencedRules>
+    <Reference class="sailpoint.object.Rule" name="NRRC_RuleLibrary_Active_Directory"/>
+  </ReferencedRules>
+  <Signature returnType="boolean">
+    <Inputs>
+      <Argument name="log" type="org.apache.commons.logging.Log">
+        <Description>
+          The log object associated with the SailPointContext.
+        </Description>
+      </Argument>
+      <Argument name="context" type="sailpoint.api.SailPointContext">
+        <Description>
+          A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+        </Description>
+      </Argument>
+      <Argument name="previousIdentity">
+        <Description>
+          The identity before the refresh/aggregation (this will be null when an
+          identity is created).
+        </Description>
+      </Argument>
+      <Argument name="newIdentity">
+        <Description>
+          The identity after the refresh/aggregation (this will be null when an
+          identity is deleted).
+        </Description>
+      </Argument>
+    </Inputs>
+    <Returns>
+      <Argument name="result">
+        <Description>
+          A boolean describing the result of the rule.
+        </Description>
+      </Argument>
+    </Returns>
+  </Signature>
+  <Source>
+  import java.text.SimpleDateFormat;
+   import java.util.Calendar;
+   import java.util.Date;
+   import sailpoint.tools.Util;
+   import sailpoint.object.Link;
+  boolean result = false;
+  Logger logs = Logger.getLogger("com.ns.rule.NRRC_Rule_Identity_Trigger_Mover");
+   logs.error("Mover_Trigger_rule started");
+  try {
+    boolean inactive   =  previousIdentity.getAttribute("inactive");
+    String prevJobtitle   =  previousIdentity.getAttribute("title");
+	String prevDepartment =  previousIdentity.getAttribute("department");
+	String prevManager    =  previousIdentity.getManager()!=null?newIdentity.getManager().getName():null;
+	String newJobtitle   =  newIdentity.getAttribute("title");
+	String newDepartment =  newIdentity.getAttribute("department");
+	String newManager    =  newIdentity.getManager()!=null?newIdentity.getManager().getName():null;
+    logs.error("prevJobtitle:::"+prevJobtitle+"::::::newJobtitle:::"+newJobtitle);
+	logs.error("prevDepartment:::"+prevDepartment+"::::::newDepartment:::"+newDepartment);
+	logs.error("prevManager:::"+prevManager+"::::::newManager:::"+newManager);
+	
+     if (!inactive &amp;&amp; Util.isNotNullOrEmpty(prevJobtitle) &amp;&amp; Util.isNotNullOrEmpty(newJobtitle) &amp;&amp; Util.isNotNullOrEmpty(prevManager)
+	  &amp;&amp; Util.isNotNullOrEmpty(newManager) &amp;&amp; Util.isNotNullOrEmpty(prevDepartment) &amp;&amp; Util.isNotNullOrEmpty(newDepartment)) {
+        if(!prevJobtitle.equalsIgnoreCase(newJobtitle) || !prevDepartment.equalsIgnoreCase(newDepartment) || !prevManager.equalsIgnoreCase(newManager)) {
+          newIdentity.setAttribute("nsStatus", "Mover-Started");
+          context.saveObject(newIdentity);
+          context.commitTransaction();
+          logs.error("Mover is able to trigger2");
+          result = true;
+        }
+      }
+    }catch (Exception e) {
+	logs.error("Exception occured in Mover_Trigger_rule"+e);
+    }
+  return result;</Source>
+</Rule>

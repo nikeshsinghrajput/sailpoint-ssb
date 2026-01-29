@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="doe1.john" entitlements="true" identity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1768911699930" manuallyCorrelated="true" uuid="{96deb622-f1fd-4138-acaf-41fdd06ea41d}">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+      <LastValue>
+        <Set>
+          <String>CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+          <String>CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+        </Set>
+      </LastValue>
+    </AttributeMetaData>
+  </AttributeMetaDatas>
+  <Attributes>
+    <Map>
+      <entry key="NetBIOSName"/>
+      <entry key="accountFlags">
+        <value>
+          <List>
+            <String>Normal User Account</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="businessCategory" value="Hybrid"/>
+      <entry key="cn" value="doe1.john"/>
+      <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="departmentNumber" value="DEPT-012"/>
+      <entry key="description" value="Created via sailpoint :Threat Intelligence Specialist"/>
+      <entry key="displayName" value="John Doe"/>
+      <entry key="distinguishedName" value="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="employeeNumber" value="739003"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="givenName" value="John"/>
+      <entry key="l" value="SG - Singapore"/>
+      <entry key="mail" value="doe1.john@nstechiiq.com"/>
+      <entry key="manager" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="memberOf">
+        <value>
+          <List>
+            <String>CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+            <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="mobile" value="+91-9845678901"/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\doe1.john"/>
+      <entry key="objectClass">
+        <value>
+          <List>
+            <String>top</String>
+            <String>person</String>
+            <String>organizationalPerson</String>
+            <String>user</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1506"/>
+      <entry key="objectType" value="user"/>
+      <entry key="objectguid" value="{96deb622-f1fd-4138-acaf-41fdd06ea41d}"/>
+      <entry key="physicalDeliveryOfficeName" value="SG_CEN_BLDG_02"/>
+      <entry key="postalCode" value="90232"/>
+      <entry key="sAMAccountName" value="doe1.john"/>
+      <entry key="sn" value="Doe"/>
+      <entry key="st" value="Singapore"/>
+      <entry key="streetAddress" value="9715 Cedar St"/>
+      <entry key="title" value="Threat Intelligence Specialist"/>
+      <entry key="userAccountControl" value="512"/>
+    </Map>
+  </Attributes>
+</Link>

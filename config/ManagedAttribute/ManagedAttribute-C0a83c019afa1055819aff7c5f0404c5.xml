@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="BGC - VDI - ExternalAccess" hash="a0b7704671f96293a5c6edbbe10d1241f85f079b" lastRefresh="1765222932228" requestable="true" type="group" uuid="{31248a69-a18d-4a17-991e-744a3771d2c8}" value="CN=BGC - VDI - ExternalAccess,OU=Shared,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="BGC - VDI - ExternalAccess"/>
+      <entry key="description" value="BGC - VDI - ExternalAccess created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\BGC - VDI - ExternalAccess"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1216"/>
+      <entry key="objectguid" value="{31248a69-a18d-4a17-991e-744a3771d2c8}"/>
+      <entry key="sAMAccountName" value="BGC - VDI - ExternalAccess"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

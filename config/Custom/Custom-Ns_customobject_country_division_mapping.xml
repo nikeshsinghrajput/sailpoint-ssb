@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Country_Division_Mapping">
+  <Attributes>
+    <Map>
+      <entry key="Argentina">
+        <value>
+          <List>
+            <String>Argentina Retail Banking and Payments</String>
+            <String>Argentina Corporate and Investment Services</String>
+            <String>Argentina Technology and Operations</String>
+            <String>Argentina Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Australia">
+        <value>
+          <List>
+            <String>Australia Retail Banking and Payments</String>
+            <String>Australia Corporate and Investment Services</String>
+            <String>Australia Technology and Operations</String>
+            <String>Australia Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Brazil">
+        <value>
+          <List>
+            <String>Brazil Retail Banking and Payments</String>
+            <String>Brazil Corporate and Investment Services</String>
+            <String>Brazil Technology and Operations</String>
+            <String>Brazil Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Canada">
+        <value>
+          <List>
+            <String>Canada Retail Banking and Payments</String>
+            <String>Canada Corporate and Investment Services</String>
+            <String>Canada Technology and Operations</String>
+            <String>Canada Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Chile">
+        <value>
+          <List>
+            <String>Chile Retail Banking and Payments</String>
+            <String>Chile Corporate and Investment Services</String>
+            <String>Chile Technology and Operations</String>
+            <String>Chile Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="China">
+        <value>
+          <List>
+            <String>China Retail Banking and Payments</String>
+            <String>China Corporate and Investment Services</String>
+            <String>China Technology and Operations</String>
+            <String>China Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Egypt">
+        <value>
+          <List>
+            <String>Egypt Retail Banking and Payments</String>
+            <String>Egypt Corporate and Investment Services</String>
+            <String>Egypt Technology and Operations</String>
+            <String>Egypt Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="France">
+        <value>
+          <List>
+            <String>France Retail Banking and Payments</String>
+            <String>France Corporate and Investment Services</String>
+            <String>France Technology and Operations</String>
+            <String>France Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Germany">
+        <value>
+          <List>
+            <String>Germany Retail Banking and Payments</String>
+            <String>Germany Corporate and Investment Services</String>
+            <String>Germany Technology and Operations</String>
+            <String>Germany Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="India">
+        <value>
+          <List>
+            <String>India Retail Banking and Payments</String>
+            <String>India Corporate and Investment Services</String>
+            <String>India Technology and Operations</String>
+            <String>India Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Italy">
+        <value>
+          <List>
+            <String>Italy Retail Banking and Payments</String>
+            <String>Italy Corporate and Investment Services</String>
+            <String>Italy Technology and Operations</String>
+            <String>Italy Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Japan">
+        <value>
+          <List>
+            <String>Japan Retail Banking and Payments</String>
+            <String>Japan Corporate and Investment Services</String>
+            <String>Japan Technology and Operations</String>
+            <String>Japan Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Kenya">
+        <value>
+          <List>
+            <String>Kenya Retail Banking and Payments</String>
+            <String>Kenya Corporate and Investment Services</String>
+            <String>Kenya Technology and Operations</String>
+            <String>Kenya Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Mexico">
+        <value>
+          <List>
+            <String>Mexico Retail Banking and Payments</String>
+            <String>Mexico Corporate and Investment Services</String>
+            <String>Mexico Technology and Operations</String>
+            <String>Mexico Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Netherlands">
+        <value>
+          <List>
+            <String>Netherlands Retail Banking and Payments</String>
+            <String>Netherlands Corporate and Investment Services</String>
+            <String>Netherlands Technology and Operations</String>
+            <String>Netherlands Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Qatar">
+        <value>
+          <List>
+            <String>Qatar Retail Banking and Payments</String>
+            <String>Qatar Corporate and Investment Services</String>
+            <String>Qatar Technology and Operations</String>
+            <String>Qatar Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Saudi Arabia">
+        <value>
+          <List>
+            <String>Saudi Arabia Retail Banking and Payments</String>
+            <String>Saudi Arabia Corporate and Investment Services</String>
+            <String>Saudi Arabia Technology and Operations</String>
+            <String>Saudi Arabia Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Singapore">
+        <value>
+          <List>
+            <String>Singapore Retail Banking and Payments</String>
+            <String>Singapore Corporate and Investment Services</String>
+            <String>Singapore Technology and Operations</String>
+            <String>Singapore Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="South Africa">
+        <value>
+          <List>
+            <String>South Africa Retail Banking and Payments</String>
+            <String>South Africa Corporate and Investment Services</String>
+            <String>South Africa Technology and Operations</String>
+            <String>South Africa Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="South Korea">
+        <value>
+          <List>
+            <String>South Korea Retail Banking and Payments</String>
+            <String>South Korea Corporate and Investment Services</String>
+            <String>South Korea Technology and Operations</String>
+            <String>South Korea Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Spain">
+        <value>
+          <List>
+            <String>Spain Retail Banking and Payments</String>
+            <String>Spain Corporate and Investment Services</String>
+            <String>Spain Technology and Operations</String>
+            <String>Spain Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="United Arab Emirates">
+        <value>
+          <List>
+            <String>United Arab Emirates Retail Banking and Payments</String>
+            <String>United Arab Emirates Corporate and Investment Services</String>
+            <String>United Arab Emirates Technology and Operations</String>
+            <String>United Arab Emirates Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="United Kingdom">
+        <value>
+          <List>
+            <String>United Kingdom Retail Banking and Payments</String>
+            <String>United Kingdom Corporate and Investment Services</String>
+            <String>United Kingdom Technology and Operations</String>
+            <String>United Kingdom Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="United States">
+        <value>
+          <List>
+            <String>United States Retail Banking and Payments</String>
+            <String>United States Corporate and Investment Services</String>
+            <String>United States Technology and Operations</String>
+            <String>United States Risk and Compliance</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

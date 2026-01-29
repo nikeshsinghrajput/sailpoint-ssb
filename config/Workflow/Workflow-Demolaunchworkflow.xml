@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow name="demoLaunchWorkflow" taskType="LCM" type="LCMProvisioning">
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity being updated.</Description>
+  </Variable>
+  <Step icon="Start" name="Start" posX="25" posY="10">
+    <Transition to="Go to form"/>
+  </Step>
+  <Step icon="Default" name="Go to form" posX="250" posY="10">
+    <Approval owner="spadmin">
+      <Arg name="workItemRequester" value="spadmin"/>
+      <Arg name="workItemDescription" value="Transient Demo Form"/>
+      <Arg name="workItemType" value="ManualAction"/>
+      <Arg name="workItemForm" value="string:Transient Test Form"/>
+    </Approval>
+    <Transition to="Last Step"/>
+  </Step>
+  <Step name="Last Step">
+    <Script>
+      <Source>
+	  System.out.println("Last step executed");
+	  </Source>
+    </Script>
+    <Transition to="end"/>
+  </Step>
+  <Step icon="Stop" name="end" posX="1131" posY="253"/>
+</Workflow>

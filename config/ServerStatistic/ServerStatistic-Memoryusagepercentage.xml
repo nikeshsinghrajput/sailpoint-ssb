@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ServerStatistic PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ServerStatistic name="memoryUsagePercentage" snapshotName="1769092161010" value="24.7" valueType="double">
+  <Host>
+    <Reference class="sailpoint.object.Server" name="NikeshRajput"/>
+  </Host>
+  <MonitoringStatisticRef>
+    <Reference class="sailpoint.object.MonitoringStatistic" name="memoryUsagePercentage"/>
+  </MonitoringStatisticRef>
+</ServerStatistic>

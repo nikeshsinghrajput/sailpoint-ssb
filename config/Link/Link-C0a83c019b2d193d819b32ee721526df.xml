@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="sumit verma" identity="8512519" lastRefresh="1766086046229">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="1453 Park Ln"/>
+      <entry key="ADDRESS_WORK" value="1453 Park Ln;Guangzhou, Guangdong 510000;China"/>
+      <entry key="BUILDING_CODE" value="CN_GUA_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3006"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="NS Soft Tech"/>
+      <entry key="CONTRACT_END_DATE" value="12-26-2025"/>
+      <entry key="COUNTRY_NAME" value="China"/>
+      <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+      <entry key="DIVISION" value="China Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-CN-02"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512519"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FIRST_NAME" value="sumit"/>
+      <entry key="HIREDATE" value="12-09-2025"/>
+      <entry key="JOBCODE" value="JT-021-01"/>
+      <entry key="JOBTITLE" value="Product Manager"/>
+      <entry key="LAST_NAME" value="verma"/>
+      <entry key="LOCATION" value="CN - Guangzhou"/>
+      <entry key="MANAGER_ID" value="8512512"/>
+      <entry key="POSTAL_CODE" value="510000"/>
+      <entry key="REGION" value="Guangzhou"/>
+      <entry key="WORKER_NAME" value="sumit verma"/>
+      <entry key="WORKER_STATUS" value="ACTIVE"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

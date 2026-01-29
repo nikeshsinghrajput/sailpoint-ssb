@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Timothy Miles" identity="739035" lastRefresh="1768468355685">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2347 Queen Blvd"/>
+      <entry key="ADDRESS_WORK" value="2347 Queen Blvd;Al Wakrah, Doha Municipality 36596;Qatar"/>
+      <entry key="BUILDING_CODE" value="QA_DOH_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3071"/>
+      <entry key="CLASS" value="Full-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-06-2026"/>
+      <entry key="COUNTRY_NAME" value="Qatar"/>
+      <entry key="DEPARTMENT" value="Enterprise Architecture"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-015"/>
+      <entry key="DIVISION" value="Qatar Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-QA-03"/>
+      <entry key="EMAIL" value="timothy.miles@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739035"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739035"/>
+      <entry key="FIRST_NAME" value="Timothy"/>
+      <entry key="HIREDATE" value="08-18-2023"/>
+      <entry key="JOBCODE" value="JT-015-03"/>
+      <entry key="JOBTITLE" value="IT Strategy Consultant"/>
+      <entry key="LAST_NAME" value="Miles"/>
+      <entry key="LOCATION" value="QA - Al Wakrah"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="5665"/>
+      <entry key="REGION" value="Al Wakrah"/>
+      <entry key="WORKER_NAME" value="Timothy Miles"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

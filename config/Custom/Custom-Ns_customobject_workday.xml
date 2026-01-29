@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Workday">
+  <Attributes>
+    <Map>
+      <entry key="Password" value="admin123"/>
+      <entry key="appName" value="Hr-Workday"/>
+      <entry key="hostUrl" value="http://localhost:9091/workday/addEmployee"/>
+      <entry key="userName" value="admin"/>
+    </Map>
+  </Attributes>
+</Custom>

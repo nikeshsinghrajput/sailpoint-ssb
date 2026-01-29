@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="CN=johnson1.mike,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" applicationName="Active Directory" identityDisplayName="Mike Johnson" identityName="fc49393e-b3a3-4255-9c7e-d24087fee378" integration="Active Directory" name="0000000041" nativeIdentity="CN=johnson1.mike,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000056"/>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=johnson1.mike,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a0512c7819a07dfd42d121c"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="mail" op="Set" value="johnson1.mikensiiq.com"/>
+            <AttributeRequest name="employeeNumber" op="Set" value="739005"/>
+            <AttributeRequest name="givenName" op="Set" value="Mike"/>
+            <AttributeRequest name="sn" op="Set" value="Johnson"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="johnson1.mike"/>
+            <AttributeRequest name="displayName" op="Set" value="Mike Johnson"/>
+            <AttributeRequest name="title" op="Set" value="IT Specialist"/>
+            <AttributeRequest name="company" op="Add" value="Nsiiq Inc"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="133641792000000000"/>
+            <AttributeRequest name="department" op="Set" value="IT Support"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="8563"/>
+            <AttributeRequest name="division" op="Add" value="Corporate - Technical"/>
+            <AttributeRequest name="streetAddress" op="Set" value="6080 Center Dr"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="USA_LOS_ANGELES_HUGHES_BUILDING_CA"/>
+            <AttributeRequest name="l" op="Set" value="USA - Los Angeles - HUGHES BUILDING - CA"/>
+            <AttributeRequest name="st" op="Set" value="Los Angeles"/>
+            <AttributeRequest name="co" op="Add" value="United States of America"/>
+            <AttributeRequest name="postalCode" op="Set" value="90045-9209"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9189012345"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-79-26581234"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint IT Specialist"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Exception occurred while executing the RPCRequest: Errors returned from IQService. &quot;The object already exists. The object already exists. 00000524: UpdErr: DSID-031A11DA, problem 6005 (ENTRY_EXISTS), data 0 00000524: UpdErr: DSID-031A11DA, problem 6005 (ENTRY_EXISTS), data 0 . HRESULT:[0x80071392] For identity: CN=johnson1.mike,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com&quot;" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="America - Symantec VIP Remote Access" hash="d8a2f7f58db044b0c99c2c3eb63875d5c267db30" lastRefresh="1765222932132" requestable="true" type="group" uuid="{98c11e82-6763-4e88-a9ad-ecf087944e77}" value="CN=America - Symantec VIP Remote Access,OU=Security,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="America - Symantec VIP Remote Access"/>
+      <entry key="description" value="America - Symantec VIP Remote Access created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\America - Symantec VIP Remote Access"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1276"/>
+      <entry key="objectguid" value="{98c11e82-6763-4e88-a9ad-ecf087944e77}"/>
+      <entry key="sAMAccountName" value="America - Symantec VIP Remote Access"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

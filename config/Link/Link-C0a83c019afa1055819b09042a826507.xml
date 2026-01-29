@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Krishna Nair" identity="8512510" lastRefresh="1765382826627">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="591 Ring Road"/>
+      <entry key="ADDRESS_WORK" value="Hybrid"/>
+      <entry key="BUILDING_CODE" value="B116"/>
+      <entry key="BUSINESS_UNIT_ID" value="BU78"/>
+      <entry key="CLASS" value="Part_time"/>
+      <entry key="COMPANY_NAME" value="NsTech"/>
+      <entry key="CONTRACT_END_DATE" value="18-07-2027"/>
+      <entry key="COUNTRY_NAME" value="India"/>
+      <entry key="DEPARTMENT" value="Regulatory Affairs and Governance"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-006"/>
+      <entry key="DIVISION" value="Division-2"/>
+      <entry key="DIVISION_ID" value="DIV48"/>
+      <entry key="EMPLOYEE_NUMBER" value="8512510"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="F94010"/>
+      <entry key="FIRST_NAME" value="Krishna"/>
+      <entry key="HIREDATE" value="01-10-2025"/>
+      <entry key="JOBCODE" value="JC176"/>
+      <entry key="JOBTITLE" value="Governance Program Manager"/>
+      <entry key="LAST_NAME" value="Nair"/>
+      <entry key="LOCATION" value="Delhi"/>
+      <entry key="MANAGER_ID" value="8512500"/>
+      <entry key="POSTAL_CODE" value="572748"/>
+      <entry key="REGION" value="South"/>
+      <entry key="WORKER_NAME" value="Krishna Nair"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

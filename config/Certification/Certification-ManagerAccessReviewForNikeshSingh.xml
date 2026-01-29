@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1765985747932" certificationDefinitionId="c0a83c019b0e110c819b2cf3cf253536" creator="spadmin" entitlementGranularity="Value" expiration="1768664147932" manager="f1aea43c-892b-4f9d-be64-42557cc5650f" name="Manager Access Review for Nikesh Singh" nextPhaseTransition="1768664148056" phase="Active" shortName="Access Review for Nikesh Singh" taskScheduleId="Manager Certification [DATE] [17/12/25, 9:05 PM]" totalEntities="11" totalItems="15" type="Manager">
+  <Attributes>
+    <Map>
+      <entry key="autoSignOffWhenNothingToCertify" value="false"/>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="requireReassignmentCompletion" value="true"/>
+      <entry key="suppressEmailWhenNothingToCertify" value="false"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Manager Certification [17/12/25, 9:05:34 PM IST]"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>f1aea43c-892b-4f9d-be64-42557cc5650f</String>
+  </Certifiers>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Staged">
+      <NotificationConfig enabled="true" escalationEnabled="true" reminderFrequency="259200000" remindersEnabled="true">
+        <Configs>
+          <ReminderConfig emailTemplateName="Work Item Reminder" enabled="true" frequency="259200000" millis="604800000"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" enabled="true" escalationRuleName="Escalation rule for policy" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig enabled="true" endDate="1768664147932" escalationEnabled="true" reminderFrequency="259200000" remindersEnabled="true" startDate="1765985747969">
+        <Configs>
+          <ReminderConfig emailTemplateName="Work Item Reminder" enabled="true" frequency="259200000" millis="604800000"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" enabled="true" escalationRuleName="Escalation rule for policy" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig>
+        <Configs>
+          <ReminderConfig before="true" emailTemplateName="Work Item Reminder" millis="1209600000" once="true"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" maxReminders="5" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <CertificationStatistics totalEntities="11" totalExceptions="3" totalItems="15" totalRoles="12"/>
+  <WorkItemRefs>
+    <Reference class="sailpoint.object.WorkItem" name="0000000120"/>
+  </WorkItemRefs>
+  <CertificationEntity firstname="Meera" identity="0c204bd8-d1ae-4615-8678-83a9090ffb53" lastname="Chopra" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d169353a" summaryStatus="Open" targetDisplayName="Meera Chopra" targetName="0c204bd8-d1ae-4615-8678-83a9090ffb53" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="17a4b68f88394059a0c9ff80b4b3c40d" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385837880" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Vihaan" identity="21c6451f-207e-40c8-828c-8c982fa0f4c7" lastname="Patel" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d1ab353d" summaryStatus="Open" targetDisplayName="Vihaan Patel" targetName="21c6451f-207e-40c8-828c-8c982fa0f4c7" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="4eaf209e4e91436ea8c719ddb942ad4b" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385843490" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Meera" identity="2d9cbd9e-3607-40ff-97cf-6515bf42d828" lastname="Nair" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d1c93540" summaryStatus="Open" targetDisplayName="Meera Nair" targetName="2d9cbd9e-3607-40ff-97cf-6515bf42d828" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="cc0058d028ad4855bf94d6d2be6cebf1" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385842479" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Myra" identity="41a860cd-e169-4c36-ae48-0c95660ed05e" lastname="Tiwari" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d1ef3543" summaryStatus="Open" targetDisplayName="Myra Tiwari" targetName="41a860cd-e169-4c36-ae48-0c95660ed05e" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="b39ed8a2b14748e8b2ef1ffce7eaf859" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385840211" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Sai" identity="4b1c6129-577a-4bfc-ab69-bf5562b1e7d7" lastname="Tiwari" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d2183546" summaryStatus="Open" targetDisplayName="Sai Tiwari" targetName="4b1c6129-577a-4bfc-ab69-bf5562b1e7d7" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="1a1d98658d4643d6a4eb39c59d284b86" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385841401" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Vihaan" identity="a6d33d8f-203f-4a40-a574-617e63f210be" lastname="Gupta" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d23c3549" summaryStatus="Open" targetDisplayName="Vihaan Gupta" targetName="a6d33d8f-203f-4a40-a574-617e63f210be" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="163fd83adc494b4da6e01802c6d7144a" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385845589" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Krishna" identity="aea74bcb-7990-4583-9366-4d5ca5d8c672" lastname="Nair" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d25a354c" summaryStatus="Open" targetDisplayName="Krishna Nair" targetName="aea74bcb-7990-4583-9366-4d5ca5d8c672" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="be9b8c4d5e2446b3a38095ec625c1ba5" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385846664" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Saanvi" identity="b6784ef2-12e8-4f63-9d90-71e74ebe35ca" lastname="Tiwari" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d278354f" summaryStatus="Open" targetDisplayName="Saanvi Tiwari" targetName="b6784ef2-12e8-4f63-9d90-71e74ebe35ca" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="d1505adb2a3941fd875620b54b2cc6ab" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385836731" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity compositeScore="251" firstname="Arjun" identity="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" lastname="Naidu" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d2cf3552" summaryStatus="Open" targetDisplayName="Arjun Naidu" targetName="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="4257718f45914814a0aed709e48d5517" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385848774" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule">
+                <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </RoleAssignment>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <BundleEntitlements>
+        <EntitlementSnapshot application="Active Directory" displayName="naidu.arjun" nativeIdentity="CN=naidu.arjun,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+          <Attributes>
+            <Map>
+              <entry key="memberOf">
+                <value>
+                  <Set>
+                    <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                  </Set>
+                </value>
+              </entry>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </BundleEntitlements>
+    </CertificationItem>
+    <CertificationItem bundle="NS_Role_Corporate_Learning_Portal" bundleAssignmentId="e3aee2de11b8462786f0cc462047cc2f" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Corporate Learning Basic Role" targetName="NS_Role_Corporate_Learning_Portal" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765387423222" roleName="NS_Role_Corporate_Learning_Portal" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+    <CertificationItem exceptionApplication="Sales Analytics" exceptionAttributeName="roles" exceptionAttributeValue="Sales Dashboard Viewer" summaryStatus="Open" type="Exception">
+      <ApplicationNames>
+        <String>Sales Analytics</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Sales Analytics" displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Sales Dashboard Viewer"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+    <CertificationItem exceptionApplication="Sales Analytics" exceptionAttributeName="roles" exceptionAttributeValue="Sales Director" summaryStatus="Open" type="Exception">
+      <ApplicationNames>
+        <String>Sales Analytics</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Sales Analytics" displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Sales Director"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+    <CertificationItem exceptionApplication="Sales Analytics" exceptionAttributeName="roles" exceptionAttributeValue="Sales Executive" summaryStatus="Open" type="Exception">
+      <ApplicationNames>
+        <String>Sales Analytics</String>
+      </ApplicationNames>
+      <ExceptionEntitlements>
+        <EntitlementSnapshot application="Sales Analytics" displayName="naidu.arjun@nstechiiq.com" nativeIdentity="8512512">
+          <Attributes>
+            <Map>
+              <entry key="roles" value="Sales Executive"/>
+            </Map>
+          </Attributes>
+        </EntitlementSnapshot>
+      </ExceptionEntitlements>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Aditya" identity="f7803391-7055-47b7-b696-aad5dd224453" lastname="Sharma" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d3583559" summaryStatus="Open" targetDisplayName="Aditya Sharma" targetName="f7803391-7055-47b7-b696-aad5dd224453" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="e3a85505672946fbbaef730ea1509845" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385839112" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+  <CertificationEntity firstname="Rohan" identity="f781f359-be5e-4d5b-9638-8adf46be0aaa" lastname="Thakur" newUser="true" snapshotId="c0a83c019b0e110c819b2cf3d380355c" summaryStatus="Open" targetDisplayName="Rohan Thakur" targetName="f781f359-be5e-4d5b-9638-8adf46be0aaa" type="Identity">
+    <CertificationItem bundle="SR_Role_Active_Directory_Basic_Access" bundleAssignmentId="e813cebac8cf45dda35f32dd3c9825db" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Active Directory Basic Access" targetName="SR_Role_Active_Directory_Basic_Access" type="Bundle">
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment date="1765385844603" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

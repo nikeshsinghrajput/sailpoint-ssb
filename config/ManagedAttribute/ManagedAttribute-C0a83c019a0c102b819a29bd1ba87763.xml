@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="groups" displayName="IT Securities" hash="fcf7f15dd9b46a3b7604a17194c636d361ee269e" lastRefresh="1761636850599" requestable="true" type="group" value="5f6441efc0a8010e0177fcb589156352">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="active" value="true"/>
+      <entry key="exclude_manager" value="false"/>
+      <entry key="name" value="IT Securities"/>
+      <entry key="sys_created_by" value="glide.maint"/>
+      <entry key="sys_created_on" value="2021-08-05 14:00:41"/>
+      <entry key="sys_mod_count" value="0"/>
+      <entry key="sys_updated_by" value="glide.maint"/>
+      <entry key="sys_updated_on" value="2021-08-05 14:00:41"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - EUR - M365_E5_PowerBI_Pro" hash="577b97753ded1f840a23004d5a5a302f728e7651" lastRefresh="1765222933517" requestable="true" type="group" uuid="{c867cab3-b3fd-4336-9372-7c15369f18a0}" value="CN=O365 License - EUR - M365_E5_PowerBI_Pro,OU=Restricted,OU=Groups,OU=Europe,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - EUR - M365_E5_PowerBI_Pro"/>
+      <entry key="description" value="O365 License - EUR - M365_E5_PowerBI_Pro created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - EUR - M365_E5_PowerBI_Pro"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1234"/>
+      <entry key="objectguid" value="{c867cab3-b3fd-4336-9372-7c15369f18a0}"/>
+      <entry key="sAMAccountName" value="O365 License - EUR - M365_E5_PowerBI_Pro"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

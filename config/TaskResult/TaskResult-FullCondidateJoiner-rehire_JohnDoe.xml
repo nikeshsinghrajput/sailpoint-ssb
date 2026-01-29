@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768851464592" completionStatus="Success" launched="1768851356577" launcher="Scheduler" name="Full Condidate Joiner-rehire: John Doe" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="identityRequestId" value="0000000334"/>
+      <entry key="message" value="doe1.john@nstechiiq.com created in AD"/>
+      <entry key="password" value="600MX$!@gr#rpTGiN+d~nSS83"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="db561a67-5064-475f-bedc-35bad74bb86b">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000334"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Create"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000334"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b" targetIntegration="Financial Planning &amp; Forecasting" trackingId="cca2517e46ba41fdad83ca250997f479">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Create" targetIntegration="Financial Planning &amp; Forecasting">
+                <AttributeRequest name="employee" op="Set" value="John Doe"/>
+                <AttributeRequest name="firstName" op="Set" value="John"/>
+                <AttributeRequest name="lastName" op="Set" value="Doe"/>
+                <AttributeRequest name="empStatus" op="Set" value="Active"/>
+                <AttributeRequest name="department" op="Set" value="Cybersecurity &amp; Threat Operations"/>
+                <AttributeRequest name="userLevel" op="Set" value="E"/>
+                <AttributeRequest name="hireDate" op="Set" value="01-21-2026"/>
+                <AttributeRequest name="salaryClass" op="Set" value="C"/>
+                <AttributeRequest name="terminationDate" op="Set" value="12-31-2028"/>
+                <AttributeRequest name="workState" op="Set" value="Singapore"/>
+                <AttributeRequest name="email" op="Set" value="doe1.john@nstechiiq.com"/>
+                <AttributeRequest name="countryCode" op="Set" value="90232"/>
+                <AttributeRequest name="workCountry" op="Set" value="Singapore"/>
+                <AttributeRequest name="manager" op="Set" value="Nikesh Singh"/>
+                <AttributeRequest name="superviserId" op="Set" value="735000"/>
+                <AttributeRequest name="bussinessUnit" op="Set" value="3018"/>
+                <AttributeRequest name="annualHours" op="Set" value="1040"/>
+                <AttributeRequest name="jobTitle" op="Set" value="Threat Intelligence Specialist"/>
+                <AttributeRequest name="isManager" op="Set" value="Yes"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000334"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="doe1.john" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="responseCode" value="200"/>
+      <entry key="retries">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019bd11f47819bd7c1bd2e0547"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="end"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+</TaskResult>

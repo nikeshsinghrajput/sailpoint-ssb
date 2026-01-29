@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.web.task.TaskDefinitionListBean" eventLevel="ERROR" lineNumber="698" quickKey="0001243926" server="NikeshRajput" thread="http-nio-1000-exec-8" username="spadmin">
+  <EventMessage>GeneralException: [An instance of task 'Perform Maintenance' is already running.]</EventMessage>
+</SyslogEvent>

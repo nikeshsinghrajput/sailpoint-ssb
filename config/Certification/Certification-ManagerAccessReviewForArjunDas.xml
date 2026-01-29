@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Certification PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Certification activated="1761848874957" certificationDefinitionId="c0a83c019a3617d6819a365ee7c30034" complete="true" completedEntities="1" completedItems="1" creator="spadmin" entitlementGranularity="Value" expiration="1764527274957" finished="1761849301475" itemPercentComplete="100" manager="a0e4d095-dfbf-4c19-aec2-129a6603a9d3" name="Manager Access Review for Arjun Das" nextPhaseTransition="1767119275024" percentComplete="100" phase="Remediation" shortName="Access Review for Arjun Das" signed="1761849290907" taskScheduleId="Manager Certification [DATE] [30/10/25, 11:56 PM]" totalEntities="1" totalItems="1" type="Manager">
+  <Attributes>
+    <Map>
+      <entry key="autoSignOffWhenNothingToCertify" value="false"/>
+      <entry key="automateSignOffOnReassignment" value="false"/>
+      <entry key="certificationDelegationReview" value="false"/>
+      <entry key="notifyRemediation">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="requireReassignmentCompletion" value="true"/>
+      <entry key="suppressEmailWhenNothingToCertify" value="false"/>
+    </Map>
+  </Attributes>
+  <CertificationGroups>
+    <Reference class="sailpoint.object.CertificationGroup" name="Manager Certification [30/10/25, 11:56:20 PM IST]"/>
+  </CertificationGroups>
+  <Certifiers>
+    <String>a0e4d095-dfbf-4c19-aec2-129a6603a9d3</String>
+  </Certifiers>
+  <Parent>
+    <Reference class="sailpoint.object.Certification" name="Manager Access Review for Kiara Naidu"/>
+  </Parent>
+  <PhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Staged"/>
+    <CertificationPhaseConfig enabled="true" phase="Active">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+    </CertificationPhaseConfig>
+    <CertificationPhaseConfig enabled="true" phase="Remediation">
+      <Duration>
+        <TimeDuration amount="1" scale="Month"/>
+      </Duration>
+      <NotificationConfig>
+        <Configs>
+          <ReminderConfig before="true" emailTemplateName="Work Item Reminder" millis="1209600000" once="true"/>
+          <EscalationConfig before="true" emailTemplateName="Work Item Escalation" maxReminders="5" millis="604800000"/>
+        </Configs>
+      </NotificationConfig>
+    </CertificationPhaseConfig>
+  </PhaseConfig>
+  <SignOffHistory>
+    <SignOffHistoryItem date="1761849290906" signerDisplayName="The Administrator" signerId="c0a83c0199cf13658199cf93c73500fe" signerName="spadmin"/>
+  </SignOffHistory>
+  <CertificationStatistics completedEntities="1" completedItems="1" itemPercentComplete="100" percentComplete="100" rolesApproved="1" totalEntities="1" totalItems="1" totalRoles="1"/>
+  <CertificationEntity completed="1761849289132" firstname="Ananya" identity="bf99ef06-3bd6-472a-bd0c-877f77777929" lastname="Iyer" newUser="true" snapshotId="c0a83c019a3617d6819a365efa960067" summaryStatus="Complete" targetDisplayName="Ananya Iyer" targetName="bf99ef06-3bd6-472a-bd0c-877f77777929" type="Identity">
+    <CertificationItem bundle="A1" bundleAssignmentId="f123c73c8786489cb6b7a8f9272a4465" completed="1761849289117" subType="AssignedRole" summaryStatus="Complete" targetDisplayName="A1" targetName="A1" type="Bundle">
+      <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019a3617d6819a365efa360066" decisionDate="1761849289037" reviewed="true" status="Approved"/>
+      <Attributes>
+        <Map>
+          <entry key="IIQ_roleAssignment">
+            <value>
+              <RoleAssignment assigner="spadmin" date="1761300085800" roleName="A1" source="LCM">
+                <RoleTarget applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" nativeIdentity="8512598"/>
+                <RoleTarget applicationId="c0a83c0199e61e6b8199e68aa06d0095" applicationName="DHP" nativeIdentity="8512598"/>
+              </RoleAssignment>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </CertificationItem>
+  </CertificationEntity>
+</Certification>

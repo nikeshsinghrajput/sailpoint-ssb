@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Accounts Payable Analyst" hash="59410b4310a31e97b3a7d2b98043d576b114671f" lastRefresh="1768326685832" requestable="true" type="roles" value="Accounts Payable Analyst">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-01-10"/>
+      <entry key="description" value="Responsible for processing vendor invoices, performing three-way matching, and managing payment runs."/>
+      <entry key="modifiedDate" value="2025-09-15"/>
+      <entry key="owner" value="payables.team@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_AP_ANALYST_001"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

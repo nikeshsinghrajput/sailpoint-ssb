@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Bundle PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Bundle displayName="Sales Analytics Basic Role" name="NS_Role_SalesAnalytics_BasicRole" type="business">
+  <Attributes>
+    <Map>
+      <entry key="accountSelectorRules"/>
+      <entry key="allowDuplicateAccounts" value="false"/>
+      <entry key="allowMultipleAssignments" value="false"/>
+      <entry key="mergeTemplates" value="false"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="Sales Analytics Provisioning form">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Sales Analytics"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="IIQTemplateOwnerDefinition">
+            <value>
+              <DynamicValue value="IIQApplicationOwner"/>
+            </value>
+          </entry>
+          <entry key="pageTitle" value="Sales Analytics Provisioning form"/>
+          <entry key="title" value="NS_Sales_Analytics_Create_Form"/>
+        </Map>
+      </Attributes>
+      <Section label="SR FORM Sales Analytics Create Form" name="NS_Form_Sales_Analytics_Create_Form">
+        <Field name="firstName" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("firstname");</Source>
+          </Script>
+        </Field>
+        <Field name="lastName" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("lastname");</Source>
+          </Script>
+        </Field>
+        <Field name="status" type="string" value="Active"/>
+        <Field name="department" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("department");</Source>
+          </Script>
+        </Field>
+        <Field name="userLevel" type="string" value="A"/>
+        <Field name="hireDate" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("hireDate");</Source>
+          </Script>
+        </Field>
+        <Field name="salesQuota" type="string" value="500000"/>
+        <Field name="achievedSales" type="string" value="0"/>
+        <Field name="terminationDate" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("terminationDate");</Source>
+          </Script>
+        </Field>
+        <Field name="workState" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("location");</Source>
+          </Script>
+        </Field>
+        <Field name="email" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("email");</Source>
+          </Script>
+        </Field>
+        <Field name="region" type="string" value="A"/>
+        <Field name="territory" type="string" value="A"/>
+        <Field name="commissionRate" type="string" value="5%"/>
+        <Field name="managerId" type="string">
+          <Script>
+            <Source>
+			import sailpoint.object.Identity;
+            Identity manager=identity.getManager();
+			if(manager!=null)
+			manager.getAttribute("employeeId");
+			</Source>
+          </Script>
+        </Field>
+        <Field name="employeeId" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("employeeId");</Source>
+          </Script>
+        </Field>
+        <Field name="annualHours" type="string" value="720"/>
+        <Field name="jobTitle" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("title");</Source>
+          </Script>
+        </Field>
+        <Field name="country" type="string">
+          <Script>
+            <Source>
+			import sailpoint.object.Identity;
+            identity.getAttribute("country");
+			</Source>
+          </Script>
+        </Field>
+        <Field name="isManager" type="string" value="No"/>
+        <Field name="businessUnit" type="string" value="A"/>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Selector>
+    <IdentitySelector>
+      <MatchExpression and="true">
+        <MatchTerm name="userAccountControl" negative="true" type="Entitlement" value="514">
+          <ApplicationRef>
+            <Reference class="sailpoint.object.Application" name="Active Directory"/>
+          </ApplicationRef>
+        </MatchTerm>
+        <MatchTerm name="inactive" type="IdentityAttribute" value="false"/>
+        <MatchTerm name="department" type="IdentityAttribute" value="Sales"/>
+      </MatchExpression>
+    </IdentitySelector>
+  </Selector>
+</Bundle>

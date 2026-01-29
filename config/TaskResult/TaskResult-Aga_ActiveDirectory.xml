@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1766343458688" completionStatus="Success" host="NikeshRajput" launched="1766343450092" launcher="spadmin" name="AGA : Active Directory" runLength="8" runLengthAverage="4" runLengthDeviation="100" schedule="60b68cbe4a7c410c9e9ebf87d8a6be5c" type="AccountGroupAggregation">
+  <Attributes>
+    <Map>
+      <entry key="applications" value="Active Directory"/>
+      <entry key="groupDetails">
+        <value>
+          <List>
+            <TaskStatistics name="Active Directory">
+              <TaskStatistics name="group">
+                <TaskStatistic data="97" name="task_out_account_group_aggregation_application_object_total"/>
+                <TaskStatistic data="97" name="task_out_account_group_aggregation_application_object_created"/>
+              </TaskStatistics>
+            </TaskStatistics>
+          </List>
+        </value>
+      </entry>
+      <entry key="groupsCreated" value="97"/>
+      <entry key="internalUpdates" value="1"/>
+      <entry key="total" value="97"/>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="AGA : Active Directory"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="ProvisioningFailure" interface="LCM" serverHost="NikeshRajput" source="Myra Tiwari" target="Myra Tiwari">
+  <Attributes>
+    <Map>
+      <entry key="error1" value="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512504' for key 'employees.PRIMARY'"/>
+      <entry key="taskResultId" value="c0a83c019b47115a819b4bbe051102ae"/>
+    </Map>
+  </Attributes>
+  <String1>FailedApplications=Financial Planning &amp; Forecasting</String1>
+</AuditEvent>

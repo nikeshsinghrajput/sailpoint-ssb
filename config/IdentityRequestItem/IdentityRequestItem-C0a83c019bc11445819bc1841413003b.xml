@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Sales Analytics" approvalState="Finished" nativeIdentity="739092" operation="Disable" ownerName="spadmin" provisioningState="Finished">
+  <Attributes>
+    <Map>
+      <entry key="flow" value="AccountsRequest"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="Disable"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="58e7088731b849c2a9751876c8e89adb">
+            <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Disable">
+              <Attributes>
+                <Map>
+                  <entry key="flow" value="AccountsRequest"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="operation" value="Disable"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</IdentityRequestItem>

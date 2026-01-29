@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765391329161" completionStatus="Warning" launched="1765390760712" launcher="Scheduler" name="Full Condidate Joiner: Sai Kumar" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="password"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="daa41f97-5236-4984-a9ef-d2f01f9e0045">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000252"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <ExpansionItems>
+              <ExpansionItem application="Active Directory" cause="Role" name="memberOf" operation="Retain" sourceInfo="SR_Role_Active_Directory_Basic_Access" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="employeeNumber" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="8512511"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="givenName" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Sai"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="sn" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Kumar"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="displayName" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Sai Kumar"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="title" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Governance Program Manager"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="company" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" sourceInfo="Active Directory" value="NsTech"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="employeeType" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Employee"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="accountExpires" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" sourceInfo="Active Directory" value="134884224000000000"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="department" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Regulatory Affairs and Governance"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="departmentNumber" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="DEPT-006"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="memberOf" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" sourceInfo="Active Directory" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="division" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" sourceInfo="Active Directory" value="Division-4"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="manager" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="streetAddress" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="313 Ring Road"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="physicalDeliveryOfficeName" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="B125"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="l" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Mumbai"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="st" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="South"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="co" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Add" sourceInfo="Active Directory" value="India"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="postalCode" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="470872"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="description" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Created via sailpoint Governance Program Manager"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="businessCategory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="Full_time"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="mobile" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="+91-9189012345"/>
+              <ExpansionItem application="Active Directory" cause="ProvisioningPolicy" name="telephoneNumber" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Set" sourceInfo="Active Directory" value="+91-40-23456789"/>
+            </ExpansionItems>
+            <MasterPlan>
+              <ProvisioningPlan nativeIdentity="daa41f97-5236-4984-a9ef-d2f01f9e0045">
+                <AccountRequest application="Active Directory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create">
+                  <AttributeRequest name="sAMAccountName" value="kumar.sai"/>
+                  <AttributeRequest name="password" value=",nFUamFP7jJ394$;wsU~[4a!a"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000252"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan targetIntegration="Active Directory" trackingId="5d167ac657694976811c9f3b7e0dbb81">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Create">
+                <AttributeRequest name="sAMAccountName" value="kumar.sai"/>
+                <AttributeRequest name="password" value=",nFUamFP7jJ394$;wsU~[4a!a"/>
+                <AttributeRequest name="employeeNumber" op="Set" value="8512511"/>
+                <AttributeRequest name="givenName" op="Set" value="Sai"/>
+                <AttributeRequest name="sn" op="Set" value="Kumar"/>
+                <AttributeRequest name="displayName" op="Set" value="Sai Kumar"/>
+                <AttributeRequest name="title" op="Set" value="Governance Program Manager"/>
+                <AttributeRequest name="company" op="Add" value="NsTech"/>
+                <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+                <AttributeRequest name="accountExpires" op="Add" value="134884224000000000"/>
+                <AttributeRequest name="department" op="Set" value="Regulatory Affairs and Governance"/>
+                <AttributeRequest name="departmentNumber" op="Set" value="DEPT-006"/>
+                <AttributeRequest name="memberOf" op="Add" value="CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="division" op="Add" value="Division-4"/>
+                <AttributeRequest name="manager" op="Set" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+                <AttributeRequest name="streetAddress" op="Set" value="313 Ring Road"/>
+                <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B125"/>
+                <AttributeRequest name="l" op="Set" value="Mumbai"/>
+                <AttributeRequest name="st" op="Set" value="South"/>
+                <AttributeRequest name="co" op="Add" value="India"/>
+                <AttributeRequest name="postalCode" op="Set" value="470872"/>
+                <AttributeRequest name="mobile" op="Set" value="+91-9189012345"/>
+                <AttributeRequest name="telephoneNumber" op="Set" value="+91-40-23456789"/>
+                <AttributeRequest name="description" op="Set" value="Created via sailpoint Governance Program Manager"/>
+                <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000252"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019afa1055819b097d3c0f756b"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="Provision Accounts"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+  <Messages>
+    <Message key="warn_case_terminated" type="Warn"/>
+  </Messages>
+</TaskResult>

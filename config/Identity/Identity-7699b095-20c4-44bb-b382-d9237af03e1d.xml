@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469511717" name="7699b095-20c4-44bb-b382-d9237af03e1d">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="South Africa"/>
+      <entry key="department" value="Digital Payments &amp; Wallet Solutions"/>
+      <entry key="displayName" value="Curtis Molina"/>
+      <entry key="division" value="South Africa Technology and Operations"/>
+      <entry key="employeeId" value="739067"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Remote"/>
+      <entry key="firstname" value="Curtis"/>
+      <entry key="hireDate" value="03-18-2015"/>
+      <entry key="lastname" value="Molina"/>
+      <entry key="location" value="ZA - Bloemfontein"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="7175"/>
+      <entry key="terminationDate" value="08-02-2024"/>
+      <entry key="title" value="Payments Operations Analyst"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469511674" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Curtis Molina" identity="739067" lastRefresh="1768468362871">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="1512 River Lane"/>
+          <entry key="ADDRESS_WORK" value="1512 River Lane;Bloemfontein, Gauteng 14820;South Africa"/>
+          <entry key="BUILDING_CODE" value="ZA_GAU_BLDG_03"/>
+          <entry key="BUSINESS_UNIT_ID" value="3059"/>
+          <entry key="CLASS" value="Remote"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="08-02-2024"/>
+          <entry key="COUNTRY_NAME" value="South Africa"/>
+          <entry key="DEPARTMENT" value="Digital Payments &amp; Wallet Solutions"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-023"/>
+          <entry key="DIVISION" value="South Africa Technology and Operations"/>
+          <entry key="DIVISION_ID" value="DIV-ZA-03"/>
+          <entry key="EMAIL" value="curtis.molina@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739067"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739067"/>
+          <entry key="FIRST_NAME" value="Curtis"/>
+          <entry key="HIREDATE" value="03-18-2015"/>
+          <entry key="JOBCODE" value="JT-023-03"/>
+          <entry key="JOBTITLE" value="Payments Operations Analyst"/>
+          <entry key="LAST_NAME" value="Molina"/>
+          <entry key="LOCATION" value="ZA - Bloemfontein"/>
+          <entry key="MANAGER_ID" value="739003"/>
+          <entry key="POSTAL_CODE" value="7175"/>
+          <entry key="REGION" value="Bloemfontein"/>
+          <entry key="WORKER_NAME" value="Curtis Molina"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Vendor"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

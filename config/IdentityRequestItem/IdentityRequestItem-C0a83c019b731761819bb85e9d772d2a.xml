@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Sales Analytics" approvalState="Finished" approverName="spadmin" nativeIdentity="8512507" operation="Create" ownerName="spadmin" provisioningEngine="Sales Analytics" provisioningState="Failed">
+  <Attributes>
+    <Map>
+      <entry key="comments" value="hii"/>
+      <entry key="errors">
+        <value>
+          <List>
+            <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512507' for key 'salesemployee.PRIMARY'" type="Error"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="flow" value="AccountsRequest"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="operation" value="Create"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="681f8979db0d4de6aae9a6707c3fca9c">
+            <AccountRequest application="Sales Analytics" nativeIdentity="8512507" op="Create">
+              <Attributes>
+                <Map>
+                  <entry key="comments" value="hii"/>
+                  <entry key="flow" value="AccountsRequest"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="nativeIdUpdated">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                  <entry key="operation" value="Create"/>
+                  <entry key="provisioningTransactionId" value="c0a83c019b731761819bb85f8c9e2d47"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+      <entry key="requesterComments" value="hii"/>
+    </Map>
+  </Attributes>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</IdentityRequestItem>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent action="Forward" clientHost="0:0:0:0:0:0:0:1" interface="LCM" serverHost="NikeshRajput" source="spadmin" target="41a860cd-e169-4c36-ae48-0c95660ed05e">
+  <Attributes>
+    <Map>
+      <entry key="interface" value="LCM"/>
+      <entry key="newOwner" value="spadmin"/>
+      <entry key="oldOwner" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+      <entry key="workitem" value="0000000123"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

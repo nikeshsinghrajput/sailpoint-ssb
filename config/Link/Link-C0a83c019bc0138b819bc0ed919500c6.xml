@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Haley Hooper" identity="739027" lastRefresh="1768468353429">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="155 River Ave"/>
+      <entry key="ADDRESS_WORK" value="155 River Ave;Sharjah, Dubai Emirate 68667;United Arab Emirates"/>
+      <entry key="BUILDING_CODE" value="AE_DUB_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3052"/>
+      <entry key="CLASS" value="Remote"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="12-22-2025"/>
+      <entry key="COUNTRY_NAME" value="United Arab Emirates"/>
+      <entry key="DEPARTMENT" value="Legal &amp; Corporate Affairs"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-009"/>
+      <entry key="DIVISION" value="United Arab Emirates Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-AE-04"/>
+      <entry key="EMAIL" value="haley.hooper@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739027"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739027"/>
+      <entry key="FIRST_NAME" value="Haley"/>
+      <entry key="HIREDATE" value="09-17-2022"/>
+      <entry key="JOBCODE" value="JT-009-01"/>
+      <entry key="JOBTITLE" value="Legal Counsel"/>
+      <entry key="LAST_NAME" value="Hooper"/>
+      <entry key="LOCATION" value="AE - Sharjah"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="48320"/>
+      <entry key="REGION" value="Sharjah"/>
+      <entry key="WORKER_NAME" value="Haley Hooper"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

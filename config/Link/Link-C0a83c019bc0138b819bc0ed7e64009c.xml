@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Sarah Williams" identity="739006" lastRefresh="1768468348517">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2651 River Lane"/>
+      <entry key="ADDRESS_WORK" value="2651 River Lane;Ajman, Dubai Emirate 51413;United Arab Emirates"/>
+      <entry key="BUILDING_CODE" value="AE_DUB_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3051"/>
+      <entry key="CLASS" value="Onsite"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="09-15-2023"/>
+      <entry key="COUNTRY_NAME" value="United Arab Emirates"/>
+      <entry key="DEPARTMENT" value="Cloud Infrastructure Services"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-013"/>
+      <entry key="DIVISION" value="United Arab Emirates Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-AE-03"/>
+      <entry key="EMAIL" value="sarah.williams@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739006"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739006"/>
+      <entry key="FIRST_NAME" value="Sarah"/>
+      <entry key="HIREDATE" value="11-05-2022"/>
+      <entry key="JOBCODE" value="JT-013-02"/>
+      <entry key="JOBTITLE" value="Cloud Administrator"/>
+      <entry key="LAST_NAME" value="Williams"/>
+      <entry key="LOCATION" value="AE - Ajman"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="90232"/>
+      <entry key="REGION" value="Ajman"/>
+      <entry key="WORKER_NAME" value="Sarah Williams"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

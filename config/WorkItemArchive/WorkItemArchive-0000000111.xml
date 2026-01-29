@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItemArchive PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItemArchive archived="1764262431662" completer="The Administrator" handler="sailpoint.api.Workflower" level="Normal" name="0000000111" ownerName="spadmin" renderer="lcmManualActionsRenderer.xhtml" state="Finished" targetClass="sailpoint.object.Identity" targetName="a11a419f-e11e-4597-b7ce-b6f371f15a06" type="ManualAction" workItemId="c0a83c019a8d1133819ac63bc7db272e">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Corporate Learning Portal" nativeIdentity="8512691" operation="Disable" state="Finished"/>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Jennifer Jackson"/>
+      <entry key="identityName" value="a11a419f-e11e-4597-b7ce-b6f371f15a06"/>
+      <entry key="policyViolations"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="a11a419f-e11e-4597-b7ce-b6f371f15a06">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000241"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Active Directory" nativeIdentity="CN=jackson.jennifer,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable"/>
+                <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512691" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000241"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="a11a419f-e11e-4597-b7ce-b6f371f15a06" targetIntegration="Active Directory" trackingId="59239e2c37a64786b8a69147eb135f2e">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=jackson.jennifer,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                <AttributeRequest name="accountExpires" op="Add" value="11/29/2025 05:30:00 AM IST"/>
+                <AttributeRequest name="manager" op="Set"/>
+                <AttributeRequest name="description" op="Set" value="Terminated"/>
+                <AttributeRequest name="userAccountControl" op="Set" value="514"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000241"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningPlan trackingId="a40f0b6d93974cea86d83b9eb244c495">
+              <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512691" op="Disable"/>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000241"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=jackson.jennifer,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="jackson.jennifer" nativeIdentity="CN=jackson.jennifer,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="saveUnmanagedPlan_WithProjectArgument" value="false"/>
+      <entry key="workItemPriority" value="Normal"/>
+      <entry key="workItemRequester" value="Scheduler"/>
+    </Map>
+  </Attributes>
+  <Description>Manual Changes requested for User: Jennifer Jackson</Description>
+  <SystemAttributes>
+    <Map>
+      <entry key="completionComments"/>
+    </Map>
+  </SystemAttributes>
+</WorkItemArchive>

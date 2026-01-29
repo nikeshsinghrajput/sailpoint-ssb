@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="BGC-HaloDEV-License-Agent" hash="45ed27639fd87a33b5b5e6783e61aeebdb70d24a" lastRefresh="1766343451697" requestable="true" type="group" uuid="{2c41433f-ebde-4ed9-9e94-4f1300a11f80}" value="CN=BGC-HaloDEV-License-Agent,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="BGC-HaloDEV-License-Agent"/>
+      <entry key="description" value="BGC-HaloDEV-License-Agent created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\BGC-HaloDEV-License-Agent"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1413"/>
+      <entry key="objectguid" value="{2c41433f-ebde-4ed9-9e94-4f1300a11f80}"/>
+      <entry key="sAMAccountName" value="BGC-HaloDEV-License-Agent"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

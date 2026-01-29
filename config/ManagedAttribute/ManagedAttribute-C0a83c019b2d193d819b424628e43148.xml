@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - APAC - O365_E3_Coreapps_NoMailbox" hash="a56772a6b2d0a5ee3b1c2bfce5aef031906500be" lastRefresh="1766343452899" requestable="true" type="group" uuid="{bdd41423-f370-4823-ad2c-f93eafbe609e}" value="CN=O365 License - APAC - O365_E3_Coreapps_NoMailbox,OU=Shared,OU=Groups,OU=Asia Pacific,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - APAC - O365_E3_Coreapps_NoMailbox"/>
+      <entry key="description" value="O365 License - APAC - O365_E3_Coreapps_NoMailbox created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - APAC - O365_E3_Coreapps_NoMailbox"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1455"/>
+      <entry key="objectguid" value="{bdd41423-f370-4823-ad2c-f93eafbe609e}"/>
+      <entry key="sAMAccountName" value="O365 License - APAC - O365_E3_Coreapps_NoMailbox"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem completed="1761849005911" exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Accounts Receivable Officer" summaryStatus="Complete" type="Exception">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019a3617d6819a365ee9500037" decisionDate="1761849005816" ownerName="spadmin" remediationAction="NoActionRequired" remediationCompleted="true" remediationKickedOff="true" reviewed="true" status="Remediated">
+    <Description>Remove the 'Financial Planning &amp;amp; Forecasting' entitlement on  'Anika Joshi'</Description>
+  </CertificationAction>
+  <ApplicationNames>
+    <String>Financial Planning &amp; Forecasting</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512561" nativeIdentity="8512561">
+      <Attributes>
+        <Map>
+          <entry key="roles" value="Accounts Receivable Officer"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>

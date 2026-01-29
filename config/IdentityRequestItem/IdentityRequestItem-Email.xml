@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Hr-Workday" approvalState="Finished" compilationStatus="Expansion" expansionCause="ProvisioningPolicy" name="email" nativeIdentity="739003" operation="Add" provisioningEngine="Hr-Workday" provisioningState="Failed" value="doe1.john@nstechiiq.com">
+  <Attributes>
+    <Map>
+      <entry key="expansionInfo" value="Hr-Workday"/>
+      <entry key="managedAttributeType" value="Entitlement"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="fcd51ec5af37464cb30013620438a5c6">
+            <AccountRequest application="Hr-Workday" nativeIdentity="739003" op="Enable">
+              <Attributes>
+                <Map>
+                  <entry key="provisioningTransactionId" value="c0a83c019bd11f47819bdaffd357083a"/>
+                </Map>
+              </Attributes>
+              <AttributeRequest name="email" op="Add" trackingId="fcd51ec5af37464cb30013620438a5c6" value="doe1.john@nstechiiq.com"/>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

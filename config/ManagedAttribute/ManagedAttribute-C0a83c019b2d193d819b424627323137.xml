@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - AME - M365_E5_Forms_KPI" hash="b0b4ea66c3205a704a6dd512c34ddae0a59e3dc4" lastRefresh="1766343452466" requestable="true" type="group" uuid="{34885015-c189-4979-bb7e-2f09b7ad8513}" value="CN=O365 License - AME - M365_E5_Forms_KPI,OU=Security,OU=Groups,OU=Africa &amp; Middle East,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - AME - M365_E5_Forms_KPI"/>
+      <entry key="description" value="O365 License - AME - M365_E5_Forms_KPI created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - AME - M365_E5_Forms_KPI"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1427"/>
+      <entry key="objectguid" value="{34885015-c189-4979-bb7e-2f09b7ad8513}"/>
+      <entry key="sAMAccountName" value="O365 License - AME - M365_E5_Forms_KPI"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

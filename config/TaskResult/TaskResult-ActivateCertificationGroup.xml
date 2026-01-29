@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765985748136" completionStatus="Success" host="NikeshRajput" launched="1765985747807" launcher="spadmin" name="Activate Certification Group" runLengthAverage="5" runLengthDeviation="-100" schedule="9291c08f6bc449c283f8c17c6c3289f5" type="Certification">
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Activate Certification Group"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

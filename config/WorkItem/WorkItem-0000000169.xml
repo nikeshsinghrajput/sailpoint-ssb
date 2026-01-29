@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItem certification="Targeted Access Review for f1aea43c-892b-4f9d-be64-42557cc5650f" expiration="1770898606274" handler="sailpoint.api.Certificationer" level="Normal" name="0000000169" type="Certification">
+  <Description>Targeted Access Review for f1aea43c-892b-4f9d-be64-42557cc5650f</Description>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <Requester>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Requester>
+</WorkItem>

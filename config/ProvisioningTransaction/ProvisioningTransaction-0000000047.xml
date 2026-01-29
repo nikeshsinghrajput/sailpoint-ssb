@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="aadhya.das@wipro.com" applicationName="Sales Analytics" identityDisplayName="Aadhya Das" identityName="99d5f5f6-0fb2-47a7-85bc-510f09bef557" integration="Sales Analytics" name="0000000047" nativeIdentity="8512570" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000071"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : Error in method invocation: Method setString(int, sailpoint.object.ProvisioningPlan$AttributeRequest) not found in class'org.apache.commons.dbcp2.DelegatingPreparedStatement' : at Line: 38 : in file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : stmt .setString ( 1 , acctReq .getAttributeRequest ( &quot;firstName&quot; ) ) &#10; BSF info: NS_GlovalProvisioning_Sales_Analytics at line: 0 column: columnNo" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Sales Analytics" nativeIdentity="8512570" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c019a0512c7819a0acb214a2859"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c019a0512c7819a0b2e15de29f7"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="Incentive &amp; Compensation Analyst" name="roles" op="Add" value="Incentive &amp; Compensation Analyst">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="firstName" op="Set" value="Aadhya"/>
+            <AttributeRequest name="lastName" op="Set" value="Das"/>
+            <AttributeRequest name="status" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Sales"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="03-11-2025"/>
+            <AttributeRequest name="salesQuota" op="Set" value="500000"/>
+            <AttributeRequest name="achievedSales" op="Set" value="0"/>
+            <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+            <AttributeRequest name="workState" op="Set" value="Chennai"/>
+            <AttributeRequest name="email" op="Set" value="aadhya.das@wipro.com"/>
+            <AttributeRequest name="region" op="Set" value="A"/>
+            <AttributeRequest name="territory" op="Set" value="A"/>
+            <AttributeRequest name="commissionRate" op="Set" value="5%"/>
+            <AttributeRequest name="managerId" op="Set" value="ee47b3e2-b118-47a3-9da8-451ec3d223fc"/>
+            <AttributeRequest name="annualHours" op="Set" value="720"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Architect"/>
+            <AttributeRequest name="country" op="Set" value="India"/>
+            <AttributeRequest name="isManager" op="Set" value="No"/>
+            <AttributeRequest name="businessUnit" op="Set" value="A"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : Error in method invocation: Method setString(int, sailpoint.object.ProvisioningPlan$AttributeRequest) not found in class'org.apache.commons.dbcp2.DelegatingPreparedStatement' : at Line: 38 : in file: inline evaluation of: ``import java.sql.Connection; import java.sql.PreparedStatement; import java.sql.R . . . '' : stmt .setString ( 1 , acctReq .getAttributeRequest ( &quot;firstName&quot; ) ) &#10; BSF info: NS_GlovalProvisioning_Sales_Analytics at line: 0 column: columnNo" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Learning Audit Officer" hash="4a6309dd2354013dbecaa84c5aa9d1490155830a" lastRefresh="1768326681162" requestable="true" type="access" value="Learning Audit Officer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Governance"/>
+      <entry key="createdDate" value="20-08-2025"/>
+      <entry key="description" value="Monitors course data accuracy and audit logs"/>
+      <entry key="modifiedDate" value="28-09-2025"/>
+      <entry key="owner" value="audit.learning@corp.com"/>
+      <entry key="roleId" value="CORP_AUDIT_010"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

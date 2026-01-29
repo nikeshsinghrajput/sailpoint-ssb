@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Mike Johnson" identity="739005" lastRefresh="1768468348444">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="4951 Park Lane"/>
+      <entry key="ADDRESS_WORK" value="4951 Park Lane;Dammam, Riyadh Province 93301;Saudi Arabia"/>
+      <entry key="BUILDING_CODE" value="SA_RIY_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3054"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="06-30-2024"/>
+      <entry key="COUNTRY_NAME" value="Saudi Arabia"/>
+      <entry key="DEPARTMENT" value="Treasury &amp; Cash Management"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-002"/>
+      <entry key="DIVISION" value="Saudi Arabia Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-SA-02"/>
+      <entry key="EMAIL" value="mike.johnson@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739005"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739005"/>
+      <entry key="FIRST_NAME" value="Mike"/>
+      <entry key="HIREDATE" value="03-10-2021"/>
+      <entry key="JOBCODE" value="JT-002-04"/>
+      <entry key="JOBTITLE" value="Liquidity Risk Analyst"/>
+      <entry key="LAST_NAME" value="Johnson"/>
+      <entry key="LOCATION" value="SA - Dammam"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="90045-9209"/>
+      <entry key="REGION" value="Dammam"/>
+      <entry key="WORKER_NAME" value="Mike Johnson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

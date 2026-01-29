@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem bundle="NS_Role_Corporate_Learning_Portal" bundleAssignmentId="e3aee2de11b8462786f0cc462047cc2f" subType="AssignedRole" summaryStatus="Open" targetDisplayName="Corporate Learning Basic Role" targetName="NS_Role_Corporate_Learning_Portal" type="Bundle">
+  <Attributes>
+    <Map>
+      <entry key="IIQ_roleAssignment">
+        <value>
+          <RoleAssignment date="1765387423222" roleName="NS_Role_Corporate_Learning_Portal" source="Rule"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</CertificationItem>

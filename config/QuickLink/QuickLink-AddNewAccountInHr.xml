@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE QuickLink PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<QuickLink action="workflow" category="Custom" messageKey="Add new Account in Hr" name="Add new Account in Hr" ordering="5">
+  <Attributes>
+    <Map>
+      <entry key="ownerId">
+        <value>
+          <Script>
+            <Source>
+               return currentUser.getId();
+                </Source>
+          </Script>
+        </value>
+      </entry>
+      <entry key="workflowName" value="Add new Account in Hr WF"/>
+    </Map>
+  </Attributes>
+  <QuickLinkOptions allowOther="true" allowSelf="true">
+    <DynamicScopeRef>
+      <Reference class="sailpoint.object.DynamicScope" name="special tasks"/>
+    </DynamicScopeRef>
+  </QuickLinkOptions>
+</QuickLink>

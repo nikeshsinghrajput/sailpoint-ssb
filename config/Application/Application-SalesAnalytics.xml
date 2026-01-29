@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Application PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Application connector="sailpoint.connector.JDBCConnector" featuresString="DISCOVER_SCHEMA, PROVISIONING, SYNC_PROVISIONING, DIRECT_PERMISSIONS, SEARCH, ENABLE, UNLOCK, ADDITIONAL_ACCOUNT_REQUEST, ACCOUNT_ONLY_REQUEST" icon="databaseIcon" name="Sales Analytics" profileClass="" type="JDBC">
+  <AccountCorrelationConfig>
+    <Reference class="sailpoint.object.CorrelationConfig" name="NS_correlationConfig_salesAnalytics"/>
+  </AccountCorrelationConfig>
+  <Attributes>
+    <Map>
+      <entry key="SQL" value="SELECT  e.firstName, e.lastName,e.status,e.department,e.userLevel,e.hireDate,e.salesQuota,e.terminationDate,e.workState,&#13;&#10; e.email, e.achievedSales,e.territory,e.managerId,e.commissionRate,e.employeeId,e.businessUnit, e.annualHours,e.jobTitle,e.isManager,&#13;&#10; e.region,e.country,&#13;&#10;    GROUP_CONCAT(r.name SEPARATOR ', ') AS roles&#13;&#10;FROM &#13;&#10;    salesEmployee e&#13;&#10;LEFT JOIN &#13;&#10;    sales_employee_roles ser ON e.employeeId = ser.employeeId&#13;&#10;LEFT JOIN &#13;&#10;    salesRoles r ON r.roleId = ser.roleId&#13;&#10;GROUP BY &#13;&#10;    e.employeeID;"/>
+      <entry key="acctAggregationEnd">
+        <value>
+          <Date>1768750418686</Date>
+        </value>
+      </entry>
+      <entry key="acctAggregationStart">
+        <value>
+          <Date>1768750418337</Date>
+        </value>
+      </entry>
+      <entry key="afterProvisioningRule"/>
+      <entry key="aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationPartitioned">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="aggregationType" value="account"/>
+      <entry key="beforeProvisioningRule"/>
+      <entry key="compositeDefinition"/>
+      <entry key="connMaxRetry" value="3"/>
+      <entry key="connRetryEnable">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="connWaitTimeForRetry" value="2"/>
+      <entry key="deltaTable"/>
+      <entry key="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+      <entry key="getDeltaSQL"/>
+      <entry key="getObjectSQL" value="SELECT  e.firstName, e.lastName,e.status,e.department,e.userLevel,e.hireDate,e.salesQuota,e.terminationDate,e.workState,&#13;&#10; e.email, e.achievedSales,e.territory,e.managerId,e.commissionRate,e.employeeId,e.businessUnit, e.annualHours,e.jobTitle,e.isManager,&#13;&#10; e.region,e.country,&#13;&#10;    GROUP_CONCAT(r.name SEPARATOR ', ') AS roles&#13;&#10;FROM &#13;&#10;    salesEmployee e&#13;&#10;LEFT JOIN &#13;&#10;    sales_employee_roles ser ON e.employeeId = ser.employeeId&#13;&#10;LEFT JOIN &#13;&#10;    salesRoles r ON r.roleId = ser.roleId&#13;&#10;WHERE e.employeeId ='$(identity)';"/>
+      <entry key="isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="jdbcExceptionBucketing">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="jdbcProvisionRule" value="NS_Rule_SalesAnalytics_ProvisioningRule"/>
+      <entry key="mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionAttributeScope" value="entitlements"/>
+      <entry key="nativeChangeDetectionAttributes"/>
+      <entry key="nativeChangeDetectionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="nativeChangeDetectionOperations"/>
+      <entry key="noPermissions" value="false"/>
+      <entry key="operations" value="Create, Modify, Delete, Enable, Disable, Unlock"/>
+      <entry key="partitionMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="partitionStatements"/>
+      <entry key="password" value="2:ACP:sJPkf6gIbAeoXRfq5L0a7gH6FG4DcHhbSzOif4U3xh4="/>
+      <entry key="provisionRule" value="globalRule"/>
+      <entry key="roles.SQL" value="select * from salesRoles;"/>
+      <entry key="roles.aggregationMode">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.deltaTable"/>
+      <entry key="roles.driverClass" value="com.mysql.cj.jdbc.Driver"/>
+      <entry key="roles.getDeltaSQL"/>
+      <entry key="roles.getDirectPermObjectSQL"/>
+      <entry key="roles.getObjectSQL"/>
+      <entry key="roles.isPermissionEnabled">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.mergeRows">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.password" value="1:ACP:j8okwIOie1euG817w3AZoeSjzZgASd+j5PBY+S3e/3E="/>
+      <entry key="roles.url" value="jdbc:mysql://localhost/Sales_Analytics"/>
+      <entry key="roles.useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="roles.user" value="root"/>
+      <entry key="sysDescriptions">
+        <value>
+          <Map>
+            <entry key="en_US"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="templateApplication" value="JDBC Template"/>
+      <entry key="testConnSQL"/>
+      <entry key="url" value="jdbc:mysql://localhost/Sales_Analytics"/>
+      <entry key="useExecuteQuery">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDelta">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureDirectPermission">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureGetObject">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedurePartition">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureSqlStmt">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="useStoredProcedureTestConn">
+        <value>
+          <Boolean/>
+        </value>
+      </entry>
+      <entry key="user" value="root"/>
+    </Map>
+  </Attributes>
+  <CustomizationRule>
+    <Reference class="sailpoint.object.Rule" name="NS_Sales_Analytics_CustomizationRule"/>
+  </CustomizationRule>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+  <ProvisioningForms>
+    <Form name="NS_FORM_Sales_Analytics_Create_Form" objectType="account" type="Create">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="NS_FORM_Sales_Analytics_Create_Form"/>
+        </Map>
+      </Attributes>
+      <Section label="NS FORM Sales Analytics Create Form" name="NS_FORM_Sales_Analytics_Create_Form">
+        <Field name="firstName" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("firstname");</Source>
+          </Script>
+        </Field>
+        <Field name="lastName" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("lastname");</Source>
+          </Script>
+        </Field>
+        <Field name="status" type="string" value="Active"/>
+        <Field name="department" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("department");</Source>
+          </Script>
+        </Field>
+        <Field name="userLevel" type="string" value="A"/>
+        <Field name="hireDate" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("hireDate");</Source>
+          </Script>
+        </Field>
+        <Field name="salesQuota" type="string" value="500000"/>
+        <Field name="achievedSales" type="string" value="0"/>
+        <Field name="terminationDate" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getStringAttribute("terminationDate");</Source>
+          </Script>
+        </Field>
+        <Field name="workState" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("location");</Source>
+          </Script>
+        </Field>
+        <Field name="email" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("email");</Source>
+          </Script>
+        </Field>
+        <Field name="region" type="string" value="A"/>
+        <Field name="territory" type="string" value="A"/>
+        <Field name="commissionRate" type="string" value="5%"/>
+        <Field name="managerId" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("manager");</Source>
+          </Script>
+        </Field>
+        <Field name="employeeId" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("employeeId");</Source>
+          </Script>
+        </Field>
+        <Field name="annualHours" type="string" value="720"/>
+        <Field name="jobTitle" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("title");</Source>
+          </Script>
+        </Field>
+        <Field name="country" type="string">
+          <Script>
+            <Source>import sailpoint.object.Identity;
+identity.getAttribute("country");</Source>
+          </Script>
+        </Field>
+        <Field name="isManager" type="string" value="No"/>
+        <Field name="businessUnit" type="string" value="A"/>
+      </Section>
+    </Form>
+    <Form name="NS_Form_Sales_Analytics_Disable" objectType="account" type="Disable">
+      <Attributes>
+        <Map>
+          <entry key="pageTitle" value="NS_Form_Sales_Analytics_Disable"/>
+        </Map>
+      </Attributes>
+      <Section label="NS Form Sales Analytics Disable" name="NS_Form_Sales_Analytics_Disable">
+        <Field name="status" type="string" value="Inactive"/>
+        <Field name="terminationDate" type="string">
+          <Script>
+            <Source> import java.text.SimpleDateFormat;
+            import java.util.Date;
+    String today = new SimpleDateFormat("MM-dd-yyyy").format(new Date());
+            return today;</Source>
+          </Script>
+        </Field>
+      </Section>
+    </Form>
+  </ProvisioningForms>
+  <Schemas>
+    <Schema displayAttribute="email" identityAttribute="employeeId" instanceAttribute="" nativeObjectType="account" objectType="account" permissionsRemediationModificationType="None">
+      <AttributeDefinition name="firstName" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="lastName" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="status" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="department" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="userLevel" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="hireDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="salesQuota" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="terminationDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="workState" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="email" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="achievedSales" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="territory" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="managerId" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="commissionRate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="employeeId" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="businessUnit" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="annualHours" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="jobTitle" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="isManager" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="region" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="country" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition entitlement="true" managed="true" multi="true" name="roles" schemaObjectType="roles" type="string">
+        <Description/>
+      </AttributeDefinition>
+    </Schema>
+    <Schema aggregationType="group" descriptionAttribute="description" displayAttribute="name" identityAttribute="name" instanceAttribute="" nativeObjectType="roles" objectType="roles" permissionsRemediationModificationType="None">
+      <AttributeDefinition name="roleId" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="name" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="description" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="type" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="status" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="owner" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="createdDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+      <AttributeDefinition name="modifiedDate" type="string">
+        <Description/>
+      </AttributeDefinition>
+    </Schema>
+  </Schemas>
+  <ApplicationScorecard/>
+</Application>

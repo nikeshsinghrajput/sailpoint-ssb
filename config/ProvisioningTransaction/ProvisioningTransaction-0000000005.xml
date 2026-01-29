@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="CN=smith.jane,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" applicationName="Active Directory" identityDisplayName="Jane Smith" identityName="17c03a6c-fea2-44d6-94f5-a1658f2f5226" integration="Active Directory" name="0000000005" nativeIdentity="CN=smith.jane,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" operation="Create" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=smith.jane,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c0199d714018199d7c0bbab011a"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="employeeNumber" op="Set" value="739004"/>
+            <AttributeRequest name="givenName" op="Set" value="Jane"/>
+            <AttributeRequest name="sn" op="Set" value="Smith"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="smith.jane"/>
+            <AttributeRequest name="displayName" op="Set" value="Jane Smith"/>
+            <AttributeRequest name="title" op="Set" value="Senior Producer"/>
+            <AttributeRequest name="company" op="Add" value="Nsiiq Inc"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="133800768000000000"/>
+            <AttributeRequest name="department" op="Set" value="Production"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="8562"/>
+            <AttributeRequest name="division" op="Add" value="Entertainment - Creative"/>
+            <AttributeRequest name="manager" op="Set" value="CN=Lawrence Rodgers,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com"/>
+            <AttributeRequest name="streetAddress" op="Set" value="10202 Washington Blvd"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="USA_CULVER_CITY_MAIN_CAMPUS_CA"/>
+            <AttributeRequest name="l" op="Set" value="USA - Culver City - MAIN CAMPUS - CA"/>
+            <AttributeRequest name="st" op="Set" value="Culver City"/>
+            <AttributeRequest name="co" op="Add" value="United States of America"/>
+            <AttributeRequest name="postalCode" op="Set" value="90232"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9878901234"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-44-27684567"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Senior Producer"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Connection reset" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

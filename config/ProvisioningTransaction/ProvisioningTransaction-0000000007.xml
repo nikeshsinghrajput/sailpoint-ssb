@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction applicationName="Active Directory" identityDisplayName="John Doe" identityName="013932db-2058-47a7-adc4-4e1386e3afd6" integration="Active Directory" name="0000000007" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000005"/>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c0199d8107e8199d8f60f340039"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c0199d8107e8199d8feddf10072"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="NSIIQ\Member of this group can have some administrative privileges to manage configuration of networking features" name="memberOf" op="Add" value="CN=Network Configuration Operation,OU=Groups,OU=Dev,DC=nsiiq,DC=com">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="employeeNumber" op="Set" value="739003"/>
+            <AttributeRequest name="givenName" op="Set" value="John"/>
+            <AttributeRequest name="sn" op="Set" value="Doe"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="doe.john"/>
+            <AttributeRequest name="displayName" op="Set" value="John Doe"/>
+            <AttributeRequest name="title" op="Set" value="Marketing Manager"/>
+            <AttributeRequest name="company" op="Add" value="Nsiiq Inc"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="133484544000000000"/>
+            <AttributeRequest name="department" op="Set" value="Marketing"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="8561"/>
+            <AttributeRequest name="division" op="Add" value="Entertainment - Creative"/>
+            <AttributeRequest name="streetAddress" op="Set" value="10202 Washington Blvd"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="USA_CULVER_CITY_MAIN_CAMPUS_CA"/>
+            <AttributeRequest name="l" op="Set" value="USA - Culver City - MAIN CAMPUS - CA"/>
+            <AttributeRequest name="st" op="Set" value="Culver City"/>
+            <AttributeRequest name="co" op="Add" value="United States of America"/>
+            <AttributeRequest name="postalCode" op="Set" value="90232"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9989012345"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-80-27911234"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Marketing Manager"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Native Identity should not be null or empty" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

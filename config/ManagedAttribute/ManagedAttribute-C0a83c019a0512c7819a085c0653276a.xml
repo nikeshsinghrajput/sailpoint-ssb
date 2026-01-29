@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Audit Viewer" hash="79bc0c57963e53c65882b7eae13d6d4e14426586" lastRefresh="1768326685854" requestable="true" type="roles" value="Audit Viewer">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-08-18"/>
+      <entry key="description" value="Read-only role for audit and compliance teams to review financial records."/>
+      <entry key="modifiedDate" value="2025-09-30"/>
+      <entry key="owner" value="audit.viewer@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_AUDIT_VIEWER_010"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Governance"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

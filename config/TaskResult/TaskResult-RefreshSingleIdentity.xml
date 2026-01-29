@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768911368452" completionStatus="Success" host="NikeshRajput" launched="1768911364865" launcher="spadmin" name="Refresh Single Identity" runLength="3" runLengthAverage="1" runLengthDeviation="200" schedule="8aae1d2cbc634fed8dbf1677f6443ecc" type="Identity">
+  <Attributes>
+    <Map>
+      <entry key="assignmentsReconciled" value="2"/>
+      <entry key="identityEntitlementsIndirectLinkUpdates" value="7"/>
+      <entry key="identityEntitlementsIndirectUpdates" value="6"/>
+      <entry key="identityEntitlementsRoleAssignmentsUpdates" value="2"/>
+      <entry key="identityEntitlementsRoleDetectionsUpdates" value="1"/>
+      <entry key="identityEntitlementsUpdated" value="8"/>
+      <entry key="managerChanges" value="1"/>
+      <entry key="managers" value="1"/>
+      <entry key="provisioningRequests" value="1"/>
+      <entry key="total" value="1"/>
+      <entry key="triggersProcessed" value="1"/>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Refresh Single Identity"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

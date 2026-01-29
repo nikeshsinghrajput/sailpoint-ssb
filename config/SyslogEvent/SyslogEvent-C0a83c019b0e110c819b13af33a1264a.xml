@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.server.Authenticator" eventLevel="ERROR" lineNumber="751" quickKey="0000448144" server="NikeshRajput" thread="http-nio-1000-exec-8" username="SailPointContextRequestFilter">
+  <EventMessage>sailpoint.connector.ConnectorException: Failed to find user: [Count: 0] sailpoint.connector.ConnectorException: Failed to find user: [Count: 0] sailpoint.connector.InvalidConfigurationException: [ InvalidConfigurationException ] 
+ [ Possible suggestions ] Verify that mandatory fields should not be empty in the application configuration. 
+ [ Error details ] Required string attribute 'authorizationType' is not defined.It must have a valid value.</EventMessage>
+</SyslogEvent>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem completed="1768226166052" exceptionApplication="Active Directory" exceptionAttributeName="memberOf" exceptionAttributeValue="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com" summaryStatus="Complete" type="Exception">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019b731761819bb27d60df2672" decisionDate="1768226166017" reviewed="true" status="Approved"/>
+  <ApplicationNames>
+    <String>Active Directory</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Active Directory" displayName="singh.sohan" nativeIdentity="CN=singh.sohan,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <Attributes>
+        <Map>
+          <entry key="memberOf" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>

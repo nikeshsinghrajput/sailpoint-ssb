@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Employee_Workforce_Type">
+  <Attributes>
+    <Map>
+      <entry key="ClassList">
+        <value>
+          <List>
+            <String>Full-Time</String>
+            <String>Part-Time</String>
+            <String>Hybrid</String>
+            <String>Remote</String>
+            <String>Onsite</String>
+            <String>Shift-Based</String>
+            <String>Field</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="CompanyList">
+        <value>
+          <List>
+            <String>NS Soft Tech</String>
+            <String>NS IIQ Inc.</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="EmployeeTypeList">
+        <value>
+          <List>
+            <String>Employee</String>
+            <String>Partner</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="WorkforceTypeList">
+        <value>
+          <List>
+            <String>Permanent</String>
+            <String>Contract</String>
+            <String>Consultant</String>
+            <String>Intern</String>
+            <String>Vendor</String>
+            <String>Temporary</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

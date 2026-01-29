@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Wanda Johnson" identity="739072" lastRefresh="1768468364760">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="5842 King Lane"/>
+      <entry key="ADDRESS_WORK" value="5842 King Lane;Santiago, Santiago Metropolitan 67307;Chile"/>
+      <entry key="BUILDING_CODE" value="CL_SAN_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3045"/>
+      <entry key="CLASS" value="Shift-Based"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="04-08-2024"/>
+      <entry key="COUNTRY_NAME" value="Chile"/>
+      <entry key="DEPARTMENT" value="Core Banking Technology"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-024"/>
+      <entry key="DIVISION" value="Chile Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-CL-01"/>
+      <entry key="EMAIL" value="wanda.johnson@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739072"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739072"/>
+      <entry key="FIRST_NAME" value="Wanda"/>
+      <entry key="HIREDATE" value="05-20-2018"/>
+      <entry key="JOBCODE" value="JT-024-03"/>
+      <entry key="JOBTITLE" value="Banking Solutions Developer"/>
+      <entry key="LAST_NAME" value="Johnson"/>
+      <entry key="LOCATION" value="CL - Santiago"/>
+      <entry key="MANAGER_ID" value="739004"/>
+      <entry key="POSTAL_CODE" value="42804"/>
+      <entry key="REGION" value="Santiago"/>
+      <entry key="WORKER_NAME" value="Wanda Johnson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Temporary"/>
+    </Map>
+  </Attributes>
+</Link>

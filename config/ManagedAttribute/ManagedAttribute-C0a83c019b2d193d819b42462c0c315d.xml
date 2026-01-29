@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="SEC_PAMP_APPSSL_OWNERS" hash="4846ed8af354f0e3f5a0cc06bde35e09e22a0049" lastRefresh="1766343453706" requestable="true" type="group" uuid="{ad8c5ad1-1335-4b65-8e2b-8a85b900aa7f}" value="CN=SEC_PAMP_APPSSL_OWNERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="SEC_PAMP_APPSSL_OWNERS"/>
+      <entry key="description" value="SEC_PAMP_APPSSL_OWNERS created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\SEC_PAMP_APPSSL_OWNERS"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1488"/>
+      <entry key="objectguid" value="{ad8c5ad1-1335-4b65-8e2b-8a85b900aa7f}"/>
+      <entry key="sAMAccountName" value="SEC_PAMP_APPSSL_OWNERS"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

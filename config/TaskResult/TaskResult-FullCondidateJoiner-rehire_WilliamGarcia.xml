@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768825305350" completionStatus="Error" launched="1768824843511" launcher="Scheduler" name="Full Condidate Joiner-rehire: William Garcia" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="identityRequestId" value="0000000325"/>
+      <entry key="password" value="po}5\klh\tD096GGVR%4!?~2-"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="9bcaa225-f0c4-405a-8895-2159b92fb553">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000325"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <ExpansionItems>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="employee" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="William Garcia"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="firstName" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="William"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="lastName" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Garcia"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="empStatus" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Active"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="department" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Workplace &amp; Facilities Management"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="hireDate" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="01-27-2026"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="terminationDate" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="03-09-2029"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="workState" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Salvador"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="email" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="garcia.william@nsiiq.com"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="countryCode" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="10815"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="workCountry" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Brazil"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="manager" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Nikesh Singh"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="superviserId" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="735000"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="bussinessUnit" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="3040"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="annualHours" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="1040"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="jobTitle" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="Facilities Coordinator"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="isManager" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="No"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="userLevel" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="C"/>
+              <ExpansionItem application="Financial Planning &amp; Forecasting" cause="ProvisioningPolicy" name="salaryClass" nativeIdentity="739013" operation="Set" sourceInfo="Financial Planning &amp; Forecasting" value="B"/>
+            </ExpansionItems>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739013" op="Create"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000325"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="9bcaa225-f0c4-405a-8895-2159b92fb553" targetIntegration="Financial Planning &amp; Forecasting" trackingId="a85157379e9a4de68a4d646d10aaddcd">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739013" op="Create" targetIntegration="Financial Planning &amp; Forecasting">
+                <AttributeRequest name="employee" op="Set" value="William Garcia"/>
+                <AttributeRequest name="firstName" op="Set" value="William"/>
+                <AttributeRequest name="lastName" op="Set" value="Garcia"/>
+                <AttributeRequest name="empStatus" op="Set" value="Active"/>
+                <AttributeRequest name="department" op="Set" value="Workplace &amp; Facilities Management"/>
+                <AttributeRequest name="userLevel" op="Set" value="C"/>
+                <AttributeRequest name="hireDate" op="Set" value="01-27-2026"/>
+                <AttributeRequest name="salaryClass" op="Set" value="B"/>
+                <AttributeRequest name="terminationDate" op="Set" value="03-09-2029"/>
+                <AttributeRequest name="workState" op="Set" value="Salvador"/>
+                <AttributeRequest name="email" op="Set" value="garcia.william@nsiiq.com"/>
+                <AttributeRequest name="countryCode" op="Set" value="10815"/>
+                <AttributeRequest name="workCountry" op="Set" value="Brazil"/>
+                <AttributeRequest name="manager" op="Set" value="Nikesh Singh"/>
+                <AttributeRequest name="superviserId" op="Set" value="735000"/>
+                <AttributeRequest name="bussinessUnit" op="Set" value="3040"/>
+                <AttributeRequest name="annualHours" op="Set" value="1040"/>
+                <AttributeRequest name="jobTitle" op="Set" value="Facilities Coordinator"/>
+                <AttributeRequest name="isManager" op="Set" value="No"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000325"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="garcia.william" nativeIdentity="CN=garcia.william,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019bd11f47819bd62d3121012c"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="end"/>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+  <Messages>
+    <Message key="err_exception" type="Error">
+      <Parameters>
+        <Message key="msg_plain_text" type="Error">
+          <Parameters>
+            <String>BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.text.SimpleDateFormat; 	import java.util.Calendar; 	import java.util . . . '' : Attempt to resolve method: equalsIgnoreCase() on undefined variable or class name: srStatus : at Line: 43 : in file: inline evaluation of: ``import java.text.SimpleDateFormat; 	import java.util.Calendar; 	import java.util . . . '' : srStatus .equalsIgnoreCase ( "Leaver-Final-Phase-Completed" ) 
+ BSF info: NS_Rule_Identity_Trigger_Joiner at line: 0 column: columnNo</String>
+          </Parameters>
+        </Message>
+      </Parameters>
+    </Message>
+    <Message key="err_exception" type="Error">
+      <Parameters>
+        <Message key="msg_plain_text" type="Error">
+          <Parameters>
+            <String>BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import java.text.SimpleDateFormat; 	import java.util.Calendar; 	import java.util . . . '' : Attempt to resolve method: equalsIgnoreCase() on undefined variable or class name: srStatus : at Line: 43 : in file: inline evaluation of: ``import java.text.SimpleDateFormat; 	import java.util.Calendar; 	import java.util . . . '' : srStatus .equalsIgnoreCase ( "Leaver-Final-Phase-Completed" ) 
+ BSF info: NS_Rule_Identity_Trigger_Joiner at line: 0 column: columnNo</String>
+          </Parameters>
+        </Message>
+      </Parameters>
+    </Message>
+  </Messages>
+</TaskResult>

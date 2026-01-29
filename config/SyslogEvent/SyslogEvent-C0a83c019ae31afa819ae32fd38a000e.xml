@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.api.Identitizer" eventLevel="ERROR" lineNumber="6340" quickKey="0000399900" server="NikeshRajput" thread="QuartzScheduler_Worker-2" username="Scheduler">
+  <EventMessage>Unable to refresh link: </EventMessage>
+  <Stacktrace>sailpoint.connector.ConnectorException: java.lang.Exception: [ERROR 1] Failed to connect to server:ldap://192.168.1.10:389 - java.net.ConnectException: Connection timed out: connect
+
+	at sailpoint.connector.activedirectory.ConnectionManager.createContextForDN(ConnectionManager.java:366)
+	at sailpoint.connector.ADLDAPConnector.createContextForDN(ADLDAPConnector.java:12955)
+	at sailpoint.connector.ADLDAPConnector.createContextForDN(ADLDAPConnector.java:12913)
+	at sailpoint.connector.LDAPConnector.getContextForGetObjectDelta(LDAPConnector.java:1006)
+	at sailpoint.connector.LDAPConnector.getObject(LDAPConnector.java:762)
+	at sailpoint.connector.ADLDAPConnector.getObject(ADLDAPConnector.java:4516)
+	at sailpoint.connector.ConnectorProxy.getObject(ConnectorProxy.java:660)
+	at sailpoint.api.Identitizer.reload(Identitizer.java:6312)
+	at sailpoint.api.Identitizer.reload(Identitizer.java:6235)
+	at sailpoint.api.Identitizer.refresh(Identitizer.java:2292)
+	at sailpoint.api.IdentityRequestProvisioningScanner.scan(IdentityRequestProvisioningScanner.java:245)
+	at sailpoint.task.IdentityRequestMaintenance.scanRequests(IdentityRequestMaintenance.java:568)
+	at sailpoint.task.IdentityRequestMaintenance.doUnPartitioned(IdentityRequestMaintenance.java:359)
+	at sailpoint.task.IdentityRequestMaintenance.execute(IdentityRequestMaintenance.java:288)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: java.lang.Exception: java.lang.Exception: [ERROR 1] Failed to connect to server:ldap://192.168.1.10:389 - java.net.ConnectException: Connection timed out: connect
+
+	at sailpoint.connector.activedirectory.ConnectionManager.createContextUsingServers(ConnectionManager.java:447)
+	at sailpoint.connector.activedirectory.ConnectionManager.createContextForDN(ConnectionManager.java:333)
+	... 18 more
+Caused by: java.lang.Exception: [ERROR 1] Failed to connect to server:ldap://192.168.1.10:389 - java.net.ConnectException: Connection timed out: connect
+
+	at sailpoint.connector.activedirectory.ConnectionManager.createContextUsingServers(ConnectionManager.java:446)
+	... 19 more
+</Stacktrace>
+</SyslogEvent>

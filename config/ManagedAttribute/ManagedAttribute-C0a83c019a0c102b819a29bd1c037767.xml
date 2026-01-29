@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="groups" displayName="Project Mgmt" hash="9c56c6d95b1901028cbf04ae0d8aeabb902e0c5c" lastRefresh="1761636850690" requestable="true" type="group" value="aacb62e2c0a80015007f67f752c2b12c">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="active" value="true"/>
+      <entry key="exclude_manager" value="false"/>
+      <entry key="name" value="Project Mgmt"/>
+      <entry key="sys_created_by" value="glide.maint"/>
+      <entry key="sys_created_on" value="2024-02-13 17:38:47"/>
+      <entry key="sys_mod_count" value="1"/>
+      <entry key="sys_updated_by" value="glide.maint"/>
+      <entry key="sys_updated_on" value="2024-02-13 17:42:19"/>
+      <entry key="type" value="catalog"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

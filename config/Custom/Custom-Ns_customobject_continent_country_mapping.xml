@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Continent_Country_Mapping">
+  <Attributes>
+    <Map>
+      <entry key="Africa &amp; Middle East">
+        <value>
+          <List>
+            <String>Egypt</String>
+            <String>Kenya</String>
+            <String>Qatar</String>
+            <String>Saudi Arabia</String>
+            <String>South Africa</String>
+            <String>United Arab Emirates</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="America">
+        <value>
+          <List>
+            <String>Argentina</String>
+            <String>Brazil</String>
+            <String>Canada</String>
+            <String>Chile</String>
+            <String>Mexico</String>
+            <String>United States</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Asia Pacific">
+        <value>
+          <List>
+            <String>Australia</String>
+            <String>China</String>
+            <String>India</String>
+            <String>Japan</String>
+            <String>Singapore</String>
+            <String>South Korea</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="Europe">
+        <value>
+          <List>
+            <String>France</String>
+            <String>Germany</String>
+            <String>Italy</String>
+            <String>Netherlands</String>
+            <String>Spain</String>
+            <String>United Kingdom</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

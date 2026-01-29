@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="NRRC_EmailTemplate_Joiner_Completion_Notification">
+  <Body>
+Hello IAM Team,
+
+The email account has been successfully created for the following user.
+
+------------------------------------------------------------
+User Details
+------------------------------------------------------------
+Display Name     : $!identityDisplayName
+Email            : $!email
+Temporary Password : $!password
+Manager          : $!managerDisplayName
+------------------------------------------------------------
+
+Please proceed with the remaining onboarding activities.
+
+Regards,  
+Identity Management Team
+    </Body>
+  <Description>
+      Notification to IAM team after email account is created for the new joiner.
+    </Description>
+  <Signature>
+    <Inputs>
+      <Argument name="identityDisplayName" type="string">
+        <Description>The display name of the user.</Description>
+      </Argument>
+      <Argument name="managerDisplayName" type="string">
+        <Description>The display name of the user's manager.</Description>
+      </Argument>
+      <Argument name="email" type="string">
+        <Description>Email assigned to the user.</Description>
+      </Argument>
+      <Argument name="password" type="string">
+        <Description>Temporary password created during provisioning.</Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Subject>
+      Mail Account Created: $!identityDisplayName
+    </Subject>
+</EmailTemplate>

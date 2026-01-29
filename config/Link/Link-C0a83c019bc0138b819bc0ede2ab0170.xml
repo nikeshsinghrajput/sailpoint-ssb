@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Chelsea Lucas" identity="739112" lastRefresh="1768468374188">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="2100 Sunset Ave"/>
+      <entry key="ADDRESS_WORK" value="2100 Sunset Ave;Fukuoka, Tokyo Prefecture 62413;Japan"/>
+      <entry key="BUILDING_CODE" value="JP_TOK_BLDG_03"/>
+      <entry key="BUSINESS_UNIT_ID" value="3011"/>
+      <entry key="CLASS" value="Field"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="10-27-2024"/>
+      <entry key="COUNTRY_NAME" value="Japan"/>
+      <entry key="DEPARTMENT" value="Cloud Infrastructure Services"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-013"/>
+      <entry key="DIVISION" value="Japan Technology and Operations"/>
+      <entry key="DIVISION_ID" value="DIV-JP-03"/>
+      <entry key="EMAIL" value="chelsea.lucas@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739112"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739112"/>
+      <entry key="FIRST_NAME" value="Chelsea"/>
+      <entry key="HIREDATE" value="02-18-2017"/>
+      <entry key="JOBCODE" value="JT-013-04"/>
+      <entry key="JOBTITLE" value="Site Reliability Engineer"/>
+      <entry key="LAST_NAME" value="Lucas"/>
+      <entry key="LOCATION" value="JP - Fukuoka"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="21076"/>
+      <entry key="REGION" value="Fukuoka"/>
+      <entry key="WORKER_NAME" value="Chelsea Lucas"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Consultant"/>
+    </Map>
+  </Attributes>
+</Link>

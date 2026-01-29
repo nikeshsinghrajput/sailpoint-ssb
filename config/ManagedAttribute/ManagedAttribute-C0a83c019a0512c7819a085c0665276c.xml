@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="roles" displayName="Budget Controller" hash="11986f135f29ac4073d3a64ded46a2fd25082186" lastRefresh="1768326685867" requestable="true" type="roles" value="Budget Controller">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="createdDate" value="2025-07-05"/>
+      <entry key="description" value="Monitors budget allocations, variance reporting, and cost control measures."/>
+      <entry key="modifiedDate" value="2025-09-25"/>
+      <entry key="owner" value="budget.office@sriiq.com"/>
+      <entry key="roleId" value="ROL_FIN_BUDGET_CTRL_008"/>
+      <entry key="status" value="Active"/>
+      <entry key="type" value="Business"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

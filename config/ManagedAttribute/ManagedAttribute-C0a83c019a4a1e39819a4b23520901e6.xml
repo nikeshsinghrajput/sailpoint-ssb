@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Curriculum Planner" hash="47303f8fdaf2cbd05f7ca5b3d4378a2a7fddc4c2" lastRefresh="1768326681143" requestable="true" type="access" value="Curriculum Planner">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Business"/>
+      <entry key="createdDate" value="15-06-2025"/>
+      <entry key="description" value="Defines course sequences and learning paths"/>
+      <entry key="modifiedDate" value="29-09-2025"/>
+      <entry key="owner" value="planner@corp.com"/>
+      <entry key="roleId" value="CORP_CURRICULUM_PLANNER_007"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="NS_Rule_Change_Hr_App_Status">
+  <Description>
+     Update HR workerStatus using REST API instead of ProvisioningPlan
+  </Description>
+  <Source>
+		import org.apache.commons.logging.Log;
+		import org.apache.commons.logging.LogFactory;
+		import sailpoint.tools.Util;
+		import sailpoint.object.Identity;
+		import sailpoint.object.TaskDefinition;
+		import java.text.SimpleDateFormat;
+		import java.util.Calendar;
+		import java.util.Date;
+
+		// OkHttp imports
+		import okhttp3.OkHttpClient;
+		import okhttp3.MediaType;
+		import okhttp3.RequestBody;
+		import okhttp3.Request;
+		import okhttp3.Response;
+		import java.util.Base64;
+
+
+		Log logger = LogFactory.getLog("com.ns.rule.NS_Rule_Change_Hr_App_Status");
+
+		try {
+		TaskDefinition taskDef = context.getObjectByName(TaskDefinition.class,"NS-TaskDefination-TerminateIdentity"); 
+			String identityName = taskDef.getString("identityName");
+			String terminationDate = taskDef.getString("terminationDate");
+				 
+			   System.out.println("identityName:::"+identityName);
+			   System.out.println("terminationDate:::"+terminationDate);
+			if (Util.isNotNullOrEmpty(identityName)&amp;&amp;Util.isNotNullOrEmpty(terminationDate)) {
+                identityName=identityName.trim();
+				
+				Identity identity = context.getObjectByName(Identity.class, identityName);
+
+				if (identity != null) {
+
+					String employeeId = identity.getAttribute("employeeId");
+
+					System.out.println("terminationDate: " + terminationDate + " | employeeId: " + employeeId);
+
+					if (Util.isNotNullOrEmpty(terminationDate) &amp;&amp; Util.isNotNullOrEmpty(employeeId)) {
+
+						// The incoming date format from task definition
+						SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a z");
+
+						// API expects MM-dd-yyyy
+						SimpleDateFormat outputFormat = new SimpleDateFormat("MM-dd-yyyy");
+
+						Date termDateObj = inputFormat.parse(terminationDate);
+
+						// Format to MM-dd-yyyy for API
+						terminationDate = outputFormat.format(termDateObj);
+
+						// Calculate date difference (day-level comparison)
+						Calendar calendar = Calendar.getInstance();
+						calendar.set(Calendar.HOUR_OF_DAY, 0);
+						calendar.set(Calendar.MINUTE, 0);
+						calendar.set(Calendar.SECOND, 0);
+						calendar.set(Calendar.MILLISECOND, 0);
+
+						Date today = calendar.getTime();
+
+						long diffInMillis = termDateObj.getTime() - today.getTime();
+						long diffInDays = diffInMillis / (1000 * 60 * 60 * 24);
+
+						System.out.println("diffInDays :::" + diffInDays);
+						// VALID DATE RANGE
+						if (diffInDays &lt;= 0) {
+
+							System.out.println("Calling HR API to update workerStatus for empId: " + employeeId);
+
+							// ---------------------------------------------
+							//              API CALL USING OKHTTP
+							// ---------------------------------------------
+							String username="admin";
+							String password="admin123";
+							String workerStatus="Terminated";
+							OkHttpClient client = new OkHttpClient();
+
+							MediaType mediaType = MediaType.parse("application/json");
+							RequestBody body = RequestBody.create(mediaType, "{ \"workerStatus\": \"" + workerStatus + "\", " + "\"contractEndDate\": \"" + terminationDate + "\" }");
+
+							String token = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+							String url = "http://localhost:9091/workday/" + employeeId;
+
+							Request request = new Request.Builder()
+								.url(url)
+								.put(body)
+								.addHeader("Content-Type", "application/json")
+								.addHeader("Authorization", "Basic "+token)
+								.build();
+
+							Response response = client.newCall(request).execute();
+
+							System.out.println("API Response Code: " + response.code());
+							System.out.println("API Response Body: " + response.body().string());
+						  taskResult.setAttribute("responseCode", response.code());
+						
+
+						}
+					}
+				}
+			}
+
+		} catch (Exception ex) {
+			logger.error("Error in NS_Rule_Change_Hr_App_Status: ", ex);
+		}
+
+  </Source>
+</Rule>

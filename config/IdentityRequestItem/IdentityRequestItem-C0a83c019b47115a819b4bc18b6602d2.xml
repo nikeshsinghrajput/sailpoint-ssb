@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequestItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequestItem application="Financial Planning &amp; Forecasting" compilationStatus="Expansion" nativeIdentity="8512504" operation="Create" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Failed">
+  <Attributes>
+    <Map>
+      <entry key="attachmentConfigList"/>
+      <entry key="attachments"/>
+      <entry key="errors">
+        <value>
+          <List>
+            <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512504' for key 'employees.PRIMARY'" type="Error"/>
+          </List>
+        </value>
+      </entry>
+      <entry key="flow" value="AccessRequest"/>
+      <entry key="id" value="c0a83c019a0512c7819a085c0665276c"/>
+      <entry key="interface" value="LCM"/>
+      <entry key="nativeIdUpdated">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="operation" value="EntitlementAdd"/>
+      <entry key="provisioningPlan">
+        <value>
+          <ProvisioningPlan trackingId="c5a29cabc8894c829d5a29d66bbda19a">
+            <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512504" op="Create">
+              <Attributes>
+                <Map>
+                  <entry key="attachmentConfigList"/>
+                  <entry key="attachments"/>
+                  <entry key="flow" value="AccessRequest"/>
+                  <entry key="id" value="c0a83c019a0512c7819a085c0665276c"/>
+                  <entry key="interface" value="LCM"/>
+                  <entry key="nativeIdUpdated">
+                    <value>
+                      <Boolean>true</Boolean>
+                    </value>
+                  </entry>
+                  <entry key="operation" value="EntitlementAdd"/>
+                  <entry key="provisioningTransactionId" value="c0a83c019b47115a819b4bc18d5c02d4"/>
+                </Map>
+              </Attributes>
+            </AccountRequest>
+            <Attributes>
+              <Map>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+          </ProvisioningPlan>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</IdentityRequestItem>

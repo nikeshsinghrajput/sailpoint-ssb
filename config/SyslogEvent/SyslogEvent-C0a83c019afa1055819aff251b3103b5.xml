@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.ADLDAPConnector" eventLevel="ERROR" lineNumber="6254" quickKey="0000447826" server="NikeshRajput" thread="QuartzScheduler_Worker-4" username="Scheduler">
+  <EventMessage>2083474180 Error(s) reported back from the IQService - Failed to update attributes for identity CN=brown.jessica,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com. A device attached to the system is not functioning.
+</EventMessage>
+</SyslogEvent>

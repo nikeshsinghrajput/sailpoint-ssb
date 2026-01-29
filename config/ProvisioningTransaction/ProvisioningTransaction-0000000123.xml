@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="jones.susan" applicationName="Active Directory" identityDisplayName="Susan Jones" identityName="4df298ed-0cba-4084-a574-9d000cc20e4f" integration="Active Directory" name="0000000123" nativeIdentity="CN=Susan titu Jones,OU=Financial and Administrative Affairs,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Disable" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000203"/>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=Susan titu Jones,OU=Financial and Administrative Affairs,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a8d1133819aa76d73710c4c"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="accountExpires" op="Add" value="11/20/2025 13:5:44 PM AST"/>
+            <AttributeRequest name="description" op="Set" value="Terminated"/>
+            <AttributeRequest name="userPrincipalName" op="Set"/>
+            <AttributeRequest name="userAccountControl" op="Set" value="514"/>
+            <ProvisioningResult status="committed"/>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

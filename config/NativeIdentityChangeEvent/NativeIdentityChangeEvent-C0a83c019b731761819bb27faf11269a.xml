@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE NativeIdentityChangeEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<NativeIdentityChangeEvent applicationId="c0a83c0199d417218199d43c5f300017" launched="1768226271432" linkId="c0a83c019b731761819bb26874b8260a" newNativeIdentity="CN=singh.sohan,OU=Financial Risk Management,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" oldNativeIdentity="CN=singh.sohan,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" status="Completed" type="Account" uuid="{4dd17e65-266b-424b-be96-b92067d23af3}"/>

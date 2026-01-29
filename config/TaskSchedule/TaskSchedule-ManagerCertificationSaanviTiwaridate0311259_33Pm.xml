@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskSchedule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskSchedule name="Manager Certification Saanvi Tiwari [DATE] [03/11/25, 9:33 PM]">
+  <Arguments>
+    <Map>
+      <entry key="certificationDefinitionId" value="Manager Certification [03/11/25, 9:25 PM]"/>
+      <entry key="executor" value="Certification Manager"/>
+      <entry key="launcher" value="spadmin"/>
+      <entry key="resultName" value="Manager Certification Saanvi Tiwari [DATE] [03/11/25, 9:33 PM]"/>
+    </Map>
+  </Arguments>
+  <Description>Manager Certification for [4bc9af5f-ff0b-4e42-aedd-e55fe7d1b7b2]</Description>
+</TaskSchedule>

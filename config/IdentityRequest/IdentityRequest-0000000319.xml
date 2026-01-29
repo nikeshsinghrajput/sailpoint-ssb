@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1768471363213" executionStatus="Completed" name="0000000319" priority="Normal" requesterDisplayName="The Administrator" requesterId="c0a83c0199cf13658199cf93c73500fe" source="LCM" state="End" targetClass="Identity" targetDisplayName="Hector Petty" type="AccessRequest" verified="1768471451956">
+  <Attributes>
+    <Map>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="3ae9ccae-0c70-4dda-a43e-2654222f32a8">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000319"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4a70500"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementRemove"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Executive" name="roles" op="Remove" value="Sales Executive">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739092" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0512c7819a085c0653276a"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementRemove"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Audit Viewer" name="roles" op="Remove" value="Audit Viewer">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000319"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="3ae9ccae-0c70-4dda-a43e-2654222f32a8" targetIntegration="Sales Analytics" trackingId="95d0a3b8bf6d42d0a7df0312a422d5e6">
+              <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify" targetIntegration="Sales Analytics">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a0c102b819a1038f4a70500"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="EntitlementRemove"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Sales Executive" name="roles" op="Remove" value="Sales Executive">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000319"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningPlan nativeIdentity="3ae9ccae-0c70-4dda-a43e-2654222f32a8" targetIntegration="Financial Planning &amp; Forecasting" trackingId="e9ca40e03ef540f28803b9939a3d4844">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739092" op="Modify" targetIntegration="Financial Planning &amp; Forecasting">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a0512c7819a085c0653276a"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="EntitlementRemove"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Audit Viewer" name="roles" op="Remove" value="Audit Viewer">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000319"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bc0138b819bc11b7b5405e7"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Sales Analytics" approvalState="Finished" name="roles" nativeIdentity="739092" operation="Remove" ownerName="spadmin" provisioningEngine="Sales Analytics" provisioningState="Finished" value="Sales Executive">
+      <Attributes>
+        <Map>
+          <entry key="attachmentConfigList"/>
+          <entry key="attachments"/>
+          <entry key="flow" value="AccessRequest"/>
+          <entry key="id" value="c0a83c019a0c102b819a1038f4a70500"/>
+          <entry key="identityEntitlementId" value="c0a83c019bc0138b819bc10adbea0553"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="operation" value="EntitlementRemove"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="49159afa680c4f2eaf5df264f6d8a8bf">
+                <AccountRequest application="Sales Analytics" nativeIdentity="739092" op="Modify" targetIntegration="Sales Analytics">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4a70500"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementRemove"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Sales Executive" name="roles" op="Remove" trackingId="49159afa680c4f2eaf5df264f6d8a8bf" value="Sales Executive">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" approvalState="Finished" name="roles" nativeIdentity="739092" operation="Remove" ownerName="spadmin" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished" value="Audit Viewer">
+      <Attributes>
+        <Map>
+          <entry key="attachmentConfigList"/>
+          <entry key="attachments"/>
+          <entry key="flow" value="AccessRequest"/>
+          <entry key="id" value="c0a83c019a0512c7819a085c0653276a"/>
+          <entry key="identityEntitlementId" value="c0a83c019bc0138b819bc10adbe90552"/>
+          <entry key="interface" value="LCM"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="operation" value="EntitlementRemove"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="7f91586545354d1aab9a2f514da69bb5">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739092" op="Modify" targetIntegration="Financial Planning &amp; Forecasting">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0512c7819a085c0653276a"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementRemove"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Audit Viewer" name="roles" op="Remove" trackingId="7f91586545354d1aab9a2f514da69bb5" value="Audit Viewer">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+      <Owner>
+        <Reference class="sailpoint.object.Identity" name="spadmin"/>
+      </Owner>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

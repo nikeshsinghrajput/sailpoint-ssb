@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Emma Ewing" identity="739023" lastRefresh="1768468353167">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="1697 Hill Lane"/>
+      <entry key="ADDRESS_WORK" value="1697 Hill Lane;Buenos Aires, Buenos Aires Province 63863;Argentina"/>
+      <entry key="BUILDING_CODE" value="AR_BUE_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3044"/>
+      <entry key="CLASS" value="Shift-Based"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="01-03-2026"/>
+      <entry key="COUNTRY_NAME" value="Argentina"/>
+      <entry key="DEPARTMENT" value="Investment Operations"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-005"/>
+      <entry key="DIVISION" value="Argentina Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-AR-04"/>
+      <entry key="EMAIL" value="emma.ewing@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739023"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739023"/>
+      <entry key="FIRST_NAME" value="Emma"/>
+      <entry key="HIREDATE" value="07-21-2019"/>
+      <entry key="JOBCODE" value="JT-005-01"/>
+      <entry key="JOBTITLE" value="Investment Operations Analyst"/>
+      <entry key="LAST_NAME" value="Ewing"/>
+      <entry key="LOCATION" value="AR - Buenos Aires"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="37742"/>
+      <entry key="REGION" value="Buenos Aires"/>
+      <entry key="WORKER_NAME" value="Emma Ewing"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Contract"/>
+    </Map>
+  </Attributes>
+</Link>

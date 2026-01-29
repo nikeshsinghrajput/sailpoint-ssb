@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="groups" displayName="NY DB" hash="40072d5d6cb2289dcea6a1b1dbc88a281c805184" lastRefresh="1761636850621" requestable="true" type="group" value="5f74727dc0a8010e01efe33a251993f9">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="ServiceNow"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="active" value="true"/>
+      <entry key="description" value="Manages databases hosted in New York"/>
+      <entry key="exclude_manager" value="false"/>
+      <entry key="name" value="NY DB"/>
+      <entry key="parent" value="Database"/>
+      <entry key="sys_created_by" value="glide.maint"/>
+      <entry key="sys_created_on" value="2021-08-05 14:18:22"/>
+      <entry key="sys_mod_count" value="0"/>
+      <entry key="sys_updated_by" value="glide.maint"/>
+      <entry key="sys_updated_on" value="2021-08-05 14:18:22"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1765477256155" completionStatus="Success" launched="1765477163702" launcher="Scheduler" name="Leaver 1st Phase: Sai Kumar" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="cart"/>
+      <entry key="identityRequestId"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="daa41f97-5236-4984-a9ef-d2f01f9e0045">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000255"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Active Directory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable"/>
+                <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512511" op="Disable"/>
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512511" op="Disable"/>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000255"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="daa41f97-5236-4984-a9ef-d2f01f9e0045" targetIntegration="Active Directory" trackingId="30ff4e8f94e942949ca57c659482fdec">
+              <AccountRequest application="Active Directory" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Disable" targetIntegration="Active Directory">
+                <AttributeRequest name="accountExpires" op="Add" value="12/12/2025 05:30:00 AM IST"/>
+                <AttributeRequest name="manager" op="Set"/>
+                <AttributeRequest name="description" op="Set" value="Terminated"/>
+                <AttributeRequest name="userPrincipalName" op="Set"/>
+                <AttributeRequest name="userAccountControl" op="Set" value="514"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000255"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningPlan trackingId="6686eec7d685443ba248366ebda7ca41">
+              <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512511" op="Disable"/>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000255"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+            </ProvisioningPlan>
+            <ProvisioningPlan nativeIdentity="daa41f97-5236-4984-a9ef-d2f01f9e0045" targetIntegration="Financial Planning &amp; Forecasting" trackingId="22cdff92cb5a442fac0479872102ae4d">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512511" op="Disable" targetIntegration="Financial Planning &amp; Forecasting">
+                <AttributeRequest name="empStatus" op="Set" value="Inactive"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000255"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" selection="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountInfo displayName="kumar.sai" nativeIdentity="CN=kumar.sai,OU=Regulatory Affairs and Governance,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+              </AccountSelection>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="retries">
+        <value>
+          <Integer>0</Integer>
+        </value>
+      </entry>
+      <entry key="workflowCaseId" value="c0a83c019afa1055819b0ea3a3750d53"/>
+      <entry key="workflowProcessId"/>
+      <entry key="workflowSummary">
+        <value>
+          <WorkflowSummary step="Stop">
+            <Interactions>
+              <ApprovalSummary completer="The Administrator" endDate="1765477255828" owner="spadmin" request="Manual Changes requested for User: Sai Kumar" startDate="1765477228573" state="Finished" workItemId="c0a83c019afa1055819b0ea477790d63" workItemType="ManualAction">
+                <ApprovalSet>
+                  <ApprovalItem application="Corporate Learning Portal" nativeIdentity="8512511" operation="Disable" state="Finished"/>
+                </ApprovalSet>
+              </ApprovalSummary>
+            </Interactions>
+          </WorkflowSummary>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="Workflow Launcher"/>
+  </Definition>
+</TaskResult>

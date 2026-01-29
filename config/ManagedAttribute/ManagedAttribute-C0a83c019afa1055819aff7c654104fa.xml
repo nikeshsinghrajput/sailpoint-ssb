@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - NA - M365_E5_PowerBI_Pro" hash="5e076b14caf99cf9ecd57a55b6aa3f19c11f572d" lastRefresh="1765222933825" requestable="true" type="group" uuid="{02fa61a5-44ac-4625-8194-015f949f4401}" value="CN=O365 License - NA - M365_E5_PowerBI_Pro,OU=Restricted,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - NA - M365_E5_PowerBI_Pro"/>
+      <entry key="description" value="O365 License - NA - M365_E5_PowerBI_Pro created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - NA - M365_E5_PowerBI_Pro"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1235"/>
+      <entry key="objectguid" value="{02fa61a5-44ac-4625-8194-015f949f4401}"/>
+      <entry key="sAMAccountName" value="O365 License - NA - M365_E5_PowerBI_Pro"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

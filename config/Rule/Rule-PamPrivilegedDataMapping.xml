@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="PAM Privileged Data Mapping" type="BeforeProvisioning">
+  <Description>
+      This rule takes the privilegedData.value, privilegedData.$ref, privilegedData.display, privilegedData.type
+      attributes and coerces them into a list of Maps to match the format SCIM expects.
+    </Description>
+  <Signature>
+    <Inputs>
+      <Argument name="log">
+        <Description>
+            The log object associated with the SailPointContext.
+          </Description>
+      </Argument>
+      <Argument name="context">
+        <Description>
+            A sailpoint.api.SailPointContext object that can be used to query the database if necessary.
+          </Description>
+      </Argument>
+      <Argument name="plan">
+        <Description>
+            The ProvisioningPlan object on its way to the Connector.
+          </Description>
+      </Argument>
+      <Argument name="application">
+        <Description>
+            The application object that references this before script.
+          </Description>
+      </Argument>
+    </Inputs>
+  </Signature>
+  <Source>
+      
+    import sailpoint.object.ProvisioningPlan;
+    import sailpoint.object.ProvisioningPlan.AttributeRequest;
+    import sailpoint.object.ProvisioningPlan.ObjectRequest;
+    import sailpoint.tools.Util;
+    import java.util.ArrayList;
+    import java.util.Arrays;
+    import java.util.HashMap;
+    import java.util.List;
+    import java.util.Map;
+
+    try {
+        ObjectRequest or = null;
+        if (!Util.isEmpty(plan.getObjectRequests())) {
+          // Can only create or modify one container at a time so there should only be one object request.
+          or = plan.getObjectRequests().get(0);
+          AttributeRequest valueReq = or.getAttributeRequest("privilegedData.value");
+          if(valueReq == null) {
+            return;
+          }
+          List&lt;String&gt; valueList = null;
+          // Single value lists are often saved as just a string
+          if (valueReq.getValue() instanceof String) {
+            valueList = Arrays.asList((String) valueReq.getValue());
+          } else {
+            valueList = (List) valueReq.getValue();
+          }
+          if(Util.isEmpty(valueList)) {
+            return;
+          }
+          or.remove(valueReq);
+          AttributeRequest typeReq = or.getAttributeRequest("privilegedData.type");
+          List&lt;String&gt; typeList = new ArrayList();
+          if (typeReq != null &amp;&amp; typeReq.getValue() instanceof String) {
+            typeList = Arrays.asList((String) typeReq.getValue());
+          } else if (typeReq != null &amp;&amp; typeReq.getValue() instanceof List) {
+            typeList = (List) typeReq.getValue();
+          }
+          or.remove(typeReq);
+          AttributeRequest refReq = or.getAttributeRequest("privilegedData.$ref");
+          List&lt;String&gt; refList = new ArrayList();
+          if (refReq != null &amp;&amp; refReq.getValue() instanceof String) {
+            refList = Arrays.asList((String) refReq.getValue());
+          } else if (refReq != null &amp;&amp; refReq.getValue() instanceof List) {
+            refList = (List) refReq.getValue();
+          }
+          or.remove(refReq);
+          AttributeRequest displayReq = or.getAttributeRequest("privilegedData.display");
+          List&lt;String&gt; displayList = new ArrayList();
+          if (displayReq != null &amp;&amp; displayReq.getValue() instanceof String) {
+            displayList = Arrays.asList((String) displayReq.getValue());
+          } else if (displayReq != null &amp;&amp; displayReq.getValue() instanceof List) {
+            displayList = (List) displayReq.getValue();
+          }
+          or.remove(displayReq);
+          ArrayList&lt;Map&gt; privDataMaps = new ArrayList();
+          for (int i = 0; i &lt; valueList.size(); i++) {
+              Map privDataMap = new HashMap();
+              privDataMap.put("value", valueList.get(i));
+              if (i &lt; refList.size()) {
+                  privDataMap.put("$ref", refList.get(i));
+              }
+              if (i &lt; displayList.size()) {
+                  privDataMap.put("display", displayList.get(i));
+              }
+              if (i &lt; typeList.size()) {
+                  privDataMap.put("type", typeList.get(i));
+              }
+              privDataMaps.add(privDataMap);
+          }
+          // Prepare the right AttributeRequest
+          AttributeRequest privDataReq = new AttributeRequest("privilegedData", privDataMaps);
+          privDataReq.setOperation(valueReq.getOperation());
+          or.add(privDataReq);
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    </Source>
+</Rule>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="NS_Form_Active_Directory_AccountEnable" type="Application">
+  <Attributes>
+    <Map>
+      <entry key="pageTitle" value="NS_Form_Active_Directory_AccountEnable"/>
+    </Map>
+  </Attributes>
+  <Section label="Disable Account Details" name="EnableAccountSection">
+    <Field displayName="Account Expiry" name="accountExpires" required="true" type="string">
+      <Script>
+        <Source>
+		  import java.text.SimpleDateFormat;
+		  import java.util.Date;
+		  import java.util.TimeZone;
+
+		  String dateStr = identity.getAttribute("terminationDate");
+		  if (dateStr == null || dateStr.trim().length() == 0) return "";
+
+		  SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+		  sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		  Date parsedDate = sdf.parse(dateStr);
+
+		  long ldapEpochDiff = 11644473600000L;
+		  long fileTime = (parsedDate.getTime() + ldapEpochDiff) * 10000;
+
+		  return String.valueOf(fileTime);
+		</Source>
+      </Script>
+    </Field>
+    <Field displayName="Manager DN" name="manager" type="string">
+      <RuleRef>
+        <Reference class="sailpoint.object.Rule" name="NS_Rule_Active_Directory_FieldValue_Manager"/>
+      </RuleRef>
+    </Field>
+    <Field displayName="Description" name="description" type="string">
+      <Script>
+        <Source>return "Created via sailpoint :"+ identity.getAttribute("title");</Source>
+      </Script>
+    </Field>
+    <Field displayName="User Account Control" name="userAccountControl" type="string">
+      <Script>
+        <Source>
+          return "512";
+        </Source>
+      </Script>
+    </Field>
+  </Section>
+</Form>

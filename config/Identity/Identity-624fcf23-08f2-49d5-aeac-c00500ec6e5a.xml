@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Active Directory Basic Access" correlated="true" lastRefresh="1768469509440" name="624fcf23-08f2-49d5-aeac-c00500ec6e5a">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq corp"/>
+      <entry key="country" value="Egypt"/>
+      <entry key="department" value="Core Banking Technology"/>
+      <entry key="displayName" value="Michelle Johnson"/>
+      <entry key="division" value="Egypt Retail Banking and Payments"/>
+      <entry key="employeeId" value="739065"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full-Time"/>
+      <entry key="firstname" value="Michelle"/>
+      <entry key="hireDate" value="12-17-2019"/>
+      <entry key="lastname" value="Johnson"/>
+      <entry key="location" value="EG - Port Said"/>
+      <entry key="nsStatus" value="Joiner_Pending"/>
+      <entry key="postalCode" value="1010"/>
+      <entry key="terminationDate" value="09-22-2026"/>
+      <entry key="title" value="Banking Solutions Developer"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="db561a67-5064-475f-bedc-35bad74bb86b"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768469509399" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule"/>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Michelle Johnson" identity="739065" lastRefresh="1768468362765">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="4288 Sunset Rd"/>
+          <entry key="ADDRESS_WORK" value="4288 Sunset Rd;Port Said, Cairo Governorate 92525;Egypt"/>
+          <entry key="BUILDING_CODE" value="EG_CAI_BLDG_01"/>
+          <entry key="BUSINESS_UNIT_ID" value="3061"/>
+          <entry key="CLASS" value="Full-Time"/>
+          <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+          <entry key="CONTRACT_END_DATE" value="09-22-2026"/>
+          <entry key="COUNTRY_NAME" value="Egypt"/>
+          <entry key="DEPARTMENT" value="Core Banking Technology"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-024"/>
+          <entry key="DIVISION" value="Egypt Retail Banking and Payments"/>
+          <entry key="DIVISION_ID" value="DIV-EG-01"/>
+          <entry key="EMAIL" value="michelle.johnson@NsCorp"/>
+          <entry key="EMPLOYEE_NUMBER" value="739065"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739065"/>
+          <entry key="FIRST_NAME" value="Michelle"/>
+          <entry key="HIREDATE" value="12-17-2019"/>
+          <entry key="JOBCODE" value="JT-024-03"/>
+          <entry key="JOBTITLE" value="Banking Solutions Developer"/>
+          <entry key="LAST_NAME" value="Johnson"/>
+          <entry key="LOCATION" value="EG - Port Said"/>
+          <entry key="MANAGER_ID" value="739003"/>
+          <entry key="POSTAL_CODE" value="1010"/>
+          <entry key="REGION" value="Port Said"/>
+          <entry key="WORKER_NAME" value="Michelle Johnson"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Vendor"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

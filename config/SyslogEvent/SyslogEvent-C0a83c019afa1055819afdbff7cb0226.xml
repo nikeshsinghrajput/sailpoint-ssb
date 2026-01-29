@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.webservices.v2.WebServiceFacadeV2" eventLevel="ERROR" lineNumber="678" quickKey="0000447818" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>Exception occurred in handling object request for ''8512680'' for operation ''Modify''</EventMessage>
+  <Stacktrace>sailpoint.connector.ConnectorException: {"timestamp":"2025-12-08T11:36:47.748+00:00","status":400,"error":"Bad Request","path":"/workday/8512680"}
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.handleAttributeRequests(WebServiceFacadeV2.java:1697)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.update(WebServiceFacadeV2.java:1161)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.provision(WebServiceFacadeV2.java:632)
+	at sailpoint.connector.webservices.WebServicesConnector.provision(WebServicesConnector.java:109)
+	at sailpoint.connector.ConnectorProxy.provision(ConnectorProxy.java:1222)
+	at sailpoint.integration.ConnectorExecutor.provision(ConnectorExecutor.java:160)
+	at sailpoint.provisioning.PlanEvaluator.provision(PlanEvaluator.java:1825)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:1145)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:849)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:741)
+	at sailpoint.api.Provisioner.execute(Provisioner.java:1732)
+	at sailpoint.api.Identitizer.finishRefresh(Identitizer.java:2915)
+	at sailpoint.api.Identitizer.refresh(Identitizer.java:2491)
+	at sailpoint.workflow.IdentityLibrary.refreshInternal(IdentityLibrary.java:1857)
+	at sailpoint.workflow.IdentityLibrary.refreshIdentity(IdentityLibrary.java:1919)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at sailpoint.server.ScriptletEvaluator.doCall(ScriptletEvaluator.java:134)
+	at sailpoint.server.ScriptletEvaluator.evalSource(ScriptletEvaluator.java:63)
+	at sailpoint.api.Workflower.evalSource(Workflower.java:6041)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5280)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.assimilate(Workflower.java:4317)
+	at sailpoint.api.Workflower.handleWorkItem(Workflower.java:7755)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2018)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2000)
+	at sailpoint.task.WorkflowerThread.process(WorkflowerThread.java:363)
+	at sailpoint.task.WorkflowerThread.run(WorkflowerThread.java:288)
+Caused by: connector.sdk.webservices.exception.WebServicesSdkException: {"timestamp":"2025-12-08T11:36:47.748+00:00","status":400,"error":"Bad Request","path":"/workday/8512680"}
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:659)
+	at connector.sdk.webservices.ExecutionMediator.process(ExecutionMediator.java:356)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.handleAttributeRequests(WebServiceFacadeV2.java:1685)
+	... 29 more
+Caused by: HttpException [url=http://localhost:9091/workday/8512680, errorCode=400, getMessage()={"timestamp":"2025-12-08T11:36:47.748+00:00","status":400,"error":"Bad Request","path":"/workday/8512680"}, getCause()=null, responseHeaders={X-Frame-Options=DENY, Transfer-Encoding=chunked, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=close, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Mon, 08 Dec 2025 11:36:47 GMT, Content-Type=application/json}]
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.handleFailedRequest(ApacheHttpClientWrapper.java:565)
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.execute(ApacheHttpClientWrapper.java:344)
+	at connector.common.http.client.HttpClientWrapper.execute(HttpClientWrapper.java:137)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$1$1.execute(WebServiceFacadeV2.java:266)
+	at connector.common.http.client.impl.ThrottledHttpClient.execute(ThrottledHttpClient.java:95)
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:628)
+	... 31 more
+</Stacktrace>
+</SyslogEvent>

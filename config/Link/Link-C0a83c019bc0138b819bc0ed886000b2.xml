@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Lawrence Rodgers" identity="739017" lastRefresh="1768468351072">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="5269 Queen St"/>
+      <entry key="ADDRESS_WORK" value="5269 Queen St;Rio de Janeiro, São Paulo State 87483;Brazil"/>
+      <entry key="BUILDING_CODE" value="BR_SOP_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3037"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="05-11-2026"/>
+      <entry key="COUNTRY_NAME" value="Brazil"/>
+      <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+      <entry key="DIVISION" value="Brazil Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-BR-01"/>
+      <entry key="EMAIL" value="rodgers.lawrence@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739017"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739017"/>
+      <entry key="FIRST_NAME" value="Lawrence"/>
+      <entry key="HIREDATE" value="03-05-2016"/>
+      <entry key="JOBCODE" value="JT-021-04"/>
+      <entry key="JOBTITLE" value="UX/UI Designer"/>
+      <entry key="LAST_NAME" value="Rodgers"/>
+      <entry key="LOCATION" value="BR - Rio de Janeiro"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="5347"/>
+      <entry key="REGION" value="Rio de Janeiro"/>
+      <entry key="WORKER_NAME" value="Lawrence Rodgers"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

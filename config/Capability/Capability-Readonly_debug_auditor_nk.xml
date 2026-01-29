@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Capability PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Capability displayName="Read Only + Debug Access" name="ReadOnly_Debug_Auditor_nk">
+  <Description>
+    Read-only access across IdentityIQ including debug and monitoring pages.
+    No modification or administrative permissions.
+  </Description>
+  <RightRefs>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentity"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewLink"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewIdentityRequest"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAuditLog"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewSyslog"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewCertifications"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewGroupCertification"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccountGroups"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewApplication"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewRole"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewPolicy"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityHistory"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityPolicy"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityActivity"/>
+    <Reference class="sailpoint.object.SPRight" name="MonitorIdentityEvents"/>
+    <Reference class="sailpoint.object.SPRight" name="ReadTaskResults"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewProvisioningTransaction"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessAboutPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessDebugPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessMemoryPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessCachesPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessBeansPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessThreadsPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessMetersPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessMetersGridPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessLoggingPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessDatabasePage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewAccessConnectionsPage"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewProcessInstrumentation"/>
+    <Reference class="sailpoint.object.SPRight" name="ViewEnvironmentMonitoring"/>
+  </RightRefs>
+</Capability>

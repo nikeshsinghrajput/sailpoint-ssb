@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Sean Allen" identity="739018" lastRefresh="1768468351134">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="3172 Hill Lane"/>
+      <entry key="ADDRESS_WORK" value="3172 Hill Lane;Riyadh, Riyadh Province 67656;Saudi Arabia"/>
+      <entry key="BUILDING_CODE" value="SA_RIY_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3056"/>
+      <entry key="CLASS" value="Part-Time"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="08-14-2025"/>
+      <entry key="COUNTRY_NAME" value="Saudi Arabia"/>
+      <entry key="DEPARTMENT" value="Core Platform Engineering"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-010"/>
+      <entry key="DIVISION" value="Saudi Arabia Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-SA-04"/>
+      <entry key="EMAIL" value="sean.allen@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739018"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739018"/>
+      <entry key="FIRST_NAME" value="Sean"/>
+      <entry key="HIREDATE" value="03-19-2018"/>
+      <entry key="JOBCODE" value="JT-010-04"/>
+      <entry key="JOBTITLE" value="Backend Engineering Lead"/>
+      <entry key="LAST_NAME" value="Allen"/>
+      <entry key="LOCATION" value="SA - Riyadh"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="67860"/>
+      <entry key="REGION" value="Riyadh"/>
+      <entry key="WORKER_NAME" value="Sean Allen"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Intern"/>
+    </Map>
+  </Attributes>
+</Link>

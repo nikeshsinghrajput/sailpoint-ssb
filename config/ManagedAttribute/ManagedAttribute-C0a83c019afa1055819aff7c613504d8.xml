@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="Group ExCo Plus" hash="e2c283d6703dfd2ea34a3ebbf859de8ff798626d" lastRefresh="1765222932788" requestable="true" type="group" uuid="{f603c0b0-3cf5-4286-bfb1-23f6bed69e8b}" value="CN=Group ExCo Plus,OU=Distribution Lists,OU=Groups,OU=America,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Distribution"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="Group ExCo Plus"/>
+      <entry key="description" value="Group ExCo Plus created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\Group ExCo Plus"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1210"/>
+      <entry key="objectguid" value="{f603c0b0-3cf5-4286-bfb1-23f6bed69e8b}"/>
+      <entry key="sAMAccountName" value="Group ExCo Plus"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem completed="1768221978787" exceptionApplication="Corporate Learning Portal" exceptionAttributeName="Access" exceptionAttributeValue="Learner" summaryStatus="Complete" type="Exception">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" completionState="Finished" completionUser="spadmin" decisionCertificationId="c0a83c019b731761819bb23c939f255d" decisionDate="1768221978707" ownerName="spadmin" remediationAction="OpenWorkItem" remediationCompleted="true" remediationKickedOff="true" reviewed="true" status="Remediated" workItem="c0a83c019b731761819bb23f2ba0258d">
+    <CompletionComments>test</CompletionComments>
+    <Description>Remove the 'Corporate Learning Portal' entitlement on  'sumit verma'</Description>
+    <RemediationPlan>
+      <ProvisioningPlan>
+        <AccountRequest application="Corporate Learning Portal" nativeIdentity="8512519" op="Modify">
+          <AttributeRequest name="Access" op="Remove" value="Learner"/>
+        </AccountRequest>
+        <Requesters>
+          <Reference class="sailpoint.object.Identity" name="spadmin"/>
+        </Requesters>
+      </ProvisioningPlan>
+    </RemediationPlan>
+  </CertificationAction>
+  <ApplicationNames>
+    <String>Corporate Learning Portal</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Corporate Learning Portal" displayName="verma.sumit@nstechiiq.com" nativeIdentity="8512519">
+      <Attributes>
+        <Map>
+          <entry key="Access" value="Learner"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>

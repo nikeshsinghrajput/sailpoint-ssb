@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Workflow PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Workflow explicitTransitions="true" libraries="Identity" name="Joiner AD 2" type="IdentityLifecycle">
+  <Variable input="true" name="trigger">
+    <Description>The IdentityTrigger</Description>
+  </Variable>
+  <Variable input="true" name="event" transient="true">
+    <Description>
+      The IdentityChangeEvent.  It can be used to build
+      the provisioning plan, but does not need to be
+      persisted with the case, so marked as transient.
+    </Description>
+  </Variable>
+  <Variable input="true" name="identityName">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable name="identityDisplayName">
+    <Script>
+      <Source>
+			import sailpoint.object.Identity;
+			Identity identity =  context.getObjectByName( Identity.class, identityName );
+			if( identity != null )
+			{
+			System.out.println("identity.getDisplayName();;;"+identity.getDisplayName());
+				return identity.getDisplayName() ;
+			}
+		</Source>
+    </Script>
+  </Variable>
+  <Variable initializer="true" name="doRefresh"/>
+  <Variable initializer="string:Joiner" name="flow">
+    <Description>The name of the identity.</Description>
+  </Variable>
+  <Variable initializer="LCM" input="true" name="source"/>
+  <Variable editable="true" initializer="String:none" name="approvalScheme"/>
+  <Variable initializer="spadmin" name="fallbackApprover"/>
+  <Variable editable="true" initializer="true" name="foregroundProvisioning">
+    <Description>
+			 IIQ is busy in processing workflow ,Workflow says
+			 let put myself on hold/sleep . workflow doesn't know awake This
+			 workflow .Preform mintanance task will trigger it
+	</Description>
+  </Variable>
+  <Variable editable="true" initializer="false" name="optimisticProvisioning">
+    <Description>
+			 IIQ is busy in processing workflow ,Workflow says
+			 let first complete myself and another workflow on hold. workflow doesn't 
+			 know awake This workflow .Preform mintanance task will trigger it
+		</Description>
+  </Variable>
+  <Variable name="cart" output="true">
+    <Description>
+			This variable includes all ApprovalItems that are part of
+			the request process and is updated during the AfterScript
+			of the
+			approval process by assimilating the decisions
+			and comments from the
+			Approvals copy of the ApprovalItem.
+		</Description>
+  </Variable>
+  <Variable input="true" name="plan">
+    <Description>
+	The provisioning plan, which is built by a service
+	method.
+	</Description>
+  </Variable>
+  <Variable initializer="string:Joiner Email Template" input="true" name="emailTemplateName">
+    <Description>The email template used for joiner mail
+		</Description>
+  </Variable>
+  <Variable name="project">
+    <Description>
+			ProvisioningProject which is just a compiled version of
+			the ProvisioningPlan.
+		</Description>
+  </Variable>
+  <Variable name="identityRequestId" output="true">
+    <Description>
+			The sequence id of the Identity request object which is
+			stored in
+			the name field of the identity request.
+		</Description>
+  </Variable>
+  <Description>Process a new employee.</Description>
+  <RuleLibraries>
+    <Reference class="sailpoint.object.Rule" name="NS_Global_RuleLibrary_Utils"/>
+  </RuleLibraries>
+  <Step icon="Start" name="Start" posX="28" posY="10">
+    <Script>
+      <Source>
+		    import sailpoint.object.*;
+			Identity identity = context.getObjectByName(Identity.class, identityName);
+		</Source>
+    </Script>
+    <Transition to="Build Plan"/>
+  </Step>
+  <Step icon="Message" name="Build Plan" posX="148" posY="10" resultVariable="plan">
+    <Description>Process the user that joined.</Description>
+    <Script>
+      <Source>
+	  import sailpoint.object.Link;
+	  import sailpoint.object.Identity;
+	  import sailpoint.object.ProvisioningPlan;
+	  import sailpoint.object.ProvisioningPlan.AccountRequest;
+	  import sailpoint.object.ProvisioningPlan.AttributeRequest;
+	  import sailpoint.object.ProvisioningPlan.Operation;
+	  import sailpoint.object.ProvisioningPlan.AccountRequest.Operation;
+	  import java.util.List;
+	  import java.util.ArrayList;
+	  
+	  Link hrLink=null;
+	  Link ADLink=null;
+	  List links=null;
+	  ProvisioningPlan plan = new ProvisioningPlan();
+	  List accountRequests=new LinkedList();
+	  Identity identity=context.getObjectByName(Identity.class,identityName);
+	  if(identity!=null){
+		links = identity.getLinks();
+		if(links!=null &amp;&amp; !links.isEmpty()){
+			for(Link link:links){
+				if(link.getApplicationName().equalsIgnoreCase("Hr-Workday")){
+					hrLink=link;
+				}
+				if(link.getApplicationName().equalsIgnoreCase("Active Directory")){
+					ADLink=link;
+				}
+			}
+		}
+		System.out.println("hrLink  :"+hrLink+" ADLink : "+ADLink);
+		if(ADLink==null &amp;&amp; hrLink!=null){
+		AccountRequest accountRequestAD=new AccountRequest();
+		List attributeRequestsAD=new LinkedList();
+		String password = generatePassword(identityName);
+		String samAccountName = generateUserName(identity);
+		plan.setIdentity(identity);
+		String nativeIdentity = "CN=" + samAccountName + ",OU=Employee Account,OU=Dev,DC=nsiiq,DC=com";
+		accountRequestAD.setNativeIdentity(nativeIdentity);
+		accountRequestAD.setApplication("Active Directory");
+		accountRequestAD.setOperation(AccountRequest.Operation.Create);
+		attributeRequestsAD.add(new AttributeRequest("password",ProvisioningPlan.Operation.Set,password));
+		attributeRequestsAD.add(new AttributeRequest("mail",ProvisioningPlan.Operation.Set,samAccountName+"@nsiiq.com"));
+		accountRequestAD.setAttributeRequests(attributeRequestsAD);
+		plan.add(accountRequestAD);
+		workflow.put("plan", plan);
+		System.out.println("after joiner plan created:"+plan.toXml());
+		}
+	  }	  
+	  return plan;
+      </Source>
+    </Script>
+    <Transition to="Compile Project"/>
+  </Step>
+  <Step action="call:compileProvisioningProject" name="Compile Project" posX="562" posY="126" resultVariable="project">
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="plan" value="ref:plan"/>
+    <Arg name="requester" value="spadmin"/>
+    <Arg name="source" value="UI"/>
+    <Arg name="optimisticProvisioning" value="false"/>
+    <Arg name="requireCreateTemplates" value="false"/>
+    <Arg name="noApplicationTemplates" value="true"/>
+    <Transition to="Provision Plan"/>
+  </Step>
+  <Step icon="Provision" name="Provision Plan" posX="620" posY="130">
+    <Arg name="project" value="ref:project"/>
+    <Arg name="trace" value="true"/>
+    <Arg name="processTriggers" value="false"/>
+    <WorkflowRef>
+      <Reference class="sailpoint.object.Workflow" name="Provision with retries"/>
+    </WorkflowRef>
+    <Transition to="Refresh Identity"/>
+  </Step>
+  <Step action="call:refreshIdentity" condition="ref:doRefresh" icon="Task" name="Refresh Identity" posY="130">
+    <Arg name="identityName" value="ref:identityName"/>
+    <Arg name="provision" value="true"/>
+    <Arg name="promoteAttributes" value="true"/>
+    <Arg name="correlateEntitlements" value="true"/>
+    <Arg name="doManualActions" value="true"/>
+    <Transition to="Stop"/>
+  </Step>
+  <Step icon="Stop" name="Stop" posX="268" posY="10"/>
+</Workflow>

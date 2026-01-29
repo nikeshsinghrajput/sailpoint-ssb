@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.connector.webservices.v2.WebServiceFacadeV2" eventLevel="ERROR" lineNumber="678" quickKey="0000448009" server="NikeshRajput" thread="QuartzScheduler_Worker-5" username="Scheduler">
+  <EventMessage>Exception occurred in handling object request for ''8512500'' for operation ''Modify''</EventMessage>
+  <Stacktrace>sailpoint.connector.ConnectorException: {"timestamp":"2025-12-10T16:57:15.329+00:00","status":400,"error":"Bad Request","path":"/workday/8512500"}
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.handleAttributeRequests(WebServiceFacadeV2.java:1697)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.update(WebServiceFacadeV2.java:1161)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.provision(WebServiceFacadeV2.java:632)
+	at sailpoint.connector.webservices.WebServicesConnector.provision(WebServicesConnector.java:109)
+	at sailpoint.connector.ConnectorProxy.provision(ConnectorProxy.java:1222)
+	at sailpoint.integration.ConnectorExecutor.provision(ConnectorExecutor.java:160)
+	at sailpoint.provisioning.PlanEvaluator.provision(PlanEvaluator.java:1825)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:1145)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:849)
+	at sailpoint.provisioning.PlanEvaluator.execute(PlanEvaluator.java:741)
+	at sailpoint.api.Provisioner.execute(Provisioner.java:1732)
+	at sailpoint.api.Identitizer.finishRefresh(Identitizer.java:2915)
+	at sailpoint.api.Identitizer.refresh(Identitizer.java:2491)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorker.refreshAndProcess(IdentityRefreshExecutor.java:1616)
+	at sailpoint.task.IdentityRefreshExecutor$RefreshWorkerPool.queue(IdentityRefreshExecutor.java:1934)
+	at sailpoint.task.IdentityRefreshExecutor.refresh(IdentityRefreshExecutor.java:1113)
+	at sailpoint.task.IdentityRefreshExecutor.execute(IdentityRefreshExecutor.java:856)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:981)
+	at sailpoint.api.TaskManager.runSync(TaskManager.java:764)
+	at sailpoint.scheduler.JobAdapter.execute(JobAdapter.java:128)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: connector.sdk.webservices.exception.WebServicesSdkException: {"timestamp":"2025-12-10T16:57:15.329+00:00","status":400,"error":"Bad Request","path":"/workday/8512500"}
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:659)
+	at connector.sdk.webservices.ExecutionMediator.process(ExecutionMediator.java:356)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2.handleAttributeRequests(WebServiceFacadeV2.java:1685)
+	... 21 more
+Caused by: HttpException [url=http://localhost:9091/workday/8512500, errorCode=400, getMessage()={"timestamp":"2025-12-10T16:57:15.329+00:00","status":400,"error":"Bad Request","path":"/workday/8512500"}, getCause()=null, responseHeaders={X-Frame-Options=DENY, Transfer-Encoding=chunked, Cache-Control=no-cache, no-store, max-age=0, must-revalidate, X-Content-Type-Options=nosniff, Connection=close, Pragma=no-cache, Expires=0, X-XSS-Protection=0, Date=Wed, 10 Dec 2025 16:57:15 GMT, Content-Type=application/json}]
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.handleFailedRequest(ApacheHttpClientWrapper.java:565)
+	at connector.common.http.client.impl.ApacheHttpClientWrapper.execute(ApacheHttpClientWrapper.java:344)
+	at connector.common.http.client.HttpClientWrapper.execute(HttpClientWrapper.java:137)
+	at sailpoint.connector.webservices.v2.WebServiceFacadeV2$1$1.execute(WebServiceFacadeV2.java:266)
+	at connector.common.http.client.impl.ThrottledHttpClient.execute(ThrottledHttpClient.java:95)
+	at connector.sdk.webservices.ExecutionMediator.processEndpoint(ExecutionMediator.java:628)
+	... 23 more
+</Stacktrace>
+</SyslogEvent>

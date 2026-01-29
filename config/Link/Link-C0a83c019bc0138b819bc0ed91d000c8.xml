@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Lindsay Green" identity="739028" lastRefresh="1768468353488">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="6879 Cedar Lane"/>
+      <entry key="ADDRESS_WORK" value="6879 Cedar Lane;Chengdu, Guangdong 13773;China"/>
+      <entry key="BUILDING_CODE" value="CN_GUA_BLDG_04"/>
+      <entry key="BUSINESS_UNIT_ID" value="3008"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="03-07-2025"/>
+      <entry key="COUNTRY_NAME" value="China"/>
+      <entry key="DEPARTMENT" value="Business Operations &amp; Support"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-025"/>
+      <entry key="DIVISION" value="China Risk and Compliance"/>
+      <entry key="DIVISION_ID" value="DIV-CN-04"/>
+      <entry key="EMAIL" value="lindsay.green@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739028"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739028"/>
+      <entry key="FIRST_NAME" value="Lindsay"/>
+      <entry key="HIREDATE" value="09-15-2015"/>
+      <entry key="JOBCODE" value="JT-025-02"/>
+      <entry key="JOBTITLE" value="Process Improvement Specialist"/>
+      <entry key="LAST_NAME" value="Green"/>
+      <entry key="LOCATION" value="CN - Chengdu"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="80847"/>
+      <entry key="REGION" value="Chengdu"/>
+      <entry key="WORKER_NAME" value="Lindsay Green"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Contract"/>
+    </Map>
+  </Attributes>
+</Link>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="O365 License - Visio_Pro" hash="e84336a485879f3c47563d22b3d9beecb436c2bb" lastRefresh="1766343453521" requestable="true" type="group" uuid="{7e452fd9-d585-4943-85c0-033493bc5995}" value="CN=O365 License - Visio_Pro,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="O365 License - Visio_Pro"/>
+      <entry key="description" value="O365 License - Visio_Pro created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\O365 License - Visio_Pro"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1437"/>
+      <entry key="objectguid" value="{7e452fd9-d585-4943-85c0-033493bc5995}"/>
+      <entry key="sAMAccountName" value="O365 License - Visio_Pro"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

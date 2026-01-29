@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Natalie Robinson" identity="739096" lastRefresh="1768468369813">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="5629 Sunset Ave"/>
+      <entry key="ADDRESS_WORK" value="5629 Sunset Ave;Milan, Lombardy 56898;Italy"/>
+      <entry key="BUILDING_CODE" value="IT_LOM_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3085"/>
+      <entry key="CLASS" value="Hybrid"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="03-28-2024"/>
+      <entry key="COUNTRY_NAME" value="Italy"/>
+      <entry key="DEPARTMENT" value="IT Governance, Risk &amp; Compliance (IT-GRC)"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-020"/>
+      <entry key="DIVISION" value="Italy Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-IT-01"/>
+      <entry key="EMAIL" value="natalie.robinson@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739096"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739096"/>
+      <entry key="FIRST_NAME" value="Natalie"/>
+      <entry key="HIREDATE" value="11-23-2021"/>
+      <entry key="JOBCODE" value="JT-020-02"/>
+      <entry key="JOBTITLE" value="IT Governance Specialist"/>
+      <entry key="LAST_NAME" value="Robinson"/>
+      <entry key="LOCATION" value="IT - Milan"/>
+      <entry key="MANAGER_ID" value="739005"/>
+      <entry key="POSTAL_CODE" value="2917"/>
+      <entry key="REGION" value="Milan"/>
+      <entry key="WORKER_NAME" value="Natalie Robinson"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

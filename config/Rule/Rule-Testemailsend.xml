@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="TestEmailSend" type="IdentityTrigger">
+  <Signature returnType="Void">
+    <Inputs>
+      <Argument name="context" type="sailpoint.api.SailPointContext"/>
+      <Argument name="log" type="org.apache.commons.logging.Log"/>
+    </Inputs>
+  </Signature>
+  <Source>
+   import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import sailpoint.object.EmailOptions;
+import sailpoint.object.EmailTemplate;
+import sailpoint.object.Filter;
+import sailpoint.object.Identity;
+import sailpoint.object.QueryOptions;
+  
+/*   Filter frName=Filter.eq("name","2935a130-2024-466b-82c8-242177e14539");	 
+	QueryOptions qo=new QueryOptions();
+  Identity identity=null;
+	qo.addFilter(frName);
+	Iterator it=context.search(Identity.class,qo);
+	while(it!=null &amp;&amp; it.hasNext()){
+identity=it.next();
+  
+  }    
+  if(identity!=null){
+	  Map args = new HashMap();
+	  String email="nikeshsingh0981@gmail.com";
+	  Identity manager=identity.getManager();
+	   if(manager!=null)
+         args.put("managerDisplayName",manager.getDisplayableName());
+        args.put("identityDisplayName",identity.getDisplayableName());
+        args.put("email",identity.getEmail());
+        args.put("isRehire","No");
+        args.put("firstName", identity.getAttribute("firstname"));
+        args.put("lastName", identity.getAttribute("lastname"));
+        args.put("employeeId",identity.getAttribute("employeeId"));
+          args.put("password","6235372");
+            args.put("NS_samAccountName", identity.getAttribute("sAMAccountName"));
+                EmailTemplate template = context.getObjectByName(EmailTemplate.class, "NS_EmailTemplate_Joiner_PasswordNotification");
+                EmailOptions options = new EmailOptions(email, args);
+                context.sendEmailNotification(template, options);
+    
+return"email sent";
+  }*/
+  Map args = new HashMap();
+ 
+// البريد الأساسي
+String email = "nikeshsinghrajpoot80020@outlook.com";
+/*args.put("identityDisplayName", "Test Employee");        // الاسم الكامل
+args.put("identityName", "lalharbi");                    // اسم الدخول
+args.put("identityEmail", email);                        // البريد الإلكتروني
+args.put("identityDepartment", "الإدارة العامة لتقنية المعلومات"); // القسم
+args.put("identityTitle", "محلل نظم");                   // المسمى الوظيفي
+args.put("identityStartDate", "2025-12-01");             // تاريخ المباشرة
+args.put("identityNationalId", "1111111111");            // رقم الهوية
+args.put("identityPhone", "0555555555");                 // الجوال
+
+args.put("managerDisplayName", "Test Manager");          // المدير المباشر
+
+args.put("requesterDisplayName", "خادر أحمد عُصي");     // مقدم الطلب
+args.put("requesterEmail", "khader.assi@nrrc.gov.sa");   // بريد مقدم الطلب
+args.put("workgroup", "خدمات تقنية المعلومات");         // مجموعة العمل
+
+args.put("requestUrl", "https://iiq.nrrc.gov.sa/request/12345"); // رابط الطلب
+
+args.put("date", new java.text.SimpleDateFormat("yyyy-MM-dd")
+                     .format(new java.util.Date())); */
+/* args.put("identityFullname", "Khader Ahmed Assi");                        
+args.put("identityDepartment", "General Department of Financial Affairs");//ة
+args.put("identityPhone", "0543868253"); 
+  args.put("identityEmail", "kassi@nrrc.gov.sa"); 
+  args.put("identityADAccount", "kassi"); */
+   args.put("identityFullname", "Khader Ahmed Assi");
+args.put("identityDepartment", "General Department of Financial Affairs");
+args.put("identityPhone", "0543868253");
+args.put("identityEmail", "kassi@nrrc.gov.sa");
+args.put("identityADAccount", "kassi");
+ 
+try {
+ 
+        
+                EmailTemplate template = context.getObjectByName(EmailTemplate.class, "NRRC_NewHire_Computer_Preparation_Request");
+                EmailOptions options = new EmailOptions(email, args);
+                context.sendEmailNotification(template, options);
+return"email sent";
+} catch (Exception e) {
+    return "Error sending email: " + e.getMessage();
+}
+  
+  </Source>
+</Rule>

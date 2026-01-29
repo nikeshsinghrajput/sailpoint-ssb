@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE TaskResult PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<TaskResult completed="1768911828686" completionStatus="Success" host="NikeshRajput" launched="1768911826135" launcher="spadmin" name="AA : Financial Planning Forecasting" runLength="2" runLengthAverage="1" runLengthDeviation="100" schedule="3ff9ad18de324387bd89b6155ce46855" type="AccountAggregation">
+  <Attributes>
+    <Map>
+      <entry key="applications" value="Financial Planning &amp; Forecasting"/>
+      <entry key="identityEntitlementsUpdated" value="1"/>
+      <entry key="internalUpdates" value="1"/>
+      <entry key="optimized" value="3"/>
+      <entry key="total" value="4"/>
+      <entry key="updated" value="1"/>
+    </Map>
+  </Attributes>
+  <Definition>
+    <Reference class="sailpoint.object.TaskDefinition" name="AA : Financial Planning Forecasting"/>
+  </Definition>
+  <Owner>
+    <Reference class="sailpoint.object.Identity" name="spadmin"/>
+  </Owner>
+</TaskResult>

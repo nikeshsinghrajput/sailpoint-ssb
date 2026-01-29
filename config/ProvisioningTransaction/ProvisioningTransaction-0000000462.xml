@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="8512504" applicationName="Financial Planning &amp; Forecasting" identityDisplayName="Myra Tiwari" identityName="41a860cd-e169-4c36-ae48-0c95660ed05e" integration="Financial Planning &amp; Forecasting" name="0000000462" nativeIdentity="8512504" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000285"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512504' for key 'employees.PRIMARY'" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512504" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c019a0512c7819a085c0665276c"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="nativeIdUpdated">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c019b47115a819b4bc18d5c02d4"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="Budget Controller" name="roles" op="Add" value="Budget Controller">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="employee" op="Set" value="Myra Tiwari"/>
+            <AttributeRequest name="firstName" op="Set" value="Myra"/>
+            <AttributeRequest name="lastName" op="Set" value="Tiwari"/>
+            <AttributeRequest name="empStatus" op="Set" value="Active"/>
+            <AttributeRequest name="department" op="Set" value="Financial Risk Management"/>
+            <AttributeRequest name="userLevel" op="Set" value="A"/>
+            <AttributeRequest name="hireDate" op="Set" value="01-04-2025"/>
+            <AttributeRequest name="salaryClass" op="Set" value="B"/>
+            <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+            <AttributeRequest name="workState" op="Set" value="North"/>
+            <AttributeRequest name="countryCode" op="Set" value="502592"/>
+            <AttributeRequest name="workCountry" op="Set" value="India"/>
+            <AttributeRequest name="manager" op="Set" value="Nikesh Singh"/>
+            <AttributeRequest name="superviserId" op="Set" value="8512500"/>
+            <AttributeRequest name="bussinessUnit" op="Set" value="BU47"/>
+            <AttributeRequest name="annualHours" op="Set" value="1040"/>
+            <AttributeRequest name="jobTitle" op="Set" value="Credit Risk Analyst"/>
+            <AttributeRequest name="isManager" op="Set" value="No"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '8512504' for key 'employees.PRIMARY'" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

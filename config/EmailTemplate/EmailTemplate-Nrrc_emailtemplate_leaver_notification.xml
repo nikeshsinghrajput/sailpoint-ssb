@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE EmailTemplate PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<EmailTemplate name="NRRC_EmailTemplate_Leaver_Notification">
+  <Body>
+Hello IAM Team,
+
+Please stop sending any further mails.  
+The following user has been terminated:
+
+User Name       : $!identityDisplayName
+Email           : $!employeeEmail
+Manager         : $!managerDisplayName
+Termination Date: $!terminationDate
+
+Regards,
+Identity Management Team
+    </Body>
+  <Description>
+      Notification to IAM Team after user termination.
+    </Description>
+  <Signature>
+    <Inputs>
+      <Argument name="identityDisplayName" type="string"/>
+      <Argument name="terminationDate" type="string"/>
+      <Argument name="managerDisplayName" type="string"/>
+      <Argument name="employeeEmail" type="string"/>
+    </Inputs>
+  </Signature>
+  <Subject>
+      User Termination Notification: $!identityDisplayName
+    </Subject>
+</EmailTemplate>

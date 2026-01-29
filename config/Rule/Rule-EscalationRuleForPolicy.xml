@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Rule PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Rule language="beanshell" name="escalationrule for policy" type="Escalation">
+  <Description>Escalation rules are used by the Escalator to figure out where to route notifiable items (work items or certification items) that have expired.
+
+Escalation rules return a string which specifies the name of the identity that should receive the escalated item.</Description>
+  <Signature returnType="String"/>
+  <Source>
+
+Identity currentOwner=item.getNotificationOwner(context);</Source>
+</Rule>

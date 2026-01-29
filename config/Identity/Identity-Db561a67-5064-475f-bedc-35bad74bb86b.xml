@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Corporate Learning Basic Role, Active Directory Basic Access" bundleSummary="Active Directory Basic IT Role" correlated="true" lastRefresh="1769027695576" managerStatus="true" name="db561a67-5064-475f-bedc-35bad74bb86b">
+  <Attributes>
+    <Map>
+      <entry key="company" value="Nsiiq inc"/>
+      <entry key="country" value="Singapore"/>
+      <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+      <entry key="displayName" value="John Doe"/>
+      <entry key="distinguishedName" value="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="division" value="Singapore Corporate and Investment Services"/>
+      <entry key="email" value="doe1.john@nstechiiq.com"/>
+      <entry key="employeeId" value="739003"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Hybrid"/>
+      <entry key="firstname" value="John"/>
+      <entry key="hireDate" value="01-21-2026"/>
+      <entry key="lastname" value="Doe"/>
+      <entry key="location" value="SG - Singapore"/>
+      <entry key="nsStatus" value="Rehire-Completed01-21-2026"/>
+      <entry key="postalCode" value="90232"/>
+      <entry key="sAMAccountName" value="doe1.john"/>
+      <entry key="terminationDate" value="01-29-2028"/>
+      <entry key="title" value="Threat Intelligence Specialist"/>
+      <entry key="triggerSnapshots">
+        <value>
+          <Map>
+            <entry key="Rule" value="db561a67-5064-475f-bedc-35bad74bb86b"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="NS_Role_Corporate_Learning_Portal"/>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+    <AttributeMetaData attribute="email" source="Active Directory:AppRule: NS_Rule_IdentityMapping_Email Active Directory$NS_Rule_IdentityMapping_Email"/>
+    <AttributeMetaData attribute="distinguishedName" source="Active Directory:distinguishedName"/>
+    <AttributeMetaData attribute="sAMAccountName" source="Active Directory:sAMAccountName"/>
+  </AttributeMetaDatas>
+  <Bundles>
+    <Reference class="sailpoint.object.Bundle" name="Active Directory Basic IT Role"/>
+  </Bundles>
+  <Exceptions>
+    <EntitlementGroup displayName="doe1.john" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="memberOf" value="CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com"/>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+    <EntitlementGroup displayName="739003" nativeIdentity="739003">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Audit Viewer</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+    <EntitlementGroup displayName="doe1.john@nstechiiq.com" nativeIdentity="739003">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+  </Exceptions>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="6be3425d-333a-43fb-89c0-192721ba4f84"/>
+  </Manager>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1768905570234" roleName="NS_Role_Corporate_Learning_Portal" source="Rule"/>
+            <RoleAssignment date="1768905570236" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule">
+              <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="doe1.john" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </RoleAssignment>
+          </List>
+        </value>
+      </entry>
+      <entry key="roleDetections">
+        <value>
+          <List>
+            <RoleDetection assignmentIds="227b40f26a4b4190bedb27b6c87f0d5c" date="1768911699841" roleName="Active Directory Basic IT Role">
+              <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="doe1.john" nativeIdentity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountItem name="memberOf">
+                  <value>
+                    <Set>
+                      <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    </Set>
+                  </value>
+                </AccountItem>
+              </RoleTarget>
+            </RoleDetection>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="John Doe" identity="739003" lastRefresh="1768468348273">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="9715 Cedar St"/>
+          <entry key="ADDRESS_WORK" value="9715 Cedar St;Singapore, Central Region 23102;Singapore"/>
+          <entry key="BUILDING_CODE" value="SG_CEN_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3018"/>
+          <entry key="CLASS" value="Hybrid"/>
+          <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+          <entry key="CONTRACT_END_DATE" value="01-29-2028"/>
+          <entry key="COUNTRY_NAME" value="Singapore"/>
+          <entry key="DEPARTMENT" value="Cybersecurity &amp; Threat Operations"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-012"/>
+          <entry key="DIVISION" value="Singapore Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-SG-02"/>
+          <entry key="EMAIL" value="john.doe@NsInc.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="739003"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="739003"/>
+          <entry key="FIRST_NAME" value="John"/>
+          <entry key="HIREDATE" value="01-21-2026"/>
+          <entry key="JOBCODE" value="JT-012-03"/>
+          <entry key="JOBTITLE" value="Threat Intelligence Specialist"/>
+          <entry key="LAST_NAME" value="Doe"/>
+          <entry key="LOCATION" value="SG - Singapore"/>
+          <entry key="MANAGER_ID" value="735000"/>
+          <entry key="POSTAL_CODE" value="90232"/>
+          <entry key="REGION" value="Singapore"/>
+          <entry key="WORKER_NAME" value="John Doe"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Temporary"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="doe1.john" entitlements="true" identity="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1768911699930" manuallyCorrelated="true" uuid="{96deb622-f1fd-4138-acaf-41fdd06ea41d}">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <AttributeMetaDatas>
+        <AttributeMetaData attribute="renamedAccountNativeIdentities" user="Aggregation">
+          <LastValue>
+            <Set>
+              <String>CN=doe1.john,OU=Disabled,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+              <String>CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com</String>
+            </Set>
+          </LastValue>
+        </AttributeMetaData>
+      </AttributeMetaDatas>
+      <Attributes>
+        <Map>
+          <entry key="NetBIOSName"/>
+          <entry key="accountFlags">
+            <value>
+              <List>
+                <String>Normal User Account</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="businessCategory" value="Hybrid"/>
+          <entry key="cn" value="doe1.john"/>
+          <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+          <entry key="departmentNumber" value="DEPT-012"/>
+          <entry key="description" value="Created via sailpoint :Threat Intelligence Specialist"/>
+          <entry key="displayName" value="John Doe"/>
+          <entry key="distinguishedName" value="CN=doe1.john,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="employeeNumber" value="739003"/>
+          <entry key="employeeType" value="Employee"/>
+          <entry key="givenName" value="John"/>
+          <entry key="l" value="SG - Singapore"/>
+          <entry key="mail" value="doe1.john@nstechiiq.com"/>
+          <entry key="manager" value="CN=singh.nikesh,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="memberOf">
+            <value>
+              <List>
+                <String>CN=SEC_ns_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="mobile" value="+91-9845678901"/>
+          <entry key="msDS-PrincipalName" value="NSIIQ\doe1.john"/>
+          <entry key="objectClass">
+            <value>
+              <List>
+                <String>top</String>
+                <String>person</String>
+                <String>organizationalPerson</String>
+                <String>user</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1506"/>
+          <entry key="objectType" value="user"/>
+          <entry key="objectguid" value="{96deb622-f1fd-4138-acaf-41fdd06ea41d}"/>
+          <entry key="physicalDeliveryOfficeName" value="SG_CEN_BLDG_02"/>
+          <entry key="postalCode" value="90232"/>
+          <entry key="sAMAccountName" value="doe1.john"/>
+          <entry key="sn" value="Doe"/>
+          <entry key="st" value="Singapore"/>
+          <entry key="streetAddress" value="9715 Cedar St"/>
+          <entry key="title" value="Threat Intelligence Specialist"/>
+          <entry key="userAccountControl" value="512"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="739003" entitlements="true" identity="739003" lastRefresh="1769027695463" manuallyCorrelated="true">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="annualHours" value="1040"/>
+          <entry key="countryCode" value="90232"/>
+          <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+          <entry key="email" value="doe1.john@nstechiiq.com"/>
+          <entry key="empStatus" value="Active"/>
+          <entry key="employee" value="John Doe"/>
+          <entry key="employeeId" value="739003"/>
+          <entry key="firstName" value="John"/>
+          <entry key="hireDate" value="01-21-2026"/>
+          <entry key="isManager" value="Yes"/>
+          <entry key="jobTitle" value="Threat Intelligence Specialist"/>
+          <entry key="lastName" value="Doe"/>
+          <entry key="manager" value="Nikesh Singh"/>
+          <entry key="roles">
+            <value>
+              <List>
+                <String>Audit Viewer</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="salaryClass" value="C"/>
+          <entry key="superviserId" value="735000"/>
+          <entry key="terminationDate" value="12-31-2028"/>
+          <entry key="userLevel" value="E"/>
+          <entry key="workCountry" value="Singapore"/>
+          <entry key="workState" value="Singapore"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="doe1.john@nstechiiq.com" entitlements="true" identity="739003">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="country" value="Singapore"/>
+          <entry key="department" value="Cybersecurity &amp; Threat Operations"/>
+          <entry key="email" value="doe1.john@nstechiiq.com"/>
+          <entry key="employeeId" value="739003"/>
+          <entry key="firstName" value="John"/>
+          <entry key="hireDate" value="01-21-2026"/>
+          <entry key="isInstructor" value="No"/>
+          <entry key="jobTitle" value="Threat Intelligence Specialist"/>
+          <entry key="lastName" value="Doe"/>
+          <entry key="learningGroup" value="Leadership Development"/>
+          <entry key="managerDisplayName" value="Nikesh Singh"/>
+          <entry key="managerId" value="735000"/>
+          <entry key="roleLevel" value="Advanced"/>
+          <entry key="status" value="ACTIVE"/>
+          <entry key="terminationDate" value="12-31-2028"/>
+          <entry key="workCountry"/>
+          <entry key="workState" value="Singapore"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

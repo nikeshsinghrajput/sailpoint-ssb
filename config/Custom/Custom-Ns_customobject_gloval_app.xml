@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Gloval_App">
+  <Attributes>
+    <Map>
+      <entry key="salaryClass">
+        <value>
+          <List>
+            <String>A</String>
+            <String>B</String>
+            <String>C</String>
+            <String>D</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="userLevel">
+        <value>
+          <List>
+            <String>A</String>
+            <String>B</String>
+            <String>C</String>
+            <String>D</String>
+            <String>E</String>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

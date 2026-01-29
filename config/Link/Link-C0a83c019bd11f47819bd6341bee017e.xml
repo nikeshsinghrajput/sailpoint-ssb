@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link disabled="true" displayName="739013" identity="739013" lastRefresh="1769027548175" manuallyCorrelated="true">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Financial Planning &amp; Forecasting"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="IIQDisabled">
+        <value>
+          <Boolean>true</Boolean>
+        </value>
+      </entry>
+      <entry key="annualHours" value="1040"/>
+      <entry key="countryCode" value="10815"/>
+      <entry key="department" value="Workplace &amp; Facilities Management"/>
+      <entry key="email" value="garcia.william@nsiiq.com"/>
+      <entry key="empStatus" value="Inactive"/>
+      <entry key="employee" value="William Garcia"/>
+      <entry key="employeeId" value="739013"/>
+      <entry key="firstName" value="William"/>
+      <entry key="hireDate" value="01-27-2026"/>
+      <entry key="isManager" value="No"/>
+      <entry key="jobTitle" value="Facilities Coordinator"/>
+      <entry key="lastName" value="Garcia"/>
+      <entry key="manager" value="Nikesh Singh"/>
+      <entry key="salaryClass" value="B"/>
+      <entry key="superviserId" value="735000"/>
+      <entry key="terminationDate" value="03-09-2029"/>
+      <entry key="userLevel" value="C"/>
+      <entry key="workCountry" value="Brazil"/>
+      <entry key="workState" value="Salvador"/>
+    </Map>
+  </Attributes>
+</Link>

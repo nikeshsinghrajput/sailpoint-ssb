@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction applicationName="ServiceNow" identityDisplayName="Aadhya Mishra" identityName="d8d97902-1f9b-4378-9777-0b34e4bc9013" integration="ServiceNow" name="0000000067" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000116"/>
+      <entry key="planResult">
+        <value>
+          <ProvisioningResult status="failed">
+            <Errors>
+              <Message key="sailpoint.connector.InvalidConfigurationException: [ InvalidConfigurationException ] &#10; [ Possible suggestions ] Make sure resource mentioned in the URL is available on the ServiceNow instance. The URL resource is /api/now/v1/import/x_sapo_iiq_connect_sysuser &#10; [ Error details ] Invalid response received from ServiceNow instance. Status: 400 , Output: Invalid staging table, Detail: Specified table does not extend 'sys_import_set_row', Status: failure" type="Error"/>
+            </Errors>
+          </ProvisioningResult>
+        </value>
+      </entry>
+      <entry key="request">
+        <value>
+          <AccountRequest application="ServiceNow" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="attachmentConfigList"/>
+                <entry key="attachments"/>
+                <entry key="flow" value="AccessRequest"/>
+                <entry key="id" value="c0a83c019a0c102b819a29b939157384"/>
+                <entry key="interface" value="LCM"/>
+                <entry key="operation" value="EntitlementAdd"/>
+                <entry key="provisioningTransactionId" value="c0a83c019a0c102b819a29c596447787"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest displayValue="role_delegator" name="roles" op="Add" value="011ba5aa0a0a0b3001a439c580549134">
+              <Attributes>
+                <Map>
+                  <entry key="assignment" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="user_name" op="Set" value="8512576"/>
+            <AttributeRequest name="first_name" op="Set" value="Aadhya"/>
+            <AttributeRequest name="last_name" op="Set" value="Mishra"/>
+            <AttributeRequest name="department" op="Set" value="Marketing"/>
+            <AttributeRequest name="title" op="Set" value="Developer"/>
+            <AttributeRequest name="password" op="Set">
+              <Attributes>
+                <Map>
+                  <entry key="secret" value="true"/>
+                </Map>
+              </Attributes>
+            </AttributeRequest>
+            <AttributeRequest name="password_needs_reset" op="Set">
+              <Value>
+                <Boolean>true</Boolean>
+              </Value>
+            </AttributeRequest>
+            <AttributeRequest name="notification" op="Set" value="Enable"/>
+            <AttributeRequest name="email" op="Set" value="aadhya.mishra@wipro.com"/>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

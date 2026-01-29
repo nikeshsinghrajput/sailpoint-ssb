@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE AuditEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<AuditEvent accountName="CN=verma.sumit,OU=Product Management Office (PMO),OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" action="ProvisioningComplete" application="Active Directory" attributeName="sAMAccountName" attributeValue="verma.sumit" interface="LCM" serverHost="NikeshRajput" source="Scheduler" target="83824b7f-2498-498f-acef-16fc78db0097">
+  <Attributes>
+    <Map>
+      <entry key="op" value="Set"/>
+      <entry key="taskResultId" value="c0a83c019b731761819bb1ee50cf2367"/>
+    </Map>
+  </Attributes>
+</AuditEvent>

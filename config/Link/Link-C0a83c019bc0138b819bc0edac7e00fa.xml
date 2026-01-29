@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="William Morris" identity="739053" lastRefresh="1768468360318">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="9280 Lake Lane"/>
+      <entry key="ADDRESS_WORK" value="9280 Lake Lane;Ras Al Khaimah, Dubai Emirate 11143;United Arab Emirates"/>
+      <entry key="BUILDING_CODE" value="AE_DUB_BLDG_01"/>
+      <entry key="BUSINESS_UNIT_ID" value="3049"/>
+      <entry key="CLASS" value="Field"/>
+      <entry key="COMPANY_NAME" value="Nsiiq corp"/>
+      <entry key="CONTRACT_END_DATE" value="12-17-2025"/>
+      <entry key="COUNTRY_NAME" value="United Arab Emirates"/>
+      <entry key="DEPARTMENT" value="Internal Audit &amp; Controls"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-004"/>
+      <entry key="DIVISION" value="United Arab Emirates Retail Banking and Payments"/>
+      <entry key="DIVISION_ID" value="DIV-AE-01"/>
+      <entry key="EMAIL" value="william.morris@NsCorp"/>
+      <entry key="EMPLOYEE_NUMBER" value="739053"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739053"/>
+      <entry key="FIRST_NAME" value="William"/>
+      <entry key="HIREDATE" value="06-11-2016"/>
+      <entry key="JOBCODE" value="JT-004-03"/>
+      <entry key="JOBTITLE" value="SOX Controls Analyst"/>
+      <entry key="LAST_NAME" value="Morris"/>
+      <entry key="LOCATION" value="AE - Ras Al Khaimah"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="18632"/>
+      <entry key="REGION" value="Ras Al Khaimah"/>
+      <entry key="WORKER_NAME" value="William Morris"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Vendor"/>
+    </Map>
+  </Attributes>
+</Link>

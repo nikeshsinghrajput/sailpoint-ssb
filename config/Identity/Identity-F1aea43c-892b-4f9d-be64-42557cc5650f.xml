@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity assignedRoleSummary="Corporate Learning Basic Role, Active Directory Basic Access" bundleSummary="Active Directory Basic IT Role" correlated="true" lastRefresh="1766397022393" managerStatus="true" name="f1aea43c-892b-4f9d-be64-42557cc5650f">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NsTech"/>
+      <entry key="country" value="India"/>
+      <entry key="department" value="Financial Accounting and Reporting"/>
+      <entry key="displayName" value="Nikesh Singh"/>
+      <entry key="distinguishedName" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+      <entry key="division" value="Division-4"/>
+      <entry key="email" value="singh.nikesh@nstechiiq.com"/>
+      <entry key="employeeId" value="8512500"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Full_time"/>
+      <entry key="firstname" value="Nikesh"/>
+      <entry key="hireDate" value="12-11-2025"/>
+      <entry key="lastname" value="Singh"/>
+      <entry key="location" value="Noida"/>
+      <entry key="nsStatus" value="Joiner-Completed"/>
+      <entry key="postalCode" value="434863"/>
+      <entry key="sAMAccountName" value="singh.nikesh"/>
+      <entry key="terminationDate" value="01-04-2030"/>
+      <entry key="title" value="Senior Financial Analyst"/>
+      <entry key="triggerSnapshots">
+        <value>
+          <Map>
+            <entry key="Rule" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AssignedRoles>
+    <Reference class="sailpoint.object.Bundle" name="NS_Role_Corporate_Learning_Portal"/>
+    <Reference class="sailpoint.object.Bundle" name="SR_Role_Active_Directory_Basic_Access"/>
+  </AssignedRoles>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+    <AttributeMetaData attribute="distinguishedName" source="Active Directory:distinguishedName"/>
+    <AttributeMetaData attribute="sAMAccountName" source="Active Directory:sAMAccountName"/>
+    <AttributeMetaData attribute="email" source="Active Directory:AppRule: NS_Rule_IdentityMapping_Email Active Directory$NS_Rule_IdentityMapping_Email"/>
+    <AttributeMetaData attribute="inactive" source="$NS_Rule_IdentityAttribute_SetInactive"/>
+  </AttributeMetaDatas>
+  <Bundles>
+    <Reference class="sailpoint.object.Bundle" name="Active Directory Basic IT Role"/>
+  </Bundles>
+  <Exceptions>
+    <EntitlementGroup displayName="8512500" nativeIdentity="8512500">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </EntitlementGroup>
+  </Exceptions>
+  <Preferences>
+    <Map>
+      <entry key="roleAssignments">
+        <value>
+          <List>
+            <RoleAssignment date="1765384775795" roleName="NS_Role_Corporate_Learning_Portal" source="Rule"/>
+            <RoleAssignment date="1765384775796" roleName="SR_Role_Active_Directory_Basic_Access" source="Rule">
+              <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="singh.nikesh" nativeIdentity="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+            </RoleAssignment>
+          </List>
+        </value>
+      </entry>
+      <entry key="roleDetections">
+        <value>
+          <List>
+            <RoleDetection assignmentIds="34ec0b21dfbc4abab79f0589ac6e3647" date="1765384775821" roleName="Active Directory Basic IT Role">
+              <RoleTarget applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" displayName="singh.nikesh" nativeIdentity="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com">
+                <AccountItem name="memberOf">
+                  <value>
+                    <Set>
+                      <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                      <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                    </Set>
+                  </value>
+                </AccountItem>
+              </RoleTarget>
+            </RoleDetection>
+          </List>
+        </value>
+      </entry>
+    </Map>
+  </Preferences>
+  <Links>
+    <Link displayName="Nikesh Singh" identity="8512500" lastRefresh="1765382824363">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="243 Ring Road"/>
+          <entry key="ADDRESS_WORK" value="Onsite"/>
+          <entry key="BUILDING_CODE" value="B531"/>
+          <entry key="BUSINESS_UNIT_ID" value="BU83"/>
+          <entry key="CLASS" value="Full_time"/>
+          <entry key="COMPANY_NAME" value="NsTech"/>
+          <entry key="CONTRACT_END_DATE" value="01-04-2030"/>
+          <entry key="COUNTRY_NAME" value="India"/>
+          <entry key="DEPARTMENT" value="Financial Accounting and Reporting"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-001"/>
+          <entry key="DIVISION" value="Division-4"/>
+          <entry key="DIVISION_ID" value="DIV23"/>
+          <entry key="EMAIL" value="singh.nikesh@nstechiiq.com"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512500"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FILENUMBER" value="F85013"/>
+          <entry key="FIRST_NAME" value="Nikesh"/>
+          <entry key="HIREDATE" value="12-11-2025"/>
+          <entry key="JOBCODE" value="JC688"/>
+          <entry key="JOBTITLE" value="Senior Financial Analyst"/>
+          <entry key="LAST_NAME" value="Singh"/>
+          <entry key="LOCATION" value="Noida"/>
+          <entry key="POSTAL_CODE" value="434863"/>
+          <entry key="REGION" value="West"/>
+          <entry key="WORKER_NAME" value="Nikesh Singh"/>
+          <entry key="WORKER_STATUS" value="Active"/>
+          <entry key="WORKFORCE_TYPE" value="Permanent"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="singh.nikesh" entitlements="true" identity="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" lastRefresh="1765384921903" manuallyCorrelated="true" uuid="{272eb720-1ddc-4dc9-827d-d02c9b80a25e}">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Active Directory"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="NetBIOSName"/>
+          <entry key="accountFlags">
+            <value>
+              <List>
+                <String>Normal User Account</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="businessCategory" value="Full_time"/>
+          <entry key="cn" value="singh.nikesh"/>
+          <entry key="department" value="Financial Accounting and Reporting"/>
+          <entry key="departmentNumber" value="DEPT-001"/>
+          <entry key="description" value="Created via sailpoint Senior Financial Analyst"/>
+          <entry key="displayName" value="Nikesh Singh"/>
+          <entry key="distinguishedName" value="CN=singh.nikesh,OU=Financial Accounting and Reporting,OU=Permanent Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com"/>
+          <entry key="employeeNumber" value="8512500"/>
+          <entry key="employeeType" value="Employee"/>
+          <entry key="givenName" value="Nikesh"/>
+          <entry key="l" value="Noida"/>
+          <entry key="mail" value="singh.nikesh@nstechiiq.com"/>
+          <entry key="memberOf">
+            <value>
+              <List>
+                <String>CN=SEC_NS_BASIC_USER_LICENCE,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=SEC_PAMP_SLPNT_USERS,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=CITRIX_EXTERNAL_ACCESS,OU=Restricted,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_OFFICE2016_SFAPDC,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+                <String>CN=XA_MYDESK_O365_USERS,OU=Shared,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="mobile" value="+91-9234567890"/>
+          <entry key="msDS-PrincipalName" value="NSIIQ\singh.nikesh"/>
+          <entry key="objectClass">
+            <value>
+              <List>
+                <String>top</String>
+                <String>person</String>
+                <String>organizationalPerson</String>
+                <String>user</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1304"/>
+          <entry key="objectType" value="user"/>
+          <entry key="objectguid" value="{272eb720-1ddc-4dc9-827d-d02c9b80a25e}"/>
+          <entry key="physicalDeliveryOfficeName" value="B531"/>
+          <entry key="postalCode" value="434863"/>
+          <entry key="sAMAccountName" value="singh.nikesh"/>
+          <entry key="sn" value="Singh"/>
+          <entry key="st" value="West"/>
+          <entry key="streetAddress" value="243 Ring Road"/>
+          <entry key="telephoneNumber" value="+91-141-27451234"/>
+          <entry key="title" value="Senior Financial Analyst"/>
+          <entry key="userAccountControl" value="512"/>
+        </Map>
+      </Attributes>
+    </Link>
+    <Link displayName="" entitlements="true" identity="8512500">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="Access">
+            <value>
+              <List>
+                <String>Learner</String>
+              </List>
+            </value>
+          </entry>
+          <entry key="country" value="India"/>
+          <entry key="department" value="Financial Accounting and Reporting"/>
+          <entry key="email"/>
+          <entry key="employeeId" value="8512500"/>
+          <entry key="firstName" value="Nikesh"/>
+          <entry key="hireDate" value="12-11-2025"/>
+          <entry key="isInstructor" value="No"/>
+          <entry key="jobTitle" value="Senior Financial Analyst"/>
+          <entry key="lastName" value="Singh"/>
+          <entry key="learningGroup" value="Leadership Development"/>
+          <entry key="managerDisplayName"/>
+          <entry key="managerId"/>
+          <entry key="roleLevel" value="Manager"/>
+          <entry key="status" value="ACTIVE"/>
+          <entry key="terminationDate" value="01-04-2030"/>
+          <entry key="workCountry"/>
+          <entry key="workState" value="West"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

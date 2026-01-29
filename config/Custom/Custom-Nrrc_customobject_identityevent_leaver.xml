@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NRRC_CustomObject_IdentityEvent_Leaver">
+  <Attributes>
+    <Map>
+      <entry key="LeaverDayDiffMax" value="3"/>
+      <entry key="LeaverDayDiffMin" value="-5"/>
+      <entry key="applicationToExclude">
+        <value>
+          <List>
+            <String>Hr-Workday</String>
+            <String>Sales Analytics</String>
+          </List>
+        </value>
+      </entry>
+      <entry key="disableOU" value="OU=Employees,OU=Disabled,OU=SailPoint,DC=nsiiq,DC=com"/>
+    </Map>
+  </Attributes>
+</Custom>

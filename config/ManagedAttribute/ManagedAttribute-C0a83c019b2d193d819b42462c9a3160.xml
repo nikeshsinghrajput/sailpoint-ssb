@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="memberOf" displayName="SEC_PRA_PASSWORD_RESET" hash="077cbd771f6d05a92835367767a4dddfa70a6e9c" lastRefresh="1766343453848" requestable="true" type="group" uuid="{8fb72b5d-1e84-4054-8dc8-a4602ef119e5}" value="CN=SEC_PRA_PASSWORD_RESET,OU=Security,OU=Global,OU=Groups,OU=SailPoint,DC=nsiiq,DC=com">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Active Directory"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="GroupScope" value="Global"/>
+      <entry key="GroupType" value="Security"/>
+      <entry key="NetBIOSName"/>
+      <entry key="cn" value="SEC_PRA_PASSWORD_RESET"/>
+      <entry key="description" value="SEC_PRA_PASSWORD_RESET created by automation."/>
+      <entry key="msDS-PrincipalName" value="NSIIQ\SEC_PRA_PASSWORD_RESET"/>
+      <entry key="objectSid" value="S-1-5-21-2550000493-1505187030-2890001270-1491"/>
+      <entry key="objectguid" value="{8fb72b5d-1e84-4054-8dc8-a4602ef119e5}"/>
+      <entry key="sAMAccountName" value="SEC_PRA_PASSWORD_RESET"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

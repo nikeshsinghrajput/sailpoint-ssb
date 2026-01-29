@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Identity PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Identity correlated="true" lastRefresh="1766397022740" name="83824b7f-2498-498f-acef-16fc78db0097">
+  <Attributes>
+    <Map>
+      <entry key="company" value="NS Soft Tech"/>
+      <entry key="country" value="China"/>
+      <entry key="department" value="Product Management Office (PMO)"/>
+      <entry key="displayName" value="sumit verma"/>
+      <entry key="division" value="China Corporate and Investment Services"/>
+      <entry key="employeeId" value="8512519"/>
+      <entry key="employeeType" value="Employee"/>
+      <entry key="employmentType" value="Part-Time"/>
+      <entry key="firstname" value="sumit"/>
+      <entry key="hireDate" value="12-09-2025"/>
+      <entry key="lastname" value="verma"/>
+      <entry key="location" value="CN - Guangzhou"/>
+      <entry key="postalCode" value="510000"/>
+      <entry key="terminationDate" value="12-26-2025"/>
+      <entry key="title" value="Product Manager"/>
+      <entry key="type" value="Internal"/>
+    </Map>
+  </Attributes>
+  <AttributeMetaDatas>
+    <AttributeMetaData attribute="company" source="Hr-Workday:COMPANY_NAME"/>
+    <AttributeMetaData attribute="division" source="Hr-Workday:DIVISION"/>
+    <AttributeMetaData attribute="firstname" source="Hr-Workday:FIRST_NAME"/>
+    <AttributeMetaData attribute="hireDate" source="Hr-Workday:HIREDATE"/>
+    <AttributeMetaData attribute="lastname" source="Hr-Workday:LAST_NAME"/>
+    <AttributeMetaData attribute="location" source="Hr-Workday:LOCATION"/>
+    <AttributeMetaData attribute="manager" source="Hr-Workday:MANAGER_ID"/>
+    <AttributeMetaData attribute="postalCode" source="Hr-Workday:POSTAL_CODE"/>
+    <AttributeMetaData attribute="terminationDate" source="Hr-Workday:CONTRACT_END_DATE"/>
+    <AttributeMetaData attribute="title" source="Hr-Workday:JOBTITLE"/>
+    <AttributeMetaData attribute="type" source="$NS_Rule_SetType"/>
+    <AttributeMetaData attribute="employmentType" source="Hr-Workday:CLASS"/>
+    <AttributeMetaData attribute="employeeType" source="Hr-Workday:EMPLOYEE_TYPE"/>
+    <AttributeMetaData attribute="department" source="Hr-Workday:DEPARTMENT"/>
+    <AttributeMetaData attribute="country" source="Hr-Workday:COUNTRY_NAME"/>
+    <AttributeMetaData attribute="employeeId" source="Hr-Workday:EMPLOYEE_NUMBER"/>
+  </AttributeMetaDatas>
+  <Manager>
+    <Reference class="sailpoint.object.Identity" name="c06fe45e-ee86-4c73-8bdb-73ca28e2cd69"/>
+  </Manager>
+  <Links>
+    <Link displayName="sumit verma" identity="8512519" lastRefresh="1766086046229">
+      <ApplicationRef>
+        <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+      </ApplicationRef>
+      <Attributes>
+        <Map>
+          <entry key="ADDRESS_LINE_1" value="1453 Park Ln"/>
+          <entry key="ADDRESS_WORK" value="1453 Park Ln;Guangzhou, Guangdong 510000;China"/>
+          <entry key="BUILDING_CODE" value="CN_GUA_BLDG_02"/>
+          <entry key="BUSINESS_UNIT_ID" value="3006"/>
+          <entry key="CLASS" value="Part-Time"/>
+          <entry key="COMPANY_NAME" value="NS Soft Tech"/>
+          <entry key="CONTRACT_END_DATE" value="12-26-2025"/>
+          <entry key="COUNTRY_NAME" value="China"/>
+          <entry key="DEPARTMENT" value="Product Management Office (PMO)"/>
+          <entry key="DEPARTMENT_ID" value="DEPT-021"/>
+          <entry key="DIVISION" value="China Corporate and Investment Services"/>
+          <entry key="DIVISION_ID" value="DIV-CN-02"/>
+          <entry key="EMPLOYEE_NUMBER" value="8512519"/>
+          <entry key="EMPLOYEE_TYPE" value="Employee"/>
+          <entry key="FIRST_NAME" value="sumit"/>
+          <entry key="HIREDATE" value="12-09-2025"/>
+          <entry key="JOBCODE" value="JT-021-01"/>
+          <entry key="JOBTITLE" value="Product Manager"/>
+          <entry key="LAST_NAME" value="verma"/>
+          <entry key="LOCATION" value="CN - Guangzhou"/>
+          <entry key="MANAGER_ID" value="8512512"/>
+          <entry key="POSTAL_CODE" value="510000"/>
+          <entry key="REGION" value="Guangzhou"/>
+          <entry key="WORKER_NAME" value="sumit verma"/>
+          <entry key="WORKER_STATUS" value="ACTIVE"/>
+          <entry key="WORKFORCE_TYPE" value="Consultant"/>
+        </Map>
+      </Attributes>
+    </Link>
+  </Links>
+</Identity>

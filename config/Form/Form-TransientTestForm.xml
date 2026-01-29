@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Form PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Form name="Transient Test Form" type="Workflow">
+  <Attributes>
+    <Map>
+      <entry key="pageTitle" value="Transient Test Form"/>
+    </Map>
+  </Attributes>
+  <Description/>
+  <Section name="Office Details">
+    <Field displayName="Office members" name="officemembers" type="int"/>
+    <Field displayName="Office Location" name="officeLocation" type="string"/>
+  </Section>
+  <Button action="cancel" label="Cancel"/>
+  <Button action="next" label="Next"/>
+</Form>

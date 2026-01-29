@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE WorkItemArchive PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<WorkItemArchive archived="1767872896037" completer="The Administrator" handler="sailpoint.api.Workflower" identityRequestId="0000000291" level="Normal" name="0000000140" ownerName="spadmin" renderer="lcmManualActionsRenderer.xhtml" requester="spadmin" state="Finished" targetClass="sailpoint.object.Identity" targetName="f7803391-7055-47b7-b696-aad5dd224453" type="ManualAction" workItemId="c0a83c019b731761819b9d6f2e850b1c">
+  <Attributes>
+    <Map>
+      <entry key="approvalSet">
+        <value>
+          <ApprovalSet>
+            <ApprovalItem application="Corporate Learning Portal" operation="Create" state="Finished">
+              <value>
+                <List>
+                  <String>Access = 'Compliance Officer'</String>
+                  <String>Access = 'Certification Manager'</String>
+                </List>
+              </value>
+            </ApprovalItem>
+          </ApprovalSet>
+        </value>
+      </entry>
+      <entry key="identityDisplayName" value="Aditya Sharma"/>
+      <entry key="identityName" value="f7803391-7055-47b7-b696-aad5dd224453"/>
+      <entry key="policyViolations"/>
+      <entry key="project">
+        <value>
+          <ProvisioningProject identity="f7803391-7055-47b7-b696-aad5dd224453">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000291"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="spadmin"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan>
+                <AccountRequest application="Financial Planning &amp; Forecasting" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0512c7819a085c0665276c"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="nativeIdUpdated">
+                        <value>
+                          <Boolean>true</Boolean>
+                        </value>
+                      </entry>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Budget Controller" name="roles" op="Add" value="Budget Controller">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <AccountRequest application="Sales Analytics" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a0c102b819a1038f4ca0502"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="nativeIdUpdated">
+                        <value>
+                          <Boolean>true</Boolean>
+                        </value>
+                      </entry>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Incentive &amp; Compensation Analyst" name="roles" op="Add" value="Incentive &amp; Compensation Analyst">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <AccountRequest application="Corporate Learning Portal" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a4a1e39819a4b2351fe01e5"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Compliance Officer" name="Access" op="Add" value="Compliance Officer">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <AccountRequest application="Corporate Learning Portal" op="Modify">
+                  <Attributes>
+                    <Map>
+                      <entry key="attachmentConfigList"/>
+                      <entry key="attachments"/>
+                      <entry key="flow" value="AccessRequest"/>
+                      <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+                      <entry key="interface" value="LCM"/>
+                      <entry key="operation" value="EntitlementAdd"/>
+                    </Map>
+                  </Attributes>
+                  <AttributeRequest displayValue="Certification Manager" name="Access" op="Add" value="Certification Manager">
+                    <Attributes>
+                      <Map>
+                        <entry key="assignment" value="true"/>
+                      </Map>
+                    </Attributes>
+                  </AttributeRequest>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000291"/>
+                    <entry key="requester" value="spadmin"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+                <ProvisioningTargets>
+                  <ProvisioningTarget application="Financial Planning &amp; Forecasting" attribute="roles" value="Budget Controller">
+                    <AccountSelection applicationId="c0a83c0199d9117b8199d942b544000a" applicationName="Financial Planning &amp; Forecasting" implicitCreate="true"/>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Incentive &amp; Compensation Analyst">
+                    <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" implicitCreate="true"/>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget application="Corporate Learning Portal" attribute="Access" value="Compliance Officer">
+                    <AccountSelection applicationId="c0a83c019a2f10b6819a3175b2500287" applicationName="Corporate Learning Portal" implicitCreate="true"/>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget application="Corporate Learning Portal" attribute="Access" value="Certification Manager">
+                    <AccountSelection applicationId="c0a83c019a2f10b6819a3175b2500287" applicationName="Corporate Learning Portal" implicitCreate="true"/>
+                  </ProvisioningTarget>
+                  <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+                    <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+                  </ProvisioningTarget>
+                </ProvisioningTargets>
+                <Requesters>
+                  <Reference class="sailpoint.object.Identity" name="spadmin"/>
+                </Requesters>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <Messages>
+              <Message key="No account creation template for application: Corporate Learning Portal" type="Info"/>
+            </Messages>
+            <ProvisioningPlan nativeIdentity="f7803391-7055-47b7-b696-aad5dd224453" targetIntegration="Financial Planning &amp; Forecasting" trackingId="88b105671b9c467294516875bd6ebd46">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="8512503" op="Create" targetIntegration="Financial Planning &amp; Forecasting">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a0512c7819a085c0665276c"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="nativeIdUpdated">
+                      <value>
+                        <Boolean>true</Boolean>
+                      </value>
+                    </entry>
+                    <entry key="operation" value="EntitlementAdd"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Budget Controller" name="roles" op="Add" value="Budget Controller">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="employee" op="Set" value="Aditya Sharma"/>
+                <AttributeRequest name="firstName" op="Set" value="Aditya"/>
+                <AttributeRequest name="lastName" op="Set" value="Sharma"/>
+                <AttributeRequest name="empStatus" op="Set" value="Active"/>
+                <AttributeRequest name="department" op="Set" value="Financial Risk Management"/>
+                <AttributeRequest name="userLevel" op="Set" value="B"/>
+                <AttributeRequest name="hireDate" op="Set" value="01-03-2025"/>
+                <AttributeRequest name="salaryClass" op="Set" value="A"/>
+                <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+                <AttributeRequest name="workState" op="Set" value="North"/>
+                <AttributeRequest name="countryCode" op="Set" value="556368"/>
+                <AttributeRequest name="workCountry" op="Set" value="India"/>
+                <AttributeRequest name="manager" op="Set" value="Nikesh Singh"/>
+                <AttributeRequest name="superviserId" op="Set" value="8512500"/>
+                <AttributeRequest name="bussinessUnit" op="Set" value="BU14"/>
+                <AttributeRequest name="annualHours" op="Set" value="1920"/>
+                <AttributeRequest name="jobTitle" op="Set" value="Credit Risk Analyst"/>
+                <AttributeRequest name="isManager" op="Set" value="No"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000291"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <Requesters>
+                <Reference class="sailpoint.object.Identity" name="spadmin"/>
+              </Requesters>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningPlan nativeIdentity="f7803391-7055-47b7-b696-aad5dd224453" targetIntegration="Sales Analytics" trackingId="18a1900463af4ff18f719d0adaa287e1">
+              <AccountRequest application="Sales Analytics" nativeIdentity="8512503" op="Create" targetIntegration="Sales Analytics">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a0c102b819a1038f4ca0502"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="nativeIdUpdated">
+                      <value>
+                        <Boolean>true</Boolean>
+                      </value>
+                    </entry>
+                    <entry key="operation" value="EntitlementAdd"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Incentive &amp; Compensation Analyst" name="roles" op="Add" value="Incentive &amp; Compensation Analyst">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest name="firstName" op="Set" value="Aditya"/>
+                <AttributeRequest name="lastName" op="Set" value="Sharma"/>
+                <AttributeRequest name="status" op="Set" value="Active"/>
+                <AttributeRequest name="department" op="Set" value="Financial Risk Management"/>
+                <AttributeRequest name="userLevel" op="Set" value="A"/>
+                <AttributeRequest name="hireDate" op="Set" value="01-03-2025"/>
+                <AttributeRequest name="salesQuota" op="Set" value="500000"/>
+                <AttributeRequest name="achievedSales" op="Set" value="0"/>
+                <AttributeRequest name="terminationDate" op="Set" value="18-07-2027"/>
+                <AttributeRequest name="workState" op="Set" value="Delhi"/>
+                <AttributeRequest name="region" op="Set" value="A"/>
+                <AttributeRequest name="territory" op="Set" value="A"/>
+                <AttributeRequest name="commissionRate" op="Set" value="5%"/>
+                <AttributeRequest name="managerId" op="Set" value="f1aea43c-892b-4f9d-be64-42557cc5650f"/>
+                <AttributeRequest name="annualHours" op="Set" value="720"/>
+                <AttributeRequest name="jobTitle" op="Set" value="Credit Risk Analyst"/>
+                <AttributeRequest name="country" op="Set" value="India"/>
+                <AttributeRequest name="isManager" op="Set" value="No"/>
+                <AttributeRequest name="businessUnit" op="Set" value="A"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000291"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <Requesters>
+                <Reference class="sailpoint.object.Identity" name="spadmin"/>
+              </Requesters>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+            <ProvisioningPlan trackingId="6aec73359eda4ce5b09397200b5783a6">
+              <AccountRequest application="Corporate Learning Portal" op="Create">
+                <Attributes>
+                  <Map>
+                    <entry key="attachmentConfigList"/>
+                    <entry key="attachments"/>
+                    <entry key="flow" value="AccessRequest"/>
+                    <entry key="id" value="c0a83c019a4a1e39819a4b23521401e7"/>
+                    <entry key="interface" value="LCM"/>
+                    <entry key="operation" value="EntitlementAdd"/>
+                  </Map>
+                </Attributes>
+                <AttributeRequest displayValue="Compliance Officer" name="Access" op="Add" value="Compliance Officer">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+                <AttributeRequest displayValue="Certification Manager" name="Access" op="Add" value="Certification Manager">
+                  <Attributes>
+                    <Map>
+                      <entry key="assignment" value="true"/>
+                    </Map>
+                  </Attributes>
+                </AttributeRequest>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000291"/>
+                  <entry key="requester" value="spadmin"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <Requesters>
+                <Reference class="sailpoint.object.Identity" name="spadmin"/>
+              </Requesters>
+            </ProvisioningPlan>
+            <ProvisioningTarget application="Financial Planning &amp; Forecasting" attribute="roles" value="Budget Controller">
+              <AccountSelection applicationId="c0a83c0199d9117b8199d942b544000a" applicationName="Financial Planning &amp; Forecasting" implicitCreate="true"/>
+            </ProvisioningTarget>
+            <ProvisioningTarget application="Sales Analytics" attribute="roles" value="Incentive &amp; Compensation Analyst">
+              <AccountSelection applicationId="c0a83c019a0c102b819a102f903504da" applicationName="Sales Analytics" implicitCreate="true"/>
+            </ProvisioningTarget>
+            <ProvisioningTarget application="Corporate Learning Portal" attribute="Access" value="Compliance Officer">
+              <AccountSelection applicationId="c0a83c019a2f10b6819a3175b2500287" applicationName="Corporate Learning Portal" implicitCreate="true"/>
+            </ProvisioningTarget>
+            <ProvisioningTarget application="Corporate Learning Portal" attribute="Access" value="Certification Manager">
+              <AccountSelection applicationId="c0a83c019a2f10b6819a3175b2500287" applicationName="Corporate Learning Portal" implicitCreate="true"/>
+            </ProvisioningTarget>
+            <ProvisioningTarget retain="true" role="SR_Role_Active_Directory_Basic_Access">
+              <AccountSelection applicationId="c0a83c0199d417218199d43c5f300017" applicationName="Active Directory" doCreate="true"/>
+            </ProvisioningTarget>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="saveUnmanagedPlan_WithProjectArgument" value="false"/>
+      <entry key="workItemPriority">
+        <value>
+          <WorkItemLevel>Normal</WorkItemLevel>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+  <Description>Manual Changes requested for User: Aditya Sharma</Description>
+  <SystemAttributes>
+    <Map>
+      <entry key="completionComments"/>
+    </Map>
+  </SystemAttributes>
+</WorkItemArchive>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ManagedAttribute PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ManagedAttribute aggregated="true" attribute="Access" displayName="Learner" hash="7039b1ddba951b7436c0fbbb3478f3a09350fad3" lastRefresh="1768326681072" requestable="true" type="access" value="Learner">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Corporate Learning Portal"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="accessType" value="Assigned Course"/>
+      <entry key="createdDate" value="15-01-2025"/>
+      <entry key="description" value="Basic access to learning portal content and assigned courses"/>
+      <entry key="modifiedDate" value="20-09-2025"/>
+      <entry key="owner" value="learning.admin@corp.com"/>
+      <entry key="roleId" value="CORP_LEARNER_001"/>
+      <entry key="status" value="Active"/>
+    </Map>
+  </Attributes>
+</ManagedAttribute>

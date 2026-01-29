@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Link PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Link displayName="Lauren Wright" identity="739019" lastRefresh="1768468351193">
+  <ApplicationRef>
+    <Reference class="sailpoint.object.Application" name="Hr-Workday"/>
+  </ApplicationRef>
+  <Attributes>
+    <Map>
+      <entry key="ADDRESS_LINE_1" value="8275 Garden St"/>
+      <entry key="ADDRESS_WORK" value="8275 Garden St;Bristol, England UK6 1NG;United Kingdom"/>
+      <entry key="BUILDING_CODE" value="GB_ENG_BLDG_02"/>
+      <entry key="BUSINESS_UNIT_ID" value="3074"/>
+      <entry key="CLASS" value="Shift-Based"/>
+      <entry key="COMPANY_NAME" value="Nsiiq inc"/>
+      <entry key="CONTRACT_END_DATE" value="11-26-2026"/>
+      <entry key="COUNTRY_NAME" value="United Kingdom"/>
+      <entry key="DEPARTMENT" value="Human Resources &amp; Talent Acquisition"/>
+      <entry key="DEPARTMENT_ID" value="DEPT-029"/>
+      <entry key="DIVISION" value="United Kingdom Corporate and Investment Services"/>
+      <entry key="DIVISION_ID" value="DIV-GB-02"/>
+      <entry key="EMAIL" value="lauren.wright@NsInc.com"/>
+      <entry key="EMPLOYEE_NUMBER" value="739019"/>
+      <entry key="EMPLOYEE_TYPE" value="Employee"/>
+      <entry key="FILENUMBER" value="739019"/>
+      <entry key="FIRST_NAME" value="Lauren"/>
+      <entry key="HIREDATE" value="08-27-2016"/>
+      <entry key="JOBCODE" value="JT-029-03"/>
+      <entry key="JOBTITLE" value="HR Operations Executive"/>
+      <entry key="LAST_NAME" value="Wright"/>
+      <entry key="LOCATION" value="GB - Bristol"/>
+      <entry key="MANAGER_ID" value="735000"/>
+      <entry key="POSTAL_CODE" value="74972"/>
+      <entry key="REGION" value="Bristol"/>
+      <entry key="WORKER_NAME" value="Lauren Wright"/>
+      <entry key="WORKER_STATUS" value="Active"/>
+      <entry key="WORKFORCE_TYPE" value="Permanent"/>
+    </Map>
+  </Attributes>
+</Link>

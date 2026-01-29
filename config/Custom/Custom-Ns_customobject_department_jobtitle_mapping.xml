@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE Custom PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<Custom name="NS_CustomObject_Department_jobtitle_Mapping">
+  <Attributes>
+    <Map>
+      <entry key="DEPT-001,Financial Accounting and Reporting">
+        <value>
+          <Map>
+            <entry key="JT-001-01" value="Senior Financial Analyst"/>
+            <entry key="JT-001-02" value="Accounts Payable Specialist"/>
+            <entry key="JT-001-03" value="Financial Reporting Manager"/>
+            <entry key="JT-001-04" value="General Ledger Accountant"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-002,Treasury and Cash Management">
+        <value>
+          <Map>
+            <entry key="JT-002-01" value="Treasury Analyst"/>
+            <entry key="JT-002-02" value="Cash Management Specialist"/>
+            <entry key="JT-002-03" value="Treasury Operations Manager"/>
+            <entry key="JT-002-04" value="Liquidity Risk Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-003,Financial Risk Management">
+        <value>
+          <Map>
+            <entry key="JT-003-01" value="Credit Risk Analyst"/>
+            <entry key="JT-003-02" value="Market Risk Specialist"/>
+            <entry key="JT-003-03" value="Risk Modeling Analyst"/>
+            <entry key="JT-003-04" value="Risk Reporting Manager"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-004,Internal Audit and Controls">
+        <value>
+          <Map>
+            <entry key="JT-004-01" value="Internal Auditor"/>
+            <entry key="JT-004-02" value="Audit Compliance Manager"/>
+            <entry key="JT-004-03" value="SOX Controls Analyst"/>
+            <entry key="JT-004-04" value="Audit Operations Lead"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-005,Investment Operations">
+        <value>
+          <Map>
+            <entry key="JT-005-01" value="Investment Operations Analyst"/>
+            <entry key="JT-005-02" value="Portfolio Operations Specialist"/>
+            <entry key="JT-005-03" value="Asset Processing Associate"/>
+            <entry key="JT-005-04" value="Trade Settlement Officer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-006,Regulatory Affairs and Governance">
+        <value>
+          <Map>
+            <entry key="JT-006-01" value="Regulatory Compliance Officer"/>
+            <entry key="JT-006-02" value="Governance Program Manager"/>
+            <entry key="JT-006-03" value="Regulatory Reporting Specialist"/>
+            <entry key="JT-006-04" value="Policy and Standards Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-007,AML and Fraud Prevention">
+        <value>
+          <Map>
+            <entry key="JT-007-01" value="AML Investigator"/>
+            <entry key="JT-007-02" value="Fraud Detection Analyst"/>
+            <entry key="JT-007-03" value="Transaction Monitoring Specialist"/>
+            <entry key="JT-007-04" value="Financial Crime Compliance Officer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-008,Data Privacy and Compliance (DPC)">
+        <value>
+          <Map>
+            <entry key="JT-008-01" value="Data Privacy Officer"/>
+            <entry key="JT-008-02" value="Compliance Analyst"/>
+            <entry key="JT-008-03" value="Data Protection Specialist"/>
+            <entry key="JT-008-04" value="Privacy Program Manager"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-009,Legal and Corporate Affairs">
+        <value>
+          <Map>
+            <entry key="JT-009-01" value="Legal Counsel"/>
+            <entry key="JT-009-02" value="Contract Management Specialist"/>
+            <entry key="JT-009-03" value="Corporate Affairs Manager"/>
+            <entry key="JT-009-04" value="Legal Compliance Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-010,Core Platform Engineering">
+        <value>
+          <Map>
+            <entry key="JT-010-01" value="Platform Engineer"/>
+            <entry key="JT-010-02" value="Software Development Engineer"/>
+            <entry key="JT-010-03" value="Technical Solutions Architect"/>
+            <entry key="JT-010-04" value="Backend Engineering Lead"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-011,Identity and Access Management (IAM)">
+        <value>
+          <Map>
+            <entry key="JT-011-01" value="IAM Engineer"/>
+            <entry key="JT-011-02" value="SailPoint IIQ Developer"/>
+            <entry key="JT-011-03" value="Access Governance Analyst"/>
+            <entry key="JT-011-04" value="PAM Specialist"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-012,Cybersecurity and Threat Operations">
+        <value>
+          <Map>
+            <entry key="JT-012-01" value="SOC Analyst"/>
+            <entry key="JT-012-02" value="Cybersecurity Engineer"/>
+            <entry key="JT-012-03" value="Threat Intelligence Specialist"/>
+            <entry key="JT-012-04" value="Incident Response Lead"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-013,Cloud Infrastructure Services">
+        <value>
+          <Map>
+            <entry key="JT-013-01" value="Cloud Engineer"/>
+            <entry key="JT-013-02" value="Cloud Administrator"/>
+            <entry key="JT-013-03" value="Infrastructure Architect"/>
+            <entry key="JT-013-04" value="Site Reliability Engineer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-014,DevOps and Release Engineering">
+        <value>
+          <Map>
+            <entry key="JT-014-01" value="DevOps Engineer"/>
+            <entry key="JT-014-02" value="CI/CD Pipeline Specialist"/>
+            <entry key="JT-014-03" value="Release Manager"/>
+            <entry key="JT-014-04" value="Automation Engineer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-015,Enterprise Architecture">
+        <value>
+          <Map>
+            <entry key="JT-015-01" value="Enterprise Architect"/>
+            <entry key="JT-015-02" value="Solutions Architect"/>
+            <entry key="JT-015-03" value="IT Strategy Consultant"/>
+            <entry key="JT-015-04" value="Architecture Governance Lead"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-016,IT Infrastructure and Network Services">
+        <value>
+          <Map>
+            <entry key="JT-016-01" value="Network Engineer"/>
+            <entry key="JT-016-02" value="IT Infrastructure Specialist"/>
+            <entry key="JT-016-03" value="Systems Administrator"/>
+            <entry key="JT-016-04" value="NOC Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-017,Application Development and Integration">
+        <value>
+          <Map>
+            <entry key="JT-017-01" value="Full-Stack Developer"/>
+            <entry key="JT-017-02" value="Integration Specialist"/>
+            <entry key="JT-017-03" value="Application Architect"/>
+            <entry key="JT-017-04" value="Senior Software Developer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-018,Database Administration and Data Engineering">
+        <value>
+          <Map>
+            <entry key="JT-018-01" value="Database Administrator"/>
+            <entry key="JT-018-02" value="Data Engineer"/>
+            <entry key="JT-018-03" value="SQL Developer"/>
+            <entry key="JT-018-04" value="ETL Specialist"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-019,Quality Engineering and Test Automation">
+        <value>
+          <Map>
+            <entry key="JT-019-01" value="QA Engineer"/>
+            <entry key="JT-019-02" value="Test Automation Specialist"/>
+            <entry key="JT-019-03" value="Quality Assurance Manager"/>
+            <entry key="JT-019-04" value="Performance Testing Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-020,IT Governance, Risk and Compliance (IT-GRC)">
+        <value>
+          <Map>
+            <entry key="JT-020-01" value="IT Risk Analyst"/>
+            <entry key="JT-020-02" value="IT Governance Specialist"/>
+            <entry key="JT-020-03" value="Compliance Program Manager"/>
+            <entry key="JT-020-04" value="Policy and Controls Advisor"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-021,Product Management Office (PMO)">
+        <value>
+          <Map>
+            <entry key="JT-021-01" value="Product Manager"/>
+            <entry key="JT-021-02" value="Product Owner"/>
+            <entry key="JT-021-03" value="Business Analyst"/>
+            <entry key="JT-021-04" value="UX/UI Designer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-022,Capital Markets and Trading Operations">
+        <value>
+          <Map>
+            <entry key="JT-022-01" value="Capital Markets Analyst"/>
+            <entry key="JT-022-02" value="Trading Operations Specialist"/>
+            <entry key="JT-022-03" value="Market Operations Associate"/>
+            <entry key="JT-022-04" value="Derivatives Processing Officer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-023,Digital Payments and Wallet Solutions">
+        <value>
+          <Map>
+            <entry key="JT-023-01" value="Payments Product Specialist"/>
+            <entry key="JT-023-02" value="Digital Wallet Engineer"/>
+            <entry key="JT-023-03" value="Payments Operations Analyst"/>
+            <entry key="JT-023-04" value="Payments Integration Developer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-024,Core Banking Technology">
+        <value>
+          <Map>
+            <entry key="JT-024-01" value="Core Banking Engineer"/>
+            <entry key="JT-024-02" value="CBS Integration Specialist"/>
+            <entry key="JT-024-03" value="Banking Solutions Developer"/>
+            <entry key="JT-024-04" value="CBS Support Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-025,Business Operations and Support">
+        <value>
+          <Map>
+            <entry key="JT-025-01" value="Business Operations Analyst"/>
+            <entry key="JT-025-02" value="Process Improvement Specialist"/>
+            <entry key="JT-025-03" value="Operations Manager"/>
+            <entry key="JT-025-04" value="MIS Reporting Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-026,Customer Success and Support">
+        <value>
+          <Map>
+            <entry key="JT-026-01" value="Customer Success Manager"/>
+            <entry key="JT-026-02" value="Client Support Executive"/>
+            <entry key="JT-026-03" value="Customer Experience Lead"/>
+            <entry key="JT-026-04" value="Technical Support Engineer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-027,Service Desk and IT Support">
+        <value>
+          <Map>
+            <entry key="JT-027-01" value="IT Service Desk Analyst"/>
+            <entry key="JT-027-02" value="IT Support Engineer"/>
+            <entry key="JT-027-03" value="Incident Coordinator"/>
+            <entry key="JT-027-04" value="Desktop Support Technician"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-028,Vendor Management Office (VMO)">
+        <value>
+          <Map>
+            <entry key="JT-028-01" value="Vendor Relationship Manager"/>
+            <entry key="JT-028-02" value="Procurement Specialist"/>
+            <entry key="JT-028-03" value="Vendor Risk Analyst"/>
+            <entry key="JT-028-04" value="Contract Compliance Officer"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-029,Human Resources and Talent Acquisition">
+        <value>
+          <Map>
+            <entry key="JT-029-01" value="HR Business Partner"/>
+            <entry key="JT-029-02" value="Talent Acquisition Specialist"/>
+            <entry key="JT-029-03" value="HR Operations Executive"/>
+            <entry key="JT-029-04" value="Compensation and Benefits Analyst"/>
+          </Map>
+        </value>
+      </entry>
+      <entry key="DEPT-030,Workplace and Facilities Management">
+        <value>
+          <Map>
+            <entry key="JT-030-01" value="Facilities Coordinator"/>
+            <entry key="JT-030-02" value="Workplace Experience Manager"/>
+            <entry key="JT-030-03" value="Security and Safety Officer"/>
+            <entry key="JT-030-04" value="Maintenance Supervisor"/>
+          </Map>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</Custom>

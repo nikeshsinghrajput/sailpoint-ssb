@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="CN=reddy.aarav,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" applicationName="Active Directory" identityDisplayName="Aarav Reddy" identityName="5e70a693-6c69-46b6-b929-12de68fdc1e5" integration="Active Directory" name="0000000054" nativeIdentity="CN=reddy.aarav,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" operation="Create" source="LCM" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="accessRequestId" value="0000000075"/>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=reddy.aarav,OU=Employee Account,OU=Dev,DC=nsiiq,DC=com" op="Create">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019a0c102b819a0d170236006e"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="password" op="Set"/>
+            <AttributeRequest name="mail" op="Set" value="reddy.aaravnsiiq.com"/>
+            <AttributeRequest name="employeeNumber" op="Set" value="8512523"/>
+            <AttributeRequest name="givenName" op="Set" value="Aarav"/>
+            <AttributeRequest name="sn" op="Set" value="Reddy"/>
+            <AttributeRequest name="sAMAccountName" op="Set" value="reddy.aarav"/>
+            <AttributeRequest name="displayName" op="Set" value="Aarav Reddy"/>
+            <AttributeRequest name="title" op="Set" value="Developer"/>
+            <AttributeRequest name="company" op="Add" value="HCL"/>
+            <AttributeRequest name="employeeType" op="Set" value="Employee"/>
+            <AttributeRequest name="accountExpires" op="Add" value="134884224000000000"/>
+            <AttributeRequest name="department" op="Set" value="Operations"/>
+            <AttributeRequest name="departmentNumber" op="Set" value="DPT393"/>
+            <AttributeRequest name="division" op="Add" value="Division-1"/>
+            <AttributeRequest name="streetAddress" op="Set" value="604 MG Road"/>
+            <AttributeRequest name="physicalDeliveryOfficeName" op="Set" value="B393"/>
+            <AttributeRequest name="l" op="Set" value="Mumbai"/>
+            <AttributeRequest name="st" op="Set" value="West"/>
+            <AttributeRequest name="co" op="Add" value="India"/>
+            <AttributeRequest name="postalCode" op="Set" value="631018"/>
+            <AttributeRequest name="mobile" op="Set" value="+91-9901234567"/>
+            <AttributeRequest name="telephoneNumber" op="Set" value="+91-20-27927890"/>
+            <AttributeRequest name="description" op="Set" value="Created via sailpoint Developer"/>
+            <AttributeRequest name="businessCategory" op="Set" value="Full_time"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Connection reset" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

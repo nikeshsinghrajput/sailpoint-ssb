@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE IdentityRequest PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<IdentityRequest completionStatus="Success" endDate="1768853388605" executionStatus="Completed" name="0000000336" priority="Normal" requesterDisplayName="Scheduler" source="LCM" state="End" targetClass="sailpoint.object.Identity" targetDisplayName="John Doe" verified="1768853560113">
+  <Attributes>
+    <Map>
+      <entry key="provisionedProject">
+        <value>
+          <ProvisioningProject identity="db561a67-5064-475f-bedc-35bad74bb86b">
+            <Attributes>
+              <Map>
+                <entry key="disableRetryRequest">
+                  <value>
+                    <Boolean>true</Boolean>
+                  </value>
+                </entry>
+                <entry key="identityRequestId" value="0000000336"/>
+                <entry key="optimisticProvisioning" value="false"/>
+                <entry key="requester" value="Scheduler"/>
+                <entry key="source" value="LCM"/>
+              </Map>
+            </Attributes>
+            <MasterPlan>
+              <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Modify">
+                  <AttributeRequest name="roles" op="Remove" value="Audit Viewer"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="identityRequestId" value="0000000336"/>
+                    <entry key="requester" value="Scheduler"/>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </MasterPlan>
+            <ProvisioningPlan nativeIdentity="db561a67-5064-475f-bedc-35bad74bb86b" targetIntegration="Financial Planning &amp; Forecasting" trackingId="d57a4c348488486eaa4fb7e9b3ff3b6f">
+              <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Modify" targetIntegration="Financial Planning &amp; Forecasting">
+                <AttributeRequest name="roles" op="Remove" value="Audit Viewer"/>
+                <ProvisioningResult status="committed"/>
+              </AccountRequest>
+              <Attributes>
+                <Map>
+                  <entry key="identityRequestId" value="0000000336"/>
+                  <entry key="requester" value="Scheduler"/>
+                  <entry key="source" value="LCM"/>
+                </Map>
+              </Attributes>
+              <ProvisioningResult status="committed"/>
+            </ProvisioningPlan>
+          </ProvisioningProject>
+        </value>
+      </entry>
+      <entry key="taskResultId" value="c0a83c019bd11f47819bd7e090d50641"/>
+    </Map>
+  </Attributes>
+  <RequestItems>
+    <IdentityRequestItem application="Financial Planning &amp; Forecasting" name="roles" nativeIdentity="739003" operation="Remove" provisioningEngine="Financial Planning &amp; Forecasting" provisioningState="Finished" value="Audit Viewer">
+      <Attributes>
+        <Map>
+          <entry key="identityEntitlementId" value="c0a83c019bd11f47819bd7c356a105ad"/>
+          <entry key="managedAttributeType" value="Entitlement"/>
+          <entry key="provisioningPlan">
+            <value>
+              <ProvisioningPlan trackingId="dfbfbe7ffab646d78648634c71e1bd4e">
+                <AccountRequest application="Financial Planning &amp; Forecasting" nativeIdentity="739003" op="Modify" targetIntegration="Financial Planning &amp; Forecasting">
+                  <AttributeRequest name="roles" op="Remove" trackingId="dfbfbe7ffab646d78648634c71e1bd4e" value="Audit Viewer"/>
+                </AccountRequest>
+                <Attributes>
+                  <Map>
+                    <entry key="source" value="LCM"/>
+                  </Map>
+                </Attributes>
+              </ProvisioningPlan>
+            </value>
+          </entry>
+        </Map>
+      </Attributes>
+    </IdentityRequestItem>
+  </RequestItems>
+</IdentityRequest>

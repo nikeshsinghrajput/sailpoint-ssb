@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE SyslogEvent PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<SyslogEvent classname="sailpoint.api.Workflower" eventLevel="ERROR" lineNumber="4709" quickKey="0000448026" server="NikeshRajput" thread="Workflow Event Thread 1" username="Scheduler">
+  <EventMessage>An unexpected error occurred: String emails = null 
+ BSF info: script at line: 0 column: columnNo</EventMessage>
+  <Stacktrace>sailpoint.tools.GeneralException: String emails = null 
+ BSF info: script at line: 0 column: columnNo
+	at sailpoint.server.ScriptletEvaluator.doScript(ScriptletEvaluator.java:268)
+	at sailpoint.server.ScriptletEvaluator.evalSource(ScriptletEvaluator.java:71)
+	at sailpoint.api.Workflower.evalSource(Workflower.java:6041)
+	at sailpoint.api.Workflower.evalArgsTo(Workflower.java:6021)
+	at sailpoint.api.Workflower.initStepEvaluationArguments(Workflower.java:5898)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5217)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.advanceSubcase(Workflower.java:5607)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5200)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.advanceSubcase(Workflower.java:5607)
+	at sailpoint.api.Workflower.advanceStep(Workflower.java:5200)
+	at sailpoint.api.Workflower.advance(Workflower.java:4667)
+	at sailpoint.api.Workflower.assimilate(Workflower.java:4317)
+	at sailpoint.api.Workflower.handleWorkItem(Workflower.java:7755)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2018)
+	at sailpoint.api.Workflower.processEvent(Workflower.java:2000)
+	at sailpoint.task.WorkflowerThread.process(WorkflowerThread.java:363)
+	at sailpoint.task.WorkflowerThread.run(WorkflowerThread.java:288)
+Caused by: sailpoint.tools.GeneralException: BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import org.apache.log4j.Logger;              Logger log = Logger.getLogger("com. . . . '' Token Parsing Error: Lexical error at line 10, column 48.  Encountered: "t" (116), after : "@" : at Line: 6 : in file: inline evaluation of: ``import org.apache.log4j.Logger;              Logger log = Logger.getLogger("com. . . . '' : String emails = null 
+ BSF info: script at line: 0 column: columnNo
+	at sailpoint.server.BSFRuleRunner.runScript(BSFRuleRunner.java:350)
+	at sailpoint.server.InternalContext.runScript(InternalContext.java:1359)
+	at sailpoint.server.ScriptletEvaluator.doScript(ScriptletEvaluator.java:263)
+	... 18 more
+Caused by: org.apache.bsf.BSFException: BeanShell script error: bsh.EvalError: Sourced file: inline evaluation of: ``import org.apache.log4j.Logger;              Logger log = Logger.getLogger("com. . . . '' Token Parsing Error: Lexical error at line 10, column 48.  Encountered: "t" (116), after : "@" : at Line: 6 : in file: inline evaluation of: ``import org.apache.log4j.Logger;              Logger log = Logger.getLogger("com. . . . '' : String emails = null 
+ BSF info: script at line: 0 column: columnNo
+	at bsh.util.BeanShellBSFEngine.eval(BeanShellBSFEngine.java:202)
+	at org.apache.bsf.BSFManager$5.run(BSFManager.java:445)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:551)
+	at org.apache.bsf.BSFManager.eval(BSFManager.java:442)
+	at sailpoint.server.BSFRuleRunner.runScript(BSFRuleRunner.java:348)
+	... 20 more
+</Stacktrace>
+</SyslogEvent>

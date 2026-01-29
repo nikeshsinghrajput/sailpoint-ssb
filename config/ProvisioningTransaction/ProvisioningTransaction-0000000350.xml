@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE ProvisioningTransaction PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<ProvisioningTransaction accountDisplayName="brown.jessica" applicationName="Active Directory" identityDisplayName="Jessica Brown" identityName="00d0d55a-dc78-4d06-a0aa-533d9d237cd7" integration="Active Directory" name="0000000350" nativeIdentity="CN=brown.jessica,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" operation="Modify" status="Failed" type="Auto">
+  <Attributes>
+    <Map>
+      <entry key="request">
+        <value>
+          <AccountRequest application="Active Directory" nativeIdentity="CN=brown.jessica,OU=Employees,OU=Users,OU=SailPoint,DC=nsiiq,DC=com" op="Modify">
+            <Attributes>
+              <Map>
+                <entry key="provisioningTransactionId" value="c0a83c019afa1055819aff28a21e03c3"/>
+              </Map>
+            </Attributes>
+            <AttributeRequest name="mail" op="Set" value="brown.jessica@nstechiiq.com"/>
+            <ProvisioningResult status="failed">
+              <Errors>
+                <Message key="Connection reset" type="Error"/>
+              </Errors>
+            </ProvisioningResult>
+          </AccountRequest>
+        </value>
+      </entry>
+    </Map>
+  </Attributes>
+</ProvisioningTransaction>

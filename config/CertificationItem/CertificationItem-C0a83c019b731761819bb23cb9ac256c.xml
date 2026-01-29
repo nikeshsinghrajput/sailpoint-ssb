@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CertificationItem PUBLIC "sailpoint.dtd" "sailpoint.dtd">
+<CertificationItem completed="1768221949572" exceptionApplication="Financial Planning &amp; Forecasting" exceptionAttributeName="roles" exceptionAttributeValue="Accounts Receivable Officer" summaryStatus="Complete" type="Exception">
+  <CertificationAction actorDisplayName="The Administrator" actorName="spadmin" decisionCertificationId="c0a83c019b731761819bb23cb98d2567" decisionDate="1768221949294" reviewed="true" status="Approved"/>
+  <ApplicationNames>
+    <String>Financial Planning &amp; Forecasting</String>
+  </ApplicationNames>
+  <ExceptionEntitlements>
+    <EntitlementSnapshot application="Financial Planning &amp; Forecasting" displayName="8512519" nativeIdentity="8512519">
+      <Attributes>
+        <Map>
+          <entry key="roles" value="Accounts Receivable Officer"/>
+        </Map>
+      </Attributes>
+    </EntitlementSnapshot>
+  </ExceptionEntitlements>
+</CertificationItem>
